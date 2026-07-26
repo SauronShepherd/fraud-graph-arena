@@ -1,8 +1,8 @@
 {
   "report_id": "FGA-I00-VALIDATION-RESULTS-1.1-20260726",
-  "generated_at": "2026-07-26T12:06:23.232794Z",
-  "repository": "/mnt/data/fga_v10_fix/fraud-graph-arena",
-  "source_commit": "197c50cafd03692d39e97524e3e403e88804ce29",
+  "generated_at": "2026-07-26T17:57:30.903492Z",
+  "repository": "/mnt/data/fga_patch_work",
+  "source_commit": "eb219e5a6bc49be2aa71720499e73f92e97e9744",
   "clean_checkout_observed": true,
   "checks": [
     {
@@ -14,13 +14,13 @@
     {
       "id": "schemas",
       "status": "pass",
-      "duration_ms": 84,
+      "duration_ms": 82,
       "errors": []
     },
     {
       "id": "baseline",
       "status": "pass",
-      "duration_ms": 14,
+      "duration_ms": 17,
       "errors": []
     },
     {
@@ -50,13 +50,13 @@
     {
       "id": "secret_scan",
       "status": "pass",
-      "duration_ms": 14,
+      "duration_ms": 12,
       "errors": []
     },
     {
       "id": "truth_scan",
       "status": "pass",
-      "duration_ms": 16,
+      "duration_ms": 11,
       "errors": []
     },
     {
@@ -68,7 +68,7 @@
     {
       "id": "evidence",
       "status": "pass",
-      "duration_ms": 16,
+      "duration_ms": 17,
       "errors": []
     }
   ],

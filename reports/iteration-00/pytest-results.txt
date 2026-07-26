@@ -1,22 +1,47 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- /opt/pyvenv/bin/python
 cachedir: .pytest_cache
-metadata: {'Python': '3.13.5', 'Platform': 'Linux-6.12.13-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'metadata': '3.1.1', 'Faker': '40.1.2', 'asyncio': '1.3.0', 'ddtrace': '4.4.0', 'cov': '7.0.0', 'json-report': '1.5.0', 'anyio': '4.13.0'}, 'PLATFORM': 'linux/amd64', 'CI': 'true'}
-rootdir: /mnt/data/fga_v10_fix/fraud-graph-arena
+metadata: {'Python': '3.13.5', 'Platform': 'Linux-6.12.13-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'asyncio': '1.3.0', 'ddtrace': '4.4.0', 'metadata': '3.1.1', 'json-report': '1.5.0', 'cov': '7.0.0', 'anyio': '4.13.0', 'Faker': '40.1.2'}, 'PLATFORM': 'linux/amd64', 'CI': 'true'}
+rootdir: /mnt/data/fga_patch_work
 configfile: pyproject.toml
 testpaths: tests
-plugins: metadata-3.1.1, Faker-40.1.2, asyncio-1.3.0, ddtrace-4.4.0, cov-7.0.0, json-report-1.5.0, anyio-4.13.0
+plugins: asyncio-1.3.0, ddtrace-4.4.0, metadata-3.1.1, json-report-1.5.0, cov-7.0.0, anyio-4.13.0, Faker-40.1.2
 asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
-collecting ... collected 9 items
+collecting ... collected 11 items
 
-tests/governance/test_iteration_00.py::test_pyproject_declares_pinned_runtime_and_test_dependencies PASSED [ 11%]
-tests/governance/test_iteration_00.py::test_pytest_discovery_is_configured_in_pyproject PASSED [ 22%]
-tests/governance/test_iteration_00.py::test_missing_dependency_error_is_actionable PASSED [ 33%]
-tests/governance/test_iteration_00.py::test_validation_is_side_effect_free_by_default_and_structurally_green PASSED [ 44%]
-tests/governance/test_iteration_00.py::test_formal_closure_blocks_missing_sources_and_pending_approvals_in_fixture PASSED [ 55%]
-tests/governance/test_iteration_00.py::test_importer_rejects_placeholder_documents PASSED [ 66%]
-tests/governance/test_iteration_00.py::test_tag_creation_refuses_unqualified_iteration PASSED [ 77%]
-tests/governance/test_iteration_00.py::test_qualified_candidate_and_evidence_only_closure_pass PASSED [ 88%]
+tests/governance/test_iteration_00.py::test_pyproject_declares_pinned_runtime_and_test_dependencies PASSED [  9%]
+tests/governance/test_iteration_00.py::test_pytest_discovery_is_configured_in_pyproject PASSED [ 18%]
+tests/governance/test_iteration_00.py::test_missing_dependency_error_is_actionable PASSED [ 27%]
+tests/governance/test_iteration_00.py::test_text_artifact_digest_is_independent_of_line_endings PASSED [ 36%]
+tests/governance/test_iteration_00.py::test_git_attributes_force_lf_for_governed_text PASSED [ 45%]
+tests/governance/test_iteration_00.py::test_validation_is_side_effect_free_by_default_and_structurally_green FAILED [ 54%]
+tests/governance/test_iteration_00.py::test_formal_closure_blocks_missing_sources_and_pending_approvals_in_fixture PASSED [ 63%]
+tests/governance/test_iteration_00.py::test_importer_rejects_placeholder_documents PASSED [ 72%]
+tests/governance/test_iteration_00.py::test_tag_creation_refuses_unqualified_iteration PASSED [ 81%]
+tests/governance/test_iteration_00.py::test_qualified_candidate_and_evidence_only_closure_pass PASSED [ 90%]
 tests/governance/test_iteration_00.py::test_closure_detects_post_qualification_source_change PASSED [100%]
 
-============================== 9 passed in 14.77s ==============================
+=================================== FAILURES ===================================
+____ test_validation_is_side_effect_free_by_default_and_structurally_green _____
+
+    def test_validation_is_side_effect_free_by_default_and_structurally_green() -> None:
+        before = run("git", "status", "--porcelain", "--untracked-files=all").stdout
+        completed = run_validator()
+        after = run("git", "status", "--porcelain", "--untracked-files=all").stdout
+    
+        assert completed.returncode == 0, completed.stdout + completed.stderr
+        assert before == after
+        payload = json.loads(completed.stdout)
+>       assert payload["status"] == "pass"
+E       AssertionError: assert 'blocked' == 'pass'
+E         
+E         - pass
+E         + blocked
+
+tests/governance/test_iteration_00.py:83: AssertionError
+=========================== short test summary info ============================
+FAILED tests/governance/test_iteration_00.py::test_validation_is_side_effect_free_by_default_and_structurally_green - AssertionError: assert 'blocked' == 'pass'
+  
+  - pass
+  + blocked
+======================== 1 failed, 10 passed in 14.50s =========================

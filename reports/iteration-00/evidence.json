@@ -1,8 +1,8 @@
 {
   "evidence_id": "EVID-I00-BASELINE",
   "iteration_id": "I00",
-  "generated_at": "2026-07-26T12:06:23.233228Z",
-  "source_commit": "197c50cafd03692d39e97524e3e403e88804ce29",
+  "generated_at": "2026-07-26T17:57:30.903888Z",
+  "source_commit": "eb219e5a6bc49be2aa71720499e73f92e97e9744",
   "status": "passing",
   "closure_eligible": true,
   "environment": {
@@ -451,7 +451,7 @@
       "status": "pass",
       "command": "python -m pytest -v",
       "result": "Validation passed.",
-      "duration_ms": 84,
+      "duration_ms": 82,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
@@ -459,7 +459,7 @@
       "status": "pass",
       "command": "python -m pytest -v",
       "result": "Validation passed.",
-      "duration_ms": 14,
+      "duration_ms": 17,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
@@ -499,7 +499,7 @@
       "status": "pass",
       "command": "python -m pytest -v",
       "result": "Validation passed.",
-      "duration_ms": 14,
+      "duration_ms": 12,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
@@ -507,7 +507,7 @@
       "status": "pass",
       "command": "python -m pytest -v",
       "result": "Validation passed.",
-      "duration_ms": 16,
+      "duration_ms": 11,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
@@ -552,5 +552,5 @@
       "evidence": "The project owner explicitly requested the corrected fixed Iteration-00 project and release package in this conversation."
     }
   ],
-  "bundle_digest": "3ab38e10c18ac8eec933a47f09e70ccda43eab3e3ca6ac93c48ee55c57d227d2"
+  "bundle_digest": "31e4b49a6dafaaeec7d8d6d9742816a662aef52b70f43f8288c9e319678d12e3"
 }
