@@ -1,12 +1,12 @@
 # Iteration 00 Qualification Evidence
 
-**Iteration:** `I00 — Normative baseline and delivery constitution`  
-**Normative pair:** `FGA-NORMATIVE-PAIR-10.0-20260726`  
-**Branch:** `Iteration-00`  
-**Qualified source commit:** `eb219e5a6bc49be2aa71720499e73f92e97e9744`  
-**Immutable release tag:** `fga-iteration-00-r1`  
-**Evidence status:** `passing`  
-**Closure eligible:** `true`  
+**Iteration:** `I00 — Normative baseline and delivery constitution`
+**Normative pair:** `FGA-NORMATIVE-PAIR-10.0-20260726`
+**Branch:** `Iteration-00`
+**Qualified source commit:** `eb219e5a6bc49be2aa71720499e73f92e97e9744`
+**Immutable release tag:** `fga-iteration-00-r1`
+**Evidence status:** `passing`
+**Closure eligible:** `true`
 **Evidence bundle digest:** `31e4b49a6dafaaeec7d8d6d9742816a662aef52b70f43f8288c9e319678d12e3`
 
 ## Result
