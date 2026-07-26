@@ -106,6 +106,10 @@ def test_formal_closure_blocks_missing_sources_and_pending_approvals_in_fixture(
 
     assert run("git", "add", ".", cwd=repository).returncode == 0
     assert run("git", "commit", "-m", "Create blocked fixture", cwd=repository).returncode == 0
+    generated = run_validator("--generate-evidence", root=repository)
+    assert generated.returncode == 0, generated.stdout + generated.stderr
+    assert run("git", "add", "reports/iteration-00", cwd=repository).returncode == 0
+    assert run("git", "commit", "-m", "Record blocked fixture evidence", cwd=repository).returncode == 0
     completed = run_validator("--require-closure", root=repository)
 
     assert completed.returncode == 2, completed.stdout + completed.stderr

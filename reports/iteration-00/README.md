@@ -1,8 +1,8 @@
 # Iteration 00 Qualification Evidence
 
-**Iteration:** `I00 — Normative baseline and delivery constitution`  
-**Normative pair:** `FGA-NORMATIVE-PAIR-10.0-20260726`  
-**Branch:** `Iteration-00`  
+**Iteration:** `I00 — Normative baseline and delivery constitution`
+**Normative pair:** `FGA-NORMATIVE-PAIR-10.0-20260726`
+**Branch:** `Iteration-00`
 **Expected immutable tag:** `fga-iteration-00`
 
 ## Candidate state
