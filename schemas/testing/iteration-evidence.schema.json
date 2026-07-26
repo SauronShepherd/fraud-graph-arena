@@ -212,8 +212,46 @@
           "date": {
             "type": "string",
             "format": "date"
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 3
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "approved"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "name",
+                "date",
+                "evidence"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "rejected"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "name",
+                "date",
+                "evidence"
+              ]
+            }
+          }
+        ]
       }
     },
     "bundle_digest": {

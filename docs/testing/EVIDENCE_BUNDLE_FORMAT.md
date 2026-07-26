@@ -1,34 +1,76 @@
 # Iteration Evidence Bundle Format
 
-**Format ID:** `FGA-EVIDENCE-FORMAT-1.0-20260726`
+## Purpose
 
-The normative machine-readable schema is [`schemas/testing/iteration-evidence.schema.json`](../../schemas/testing/iteration-evidence.schema.json).
+Every Fraud Graph Arena iteration closes with a machine-readable evidence bundle and a human-readable summary. Evidence is created from a clean candidate commit and cannot be reconstructed after release from memory or terminal screenshots.
+
+## Two-commit qualification model
+
+Iteration qualification uses two preserved commits:
+
+```text
+C — qualified source candidate
+│
+└── E — evidence-only closure record
+        └── immutable iteration tag
+```
+
+The evidence bundle stored in `E` identifies `C` through `source_commit`. The closure validator requires:
+
+- `C` exists and is an ancestor of `E`;
+- the candidate was clean when evidence was generated;
+- changes from `C` to `E` are limited to `reports/iteration-00/`;
+- all required source artefacts are present and digest-verified;
+- all required independent approvals are approved;
+- no closure-blocking gap or release exception remains;
+- required I00 gates and tests pass;
+- the evidence bundle digest is valid.
+
+This model avoids a self-referential commit hash inside a file committed by the same commit.
 
 ## Required contents
 
-- Evidence and iteration IDs.
-- UTC generation time and exact source commit.
-- Overall status and formal closure eligibility.
-- Operating system, runtime/tool versions, and clean-checkout fact.
-- Exact commands executed.
-- Governing source artifact status and digests.
-- One result for each universal gate `G01`–`G15`.
-- Normalized test records including status, command, result, duration, seed where relevant, and report path.
-- Temporary exceptions, known gaps, owners, expiry, and closure effect.
-- Required approvals.
-- Canonical SHA-256 of the bundle excluding its own `bundle_digest` field.
+The bundle records:
 
-## Status semantics
+- evidence and iteration IDs;
+- generation time;
+- qualified source commit;
+- status and closure eligibility;
+- operating system, Python version, and clean-checkout observation;
+- exact commands;
+- required source artefacts and SHA-256 digests;
+- all fifteen universal gates with applicability rationale;
+- normalized test results and reports;
+- exceptions and known gaps;
+- independent approvals;
+- canonical bundle digest.
 
-- `passing`: all applicable gates pass and no blocking gap remains.
-- `failing`: at least one executed applicable gate fails.
-- `blocked`: verification is structurally sound but a prerequisite or required authority is unavailable.
-- `not_applicable`: a capability does not yet exist; a reason is mandatory. Once introduced, its gate remains cumulative.
+## Status meanings
 
-## Integrity
+- `passing`: every applicable requirement for closure is satisfied;
+- `failing`: one or more implemented validation checks failed;
+- `blocked`: implemented checks may pass, but an external prerequisite, approval, or clean-run condition is incomplete.
 
-Evidence is generated, not hand-waved. The validator recalculates available source digests, schema-validates the bundle, verifies all fifteen gate IDs exactly once, rejects hidden critical skips/quarantines, and recalculates the bundle digest.
+`not_applicable` is allowed only before a capability exists and must include a concrete reason. It does not mean “not run.”
 
-## I00 rule
+## Commands
 
-Documentation-only I00 explicitly marks executable product layers not applicable. The absent v9.0 parent pair blocks `G01` and therefore `G15`; the bundle remains valid but cannot claim iteration closure.
+Side-effect-free validation:
+
+```text
+python scripts/validate_iteration_00.py
+```
+
+Generate evidence from a clean candidate commit:
+
+```text
+python scripts/validate_iteration_00.py --generate-evidence
+```
+
+After committing only the evidence directory, verify formal closure:
+
+```text
+python scripts/validate_iteration_00.py --require-closure
+```
+
+The immutable tag is created only through `scripts/create_iteration_00_tag.py` after closure passes.

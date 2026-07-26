@@ -27,16 +27,28 @@
   ],
   "artifacts": [
     {
-      "artifact_id": "FGA-NORMATIVE-PAIR-9.0-20260726",
-      "title": "Fraud Graph Arena v9.0 functional and technical normative pair",
-      "kind": "normative_pair",
+      "artifact_id": "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
+      "title": "Fraud Graph Arena Complete Functional Specification v9.0",
+      "kind": "normative_specification",
       "authority_rank": 1,
       "version": "9.0",
       "date": "2026-07-26",
       "availability": "external_missing",
-      "external_reference": "The modular pack names this parent pair, but the two source documents were not included in the supplied build inputs.",
+      "external_reference": "Approved source attachment Fraud_Graph_Arena_Complete_Functional_Specification_v9.0.md is not mounted in this repository.",
       "required_for_closure": true,
-      "notes": "Must be supplied and digest-registered before I00 may close."
+      "notes": "Import the exact approved source with scripts/import_normative_pair.py; placeholders and summaries are rejected."
+    },
+    {
+      "artifact_id": "FGA-NORMATIVE-TECHNICAL-9.0-20260726",
+      "title": "Fraud Graph Arena Complete Technical Architecture and Design Specification v9.0",
+      "kind": "normative_specification",
+      "authority_rank": 1,
+      "version": "9.0",
+      "date": "2026-07-26",
+      "availability": "external_missing",
+      "external_reference": "Approved source attachment Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v9.0.md is not mounted in this repository.",
+      "required_for_closure": true,
+      "notes": "Import the exact approved source with scripts/import_normative_pair.py; placeholders and summaries are rejected."
     },
     {
       "artifact_id": "FGA-END-TO-END-BUILD-PLAN-1.0-20260726",
@@ -607,7 +619,8 @@
     "all_required_available": false,
     "all_available_digests_verified": true,
     "unresolved_required_artifact_ids": [
-      "FGA-NORMATIVE-PAIR-9.0-20260726"
+      "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
+      "FGA-NORMATIVE-TECHNICAL-9.0-20260726"
     ]
   }
 }

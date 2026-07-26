@@ -1,0 +1,13 @@
+approval_set_id: FGA-I00-APPROVALS-1.0-20260726
+iteration_id: I00
+required_roles:
+  - architecture-governance
+  - quality-engineering
+  - release-management
+approvals:
+  - role: architecture-governance
+    status: pending
+  - role: quality-engineering
+    status: pending
+  - role: release-management
+    status: pending

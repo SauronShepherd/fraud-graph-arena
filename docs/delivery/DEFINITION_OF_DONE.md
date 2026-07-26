@@ -1,26 +1,31 @@
 # Definition of Done
 
-**Checklist ID:** `FGA-DOD-1.0-20260726`
-
 ## Task done
 
-The declared file contains the bounded change, its local check passes, traceability is current, review is complete, and no unrelated file is smuggled into the task.
+A task is done only when its one exact file contains the bounded change, its file-local acceptance statement passes, traceability is current, and review is complete.
 
 ## Stage done
 
-Every task is done, stage-specific tests pass, public contracts and compatibility fixtures are current, and no stage-created defect is deferred.
+A stage is done only when every task is complete, stage tests pass, public contracts are compatible or explicitly migrated, and no stage-created defect is deferred.
 
 ## Iteration done
 
-- Every stage is done.
-- Every applicable cumulative gate `G01`–`G15` passes.
-- Not-applicable gates have explicit capability-based reasons.
-- A clean checkout with fresh generated state reproduces the result.
-- No critical failure is skipped, muted, quarantined, or marked expected-failure.
-- A rerun-only green result does not count; the original cause is identified and corrected.
-- No severity-1/2 defect, stale contract, unreviewed migration, missing report, or blocking prerequisite remains.
-- The evidence bundle validates, contains exact commands, environment, seeds, digests, results, exceptions, gaps, and approvals, and records `closure_eligible: true`.
+An iteration is done only when:
 
-## No pass, no progress
+- all stages are complete;
+- all applicable cumulative gates pass;
+- the qualified source candidate was tested from a clean checkout;
+- all required source artefacts are present and digest-verified;
+- required independent approvals are named, dated, and evidence-backed;
+- no critical test is skipped, quarantined, muted, or expected-failure;
+- no rerun-only green result remains unexplained;
+- no blocking gap, release exception, or unresolved severity-one/two defect remains;
+- an evidence-only closure commit records the qualified source commit;
+- formal closure verification passes;
+- the immutable iteration tag is created only after closure passes.
 
-A failure creates a corrective task in the same iteration. The next iteration cannot begin until the complete cumulative gate passes again. Temporary exceptions apply only to noncritical checks, require signed ownership and expiry, and cannot survive release qualification.
+The evidence-only closure commit may change only the governed evidence directory. Any source, configuration, schema, test, or documentation change after qualification requires a new candidate run.
+
+## No Pass, No Progress
+
+A failure creates corrective work in the same iteration. The next iteration does not begin until the complete cumulative gate passes again and reproducible evidence is recorded.

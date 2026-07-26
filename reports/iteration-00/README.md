@@ -2,47 +2,50 @@
 
 **Iteration:** `I00 — Normative baseline and delivery constitution`
 **Evidence ID:** `EVID-I00-BASELINE`
-**Status:** blocked, not failed
+**Implementation:** complete
+**Qualification:** blocked, not failed
+**Immutable release tag:** deliberately absent
 
 ## Implemented outputs
 
-All sixteen planned I00 file-atomic deliverables exist:
+All sixteen planned I00 file-atomic deliverables exist. Corrective work additionally provides:
 
-- baseline authority and digest registry;
-- stable ID policy;
-- task/stage/iteration model, ready and done definitions;
-- machine-readable no-pass-no-progress policy;
-- traceability model, schema, graph, owners, and change classification;
-- evidence format, schema, generated bundle, and validation report.
-
-Corrective delivery tasks also provide standard Python project metadata, exactly pinned runtime and test dependencies, pytest discovery configuration, actionable bootstrap diagnostics, and side-effect-free validator execution for automated tests.
+- exact dependency and pytest declarations;
+- side-effect-free validation;
+- separate registration of both normative-pair members;
+- placeholder-resistant source import;
+- governed independent approvals;
+- clean-candidate and evidence-only closure enforcement;
+- post-qualification tampering detection;
+- guarded immutable tag creation;
+- removal of IDE and generated local artefacts from tracked source.
 
 ## Passing checks
 
-JSON Schema metaschemas and positive/negative fixtures, JSON/YAML/TOML syntax, all available source digests, Markdown structure and relative links, ID uniqueness, ownership coverage, traceability references and no-orphan rules, secret scan, protected-truth artifact scan, Python project metadata, pytest configuration, and the governance regression suite pass.
+The repository validates:
 
-## Blocking prerequisite
+- JSON Schemas and positive/incompatible negative fixtures;
+- JSON, YAML, TOML, and Markdown structure;
+- all currently available source digests;
+- IDs, ownership, traceability, and task-to-test coverage;
+- secret and protected-truth scans;
+- dependency and pytest configuration;
+- approval schema and exact role coverage;
+- fixture-based successful qualification;
+- dirty or post-qualification source-change rejection;
+- placeholder normative-source rejection;
+- premature tag prevention.
 
-`FGA-NORMATIVE-PAIR-9.0-20260726` is named as the parent authority by the supplied modular pack, but its functional and technical source documents are absent. The repository therefore refuses to mark `G01` or `G15` passing. No placeholder or guessed digest is used.
+## Current blockers
 
-## Remediation
+1. The exact approved v9.0 functional source document is not mounted in this repository.
+2. The exact approved v9.0 technical source document is not mounted in this repository.
+3. Architecture-governance, quality-engineering, and release-management approvals remain pending.
 
-Add the two approved v9.0 normative documents under `specifications/normative-pair-v9.0/`, register their exact IDs, paths, and SHA-256 values in `config/governance/baseline.json`, set the baseline closure facts to complete, rerun the validation from a clean checkout, then record independent approvals.
+The repository does not invent replacement documents, digests, reviewers, or approvals.
 
-## Install and run all tests
+## Import and qualify
 
-```text
-python -m pip install -e ".[test]"
-python -m pytest -v
-```
+Follow the commands in the root [`README.md`](../../README.md). After source import and approvals, generate evidence from a clean candidate commit, commit only this evidence directory, run formal closure, and create the tag through the guarded tag script.
 
-Pytest reads its discovery and strictness configuration from `pyproject.toml`. The tests invoke the validator in a side-effect-free mode, so running the suite does not rewrite tracked evidence files.
-
-## Run the validator directly
-
-```text
-python scripts/validate_iteration_00.py
-python scripts/validate_iteration_00.py --require-closure
-```
-
-The first command validates the implementation and writes [`validation-results.json`](validation-results.json). The second intentionally blocks until the missing prerequisite is supplied.
+The current `evidence.json` remains blocked until those steps are completed.

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fraud-graph-arena.local/schemas/governance/approvals.schema.json",
+  "title": "Fraud Graph Arena iteration approval set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["approval_set_id", "iteration_id", "required_roles", "approvals"],
+  "properties": {
+    "approval_set_id": {
+      "type": "string",
+      "pattern": "^FGA-I[0-9]{2}-APPROVALS-[0-9]+\\.[0-9]+-[0-9]{8}$"
+    },
+    "iteration_id": {"const": "I00"},
+    "required_roles": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 3},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "approvals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "status"],
+        "properties": {
+          "role": {"type": "string", "minLength": 3},
+          "status": {"enum": ["approved", "pending", "rejected"]},
+          "name": {"type": "string", "minLength": 2},
+          "date": {"type": "string", "format": "date"},
+          "evidence": {"type": "string", "minLength": 3}
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"status": {"const": "approved"}}},
+            "then": {"required": ["name", "date", "evidence"]}
+          },
+          {
+            "if": {"properties": {"status": {"const": "rejected"}}},
+            "then": {"required": ["name", "date", "evidence"]}
+          }
+        ]
+      }
+    }
+  }
+}

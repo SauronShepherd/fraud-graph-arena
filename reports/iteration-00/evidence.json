@@ -1,14 +1,14 @@
 {
   "evidence_id": "EVID-I00-BASELINE",
   "iteration_id": "I00",
-  "generated_at": "2026-07-26T10:09:49.472201Z",
-  "source_commit": "d45750e9494a9e12545ae130580c94782dee2f97",
+  "generated_at": "2026-07-26T11:21:56.035929Z",
+  "source_commit": "0b3c88b5b41767ff008d5f06dfbdf8e3b2e2acf3",
   "status": "blocked",
   "closure_eligible": false,
   "environment": {
     "os": "Linux-6.12.13-x86_64-with-glibc2.41",
     "python": "3.13.5",
-    "clean_checkout": true
+    "clean_checkout": false
   },
   "commands": [
     "python -m pip install -e \".[test]\"",
@@ -18,7 +18,11 @@
   ],
   "source_artifacts": [
     {
-      "artifact_id": "FGA-NORMATIVE-PAIR-9.0-20260726",
+      "artifact_id": "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
+      "status": "missing"
+    },
+    {
+      "artifact_id": "FGA-NORMATIVE-TECHNICAL-9.0-20260726",
       "status": "missing"
     },
     {
@@ -32,6 +36,276 @@
       "status": "verified",
       "path": "specifications/source-archives/Fraud_Graph_Arena_Modular_Architecture_Specification_Pack_v1.0.zip",
       "sha256": "2657cd372b0f4d838c57f03d2206c92d35943c01bbce22f00a815b03648dbb20"
+    },
+    {
+      "artifact_id": "FGA-MODULAR-SPEC-PACK-README-1.0-20260726",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/README.md",
+      "sha256": "1358542bb0b7f63df0a21cbabae608b3c62b4cdb9ffbcbc63dc0c06017d8ad74"
+    },
+    {
+      "artifact_id": "FGA-MODULAR-SPEC-PACK-SHA256SUMS-1.0-20260726",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/SHA256SUMS.txt",
+      "sha256": "92db22cdf050b854ac908389099bb4f1a451fc60b8680530bcaefe6064af0de4"
+    },
+    {
+      "artifact_id": "FGA-MODULAR-ARCHITECTURE-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/architecture/HIGH_LEVEL_FUNCTIONAL_ARCHITECTURE.md",
+      "sha256": "05364fb8da4595ca755961b47e724ffa936ccf87e8ea1ebebc1cc67afe470b1a"
+    },
+    {
+      "artifact_id": "FGA-MODULAR-ARCHITECTURE-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/architecture/HIGH_LEVEL_TECHNICAL_ARCHITECTURE_AND_TEST_STRATEGY.md",
+      "sha256": "b3f909ea874ecfd7737542b82ddf8cf0d3fe134f9a922aadcf48306a54f3eafb"
+    },
+    {
+      "artifact_id": "FGA-MODULAR-SPEC-PACK-MANIFEST-1.0-20260726",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/manifest.json",
+      "sha256": "088f372a485310edda4b15ee8287cdbcd524126e49b32dc868634289f606e8d3"
+    },
+    {
+      "artifact_id": "FGA-MODULE-01-APPLICATION_SHELL_NAVIGATION-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/01-application-shell-navigation/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "67fba787fbada27a5c66c18a8205f99d3018435403377223a7fea57c09dfe898"
+    },
+    {
+      "artifact_id": "FGA-MODULE-01-APPLICATION_SHELL_NAVIGATION-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/01-application-shell-navigation/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "bfb91b42b0344a5dd8b1d02e890744872f92ebe2437ef6376e9ae5979d08efcb"
+    },
+    {
+      "artifact_id": "FGA-MODULE-02-PRESENTATION_ACCESSIBILITY-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/02-presentation-accessibility/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "be5dfc34f3c7adc93082c79cba286873911654cf5467ff085df566f1846c06c7"
+    },
+    {
+      "artifact_id": "FGA-MODULE-02-PRESENTATION_ACCESSIBILITY-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/02-presentation-accessibility/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "ed9b25f945b050dcd7590967370bcaa58fc12d00361c712d956a30b6ea1c59c0"
+    },
+    {
+      "artifact_id": "FGA-MODULE-03-LOCALIZATION_MESSAGING-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/03-localization-messaging/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "646c3fa290e8edd02b13f4285128e4e68da9f6bfd4c16bf6a9837c90dfab6209"
+    },
+    {
+      "artifact_id": "FGA-MODULE-03-LOCALIZATION_MESSAGING-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/03-localization-messaging/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "7eef8f400ad6ce5da8485e6250e597a6f3213a5d2775db46fd0e9c3d89954e6b"
+    },
+    {
+      "artifact_id": "FGA-MODULE-04-ASSET_RESOURCE_MANAGEMENT-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/04-asset-resource-management/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "05495b6d59a88ae111d5d40942a69f31935d1afc6ebacf418f74fca362625c58"
+    },
+    {
+      "artifact_id": "FGA-MODULE-04-ASSET_RESOURCE_MANAGEMENT-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/04-asset-resource-management/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "138f28851d95ec64c9e6eb357d2378a6c11dc99e514a901982ab561b7223cbe7"
+    },
+    {
+      "artifact_id": "FGA-MODULE-05-AUDIO_RADIO-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/05-audio-radio/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "e9e894903b7a93e24ebc884682a14e339a0cfc245c5cac36dc978789e22bd89e"
+    },
+    {
+      "artifact_id": "FGA-MODULE-05-AUDIO_RADIO-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/05-audio-radio/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "4a9b5a7af658c24625f52bb4889d722aff2cf8d877d79f3d52681d4d45f0f336"
+    },
+    {
+      "artifact_id": "FGA-MODULE-06-CLIENT_STATE_SYNCHRONIZATION-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/06-client-state-synchronization/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "6bc4ab731f16e884666eaf583b84a2e0a06b75b8ff422ac4aae9a64b5e3b5178"
+    },
+    {
+      "artifact_id": "FGA-MODULE-06-CLIENT_STATE_SYNCHRONIZATION-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/06-client-state-synchronization/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "66413e469c5b16bf09a76047df214c703452147a91c1e4790fa93fc2db6f54c6"
+    },
+    {
+      "artifact_id": "FGA-MODULE-07-IDENTITY_ACCOUNT_SECURITY-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/07-identity-account-security/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "e9904b4466744e568f685b59e6885d80d4133ca4d847b2c26c23172c5668e052"
+    },
+    {
+      "artifact_id": "FGA-MODULE-07-IDENTITY_ACCOUNT_SECURITY-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/07-identity-account-security/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "7759b721c17b4ddf4c73aae84e100e9407bf8aadcb8efed7a467d877bb7f271c"
+    },
+    {
+      "artifact_id": "FGA-MODULE-08-CAREER_CATALOGUE_PROGRESSION-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/08-career-catalogue-progression/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "7e581e1f1d1095b248420175142b1e951a603fd3d2f599a9f9131794b8bf6ac9"
+    },
+    {
+      "artifact_id": "FGA-MODULE-08-CAREER_CATALOGUE_PROGRESSION-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/08-career-catalogue-progression/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "1e70db9673f3a905972aef60fa170319e62d2027aba744af045502d4dbe28288"
+    },
+    {
+      "artifact_id": "FGA-MODULE-09-ROUND_GAME_STATE-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/09-round-game-state/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "d51b70207b688c54560c0993781cbe04f8bfdc36a44003f85246059f95586888"
+    },
+    {
+      "artifact_id": "FGA-MODULE-09-ROUND_GAME_STATE-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/09-round-game-state/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "7ccc24e9f8513118f003d95651e92ee8c0c30498ae2cb39f27e04f8a0e1e4a91"
+    },
+    {
+      "artifact_id": "FGA-MODULE-10-CASE_CONTENT_RULES-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/10-case-content-rules/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "7e3a63966495c43ce9ae43fc32e9a0fdcf1fd776740cbc2993039a7fc3876a5b"
+    },
+    {
+      "artifact_id": "FGA-MODULE-10-CASE_CONTENT_RULES-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/10-case-content-rules/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "21490c655a4361ac1c927113516c075186c4cc1f2f8b00aa2f7979176a1c1ff3"
+    },
+    {
+      "artifact_id": "FGA-MODULE-11-INVESTIGATION_VISIBILITY-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/11-investigation-visibility/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "95775734b3f94c27d6bee3641a5def015b9df36153d52663e719d5194329b8e8"
+    },
+    {
+      "artifact_id": "FGA-MODULE-11-INVESTIGATION_VISIBILITY-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/11-investigation-visibility/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "2cddcaeb5dc8cf1623c6ab9049fd9d455da8cac585ef3f3605e34fa1e4fa543e"
+    },
+    {
+      "artifact_id": "FGA-MODULE-12-WORKSPACE_PROJECTION-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/12-workspace-projection/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "ef8226d02b4d5cb10b59e2e479a1a55e4cc5c92d3f729499fff67095818281b1"
+    },
+    {
+      "artifact_id": "FGA-MODULE-12-WORKSPACE_PROJECTION-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/12-workspace-projection/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "d78306d5f110dc73d980fa1b6e19b39063396d77d6ff7a6e4d74a21e5024c0f3"
+    },
+    {
+      "artifact_id": "FGA-MODULE-13-ACTION_COMMAND-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/13-action-command/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "f4de5d7f3139e5772d296f9515ef8a2d1a3a5dca9074e3171cb69cbb57b304f9"
+    },
+    {
+      "artifact_id": "FGA-MODULE-13-ACTION_COMMAND-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/13-action-command/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "2c69a7e5d4ad0fc00d467461a2e45e37766057d986f34b022d713f7bba0f46f6"
+    },
+    {
+      "artifact_id": "FGA-MODULE-14-ECONOMY_CREDIT-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/14-economy-credit/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "952a036e535d45cd386a900fb6f060503e354b12254489ca6a4fa0100ee2f934"
+    },
+    {
+      "artifact_id": "FGA-MODULE-14-ECONOMY_CREDIT-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/14-economy-credit/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "0b0d543b1341885e14cb84352c77e734c9f402b2205ae72b48e2a2d89a4cbfdc"
+    },
+    {
+      "artifact_id": "FGA-MODULE-15-SAVE_RECOVERY-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/15-save-recovery/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "33374e788c5f70644c602b854f1cc53c4f165e63992921c0df4d04f8e69e0f10"
+    },
+    {
+      "artifact_id": "FGA-MODULE-15-SAVE_RECOVERY-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/15-save-recovery/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "81b13d3f560f89dc1b7ccff34ac5b33b459cec604595070f501931d81043f578"
+    },
+    {
+      "artifact_id": "FGA-MODULE-16-CASE_FILE_SUBMISSION-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/16-case-file-submission/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "8d65a01141cf8610afddcf836feb330058e76795a7bb16c672e0657a1e60fcbb"
+    },
+    {
+      "artifact_id": "FGA-MODULE-16-CASE_FILE_SUBMISSION-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/16-case-file-submission/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "30183581bfa6425d77b381d85cd812e259e5d1c3e79c13239a47369f88609382"
+    },
+    {
+      "artifact_id": "FGA-MODULE-17-EVALUATION_SCORING_ENDING-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/17-evaluation-scoring-ending/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "757fe1f5e61c762407ecdbd1e4e0047440fa14bd077b11f61c36e1a87e8c7240"
+    },
+    {
+      "artifact_id": "FGA-MODULE-17-EVALUATION_SCORING_ENDING-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/17-evaluation-scoring-ending/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "dc9041e2328a083aaddcbc08a1a98ba1a77a160cdfb4d7de9898817a605598c6"
+    },
+    {
+      "artifact_id": "FGA-MODULE-18-LEADERBOARD_RESULTS-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/18-leaderboard-results/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "ab3de667aaaa9289dc2608f7009cc0be0ced667915c8b601e9d15ae483342079"
+    },
+    {
+      "artifact_id": "FGA-MODULE-18-LEADERBOARD_RESULTS-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/18-leaderboard-results/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "b7653efa0416bc309a66625a29d3680caaf6121ff75b421545befc8272b15575"
+    },
+    {
+      "artifact_id": "FGA-MODULE-19-RETRIEVAL_PROVIDER_GATEWAY-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/19-retrieval-provider-gateway/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "d530fecdedfbad998c84c0cbe667475dbc67ca282e558feaee0ddc7855fef9c1"
+    },
+    {
+      "artifact_id": "FGA-MODULE-19-RETRIEVAL_PROVIDER_GATEWAY-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/19-retrieval-provider-gateway/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "f0ee90a7c5ca974f68a01bb1fbd70c62d0f3478bcfd25e0d6e7400374b7e5bcc"
+    },
+    {
+      "artifact_id": "FGA-MODULE-20-PUBLICATION_WORKFLOW_RUNTIME_CONTROL-1.0-20260726-FUNCTIONAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/20-publication-workflow-runtime-control/FUNCTIONAL_SPECIFICATION.md",
+      "sha256": "cf816e905eeb5801767b654d06aa97eda9184cc05348340f2c693e3aa8f81779"
+    },
+    {
+      "artifact_id": "FGA-MODULE-20-PUBLICATION_WORKFLOW_RUNTIME_CONTROL-1.0-20260726-TECHNICAL",
+      "status": "verified",
+      "path": "specifications/modular-pack-v1.0/modules/20-publication-workflow-runtime-control/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "sha256": "e9123a438f77ffc2584757d693cccfab20edddd470b2db23733e33e6a7e3f175"
     }
   ],
   "gates": [
@@ -39,7 +313,7 @@
       "gate_id": "G01",
       "name": "Governance and traceability",
       "status": "blocked",
-      "rationale": "Available governance artifacts validate, but the required parent normative pair is missing.",
+      "rationale": "The registered governance structure passes, but required normative source artifacts are missing.",
       "evidence": [
         "reports/iteration-00/validation-results.json",
         "config/governance/baseline.json"
@@ -49,7 +323,7 @@
       "gate_id": "G02",
       "name": "Static quality and build",
       "status": "pass",
-      "rationale": "Authored governance files, JSON/YAML syntax, schemas, links, and validation tooling pass.",
+      "rationale": "Governance files, dependency declarations, schemas, Markdown, JSON, YAML, TOML, and validation tooling pass.",
       "evidence": [
         "reports/iteration-00/validation-results.json"
       ]
@@ -64,8 +338,8 @@
     {
       "gate_id": "G04",
       "name": "Contract compatibility",
-      "status": "not_applicable",
-      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "status": "pass",
+      "rationale": "I00 governance schemas have positive and incompatible negative fixtures; product contract compatibility is not yet applicable.",
       "evidence": []
     },
     {
@@ -114,7 +388,7 @@
       "gate_id": "G11",
       "name": "Security privacy and leakage",
       "status": "pass",
-      "rationale": "Repository governance implementation passes secret and protected-truth artifact scans.",
+      "rationale": "Secret and protected-truth scans pass for all implemented public governance artifacts.",
       "evidence": [
         "reports/iteration-00/validation-results.json"
       ]
@@ -136,15 +410,15 @@
     {
       "gate_id": "G14",
       "name": "Supply chain and release integrity",
-      "status": "not_applicable",
-      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "status": "pass",
+      "rationale": "Available source artifacts are content-addressed and dependency declarations are exactly pinned for I00.",
       "evidence": []
     },
     {
       "gate_id": "G15",
       "name": "Evidence and closure",
       "status": "blocked",
-      "rationale": "The evidence format is valid and reproducible, but formal closure is prohibited while G01 is blocked.",
+      "rationale": "Formal closure is blocked by missing required source artifacts.",
       "evidence": [
         "reports/iteration-00/evidence.json",
         "reports/iteration-00/validation-results.json"
@@ -156,7 +430,7 @@
       "test_id": "TEST-I00-DEPENDENCIES",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "jsonschema, PyYAML, and pytest are exactly pinned in pyproject.toml; pytest discovery and strict validation are configured there.",
+      "result": "Validation passed.",
       "duration_ms": 0,
       "report": "reports/iteration-00/validation-results.json"
     },
@@ -164,15 +438,15 @@
       "test_id": "TEST-I00-SCHEMAS",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "Schema metaschemas and positive/negative fixtures validate as expected.",
-      "duration_ms": 29,
+      "result": "Validation passed.",
+      "duration_ms": 85,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
       "test_id": "TEST-I00-DIGESTS",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "Every supplied registered artifact matches its SHA-256; the absent parent pair is reported as a blocker, not a fabricated digest.",
+      "result": "Validation passed.",
       "duration_ms": 12,
       "report": "reports/iteration-00/validation-results.json"
     },
@@ -180,7 +454,7 @@
       "test_id": "TEST-I00-MARKDOWN",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "Authored Markdown structure, code fences, relative links, whitespace, and final newlines pass.",
+      "result": "Validation passed.",
       "duration_ms": 1,
       "report": "reports/iteration-00/validation-results.json"
     },
@@ -188,7 +462,7 @@
       "test_id": "TEST-I00-IDS",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "Artifact, node, stage, task, gate, module, and interaction IDs are unique and pattern-valid.",
+      "result": "Validation passed.",
       "duration_ms": 5,
       "report": "reports/iteration-00/validation-results.json"
     },
@@ -196,7 +470,7 @@
       "test_id": "TEST-I00-OWNERS",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "Every governed path has one matching owner and independent reviewer.",
+      "result": "Validation passed.",
       "duration_ms": 5,
       "report": "reports/iteration-00/validation-results.json"
     },
@@ -204,31 +478,39 @@
       "test_id": "TEST-I00-TRACEABILITY",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "All M01–M20 and I01–I19 are covered; edge references are valid and no graph node is orphaned.",
-      "duration_ms": 0,
+      "result": "Validation passed.",
+      "duration_ms": 1,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
       "test_id": "TEST-I00-SECRET-SCAN",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "No credential, private-key, or token pattern is present in governance implementation files.",
-      "duration_ms": 11,
+      "result": "Validation passed.",
+      "duration_ms": 13,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
       "test_id": "TEST-I00-TRUTH-SCAN",
       "status": "pass",
       "command": "python -m pytest -v",
-      "result": "No protected truth artifact is present outside the immutable source specifications.",
-      "duration_ms": 10,
+      "result": "Validation passed.",
+      "duration_ms": 12,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-APPROVALS",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "Validation passed.",
+      "duration_ms": 4,
       "report": "reports/iteration-00/validation-results.json"
     },
     {
       "test_id": "TEST-I00-CLOSURE",
       "status": "blocked",
       "command": "python scripts/validate_iteration_00.py --require-closure",
-      "result": "Expected governance block: FGA-NORMATIVE-PAIR-9.0-20260726 unavailable.",
+      "result": "Closure blocked: missing-artifact:FGA-NORMATIVE-FUNCTIONAL-9.0-20260726, missing-artifact:FGA-NORMATIVE-TECHNICAL-9.0-20260726, approval:architecture-governance:pending, approval:quality-engineering:pending, approval:release-management:pending, candidate-checkout-not-clean",
       "duration_ms": 0,
       "report": "reports/iteration-00/validation-results.json"
     }
@@ -236,12 +518,36 @@
   "exceptions": [],
   "known_gaps": [
     {
-      "id": "RISK-001",
+      "id": "RISK-MISSING-FGA-NORMATIVE-FUNCTIONAL-9-0-20260726",
       "severity": "high",
-      "description": "The parent v9.0 functional and technical normative documents are not present in the supplied build inputs.",
+      "description": "Required normative source artifact is unavailable: FGA-NORMATIVE-FUNCTIONAL-9.0-20260726.",
       "owner": "architecture-governance",
       "blocks_closure": true,
-      "remediation": "Supply both v9.0 source documents, register their repository paths and SHA-256 digests, rerun the clean I00 gate, and obtain approvals."
+      "remediation": "Import the exact approved source with scripts/import_normative_pair.py and commit the updated baseline."
+    },
+    {
+      "id": "RISK-MISSING-FGA-NORMATIVE-TECHNICAL-9-0-20260726",
+      "severity": "high",
+      "description": "Required normative source artifact is unavailable: FGA-NORMATIVE-TECHNICAL-9.0-20260726.",
+      "owner": "architecture-governance",
+      "blocks_closure": true,
+      "remediation": "Import the exact approved source with scripts/import_normative_pair.py and commit the updated baseline."
+    },
+    {
+      "id": "RISK-I00-APPROVALS-INCOMPLETE",
+      "severity": "high",
+      "description": "One or more required independent approval records are not approved.",
+      "owner": "release-management",
+      "blocks_closure": true,
+      "remediation": "Record named, dated, evidence-backed approvals in config/governance/approvals.yaml."
+    },
+    {
+      "id": "RISK-I00-DIRTY-CANDIDATE",
+      "severity": "high",
+      "description": "Qualification was not generated from a clean candidate checkout.",
+      "owner": "quality-engineering",
+      "blocks_closure": true,
+      "remediation": "Commit all candidate changes and regenerate evidence from a clean checkout."
     }
   ],
   "approvals": [
@@ -258,5 +564,5 @@
       "status": "pending"
     }
   ],
-  "bundle_digest": "3b142f3afa54e16b4ebabef9a44fa79c58843c0d2771acf16096dc84c81324a9"
+  "bundle_digest": "3df6ab9fc344daaa614fe02445b0106d8ea2252a14c2b1e07608fa1db769b977"
 }

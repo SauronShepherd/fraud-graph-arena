@@ -5,18 +5,20 @@ This repository is being built from the approved modular architecture pack and t
 ## Current delivery state
 
 - **Implemented iteration:** `I00 — Normative baseline and delivery constitution`
-- **Implementation state:** all sixteen planned I00 file-atomic deliverables and subsequent corrective tasks are present and validated.
-- **Closure state:** **blocked by a missing prerequisite**. The modular pack identifies `FGA-NORMATIVE-PAIR-9.0-20260726` as its parent authority, but the two v9.0 normative source documents were not supplied with the build inputs. The repository records this explicitly and never invents their digests.
+- **Branch:** `Iteration-00`
+- **Implementation state:** the sixteen planned I00 deliverables and corrective release-control tasks are present.
+- **Qualification state:** **blocked, not failed**.
+- **Immutable release tag:** not created. The repository deliberately removed the premature `fga-iteration-00` tag and now refuses to recreate it before formal closure passes.
+
+The remaining external inputs are the exact approved v9.0 functional and technical source documents. Their attachment contents must be imported byte-for-byte; placeholders and summaries are rejected. Independent architecture, quality, and release approvals must then be recorded.
 
 ## Install the project and test tools
 
-Project metadata, runtime dependencies, test dependencies, and pytest configuration are defined in `pyproject.toml`.
+Project metadata, exactly pinned runtime dependencies, test dependencies, and pytest configuration are defined in `pyproject.toml`.
 
 ```text
 python -m pip install -e ".[test]"
 ```
-
-An isolated virtual environment is recommended. Create and activate it using the standard mechanism for your environment before running the installation command.
 
 ## Run all tests
 
@@ -24,18 +26,56 @@ An isolated virtual environment is recommended. Create and activate it using the
 python -m pytest -v
 ```
 
-The pytest suite executes the governance regression tests and invokes the complete Iteration-00 validator without modifying tracked evidence files.
+Pytest executes the governance regression suite, including fixture-based successful closure, post-qualification tampering, placeholder-source rejection, and premature-tag prevention.
 
-## Run the validator directly
+## Validate without changing files
+
+Validation is side-effect-free by default:
 
 ```text
 python scripts/validate_iteration_00.py
 ```
 
-Require formal iteration closure, which is currently expected to return a blocking exit code until the parent pair is supplied:
+Formal closure is also side-effect-free and currently returns exit code `2` while source documents or approvals remain incomplete:
 
 ```text
 python scripts/validate_iteration_00.py --require-closure
 ```
 
-See [the iteration evidence](reports/iteration-00/README.md) for exact status and remediation.
+## Import the exact normative pair
+
+```text
+python scripts/import_normative_pair.py \
+  /path/to/Fraud_Graph_Arena_Complete_Functional_Specification_v9.0.md \
+  /path/to/Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v9.0.md
+```
+
+The importer validates document identity and minimum completeness, copies the exact sources under `specifications/normative-pair-v9.0/`, calculates SHA-256 digests, and updates the baseline registry.
+
+## Complete qualification
+
+1. Commit the imported sources and updated baseline.
+2. Record named, dated, evidence-backed independent approvals in `config/governance/approvals.yaml`.
+3. Confirm the candidate checkout is clean.
+4. Generate evidence:
+
+```text
+python scripts/validate_iteration_00.py --generate-evidence
+```
+
+5. Commit only `reports/iteration-00/` as the closure record.
+6. Verify closure:
+
+```text
+python scripts/validate_iteration_00.py --require-closure
+```
+
+7. Create the immutable tag through the guarded command:
+
+```text
+python scripts/create_iteration_00_tag.py
+```
+
+The tag command refuses an existing tag and refuses to create a tag unless formal closure passes.
+
+See [the Iteration-00 evidence summary](reports/iteration-00/README.md) for the current status.

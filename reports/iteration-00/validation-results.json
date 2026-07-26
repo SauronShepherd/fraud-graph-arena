@@ -1,9 +1,9 @@
 {
-  "report_id": "FGA-I00-VALIDATION-RESULTS-1.0-20260726",
-  "generated_at": "2026-07-26T10:09:49.469108Z",
-  "repository": "/mnt/data/fraud-graph-arena",
-  "source_commit": "d45750e9494a9e12545ae130580c94782dee2f97",
-  "clean_checkout_observed": true,
+  "report_id": "FGA-I00-VALIDATION-RESULTS-1.1-20260726",
+  "generated_at": "2026-07-26T11:21:56.035568Z",
+  "repository": "/mnt/data/fga_fix/fraud-graph-arena",
+  "source_commit": "0b3c88b5b41767ff008d5f06dfbdf8e3b2e2acf3",
+  "clean_checkout_observed": false,
   "checks": [
     {
       "id": "dependencies",
@@ -14,7 +14,7 @@
     {
       "id": "schemas",
       "status": "pass",
-      "duration_ms": 29,
+      "duration_ms": 85,
       "errors": []
     },
     {
@@ -44,30 +44,41 @@
     {
       "id": "traceability",
       "status": "pass",
-      "duration_ms": 0,
+      "duration_ms": 1,
       "errors": []
     },
     {
       "id": "secret_scan",
       "status": "pass",
-      "duration_ms": 11,
+      "duration_ms": 13,
       "errors": []
     },
     {
       "id": "truth_scan",
       "status": "pass",
-      "duration_ms": 10,
+      "duration_ms": 12,
+      "errors": []
+    },
+    {
+      "id": "approvals",
+      "status": "pass",
+      "duration_ms": 4,
       "errors": []
     },
     {
       "id": "evidence",
       "status": "pass",
-      "duration_ms": 10,
+      "duration_ms": 18,
       "errors": []
     }
   ],
   "blocking_prerequisites": [
-    "FGA-NORMATIVE-PAIR-9.0-20260726"
+    "approval:architecture-governance:pending",
+    "approval:quality-engineering:pending",
+    "approval:release-management:pending",
+    "candidate-checkout-not-clean",
+    "missing-artifact:FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
+    "missing-artifact:FGA-NORMATIVE-TECHNICAL-9.0-20260726"
   ],
   "status": "blocked"
 }

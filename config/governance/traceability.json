@@ -528,6 +528,174 @@
       "kind": "test",
       "title": "Project runtime and test dependencies are declared and exactly pinned in pyproject.toml",
       "status": "verified"
+    },
+    {
+      "id": "TEST-I00-APPROVALS",
+      "kind": "test",
+      "title": "Validate exact independent approval roles and records",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-NORMATIVE-IMPORT",
+      "kind": "test",
+      "title": "Reject placeholders and import only identified v9.0 normative sources",
+      "path": "tests/governance/test_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-RELEASE-CLOSURE",
+      "kind": "test",
+      "title": "Enforce clean candidate evidence-only closure and qualified tag creation",
+      "path": "tests/governance/test_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-PACKAGING",
+      "kind": "test",
+      "title": "Exclude IDE metadata caches and generated build artifacts",
+      "path": "tests/governance/test_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "I00-S04-T09",
+      "kind": "task",
+      "title": "Exclude local IDE and generated artifacts",
+      "path": ".gitignore",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T10",
+      "kind": "task",
+      "title": "Govern independent Iteration-00 approvals",
+      "path": "config/governance/approvals.yaml",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T11",
+      "kind": "task",
+      "title": "Define approval record schema",
+      "path": "schemas/governance/approvals.schema.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T12",
+      "kind": "task",
+      "title": "Register normative pair members separately",
+      "path": "config/governance/baseline.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T13",
+      "kind": "task",
+      "title": "Support normative specification artifacts",
+      "path": "schemas/governance/baseline.schema.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T14",
+      "kind": "task",
+      "title": "Enforce complete formal closure",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T15",
+      "kind": "task",
+      "title": "Import exact normative pair sources",
+      "path": "scripts/import_normative_pair.py",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T16",
+      "kind": "task",
+      "title": "Create release tag only after qualification",
+      "path": "scripts/create_iteration_00_tag.py",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T17",
+      "kind": "task",
+      "title": "Strengthen evidence approval and closure schema",
+      "path": "schemas/testing/iteration-evidence.schema.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T18",
+      "kind": "task",
+      "title": "Correct Iteration-00 evidence state",
+      "path": "reports/iteration-00/evidence.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T19",
+      "kind": "task",
+      "title": "Document exact normative source import",
+      "path": "specifications/normative-pair-v9.0/README.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T20",
+      "kind": "task",
+      "title": "Add valid approval fixture",
+      "path": "tests/fixtures/governance/approvals.valid.yaml",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T21",
+      "kind": "task",
+      "title": "Add invalid approval fixture",
+      "path": "tests/fixtures/governance/approvals.invalid.yaml",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T22",
+      "kind": "task",
+      "title": "Test closure and release integrity",
+      "path": "tests/governance/test_iteration_00.py",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T23",
+      "kind": "task",
+      "title": "Document corrected candidate workflow",
+      "path": "README.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T24",
+      "kind": "task",
+      "title": "Document member-level normative authority",
+      "path": "docs/governance/NORMATIVE_BASELINE.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T25",
+      "kind": "task",
+      "title": "Document candidate and closure evidence model",
+      "path": "docs/testing/EVIDENCE_BUNDLE_FORMAT.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T26",
+      "kind": "task",
+      "title": "Document current Iteration-00 qualification status",
+      "path": "reports/iteration-00/README.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T27",
+      "kind": "task",
+      "title": "Require evidence-only closure commits",
+      "path": "docs/delivery/DEFINITION_OF_DONE.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T28",
+      "kind": "task",
+      "title": "Trace corrective release-control work",
+      "path": "config/governance/traceability.json",
+      "status": "implemented"
     }
   ],
   "edges": [
@@ -1270,6 +1438,246 @@
       "from": "TEST-I00-DEPENDENCIES",
       "to": "EVID-I00-BASELINE",
       "relationship": "recorded_in"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T09",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T09",
+      "to": "TEST-I00-PACKAGING",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T10",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T10",
+      "to": "TEST-I00-APPROVALS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T11",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T11",
+      "to": "TEST-I00-APPROVALS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T12",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T12",
+      "to": "TEST-I00-DIGESTS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T13",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T13",
+      "to": "TEST-I00-SCHEMAS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T14",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T14",
+      "to": "TEST-I00-RELEASE-CLOSURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T15",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T15",
+      "to": "TEST-I00-NORMATIVE-IMPORT",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T16",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T16",
+      "to": "TEST-I00-RELEASE-CLOSURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T17",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T17",
+      "to": "TEST-I00-SCHEMAS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T18",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T18",
+      "to": "TEST-I00-RELEASE-CLOSURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T19",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T19",
+      "to": "TEST-I00-NORMATIVE-IMPORT",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T20",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T20",
+      "to": "TEST-I00-APPROVALS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T21",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T21",
+      "to": "TEST-I00-APPROVALS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T22",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T22",
+      "to": "TEST-I00-RELEASE-CLOSURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T23",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T23",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T24",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T24",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T25",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T25",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T26",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T26",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T27",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T27",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T28",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T28",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "TEST-I00-APPROVALS",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-NORMATIVE-IMPORT",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-RELEASE-CLOSURE",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-PACKAGING",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "REQ-GOV-EVIDENCE-001",
+      "to": "TEST-I00-APPROVALS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-EVIDENCE-001",
+      "to": "TEST-I00-NORMATIVE-IMPORT",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-EVIDENCE-001",
+      "to": "TEST-I00-RELEASE-CLOSURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-EVIDENCE-001",
+      "to": "TEST-I00-PACKAGING",
+      "relationship": "verified_by"
     }
   ],
   "coverage_rules": {

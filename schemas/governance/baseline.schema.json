@@ -119,6 +119,7 @@
         "kind": {
           "enum": [
             "normative_pair",
+            "normative_specification",
             "modular_specification",
             "architecture_specification",
             "module_specification",

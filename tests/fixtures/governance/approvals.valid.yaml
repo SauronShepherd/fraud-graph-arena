@@ -1,0 +1,19 @@
+approval_set_id: FGA-I00-APPROVALS-1.0-20260726
+iteration_id: I00
+required_roles: [architecture-governance, quality-engineering, release-management]
+approvals:
+  - role: architecture-governance
+    status: approved
+    name: Architecture Reviewer
+    date: "2026-07-26"
+    evidence: Reviewed normative baseline and traceability.
+  - role: quality-engineering
+    status: approved
+    name: Quality Reviewer
+    date: "2026-07-26"
+    evidence: Reviewed clean qualification evidence.
+  - role: release-management
+    status: approved
+    name: Release Reviewer
+    date: "2026-07-26"
+    evidence: Approved immutable release creation.

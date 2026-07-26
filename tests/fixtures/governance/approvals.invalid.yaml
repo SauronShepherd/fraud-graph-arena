@@ -1,0 +1,6 @@
+approval_set_id: FGA-I00-APPROVALS-1.0-20260726
+iteration_id: I00
+required_roles: [architecture-governance]
+approvals:
+  - role: architecture-governance
+    status: approved

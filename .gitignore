@@ -7,3 +7,5 @@ reports/iteration-00/runtime/
 *.egg-info/
 build/
 dist/
+
+.idea/
