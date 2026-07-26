@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fraud-graph-arena.local/schemas/governance/traceability.schema.json",
+  "title": "Fraud Graph Arena traceability graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "graph_id",
+    "version",
+    "nodes",
+    "edges",
+    "coverage_rules"
+  ],
+  "properties": {
+    "graph_id": {
+      "type": "string",
+      "pattern": "^FGA-TRACE-[0-9]+\\.[0-9]+-[0-9]{8}$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/edge"
+      }
+    },
+    "coverage_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_modules",
+        "required_interactions",
+        "forbid_orphans"
+      ],
+      "properties": {
+        "required_modules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^M(?:0[1-9]|1[0-9]|20)$"
+          },
+          "minItems": 20,
+          "maxItems": 20,
+          "uniqueItems": true
+        },
+        "required_interactions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^I(?:0[1-9]|1[0-9])$"
+          },
+          "minItems": 19,
+          "maxItems": 19,
+          "uniqueItems": true
+        },
+        "forbid_orphans": {
+          "const": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 2
+        },
+        "kind": {
+          "enum": [
+            "requirement",
+            "module",
+            "interaction",
+            "stage",
+            "task",
+            "test",
+            "evidence",
+            "release"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 2
+        },
+        "path": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "implemented",
+            "verified",
+            "blocked",
+            "not_applicable"
+          ]
+        }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to",
+        "relationship"
+      ],
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "relationship": {
+          "enum": [
+            "governs",
+            "decomposes_to",
+            "implemented_by",
+            "verified_by",
+            "recorded_in",
+            "produces",
+            "consumes",
+            "depends_on",
+            "qualifies"
+          ]
+        }
+      }
+    }
+  }
+}

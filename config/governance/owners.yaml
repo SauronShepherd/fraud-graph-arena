@@ -1,0 +1,27 @@
+policy_id: FGA-OWNERS-1.0-20260726
+version: "1.0"
+teams:
+  architecture-governance: {purpose: architecture and normative authority}
+  delivery-governance: {purpose: task stage and iteration process}
+  quality-engineering: {purpose: verification evidence and test policy}
+  security-assurance: {purpose: independent security privacy and truth-boundary review}
+  release-management: {purpose: release evidence and handover approval}
+  developer-experience: {purpose: repository tooling and automation}
+assignments:
+  - {path: README.md, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: .gitignore, owner: developer-experience, reviewer: quality-engineering}
+  - {path: pyproject.toml, owner: developer-experience, reviewer: quality-engineering}
+  - {path: docs/governance/**, owner: architecture-governance, reviewer: security-assurance}
+  - {path: docs/delivery/**, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: docs/testing/**, owner: quality-engineering, reviewer: security-assurance}
+  - {path: config/governance/**, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: schemas/governance/**, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: schemas/testing/**, owner: quality-engineering, reviewer: architecture-governance}
+  - {path: reports/**, owner: quality-engineering, reviewer: release-management}
+  - {path: scripts/**, owner: developer-experience, reviewer: quality-engineering}
+  - {path: tests/**, owner: quality-engineering, reviewer: architecture-governance}
+  - {path: specifications/**, owner: architecture-governance, reviewer: release-management}
+constraints:
+  owner_and_reviewer_must_differ: true
+  every_governed_path_must_match: true
+  most_specific_path_wins: true

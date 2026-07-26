@@ -1,0 +1,1321 @@
+{
+  "graph_id": "FGA-TRACE-1.0-20260726",
+  "version": "1.0",
+  "nodes": [
+    {
+      "id": "REQ-GOV-BASELINE-001",
+      "kind": "requirement",
+      "title": "Register authority and verified digests",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-ID-001",
+      "kind": "requirement",
+      "title": "Use stable unique governance and delivery identifiers",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-DELIVERY-001",
+      "kind": "requirement",
+      "title": "Enforce file-atomic tasks stages and iterations",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-CLOSURE-001",
+      "kind": "requirement",
+      "title": "Enforce no-pass-no-progress closure",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-TRACE-001",
+      "kind": "requirement",
+      "title": "Trace requirements through tests and evidence",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-OWNERS-001",
+      "kind": "requirement",
+      "title": "Assign independent owners and reviewers",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-CHANGE-001",
+      "kind": "requirement",
+      "title": "Classify changes by consequence",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-EVIDENCE-001",
+      "kind": "requirement",
+      "title": "Generate schema-valid reproducible evidence",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-MODULES-001",
+      "kind": "requirement",
+      "title": "Register all twenty modules",
+      "status": "verified"
+    },
+    {
+      "id": "REQ-GOV-INTERACTIONS-001",
+      "kind": "requirement",
+      "title": "Register all nineteen interactions",
+      "status": "verified"
+    },
+    {
+      "id": "M01",
+      "kind": "module",
+      "title": "Governed module M01",
+      "status": "planned"
+    },
+    {
+      "id": "M02",
+      "kind": "module",
+      "title": "Governed module M02",
+      "status": "planned"
+    },
+    {
+      "id": "M03",
+      "kind": "module",
+      "title": "Governed module M03",
+      "status": "planned"
+    },
+    {
+      "id": "M04",
+      "kind": "module",
+      "title": "Governed module M04",
+      "status": "planned"
+    },
+    {
+      "id": "M05",
+      "kind": "module",
+      "title": "Governed module M05",
+      "status": "planned"
+    },
+    {
+      "id": "M06",
+      "kind": "module",
+      "title": "Governed module M06",
+      "status": "planned"
+    },
+    {
+      "id": "M07",
+      "kind": "module",
+      "title": "Governed module M07",
+      "status": "planned"
+    },
+    {
+      "id": "M08",
+      "kind": "module",
+      "title": "Governed module M08",
+      "status": "planned"
+    },
+    {
+      "id": "M09",
+      "kind": "module",
+      "title": "Governed module M09",
+      "status": "planned"
+    },
+    {
+      "id": "M10",
+      "kind": "module",
+      "title": "Governed module M10",
+      "status": "planned"
+    },
+    {
+      "id": "M11",
+      "kind": "module",
+      "title": "Governed module M11",
+      "status": "planned"
+    },
+    {
+      "id": "M12",
+      "kind": "module",
+      "title": "Governed module M12",
+      "status": "planned"
+    },
+    {
+      "id": "M13",
+      "kind": "module",
+      "title": "Governed module M13",
+      "status": "planned"
+    },
+    {
+      "id": "M14",
+      "kind": "module",
+      "title": "Governed module M14",
+      "status": "planned"
+    },
+    {
+      "id": "M15",
+      "kind": "module",
+      "title": "Governed module M15",
+      "status": "planned"
+    },
+    {
+      "id": "M16",
+      "kind": "module",
+      "title": "Governed module M16",
+      "status": "planned"
+    },
+    {
+      "id": "M17",
+      "kind": "module",
+      "title": "Governed module M17",
+      "status": "planned"
+    },
+    {
+      "id": "M18",
+      "kind": "module",
+      "title": "Governed module M18",
+      "status": "planned"
+    },
+    {
+      "id": "M19",
+      "kind": "module",
+      "title": "Governed module M19",
+      "status": "planned"
+    },
+    {
+      "id": "M20",
+      "kind": "module",
+      "title": "Governed module M20",
+      "status": "planned"
+    },
+    {
+      "id": "I01",
+      "kind": "interaction",
+      "title": "Governed interaction I01",
+      "status": "planned"
+    },
+    {
+      "id": "I02",
+      "kind": "interaction",
+      "title": "Governed interaction I02",
+      "status": "planned"
+    },
+    {
+      "id": "I03",
+      "kind": "interaction",
+      "title": "Governed interaction I03",
+      "status": "planned"
+    },
+    {
+      "id": "I04",
+      "kind": "interaction",
+      "title": "Governed interaction I04",
+      "status": "planned"
+    },
+    {
+      "id": "I05",
+      "kind": "interaction",
+      "title": "Governed interaction I05",
+      "status": "planned"
+    },
+    {
+      "id": "I06",
+      "kind": "interaction",
+      "title": "Governed interaction I06",
+      "status": "planned"
+    },
+    {
+      "id": "I07",
+      "kind": "interaction",
+      "title": "Governed interaction I07",
+      "status": "planned"
+    },
+    {
+      "id": "I08",
+      "kind": "interaction",
+      "title": "Governed interaction I08",
+      "status": "planned"
+    },
+    {
+      "id": "I09",
+      "kind": "interaction",
+      "title": "Governed interaction I09",
+      "status": "planned"
+    },
+    {
+      "id": "I10",
+      "kind": "interaction",
+      "title": "Governed interaction I10",
+      "status": "planned"
+    },
+    {
+      "id": "I11",
+      "kind": "interaction",
+      "title": "Governed interaction I11",
+      "status": "planned"
+    },
+    {
+      "id": "I12",
+      "kind": "interaction",
+      "title": "Governed interaction I12",
+      "status": "planned"
+    },
+    {
+      "id": "I13",
+      "kind": "interaction",
+      "title": "Governed interaction I13",
+      "status": "planned"
+    },
+    {
+      "id": "I14",
+      "kind": "interaction",
+      "title": "Governed interaction I14",
+      "status": "planned"
+    },
+    {
+      "id": "I15",
+      "kind": "interaction",
+      "title": "Governed interaction I15",
+      "status": "planned"
+    },
+    {
+      "id": "I16",
+      "kind": "interaction",
+      "title": "Governed interaction I16",
+      "status": "planned"
+    },
+    {
+      "id": "I17",
+      "kind": "interaction",
+      "title": "Governed interaction I17",
+      "status": "planned"
+    },
+    {
+      "id": "I18",
+      "kind": "interaction",
+      "title": "Governed interaction I18",
+      "status": "planned"
+    },
+    {
+      "id": "I19",
+      "kind": "interaction",
+      "title": "Governed interaction I19",
+      "status": "planned"
+    },
+    {
+      "id": "I00-S01",
+      "kind": "stage",
+      "title": "Baseline registration",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S02",
+      "kind": "stage",
+      "title": "Delivery hierarchy",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S03",
+      "kind": "stage",
+      "title": "Traceability and change control",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04",
+      "kind": "stage",
+      "title": "Initial evidence tooling contract",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S01-T01",
+      "kind": "task",
+      "title": "Record normative baseline",
+      "path": "docs/governance/NORMATIVE_BASELINE.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S01-T02",
+      "kind": "task",
+      "title": "Define stable IDs",
+      "path": "docs/governance/REQUIREMENT_ID_POLICY.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S01-T03",
+      "kind": "task",
+      "title": "Register governing artifacts",
+      "path": "config/governance/baseline.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S01-T04",
+      "kind": "task",
+      "title": "Define baseline schema",
+      "path": "schemas/governance/baseline.schema.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S02-T01",
+      "kind": "task",
+      "title": "Define delivery hierarchy",
+      "path": "docs/delivery/TASK_STAGE_ITERATION_MODEL.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S02-T02",
+      "kind": "task",
+      "title": "Define readiness",
+      "path": "docs/delivery/DEFINITION_OF_READY.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S02-T03",
+      "kind": "task",
+      "title": "Define completion",
+      "path": "docs/delivery/DEFINITION_OF_DONE.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S02-T04",
+      "kind": "task",
+      "title": "Encode iteration policy",
+      "path": "config/governance/iteration-policy.yaml",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S03-T01",
+      "kind": "task",
+      "title": "Define traceability",
+      "path": "docs/governance/TRACEABILITY_MODEL.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S03-T02",
+      "kind": "task",
+      "title": "Define traceability schema",
+      "path": "schemas/governance/traceability.schema.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S03-T03",
+      "kind": "task",
+      "title": "Assign owners and reviewers",
+      "path": "config/governance/owners.yaml",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S03-T04",
+      "kind": "task",
+      "title": "Classify changes",
+      "path": "docs/governance/CHANGE_CLASSIFICATION.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T01",
+      "kind": "task",
+      "title": "Define evidence format",
+      "path": "docs/testing/EVIDENCE_BUNDLE_FORMAT.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T02",
+      "kind": "task",
+      "title": "Define evidence schema",
+      "path": "schemas/testing/iteration-evidence.schema.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T03",
+      "kind": "task",
+      "title": "Create I00 evidence",
+      "path": "reports/iteration-00/evidence.json",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T04",
+      "kind": "task",
+      "title": "Summarize I00 evidence",
+      "path": "reports/iteration-00/README.md",
+      "status": "implemented"
+    },
+    {
+      "id": "TEST-I00-SCHEMAS",
+      "kind": "test",
+      "title": "Validate schemas and positive/negative fixtures",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-DIGESTS",
+      "kind": "test",
+      "title": "Verify all supplied baseline digests",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-MARKDOWN",
+      "kind": "test",
+      "title": "Validate authored Markdown and links",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-IDS",
+      "kind": "test",
+      "title": "Validate stable IDs and uniqueness",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-OWNERS",
+      "kind": "test",
+      "title": "Validate path ownership and independent review",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-TRACEABILITY",
+      "kind": "test",
+      "title": "Validate graph references coverage and no orphans",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-SECRET-SCAN",
+      "kind": "test",
+      "title": "Scan governance implementation for secrets",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "TEST-I00-TRUTH-SCAN",
+      "kind": "test",
+      "title": "Scan public governance implementation for protected truth artifacts",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "verified"
+    },
+    {
+      "id": "EVID-I00-BASELINE",
+      "kind": "evidence",
+      "title": "Iteration 00 evidence bundle",
+      "path": "reports/iteration-00/evidence.json",
+      "status": "blocked"
+    },
+    {
+      "id": "I00-S04-T05",
+      "kind": "task",
+      "title": "Declare project metadata, runtime dependencies, test dependencies, and pytest configuration",
+      "path": "pyproject.toml",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T06",
+      "kind": "task",
+      "title": "Add pyproject dependency preflight and side-effect-free validation mode",
+      "path": "scripts/validate_iteration_00.py",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T07",
+      "kind": "task",
+      "title": "Document pyproject installation and one-command pytest execution",
+      "path": "README.md",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T08",
+      "kind": "task",
+      "title": "Verify pyproject and pytest execution contract",
+      "path": "tests/governance/test_iteration_00.py",
+      "status": "implemented"
+    },
+    {
+      "id": "TEST-I00-DEPENDENCIES",
+      "kind": "test",
+      "title": "Project runtime and test dependencies are declared and exactly pinned in pyproject.toml",
+      "status": "verified"
+    }
+  ],
+  "edges": [
+    {
+      "from": "REQ-GOV-BASELINE-001",
+      "to": "I00-S01",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-ID-001",
+      "to": "I00-S01",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-DELIVERY-001",
+      "to": "I00-S02",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-CLOSURE-001",
+      "to": "I00-S02",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-TRACE-001",
+      "to": "I00-S03",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-OWNERS-001",
+      "to": "I00-S03",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-CHANGE-001",
+      "to": "I00-S03",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-EVIDENCE-001",
+      "to": "I00-S04",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "I00-S03",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I00-S03",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S01",
+      "to": "I00-S01-T01",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S01",
+      "to": "I00-S01-T02",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S01",
+      "to": "I00-S01-T03",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S01",
+      "to": "I00-S01-T04",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S02",
+      "to": "I00-S02-T01",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S02",
+      "to": "I00-S02-T02",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S02",
+      "to": "I00-S02-T03",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S02",
+      "to": "I00-S02-T04",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S03",
+      "to": "I00-S03-T01",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S03",
+      "to": "I00-S03-T02",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S03",
+      "to": "I00-S03-T03",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S03",
+      "to": "I00-S03-T04",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T01",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T02",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T03",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T04",
+      "relationship": "implemented_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M01",
+      "relationship": "governs"
+    },
+    {
+      "from": "M01",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M02",
+      "relationship": "governs"
+    },
+    {
+      "from": "M02",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M03",
+      "relationship": "governs"
+    },
+    {
+      "from": "M03",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M04",
+      "relationship": "governs"
+    },
+    {
+      "from": "M04",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M05",
+      "relationship": "governs"
+    },
+    {
+      "from": "M05",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M06",
+      "relationship": "governs"
+    },
+    {
+      "from": "M06",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M07",
+      "relationship": "governs"
+    },
+    {
+      "from": "M07",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M08",
+      "relationship": "governs"
+    },
+    {
+      "from": "M08",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M09",
+      "relationship": "governs"
+    },
+    {
+      "from": "M09",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M10",
+      "relationship": "governs"
+    },
+    {
+      "from": "M10",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M11",
+      "relationship": "governs"
+    },
+    {
+      "from": "M11",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M12",
+      "relationship": "governs"
+    },
+    {
+      "from": "M12",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M13",
+      "relationship": "governs"
+    },
+    {
+      "from": "M13",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M14",
+      "relationship": "governs"
+    },
+    {
+      "from": "M14",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M15",
+      "relationship": "governs"
+    },
+    {
+      "from": "M15",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M16",
+      "relationship": "governs"
+    },
+    {
+      "from": "M16",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M17",
+      "relationship": "governs"
+    },
+    {
+      "from": "M17",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M18",
+      "relationship": "governs"
+    },
+    {
+      "from": "M18",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M19",
+      "relationship": "governs"
+    },
+    {
+      "from": "M19",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "M20",
+      "relationship": "governs"
+    },
+    {
+      "from": "M20",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I01",
+      "relationship": "governs"
+    },
+    {
+      "from": "I01",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I02",
+      "relationship": "governs"
+    },
+    {
+      "from": "I02",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I03",
+      "relationship": "governs"
+    },
+    {
+      "from": "I03",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I04",
+      "relationship": "governs"
+    },
+    {
+      "from": "I04",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I05",
+      "relationship": "governs"
+    },
+    {
+      "from": "I05",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I06",
+      "relationship": "governs"
+    },
+    {
+      "from": "I06",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I07",
+      "relationship": "governs"
+    },
+    {
+      "from": "I07",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I08",
+      "relationship": "governs"
+    },
+    {
+      "from": "I08",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I09",
+      "relationship": "governs"
+    },
+    {
+      "from": "I09",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I10",
+      "relationship": "governs"
+    },
+    {
+      "from": "I10",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I11",
+      "relationship": "governs"
+    },
+    {
+      "from": "I11",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I12",
+      "relationship": "governs"
+    },
+    {
+      "from": "I12",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I13",
+      "relationship": "governs"
+    },
+    {
+      "from": "I13",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I14",
+      "relationship": "governs"
+    },
+    {
+      "from": "I14",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I15",
+      "relationship": "governs"
+    },
+    {
+      "from": "I15",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I16",
+      "relationship": "governs"
+    },
+    {
+      "from": "I16",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I17",
+      "relationship": "governs"
+    },
+    {
+      "from": "I17",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I18",
+      "relationship": "governs"
+    },
+    {
+      "from": "I18",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "I19",
+      "relationship": "governs"
+    },
+    {
+      "from": "I19",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S01-T01",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S01-T02",
+      "to": "TEST-I00-IDS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S01-T03",
+      "to": "TEST-I00-DIGESTS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S01-T04",
+      "to": "TEST-I00-SCHEMAS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S02-T01",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S02-T02",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S02-T03",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S02-T04",
+      "to": "TEST-I00-IDS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S03-T01",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S03-T02",
+      "to": "TEST-I00-SCHEMAS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S03-T03",
+      "to": "TEST-I00-OWNERS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S03-T04",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04-T01",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04-T02",
+      "to": "TEST-I00-SCHEMAS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04-T03",
+      "to": "TEST-I00-SCHEMAS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04-T04",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-BASELINE-001",
+      "to": "TEST-I00-DIGESTS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-ID-001",
+      "to": "TEST-I00-IDS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-DELIVERY-001",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-CLOSURE-001",
+      "to": "TEST-I00-IDS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-TRACE-001",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-OWNERS-001",
+      "to": "TEST-I00-OWNERS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-CHANGE-001",
+      "to": "TEST-I00-MARKDOWN",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-EVIDENCE-001",
+      "to": "TEST-I00-SCHEMAS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-MODULES-001",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-INTERACTIONS-001",
+      "to": "TEST-I00-TRACEABILITY",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "TEST-I00-SCHEMAS",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-DIGESTS",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-MARKDOWN",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-IDS",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-OWNERS",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-TRACEABILITY",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-SECRET-SCAN",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "TEST-I00-TRUTH-SCAN",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T05",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T05",
+      "to": "TEST-I00-DEPENDENCIES",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T06",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T06",
+      "to": "TEST-I00-DEPENDENCIES",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T07",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T07",
+      "to": "TEST-I00-DEPENDENCIES",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T08",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T08",
+      "to": "TEST-I00-DEPENDENCIES",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "REQ-GOV-EVIDENCE-001",
+      "to": "TEST-I00-DEPENDENCIES",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "TEST-I00-DEPENDENCIES",
+      "to": "EVID-I00-BASELINE",
+      "relationship": "recorded_in"
+    }
+  ],
+  "coverage_rules": {
+    "required_modules": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "M16",
+      "M17",
+      "M18",
+      "M19",
+      "M20"
+    ],
+    "required_interactions": [
+      "I01",
+      "I02",
+      "I03",
+      "I04",
+      "I05",
+      "I06",
+      "I07",
+      "I08",
+      "I09",
+      "I10",
+      "I11",
+      "I12",
+      "I13",
+      "I14",
+      "I15",
+      "I16",
+      "I17",
+      "I18",
+      "I19"
+    ],
+    "forbid_orphans": true
+  }
+}

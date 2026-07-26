@@ -1,0 +1,649 @@
+{
+  "graph_id": "FGA-TRACE-1.0-20260726",
+  "version": "1.0",
+  "nodes": [
+    {
+      "id": "M01",
+      "kind": "module",
+      "title": "Module 1"
+    },
+    {
+      "id": "M02",
+      "kind": "module",
+      "title": "Module 2"
+    },
+    {
+      "id": "M03",
+      "kind": "module",
+      "title": "Module 3"
+    },
+    {
+      "id": "M04",
+      "kind": "module",
+      "title": "Module 4"
+    },
+    {
+      "id": "M05",
+      "kind": "module",
+      "title": "Module 5"
+    },
+    {
+      "id": "M06",
+      "kind": "module",
+      "title": "Module 6"
+    },
+    {
+      "id": "M07",
+      "kind": "module",
+      "title": "Module 7"
+    },
+    {
+      "id": "M08",
+      "kind": "module",
+      "title": "Module 8"
+    },
+    {
+      "id": "M09",
+      "kind": "module",
+      "title": "Module 9"
+    },
+    {
+      "id": "M10",
+      "kind": "module",
+      "title": "Module 10"
+    },
+    {
+      "id": "M11",
+      "kind": "module",
+      "title": "Module 11"
+    },
+    {
+      "id": "M12",
+      "kind": "module",
+      "title": "Module 12"
+    },
+    {
+      "id": "M13",
+      "kind": "module",
+      "title": "Module 13"
+    },
+    {
+      "id": "M14",
+      "kind": "module",
+      "title": "Module 14"
+    },
+    {
+      "id": "M15",
+      "kind": "module",
+      "title": "Module 15"
+    },
+    {
+      "id": "M16",
+      "kind": "module",
+      "title": "Module 16"
+    },
+    {
+      "id": "M17",
+      "kind": "module",
+      "title": "Module 17"
+    },
+    {
+      "id": "M18",
+      "kind": "module",
+      "title": "Module 18"
+    },
+    {
+      "id": "M19",
+      "kind": "module",
+      "title": "Module 19"
+    },
+    {
+      "id": "M20",
+      "kind": "module",
+      "title": "Module 20"
+    },
+    {
+      "id": "I01",
+      "kind": "interaction",
+      "title": "Interaction 1"
+    },
+    {
+      "id": "I02",
+      "kind": "interaction",
+      "title": "Interaction 2"
+    },
+    {
+      "id": "I03",
+      "kind": "interaction",
+      "title": "Interaction 3"
+    },
+    {
+      "id": "I04",
+      "kind": "interaction",
+      "title": "Interaction 4"
+    },
+    {
+      "id": "I05",
+      "kind": "interaction",
+      "title": "Interaction 5"
+    },
+    {
+      "id": "I06",
+      "kind": "interaction",
+      "title": "Interaction 6"
+    },
+    {
+      "id": "I07",
+      "kind": "interaction",
+      "title": "Interaction 7"
+    },
+    {
+      "id": "I08",
+      "kind": "interaction",
+      "title": "Interaction 8"
+    },
+    {
+      "id": "I09",
+      "kind": "interaction",
+      "title": "Interaction 9"
+    },
+    {
+      "id": "I10",
+      "kind": "interaction",
+      "title": "Interaction 10"
+    },
+    {
+      "id": "I11",
+      "kind": "interaction",
+      "title": "Interaction 11"
+    },
+    {
+      "id": "I12",
+      "kind": "interaction",
+      "title": "Interaction 12"
+    },
+    {
+      "id": "I13",
+      "kind": "interaction",
+      "title": "Interaction 13"
+    },
+    {
+      "id": "I14",
+      "kind": "interaction",
+      "title": "Interaction 14"
+    },
+    {
+      "id": "I15",
+      "kind": "interaction",
+      "title": "Interaction 15"
+    },
+    {
+      "id": "I16",
+      "kind": "interaction",
+      "title": "Interaction 16"
+    },
+    {
+      "id": "I17",
+      "kind": "interaction",
+      "title": "Interaction 17"
+    },
+    {
+      "id": "I18",
+      "kind": "interaction",
+      "title": "Interaction 18"
+    },
+    {
+      "id": "I19",
+      "kind": "interaction",
+      "title": "Interaction 19"
+    },
+    {
+      "id": "REQ-GOV-FIXTURE-001",
+      "kind": "requirement",
+      "title": "Fixture requirement"
+    },
+    {
+      "id": "TEST-FIXTURE",
+      "kind": "test",
+      "title": "Fixture test"
+    }
+  ],
+  "edges": [
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M01",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M02",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M03",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M04",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M05",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M06",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M07",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M08",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M09",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M10",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M11",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M12",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M13",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M14",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M15",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M16",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M17",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M18",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M19",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "M20",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I01",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I02",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I03",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I04",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I05",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I06",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I07",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I08",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I09",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I10",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I11",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I12",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I13",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I14",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I15",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I16",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I17",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I18",
+      "relationship": "governs"
+    },
+    {
+      "from": "REQ-GOV-FIXTURE-001",
+      "to": "I19",
+      "relationship": "governs"
+    },
+    {
+      "from": "M01",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M02",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M03",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M04",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M05",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M06",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M07",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M08",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M09",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M10",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M11",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M12",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M13",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M14",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M15",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M16",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M17",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M18",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M19",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "M20",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I01",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I02",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I03",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I04",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I05",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I06",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I07",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I08",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I09",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I10",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I11",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I12",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I13",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I14",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I15",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I16",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I17",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I18",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I19",
+      "to": "TEST-FIXTURE",
+      "relationship": "verified_by"
+    }
+  ],
+  "coverage_rules": {
+    "required_modules": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12",
+      "M13",
+      "M14",
+      "M15",
+      "M16",
+      "M17",
+      "M18",
+      "M19",
+      "M20"
+    ],
+    "required_interactions": [
+      "I01",
+      "I02",
+      "I03",
+      "I04",
+      "I05",
+      "I06",
+      "I07",
+      "I08",
+      "I09",
+      "I10",
+      "I11",
+      "I12",
+      "I13",
+      "I14",
+      "I15",
+      "I16",
+      "I17",
+      "I18",
+      "I19"
+    ],
+    "forbid_orphans": true
+  }
+}

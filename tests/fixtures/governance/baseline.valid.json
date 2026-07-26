@@ -1,0 +1,32 @@
+{
+  "baseline_id": "FGA-BASELINE-1.0-20260726",
+  "version": "1.0",
+  "date": "2026-07-26",
+  "status": "active",
+  "precedence": [
+    {
+      "rank": 1,
+      "authority": "AUTH-ONE",
+      "rule": "This authority controls the positive fixture."
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "AUTH-ONE",
+      "title": "Fixture authority",
+      "kind": "build_plan",
+      "authority_rank": 1,
+      "version": "1",
+      "date": "2026-07-26",
+      "availability": "available",
+      "path": "README.md",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "required_for_closure": true
+    }
+  ],
+  "closure_requirements": {
+    "all_required_available": true,
+    "all_available_digests_verified": true,
+    "unresolved_required_artifact_ids": []
+  }
+}

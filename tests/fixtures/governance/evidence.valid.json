@@ -1,0 +1,252 @@
+{
+  "evidence_id": "EVID-I00-BASELINE",
+  "iteration_id": "I00",
+  "generated_at": "2026-07-26T09:27:15.316397Z",
+  "source_commit": "WORKTREE-PRE-VALIDATION",
+  "status": "blocked",
+  "closure_eligible": false,
+  "environment": {
+    "os": "Linux-6.12.13-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "clean_checkout": false
+  },
+  "commands": [
+    "python scripts/validate_iteration_00.py",
+    "python scripts/validate_iteration_00.py --require-closure"
+  ],
+  "source_artifacts": [
+    {
+      "artifact_id": "FGA-NORMATIVE-PAIR-9.0-20260726",
+      "status": "missing"
+    },
+    {
+      "artifact_id": "FGA-END-TO-END-BUILD-PLAN-1.0-20260726",
+      "status": "verified",
+      "path": "specifications/build-plan/Fraud_Graph_Arena_Complete_End_to_End_Build_and_Qualification_Plan_v1.0.md",
+      "sha256": "00a7f7aec9c80bfa310fc7560753c6533155ea8db0e78e222bd91968b966cf93"
+    },
+    {
+      "artifact_id": "FGA-MODULAR-SPEC-PACK-ARCHIVE-1.0-20260726",
+      "status": "verified",
+      "path": "specifications/source-archives/Fraud_Graph_Arena_Modular_Architecture_Specification_Pack_v1.0.zip",
+      "sha256": "2657cd372b0f4d838c57f03d2206c92d35943c01bbce22f00a815b03648dbb20"
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "G01",
+      "name": "Governance and traceability",
+      "status": "blocked",
+      "rationale": "Available governance artifacts validate, but the required parent normative pair is missing.",
+      "evidence": [
+        "reports/iteration-00/validation-results.json",
+        "config/governance/baseline.json"
+      ]
+    },
+    {
+      "gate_id": "G02",
+      "name": "Static quality and build",
+      "status": "pass",
+      "rationale": "Authored governance files, JSON/YAML syntax, schemas, links, and validation tooling pass.",
+      "evidence": [
+        "reports/iteration-00/validation-results.json"
+      ]
+    },
+    {
+      "gate_id": "G03",
+      "name": "Independent module qualification",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G04",
+      "name": "Contract compatibility",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G05",
+      "name": "Persistence and migration",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G06",
+      "name": "Pairwise integration",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G07",
+      "name": "Capability-cluster integration",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G08",
+      "name": "Runtime-role integration",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G09",
+      "name": "End-to-end product journeys",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G10",
+      "name": "Accessibility and localization",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G11",
+      "name": "Security privacy and leakage",
+      "status": "pass",
+      "rationale": "Repository governance implementation passes secret and protected-truth artifact scans.",
+      "evidence": [
+        "reports/iteration-00/validation-results.json"
+      ]
+    },
+    {
+      "gate_id": "G12",
+      "name": "Concurrency and resilience",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G13",
+      "name": "Performance and capacity",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G14",
+      "name": "Supply chain and release integrity",
+      "status": "not_applicable",
+      "rationale": "No executable product capability exists in documentation-only I00; this gate becomes cumulative and mandatory when introduced by its planned iteration.",
+      "evidence": []
+    },
+    {
+      "gate_id": "G15",
+      "name": "Evidence and closure",
+      "status": "blocked",
+      "rationale": "The evidence format is valid and reproducible, but formal closure is prohibited while G01 is blocked.",
+      "evidence": [
+        "reports/iteration-00/evidence.json",
+        "reports/iteration-00/validation-results.json"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "TEST-I00-SCHEMAS",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "Schema metaschemas and positive/negative fixtures validate as expected.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-DIGESTS",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "Every supplied registered artifact matches its SHA-256; the absent parent pair is reported as a blocker, not a fabricated digest.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-MARKDOWN",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "Authored Markdown structure, code fences, relative links, whitespace, and final newlines pass.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-IDS",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "Artifact, node, stage, task, gate, module, and interaction IDs are unique and pattern-valid.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-OWNERS",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "Every governed path has one matching owner and independent reviewer.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-TRACEABILITY",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "All M01–M20 and I01–I19 are covered; edge references are valid and no graph node is orphaned.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-SECRET-SCAN",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "No credential, private-key, or token pattern is present in governance implementation files.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-TRUTH-SCAN",
+      "status": "pass",
+      "command": "python scripts/validate_iteration_00.py",
+      "result": "No protected truth artifact is present outside the immutable source specifications.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    },
+    {
+      "test_id": "TEST-I00-CLOSURE",
+      "status": "blocked",
+      "command": "python scripts/validate_iteration_00.py --require-closure",
+      "result": "Expected governance block: FGA-NORMATIVE-PAIR-9.0-20260726 is unavailable.",
+      "duration_ms": 0,
+      "report": "reports/iteration-00/validation-results.json"
+    }
+  ],
+  "exceptions": [],
+  "known_gaps": [
+    {
+      "id": "RISK-001",
+      "severity": "high",
+      "description": "The parent v9.0 functional and technical normative documents are not present in the supplied build inputs.",
+      "owner": "architecture-governance",
+      "blocks_closure": true,
+      "remediation": "Supply both v9.0 source documents, register their repository paths and SHA-256 digests, rerun the clean I00 gate, and obtain approvals."
+    }
+  ],
+  "approvals": [
+    {
+      "role": "architecture-governance",
+      "status": "pending"
+    },
+    {
+      "role": "quality-engineering",
+      "status": "pending"
+    },
+    {
+      "role": "release-management",
+      "status": "pending"
+    }
+  ],
+  "bundle_digest": "8564236a21fb18496653dfee25db3371bf0adbd96dbed3a01141c7630725a100"
+}

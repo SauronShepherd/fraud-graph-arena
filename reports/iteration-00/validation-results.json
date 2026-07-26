@@ -1,0 +1,73 @@
+{
+  "report_id": "FGA-I00-VALIDATION-RESULTS-1.0-20260726",
+  "generated_at": "2026-07-26T10:09:49.469108Z",
+  "repository": "/mnt/data/fraud-graph-arena",
+  "source_commit": "d45750e9494a9e12545ae130580c94782dee2f97",
+  "clean_checkout_observed": true,
+  "checks": [
+    {
+      "id": "dependencies",
+      "status": "pass",
+      "duration_ms": 0,
+      "errors": []
+    },
+    {
+      "id": "schemas",
+      "status": "pass",
+      "duration_ms": 29,
+      "errors": []
+    },
+    {
+      "id": "baseline",
+      "status": "pass",
+      "duration_ms": 12,
+      "errors": []
+    },
+    {
+      "id": "markdown",
+      "status": "pass",
+      "duration_ms": 1,
+      "errors": []
+    },
+    {
+      "id": "ids",
+      "status": "pass",
+      "duration_ms": 5,
+      "errors": []
+    },
+    {
+      "id": "owners",
+      "status": "pass",
+      "duration_ms": 5,
+      "errors": []
+    },
+    {
+      "id": "traceability",
+      "status": "pass",
+      "duration_ms": 0,
+      "errors": []
+    },
+    {
+      "id": "secret_scan",
+      "status": "pass",
+      "duration_ms": 11,
+      "errors": []
+    },
+    {
+      "id": "truth_scan",
+      "status": "pass",
+      "duration_ms": 10,
+      "errors": []
+    },
+    {
+      "id": "evidence",
+      "status": "pass",
+      "duration_ms": 10,
+      "errors": []
+    }
+  ],
+  "blocking_prerequisites": [
+    "FGA-NORMATIVE-PAIR-9.0-20260726"
+  ],
+  "status": "blocked"
+}

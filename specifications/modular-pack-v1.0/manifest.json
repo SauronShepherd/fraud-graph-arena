@@ -1,0 +1,424 @@
+{
+  "pack_id": "FGA-MODULAR-SPEC-PACK-1.0-20260726",
+  "version": "1.0",
+  "date": "2026-07-26",
+  "parent_normative_pair": "FGA-NORMATIVE-PAIR-9.0-20260726",
+  "architecture_pair_id": "FGA-MODULAR-ARCHITECTURE-1.0-20260726",
+  "primary_document_count": 42,
+  "architecture_documents": [
+    "architecture/HIGH_LEVEL_FUNCTIONAL_ARCHITECTURE.md",
+    "architecture/HIGH_LEVEL_TECHNICAL_ARCHITECTURE_AND_TEST_STRATEGY.md"
+  ],
+  "modules": [
+    {
+      "module_id": "M01",
+      "slug": "application-shell-navigation",
+      "name": "Application Shell and Navigation",
+      "pair_id": "FGA-MODULE-01-APPLICATION_SHELL_NAVIGATION-1.0-20260726",
+      "runtime": "WEB browser bundle",
+      "kind": "Frontend orchestration",
+      "functional_document": "modules/01-application-shell-navigation/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/01-application-shell-navigation/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/application-shell-navigation-contracts",
+        "@fga/application-shell-navigation",
+        "@fga/application-shell-navigation-testkit"
+      ],
+      "dependencies": [
+        "M02 Presentation and Accessibility",
+        "M03 Localization and Messaging",
+        "M04 Asset and Resource Management",
+        "M05 Audio and Radio",
+        "M06 Client State Synchronization",
+        "public client contracts of M07 and M20"
+      ]
+    },
+    {
+      "module_id": "M02",
+      "slug": "presentation-accessibility",
+      "name": "Presentation System and Accessibility",
+      "pair_id": "FGA-MODULE-02-PRESENTATION_ACCESSIBILITY-1.0-20260726",
+      "runtime": "WEB browser bundle",
+      "kind": "Frontend foundation",
+      "functional_document": "modules/02-presentation-accessibility/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/02-presentation-accessibility/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/presentation-accessibility-contracts",
+        "@fga/presentation-accessibility",
+        "@fga/presentation-accessibility-testkit"
+      ],
+      "dependencies": [
+        "M03 Localization and Messaging",
+        "M04 Asset and Resource Management"
+      ]
+    },
+    {
+      "module_id": "M03",
+      "slug": "localization-messaging",
+      "name": "Localization and Messaging",
+      "pair_id": "FGA-MODULE-03-LOCALIZATION_MESSAGING-1.0-20260726",
+      "runtime": "WEB plus server-side safe message catalogues",
+      "kind": "Cross-stack content foundation",
+      "functional_document": "modules/03-localization-messaging/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/03-localization-messaging/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/localization-messaging-contracts",
+        "@fga/localization-messaging-ui",
+        "fga_localization_messaging",
+        "@fga/localization-messaging-testkit"
+      ],
+      "dependencies": [
+        "M20 signed publication and policy bundles"
+      ]
+    },
+    {
+      "module_id": "M04",
+      "slug": "asset-resource-management",
+      "name": "Asset and Resource Management",
+      "pair_id": "FGA-MODULE-04-ASSET_RESOURCE_MANAGEMENT-1.0-20260726",
+      "runtime": "WEB and MIGRATE/publication tooling",
+      "kind": "Frontend plus publication adapter",
+      "functional_document": "modules/04-asset-resource-management/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/04-asset-resource-management/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/asset-resource-management-contracts",
+        "@fga/asset-resource-management",
+        "@fga/asset-resource-management-testkit"
+      ],
+      "dependencies": [
+        "M03 Localization and Messaging",
+        "M20 Publication/Workflow/Runtime Control"
+      ]
+    },
+    {
+      "module_id": "M05",
+      "slug": "audio-radio",
+      "name": "Audio and Radio",
+      "pair_id": "FGA-MODULE-05-AUDIO_RADIO-1.0-20260726",
+      "runtime": "WEB browser bundle",
+      "kind": "Frontend feature",
+      "functional_document": "modules/05-audio-radio/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/05-audio-radio/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/audio-radio-contracts",
+        "@fga/audio-radio",
+        "@fga/audio-radio-testkit"
+      ],
+      "dependencies": [
+        "M04 Asset and Resource Management",
+        "M06 Client State Synchronization"
+      ]
+    },
+    {
+      "module_id": "M06",
+      "slug": "client-state-synchronization",
+      "name": "Client State and Synchronization",
+      "pair_id": "FGA-MODULE-06-CLIENT_STATE_SYNCHRONIZATION-1.0-20260726",
+      "runtime": "WEB browser bundle",
+      "kind": "Frontend data coordination",
+      "functional_document": "modules/06-client-state-synchronization/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/06-client-state-synchronization/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/client-state-synchronization-contracts",
+        "@fga/client-state-synchronization",
+        "@fga/client-state-synchronization-testkit"
+      ],
+      "dependencies": [
+        "public contracts of M07–M19",
+        "M01 Application Shell",
+        "M20 client compatibility and policy"
+      ]
+    },
+    {
+      "module_id": "M07",
+      "slug": "identity-account-security",
+      "name": "Identity, Account, Policy Receipt, and Privacy Requests",
+      "pair_id": "FGA-MODULE-07-IDENTITY_ACCOUNT_SECURITY-1.0-20260726",
+      "runtime": "WEB and MAINTENANCE for long-running privacy workflows",
+      "kind": "Backend domain plus frontend surfaces",
+      "functional_document": "modules/07-identity-account-security/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/07-identity-account-security/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/identity-account-security-contracts",
+        "@fga/identity-account-security-ui",
+        "fga_identity_account_security",
+        "@fga/identity-account-security-testkit"
+      ],
+      "dependencies": [
+        "M03 Localization for notices",
+        "M20 policy bundles, workflows, and runtime admission",
+        "M18 for optional public alias linkage"
+      ]
+    },
+    {
+      "module_id": "M08",
+      "slug": "career-catalogue-progression",
+      "name": "Career, Catalogue, and Progression",
+      "pair_id": "FGA-MODULE-08-CAREER_CATALOGUE_PROGRESSION-1.0-20260726",
+      "runtime": "WEB and MAINTENANCE finalization",
+      "kind": "Backend domain plus frontend surfaces",
+      "functional_document": "modules/08-career-catalogue-progression/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/08-career-catalogue-progression/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/career-catalogue-progression-contracts",
+        "@fga/career-catalogue-progression-ui",
+        "fga_career_catalogue_progression",
+        "@fga/career-catalogue-progression-testkit"
+      ],
+      "dependencies": [
+        "M07 Identity",
+        "M10 Case Content and Rules",
+        "M20 Publication/Runtime Control",
+        "event contract from M17"
+      ]
+    },
+    {
+      "module_id": "M09",
+      "slug": "round-game-state",
+      "name": "Round and Game-State Engine",
+      "pair_id": "FGA-MODULE-09-ROUND_GAME_STATE-1.0-20260726",
+      "runtime": "WEB plus MAINTENANCE recovery/finalization",
+      "kind": "Backend domain",
+      "functional_document": "modules/09-round-game-state/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/09-round-game-state/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_round_game_state",
+        "fga_round_game_state_contracts",
+        "fga_round_game_state_testkit"
+      ],
+      "dependencies": [
+        "M08 Career",
+        "M10 Case Content and Rules",
+        "M20 policy/publication/runtime"
+      ]
+    },
+    {
+      "module_id": "M10",
+      "slug": "case-content-rules",
+      "name": "Case Content and Rules",
+      "pair_id": "FGA-MODULE-10-CASE_CONTENT_RULES-1.0-20260726",
+      "runtime": "WEB reads; MIGRATE/publication compiles",
+      "kind": "Backend domain plus authoring contracts",
+      "functional_document": "modules/10-case-content-rules/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/10-case-content-rules/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_case_content_rules",
+        "fga_case_content_rules_contracts",
+        "fga_case_content_rules_testkit"
+      ],
+      "dependencies": [
+        "M03 Localization",
+        "M04 Assets",
+        "M20 Publication/Trust"
+      ]
+    },
+    {
+      "module_id": "M11",
+      "slug": "investigation-visibility",
+      "name": "Investigation and Visibility Engine",
+      "pair_id": "FGA-MODULE-11-INVESTIGATION_VISIBILITY-1.0-20260726",
+      "runtime": "WEB plus MAINTENANCE settlement",
+      "kind": "Backend domain",
+      "functional_document": "modules/11-investigation-visibility/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/11-investigation-visibility/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_investigation_visibility",
+        "fga_investigation_visibility_contracts",
+        "fga_investigation_visibility_testkit"
+      ],
+      "dependencies": [
+        "M09 Round",
+        "M10 Case Content and Rules",
+        "settlement contract from M13"
+      ]
+    },
+    {
+      "module_id": "M12",
+      "slug": "workspace-projection",
+      "name": "Workspace Projection: List, Graph, Documents, and Semantic Navigation",
+      "pair_id": "FGA-MODULE-12-WORKSPACE_PROJECTION-1.0-20260726",
+      "runtime": "WEB server projection plus browser bundle",
+      "kind": "Read-model and frontend feature",
+      "functional_document": "modules/12-workspace-projection/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/12-workspace-projection/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/workspace-projection-contracts",
+        "@fga/workspace-projection-ui",
+        "fga_workspace_projection",
+        "@fga/workspace-projection-testkit"
+      ],
+      "dependencies": [
+        "M03 Localization",
+        "M04 Assets",
+        "M10 Case safe schema",
+        "M11 Investigation"
+      ]
+    },
+    {
+      "module_id": "M13",
+      "slug": "action-command",
+      "name": "Action, Quote, Command, and Settlement Orchestration",
+      "pair_id": "FGA-MODULE-13-ACTION_COMMAND-1.0-20260726",
+      "runtime": "WEB acceptance plus MAINTENANCE execution/reconciliation",
+      "kind": "Backend domain",
+      "functional_document": "modules/13-action-command/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/13-action-command/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_action_command",
+        "fga_action_command_contracts",
+        "fga_action_command_testkit"
+      ],
+      "dependencies": [
+        "M09 Round",
+        "M11 Investigation",
+        "M14 Economy",
+        "M19 Retrieval",
+        "M20 Workflow/Runtime"
+      ]
+    },
+    {
+      "module_id": "M14",
+      "slug": "economy-credit",
+      "name": "Investigation Economy and Credit Ledger",
+      "pair_id": "FGA-MODULE-14-ECONOMY_CREDIT-1.0-20260726",
+      "runtime": "WEB and MAINTENANCE settlement",
+      "kind": "Backend domain",
+      "functional_document": "modules/14-economy-credit/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/14-economy-credit/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_economy_credit",
+        "fga_economy_credit_contracts",
+        "fga_economy_credit_testkit"
+      ],
+      "dependencies": [
+        "M10/M20 economy policy only; M13 uses public settlement port"
+      ]
+    },
+    {
+      "module_id": "M15",
+      "slug": "save-recovery",
+      "name": "Save, Checkpoint, Draft History, and Recovery",
+      "pair_id": "FGA-MODULE-15-SAVE_RECOVERY-1.0-20260726",
+      "runtime": "WEB and MAINTENANCE retention/recovery",
+      "kind": "Backend domain plus frontend collaboration",
+      "functional_document": "modules/15-save-recovery/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/15-save-recovery/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/save-recovery-contracts",
+        "@fga/save-recovery-ui",
+        "fga_save_recovery",
+        "@fga/save-recovery-testkit"
+      ],
+      "dependencies": [
+        "M06 Client Sync",
+        "M09 Round",
+        "M11 Investigation references",
+        "M16 Case File",
+        "M20 Retention/Workflow"
+      ]
+    },
+    {
+      "module_id": "M16",
+      "slug": "case-file-submission",
+      "name": "Case File, Claims, Evidence Mapping, and Submission",
+      "pair_id": "FGA-MODULE-16-CASE_FILE_SUBMISSION-1.0-20260726",
+      "runtime": "WEB plus MAINTENANCE finalization",
+      "kind": "Backend domain plus frontend feature",
+      "functional_document": "modules/16-case-file-submission/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/16-case-file-submission/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/case-file-submission-contracts",
+        "@fga/case-file-submission-ui",
+        "fga_case_file_submission",
+        "@fga/case-file-submission-testkit"
+      ],
+      "dependencies": [
+        "M09 Round",
+        "M11 Investigation",
+        "M13 Command",
+        "M14 Economy",
+        "M20 Integrity/Workflow"
+      ]
+    },
+    {
+      "module_id": "M17",
+      "slug": "evaluation-scoring-ending",
+      "name": "Evaluation, Scoring, Endings, Verdicts, and Amendments",
+      "pair_id": "FGA-MODULE-17-EVALUATION_SCORING_ENDING-1.0-20260726",
+      "runtime": "EVALUATOR plus MAINTENANCE safe finalization",
+      "kind": "Private backend domain",
+      "functional_document": "modules/17-evaluation-scoring-ending/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/17-evaluation-scoring-ending/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_evaluation_scoring_ending",
+        "fga_evaluation_scoring_ending_contracts",
+        "fga_evaluation_scoring_ending_testkit"
+      ],
+      "dependencies": [
+        "M16 Submission contract",
+        "M10 protected evaluator bundle contract",
+        "M20 private runtime/trust/workflow"
+      ]
+    },
+    {
+      "module_id": "M18",
+      "slug": "leaderboard-results",
+      "name": "Leaderboard, Public Results, Moderation, and Disputes",
+      "pair_id": "FGA-MODULE-18-LEADERBOARD_RESULTS-1.0-20260726",
+      "runtime": "WEB plus MAINTENANCE reindex/moderation",
+      "kind": "Backend domain plus frontend surfaces",
+      "functional_document": "modules/18-leaderboard-results/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/18-leaderboard-results/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "@fga/leaderboard-results-contracts",
+        "@fga/leaderboard-results-ui",
+        "fga_leaderboard_results",
+        "@fga/leaderboard-results-testkit"
+      ],
+      "dependencies": [
+        "M07 Identity public alias",
+        "M09 ranking segment",
+        "M17 safe verdict events",
+        "M20 workflows/policy"
+      ]
+    },
+    {
+      "module_id": "M19",
+      "slug": "retrieval-provider-gateway",
+      "name": "Retrieval, Deterministic Resolver, and Provider Gateway",
+      "pair_id": "FGA-MODULE-19-RETRIEVAL_PROVIDER_GATEWAY-1.0-20260726",
+      "runtime": "MAINTENANCE primarily; WEB for free deterministic planning only",
+      "kind": "Backend integration domain",
+      "functional_document": "modules/19-retrieval-provider-gateway/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/19-retrieval-provider-gateway/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_retrieval_provider_gateway",
+        "fga_retrieval_provider_gateway_contracts",
+        "fga_retrieval_provider_gateway_testkit"
+      ],
+      "dependencies": [
+        "M10 Case safe interface",
+        "M13 Command",
+        "M20 Publication/Workflow/Capability"
+      ]
+    },
+    {
+      "module_id": "M20",
+      "slug": "publication-workflow-runtime-control",
+      "name": "Publication Trust, Durable Workflow, and Runtime Control",
+      "pair_id": "FGA-MODULE-20-PUBLICATION_WORKFLOW_RUNTIME_CONTROL-1.0-20260726",
+      "runtime": "WEB safe queries, MAINTENANCE, EVALUATOR support, and MIGRATE",
+      "kind": "Platform bounded context",
+      "functional_document": "modules/20-publication-workflow-runtime-control/FUNCTIONAL_SPECIFICATION.md",
+      "technical_document": "modules/20-publication-workflow-runtime-control/TECHNICAL_AND_TEST_SPECIFICATION.md",
+      "packages": [
+        "fga_publication_workflow_runtime_control",
+        "fga_publication_workflow_runtime_control_contracts",
+        "fga_publication_workflow_runtime_control_testkit"
+      ],
+      "dependencies": [
+        "foundation only; all modules consume its public platform contracts or register workflow handlers"
+      ]
+    }
+  ]
+}

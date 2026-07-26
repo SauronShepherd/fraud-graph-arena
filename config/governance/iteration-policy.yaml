@@ -1,0 +1,53 @@
+policy_id: FGA-ITERATION-POLICY-1.0-20260726
+version: "1.0"
+effective_date: 2026-07-26
+principle: no-pass-no-progress
+references:
+  definition_of_ready: docs/delivery/DEFINITION_OF_READY.md
+  definition_of_done: docs/delivery/DEFINITION_OF_DONE.md
+  task_stage_iteration_model: docs/delivery/TASK_STAGE_ITERATION_MODEL.md
+hierarchy:
+  task:
+    atomic_file_limit: 1
+    required_fields: [stable_id, exact_path, bounded_change, file_acceptance, traceability]
+  stage:
+    closure_requires: [all_tasks_complete, stage_tests_pass, contracts_current, no_deferred_stage_defects]
+  iteration:
+    closure_requires: [all_stages_complete, cumulative_gates_pass, clean_checkout, reproducible_evidence, no_blocking_gaps]
+failure_handling:
+  corrective_task_same_iteration: true
+  root_cause_required_after_rerun: true
+  severity_1_2_defer_forbidden: true
+  rerun_only_green_forbidden: true
+skips_and_quarantine:
+  critical_skip_forbidden: true
+  critical_quarantine_forbidden: true
+  constitutional_expected_failure_forbidden: true
+  noncritical_exception_requires: [signed_approval, risk_owner, expiry, rationale]
+  release_may_contain_temporary_exception: false
+clean_run:
+  fresh_generated_state: true
+  isolated_test_databases: true
+  release_candidate_independent_runs: 2
+gates:
+  - {id: G01, name: Governance and traceability, cumulative: true, critical: true}
+  - {id: G02, name: Static quality and build, cumulative: true, critical: true}
+  - {id: G03, name: Independent module qualification, cumulative: true, critical: true}
+  - {id: G04, name: Contract compatibility, cumulative: true, critical: true}
+  - {id: G05, name: Persistence and migration, cumulative: true, critical: true}
+  - {id: G06, name: Pairwise integration, cumulative: true, critical: true}
+  - {id: G07, name: Capability-cluster integration, cumulative: true, critical: true}
+  - {id: G08, name: Runtime-role integration, cumulative: true, critical: true}
+  - {id: G09, name: End-to-end product journeys, cumulative: true, critical: true}
+  - {id: G10, name: Accessibility and localization, cumulative: true, critical: true}
+  - {id: G11, name: Security privacy and leakage, cumulative: true, critical: true}
+  - {id: G12, name: Concurrency and resilience, cumulative: true, critical: true}
+  - {id: G13, name: Performance and capacity, cumulative: true, critical: true}
+  - {id: G14, name: Supply chain and release integrity, cumulative: true, critical: true}
+  - {id: G15, name: Evidence and closure, cumulative: true, critical: true}
+applicability:
+  before_capability_exists: not_applicable_with_reason
+  after_capability_introduced: mandatory_forever
+closure_command:
+  from_iteration: I04
+  command: ./scripts/verify iteration IXX --clean --all-implemented --no-critical-skips --no-quarantine --evidence reports/iteration-XX
