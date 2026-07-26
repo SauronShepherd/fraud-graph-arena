@@ -1,0 +1,5 @@
+# Keep repository text deterministic across Windows, macOS, and Linux.
+* text=auto eol=lf
+
+# Binary source archives must never receive text conversion.
+*.zip binary

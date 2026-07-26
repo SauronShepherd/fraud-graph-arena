@@ -7,6 +7,8 @@ import sys
 import tomllib
 from pathlib import Path
 
+from scripts.governance_digest import canonical_sha256
+
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -50,6 +52,24 @@ def test_missing_dependency_error_is_actionable() -> None:
     assert "pip install -e" in completed.stderr
     assert ".[test]" in completed.stderr
     assert "pyproject.toml" in completed.stderr
+
+
+
+def test_text_artifact_digest_is_independent_of_line_endings(tmp_path: Path) -> None:
+    lf = tmp_path / "artifact.md"
+    crlf = tmp_path / "artifact-crlf.md"
+    content = "# Baseline\n\nSame governed content.\n"
+    lf.write_bytes(content.encode("utf-8"))
+    crlf.write_bytes(content.replace("\n", "\r\n").encode("utf-8"))
+
+    assert canonical_sha256(lf) == canonical_sha256(crlf)
+
+
+def test_git_attributes_force_lf_for_governed_text() -> None:
+    attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
+
+    assert "* text=auto eol=lf" in attributes
+    assert "*.zip binary" in attributes
 
 
 def test_validation_is_side_effect_free_by_default_and_structurally_green() -> None:

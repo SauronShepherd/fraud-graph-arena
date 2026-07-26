@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
+from governance_digest import canonical_sha256
+
 try:
     import jsonschema
     import yaml
@@ -35,7 +37,7 @@ ROOT = DEFAULT_ROOT
 RESULT_PATH = ROOT / "reports/iteration-00/validation-results.json"
 EVIDENCE_PATH = ROOT / "reports/iteration-00/evidence.json"
 APPROVALS_PATH = ROOT / "config/governance/approvals.yaml"
-EXPECTED_TAG = "fga-iteration-00"
+EXPECTED_TAG = "fga-iteration-00-r1"
 PAIR_ID = "FGA-NORMATIVE-PAIR-10.0-20260726"
 NORMATIVE_MEMBERS = {
     "FGA-NORMATIVE-FUNCTIONAL-10.0-20260726": {
@@ -72,14 +74,6 @@ def read_yaml(path: Path) -> Any:
 def write_json(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-
-
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
 
 
 def canonical_evidence_digest(value: dict[str, Any]) -> str:
@@ -248,6 +242,7 @@ def owner_errors() -> list[str]:
     for base in [
         "README.md",
         ".gitignore",
+        ".gitattributes",
         "pyproject.toml",
         "docs",
         "config",
@@ -414,7 +409,7 @@ def baseline_errors() -> tuple[list[str], list[str]]:
                     f"artifact path missing: {artifact['artifact_id']} -> {artifact['path']}"
                 )
                 continue
-            if sha256(path) != artifact["sha256"]:
+            if canonical_sha256(path) != artifact["sha256"]:
                 errors.append(f"digest mismatch: {artifact['artifact_id']}")
             if artifact["artifact_id"] in NORMATIVE_MEMBERS:
                 errors.extend(validate_normative_member(artifact, path))

@@ -24,7 +24,7 @@ The current pair is registered as two independently content-addressed source art
 - `FGA-NORMATIVE-FUNCTIONAL-10.0-20260726`;
 - `FGA-NORMATIVE-TECHNICAL-10.0-20260726`.
 
-Both documents declare `FGA-NORMATIVE-PAIR-10.0-20260726`, identify version 10.0, and explicitly supersede version 9.0. Validation checks the expected title, document version, pair ID, filename, plausible completeness, and exact SHA-256 digest.
+Both documents declare `FGA-NORMATIVE-PAIR-10.0-20260726`, identify version 10.0, and explicitly supersede version 9.0. Validation checks the expected title, document version, pair ID, filename, plausible completeness, and canonical SHA-256 digest, with UTF-8 text line endings normalized to LF.
 
 Re-import instructions are in [`specifications/normative-pair-v10.0/README.md`](../../specifications/normative-pair-v10.0/README.md).
 
@@ -45,3 +45,7 @@ The registry also contains the build plan, original modular-pack archive, archit
 ## Supersession
 
 A new baseline must identify every superseded artefact, preserve historical identities and digests where available, state the change classification, include migration consequences, and generate a new baseline ID. Existing release records remain immutable; supersession adds a new baseline rather than rewriting a historical tag.
+
+## Cross-platform digest canonicalization
+
+Registered UTF-8 Markdown, JSON, and text artifacts are fingerprinted after canonicalizing line endings to LF. This preserves one logical content identity across Windows CRLF and Unix LF checkouts. Binary archives remain byte-for-byte hashed and are explicitly marked binary in `.gitattributes`.

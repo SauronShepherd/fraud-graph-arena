@@ -10,6 +10,7 @@ teams:
 assignments:
   - {path: README.md, owner: delivery-governance, reviewer: architecture-governance}
   - {path: .gitignore, owner: developer-experience, reviewer: quality-engineering}
+  - {path: .gitattributes, owner: developer-experience, reviewer: quality-engineering}
   - {path: pyproject.toml, owner: developer-experience, reviewer: quality-engineering}
   - {path: docs/governance/**, owner: architecture-governance, reviewer: security-assurance}
   - {path: docs/delivery/**, owner: delivery-governance, reviewer: architecture-governance}

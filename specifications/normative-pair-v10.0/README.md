@@ -17,4 +17,4 @@ python scripts/import_normative_pair.py \
   /path/to/Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v10.0.md
 ```
 
-The importer refuses placeholders, summaries, wrong versions, wrong pair IDs, or implausibly short documents. It copies the exact bytes, recalculates SHA-256 digests, and updates `config/governance/baseline.json`.
+The importer refuses placeholders, summaries, wrong versions, wrong pair IDs, or implausibly short documents. It copies the source files, calculates LF-canonical SHA-256 digests for their UTF-8 text, and updates `config/governance/baseline.json`.

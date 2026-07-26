@@ -696,6 +696,27 @@
       "title": "Trace corrective release-control work",
       "path": "config/governance/traceability.json",
       "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T29",
+      "kind": "task",
+      "title": "Canonicalize governed text digests across operating systems",
+      "path": "scripts/governance_digest.py",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T30",
+      "kind": "task",
+      "title": "Enforce deterministic LF checkout for governed text",
+      "path": ".gitattributes",
+      "status": "implemented"
+    },
+    {
+      "id": "I00-S04-T31",
+      "kind": "task",
+      "title": "Test Windows and Unix line-ending equivalence",
+      "path": "tests/governance/test_iteration_00.py",
+      "status": "implemented"
     }
   ],
   "edges": [
@@ -1677,6 +1698,36 @@
     {
       "from": "REQ-GOV-EVIDENCE-001",
       "to": "TEST-I00-PACKAGING",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T29",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T29",
+      "to": "TEST-I00-DIGESTS",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T30",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T30",
+      "to": "TEST-I00-PACKAGING",
+      "relationship": "verified_by"
+    },
+    {
+      "from": "I00-S04",
+      "to": "I00-S04-T31",
+      "relationship": "decomposes_to"
+    },
+    {
+      "from": "I00-S04-T31",
+      "to": "TEST-I00-DIGESTS",
       "relationship": "verified_by"
     }
   ],

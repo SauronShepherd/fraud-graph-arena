@@ -38,7 +38,7 @@ The bundle records:
 - status and closure eligibility;
 - operating system, Python version, and clean-checkout observation;
 - exact commands;
-- required source artefacts and SHA-256 digests;
+- required source artefacts and SHA-256 digests, using LF-canonical UTF-8 text fingerprints and byte-exact binary fingerprints;
 - all fifteen universal gates with applicability rationale;
 - normalized test results and reports;
 - exceptions and known gaps;

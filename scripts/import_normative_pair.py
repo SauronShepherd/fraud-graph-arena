@@ -2,10 +2,11 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import shutil
 from pathlib import Path
+
+from governance_digest import canonical_sha256
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE_PATH = ROOT / "config/governance/baseline.json"
@@ -24,14 +25,6 @@ EXPECTED = {
     },
 }
 PAIR_ID = "FGA-NORMATIVE-PAIR-10.0-20260726"
-
-
-def digest(path: Path) -> str:
-    value = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            value.update(chunk)
-    return value.hexdigest()
 
 
 def validate_source(path: Path, kind: str) -> None:
@@ -68,7 +61,7 @@ def update_baseline(imported: dict[str, Path]) -> None:
         artifact = artifacts_by_id[artifact_id]
         artifact["availability"] = "available"
         artifact["path"] = path.relative_to(ROOT).as_posix()
-        artifact["sha256"] = digest(path)
+        artifact["sha256"] = canonical_sha256(path)
         artifact.pop("external_reference", None)
         artifact["notes"] = "Imported from the exact approved v10.0 source document."
 
@@ -111,7 +104,7 @@ def main() -> int:
     update_baseline(imported)
     print("Imported and digest-registered the v10.0 normative pair:")
     for kind, path in imported.items():
-        print(f"  {kind}: {path.relative_to(ROOT)} ({digest(path)})")
+        print(f"  {kind}: {path.relative_to(ROOT)} ({canonical_sha256(path)})")
     print("Commit the two documents and updated baseline before generating closure evidence.")
     return 0
 

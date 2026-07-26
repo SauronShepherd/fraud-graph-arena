@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_TAG = "fga-iteration-00"
+DEFAULT_TAG = "fga-iteration-00-r1"
 
 
 def run(*args: str, capture: bool = False) -> subprocess.CompletedProcess[str]:
@@ -23,7 +23,7 @@ def main() -> int:
     parser.add_argument("--tag", default=DEFAULT_TAG)
     parser.add_argument(
         "--message",
-        default="Fraud Graph Arena Iteration 00 — qualified normative baseline and delivery constitution",
+        default="Fraud Graph Arena Iteration 00 r1 — Windows-portable qualified normative baseline and delivery constitution",
     )
     args = parser.parse_args()
 

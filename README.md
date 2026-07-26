@@ -6,7 +6,7 @@ This repository contains the qualified `I00 — Normative baseline and delivery 
 
 - **Branch:** `Iteration-00`
 - **Normative pair:** `FGA-NORMATIVE-PAIR-10.0-20260726`
-- **Immutable tag:** `fga-iteration-00`
+- **Immutable tag:** `fga-iteration-00-r1`
 - **Evidence:** `reports/iteration-00/`
 - **Player-facing capability:** none by design
 
@@ -36,7 +36,7 @@ python scripts/validate_iteration_00.py
 python scripts/validate_iteration_00.py --require-closure
 ```
 
-A qualified release returns exit code `0`, reports no closure blockers, and has an annotated `fga-iteration-00` tag pointing to the evidence-only closure commit.
+A qualified release returns exit code `0`, reports no closure blockers, and has an annotated `fga-iteration-00-r1` tag pointing to the evidence-only closure commit.
 
 ## Re-import the normative pair
 
@@ -48,7 +48,7 @@ python scripts/import_normative_pair.py \
   /path/to/Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v10.0.md
 ```
 
-The importer validates document identity and completeness, copies the sources under `specifications/normative-pair-v10.0/`, calculates SHA-256 digests, and updates the baseline registry.
+The importer validates document identity and completeness, copies the sources under `specifications/normative-pair-v10.0/`, calculates canonical SHA-256 digests for governed text and byte-exact SHA-256 digests for binary archives, and updates the baseline registry.
 
 ## Release protocol
 
