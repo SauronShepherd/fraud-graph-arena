@@ -16,7 +16,7 @@
   ],
   "source_artifacts": [
     {
-      "artifact_id": "FGA-NORMATIVE-PAIR-9.0-20260726",
+      "artifact_id": "FGA-NORMATIVE-PAIR-10.0-20260726",
       "status": "missing"
     },
     {
@@ -217,7 +217,7 @@
       "test_id": "TEST-I00-CLOSURE",
       "status": "blocked",
       "command": "python scripts/validate_iteration_00.py --require-closure",
-      "result": "Expected governance block: FGA-NORMATIVE-PAIR-9.0-20260726 is unavailable.",
+      "result": "Expected governance block: FGA-NORMATIVE-PAIR-10.0-20260726 is unavailable.",
       "duration_ms": 0,
       "report": "reports/iteration-00/validation-results.json"
     }
@@ -227,10 +227,10 @@
     {
       "id": "RISK-001",
       "severity": "high",
-      "description": "The parent v9.0 functional and technical normative documents are not present in the supplied build inputs.",
+      "description": "The parent v10.0 functional and technical normative documents are not present in the supplied build inputs.",
       "owner": "architecture-governance",
       "blocks_closure": true,
-      "remediation": "Supply both v9.0 source documents, register their repository paths and SHA-256 digests, rerun the clean I00 gate, and obtain approvals."
+      "remediation": "Supply both v10.0 source documents, register their repository paths and SHA-256 digests, rerun the clean I00 gate, and obtain approvals."
     }
   ],
   "approvals": [

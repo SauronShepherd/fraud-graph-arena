@@ -539,7 +539,7 @@
     {
       "id": "TEST-I00-NORMATIVE-IMPORT",
       "kind": "test",
-      "title": "Reject placeholders and import only identified v9.0 normative sources",
+      "title": "Reject placeholders and import only identified v10.0 normative sources",
       "path": "tests/governance/test_iteration_00.py",
       "status": "verified"
     },
@@ -631,7 +631,7 @@
       "id": "I00-S04-T19",
       "kind": "task",
       "title": "Document exact normative source import",
-      "path": "specifications/normative-pair-v9.0/README.md",
+      "path": "specifications/normative-pair-v10.0/README.md",
       "status": "implemented"
     },
     {

@@ -1,20 +1,18 @@
 # Fraud Graph Arena
 
-This repository is being built from the approved modular architecture pack and the complete end-to-end build and qualification plan.
+This repository contains the qualified `I00 — Normative baseline and delivery constitution` release.
 
-## Current delivery state
+## Release identity
 
-- **Implemented iteration:** `I00 — Normative baseline and delivery constitution`
 - **Branch:** `Iteration-00`
-- **Implementation state:** the sixteen planned I00 deliverables and corrective release-control tasks are present.
-- **Qualification state:** **blocked, not failed**.
-- **Immutable release tag:** not created. The repository deliberately removed the premature `fga-iteration-00` tag and now refuses to recreate it before formal closure passes.
+- **Normative pair:** `FGA-NORMATIVE-PAIR-10.0-20260726`
+- **Immutable tag:** `fga-iteration-00`
+- **Evidence:** `reports/iteration-00/`
+- **Player-facing capability:** none by design
 
-The remaining external inputs are the exact approved v9.0 functional and technical source documents. Their attachment contents must be imported byte-for-byte; placeholders and summaries are rejected. Independent architecture, quality, and release approvals must then be recorded.
+Version 10.0 of the complete functional and technical specifications is the primary authority and explicitly supersedes version 9.0. The earlier v1.0 modular pack and build plan remain registered supporting artefacts where compatible with v10.0.
 
 ## Install the project and test tools
-
-Project metadata, exactly pinned runtime dependencies, test dependencies, and pytest configuration are defined in `pyproject.toml`.
 
 ```text
 python -m pip install -e ".[test]"
@@ -26,56 +24,39 @@ python -m pip install -e ".[test]"
 python -m pytest -v
 ```
 
-Pytest executes the governance regression suite, including fixture-based successful closure, post-qualification tampering, placeholder-source rejection, and premature-tag prevention.
-
 ## Validate without changing files
-
-Validation is side-effect-free by default:
 
 ```text
 python scripts/validate_iteration_00.py
 ```
 
-Formal closure is also side-effect-free and currently returns exit code `2` while source documents or approvals remain incomplete:
+## Verify formal closure
 
 ```text
 python scripts/validate_iteration_00.py --require-closure
 ```
 
-## Import the exact normative pair
+A qualified release returns exit code `0`, reports no closure blockers, and has an annotated `fga-iteration-00` tag pointing to the evidence-only closure commit.
+
+## Re-import the normative pair
+
+The exact v10.0 source documents are already included. To verify or replace them with byte-identical approved sources:
 
 ```text
 python scripts/import_normative_pair.py \
-  /path/to/Fraud_Graph_Arena_Complete_Functional_Specification_v9.0.md \
-  /path/to/Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v9.0.md
+  /path/to/Fraud_Graph_Arena_Complete_Functional_Specification_v10.0.md \
+  /path/to/Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v10.0.md
 ```
 
-The importer validates document identity and minimum completeness, copies the exact sources under `specifications/normative-pair-v9.0/`, calculates SHA-256 digests, and updates the baseline registry.
+The importer validates document identity and completeness, copies the sources under `specifications/normative-pair-v10.0/`, calculates SHA-256 digests, and updates the baseline registry.
 
-## Complete qualification
+## Release protocol
 
-1. Commit the imported sources and updated baseline.
-2. Record named, dated, evidence-backed independent approvals in `config/governance/approvals.yaml`.
-3. Confirm the candidate checkout is clean.
-4. Generate evidence:
+1. Commit all candidate source and governance changes.
+2. Run the full pytest suite from a clean checkout.
+3. Generate evidence with `python scripts/validate_iteration_00.py --generate-evidence`.
+4. Commit only `reports/iteration-00/` as the closure record.
+5. Verify closure with `--require-closure`.
+6. Create the immutable tag through `python scripts/create_iteration_00_tag.py`.
 
-```text
-python scripts/validate_iteration_00.py --generate-evidence
-```
-
-5. Commit only `reports/iteration-00/` as the closure record.
-6. Verify closure:
-
-```text
-python scripts/validate_iteration_00.py --require-closure
-```
-
-7. Create the immutable tag through the guarded command:
-
-```text
-python scripts/create_iteration_00_tag.py
-```
-
-The tag command refuses an existing tag and refuses to create a tag unless formal closure passes.
-
-See [the Iteration-00 evidence summary](reports/iteration-00/README.md) for the current status.
+The tag command refuses to replace an existing tag and refuses release when closure does not pass.

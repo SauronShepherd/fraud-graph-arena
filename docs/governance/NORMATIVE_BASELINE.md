@@ -1,8 +1,8 @@
 # Normative Baseline
 
-**Baseline ID:** `FGA-BASELINE-1.0-20260726`
+**Baseline ID:** `FGA-BASELINE-10.0-20260726`
 **Iteration:** `I00`
-**State:** blocked until the exact v9.0 pair and approvals are present
+**State:** active after the exact v10.0 pair, source digests, approvals, and clean qualification evidence are present
 
 ## Purpose
 
@@ -10,27 +10,27 @@ This baseline fixes the authority, integrity, precedence, and supersession rules
 
 ## Authority and precedence
 
-1. `FGA-NORMATIVE-PAIR-9.0-20260726` is the primary product and technical authority.
-2. `FGA-MODULAR-SPEC-PACK-1.0-20260726` decomposes the parent pair into twenty independently testable modules and four runtime roles. It cannot override the parent pair.
-3. `FGA-END-TO-END-BUILD-PLAN-1.0-20260726` governs tasks, stages, iterations, cumulative gates, evidence, and no-pass-no-progress behaviour.
+1. `FGA-NORMATIVE-PAIR-10.0-20260726` is the primary product and technical authority. It explicitly supersedes the paired v9.0 specifications.
+2. `FGA-MODULAR-SPEC-PACK-1.0-20260726` remains a useful historical decomposition of twenty modules and four runtime roles where compatible with v10.0. It cannot override the current pair.
+3. `FGA-END-TO-END-BUILD-PLAN-1.0-20260726` governs the Iteration-00 delivery sequence, cumulative gates, evidence, and no-pass-no-progress behaviour where compatible with v10.0.
 4. Repository decisions implement those authorities and cannot silently redefine a constitutional requirement.
 
-When lower-ranked artefacts conflict, the higher-ranked authority controls. Ambiguity becomes an explicit decision, risk, or blocking defect; it is never resolved silently in code.
+When lower-ranked artefacts conflict, the higher-ranked authority controls. Ambiguity becomes an explicit decision, risk, migration, or blocking defect; it is never resolved silently in code.
 
 ## Normative pair membership
 
-The pair is registered as two independently content-addressed source artefacts:
+The current pair is registered as two independently content-addressed source artefacts:
 
-- `FGA-NORMATIVE-FUNCTIONAL-9.0-20260726`;
-- `FGA-NORMATIVE-TECHNICAL-9.0-20260726`.
+- `FGA-NORMATIVE-FUNCTIONAL-10.0-20260726`;
+- `FGA-NORMATIVE-TECHNICAL-10.0-20260726`.
 
-Formal closure requires both exact source files. The importer rejects files that do not contain the expected title, document version, pair ID, and a plausible complete document body. A pair summary, placeholder, reconstructed document, or guessed digest cannot satisfy the baseline.
+Both documents declare `FGA-NORMATIVE-PAIR-10.0-20260726`, identify version 10.0, and explicitly supersede version 9.0. Validation checks the expected title, document version, pair ID, filename, plausible completeness, and exact SHA-256 digest.
 
-Import instructions are in [`specifications/normative-pair-v9.0/README.md`](../../specifications/normative-pair-v9.0/README.md).
+Re-import instructions are in [`specifications/normative-pair-v10.0/README.md`](../../specifications/normative-pair-v10.0/README.md).
 
-## Registered supplied artefacts
+## Registered supporting artefacts
 
-The registry contains the build plan, original modular-pack archive, architecture pair, module specification pairs, manifest, integrity listing, and eventually both v9.0 normative sources. Validation recalculates every available SHA-256 digest.
+The registry also contains the build plan, original modular-pack archive, architecture pair, twenty module specification pairs, manifest, and integrity listing. These supporting artefacts remain required for Iteration-00 traceability but are subordinate to the v10.0 normative pair.
 
 ## Constitutional invariants
 
@@ -44,4 +44,4 @@ The registry contains the build plan, original modular-pack archive, architectur
 
 ## Supersession
 
-A new baseline must identify every superseded artefact, preserve historical digests, state the change classification, include migration consequences, and generate a new baseline ID. Existing records remain immutable; supersession adds a new record rather than rewriting history.
+A new baseline must identify every superseded artefact, preserve historical identities and digests where available, state the change classification, include migration consequences, and generate a new baseline ID. Existing release records remain immutable; supersession adds a new baseline rather than rewriting a historical tag.

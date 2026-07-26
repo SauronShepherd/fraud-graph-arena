@@ -1,51 +1,27 @@
-# Iteration 00 Evidence
+# Iteration 00 Qualification Evidence
 
-**Iteration:** `I00 — Normative baseline and delivery constitution`
-**Evidence ID:** `EVID-I00-BASELINE`
-**Implementation:** complete
-**Qualification:** blocked, not failed
-**Immutable release tag:** deliberately absent
+**Iteration:** `I00 — Normative baseline and delivery constitution`  
+**Normative pair:** `FGA-NORMATIVE-PAIR-10.0-20260726`  
+**Branch:** `Iteration-00`  
+**Expected immutable tag:** `fga-iteration-00`
 
-## Implemented outputs
+## Candidate state
 
-All sixteen planned I00 file-atomic deliverables exist. Corrective work additionally provides:
+The exact v10.0 functional and technical specifications are registered separately, copied into the repository, and protected by SHA-256 digests. Version 10.0 explicitly supersedes the paired v9.0 specifications.
 
-- exact dependency and pytest declarations;
-- side-effect-free validation;
-- separate registration of both normative-pair members;
-- placeholder-resistant source import;
-- governed independent approvals;
-- clean-candidate and evidence-only closure enforcement;
-- post-qualification tampering detection;
-- guarded immutable tag creation;
-- removal of IDE and generated local artefacts from tracked source.
+The v1.0 modular architecture pack and v1.0 build plan remain registered supporting authorities where compatible with the current normative pair.
 
-## Passing checks
+## Qualification model
 
-The repository validates:
+Iteration 00 is governance-only. It provides no player-facing executable capability by design. Its applicable release gates cover:
 
-- JSON Schemas and positive/incompatible negative fixtures;
-- JSON, YAML, TOML, and Markdown structure;
-- all currently available source digests;
-- IDs, ownership, traceability, and task-to-test coverage;
+- normative authority and source integrity;
+- schemas and negative fixtures;
+- stable identifiers;
+- ownership and independent review roles;
+- traceability across all twenty modules and nineteen interaction families;
 - secret and protected-truth scans;
-- dependency and pytest configuration;
-- approval schema and exact role coverage;
-- fixture-based successful qualification;
-- dirty or post-qualification source-change rejection;
-- placeholder normative-source rejection;
-- premature tag prevention.
+- release evidence integrity;
+- clean-checkout closure and immutable tagging.
 
-## Current blockers
-
-1. The exact approved v9.0 functional source document is not mounted in this repository.
-2. The exact approved v9.0 technical source document is not mounted in this repository.
-3. Architecture-governance, quality-engineering, and release-management approvals remain pending.
-
-The repository does not invent replacement documents, digests, reviewers, or approvals.
-
-## Import and qualify
-
-Follow the commands in the root [`README.md`](../../README.md). After source import and approvals, generate evidence from a clean candidate commit, commit only this evidence directory, run formal closure, and create the tag through the guarded tag script.
-
-The current `evidence.json` remains blocked until those steps are completed.
+The machine-readable evidence is stored in `evidence.json`. It is regenerated from the clean candidate commit and committed separately as the evidence-only closure record.

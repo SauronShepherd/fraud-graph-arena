@@ -9,21 +9,21 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE_PATH = ROOT / "config/governance/baseline.json"
-DESTINATION = ROOT / "specifications/normative-pair-v9.0"
+DESTINATION = ROOT / "specifications/normative-pair-v10.0"
 
 EXPECTED = {
     "functional": {
-        "filename": "Fraud_Graph_Arena_Complete_Functional_Specification_v9.0.md",
+        "filename": "Fraud_Graph_Arena_Complete_Functional_Specification_v10.0.md",
         "title": "## Complete Functional Specification",
-        "artifact_id": "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
+        "artifact_id": "FGA-NORMATIVE-FUNCTIONAL-10.0-20260726",
     },
     "technical": {
-        "filename": "Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v9.0.md",
+        "filename": "Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v10.0.md",
         "title": "## Complete Technical Architecture and Design Specification",
-        "artifact_id": "FGA-NORMATIVE-TECHNICAL-9.0-20260726",
+        "artifact_id": "FGA-NORMATIVE-TECHNICAL-10.0-20260726",
     },
 }
-PAIR_ID = "FGA-NORMATIVE-PAIR-9.0-20260726"
+PAIR_ID = "FGA-NORMATIVE-PAIR-10.0-20260726"
 
 
 def digest(path: Path) -> str:
@@ -42,7 +42,7 @@ def validate_source(path: Path, kind: str) -> None:
     required_fragments = [
         "# Fraud Graph Arena",
         expected["title"],
-        "**Document version:** 9.0",
+        "**Document version:** 10.0",
         f"**Normative pair ID:** `{PAIR_ID}`",
     ]
     missing = [fragment for fragment in required_fragments if fragment not in text]
@@ -70,7 +70,7 @@ def update_baseline(imported: dict[str, Path]) -> None:
         artifact["path"] = path.relative_to(ROOT).as_posix()
         artifact["sha256"] = digest(path)
         artifact.pop("external_reference", None)
-        artifact["notes"] = "Imported from the exact approved v9.0 source document."
+        artifact["notes"] = "Imported from the exact approved v10.0 source document."
 
     unresolved = [
         item["artifact_id"]
@@ -90,7 +90,7 @@ def update_baseline(imported: dict[str, Path]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Import the exact approved Fraud Graph Arena v9.0 normative pair."
+        description="Import the exact approved Fraud Graph Arena v10.0 normative pair."
     )
     parser.add_argument("functional", type=Path)
     parser.add_argument("technical", type=Path)
@@ -109,7 +109,7 @@ def main() -> int:
         imported[kind] = destination
 
     update_baseline(imported)
-    print("Imported and digest-registered the v9.0 normative pair:")
+    print("Imported and digest-registered the v10.0 normative pair:")
     for kind, path in imported.items():
         print(f"  {kind}: {path.relative_to(ROOT)} ({digest(path)})")
     print("Commit the two documents and updated baseline before generating closure evidence.")

@@ -1,9 +1,9 @@
 {
   "report_id": "FGA-I00-VALIDATION-RESULTS-1.1-20260726",
-  "generated_at": "2026-07-26T11:22:58.598275Z",
-  "repository": "/mnt/data/fga_fix/fraud-graph-arena",
-  "source_commit": "4bce11bdb3adece3a1289632c0b83ea5f58cd1db",
-  "clean_checkout_observed": true,
+  "generated_at": "2026-07-26T12:02:43.789004Z",
+  "repository": "/mnt/data/fga_v10_fix/fraud-graph-arena",
+  "source_commit": "a3e7cc83c8127458e380ca48ce1cb37258bb3bc6",
+  "clean_checkout_observed": false,
   "checks": [
     {
       "id": "dependencies",
@@ -20,7 +20,7 @@
     {
       "id": "baseline",
       "status": "pass",
-      "duration_ms": 12,
+      "duration_ms": 14,
       "errors": []
     },
     {
@@ -50,7 +50,7 @@
     {
       "id": "secret_scan",
       "status": "pass",
-      "duration_ms": 14,
+      "duration_ms": 13,
       "errors": []
     },
     {
@@ -62,7 +62,7 @@
     {
       "id": "approvals",
       "status": "pass",
-      "duration_ms": 4,
+      "duration_ms": 5,
       "errors": []
     },
     {
@@ -73,11 +73,7 @@
     }
   ],
   "blocking_prerequisites": [
-    "approval:architecture-governance:pending",
-    "approval:quality-engineering:pending",
-    "approval:release-management:pending",
-    "missing-artifact:FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
-    "missing-artifact:FGA-NORMATIVE-TECHNICAL-9.0-20260726"
+    "candidate-checkout-not-clean"
   ],
   "status": "blocked"
 }

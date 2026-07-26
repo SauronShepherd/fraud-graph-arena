@@ -1,23 +1,23 @@
 {
-  "baseline_id": "FGA-BASELINE-1.0-20260726",
-  "version": "1.0",
+  "baseline_id": "FGA-BASELINE-10.0-20260726",
+  "version": "10.0",
   "date": "2026-07-26",
-  "status": "blocked",
+  "status": "active",
   "precedence": [
     {
       "rank": 1,
-      "authority": "FGA-NORMATIVE-PAIR-9.0-20260726",
-      "rule": "The approved v9.0 functional and technical pair is the primary product and architecture authority."
+      "authority": "FGA-NORMATIVE-PAIR-10.0-20260726",
+      "rule": "The approved v10.0 functional and technical pair is the primary product and architecture authority and supersedes the v9.0 pair."
     },
     {
       "rank": 2,
       "authority": "FGA-MODULAR-SPEC-PACK-1.0-20260726",
-      "rule": "The modular pack decomposes the parent pair; it may clarify module ownership but may not contradict the parent pair."
+      "rule": "The v1.0 modular pack is a historical decomposition derived from the earlier baseline; it remains useful where compatible but cannot override the v10.0 normative pair."
     },
     {
       "rank": 3,
       "authority": "FGA-END-TO-END-BUILD-PLAN-1.0-20260726",
-      "rule": "The build plan governs delivery sequence, gates, evidence, and no-pass-no-progress behavior."
+      "rule": "The v1.0 build plan governs Iteration-00 delivery, gates, evidence, and no-pass-no-progress behavior where compatible with the v10.0 normative pair."
     },
     {
       "rank": 4,
@@ -27,28 +27,36 @@
   ],
   "artifacts": [
     {
-      "artifact_id": "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
-      "title": "Fraud Graph Arena Complete Functional Specification v9.0",
+      "artifact_id": "FGA-NORMATIVE-FUNCTIONAL-10.0-20260726",
+      "title": "Fraud Graph Arena Complete Functional Specification v10.0",
       "kind": "normative_specification",
       "authority_rank": 1,
-      "version": "9.0",
+      "version": "10.0",
       "date": "2026-07-26",
-      "availability": "external_missing",
-      "external_reference": "Approved source attachment Fraud_Graph_Arena_Complete_Functional_Specification_v9.0.md is not mounted in this repository.",
+      "availability": "available",
       "required_for_closure": true,
-      "notes": "Import the exact approved source with scripts/import_normative_pair.py; placeholders and summaries are rejected."
+      "notes": "Imported from the exact approved v10.0 source document.",
+      "supersedes": [
+        "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726"
+      ],
+      "path": "specifications/normative-pair-v10.0/Fraud_Graph_Arena_Complete_Functional_Specification_v10.0.md",
+      "sha256": "c5e1e4d36a402ba988d9bc76349c27e0eb45e8281851b8cdd755336f3ef753d2"
     },
     {
-      "artifact_id": "FGA-NORMATIVE-TECHNICAL-9.0-20260726",
-      "title": "Fraud Graph Arena Complete Technical Architecture and Design Specification v9.0",
+      "artifact_id": "FGA-NORMATIVE-TECHNICAL-10.0-20260726",
+      "title": "Fraud Graph Arena Complete Technical Architecture and Design Specification v10.0",
       "kind": "normative_specification",
       "authority_rank": 1,
-      "version": "9.0",
+      "version": "10.0",
       "date": "2026-07-26",
-      "availability": "external_missing",
-      "external_reference": "Approved source attachment Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v9.0.md is not mounted in this repository.",
+      "availability": "available",
       "required_for_closure": true,
-      "notes": "Import the exact approved source with scripts/import_normative_pair.py; placeholders and summaries are rejected."
+      "notes": "Imported from the exact approved v10.0 source document.",
+      "supersedes": [
+        "FGA-NORMATIVE-TECHNICAL-9.0-20260726"
+      ],
+      "path": "specifications/normative-pair-v10.0/Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v10.0.md",
+      "sha256": "fc577c5bee06de7f1a9e143f8442cdb804ac387814458ad0c3e6f4520bae97b1"
     },
     {
       "artifact_id": "FGA-END-TO-END-BUILD-PLAN-1.0-20260726",
@@ -616,11 +624,8 @@
     }
   ],
   "closure_requirements": {
-    "all_required_available": false,
+    "all_required_available": true,
     "all_available_digests_verified": true,
-    "unresolved_required_artifact_ids": [
-      "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726",
-      "FGA-NORMATIVE-TECHNICAL-9.0-20260726"
-    ]
+    "unresolved_required_artifact_ids": []
   }
 }

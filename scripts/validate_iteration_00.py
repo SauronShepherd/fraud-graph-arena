@@ -36,15 +36,15 @@ RESULT_PATH = ROOT / "reports/iteration-00/validation-results.json"
 EVIDENCE_PATH = ROOT / "reports/iteration-00/evidence.json"
 APPROVALS_PATH = ROOT / "config/governance/approvals.yaml"
 EXPECTED_TAG = "fga-iteration-00"
-PAIR_ID = "FGA-NORMATIVE-PAIR-9.0-20260726"
+PAIR_ID = "FGA-NORMATIVE-PAIR-10.0-20260726"
 NORMATIVE_MEMBERS = {
-    "FGA-NORMATIVE-FUNCTIONAL-9.0-20260726": {
+    "FGA-NORMATIVE-FUNCTIONAL-10.0-20260726": {
         "title": "## Complete Functional Specification",
-        "filename": "Fraud_Graph_Arena_Complete_Functional_Specification_v9.0.md",
+        "filename": "Fraud_Graph_Arena_Complete_Functional_Specification_v10.0.md",
     },
-    "FGA-NORMATIVE-TECHNICAL-9.0-20260726": {
+    "FGA-NORMATIVE-TECHNICAL-10.0-20260726": {
         "title": "## Complete Technical Architecture and Design Specification",
-        "filename": "Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v9.0.md",
+        "filename": "Fraud_Graph_Arena_Complete_Technical_Architecture_and_Design_Specification_v10.0.md",
     },
 }
 
@@ -194,7 +194,7 @@ def markdown_errors() -> list[str]:
         ROOT / "README.md",
         ROOT / "docs",
         ROOT / "reports/iteration-00/README.md",
-        ROOT / "specifications/normative-pair-v9.0/README.md",
+        ROOT / "specifications/normative-pair-v10.0/README.md",
     ]
     files: list[Path] = []
     for item in authored_roots:
@@ -375,7 +375,7 @@ def validate_normative_member(artifact: dict[str, Any], path: Path) -> list[str]
     required = [
         "# Fraud Graph Arena",
         expected["title"],
-        "**Document version:** 9.0",
+        "**Document version:** 10.0",
         f"**Normative pair ID:** `{PAIR_ID}`",
     ]
     for fragment in required:
@@ -404,7 +404,7 @@ def baseline_errors() -> tuple[list[str], list[str]]:
     baseline = read_json(baseline_path)
     artifact_ids = {artifact["artifact_id"] for artifact in baseline["artifacts"]}
     if set(NORMATIVE_MEMBERS) - artifact_ids:
-        errors.append("both v9.0 normative member artifacts must be registered separately")
+        errors.append("both v10.0 normative member artifacts must be registered separately")
 
     for artifact in baseline["artifacts"]:
         if artifact["availability"] == "available":
