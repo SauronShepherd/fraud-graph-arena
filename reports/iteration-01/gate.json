@@ -5,7 +5,7 @@
     {
       "name": "Python tests",
       "command": [
-        "C:\\Users\\angel.alvarez\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
         "-m",
         "pytest",
         "-v"
