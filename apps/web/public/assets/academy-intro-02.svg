@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">A Board with Nothing to Hide</title>
+  <desc id="desc">Hercule faces an almost empty evidence board marked Academy 001 with one training folder and no real-case clues.</desc>
+  <rect width="1200" height="700" fill="#17130f"/>
+  <rect x="370" y="95" width="710" height="470" rx="10" fill="#5e4a34" stroke="#d9b46c" stroke-width="8"/>
+  <text x="725" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#f1e7d0">ACADEMY 001</text>
+  <rect x="585" y="230" width="270" height="155" fill="#ddcfab" stroke="#211a14" stroke-width="5" transform="rotate(-2 720 307)"/>
+  <text x="720" y="295" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#211a14">EMPTY BOARD</text>
+  <text x="720" y="335" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#4f4030">NO SPOILERS ATTACHED</text>
+  <circle cx="520" cy="210" r="10" fill="#b55d4d"/>
+  <circle cx="920" cy="430" r="10" fill="#b55d4d"/>
+  <path d="M520 210 C610 210 630 220 650 245" stroke="#b55d4d" stroke-width="5" fill="none"/>
+  <path d="M920 430 C860 420 840 395 825 370" stroke="#b55d4d" stroke-width="5" fill="none"/>
+  <path d="M155 510 C120 425 145 310 235 283 C305 260 368 307 370 385 C372 465 330 545 255 569 Z" fill="#4c3c2c"/>
+  <circle cx="241" cy="270" r="90" fill="#5a4936"/>
+  <path d="M160 245 C195 165 305 163 340 245" fill="#221b15"/>
+  <rect x="175" y="225" width="150" height="22" fill="#15110d"/>
+  <path d="M187 355 L300 355 L340 555 L145 555 Z" fill="#766047" stroke="#1b1611" stroke-width="6"/>
+  <rect x="455" y="485" width="235" height="105" fill="#b9985f" stroke="#211a14" stroke-width="5" transform="rotate(3 570 535)"/>
+  <text x="570" y="530" text-anchor="middle" font-family="Georgia, serif" font-size="27" fill="#211a14">TRAINING FILE</text>
+  <text x="570" y="562" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#211a14">ACADEMY_001</text>
+  <text x="600" y="660" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#d9b46c">First prove the journey. Then add the mystery.</text>
+</svg>

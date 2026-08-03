@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">The Academy Door</title>
+  <desc id="desc">A curly Spanish Water Dog detective stands at the entrance to the Detective Academy under a rainy lamp.</desc>
+  <rect width="1200" height="700" fill="#17130f"/>
+  <rect x="120" y="85" width="960" height="530" rx="18" fill="#2d251c" stroke="#d9b46c" stroke-width="8"/>
+  <rect x="490" y="175" width="270" height="440" fill="#1d1813" stroke="#8d7656" stroke-width="7"/>
+  <circle cx="710" cy="405" r="12" fill="#d9b46c"/>
+  <text x="600" y="135" text-anchor="middle" font-family="Georgia, serif" font-size="48" fill="#f1e7d0">DETECTIVE ACADEMY</text>
+  <path d="M355 505 C315 420 340 305 430 278 C500 255 563 302 565 380 C567 460 525 540 450 564 Z" fill="#4c3c2c"/>
+  <circle cx="436" cy="265" r="90" fill="#5a4936"/>
+  <path d="M355 240 C390 160 500 158 535 240" fill="#221b15"/>
+  <rect x="370" y="220" width="150" height="22" fill="#15110d"/>
+  <circle cx="410" cy="270" r="8" fill="#0c0a08"/>
+  <circle cx="465" cy="270" r="8" fill="#0c0a08"/>
+  <ellipse cx="438" cy="305" rx="18" ry="13" fill="#0c0a08"/>
+  <path d="M382 350 L495 350 L535 550 L340 550 Z" fill="#766047" stroke="#1b1611" stroke-width="6"/>
+  <path d="M230 120 L300 120 L260 315" stroke="#d9b46c" stroke-width="14" fill="none"/>
+  <circle cx="260" cy="125" r="42" fill="#e5c77f" opacity=".85"/>
+  <g fill="#77644b" opacity=".65">
+    <circle cx="170" cy="160" r="6"/><circle cx="210" cy="220" r="6"/><circle cx="180" cy="290" r="6"/>
+    <circle cx="970" cy="155" r="6"/><circle cx="1015" cy="235" r="6"/><circle cx="985" cy="310" r="6"/>
+  </g>
+  <text x="600" y="665" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#d9b46c">The ranked files stay sealed upstairs.</text>
+</svg>

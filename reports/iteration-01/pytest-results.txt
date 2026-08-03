@@ -1,0 +1,38 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- /opt/pyvenv/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.5', 'Platform': 'Linux-6.12.13-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.13.0', 'metadata': '3.1.1', 'asyncio': '1.3.0', 'cov': '7.0.0', 'json-report': '1.5.0', 'ddtrace': '4.4.0', 'Faker': '40.1.2'}, 'PLATFORM': 'linux/amd64', 'CI': 'true'}
+rootdir: /mnt/data/fga-i01-academy
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.13.0, metadata-3.1.1, asyncio-1.3.0, cov-7.0.0, json-report-1.5.0, ddtrace-4.4.0, Faker-40.1.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 25 items
+
+tests/iteration_01/test_architecture_boundaries.py::test_domain_and_ports_do_not_import_frameworks_or_database_drivers PASSED [  4%]
+tests/iteration_01/test_architecture_boundaries.py::test_frontend_does_not_define_canonical_path_ids_a_second_time PASSED [  8%]
+tests/iteration_01/test_boot.py::test_application_boots_and_registers_walking_skeleton_routes PASSED [ 12%]
+tests/iteration_01/test_boot.py::test_openapi_uses_versioned_public_contract PASSED [ 16%]
+tests/iteration_01/test_catalogue.py::test_catalogue_exposes_canonical_path_identifiers_and_server_owned_access PASSED [ 20%]
+tests/iteration_01/test_catalogue.py::test_academy_catalogue_contains_only_spoiler_free_training_case PASSED [ 24%]
+tests/iteration_01/test_catalogue.py::test_ranked_catalogue_does_not_publish_real_case_details PASSED [ 28%]
+tests/iteration_01/test_catalogue.py::test_invalid_path_is_a_deliberate_problem_contract PASSED [ 32%]
+tests/iteration_01/test_health.py::test_liveness_is_deliberately_modest PASSED [ 36%]
+tests/iteration_01/test_health.py::test_readiness_checks_owned_round_repository PASSED [ 40%]
+tests/iteration_01/test_health.py::test_version_exposes_only_safe_runtime_metadata PASSED [ 44%]
+tests/iteration_01/test_narrative.py::test_every_published_case_registers_opening_and_closing_sequences PASSED [ 48%]
+tests/iteration_01/test_narrative.py::test_closing_sequence_is_registered_but_not_exposed_as_iteration_01_route PASSED [ 52%]
+tests/iteration_01/test_problem_contract.py::test_validation_failures_are_rfc_9457_style_problem_details PASSED [ 56%]
+tests/iteration_01/test_problem_contract.py::test_unknown_api_route_uses_problem_contract PASSED [ 60%]
+tests/iteration_01/test_refresh_persistence.py::test_academy_context_and_intro_completion_survive_application_recomposition PASSED [ 64%]
+tests/iteration_01/test_round_journey.py::test_selected_academy_case_reaches_opening_then_empty_board PASSED [ 68%]
+tests/iteration_01/test_round_journey.py::test_start_and_opening_completion_are_idempotent PASSED [ 72%]
+tests/iteration_01/test_round_journey.py::test_academy_case_cannot_be_guessed_from_a_ranked_path PASSED [ 76%]
+tests/iteration_01/test_round_journey.py::test_unpublished_ranked_case_identifiers_are_not_available_as_defaults PASSED [ 80%]
+tests/iteration_01/test_round_journey.py::test_unknown_round_does_not_render_a_fixture_board PASSED [ 84%]
+tests/iteration_01/test_settings.py::test_production_rejects_process_local_round_state PASSED [ 88%]
+tests/iteration_01/test_settings.py::test_production_rejects_wildcard_cors PASSED [ 92%]
+tests/iteration_01/test_spa_fallback.py::test_production_frontend_refresh_falls_back_to_index_html PASSED [ 96%]
+tests/iteration_01/test_spa_fallback.py::test_missing_static_asset_remains_a_real_404 PASSED [100%]
+
+============================== 25 passed in 0.55s ==============================

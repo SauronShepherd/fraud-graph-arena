@@ -1,0 +1,22 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      FGA_ENVIRONMENT: production
+      FGA_RUNTIME_ROLE: WEB
+      FGA_ROUND_REPOSITORY: sqlite
+      FGA_SQLITE_PATH: /data/fga.sqlite3
+      FGA_FRONTEND_DIST: /app/apps/web/dist
+      FGA_ALLOWED_ORIGINS: '[]'
+    volumes:
+      - fga-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health/ready', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  fga-data:

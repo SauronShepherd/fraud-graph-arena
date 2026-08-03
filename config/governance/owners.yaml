@@ -12,9 +12,17 @@ assignments:
   - {path: .gitignore, owner: developer-experience, reviewer: quality-engineering}
   - {path: .gitattributes, owner: developer-experience, reviewer: quality-engineering}
   - {path: pyproject.toml, owner: developer-experience, reviewer: quality-engineering}
+  - {path: .env.example, owner: developer-experience, reviewer: security-assurance}
+  - {path: APPLY_ITERATION_01.md, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: Dockerfile, owner: developer-experience, reviewer: quality-engineering}
+  - {path: compose.yaml, owner: developer-experience, reviewer: quality-engineering}
+  - {path: contracts/**, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: apps/**, owner: developer-experience, reviewer: quality-engineering}
+  - {path: src/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: docs/governance/**, owner: architecture-governance, reviewer: security-assurance}
   - {path: docs/delivery/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/testing/**, owner: quality-engineering, reviewer: security-assurance}
+  - {path: docs/iteration-01/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: config/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/testing/**, owner: quality-engineering, reviewer: architecture-governance}

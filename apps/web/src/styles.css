@@ -1,0 +1,68 @@
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f1e7d0;
+  background: #17130f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at top, #3a2f24, #17130f 55%); }
+button, a { font: inherit; }
+button:focus-visible, a:focus-visible { outline: 3px solid #e6bd6b; outline-offset: 3px; }
+
+.app-shell { min-height: 100vh; }
+.masthead { display: flex; gap: .65rem; align-items: center; padding: 1rem 5vw; border-bottom: 1px solid #77644b; letter-spacing: .08em; text-transform: uppercase; background: rgba(12, 10, 8, .65); }
+.paw { filter: grayscale(1); }
+.panel { width: min(1080px, 90vw); margin: 7vh auto; padding: clamp(1.25rem, 4vw, 3rem); border: 1px solid #77644b; background: rgba(25, 20, 15, .92); box-shadow: 0 22px 80px rgba(0,0,0,.42); }
+.hero { min-height: 58vh; display: grid; align-content: center; }
+h1 { margin: .2rem 0 1rem; font-size: clamp(2.2rem, 7vw, 5.5rem); line-height: .96; }
+h2 { margin-top: .2rem; }
+.eyebrow { color: #d9b46c; text-transform: uppercase; letter-spacing: .12em; font-size: .82rem; }
+.lede { max-width: 55ch; font-size: 1.25rem; line-height: 1.6; }
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+.button { display: inline-block; border: 1px solid #d9b46c; padding: .85rem 1.1rem; color: #17130f; background: #d9b46c; text-decoration: none; cursor: pointer; }
+.button.secondary { color: #f1e7d0; background: transparent; }
+.button:disabled { opacity: .45; cursor: not-allowed; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.choice-card, .case-card { min-height: 220px; padding: 1.25rem; border: 1px solid #77644b; color: inherit; background: #211a14; text-align: left; }
+.choice-card { display: grid; align-content: space-between; cursor: pointer; }
+.choice-card:hover { border-color: #d9b46c; transform: translateY(-2px); }
+.choice-title { display: block; font-size: 1.65rem; font-weight: 700; }
+.case-card p { line-height: 1.5; }
+.loading, .problem, .empty-state { width: min(720px, 90vw); margin: 15vh auto; padding: 2rem; border: 1px solid #77644b; background: #211a14; }
+.problem { border-color: #bd6b5a; }
+.problem button { display: block; margin-top: 1rem; }
+.recovery { color: #d9b46c; }
+.case-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .75rem; margin: 2rem 0; }
+.case-facts div { padding: 1rem; border: 1px solid #5d4d3a; }
+.case-facts dt { color: #d9b46c; font-size: .78rem; text-transform: uppercase; }
+.case-facts dd { margin: .35rem 0 0; overflow-wrap: anywhere; }
+.empty-board { min-height: 300px; display: grid; place-items: center; align-content: center; gap: 1rem; padding: 2rem; margin-bottom: 1.5rem; border: 2px dashed #77644b; text-align: center; background: #19140f; }
+.question-mark { font-size: 5rem; color: #77644b; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .choice-card { transition: transform .15s ease, border-color .15s ease; }
+}
+
+.choice-card:disabled { cursor: not-allowed; transform: none; }
+.choice-card[data-status="COMING_SOON"], .choice-card[data-status="LOCKED"] { opacity: .58; }
+.choice-card small + small { margin-top: .65rem; line-height: 1.35; color: #c9b996; }
+
+.comic-shell h1 { font-size: clamp(2rem, 5vw, 4.25rem); }
+.comic-progress { color: #d9b46c; font-variant-numeric: tabular-nums; }
+.comic-page { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(240px, .85fr); gap: 1.5rem; align-items: stretch; margin: 1.5rem 0; }
+.comic-frame { min-height: 360px; border: 1px solid #77644b; background: #100d0a; display: grid; place-items: center; overflow: hidden; }
+.comic-frame img { display: block; width: 100%; height: 100%; max-height: 560px; object-fit: contain; }
+.comic-fallback { width: 100%; min-height: 360px; display: grid; place-items: center; align-content: center; gap: 1rem; padding: 2rem; text-align: center; color: #d9b46c; }
+.comic-fallback span { font-size: 4rem; filter: grayscale(1); }
+.comic-caption { padding: 1.5rem; border: 1px solid #5d4d3a; background: #211a14; }
+.comic-caption p { line-height: 1.65; }
+.comic-actions { align-items: center; }
+.text-button { border: 0; padding: .75rem; background: transparent; color: #d9b46c; text-decoration: underline; cursor: pointer; }
+.text-button:disabled { opacity: .45; cursor: not-allowed; }
+
+@media (max-width: 760px) {
+  .comic-page { grid-template-columns: 1fr; }
+  .comic-frame { min-height: 240px; }
+}

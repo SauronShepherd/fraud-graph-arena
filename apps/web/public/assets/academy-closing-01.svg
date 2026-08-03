@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Conclusion Reserved</title>
+  <desc id="desc">A closed Detective Academy case file stamped Conclusion Reserved for a later iteration.</desc>
+  <rect width="1200" height="700" fill="#17130f"/>
+  <rect x="265" y="120" width="670" height="460" rx="14" fill="#b9985f" stroke="#4d3c2b" stroke-width="12" transform="rotate(-2 600 350)"/>
+  <rect x="315" y="178" width="570" height="340" fill="#d9c99e" stroke="#6d563d" stroke-width="6"/>
+  <text x="600" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#211a14">DETECTIVE ACADEMY</text>
+  <text x="600" y="355" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#211a14">CONCLUSION RESERVED</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#4d3c2b">Awaiting submission and evaluation</text>
+  <path d="M510 470 q90 -70 180 0 q-90 70 -180 0" fill="none" stroke="#8c3e31" stroke-width="10"/>
+  <text x="600" y="650" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#d9b46c">The contract exists. The ending does not leak early.</text>
+</svg>

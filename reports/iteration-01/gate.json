@@ -1,0 +1,53 @@
+{
+  "iteration": "I01",
+  "scope": "Detective Academy walking skeleton",
+  "checks": [
+    {
+      "name": "Python tests",
+      "command": [
+        "C:\\Users\\angel.alvarez\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-m",
+        "pytest",
+        "-v"
+      ],
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "Frontend typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "Frontend component tests",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "test"
+      ],
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "Playwright Academy journey",
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "test:e2e"
+      ],
+      "status": "passed",
+      "returncode": 0
+    }
+  ],
+  "status": "passed",
+  "executed_checks_passed": true,
+  "mandatory_checks_complete": true,
+  "iteration_gate_passed": true,
+  "passed": true,
+  "fully_qualified": true
+}

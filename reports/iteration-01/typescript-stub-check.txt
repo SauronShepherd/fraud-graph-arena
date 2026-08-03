@@ -1,0 +1,16 @@
+Temporary ambient-stub TypeScript check: PASSED
+
+Command equivalent:
+  tsc -p /tmp/fga-tscheck/tsconfig.json --pretty false
+
+Scope:
+  apps/web/src/**/*.ts
+  apps/web/src/**/*.tsx
+  apps/web/e2e/**/*.ts
+
+Limitations:
+  Framework and test-library APIs were represented by temporary ambient declarations.
+  This verifies syntax and internal project typing only. It does not replace:
+    npm run typecheck
+    npm run test
+    npm run test:e2e

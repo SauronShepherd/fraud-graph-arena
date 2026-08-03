@@ -7,5 +7,14 @@ reports/iteration-00/runtime/
 *.egg-info/
 build/
 dist/
-
 .idea/
+
+# Iteration 01 runtime and frontend outputs
+.fga/
+.env
+node_modules/
+apps/web/dist/
+apps/web/test-results/
+apps/web/playwright-report/
+apps/web/*.tsbuildinfo
+coverage/
