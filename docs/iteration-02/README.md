@@ -8,6 +8,6 @@ The board uses three authorities: artwork supplies atmosphere, semantic React co
 
 The current Academy action projection uses stable IDs (`COMPARE_IDENTITIES`, `FIND_SHARED_FIELDS`, `SEARCH_EVIDENCE`, `OPEN_CASE_FILE`) with explicit availability states. These actions are intentionally `NOT_IMPLEMENTED` in I02. No graph nodes, edges, evidence, retrieval, credits, submissions, scoring, evaluator, ranked case, or FGA03 screen-state machinery is included.
 
-Board assets are versioned under `apps/web/public/assets/board/v1`, with manifest, regions, stacking levels, safe frames, and a neutral nonfatal fallback. The approved final office artwork is an external design dependency; the fallback is not claimed as that artwork.
+Board assets are versioned under `apps/web/public/assets/board/v1`, with manifest, regions, stacking levels, safe frames, and a neutral nonfatal fallback. The manifest currently records `EXTERNAL_APPROVAL_REQUIRED`; the approved final office artwork is an external design dependency and the fallback is not claimed as that artwork.
 
 Accessibility requirements are represented through semantic regions, real buttons, focus styles, screen-reader empty-state text, pointer-transparent decorative layers, and reduced-motion-safe CSS. Long labels must wrap rather than be baked into artwork.

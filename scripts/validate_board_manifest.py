@@ -10,6 +10,8 @@ def validate(path: Path = MANIFEST) -> list[str]:
     errors: list[str] = []
     data = json.loads(path.read_text(encoding="utf-8"))
     if not data.get("template_id") or not data.get("template_version"): errors.append("template identity/version required")
+    if data.get("artwork_status") not in {"APPROVED", "EXTERNAL_APPROVAL_REQUIRED"}: errors.append("invalid artwork status")
+    if data.get("artwork_status") == "APPROVED" and not data.get("approved_source"): errors.append("approved artwork requires source provenance")
     if data.get("canvas") != {"width": 1600, "height": 900}: errors.append("canvas must be exactly 1600x900")
     regions = path.parent / "regions.json"
     if not regions.is_file(): errors.append("regions.json is required")

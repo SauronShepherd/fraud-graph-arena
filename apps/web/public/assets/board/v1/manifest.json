@@ -1,6 +1,8 @@
 {
   "template_id": "FGA_I02_DETECTIVE_OFFICE",
   "template_version": "1.0.0",
+  "artwork_status": "EXTERNAL_APPROVAL_REQUIRED",
+  "approved_source": null,
   "canvas": { "width": 1600, "height": 900 },
   "regions_version": "1.0.0",
   "assets": [
