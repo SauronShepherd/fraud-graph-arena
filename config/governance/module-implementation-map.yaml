@@ -1,0 +1,21 @@
+modules:
+  - {id: M01, responsibility: application shell and navigation, status: partial, locations: [src/fraud_graph_arena/web, apps/web/src/App.tsx], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
+  - {id: M02, responsibility: presentation and accessibility, status: partial, locations: [apps/web/src/styles.css], roles: [WEB], tests: [apps/web/src/board/layout.test.ts]}
+  - {id: M03, responsibility: localization and messaging, status: planned, locations: [], roles: [WEB], tests: []}
+  - {id: M04, responsibility: asset and resource management, status: partial, locations: [apps/web/public/assets/board/v1], roles: [WEB], tests: [scripts/validate_board_manifest.py]}
+  - {id: M05, responsibility: audio and radio, status: planned, locations: [], roles: [WEB], tests: []}
+  - {id: M06, responsibility: client-state synchronization, status: partial, locations: [apps/web/src/state], roles: [WEB], tests: [tests/iteration_01/test_refresh_persistence.py]}
+  - {id: M07, responsibility: identity and account security, status: planned, locations: [], roles: [WEB], tests: []}
+  - {id: M08, responsibility: catalogue and progression, status: partial, locations: [src/fraud_graph_arena/catalogue], roles: [WEB], tests: [tests/iteration_01/test_catalogue.py]}
+  - {id: M09, responsibility: round and game state, status: implemented, locations: [src/fraud_graph_arena/rounds], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
+  - {id: M10, responsibility: case content and rules, status: partial, locations: [src/fraud_graph_arena/catalogue], roles: [WEB], tests: [tests/iteration_01/test_narrative.py]}
+  - {id: M11, responsibility: investigation visibility, status: partial, locations: [src/fraud_graph_arena/workspace], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
+  - {id: M12, responsibility: workspace projection, status: implemented, locations: [src/fraud_graph_arena/workspace], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
+  - {id: M13, responsibility: action command, status: boundary_only, locations: [src/fraud_graph_arena/workspace], roles: [WEB], tests: []}
+  - {id: M14, responsibility: economy and credits, status: planned, locations: [], roles: [WEB], tests: []}
+  - {id: M15, responsibility: save and recovery, status: partial, locations: [src/fraud_graph_arena/rounds/adapters], roles: [WEB], tests: [tests/iteration_01/test_refresh_persistence.py]}
+  - {id: M16, responsibility: case-file submission, status: planned, locations: [], roles: [WEB], tests: []}
+  - {id: M17, responsibility: evaluation scoring and ending, status: planned, locations: [], roles: [EVALUATOR], tests: []}
+  - {id: M18, responsibility: leaderboard results, status: planned, locations: [], roles: [WEB], tests: []}
+  - {id: M19, responsibility: retrieval provider gateway and analytics boundary, status: boundary_only, locations: [src/fraud_graph_arena/analytics], roles: [WEB, MAINTENANCE], tests: [tests/iteration_01/test_architecture_boundaries.py]}
+  - {id: M20, responsibility: publication workflow and runtime control, status: boundary_only, locations: [src/fraud_graph_arena/config.py], roles: [MAINTENANCE, MIGRATE], tests: []}
