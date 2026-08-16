@@ -1,8 +1,8 @@
 {
   "iteration": "02",
   "scope": "FGA 00-02 backlog",
-  "timestamp_utc": "2026-08-16T06:48:18.932766+00:00",
-  "commit": "ee235ca004ff5512c93158a2fba00ce9d2c39743",
+  "timestamp_utc": "2026-08-16T06:55:18.840780+00:00",
+  "commit": "ad3841a6dba0c9c3074fe2bd469faff6b95b49c6",
   "platform": "Windows-11-10.0.26200-SP0",
   "checks": [
     {
@@ -14,8 +14,8 @@
         "-q"
       ],
       "returncode": 0,
-      "duration_seconds": 125.665,
-      "stdout": "........................................                                 [100%]\n============================== warnings summary ===============================\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n40 passed, 1 warning in 109.46s (0:01:49)\n",
+      "duration_seconds": 127.971,
+      "stdout": ".........................................                                [100%]\n============================== warnings summary ===============================\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n41 passed, 1 warning in 113.23s (0:01:53)\n",
       "stderr": ""
     },
     {
@@ -25,8 +25,8 @@
         "scripts/verify_release_lineage.py"
       ],
       "returncode": 0,
-      "duration_seconds": 0.379,
-      "stdout": "fga-iteration-00-r1 is an ancestor of ee235ca004ff5512c93158a2fba00ce9d2c39743\n",
+      "duration_seconds": 0.273,
+      "stdout": "fga-iteration-00-r1 is an ancestor of ad3841a6dba0c9c3074fe2bd469faff6b95b49c6\n",
       "stderr": ""
     },
     {
@@ -36,7 +36,7 @@
         "scripts/validate_board_manifest.py"
       ],
       "returncode": 0,
-      "duration_seconds": 0.079,
+      "duration_seconds": 0.066,
       "stdout": "board manifest valid\n",
       "stderr": ""
     },
@@ -48,7 +48,7 @@
         "typecheck"
       ],
       "returncode": 0,
-      "duration_seconds": 1.982,
+      "duration_seconds": 1.346,
       "stdout": "\n> @fraud-graph-arena/web@0.1.0 typecheck\n> tsc -b --pretty false\n\n",
       "stderr": ""
     },
@@ -60,8 +60,8 @@
         "build"
       ],
       "returncode": 0,
-      "duration_seconds": 2.599,
-      "stdout": "\n> @fraud-graph-arena/web@0.1.0 build\n> tsc -b && vite build\n\nvite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 36 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB \u2502 gzip:  0.29 kB\ndist/assets/index-BL9vQSCh.css    7.59 kB \u2502 gzip:  2.55 kB\ndist/assets/index-CWElYPxr.js   243.00 kB \u2502 gzip: 77.38 kB\n\n\u2713 built in 188ms\n",
+      "duration_seconds": 1.81,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 build\n> tsc -b && vite build\n\nvite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 36 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB \u2502 gzip:  0.29 kB\ndist/assets/index-BL9vQSCh.css    7.59 kB \u2502 gzip:  2.55 kB\ndist/assets/index-CWElYPxr.js   243.00 kB \u2502 gzip: 77.38 kB\n\n\u2713 built in 160ms\n",
       "stderr": ""
     },
     {
@@ -71,9 +71,21 @@
         "test"
       ],
       "returncode": 0,
-      "duration_seconds": 7.106,
-      "stdout": "\n> @fraud-graph-arena/web@0.1.0 test\n> vitest run --pool=threads --no-file-parallelism --maxWorkers=1\n\n\n RUN  v4.1.10 C:/Users/angel.alvarez/PycharmProjects/fraud-graph-arena/apps/web\n\n\n Test Files  4 passed (4)\n      Tests  10 passed (10)\n   Start at  08:48:12\n   Duration  5.90s (transform 160ms, setup 1.10s, import 194ms, tests 252ms, environment 3.61s)\n\n",
+      "duration_seconds": 6.399,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 test\n> vitest run --pool=threads --no-file-parallelism --maxWorkers=1\n\n\n RUN  v4.1.10 C:/Users/angel.alvarez/PycharmProjects/fraud-graph-arena/apps/web\n\n\n Test Files  4 passed (4)\n      Tests  10 passed (10)\n   Start at  08:54:59\n   Duration  5.32s (transform 143ms, setup 1.20s, import 177ms, tests 255ms, environment 2.97s)\n\n",
       "stderr": ""
+    },
+    {
+      "label": "frontend-e2e-accessibility",
+      "command": [
+        "npm.cmd",
+        "run",
+        "test:e2e"
+      ],
+      "returncode": 0,
+      "duration_seconds": 13.782,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 test:e2e\n> playwright test\n\n\nRunning 4 tests using 2 workers\n\n  ok 1 e2e\\walking-skeleton.spec.ts:3:1 \u203a Academy walking skeleton preserves comic and board context across refresh (3.1s)\n  ok 2 e2e\\investigation-board.spec.ts:17:5 \u203a I02 investigation board \u203a wide preserves the empty investigation contract (4.2s)\n  ok 3 e2e\\investigation-board.spec.ts:17:5 \u203a I02 investigation board \u203a laptop preserves the empty investigation contract (2.5s)\n  ok 4 e2e\\investigation-board.spec.ts:17:5 \u203a I02 investigation board \u203a portrait preserves the empty investigation contract (2.2s)\n\n  4 passed (12.9s)\n",
+      "stderr": "[WebServer] INFO:     Started server process [34572]\n[WebServer] INFO:     Waiting for application startup.\n[WebServer] INFO:     Application startup complete.\n[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\n[WebServer] (node:28736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:3812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:18296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
     }
   ],
   "fully_qualified": true
