@@ -2,6 +2,12 @@ export const BOARD_CANVAS = Object.freeze({ width: 1600, height: 900 });
 export type Point = { x: number; y: number };
 export type Rect = { x: number; y: number; width: number; height: number };
 export type ContainTransform = { scale: number; renderedWidth: number; renderedHeight: number; offsetX: number; offsetY: number };
+export type BoardMode = "FULL" | "COMPACT";
+
+/** Selects composition from the available rectangle, not viewport width alone. */
+export function selectBoardMode(containerWidth: number, containerHeight: number): BoardMode {
+  return containerWidth < 900 || containerHeight < 620 ? "COMPACT" : "FULL";
+}
 
 export function calculateContainTransform(containerWidth: number, containerHeight: number): ContainTransform {
   const scale = Math.min(containerWidth / BOARD_CANVAS.width, containerHeight / BOARD_CANVAS.height);

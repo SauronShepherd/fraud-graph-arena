@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BOARD_CANVAS, calculateContainTransform, logicalToRenderedPoint, renderedToLogicalPoint, transformRect } from "./layout";
+import { BOARD_CANVAS, calculateContainTransform, logicalToRenderedPoint, renderedToLogicalPoint, selectBoardMode, transformRect } from "./layout";
 
 describe("board logical canvas", () => {
   it("uses one 1600 by 900 contain transform", () => {
@@ -13,5 +13,10 @@ describe("board logical canvas", () => {
       expect(actual.x).toBeCloseTo(point.x, 8); expect(actual.y).toBeCloseTo(point.y, 8);
     }
     expect(transformRect({ x: 100, y: 50, width: 300, height: 200 }, transform)).toEqual({ x: 80, y: 40, width: 240, height: 160 });
+  });
+  it("selects compact composition from width and height constraints", () => {
+    expect(selectBoardMode(1200, 800)).toBe("FULL");
+    expect(selectBoardMode(899, 800)).toBe("COMPACT");
+    expect(selectBoardMode(1200, 619)).toBe("COMPACT");
   });
 });
