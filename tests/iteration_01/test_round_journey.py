@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+from fraud_graph_arena.workspace.service import SEMANTIC_ACTIONS, NOT_IMPLEMENTED
 
 
 def create_academy_round(client: TestClient) -> dict[str, object]:
@@ -47,6 +48,8 @@ def test_selected_academy_case_reaches_opening_then_empty_board(client: TestClie
     assert payload["case"]["name"] == "The Case of the Empty Evidence Board"
     assert payload["evidence_count"] == 0
     assert payload["suspect_count"] == 0
+    assert [(action["id"], action["reason"]) for action in payload["actions"]] == list(SEMANTIC_ACTIONS)
+    assert {action["state"] for action in payload["actions"]} == {NOT_IMPLEMENTED}
 
 
 def test_start_and_opening_completion_are_idempotent(client: TestClient) -> None:

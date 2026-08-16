@@ -7,6 +7,14 @@ from fraud_graph_arena.rounds.domain import Round, RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError
 
+SEMANTIC_ACTIONS: tuple[tuple[str, str], ...] = (
+    ("COMPARE_IDENTITIES", "Identity comparison is not available in Academy yet."),
+    ("FIND_SHARED_FIELDS", "Exact shared-field analysis is not available in Academy yet."),
+    ("SEARCH_EVIDENCE", "Evidence search will unlock when the case publishes evidence."),
+    ("OPEN_CASE_FILE", "Case-file construction is not available in the empty Academy round."),
+)
+NOT_IMPLEMENTED = "NOT_IMPLEMENTED"
+
 @dataclass(frozen=True, slots=True)
 class WorkspaceProjection:
     round: Round
@@ -29,11 +37,6 @@ class WorkspaceService:
         if round_.status == RoundStatus.INTRO_PENDING:
             raise ConflictError(code="INTRO_REQUIRED", title="Academy introduction required", detail="Complete or skip the registered opening comic before entering the board.", recovery=f"Open /rounds/{round_id}/intro and finish the Academy briefing.")
         case = self._catalogue.require_case_for_path(raw_path_id=round_.path_id.value, case_id=round_.case_id, case_version=round_.case_version)
-        actions = tuple({"id": action, "state": "NOT_IMPLEMENTED", "reason_code": "CAPABILITY_NOT_IMPLEMENTED", "reason": reason} for action, reason in (
-            ("COMPARE_IDENTITIES", "Identity comparison is not available in Academy yet."),
-            ("FIND_SHARED_FIELDS", "Exact shared-field analysis is not available in Academy yet."),
-            ("SEARCH_EVIDENCE", "Evidence search will unlock when the case publishes evidence."),
-            ("OPEN_CASE_FILE", "Case-file construction is not available in the empty Academy round."),
-        ))
+        actions = tuple({"id": action, "state": NOT_IMPLEMENTED, "reason_code": "CAPABILITY_NOT_IMPLEMENTED", "reason": reason} for action, reason in SEMANTIC_ACTIONS)
         path = next(path for path in self._catalogue.list_paths() if path.id == round_.path_id)
         return WorkspaceProjection(round_, case, path.name, "NO_EVIDENCE_REVEALED", 0, 0, actions)
