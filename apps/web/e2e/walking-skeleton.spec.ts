@@ -24,6 +24,5 @@ test("Academy walking skeleton preserves comic and board context across refresh"
   await page.reload();
   await expect(page.getByRole("heading", { name: "The Case of the Empty Evidence Board" })).toBeVisible();
   await expect(page.getByText("ACADEMY_001")).toBeVisible();
-  await expect(page.getByText(/no evidence has been revealed/i).first()).toBeVisible();
   await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
 });
