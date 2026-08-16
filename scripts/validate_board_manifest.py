@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import argparse
+import hashlib
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
@@ -39,6 +41,14 @@ def validate(path: Path = MANIFEST) -> list[str]:
         if not target.is_file(): errors.append(f"missing asset: {asset.get('path')}")
         if asset.get("layer") not in allowed_layers: errors.append(f"unknown layer: {asset.get('layer')}")
         if not asset.get("version") or not asset.get("dimensions"): errors.append(f"incomplete asset metadata: {asset.get('id')}")
+        if target.is_file() and asset.get("sha256"):
+            digest = hashlib.sha256(target.read_bytes()).hexdigest()
+            if digest != asset["sha256"].lower(): errors.append(f"asset hash mismatch: {asset.get('id')}")
+        if target.is_file() and target.suffix.lower() == ".svg":
+            text = target.read_text(encoding="utf-8")[:2000]
+            match = re.search(r'<svg[^>]*\bwidth="(\d+)"[^>]*\bheight="(\d+)"', text)
+            if match and asset.get("dimensions") != {"width": int(match.group(1)), "height": int(match.group(2))}:
+                errors.append(f"asset dimensions mismatch: {asset.get('id')}")
     return errors
 
 if __name__ == "__main__":

@@ -6,6 +6,6 @@
   "canvas": { "width": 1600, "height": 900 },
   "regions_version": "1.0.0",
   "assets": [
-    { "id": "board-neutral-fallback", "version": "1.0.0", "path": "fallback.svg", "dimensions": { "width": 1600, "height": 900 }, "layer": "scene", "purpose": "nonfatal neutral fallback", "transparency": false, "decorative": true, "fatal": false }
+    { "id": "board-neutral-fallback", "version": "1.0.0", "path": "fallback.svg", "sha256": "89e7c5c8d3e1009a516afbe8b007b3539d3d6e940e86f4a4aebb1934d49c7ebd", "dimensions": { "width": 1600, "height": 900 }, "layer": "scene", "purpose": "nonfatal neutral fallback", "transparency": false, "decorative": true, "fatal": false }
   ]
 }
