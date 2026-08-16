@@ -41,6 +41,26 @@ h2 { margin-top: .2rem; }
 .empty-board { min-height: 300px; display: grid; place-items: center; align-content: center; gap: 1rem; padding: 2rem; margin-bottom: 1.5rem; border: 2px dashed #77644b; text-align: center; background: #19140f; }
 .question-mark { font-size: 5rem; color: #77644b; }
 
+.board-shell { position: relative; min-height: calc(100vh - 61px); overflow: hidden; background: radial-gradient(circle at 78% 10%, #59432b 0, #211810 32%, #0e0b08 78%); }
+.board-scene { position: absolute; inset: 0; pointer-events: none; opacity: .7; background: linear-gradient(165deg, transparent 0 72%, rgba(86,57,31,.55) 73% 75%, transparent 76%), repeating-linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,.025) 12.1% 12.2%); }
+.lamp-glow { position: absolute; width: 36rem; height: 20rem; right: 2%; top: -8rem; border-radius: 50%; background: rgba(238,186,90,.16); filter: blur(30px); }
+.desk-line { position: absolute; left: -5%; right: -5%; bottom: 10%; height: 9rem; border-top: 2px solid #5b432d; transform: rotate(-2deg); background: rgba(31,21,14,.65); }
+.board-content { position: relative; width: min(1320px, 94vw); margin: 0 auto; padding: clamp(1.4rem, 4vw, 3.5rem) 0 2rem; }
+.board-header { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+.board-header h1 { max-width: 22ch; font-size: clamp(2rem, 5vw, 4.6rem); }
+.round-badge, .tool-status { border: 1px solid #bf9450; padding: .55rem .75rem; color: #f3c979; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
+.board-layout { display: grid; grid-template-columns: minmax(300px, .9fr) minmax(390px, 1.35fr); gap: clamp(1rem, 3vw, 2.5rem); align-items: stretch; }
+.case-paper, .graph-panel { min-height: 390px; position: relative; border: 1px solid #a6824d; box-shadow: 0 18px 45px rgba(0,0,0,.32); }
+.case-paper { padding: clamp(1.3rem, 3vw, 2.3rem); color: #291d12; background: #e5d1a5; }
+.case-paper h2 { margin: .25rem 0 1.5rem; font-size: 1.9rem; }
+.paper-kicker { margin: 0; color: #74512c; font-size: .75rem; letter-spacing: .13em; text-transform: uppercase; }
+.case-paper .case-facts { margin: 0 0 2rem; }.case-paper .case-facts div { border-color: rgba(83,57,28,.4); }.case-paper .case-facts dt { color: #74512c; }.case-paper .case-facts dd { font-weight: 700; }
+.paper-empty { font-size: 1.18rem; line-height: 1.55; }.paper-note { padding-top: 1rem; border-top: 1px solid rgba(83,57,28,.35); font-size: .92rem; }
+.graph-panel { display: grid; place-items: center; overflow: hidden; background: #15110e; }.graph-grid { position: absolute; inset: 0; opacity: .25; background-image: linear-gradient(#765b3b 1px, transparent 1px), linear-gradient(90deg, #765b3b 1px, transparent 1px); background-size: 42px 42px; }
+.graph-empty { position: relative; max-width: 34ch; padding: 2rem; text-align: center; }.graph-empty h2 { margin: .35rem 0 .75rem; }.graph-mark { font-size: 3.6rem; color: #d9b46c; }.muted { color: #b6a384; }
+.typewriter { margin-top: 2rem; padding: 1.25rem; border: 1px solid #654a2e; background: rgba(23,16,11,.88); }.typewriter-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }.typewriter-top h2 { margin: 0; }.key-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; margin-top: 1rem; }.typewriter-key { min-height: 92px; display: grid; align-content: center; gap: .5rem; padding: .85rem; border: 1px solid #80633d; color: #ecd9b2; background: #302116; text-align: left; cursor: not-allowed; }.typewriter-key span { font-weight: 700; }.typewriter-key small { color: #b8a17b; line-height: 1.25; }.typewriter-key:disabled { opacity: .8; }
+.board-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.5rem; color: #c7b898; font-size: .9rem; }.board-footer p { margin: 0; }
+
 @media (prefers-reduced-motion: no-preference) {
   .choice-card { transition: transform .15s ease, border-color .15s ease; }
 }
@@ -66,3 +86,6 @@ h2 { margin-top: .2rem; }
   .comic-page { grid-template-columns: 1fr; }
   .comic-frame { min-height: 240px; }
 }
+
+@media (max-width: 900px) { .board-layout { grid-template-columns: 1fr; }.case-paper, .graph-panel { min-height: 330px; } }
+@media (max-width: 620px) { .board-header, .board-footer, .typewriter-top { align-items: flex-start; flex-direction: column; }.key-row { grid-template-columns: repeat(2, 1fr); }.board-header h1 { font-size: clamp(2rem, 10vw, 3.1rem); } }
