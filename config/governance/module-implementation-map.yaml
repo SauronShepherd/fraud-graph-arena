@@ -1,7 +1,7 @@
 modules:
   - {id: M01, responsibility: application shell and navigation, status: partial, locations: [src/fraud_graph_arena/web, apps/web/src/App.tsx], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
   - {id: M02, responsibility: presentation and accessibility, status: partial, locations: [apps/web/src/styles.css], roles: [WEB], tests: [apps/web/src/board/layout.test.ts]}
-  - {id: M03, responsibility: localization and messaging, status: planned, locations: [], roles: [WEB], tests: []}
+  - {id: M03, responsibility: localization and messaging, status: partial, locations: [apps/web/src/messages.ts], roles: [WEB], tests: [apps/web/src/test/messages.test.ts]}
   - {id: M04, responsibility: asset and resource management, status: partial, locations: [apps/web/public/assets/board/v1], roles: [WEB], tests: [scripts/validate_board_manifest.py]}
   - {id: M05, responsibility: audio and radio, status: planned, locations: [], roles: [WEB], tests: []}
   - {id: M06, responsibility: client-state synchronization, status: partial, locations: [apps/web/src/state], roles: [WEB], tests: [tests/iteration_01/test_refresh_persistence.py]}
