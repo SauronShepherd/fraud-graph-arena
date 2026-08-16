@@ -36,4 +36,13 @@ test.describe("I02 investigation board", () => {
     await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
     await expect(page.locator("[data-action-id]")).toHaveCount(4);
   });
+  test("preserves state under reduced motion and effective high zoom", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.setViewportSize({ width: 640, height: 900 });
+    await openBoard(page);
+    await page.evaluate(() => { document.documentElement.style.zoom = "2"; });
+    await expect(page.getByText("ACADEMY_001")).toBeVisible();
+    await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
+    await expect(page.locator("[data-action-id]")).toHaveCount(4);
+  });
 });
