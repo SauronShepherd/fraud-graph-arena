@@ -46,6 +46,7 @@ h2 { margin-top: .2rem; }
 .lamp-glow { position: absolute; width: 36rem; height: 20rem; right: 2%; top: -8rem; border-radius: 50%; background: rgba(238,186,90,.16); filter: blur(30px); }
 .desk-line { position: absolute; left: -5%; right: -5%; bottom: 10%; height: 9rem; border-top: 2px solid #5b432d; transform: rotate(-2deg); background: rgba(31,21,14,.65); }
 .board-content { position: relative; width: min(1320px, 94vw); margin: 0 auto; padding: clamp(1.4rem, 4vw, 3.5rem) 0 2rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .board-header { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
 .board-header h1 { max-width: 22ch; font-size: clamp(2rem, 5vw, 4.6rem); }
 .round-badge, .tool-status { border: 1px solid #bf9450; padding: .55rem .75rem; color: #f3c979; font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -88,4 +89,5 @@ h2 { margin-top: .2rem; }
 }
 
 @media (max-width: 900px) { .board-layout { grid-template-columns: 1fr; }.case-paper, .graph-panel { min-height: 330px; } }
+.board-shell--compact .board-scene { opacity: .35; }.board-shell--compact .board-layout { grid-template-columns: 1fr; }.board-shell--compact .board-header h1 { font-size: clamp(2rem, 7vw, 3.4rem); }
 @media (max-width: 620px) { .board-header, .board-footer, .typewriter-top { align-items: flex-start; flex-direction: column; }.key-row { grid-template-columns: repeat(2, 1fr); }.board-header h1 { font-size: clamp(2rem, 10vw, 3.1rem); } }
