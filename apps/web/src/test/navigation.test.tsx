@@ -136,7 +136,7 @@ describe("walking skeleton navigation", () => {
     expect(screen.getByText("ACADEMY_001")).toBeVisible();
     expect(screen.getAllByText(/no evidence has been revealed/i)).toHaveLength(2);
     expect(screen.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
-    expect(screen.getByRole("button", { name: /compare identities/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /compare identities/i })).toHaveAttribute("aria-disabled", "true");
   });
 
   it("reconstructs an active Academy board directly from its round route", async () => {
