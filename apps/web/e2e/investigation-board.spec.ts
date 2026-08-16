@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import type { Page } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 async function openBoard(page: Page) {
   await page.goto("/");
@@ -22,6 +23,8 @@ test.describe("I02 investigation board", () => {
       await expect(page.locator("[data-action-id]")).toHaveCount(4);
       await expect(page.locator("[data-action-id][data-state=NOT_IMPLEMENTED]")).toHaveCount(4);
       await expect(page.locator("[data-graph-node], [data-graph-edge]")).toHaveCount(0);
+      const accessibility = await new AxeBuilder({ page }).analyze();
+      expect(accessibility.violations).toEqual([]);
       await page.reload();
       await expect(page.getByText("ACADEMY_001")).toBeVisible();
     });

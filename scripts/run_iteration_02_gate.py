@@ -30,6 +30,7 @@ def main() -> int:
         run("frontend-typecheck", [NPM, "run", "typecheck"], ROOT / "apps/web"),
         run("frontend-build", [NPM, "run", "build"], ROOT / "apps/web"),
         run("frontend-vitest", [NPM, "test"], ROOT / "apps/web"),
+        run("frontend-e2e-accessibility", [NPM, "run", "test:e2e"], ROOT / "apps/web"),
     ]
     payload = {"iteration": "02", "scope": "FGA 00-02 backlog", "timestamp_utc": datetime.now(UTC).isoformat(), "commit": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(), "platform": platform.platform(), "checks": checks, "fully_qualified": all(check["returncode"] == 0 for check in checks)}
     (REPORT / "gate.json").write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
