@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Request, status
+from fraud_graph_arena.rounds.domain import IntroCompletion
 
 from fraud_graph_arena.web.api_models import (
     CreateRoundRequest,
@@ -36,7 +37,7 @@ def opening(round_id: str, request: Request) -> OpeningResponse:
 
 @router.post("/{round_id}/opening/complete", response_model=RoundResponse)
 def complete_opening(round_id: str, request: Request, payload: IntroCompletionRequest | None = None) -> RoundResponse:
-    completion = payload.completion if payload else "FINISHED"
+    completion = payload.completion if payload else IntroCompletion.FINISHED
     return map_round(request.app.state.container.rounds.complete_opening(round_id, completion=completion))
 
 

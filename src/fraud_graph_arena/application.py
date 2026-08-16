@@ -32,7 +32,9 @@ class Container:
     workspace: WorkspaceService
 
 
-def build_container(settings: Settings) -> Container:
+def build_web_container(settings: Settings) -> Container:
+    if settings.runtime_role != RuntimeRole.WEB:
+        raise RuntimeError("the public container is only valid for WEB runtime role")
     catalogue = CatalogueService(InMemoryCatalogueRepository())
     narrative = NarrativeService(InMemoryNarrativeRepository())
     for case in catalogue.list_cases():
@@ -58,6 +60,11 @@ def build_container(settings: Settings) -> Container:
     )
 
 
+def build_container(settings: Settings) -> Container:
+    """Compatibility entry point for existing I01 tests and integrations."""
+    return build_web_container(settings)
+
+
 def create_app(
     settings: Settings | None = None,
     *,
@@ -66,7 +73,7 @@ def create_app(
     resolved_settings = settings or Settings()
     if resolved_settings.runtime_role != RuntimeRole.WEB:
         raise RuntimeError(f"create_app is only available for WEB runtime role, got {resolved_settings.runtime_role.value}")
-    resolved_container = container or build_container(resolved_settings)
+    resolved_container = container or build_web_container(resolved_settings)
 
     app = FastAPI(
         title=resolved_settings.app_name,

@@ -12,6 +12,10 @@ class RoundStatus(StrEnum):
     INTRO_PENDING = "INTRO_PENDING"
     ACTIVE = "ACTIVE"
 
+class IntroCompletion(StrEnum):
+    FINISHED = "FINISHED"
+    SKIPPED = "SKIPPED"
+
 
 @dataclass(frozen=True, slots=True)
 class Round:

@@ -6,7 +6,7 @@ from uuid import uuid4
 
 from fraud_graph_arena.catalogue import CaseStatus, CaseSummary, CatalogueService
 from fraud_graph_arena.narrative import ComicKind, ComicSequence, NarrativeService
-from fraud_graph_arena.rounds.domain import Round, RoundStatus
+from fraud_graph_arena.rounds.domain import IntroCompletion, Round, RoundStatus
 from fraud_graph_arena.rounds.ports import RoundRepository
 from fraud_graph_arena.shared.errors import ConflictError, NotFoundError
 
@@ -16,15 +16,6 @@ class Opening:
     round: Round
     case: CaseSummary
     sequence: ComicSequence
-
-
-@dataclass(frozen=True, slots=True)
-class Workspace:
-    round: Round
-    case: CaseSummary
-    board_message: str
-    evidence_count: int = 0
-    suspect_count: int = 0
 
 
 class RoundService:
@@ -91,7 +82,7 @@ class RoundService:
         )
         return Opening(round=round_, case=case, sequence=sequence)
 
-    def complete_opening(self, round_id: str, *, completion: str = "FINISHED") -> Round:
+    def complete_opening(self, round_id: str, *, completion: IntroCompletion = IntroCompletion.FINISHED) -> Round:
         round_ = self.require(round_id)
         if round_.status == RoundStatus.CREATED:
             raise ConflictError(
@@ -100,9 +91,7 @@ class RoundService:
                 detail=f"Round '{round_id}' cannot complete an introduction before it starts.",
                 recovery="Start the round before completing its opening sequence.",
             )
-        if completion not in {"FINISHED", "SKIPPED"}:
-            raise ConflictError(code="INVALID_INTRO_COMPLETION", title="Invalid introduction completion", detail="Completion must be FINISHED or SKIPPED.")
-        if completion == "SKIPPED":
+        if completion == IntroCompletion.SKIPPED:
             case = self._case_for(round_)
             sequence = self._narrative.require_sequence(case_id=case.id, case_version=case.version, kind=ComicKind.OPENING)
             if not sequence.skippable:
@@ -111,32 +100,6 @@ class RoundService:
         if completed != round_:
             self._repository.save(completed)
         return completed
-
-    def workspace(self, round_id: str) -> Workspace:
-        round_ = self.require(round_id)
-        if round_.status == RoundStatus.CREATED:
-            raise ConflictError(
-                code="ROUND_NOT_STARTED",
-                title="Investigation has not started",
-                detail=f"Round '{round_id}' has not started.",
-                recovery="Start the investigation before opening the board.",
-            )
-        if round_.status == RoundStatus.INTRO_PENDING:
-            raise ConflictError(
-                code="INTRO_REQUIRED",
-                title="Academy introduction required",
-                detail="Complete or skip the registered opening comic before entering the board.",
-                recovery=f"Open /rounds/{round_id}/intro and finish the Academy briefing.",
-            )
-        case = self._case_for(round_)
-        return Workspace(
-            round=round_,
-            case=case,
-            board_message=(
-                "The Academy workspace is intentionally empty. The real achievement is that the "
-                "correct training file crossed every boundary and survived the journey."
-            ),
-        )
 
     def require(self, round_id: str) -> Round:
         round_ = self._repository.get(round_id)

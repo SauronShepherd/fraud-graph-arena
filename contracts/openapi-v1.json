@@ -245,14 +245,20 @@
         "title": "HTTPValidationError",
         "type": "object"
       },
+      "IntroCompletion": {
+        "enum": [
+          "FINISHED",
+          "SKIPPED"
+        ],
+        "title": "IntroCompletion",
+        "type": "string"
+      },
       "IntroCompletionRequest": {
         "additionalProperties": false,
         "properties": {
           "completion": {
-            "default": "FINISHED",
-            "pattern": "^(FINISHED|SKIPPED)$",
-            "title": "Completion",
-            "type": "string"
+            "$ref": "#/components/schemas/IntroCompletion",
+            "default": "FINISHED"
           }
         },
         "title": "IntroCompletionRequest",

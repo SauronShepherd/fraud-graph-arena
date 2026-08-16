@@ -3,7 +3,7 @@ from __future__ import annotations
 from fraud_graph_arena.catalogue.domain import CaseSummary, CatalogueSection, PathDefinition
 from fraud_graph_arena.narrative.domain import ComicPage, ComicSequence
 from fraud_graph_arena.rounds.domain import Round
-from fraud_graph_arena.rounds.service import Opening, Workspace
+from fraud_graph_arena.rounds.service import Opening
 from fraud_graph_arena.workspace.service import WorkspaceProjection
 from fraud_graph_arena.web.api_models import (
     CaseResponse,
@@ -90,18 +90,9 @@ def map_opening(value: Opening) -> OpeningResponse:
     )
 
 
-def map_workspace(value: WorkspaceProjection | Workspace) -> WorkspaceResponse:
-    if isinstance(value, WorkspaceProjection):
-        return WorkspaceResponse(
-            round=map_round(value.round), case=map_case(value.case), board_message="No evidence has been revealed.",
-            evidence_count=value.evidence_count, suspect_count=value.suspect_count, path_name=value.path_name,
-            empty_state_code=value.empty_state_code, actions=value.actions,
-        )
+def map_workspace(value: WorkspaceProjection) -> WorkspaceResponse:
     return WorkspaceResponse(
-        round=map_round(value.round),
-        case=map_case(value.case),
-        board_message=value.board_message,
-        evidence_count=value.evidence_count,
-        suspect_count=value.suspect_count,
-        path_name="Detective Academy", empty_state_code="NO_EVIDENCE_REVEALED", actions=[],
+        round=map_round(value.round), case=map_case(value.case), board_message="No evidence has been revealed.",
+        evidence_count=value.evidence_count, suspect_count=value.suspect_count, path_name=value.path_name,
+        empty_state_code=value.empty_state_code, actions=value.actions,
     )

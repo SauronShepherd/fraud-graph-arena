@@ -7,7 +7,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from fraud_graph_arena.catalogue.domain import CaseStatus, PathId, PathStatus
 from fraud_graph_arena.narrative.domain import ComicKind
-from fraud_graph_arena.rounds.domain import RoundStatus
+from fraud_graph_arena.rounds.domain import IntroCompletion, RoundStatus
 
 
 class ApiModel(BaseModel):
@@ -83,7 +83,7 @@ class OpeningResponse(ApiModel):
     sequence: ComicSequenceResponse
 
 class IntroCompletionRequest(ApiModel):
-    completion: str = Field(default="FINISHED", pattern="^(FINISHED|SKIPPED)$")
+    completion: IntroCompletion = IntroCompletion.FINISHED
 
 class ActionAvailability(ApiModel):
     id: str
