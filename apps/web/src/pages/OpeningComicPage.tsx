@@ -41,11 +41,11 @@ export function OpeningComicPage() {
     setImageFailed(false);
   }, [currentIndex]);
 
-  async function finish() {
+  async function finish(completion: "FINISHED" | "SKIPPED" = "FINISHED") {
     setFinishing(true);
     setProblem(null);
     try {
-      const round = await completeOpening(roundId);
+      const round = await completeOpening(roundId, completion);
       navigate(`/rounds/${encodeURIComponent(round.id)}/board`, { replace: true });
     } catch (error: unknown) {
       if (error instanceof ApiProblem) setProblem(error.problem);
@@ -108,7 +108,7 @@ export function OpeningComicPage() {
           </button>
         )}
         {opening.sequence.skippable && !isLast ? (
-          <button className="text-button" type="button" disabled={finishing} onClick={() => void finish()}>
+            <button className="text-button" type="button" disabled={finishing} onClick={() => void finish("SKIPPED")}>
             Skip introduction
           </button>
         ) : null}

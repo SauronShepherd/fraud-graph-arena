@@ -87,9 +87,10 @@ export function getOpening(roundId: string): Promise<Opening> {
   return request<Opening>(`/rounds/${encodeURIComponent(roundId)}/opening`);
 }
 
-export function completeOpening(roundId: string): Promise<RoundSummary> {
+export function completeOpening(roundId: string, completion: "FINISHED" | "SKIPPED" = "FINISHED"): Promise<RoundSummary> {
   return request<RoundSummary>(`/rounds/${encodeURIComponent(roundId)}/opening/complete`, {
-    method: "POST"
+    method: "POST",
+    body: JSON.stringify({ completion })
   });
 }
 
