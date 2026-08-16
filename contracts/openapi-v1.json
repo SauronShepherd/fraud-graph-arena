@@ -1,6 +1,35 @@
 {
   "components": {
     "schemas": {
+      "ActionAvailability": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          },
+          "reason_code": {
+            "title": "Reason Code",
+            "type": "string"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "state",
+          "reason_code",
+          "reason"
+        ],
+        "title": "ActionAvailability",
+        "type": "object"
+      },
       "CaseResponse": {
         "additionalProperties": false,
         "properties": {
@@ -214,6 +243,19 @@
           }
         },
         "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "IntroCompletionRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "completion": {
+            "default": "FINISHED",
+            "pattern": "^(FINISHED|SKIPPED)$",
+            "title": "Completion",
+            "type": "string"
+          }
+        },
+        "title": "IntroCompletionRequest",
         "type": "object"
       },
       "LiveHealthResponse": {
@@ -477,6 +519,13 @@
       "WorkspaceResponse": {
         "additionalProperties": false,
         "properties": {
+          "actions": {
+            "items": {
+              "$ref": "#/components/schemas/ActionAvailability"
+            },
+            "title": "Actions",
+            "type": "array"
+          },
           "board_message": {
             "title": "Board Message",
             "type": "string"
@@ -484,9 +533,17 @@
           "case": {
             "$ref": "#/components/schemas/CaseResponse"
           },
+          "empty_state_code": {
+            "title": "Empty State Code",
+            "type": "string"
+          },
           "evidence_count": {
             "title": "Evidence Count",
             "type": "integer"
+          },
+          "path_name": {
+            "title": "Path Name",
+            "type": "string"
           },
           "round": {
             "$ref": "#/components/schemas/RoundResponse"
@@ -501,7 +558,10 @@
           "case",
           "board_message",
           "evidence_count",
-          "suspect_count"
+          "suspect_count",
+          "path_name",
+          "empty_state_code",
+          "actions"
         ],
         "title": "WorkspaceResponse",
         "type": "object"
@@ -737,6 +797,23 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/IntroCompletionRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Payload"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "content": {
