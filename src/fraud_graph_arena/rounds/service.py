@@ -91,7 +91,7 @@ class RoundService:
         )
         return Opening(round=round_, case=case, sequence=sequence)
 
-    def complete_opening(self, round_id: str) -> Round:
+    def complete_opening(self, round_id: str, *, completion: str = "FINISHED") -> Round:
         round_ = self.require(round_id)
         if round_.status == RoundStatus.CREATED:
             raise ConflictError(
@@ -100,6 +100,13 @@ class RoundService:
                 detail=f"Round '{round_id}' cannot complete an introduction before it starts.",
                 recovery="Start the round before completing its opening sequence.",
             )
+        if completion not in {"FINISHED", "SKIPPED"}:
+            raise ConflictError(code="INVALID_INTRO_COMPLETION", title="Invalid introduction completion", detail="Completion must be FINISHED or SKIPPED.")
+        if completion == "SKIPPED":
+            case = self._case_for(round_)
+            sequence = self._narrative.require_sequence(case_id=case.id, case_version=case.version, kind=ComicKind.OPENING)
+            if not sequence.skippable:
+                raise ConflictError(code="INTRO_NOT_SKIPPABLE", title="Introduction cannot be skipped", detail="This case requires the complete opening sequence.")
         completed = round_.complete_intro()
         if completed != round_:
             self._repository.save(completed)

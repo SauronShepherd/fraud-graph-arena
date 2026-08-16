@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1.7
 FROM node:22-bookworm-slim AS web-build
 WORKDIR /workspace/apps/web
-COPY apps/web/package.json ./
-RUN npm install --no-audit --no-fund
+COPY apps/web/package.json apps/web/package-lock.json ./
+RUN npm ci --no-audit --no-fund
 COPY apps/web/ ./
 RUN npm run build
 

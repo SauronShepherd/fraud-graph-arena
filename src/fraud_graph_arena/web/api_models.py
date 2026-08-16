@@ -82,6 +82,15 @@ class OpeningResponse(ApiModel):
     case: CaseResponse
     sequence: ComicSequenceResponse
 
+class IntroCompletionRequest(ApiModel):
+    completion: str = Field(default="FINISHED", pattern="^(FINISHED|SKIPPED)$")
+
+class ActionAvailability(ApiModel):
+    id: str
+    state: str
+    reason_code: str
+    reason: str
+
 
 class WorkspaceResponse(ApiModel):
     round: RoundResponse
@@ -89,6 +98,9 @@ class WorkspaceResponse(ApiModel):
     board_message: str
     evidence_count: int
     suspect_count: int
+    path_name: str
+    empty_state_code: str
+    actions: list[ActionAvailability]
 
 
 class LiveHealthResponse(ApiModel):

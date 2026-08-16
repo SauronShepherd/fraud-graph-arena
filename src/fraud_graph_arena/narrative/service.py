@@ -42,8 +42,13 @@ class NarrativeService:
             )
             if not sequence.pages:
                 raise ValueError(f"{sequence.id} must contain at least one comic page")
+            if not sequence.id or sequence.case_id != case.id or sequence.case_version != case.version or sequence.kind != kind:
+                raise ValueError(f"{sequence.id or '<unnamed>'} has inconsistent sequence metadata")
             positions = tuple(page.position for page in sequence.pages)
             if positions != tuple(range(1, len(sequence.pages) + 1)):
                 raise ValueError(f"{sequence.id} page positions must be contiguous and one-based")
-            if any(not page.alt_text.strip() or not page.narration.strip() for page in sequence.pages):
-                raise ValueError(f"{sequence.id} pages require narration and alt text")
+            ids = tuple(page.id for page in sequence.pages)
+            if any(not page.id.strip() or not page.title.strip() for page in sequence.pages) or len(set(ids)) != len(ids):
+                raise ValueError(f"{sequence.id} pages require unique ids and non-empty titles")
+            if any(not page.alt_text.strip() or not page.narration.strip() or not page.image_url.strip() for page in sequence.pages):
+                raise ValueError(f"{sequence.id} pages require narration, image reference and alt text")

@@ -69,7 +69,13 @@ export interface Workspace {
   board_message: string;
   evidence_count: number;
   suspect_count: number;
+  path_name: string;
+  empty_state_code: string;
+  actions: ActionAvailability[];
 }
+
+export type ActionState = "AVAILABLE" | "NOT_IMPLEMENTED" | "LOCKED" | "PENDING" | "FAILED";
+export interface ActionAvailability { id: string; state: ActionState; reason_code: string; reason: string; }
 
 export interface ProblemDetails {
   type: string;

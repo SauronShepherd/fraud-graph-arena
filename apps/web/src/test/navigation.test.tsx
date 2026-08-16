@@ -99,6 +99,14 @@ const workspace = {
   board_message: "The Academy workspace is intentionally empty.",
   evidence_count: 0,
   suspect_count: 0
+  ,path_name: "Detective Academy",
+  empty_state_code: "NO_EVIDENCE_REVEALED",
+  actions: [
+    { id: "COMPARE_IDENTITIES", state: "NOT_IMPLEMENTED", reason_code: "CAPABILITY_NOT_IMPLEMENTED", reason: "Identity comparison is not available in Academy yet." },
+    { id: "FIND_SHARED_FIELDS", state: "NOT_IMPLEMENTED", reason_code: "CAPABILITY_NOT_IMPLEMENTED", reason: "Exact shared-field analysis is not available in Academy yet." },
+    { id: "SEARCH_EVIDENCE", state: "NOT_IMPLEMENTED", reason_code: "CAPABILITY_NOT_IMPLEMENTED", reason: "Evidence search will unlock when the case publishes evidence." },
+    { id: "OPEN_CASE_FILE", state: "NOT_IMPLEMENTED", reason_code: "CAPABILITY_NOT_IMPLEMENTED", reason: "Case-file construction is not available in the empty Academy round." }
+  ]
 };
 
 describe("walking skeleton navigation", () => {

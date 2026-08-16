@@ -4,6 +4,7 @@ from fastapi import APIRouter, Request, status
 
 from fraud_graph_arena.web.api_models import (
     CreateRoundRequest,
+    IntroCompletionRequest,
     OpeningResponse,
     RoundResponse,
     WorkspaceResponse,
@@ -34,10 +35,11 @@ def opening(round_id: str, request: Request) -> OpeningResponse:
 
 
 @router.post("/{round_id}/opening/complete", response_model=RoundResponse)
-def complete_opening(round_id: str, request: Request) -> RoundResponse:
-    return map_round(request.app.state.container.rounds.complete_opening(round_id))
+def complete_opening(round_id: str, request: Request, payload: IntroCompletionRequest | None = None) -> RoundResponse:
+    completion = payload.completion if payload else "FINISHED"
+    return map_round(request.app.state.container.rounds.complete_opening(round_id, completion=completion))
 
 
 @router.get("/{round_id}/workspace", response_model=WorkspaceResponse)
 def workspace(round_id: str, request: Request) -> WorkspaceResponse:
-    return map_workspace(request.app.state.container.rounds.workspace(round_id))
+    return map_workspace(request.app.state.container.workspace.get(round_id))

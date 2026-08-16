@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from fraud_graph_arena.catalogue.adapters.memory import InMemoryCatalogueRepository
 from fraud_graph_arena.catalogue.service import CatalogueService
-from fraud_graph_arena.config import Settings
+from fraud_graph_arena.config import RuntimeRole, Settings
 from fraud_graph_arena.narrative.adapters.memory import InMemoryNarrativeRepository
 from fraud_graph_arena.narrative.service import NarrativeService
 from fraud_graph_arena.rounds.adapters.memory import InMemoryRoundRepository
@@ -19,6 +19,7 @@ from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.web.problem_handlers import register_problem_handlers
 from fraud_graph_arena.web.routes import catalogue, health, rounds
 from fraud_graph_arena.web.spa import SpaStaticFiles
+from fraud_graph_arena.workspace import WorkspaceService
 
 
 @dataclass(slots=True)
@@ -28,6 +29,7 @@ class Container:
     narrative: NarrativeService
     rounds: RoundService
     round_repository: RoundRepository
+    workspace: WorkspaceService
 
 
 def build_container(settings: Settings) -> Container:
@@ -52,6 +54,7 @@ def build_container(settings: Settings) -> Container:
         narrative=narrative,
         rounds=round_service,
         round_repository=round_repository,
+        workspace=WorkspaceService(round_service, catalogue),
     )
 
 
@@ -61,6 +64,8 @@ def create_app(
     container: Container | None = None,
 ) -> FastAPI:
     resolved_settings = settings or Settings()
+    if resolved_settings.runtime_role != RuntimeRole.WEB:
+        raise RuntimeError(f"create_app is only available for WEB runtime role, got {resolved_settings.runtime_role.value}")
     resolved_container = container or build_container(resolved_settings)
 
     app = FastAPI(
