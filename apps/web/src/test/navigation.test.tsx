@@ -134,7 +134,9 @@ describe("walking skeleton navigation", () => {
     await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(7));
     expect(await screen.findByRole("heading", { name: "The Case of the Empty Evidence Board" })).toBeVisible();
     expect(screen.getByText("ACADEMY_001")).toBeVisible();
-    expect(screen.getByText(/right dog reached the right room/i)).toBeVisible();
+    expect(screen.getAllByText(/no evidence has been revealed/i)).toHaveLength(2);
+    expect(screen.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
+    expect(screen.getByRole("button", { name: /compare identities/i })).toBeDisabled();
   });
 
   it("reconstructs an active Academy board directly from its round route", async () => {
