@@ -44,7 +44,7 @@ export function BoardPage() {
   if (!workspace) return <Loading message="Recovering the training file from authoritative state…" />;
 
   return <main ref={boardRef} className={`board-shell${compact ? " board-shell--compact" : ""}`} aria-labelledby="board-title">
-    <div className="board-scene" aria-hidden="true"><span className="lamp-glow" /><span className="desk-line" /></div>
+    <div className="board-scene" aria-hidden="true"><img className="board-art" src="/assets/board/v1/fallback.svg" alt="" /><span className="lamp-glow" /><span className="desk-line" /></div>
     <section className="board-content">
       <header className="board-header"><div><p className="eyebrow">Active investigation · {workspace.path_name}</p><h1 id="board-title">{workspace.case.name}</h1></div><div className="round-badge" aria-label={`Round status ${workspace.round.status}`}>{workspace.round.status}</div></header>
       <div className="board-layout">

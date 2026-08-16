@@ -17,6 +17,10 @@ def validate(path: Path = MANIFEST) -> list[str]:
         region_data = json.loads(regions.read_text(encoding="utf-8"))
         if region_data.get("template_version") != data.get("template_version"): errors.append("manifest and region template versions differ")
         if not region_data.get("stacking"): errors.append("stacking levels required")
+        canvas = data["canvas"]
+        for name, region in region_data.get("regions", {}).items():
+            if any(region.get(key, -1) < 0 for key in ("x", "y", "width", "height")): errors.append(f"invalid region geometry: {name}")
+            if region["x"] + region["width"] > canvas["width"] or region["y"] + region["height"] > canvas["height"]: errors.append(f"region outside canvas: {name}")
     assets = data.get("assets", [])
     if len({asset.get("id") for asset in assets}) != len(assets): errors.append("asset IDs must be unique")
     allowed_layers = {"scene", "typewriter", "paper", "graph", "decoration"}

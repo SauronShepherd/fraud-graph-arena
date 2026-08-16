@@ -42,7 +42,7 @@ h2 { margin-top: .2rem; }
 .question-mark { font-size: 5rem; color: #77644b; }
 
 .board-shell { position: relative; min-height: calc(100vh - 61px); overflow: hidden; background: radial-gradient(circle at 78% 10%, #59432b 0, #211810 32%, #0e0b08 78%); }
-.board-scene { position: absolute; inset: 0; pointer-events: none; opacity: .7; background: linear-gradient(165deg, transparent 0 72%, rgba(86,57,31,.55) 73% 75%, transparent 76%), repeating-linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,.025) 12.1% 12.2%); }
+.board-scene { position: absolute; inset: 0; pointer-events: none; opacity: .7; background: linear-gradient(165deg, transparent 0 72%, rgba(86,57,31,.55) 73% 75%, transparent 76%), repeating-linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,.025) 12.1% 12.2%); }.board-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; pointer-events: none; }
 .lamp-glow { position: absolute; width: 36rem; height: 20rem; right: 2%; top: -8rem; border-radius: 50%; background: rgba(238,186,90,.16); filter: blur(30px); }
 .desk-line { position: absolute; left: -5%; right: -5%; bottom: 10%; height: 9rem; border-top: 2px solid #5b432d; transform: rotate(-2deg); background: rgba(31,21,14,.65); }
 .board-content { position: relative; width: min(1320px, 94vw); margin: 0 auto; padding: clamp(1.4rem, 4vw, 3.5rem) 0 2rem; }

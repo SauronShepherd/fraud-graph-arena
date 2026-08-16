@@ -2,7 +2,8 @@ import { expect, test } from "@playwright/test";
 import type { Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-async function openBoard(page: Page) {
+async function openBoard(page: Page, failArt = false) {
+  if (failArt) await page.route("**/assets/board/**", async (route) => route.fulfill({ status: 404, body: "missing" }));
   await page.goto("/");
   await page.getByRole("link", { name: /choose your trench coat/i }).click();
   await page.getByRole("button", { name: /detective academy/i }).click();
@@ -29,4 +30,10 @@ test.describe("I02 investigation board", () => {
       await expect(page.getByText("ACADEMY_001")).toBeVisible();
     });
   }
+  test("remains usable when decorative board art fails", async ({ page }) => {
+    await openBoard(page, true);
+    await expect(page.getByText("ACADEMY_001")).toBeVisible();
+    await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
+    await expect(page.locator("[data-action-id]")).toHaveCount(4);
+  });
 });
