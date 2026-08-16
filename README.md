@@ -1,6 +1,6 @@
 # Fraud Graph Arena
 
-This candidate implements `I01 — Academy walking skeleton and application baseline` on top of the qualified Iteration 00 governance baseline.
+This repository contains the `I02 — Typewriter of the Living Dead` candidate on top of the qualified Iteration 00 governance baseline. The implementation is substantially complete for the empty Academy board, but it is not yet a closed release: approved layered artwork and final I01/I02 qualification lineage remain outstanding.
 
 ## Playable result
 
@@ -40,6 +40,9 @@ The only playable file is the spoiler-free `ACADEMY_001 — The Case of the Empt
 - RFC 9457-style `application/problem+json` failures with correlation IDs;
 - typed environment configuration and explicit dependency composition;
 - a production image that serves the same built React application and API;
+- explicit WEB, MAINTENANCE, EVALUATOR and MIGRATE runtime roots;
+- a 1600×900 board geometry mapper, semantic board regions, asset hashes and release validation;
+- keyboard-reachable unavailable investigation controls with typed semantic action IDs;
 - Python, React component and Playwright Academy walking-skeleton tests.
 
 ## Install the Python application and tests
@@ -51,7 +54,7 @@ python -m pip install -e ".[test]"
 ## Run the backend
 
 ```text
-python -m uvicorn fraud_graph_arena.web.main:app --reload
+python -m fraud_graph_arena.runtime
 ```
 
 The API is available under `http://127.0.0.1:8000/api/v1`.
@@ -60,7 +63,7 @@ The API is available under `http://127.0.0.1:8000/api/v1`.
 
 ```text
 cd apps/web
-npm install
+npm ci
 npm run dev
 ```
 
@@ -116,7 +119,11 @@ The generated contract is written to `contracts/openapi-v1.json`.
 
 ## Deliberate non-goals
 
-There is no real ranked case content, evidence, graph, entity resolution, retrieval provider, economy, scoring, submission or evaluator behaviour yet. The Academy closing sequence is registered but not player-reachable until verdict selection exists.
+There is no real ranked case content, evidence, graph, entity resolution, retrieval provider, economy, scoring, submission or evaluator behaviour yet. The Academy closing sequence is registered but not player-reachable until verdict selection exists. This is intentional FGA 00–02 scope.
+
+## Release status
+
+The current branch is a candidate, not a 100% compliant immutable release. Run `python scripts/validate_board_manifest.py --require-approved-artwork` to see the artwork closure dependency. The cumulative gate also requires a clean source checkout, current frontend/browser evidence, and I00→I01→I02 release lineage.
 
 Iteration 01 proves architectural continuity without spending any real-case spoilers.
 
