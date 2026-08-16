@@ -1,12 +1,14 @@
 {
   "template_version": "1.0.0",
   "regions": {
-    "CASE_PAPER_CONTENT_FRAME": {"x": 180, "y": 100, "width": 520, "height": 610, "purpose": "dynamic case content"},
-    "GRAPH_CONTENT_FRAME": {"x": 780, "y": 100, "width": 680, "height": 560, "purpose": "empty graph viewport"},
-    "TYPEWRITER_CONTROL_ZONE": {"x": 240, "y": 700, "width": 1120, "height": 150, "purpose": "semantic investigation actions"},
-    "STATUS_ZONE": {"x": 40, "y": 30, "width": 1520, "height": 60, "purpose": "round/status projection"},
-    "DECORATIVE_ONLY_ZONE": {"x": 0, "y": 0, "width": 1600, "height": 900, "purpose": "non-semantic atmosphere"},
-    "DO_NOT_PLACE_TEXT": {"x": 0, "y": 0, "width": 1600, "height": 900, "purpose": "reserved artwork-only space"}
+    "CASE_PAPER": {"x": 120, "y": 110, "width": 600, "height": 580, "purpose": "empty case paper", "kind": "semantic", "anchor": "left-center", "min_width": 280, "min_height": 240, "policy": "dynamic-content-only"},
+    "GRAPH_VIEWPORT": {"x": 760, "y": 110, "width": 720, "height": 560, "purpose": "empty graph viewport", "kind": "semantic", "anchor": "right-center", "min_width": 320, "min_height": 240, "policy": "dynamic-content-only"},
+    "TYPEWRITER_CONTROLS": {"x": 240, "y": 710, "width": 800, "height": 120, "purpose": "semantic investigation actions", "kind": "semantic", "anchor": "bottom-center", "min_width": 280, "min_height": 64, "policy": "interactive-controls-only"},
+    "GRAPH_CONTROLS": {"x": 1080, "y": 690, "width": 400, "height": 140, "purpose": "graph control reserve", "kind": "semantic", "anchor": "bottom-right", "min_width": 180, "min_height": 64, "policy": "interactive-controls-only"},
+    "BOARD_STATUS": {"x": 40, "y": 30, "width": 1520, "height": 60, "purpose": "round/status projection", "kind": "semantic", "anchor": "top-center", "min_width": 320, "min_height": 40, "policy": "status-only"},
+    "DEBUG_OVERLAY": {"x": 20, "y": 20, "width": 1560, "height": 860, "purpose": "development diagnostics", "kind": "overlay", "anchor": "canvas", "min_width": 0, "min_height": 0, "policy": "debug-only"},
+    "DECORATIVE_ONLY_ZONE": {"x": 0, "y": 0, "width": 1600, "height": 900, "purpose": "non-semantic atmosphere", "kind": "decorative", "anchor": "canvas", "min_width": 0, "min_height": 0, "policy": "never-focusable"},
+    "DO_NOT_PLACE_TEXT": {"x": 0, "y": 0, "width": 1600, "height": 900, "purpose": "reserved artwork-only space", "kind": "exclusion", "anchor": "canvas", "min_width": 0, "min_height": 0, "policy": "no-dynamic-text"}
   },
   "stacking": ["scene-background", "decorative-foreground", "dynamic-content", "graph-canvas", "interactive-controls", "focus-selection", "tooltips-status", "application-overlays"]
 }

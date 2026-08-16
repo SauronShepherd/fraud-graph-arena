@@ -5,15 +5,7 @@ from pathlib import Path
 
 
 SRC = Path(__file__).parents[2] / "src" / "fraud_graph_arena"
-DOMAIN_FILES = [
-    SRC / "catalogue" / "domain.py",
-    SRC / "catalogue" / "ports.py",
-    SRC / "narrative" / "domain.py",
-    SRC / "narrative" / "ports.py",
-    SRC / "rounds" / "domain.py",
-    SRC / "rounds" / "ports.py",
-    SRC / "analytics" / "ports.py",
-]
+DOMAIN_FILES = sorted((*SRC.rglob("domain.py"), *SRC.rglob("ports.py")))
 FORBIDDEN_INFRASTRUCTURE_IMPORTS = {
     "fastapi",
     "pydantic",
@@ -61,3 +53,23 @@ def test_frontend_does_not_define_canonical_path_ids_a_second_time() -> None:
             offenders.append(str(path.relative_to(frontend)))
 
     assert offenders == [], "Path IDs must come from the catalogue API, not UI constants"
+
+
+def test_capability_modules_do_not_import_another_modules_private_adapters() -> None:
+    offenders: list[str] = []
+    for path in SRC.rglob("*.py"):
+        relative = path.relative_to(SRC)
+        owner = relative.parts[0]
+        if owner in {"runtime", "application.py"}:
+            continue
+        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+        for node in ast.walk(tree):
+            module = node.module if isinstance(node, ast.ImportFrom) else None
+            names = [alias.name for alias in node.names] if isinstance(node, ast.Import) else []
+            candidates = ([module] if module else []) + names
+            for imported in candidates:
+                if imported.startswith("fraud_graph_arena.") and ".adapters" in imported:
+                    imported_owner = imported.split(".")[1]
+                    if imported_owner != owner:
+                        offenders.append(f"{relative}: {imported}")
+    assert offenders == []

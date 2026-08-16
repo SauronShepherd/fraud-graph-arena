@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
@@ -19,10 +20,15 @@ def validate(path: Path = MANIFEST) -> list[str]:
         region_data = json.loads(regions.read_text(encoding="utf-8"))
         if region_data.get("template_version") != data.get("template_version"): errors.append("manifest and region template versions differ")
         if not region_data.get("stacking"): errors.append("stacking levels required")
+        required_regions = {"CASE_PAPER", "GRAPH_VIEWPORT", "TYPEWRITER_CONTROLS", "GRAPH_CONTROLS", "BOARD_STATUS", "DEBUG_OVERLAY", "DECORATIVE_ONLY_ZONE", "DO_NOT_PLACE_TEXT"}
+        missing = required_regions - set(region_data.get("regions", {}))
+        if missing: errors.append(f"missing semantic regions: {sorted(missing)}")
         canvas = data["canvas"]
         for name, region in region_data.get("regions", {}).items():
             if any(region.get(key, -1) < 0 for key in ("x", "y", "width", "height")): errors.append(f"invalid region geometry: {name}")
             if region["x"] + region["width"] > canvas["width"] or region["y"] + region["height"] > canvas["height"]: errors.append(f"region outside canvas: {name}")
+            if name in required_regions and not all(region.get(key) is not None for key in ("kind", "anchor", "policy")):
+                errors.append(f"incomplete semantic metadata: {name}")
     assets = data.get("assets", [])
     if len({asset.get("id") for asset in assets}) != len(assets): errors.append("asset IDs must be unique")
     allowed_layers = {"scene", "typewriter", "paper", "graph", "decoration"}
@@ -36,7 +42,14 @@ def validate(path: Path = MANIFEST) -> list[str]:
     return errors
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--require-approved-artwork", action="store_true")
+    args = parser.parse_args()
     errors = validate()
+    if args.require_approved_artwork:
+        data = json.loads(MANIFEST.read_text(encoding="utf-8"))
+        if data.get("artwork_status") != "APPROVED" or not data.get("approved_source"):
+            errors.append("approved artwork is required for release closure")
     if errors:
         raise SystemExit("\n".join(errors))
     print("board manifest valid")

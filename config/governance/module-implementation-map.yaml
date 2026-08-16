@@ -18,4 +18,4 @@ modules:
   - {id: M17, responsibility: evaluation scoring and ending, status: planned, locations: [], roles: [EVALUATOR], tests: []}
   - {id: M18, responsibility: leaderboard results, status: planned, locations: [], roles: [WEB], tests: []}
   - {id: M19, responsibility: retrieval provider gateway and analytics boundary, status: boundary_only, locations: [src/fraud_graph_arena/analytics], roles: [WEB, MAINTENANCE], tests: [tests/iteration_01/test_architecture_boundaries.py]}
-  - {id: M20, responsibility: publication workflow and runtime control, status: boundary_only, locations: [src/fraud_graph_arena/config.py], roles: [MAINTENANCE, MIGRATE], tests: []}
+  - {id: M20, responsibility: publication workflow and runtime control, status: boundary_only, locations: [src/fraud_graph_arena/runtime], roles: [MAINTENANCE, MIGRATE], tests: [tests/iteration_01/test_runtime_roles.py]}
