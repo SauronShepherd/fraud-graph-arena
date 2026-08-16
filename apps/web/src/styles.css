@@ -61,6 +61,7 @@ h2 { margin-top: .2rem; }
 .graph-empty { position: relative; max-width: 34ch; padding: 2rem; text-align: center; }.graph-empty h2 { margin: .35rem 0 .75rem; }.graph-mark { font-size: 3.6rem; color: #d9b46c; }.muted { color: #b6a384; }
 .typewriter { margin-top: 2rem; padding: 1.25rem; border: 1px solid #654a2e; background: rgba(23,16,11,.88); }.typewriter-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }.typewriter-top h2 { margin: 0; }.key-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; margin-top: 1rem; }.typewriter-key { min-height: 92px; display: grid; align-content: center; gap: .5rem; padding: .85rem; border: 1px solid #80633d; color: #ecd9b2; background: #302116; text-align: left; cursor: not-allowed; }.typewriter-key[aria-disabled="true"] { opacity: .8; }.typewriter-key:focus-visible { outline: 3px solid #f2c66d; outline-offset: 3px; }.typewriter-key span { font-weight: 700; }.typewriter-key small { color: #b8a17b; line-height: 1.25; }
 .board-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1.5rem; color: #c7b898; font-size: .9rem; }.board-footer p { margin: 0; }
+.debug-overlay { position: fixed; right: .75rem; bottom: .75rem; z-index: 20; padding: .5rem .7rem; border: 1px solid #f2c66d; color: #f2c66d; background: #17130f; font: 700 .75rem/1.2 ui-monospace, monospace; }
 
 @media (prefers-reduced-motion: no-preference) {
   .choice-card { transition: transform .15s ease, border-color .15s ease; }
@@ -91,3 +92,4 @@ h2 { margin-top: .2rem; }
 @media (max-width: 900px) { .board-layout { grid-template-columns: 1fr; }.case-paper, .graph-panel { min-height: 330px; } }
 .board-shell--compact .board-scene { opacity: .35; }.board-shell--compact .board-layout { grid-template-columns: 1fr; }.board-shell--compact .board-header h1 { font-size: clamp(2rem, 7vw, 3.4rem); }
 @media (max-width: 620px) { .board-header, .board-footer, .typewriter-top { align-items: flex-start; flex-direction: column; }.key-row { grid-template-columns: repeat(2, 1fr); }.board-header h1 { font-size: clamp(2rem, 10vw, 3.1rem); } }
+@media (forced-colors: active) { *, *::before, *::after { forced-color-adjust: auto; } .button, .choice-card, .case-card, .typewriter-key, .case-paper, .graph-panel { border: 2px solid CanvasText; } .board-art, .lamp-glow, .desk-line { display: none; } }

@@ -9,6 +9,7 @@ import { CasePaper } from "../board/CasePaper";
 import { GraphViewport } from "../board/GraphViewport";
 import { InvestigationActions } from "../board/InvestigationActions";
 import { selectBoardMode } from "../board/layout";
+import { DebugOverlay } from "../board/DebugOverlay";
 
 export function BoardPage() {
   const { roundId = "" } = useParams();
@@ -54,5 +55,6 @@ export function BoardPage() {
       <InvestigationActions workspace={workspace} />
       <footer className="board-footer"><p><strong>Training round:</strong> {workspace.round.id} · Future capabilities explain themselves when unavailable.</p><Link className="button secondary" to={`/paths/${workspace.round.path_id}/cases`}>Back to Academy catalogue</Link></footer>
     </section>
+    <DebugOverlay mode={compact ? "COMPACT" : "FULL"} />
   </main>;
 }
