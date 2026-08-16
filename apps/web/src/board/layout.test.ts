@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BOARD_CANVAS, calculateContainTransform, logicalToRenderedPoint, renderedToLogicalPoint, selectBoardMode, transformRect } from "./layout";
+import { BOARD_CANVAS, calculateBoardGeometry, calculateContainTransform, logicalToRenderedPoint, renderedToLogicalPoint, selectBoardMode, transformRect } from "./layout";
 
 describe("board logical canvas", () => {
   it("uses one 1600 by 900 contain transform", () => {
@@ -18,5 +18,10 @@ describe("board logical canvas", () => {
     expect(selectBoardMode(1200, 800)).toBe("FULL");
     expect(selectBoardMode(899, 800)).toBe("COMPACT");
     expect(selectBoardMode(1200, 619)).toBe("COMPACT");
+  });
+  it("maps semantic regions through the same production transform", () => {
+    const geometry = calculateBoardGeometry(1600, 900);
+    expect(geometry.regions.CASE_PAPER).toEqual({ x: 120, y: 110, width: 600, height: 580 });
+    expect(geometry.regions.GRAPH_VIEWPORT).toEqual({ x: 760, y: 110, width: 720, height: 560 });
   });
 });

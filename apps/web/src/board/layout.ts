@@ -3,6 +3,20 @@ export type Point = { x: number; y: number };
 export type Rect = { x: number; y: number; width: number; height: number };
 export type ContainTransform = { scale: number; renderedWidth: number; renderedHeight: number; offsetX: number; offsetY: number };
 export type BoardMode = "FULL" | "COMPACT";
+export const BOARD_REGIONS = Object.freeze({
+  CASE_PAPER: { x: 120, y: 110, width: 600, height: 580 },
+  GRAPH_VIEWPORT: { x: 760, y: 110, width: 720, height: 560 },
+  TYPEWRITER_CONTROLS: { x: 240, y: 710, width: 800, height: 120 },
+  BOARD_STATUS: { x: 40, y: 30, width: 1520, height: 60 },
+});
+
+export type BoardGeometry = { transform: ContainTransform; regions: Record<string, Rect> };
+
+export function calculateBoardGeometry(containerWidth: number, containerHeight: number): BoardGeometry {
+  const transform = calculateContainTransform(containerWidth, containerHeight);
+  const regions = Object.fromEntries(Object.entries(BOARD_REGIONS).map(([name, rect]) => [name, transformRect(rect, transform)]));
+  return { transform, regions };
+}
 
 /** Selects composition from the available rectangle, not viewport width alone. */
 export function selectBoardMode(containerWidth: number, containerHeight: number): BoardMode {
