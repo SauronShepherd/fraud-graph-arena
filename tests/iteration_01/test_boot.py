@@ -6,11 +6,7 @@ from fraud_graph_arena.config import Settings
 
 def test_application_boots_and_registers_walking_skeleton_routes(test_settings: Settings) -> None:
     app = create_app(test_settings)
-    paths = {
-        route.path
-        for route in app.routes
-        if isinstance(route, APIRoute)
-    }
+    paths = set(app.openapi()["paths"])
 
     assert "/api/v1/health/live" in paths
     assert "/api/v1/catalogue/sections" in paths

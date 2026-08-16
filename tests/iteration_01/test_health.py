@@ -15,7 +15,7 @@ def test_readiness_checks_owned_round_repository(client: TestClient) -> None:
     assert response.status_code == 200
     assert response.json() == {
         "status": "ready",
-        "checks": {"round_repository": "ready"},
+        "checks": {"round_repository": "ready", "frontend_distribution": "ready"},
     }
 
 

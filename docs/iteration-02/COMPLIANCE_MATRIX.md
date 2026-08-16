@@ -1,3 +1,5 @@
+# FGA 00–02 compliance matrix
+
 | Requirement | Implementation | Evidence |
 |---|---|---|
 | 1600×900 logical canvas | `apps/web/src/board/layout.ts` | `layout.test.ts` |

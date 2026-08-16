@@ -23,6 +23,7 @@ assignments:
   - {path: docs/delivery/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/testing/**, owner: quality-engineering, reviewer: security-assurance}
   - {path: docs/iteration-01/**, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: docs/iteration-02/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: config/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/testing/**, owner: quality-engineering, reviewer: architecture-governance}
