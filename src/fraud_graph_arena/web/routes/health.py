@@ -15,11 +15,15 @@ def live() -> LiveHealthResponse:
 @router.get("/ready", response_model=ReadyHealthResponse)
 def ready(request: Request, response: Response) -> ReadyHealthResponse:
     repository_ready = request.app.state.container.round_repository.is_ready()
-    if not repository_ready:
+    frontend_ready = True
+    settings = request.app.state.container.settings
+    if settings.environment == "production":
+        frontend_ready = settings.frontend_dist.is_dir() and (settings.frontend_dist / "index.html").is_file()
+    if not repository_ready or not frontend_ready:
         response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
     return ReadyHealthResponse(
-        status="ready" if repository_ready else "not_ready",
-        checks={"round_repository": "ready" if repository_ready else "unavailable"},
+        status="ready" if repository_ready and frontend_ready else "not_ready",
+        checks={"round_repository": "ready" if repository_ready else "unavailable", "frontend_distribution": "ready" if frontend_ready else "unavailable"},
     )
 
 

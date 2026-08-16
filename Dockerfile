@@ -22,4 +22,4 @@ RUN python -m pip install --no-cache-dir .
 COPY --from=web-build /workspace/apps/web/dist ./apps/web/dist
 RUN mkdir -p /data
 EXPOSE 8000
-CMD ["python", "-m", "uvicorn", "fraud_graph_arena.web.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "fraud_graph_arena.runtime.main:app", "--host", "0.0.0.0", "--port", "8000"]

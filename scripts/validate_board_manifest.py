@@ -11,6 +11,12 @@ def validate(path: Path = MANIFEST) -> list[str]:
     data = json.loads(path.read_text(encoding="utf-8"))
     if not data.get("template_id") or not data.get("template_version"): errors.append("template identity/version required")
     if data.get("canvas") != {"width": 1600, "height": 900}: errors.append("canvas must be exactly 1600x900")
+    regions = path.parent / "regions.json"
+    if not regions.is_file(): errors.append("regions.json is required")
+    else:
+        region_data = json.loads(regions.read_text(encoding="utf-8"))
+        if region_data.get("template_version") != data.get("template_version"): errors.append("manifest and region template versions differ")
+        if not region_data.get("stacking"): errors.append("stacking levels required")
     assets = data.get("assets", [])
     if len({asset.get("id") for asset in assets}) != len(assets): errors.append("asset IDs must be unique")
     allowed_layers = {"scene", "typewriter", "paper", "graph", "decoration"}

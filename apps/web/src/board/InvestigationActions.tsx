@@ -1,0 +1,5 @@
+import type { Workspace } from "../api/contracts";
+
+export function InvestigationActions({ workspace }: { workspace: Workspace }) {
+  return <section className="typewriter" aria-labelledby="actions-title"><div className="typewriter-top"><h2 id="actions-title">Investigation tools</h2><span className="tool-status">Academy tools · unavailable</span></div><div className="key-row">{workspace.actions.map((action) => <button className="typewriter-key" data-action-id={action.id} data-state={action.state} key={action.id} type="button" disabled={action.state !== "AVAILABLE"} title={action.reason}><span>{action.id.replaceAll("_", " ")}</span><small>{action.reason}</small></button>)}</div></section>;
+}

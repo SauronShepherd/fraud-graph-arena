@@ -1,0 +1,12 @@
+{
+  "template_version": "1.0.0",
+  "regions": {
+    "CASE_PAPER_CONTENT_FRAME": {"x": 180, "y": 100, "width": 520, "height": 610, "purpose": "dynamic case content"},
+    "GRAPH_CONTENT_FRAME": {"x": 780, "y": 100, "width": 680, "height": 560, "purpose": "empty graph viewport"},
+    "TYPEWRITER_CONTROL_ZONE": {"x": 240, "y": 700, "width": 1120, "height": 150, "purpose": "semantic investigation actions"},
+    "STATUS_ZONE": {"x": 40, "y": 30, "width": 1520, "height": 60, "purpose": "round/status projection"},
+    "DECORATIVE_ONLY_ZONE": {"x": 0, "y": 0, "width": 1600, "height": 900, "purpose": "non-semantic atmosphere"},
+    "DO_NOT_PLACE_TEXT": {"x": 0, "y": 0, "width": 1600, "height": 900, "purpose": "reserved artwork-only space"}
+  },
+  "stacking": ["scene-background", "decorative-foreground", "dynamic-content", "graph-canvas", "interactive-controls", "focus-selection", "tooltips-status", "application-overlays"]
+}
