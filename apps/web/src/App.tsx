@@ -9,13 +9,22 @@ import { resolveTransition } from "./screen-system/machine";
 import { locationFor } from "./screen-system/routeCodec";
 import type { ActionId, TransitionPlan } from "./screen-system/contracts";
 import { useNavigate } from "react-router-dom";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
+import { dataSources } from "./screen-system/dataSources";
+import type { DataSourceId } from "./screen-system/contracts";
 
 export function App() {
   const { screen, context } = useScreenLocation();
   const navigate = useNavigate();
   const [transitionPlan, setTransitionPlan] = useState<TransitionPlan | null>(null);
   const [transitionLocked, setTransitionLocked] = useState(false);
+  const loadController = useRef<AbortController | null>(null);
+  const loadScreenModel = useCallback(async (source: DataSourceId, loadContext: typeof context) => {
+    loadController.current?.abort();
+    const controller = new AbortController();
+    loadController.current = controller;
+    return dataSources[source](loadContext, controller.signal);
+  }, [screen]);
   const dispatchAction = useCallback(async (actionId: string, payload?: Record<string, string | number>): Promise<void> => {
     if (transitionLocked) return;
     const action = actions[actionId as ActionId];
@@ -39,7 +48,7 @@ export function App() {
         <span className="paw" aria-hidden="true">🐾</span>
         <span>The Dogtective Agency</span>
       </header>
-      <ScreenRuntimeProvider value={{ context, dispatchAction, transitionLocked }}>
+      <ScreenRuntimeProvider value={{ context, dispatchAction, loadScreenModel, transitionLocked }}>
         <ScreenHost definition={screenDefinitions.get(screen)!} screen={screen}>
           <Component />
         </ScreenHost>
