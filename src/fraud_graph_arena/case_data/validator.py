@@ -3,6 +3,7 @@ import csv, json, hashlib
 from pathlib import Path
 from .registry import TABLE_PATHS, headers, sql_types, load_typed_registry
 from .types import parse_json, parse_timestamp, validate_sql_value
+from .semantics import CONFIDENCE_BANDS, FAMILIES, GENERATION_MODES, RELATIONSHIP_FAMILIES, require_controlled
 FORBIDDEN=('canonical_entity','culpability','solve_gate','mastermind','guilty','scoring_rule','ending_rule')
 def validate_package(root: Path) -> list[dict]:
     errors=[]; root=Path(root)
@@ -51,4 +52,16 @@ def validate_package(root: Path) -> list[dict]:
                 digest=hashlib.sha256(p.read_bytes()).hexdigest()
                 if receipts[rel].get('sha256') != digest: err('PKG.RECEIPT.SHA256',rel,'Manifest digest does not match bytes.')
     except Exception: pass
+    try:
+        case_rows = loaded.get('config/cases.csv', [])
+        profile_rows = loaded.get('config/case_profiles.csv', [])
+        if case_rows:
+            require_controlled(case_rows[0].get('path_code', ''), FAMILIES, 'path_code')
+            manifest_family = manifest.get('family')
+            if manifest_family and manifest_family != case_rows[0].get('path_code'):
+                err('PKG.FAMILY', 'manifest.json', 'Manifest family disagrees with config/cases.csv.')
+        for row in profile_rows: require_controlled(row.get('profile_code', ''), FAMILIES, 'profile_code')
+        for row in loaded.get('authoring/relationships.csv', []): require_controlled(row.get('relationship_family', ''), RELATIONSHIP_FAMILIES, 'relationship_family')
+        for row in loaded.get('analytics/entity_resolution_candidates.csv', []): require_controlled(row.get('confidence_band', ''), CONFIDENCE_BANDS, 'confidence_band'); require_controlled(row.get('generation_mode', ''), GENERATION_MODES, 'generation_mode')
+    except ValueError as exc: err('CANONICAL.CONTROLLED_VALUE', 'package', str(exc))
     return errors
