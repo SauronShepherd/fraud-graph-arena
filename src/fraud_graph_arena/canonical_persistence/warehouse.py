@@ -8,7 +8,8 @@ class MemoryWarehouse:
     def __init__(self) -> None:
         self.runs: dict[str, ImportRun] = {}; self.publications: dict[str, Publication] = {}
         self.active: dict[tuple[str, str, str], str] = {}; self.topology: set[str] = set(); self.candidates: dict[str, Publication] = {}
-    def snapshot(self) -> dict: return deepcopy({"runs": self.runs, "publications": self.publications, "active": self.active, "topology": self.topology, "candidates": self.candidates})
+        self.run_files: dict[tuple[str, str], dict] = {}; self.run_datasets: dict[tuple[str, str], dict] = {}
+    def snapshot(self) -> dict: return deepcopy({"runs": self.runs, "run_files": self.run_files, "run_datasets": self.run_datasets, "publications": self.publications, "active": self.active, "topology": self.topology, "candidates": self.candidates})
     def topology_digest(self) -> str: return topology_hash(self.topology)
     def rollback(self, scope: tuple[str, str, str], publication_id: str) -> None:
         publication = self.publications.get(publication_id)
@@ -21,3 +22,7 @@ class MemoryWarehouse:
     def cleanup_candidate(self, publication_id: str, *, fail: bool = False) -> None:
         if fail: raise RuntimeError("candidate cleanup failed")
         self.candidates.pop(publication_id, None)
+    def record_file(self, run_id: str, relative_path: str, byte_length: int, sha256: str) -> None:
+        self.run_files[(run_id, relative_path)] = {"run_id": run_id, "relative_path": relative_path, "byte_length": byte_length, "sha256": sha256}
+    def record_dataset(self, run_id: str, dataset_path: str, source_rows: int, staged_rows: int | None = None, validated_rows: int | None = None, phase: str = "OBSERVED") -> None:
+        self.run_datasets[(run_id, dataset_path)] = {"run_id": run_id, "dataset_path": dataset_path, "source_row_count": source_rows, "staged_row_count": staged_rows, "validated_row_count": validated_rows, "phase": phase}

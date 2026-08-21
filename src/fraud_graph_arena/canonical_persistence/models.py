@@ -21,7 +21,10 @@ class PackageIdentity:
 class ImportRun:
     run_id: str; identity: PackageIdentity; retry_of: str | None = None
     status: ImportStatus = ImportStatus.STARTED; error_code: str | None = None
+    error_summary: str | None = None
+    files: dict[str, dict[str, Any]] = field(default_factory=dict)
     datasets: dict[str, int] = field(default_factory=dict)
+    dataset_phases: dict[str, str] = field(default_factory=dict)
 
 @dataclass
 class Publication:

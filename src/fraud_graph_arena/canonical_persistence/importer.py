@@ -1,5 +1,5 @@
 from __future__ import annotations
-import csv, uuid
+import csv, uuid, hashlib
 from pathlib import Path
 from .identity import content_digest, publication_id, semantic_hash
 from .models import ImportResult, ImportRun, ImportStatus, PackageIdentity, Publication, PublicationStatus
@@ -39,21 +39,24 @@ class CanonicalImporter:
             for index, rel in enumerate(PHYSICAL_TARGETS):
                 path = root / rel
                 if not path.is_file() or path.stat().st_size == 0: raise CanonicalImportError(f"missing or zero-byte canonical file: {rel}")
+                data = path.read_bytes(); digest = hashlib.sha256(data).hexdigest(); run.files[rel] = {"bytes": len(data), "sha256": digest}; self.warehouse.record_file(run_id, rel, len(data), digest)
                 with path.open(newline="", encoding="utf-8") as fh:
                     reader = csv.DictReader(fh); expected = __import__("fraud_graph_arena.case_data.registry", fromlist=["headers"]).headers(rel)
                     if tuple(reader.fieldnames or ()) != expected: raise CanonicalImportError(f"header mismatch: {rel}")
                     rows[rel] = [dict(row) for row in reader]
                     for row in rows[rel]: validate_row_types(row, rel)
                 run.datasets[rel] = len(rows[rel])
+                run.dataset_phases[rel] = "STAGED"; self.warehouse.record_dataset(run_id, rel, len(rows[rel]), len(rows[rel]), None, "STAGED")
                 if fail_after is not None and index + 1 == fail_after: raise RuntimeError("injected failure")
             run.status = ImportStatus.STAGED; run.status = ImportStatus.VALIDATING
             fingerprint = semantic_hash(rows)
             persisted_rows = {path: [dict(row, _publication_id=pub_id, _load_run_id=run_id) for row in values] for path, values in rows.items()}
             candidate = Publication(pub_id, identity, PublicationStatus.CANDIDATE, persisted_rows, fingerprint); self.warehouse.candidates[pub_id] = candidate
             candidate.status = PublicationStatus.VALIDATED; self.warehouse.publications[pub_id] = candidate; self.warehouse.candidates.pop(pub_id, None)
+            for rel, count in run.datasets.items(): run.dataset_phases[rel] = "VALIDATED"; self.warehouse.record_dataset(run_id, rel, count, count, count, "VALIDATED")
             previous = self.warehouse.active.get(identity.key)
             if previous: self.warehouse.publications[previous].status = PublicationStatus.SUPERSEDED
             candidate.status = PublicationStatus.ACTIVE; self.warehouse.active[identity.key] = pub_id; run.status = ImportStatus.PUBLISHED
             return ImportResult(run_id, run.status, pub_id, candidate.semantic_hash)
         except Exception as exc:
-            run.status = ImportStatus.FAILED; run.error_code = type(exc).__name__; return ImportResult(run_id, run.status, None, None)
+            run.status = ImportStatus.FAILED; run.error_code = type(exc).__name__; run.error_summary = str(exc)[:512]; return ImportResult(run_id, run.status, None, None)
