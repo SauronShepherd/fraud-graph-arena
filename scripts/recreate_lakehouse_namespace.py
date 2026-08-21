@@ -4,6 +4,8 @@ from pathlib import Path
 from fraud_graph_arena.canonical_persistence.registry import expected_topology
 
 APPROVED_ENVIRONMENT = "fga_dev"
+APPROVED_CATALOG = "sda_dev"
+APPROVED_SCHEMA = "sandbox"
 
 def execute(profile, warehouse, catalog, schema, statement):
     payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
@@ -18,7 +20,8 @@ def main() -> int:
     p=argparse.ArgumentParser(description="Recreate only the explicitly approved disposable FGA namespace")
     p.add_argument("--environment",required=True); p.add_argument("--profile",default="sda"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--dry-run",action="store_true"); p.add_argument("--report",type=Path)
     args=p.parse_args()
-    if args.environment != APPROVED_ENVIRONMENT: raise SystemExit(f"refusing destructive recreation outside approved {APPROVED_ENVIRONMENT}")
+    if args.environment != APPROVED_ENVIRONMENT or args.catalog != APPROVED_CATALOG or args.schema != APPROVED_SCHEMA:
+        raise SystemExit(f"refusing destructive recreation outside approved tuple ({APPROVED_ENVIRONMENT}, {APPROVED_CATALOG}, {APPROVED_SCHEMA})")
     expected=set(expected_topology()); report={"environment":args.environment,"catalog":args.catalog,"schema":args.schema,"dry_run":args.dry_run,"expected_count":len(expected),"statements":[]}
     if not args.dry_run:
         inventory=execute(args.profile,args.warehouse,args.catalog,args.schema,f"SHOW TABLES IN `{args.catalog}`.`{args.schema}`")

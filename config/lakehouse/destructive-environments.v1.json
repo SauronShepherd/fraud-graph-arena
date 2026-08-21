@@ -1,0 +1,9 @@
+{
+  "environments": {
+    "fga_dev": {
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "allow_destructive_recreation": true
+    }
+  }
+}
