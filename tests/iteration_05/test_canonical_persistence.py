@@ -62,6 +62,12 @@ def test_manifest_tampering_fails_before_run_staging(tmp_path):
     with pytest.raises(ValueError): CanonicalImporter(warehouse).import_package(package)
     assert not warehouse.runs
 
+def test_manifest_case_version_disagreement_fails_before_staging(tmp_path):
+    package = tmp_path / PACKAGES[0].name; import shutil; shutil.copytree(PACKAGES[0], package)
+    manifest = json.loads((package / "manifest.json").read_text()); manifest["case_version"] = "wrong"; (package / "manifest.json").write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="case_version disagrees"):
+        CanonicalImporter(MemoryWarehouse()).import_package(package)
+
 def test_topology_hash_is_order_independent():
     assert topology_hash({"b", "a"}) == topology_hash({"a", "b"})
 

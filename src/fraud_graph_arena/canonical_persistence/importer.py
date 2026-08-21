@@ -20,8 +20,18 @@ def serialized_import(method):
 class CanonicalImporter:
     def __init__(self, warehouse): self.warehouse = warehouse; validate_registry(); self.warehouse.topology.update(PHYSICAL_TARGETS.values())
     def _identity(self, root: Path) -> PackageIdentity:
-        import json
+        import csv, json
         manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
+        if not manifest.get("case_version"):
+            raise CanonicalImportError("manifest case_version is required")
+        with (root / "config/cases.csv").open(newline="", encoding="utf-8") as handle:
+            case_row = next(csv.DictReader(handle), None)
+        if not case_row or case_row.get("case_id") != manifest.get("case_id"):
+            raise CanonicalImportError("manifest case_id disagrees with config/cases.csv")
+        if case_row.get("case_version") != manifest.get("case_version"):
+            raise CanonicalImportError("manifest case_version disagrees with config/cases.csv")
+        if case_row.get("snapshot_version") != manifest.get("snapshot_version"):
+            raise CanonicalImportError("manifest snapshot_version disagrees with config/cases.csv")
         listed = {item["path"]: item for item in manifest.get("files", [])}
         if not set(PHYSICAL_TARGETS).issubset(listed): raise CanonicalImportError("manifest canonical file inventory mismatch")
         import hashlib
@@ -30,7 +40,7 @@ class CanonicalImporter:
             data = (root / rel).read_bytes()
             if len(data) != item.get("bytes") or hashlib.sha256(data).hexdigest() != item.get("sha256"):
                 raise CanonicalImportError(f"manifest digest mismatch: {rel}")
-        return PackageIdentity(manifest["case_id"], manifest.get("case_version", "1.0.0"), manifest["snapshot_version"], manifest["canonical_model_version"], content_digest(root))
+        return PackageIdentity(manifest["case_id"], manifest["case_version"], manifest["snapshot_version"], manifest["canonical_model_version"], content_digest(root))
     @serialized_import
     def import_package(self, root: str | Path, *, retry_of: str | None = None, fail_after: int | None = None, lose_response_after_activation: bool = False) -> ImportResult:
         root = Path(root); identity = self._identity(root); run_id = "run_" + uuid.uuid4().hex
