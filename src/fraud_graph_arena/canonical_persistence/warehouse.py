@@ -7,11 +7,11 @@ class MemoryWarehouse:
     """Reference adapter used by tests and dry-run qualification; no SQL or app-state authority."""
     def __init__(self) -> None:
         self.runs: dict[str, ImportRun] = {}; self.publications: dict[str, Publication] = {}
-        self.active: dict[tuple[str, str, str], str] = {}; self.topology: set[str] = set(); self.candidates: dict[str, Publication] = {}
+        self.active: dict[tuple[str, str], str] = {}; self.topology: set[str] = set(); self.candidates: dict[str, Publication] = {}
         self.run_files: dict[tuple[str, str], dict] = {}; self.run_datasets: dict[tuple[str, str], dict] = {}
     def snapshot(self) -> dict: return deepcopy({"runs": self.runs, "run_files": self.run_files, "run_datasets": self.run_datasets, "publications": self.publications, "active": self.active, "topology": self.topology, "candidates": self.candidates})
     def topology_digest(self) -> str: return topology_hash(self.topology)
-    def rollback(self, scope: tuple[str, str, str], publication_id: str) -> None:
+    def rollback(self, scope: tuple[str, str], publication_id: str) -> None:
         publication = self.publications.get(publication_id)
         if publication is None or publication.status in ("REJECTED", "CANDIDATE"):
             raise ValueError("publication is not rollback-eligible")

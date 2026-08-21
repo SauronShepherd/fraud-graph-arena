@@ -15,7 +15,9 @@ class PublicationStatus(StrEnum):
 class PackageIdentity:
     case_id: str; case_version: str; snapshot_version: str; canonical_model_version: str; content_digest: str
     @property
-    def key(self) -> tuple[str, str, str]: return (self.case_id, self.case_version, self.snapshot_version)
+    # Active publication is case-version scoped. Snapshot identity remains part
+    # of the publication ID, but must not create a second visible pointer.
+    def key(self) -> tuple[str, str]: return (self.case_id, self.case_version)
 
 @dataclass
 class ImportRun:

@@ -18,7 +18,7 @@ class PointerPublisher:
         require_transition(publication.status, PublicationStatus.ACTIVE); publication.status = PublicationStatus.ACTIVE
         self.warehouse.active[scope] = publication_id
 
-    def rollback(self, scope, publication_id: str) -> None:
+    def rollback(self, scope: tuple[str, str], publication_id: str) -> None:
         publication = self.warehouse.publications.get(publication_id)
         if publication is None or publication.identity.key != scope or publication.status in {PublicationStatus.CANDIDATE, PublicationStatus.REJECTED}:
             raise PublicationError("publication is not rollback-eligible")
@@ -29,4 +29,3 @@ class PointerPublisher:
     def active_for(self, scope):
         publication_id = self.warehouse.active.get(scope)
         return self.warehouse.publications.get(publication_id) if publication_id else None
-
