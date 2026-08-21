@@ -19,6 +19,7 @@ def main() -> int:
     live_repeat = read_json(live_root / "databricks-repeat.json")
     failure = read_json(live_root / "imports/failure-injection-summary.json")
     resources = read_json(live_root / "resource-inventory.json")
+    truth_access = read_json(live_root / "security/truth-access-negative.json")
     local_recovery = read_json(live_root / "imports/recovery-comparison.json")
     local_conflict = read_json(live_root / "imports/immutable-conflict-summary.json")
     base = {"qualified_source_sha": sha, "generated_at_utc": datetime.now(timezone.utc).isoformat()}
@@ -34,8 +35,8 @@ def main() -> int:
         "topology/after-repeat-10.json": {**base, "status": live_repeat.get("status", "not_run"), "source": "databricks-repeat.json"},
         "topology/topology-comparison.json": {**base, "status": "pass" if live_topology.get("status") == "pass" and live_repeat.get("status") == "pass" else "not_run", "comparison": "expected topology remains bounded"},
         "topology/resource-inventory.json": {**base, **resources} if resources else {**base, "status": "not_run"},
-        "security/truth-access-negative.json": {**base, "status": "not_qualified", "reason": "profile sda is administrator; no non-admin principal/session available"},
-        "security/qualification-gap.json": {**base, "status": "not_qualified", "reason": "non-admin Unity Catalog principal is unavailable"},
+        "security/truth-access-negative.json": {**base, **truth_access} if truth_access else {**base, "status": "not_qualified"},
+        "security/qualification-gap.json": {**base, "status": "pass" if truth_access.get("status") == "pass" else "not_qualified", "reason": "non-admin truth denial verified" if truth_access.get("status") == "pass" else "non-admin Unity Catalog principal is unavailable"},
         "regression/local-tests.json": {**base, "command": "python -m pytest tests/iteration_05 -q", "status": "pass"},
     }
     for rel, payload in files.items():

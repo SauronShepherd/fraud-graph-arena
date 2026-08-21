@@ -17,7 +17,7 @@ def main() -> int:
         "resource_budget": "pass" if resources.get("within_budget") else "fail",
         "failure_isolation": "pass" if load(root/"imports/failure-injection-summary.json").get("status")=="pass" else "fail",
         "local_regression_gate": "pass" if gate.get("status")=="pass" else "fail",
-        "non_admin_truth_denial": "external_gap" if security.get("status")=="not_qualified" else security.get("status","missing"),
+        "non_admin_truth_denial": security.get("status","missing"),
     }
     report={"status":"external_gap" if "external_gap" in requirements.values() else ("pass" if all(v=="pass" for v in requirements.values()) else "fail"),"qualified_source_sha":gate.get("qualified_source_sha"),"requirements":requirements,"closure_tag_allowed":all(v=="pass" for v in requirements.values())}
     args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0 if report["status"] in {"pass","external_gap"} else 1

@@ -15,12 +15,12 @@ This matrix maps the plan families to implementation owners and evidence. Paths 
 | S11 | topology/resource budget | `topology.py`, `audit_lakehouse_topology.py`, resource script | final topology/resource reports | PASS |
 | S12–S13 | loader/security/authority boundaries | `security.py`, permissions SQL, loader tests | security tests and SQL policy review | PASS locally |
 | S14 | qualification harness and cumulative gate | `qualify_databricks*.py`, `run_iteration_05_gate.py` | gate, package, repeat, row-count, failure reports | PASS |
-| S15 | operations, qualification, evidence, closure audit | `docs/iteration-05-*.md`, requirement audit | `requirement-audit.json`, closure commits | PASS with external gap |
+| S15 | operations, qualification, evidence, closure audit | `docs/iteration-05-*.md`, requirement audit | `requirement-audit.json`, closure commits | PASS |
 
 ## Explicit qualification gaps
 
 | Requirement | Evidence | Status |
 |---|---|---|
-| DBX-012 / SEC-001: non-admin identity denied truth access | `reports/iteration-05/security/qualification-gap.json` | EXTERNAL GAP: both available profiles authenticate as administrator |
+| DBX-012 / SEC-001: non-admin identity denied truth access | `reports/iteration-05/security/truth-access-negative.json` | PASS: `angel.alvarez.pascua@gmail.com` safe read passed and truth read was denied |
 | DBX-009 response-loss and cleanup-failure live fault injection | `reports/iteration-05/imports/recovery-comparison.json` plus local resilience tests | Local behavior verified; live fault-injection adapter unavailable |
-| Immutable closed tag | `reports/iteration-05/requirement-audit.json` sets `closure_tag_allowed=false` | Intentionally not created |
+| Immutable closed tag | `reports/iteration-05/requirement-audit.json` sets `closure_tag_allowed=true` | Ready after final gate |
