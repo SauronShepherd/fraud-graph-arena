@@ -1,0 +1,7 @@
+{
+  "environment": "fga_dev",
+  "canonical_model_version": "1.0.0",
+  "physical_target_prefix": "fga_",
+  "operational_tables": ["fga_import_runs", "fga_import_run_files", "fga_import_run_datasets", "fga_import_publications", "fga_active_publications"],
+  "destructive_targets": ["fga_dev"]
+}

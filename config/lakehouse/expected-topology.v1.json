@@ -1,0 +1,12 @@
+{
+  "canonical_source": "contracts/canonical/v1/schema-registry.json",
+  "canonical_table_prefix": "fga_",
+  "operational_tables": [
+    "fga_import_runs",
+    "fga_import_run_files",
+    "fga_import_run_datasets",
+    "fga_import_publications",
+    "fga_active_publications"
+  ],
+  "forbid_case_specific_names": true
+}

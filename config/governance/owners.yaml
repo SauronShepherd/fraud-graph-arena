@@ -27,10 +27,16 @@ assignments:
   - {path: docs/iteration-02/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/iteration-03/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/iteration-04/**, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: docs/iteration-05/**, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: docs/iteration-05-*.md, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: docs/iteration-05-SECURITY.md, owner: security-assurance, reviewer: quality-engineering}
+  - {path: docs/architecture/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: config/governance/**, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: config/lakehouse/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/testing/**, owner: quality-engineering, reviewer: architecture-governance}
   - {path: schemas/canonical/**, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: sql/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: reports/**, owner: quality-engineering, reviewer: release-management}
   - {path: scripts/**, owner: developer-experience, reviewer: quality-engineering}
   - {path: tests/**, owner: quality-engineering, reviewer: architecture-governance}

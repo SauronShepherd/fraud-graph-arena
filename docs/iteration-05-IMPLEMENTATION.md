@@ -1,0 +1,5 @@
+# FGA 05 implementation
+
+The `fraud_graph_arena.canonical_persistence` package owns the closed Canonical v1 target map, package identity, import lifecycle, publication pointer, topology digest, reconciliation, and safe identifier handling. Mutable game state remains in the existing application persistence modules.
+
+The reference adapter is `MemoryWarehouse`. Its topology is 32 canonical targets plus five operational targets: runs, run files, run datasets, publications, and active publications. The importer validates manifest hashes before staging and never derives a target from an arbitrary package filename. The live qualification harness uses `COPY INTO` only with explicit `mergeSchema=false` and supports an explicit `force=true` mode for clean recreation, because Databricks retains file-load history after `TRUNCATE`; row receipts are applied per package after each forced reload.
