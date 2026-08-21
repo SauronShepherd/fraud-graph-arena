@@ -1,6 +1,9 @@
 {
-  "qualified_source_sha": "7b9fcf5407c55f11dd734c8033b69c1776025423",
-  "generated_at_utc": "2026-08-21T18:43:54.668962+00:00",
+  "profile": "fga",
+  "user": "angel.alvarez@sdggroup.com",
+  "is_admin": true,
+  "safe_select": "not_run",
+  "truth_select": "not_run",
   "status": "not_qualified",
-  "reason": "profile sda is administrator; no non-admin principal/session available"
+  "reason": "identity is a member of admins; admin sessions cannot prove denial"
 }
