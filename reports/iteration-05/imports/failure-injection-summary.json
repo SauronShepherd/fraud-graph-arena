@@ -1,11 +1,10 @@
 {
-  "qualified_source_sha": "8eb0dec26616d992f71e98cbeb861c5d043e7043",
-  "generated_at_utc": "2026-08-21T18:18:12.145302+00:00",
   "status": "pass",
   "before": "pub_ae6be5d6b9f29cf19c0913300ad402f09fb9b039377168ebcccb5410900b739e",
   "after": "pub_ae6be5d6b9f29cf19c0913300ad402f09fb9b039377168ebcccb5410900b739e",
   "failed_run": "dbx_failed_run_17",
   "candidate_active": false,
+  "qualified_source_sha": "db2312bab4159e4792561c7d4b3ae42aefa6b771",
   "catalog": "sda_dev",
   "schema": "sandbox",
   "warehouse": "e444f39962128242"
