@@ -2,12 +2,13 @@ import { useMemo } from "react";
 import type { CatalogueSections } from "../api/contracts";
 import { Loading } from "../components/Loading";
 import { ProblemPanel } from "../components/ProblemPanel";
-import { ScreenLink } from "../screen-system/ScreenLink";
 import { useScreenData } from "../screen-system/useScreenData";
+import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 
 export function PathSelectionPage() {
   const { model, problem, retry } = useScreenData<CatalogueSections>("CATALOGUE_SECTIONS", {}, "paths");
   const paths = useMemo(() => model?.sections ?? [], [model]);
+  const { dispatchAction, transitionLocked } = useScreenRuntime();
 
   if (problem) return <ProblemPanel problem={problem} onRetry={retry} />;
   if (paths.length === 0) return <Loading message="Inspecting available paths…" />;
@@ -26,7 +27,7 @@ export function PathSelectionPage() {
               <small>{path.ranked ? "Ranked path" : "Training path"} · {path.status}</small>
               <small id={`${path.id}-access`}>{path.access_message}</small>
             </>;
-          return isOpen ? <ScreenLink role="button" className="choice-card" data-status={path.status} key={path.id} aria-describedby={`${path.id}-access`} to={`/paths/${encodeURIComponent(path.id)}/cases`}>{content}</ScreenLink> : <button className="choice-card" data-status={path.status} key={path.id} type="button" disabled aria-describedby={`${path.id}-access`}>{content}</button>;
+          return isOpen ? <button className="choice-card" data-status={path.status} key={path.id} type="button" disabled={transitionLocked} aria-describedby={`${path.id}-access`} onClick={() => void dispatchAction("SELECT_PATH", { pathId: path.id })}>{content}</button> : <button className="choice-card" data-status={path.status} key={path.id} type="button" disabled aria-describedby={`${path.id}-access`}>{content}</button>;
         })}
       </div>
     </main>
