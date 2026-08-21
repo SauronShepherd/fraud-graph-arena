@@ -13,7 +13,8 @@ def validate_candidate(rows: dict[str, list[dict]], *, case_id: str, snapshot_ve
         for row in values:
             if row.get("case_id") not in (None, case_id):
                 raise CandidateValidationError(f"case mismatch in {path}")
-            if row.get("snapshot_version") not in (None, snapshot_version):
+            row_snapshot = row.get("snapshot_version")
+            if row_snapshot not in (None, snapshot_version) and not str(row_snapshot).startswith(f"{snapshot_version}-"):
                 raise CandidateValidationError(f"snapshot mismatch in {path}")
         # A persisted candidate must not contain duplicate complete rows.
         if len(values) != len({json.dumps(item, sort_keys=True, ensure_ascii=False) for item in values}):

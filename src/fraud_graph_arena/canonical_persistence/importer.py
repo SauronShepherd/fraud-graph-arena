@@ -5,6 +5,7 @@ from .identity import content_digest, publication_id, semantic_hash
 from .models import ImportResult, ImportRun, ImportStatus, PackageIdentity, Publication, PublicationStatus
 from .registry import PHYSICAL_TARGETS, validate_registry
 from .types import validate_row_types
+from .validator import validate_candidate
 
 class CanonicalImportError(ValueError): pass
 class ResponseLostAfterActivation(RuntimeError): pass
@@ -50,7 +51,7 @@ class CanonicalImporter:
                 run.dataset_phases[rel] = "STAGED"; self.warehouse.record_dataset(run_id, rel, len(rows[rel]), len(rows[rel]), None, "STAGED")
                 if fail_after is not None and index + 1 == fail_after: raise RuntimeError("injected failure")
             run.status = ImportStatus.STAGED; run.status = ImportStatus.VALIDATING
-            fingerprint = semantic_hash(rows)
+            fingerprint = validate_candidate(rows, case_id=identity.case_id, snapshot_version=identity.snapshot_version)
             persisted_rows = {path: [dict(row, _publication_id=pub_id, _load_run_id=run_id) for row in values] for path, values in rows.items()}
             candidate = Publication(pub_id, identity, PublicationStatus.CANDIDATE, persisted_rows, fingerprint); self.warehouse.candidates[pub_id] = candidate
             candidate.status = PublicationStatus.VALIDATED; self.warehouse.publications[pub_id] = candidate; self.warehouse.candidates.pop(pub_id, None)

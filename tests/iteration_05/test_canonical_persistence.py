@@ -34,6 +34,13 @@ def test_failed_candidate_does_not_replace_active():
     assert failed.status == ImportStatus.FAILED
     assert warehouse.active[(first.publication_id and warehouse.publications[first.publication_id].identity.key)] == first.publication_id
 
+def test_candidate_validation_is_mandatory_before_activation(monkeypatch):
+    warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
+    monkeypatch.setattr("fraud_graph_arena.canonical_persistence.importer.validate_candidate", lambda *args, **kwargs: (_ for _ in ()).throw(ValueError("candidate rejected")))
+    result = importer.import_package(PACKAGES[0])
+    assert result.status == ImportStatus.FAILED
+    assert not warehouse.active and not warehouse.publications
+
 def test_all_packages_share_topology():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
     for package in PACKAGES: importer.import_package(package)
