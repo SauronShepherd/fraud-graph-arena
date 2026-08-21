@@ -1,220 +1,210 @@
 {
-  "package_name": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
-  "package_version": "2.0.0-canonical.1",
-  "case_id": "LOVE_LEASHES_OFFSHORE",
-  "short_id": "S1",
-  "title": "Love, Leashes & Offshore Transfers",
-  "profile_code": "SENIOR",
-  "canonical_model_version": "1.0.0",
-  "snapshot_version": "2026.07.18.1",
-  "source_archive": "S1_LOVE_LEASHES_OFFSHORE_SENIOR_case_datasets_v1(1).zip",
-  "validation_status": "PASS",
   "canonical_csv_table_count": 32,
+  "canonical_model_version": "1.0.0",
+  "case_id": "LOVE_LEASHES_OFFSHORE",
+  "case_version": "1.0.0",
+  "converter": "senior.csv.v1",
+  "family": "SENIOR",
   "files": [
     {
-      "path": "README.md",
-      "bytes": 661,
-      "sha256": "592809b0fa3223d4f7b4493d1cf04a8dd138b39ab96950d697328a1baf91cb6d"
-    },
-    {
-      "path": "analytics/entity_resolution_candidates.csv",
-      "bytes": 121315,
-      "sha256": "aa9675334f473922baffd8a713e2556ee33cb3aa2fd8760ba39a91dc489f5769"
-    },
-    {
-      "path": "analytics/exact_matches.csv",
-      "bytes": 785107,
-      "sha256": "f890a48adaecea1c43129d497f277409a02cb408501f25c3b7a8ea19ad05e5ab"
-    },
-    {
-      "path": "analytics/tool_fixtures.csv",
-      "bytes": 1408,
-      "sha256": "9ea1a87b40a6710980035f491595cc95958de622c3b3177408d577f16a4d170f"
-    },
-    {
-      "path": "authoring/record_attributes.csv",
-      "bytes": 11774890,
-      "sha256": "61e60ec59d4fa76eca15ef20f0e4ecfa76d0be2b2aeaaf571aaf882239fdac92"
-    },
-    {
-      "path": "authoring/records.csv",
-      "bytes": 5145738,
-      "sha256": "53128a741d8ef96621a08d63ea7ac129197b394aa30b6cf7f4377995d6e70d84"
-    },
-    {
-      "path": "authoring/relationships.csv",
-      "bytes": 9615821,
-      "sha256": "0340091c757fc4146e627904f834580f6eebeee896ee1ad233a42e71353e1ff1"
-    },
-    {
-      "path": "config/case_initial_items.csv",
-      "bytes": 515,
-      "sha256": "21c88fdffafff9e9d6118d9931b4033154b83d10b25c4408fd7f73df2fac0fa4"
-    },
-    {
-      "path": "config/case_profiles.csv",
-      "bytes": 364,
-      "sha256": "98b7c88ee2e8ddba1bd3407211b6085dc8a358daeb0026200707116b97a68362"
-    },
-    {
-      "path": "config/cases.csv",
       "bytes": 532,
+      "path": "config/cases.csv",
+      "rows": 1,
       "sha256": "401ec829564721afb59bdc3b9cb8c98e2fa2e7fa096365745f12a546d2b9c45f"
     },
     {
-      "path": "config/genie_benchmarks.csv",
-      "bytes": 4427,
-      "sha256": "e715e501792e5b52c1063033edf66ce0b0149b6b38c57bec5d37d50b4750f9c9"
+      "bytes": 364,
+      "path": "config/case_profiles.csv",
+      "rows": 1,
+      "sha256": "98b7c88ee2e8ddba1bd3407211b6085dc8a358daeb0026200707116b97a68362"
     },
     {
-      "path": "config/registries.csv",
-      "bytes": 21495,
-      "sha256": "7707af7a21ce600aa80a48d89fdc2ac7f77e2b287a0e644e24d895df680b1012"
+      "bytes": 515,
+      "path": "config/case_initial_items.csv",
+      "rows": 6,
+      "sha256": "21c88fdffafff9e9d6118d9931b4033154b83d10b25c4408fd7f73df2fac0fa4"
     },
     {
-      "path": "config/reveal_steps.csv",
-      "bytes": 153,
-      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
-    },
-    {
-      "path": "config/ui_contracts.csv",
       "bytes": 56,
+      "path": "config/ui_contracts.csv",
+      "rows": 0,
       "sha256": "b3000aa0c0582a1dd2987d5514cdf7ee47941ca01a2585d8373dbe870e4fc86b"
     },
     {
-      "path": "conversion_report.json",
-      "bytes": 2361,
-      "sha256": "33cf8006a696be366fa6d53d0b3fdb956defa0b8d428b2397655695d3ee8c01d"
+      "bytes": 21495,
+      "path": "config/registries.csv",
+      "rows": 122,
+      "sha256": "7707af7a21ce600aa80a48d89fdc2ac7f77e2b287a0e644e24d895df680b1012"
     },
     {
-      "path": "fga_canonical_schema_registry_v1.json",
-      "bytes": 70166,
-      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+      "bytes": 153,
+      "path": "config/reveal_steps.csv",
+      "rows": 0,
+      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
     },
     {
-      "path": "genie/record_attributes.csv",
-      "bytes": 9380310,
-      "sha256": "4e07fc51774631079bcd21e9e326329155566dcd4bdd250a96da902053c19938"
+      "bytes": 4427,
+      "path": "config/genie_benchmarks.csv",
+      "rows": 18,
+      "sha256": "e715e501792e5b52c1063033edf66ce0b0149b6b38c57bec5d37d50b4750f9c9"
     },
     {
-      "path": "genie/records.csv",
-      "bytes": 3907941,
-      "sha256": "7f5249fcb6bb6e77bb8ef90f92d254823b8c5100e7f4dac26ab372c18169a5a3"
+      "bytes": 5145738,
+      "path": "authoring/records.csv",
+      "rows": 6244,
+      "sha256": "53128a741d8ef96621a08d63ea7ac129197b394aa30b6cf7f4377995d6e70d84"
     },
     {
-      "path": "genie/relationships.csv",
-      "bytes": 5319287,
-      "sha256": "159b4d6c04159a5f4328b07c746479d0e5345d7f5a782430af243195ceba94d0"
+      "bytes": 11774890,
+      "path": "authoring/record_attributes.csv",
+      "rows": 76157,
+      "sha256": "61e60ec59d4fa76eca15ef20f0e4ecfa76d0be2b2aeaaf571aaf882239fdac92"
     },
     {
-      "path": "metadata/source_README.md",
-      "bytes": 618,
-      "sha256": "dd9ff0f56d91c19856492ebe2fe27662b99563732670344e3f723b9be8fb56cb"
+      "bytes": 9615821,
+      "path": "authoring/relationships.csv",
+      "rows": 33798,
+      "sha256": "0340091c757fc4146e627904f834580f6eebeee896ee1ad233a42e71353e1ff1"
     },
     {
-      "path": "metadata/source_case.yaml",
-      "bytes": 484,
-      "sha256": "7f82acb87154ba93968b068588aaa78e5168b2206c769cda13426b258e255179"
+      "bytes": 121315,
+      "path": "analytics/entity_resolution_candidates.csv",
+      "rows": 272,
+      "sha256": "aa9675334f473922baffd8a713e2556ee33cb3aa2fd8760ba39a91dc489f5769"
     },
     {
-      "path": "metadata/source_data_dictionary.json",
-      "bytes": 152362,
-      "sha256": "0b57f3b162bb6191f143554e44e2791c228d14f7a535c4bcb923d5920e43c39c"
+      "bytes": 785107,
+      "path": "analytics/exact_matches.csv",
+      "rows": 1756,
+      "sha256": "f890a48adaecea1c43129d497f277409a02cb408501f25c3b7a8ea19ad05e5ab"
     },
     {
-      "path": "metadata/source_manifest.json",
-      "bytes": 12812,
-      "sha256": "9f0ba69cfcb759513ca10c8bee0c9f30250ec232415aec7e10e7efa5d852af7f"
+      "bytes": 1408,
+      "path": "analytics/tool_fixtures.csv",
+      "rows": 4,
+      "sha256": "9ea1a87b40a6710980035f491595cc95958de622c3b3177408d577f16a4d170f"
     },
     {
-      "path": "metadata/source_validation_report.json",
-      "bytes": 2280,
-      "sha256": "543f4483d82f82d78097463743a940b10a8f2ce2eb9e42bf1f9b2b0ca8f930af"
-    },
-    {
-      "path": "published/entity_resolution_candidates.csv",
-      "bytes": 85015,
-      "sha256": "c820cbb7db6c28ed4c335eed0a352a15f20026215a51f044922aae585cd1c3a3"
-    },
-    {
-      "path": "published/exact_matches.csv",
-      "bytes": 574272,
-      "sha256": "ad872fbaaee222866e94535285af9eeb4943b02825d7e12a5d620c2b58d9c764"
-    },
-    {
-      "path": "published/records.csv",
       "bytes": 2687892,
+      "path": "published/records.csv",
+      "rows": 6101,
       "sha256": "52176ba0e64b4b410b9ea0fad2f500854a18167f8576d23df3406da1b8403e7d"
     },
     {
-      "path": "published/relationships.csv",
       "bytes": 3597745,
+      "path": "published/relationships.csv",
+      "rows": 16240,
       "sha256": "4b02c5ed85228a38a5465cb0435fe619784d66d04d6d08127e4b39547349764f"
     },
     {
-      "path": "scripts/validate_canonical_package.py",
-      "bytes": 6999,
-      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+      "bytes": 85015,
+      "path": "published/entity_resolution_candidates.csv",
+      "rows": 272,
+      "sha256": "c820cbb7db6c28ed4c335eed0a352a15f20026215a51f044922aae585cd1c3a3"
     },
     {
-      "path": "truth/allowed_alternatives.csv",
-      "bytes": 937,
-      "sha256": "35f7181a33346273bc79e042fa301298709f5d371b131948647b7a30621657d2"
+      "bytes": 574272,
+      "path": "published/exact_matches.csv",
+      "rows": 1756,
+      "sha256": "ad872fbaaee222866e94535285af9eeb4943b02825d7e12a5d620c2b58d9c764"
     },
     {
-      "path": "truth/assertions.csv",
-      "bytes": 62824,
-      "sha256": "525d0f338570ee4d83a4998971664ad90c1278e567e03005c412a11fce800e7c"
+      "bytes": 3907941,
+      "path": "genie/records.csv",
+      "rows": 6007,
+      "sha256": "7f5249fcb6bb6e77bb8ef90f92d254823b8c5100e7f4dac26ab372c18169a5a3"
     },
     {
-      "path": "truth/claims.csv",
-      "bytes": 1875,
-      "sha256": "3d3ad12d3e040b2556b0d920d847d19c6156b1a5da43b06dd76f775d624279ea"
+      "bytes": 9380310,
+      "path": "genie/record_attributes.csv",
+      "rows": 61476,
+      "sha256": "4e07fc51774631079bcd21e9e326329155566dcd4bdd250a96da902053c19938"
     },
     {
-      "path": "truth/ending_rules.csv",
-      "bytes": 1125,
-      "sha256": "ed3cc4584fc5d635c5e67c73452bc5815ac44886c95cab1edbcdda8edf206370"
+      "bytes": 5319287,
+      "path": "genie/relationships.csv",
+      "rows": 16621,
+      "sha256": "159b4d6c04159a5f4328b07c746479d0e5345d7f5a782430af243195ceba94d0"
     },
     {
-      "path": "truth/entities.csv",
       "bytes": 31716,
+      "path": "truth/entities.csv",
+      "rows": 143,
       "sha256": "aef504dfe54d723acc5c54f883bb182fb975a0e2a3c2e6eefe56a4a2c6784979"
     },
     {
-      "path": "truth/evidence_requirements.csv",
+      "bytes": 1875,
+      "path": "truth/claims.csv",
+      "rows": 9,
+      "sha256": "3d3ad12d3e040b2556b0d920d847d19c6156b1a5da43b06dd76f775d624279ea"
+    },
+    {
       "bytes": 2097,
+      "path": "truth/evidence_requirements.csv",
+      "rows": 9,
       "sha256": "4bebc06faa975235051c0184fa53bbbe180582f89afa067dbffba1446383c5e1"
     },
     {
-      "path": "truth/evidence_routes.csv",
       "bytes": 978,
+      "path": "truth/evidence_routes.csv",
+      "rows": 6,
       "sha256": "a74a839ae4c46c0c4ccf63c583d3f23d6fdcb12598a4181e0c0ab26c7b949ace"
     },
     {
-      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 937,
+      "path": "truth/allowed_alternatives.csv",
+      "rows": 5,
+      "sha256": "35f7181a33346273bc79e042fa301298709f5d371b131948647b7a30621657d2"
+    },
+    {
       "bytes": 1231,
+      "path": "truth/forbidden_conclusions.csv",
+      "rows": 10,
       "sha256": "b870759e973dbd1519ebc0fad71bddef5bf40dd5512bbcd1edc31b3277f3e1d7"
     },
     {
-      "path": "truth/scoring_rules.csv",
       "bytes": 1237,
+      "path": "truth/scoring_rules.csv",
+      "rows": 8,
       "sha256": "0f36e08025a6109aa5eccdb6c6ba90c8f4df48fb484b632dd46f43ef0576c262"
     },
     {
-      "path": "truth/test_scenarios.csv",
+      "bytes": 1125,
+      "path": "truth/ending_rules.csv",
+      "rows": 6,
+      "sha256": "ed3cc4584fc5d635c5e67c73452bc5815ac44886c95cab1edbcdda8edf206370"
+    },
+    {
       "bytes": 170,
+      "path": "truth/test_scenarios.csv",
+      "rows": 0,
       "sha256": "bccb4722918cdb299476defc3db1a87b31475e57d430c00e3ddc4816b81c039d"
     },
     {
-      "path": "validation/checks.csv",
+      "bytes": 62824,
+      "path": "truth/assertions.csv",
+      "rows": 180,
+      "sha256": "525d0f338570ee4d83a4998971664ad90c1278e567e03005c412a11fce800e7c"
+    },
+    {
       "bytes": 3119,
+      "path": "validation/checks.csv",
+      "rows": 28,
       "sha256": "1086c55b861731a7931c4fcc32076f09e0ff2f8f08c7406667b9848c7e75cdc6"
     },
     {
-      "path": "validation/metrics.csv",
       "bytes": 25053,
+      "path": "validation/metrics.csv",
+      "rows": 117,
       "sha256": "e1d22dfe25870a5500ae97f4cc27c8eb6c0d03b550a131c59d9f7a9361eb8045"
     }
-  ]
+  ],
+  "package_name": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+  "package_version": "2.0.0-canonical.1",
+  "profile_code": "SENIOR",
+  "short_id": "S1",
+  "snapshot_version": "2026.07.18.1",
+  "source_archive": "S1_LOVE_LEASHES_OFFSHORE_SENIOR_case_datasets_v1(1).zip",
+  "title": "Love, Leashes & Offshore Transfers",
+  "validation_status": "PASS"
 }

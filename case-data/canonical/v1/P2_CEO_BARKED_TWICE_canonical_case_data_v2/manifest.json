@@ -1,220 +1,210 @@
 {
-  "package_name": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
-  "package_version": "2.0.0-canonical.1",
-  "case_id": "CEO_BARKED_TWICE",
-  "short_id": "P2",
-  "title": "The CEO Who Barked Twice",
-  "profile_code": "PUPPY",
-  "canonical_model_version": "1.0.0",
-  "snapshot_version": "2026.07.19.2",
-  "source_archive": "P2_CEO_BARKED_TWICE_PUPPY_case_datasets_v1(1).zip",
-  "validation_status": "PASS",
   "canonical_csv_table_count": 32,
+  "canonical_model_version": "1.0.0",
+  "case_id": "CEO_BARKED_TWICE",
+  "case_version": "1.1.0",
+  "converter": "puppy.csv.v1",
+  "family": "PUPPY",
   "files": [
     {
-      "path": "README.md",
-      "bytes": 639,
-      "sha256": "701ea06d5c793bc387efe382a51baa0002f1a677e97657316c432683d6d5020b"
-    },
-    {
-      "path": "analytics/entity_resolution_candidates.csv",
-      "bytes": 13691,
-      "sha256": "8cf76125febb16983a4fbcd55f3268c7bd8409fa3d7a26d022230675e40a9302"
-    },
-    {
-      "path": "analytics/exact_matches.csv",
-      "bytes": 23794,
-      "sha256": "0eb67ba56f01e2b20ecb5080a19d7eaa5b2f4aca7485bae5787dc033513dd5d0"
-    },
-    {
-      "path": "analytics/tool_fixtures.csv",
-      "bytes": 776,
-      "sha256": "55d30c40dd54b9375e39736e72d6da0dec0a21bff749bc04f453fa1ea222d6f3"
-    },
-    {
-      "path": "authoring/record_attributes.csv",
-      "bytes": 1096325,
-      "sha256": "041232f4313cea198a001fa9a55574ae1da6309f8e48693231543f16620d0b40"
-    },
-    {
-      "path": "authoring/records.csv",
-      "bytes": 471756,
-      "sha256": "87d121688bf1f0831cf5146eef47e925974391c274b5b6df4914914472f2556a"
-    },
-    {
-      "path": "authoring/relationships.csv",
-      "bytes": 581074,
-      "sha256": "4176b869a38ed849c63be254616eaa661efdf4fd205186e8cce394185ffa4d93"
-    },
-    {
-      "path": "config/case_initial_items.csv",
-      "bytes": 942,
-      "sha256": "404fbdbce68990af8c4ae3687877b50f2a124de9b521693b283ddd68f7e3e50c"
-    },
-    {
-      "path": "config/case_profiles.csv",
-      "bytes": 362,
-      "sha256": "b2ebbae761f8ed06a5f7239b7d29f980ec0b7b007d102bd2fc46d302049dd59c"
-    },
-    {
-      "path": "config/cases.csv",
       "bytes": 522,
+      "path": "config/cases.csv",
+      "rows": 1,
       "sha256": "6dc7b6830a16a5c8e2a1ef682e2c6017545c675e837c82e1d863ae11573cd7e7"
     },
     {
-      "path": "config/genie_benchmarks.csv",
-      "bytes": 3292,
-      "sha256": "66ccfd7288cfadf1c782cf5c6ccef3e64fedc3b7b44907d1e388fe4dc4e914a7"
+      "bytes": 362,
+      "path": "config/case_profiles.csv",
+      "rows": 1,
+      "sha256": "b2ebbae761f8ed06a5f7239b7d29f980ec0b7b007d102bd2fc46d302049dd59c"
     },
     {
-      "path": "config/registries.csv",
-      "bytes": 12995,
-      "sha256": "f671156c86a0acd1c17f359f2b6c997ec8d3ca11e526cc68d11f16e184405660"
+      "bytes": 942,
+      "path": "config/case_initial_items.csv",
+      "rows": 12,
+      "sha256": "404fbdbce68990af8c4ae3687877b50f2a124de9b521693b283ddd68f7e3e50c"
     },
     {
-      "path": "config/reveal_steps.csv",
-      "bytes": 153,
-      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
-    },
-    {
-      "path": "config/ui_contracts.csv",
       "bytes": 56,
+      "path": "config/ui_contracts.csv",
+      "rows": 0,
       "sha256": "b3000aa0c0582a1dd2987d5514cdf7ee47941ca01a2585d8373dbe870e4fc86b"
     },
     {
-      "path": "conversion_report.json",
-      "bytes": 2196,
-      "sha256": "7cded8d93a8ab8a073eb48d513d49ab2e1be28f0583746a93e1a458bd6d435ab"
+      "bytes": 12995,
+      "path": "config/registries.csv",
+      "rows": 81,
+      "sha256": "f671156c86a0acd1c17f359f2b6c997ec8d3ca11e526cc68d11f16e184405660"
     },
     {
-      "path": "fga_canonical_schema_registry_v1.json",
-      "bytes": 70166,
-      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+      "bytes": 153,
+      "path": "config/reveal_steps.csv",
+      "rows": 0,
+      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
     },
     {
-      "path": "genie/record_attributes.csv",
-      "bytes": 836839,
-      "sha256": "8edfc0a89ece754767c6489e138867bff7abaac9ad071599784af1a278ff35ae"
+      "bytes": 3292,
+      "path": "config/genie_benchmarks.csv",
+      "rows": 13,
+      "sha256": "66ccfd7288cfadf1c782cf5c6ccef3e64fedc3b7b44907d1e388fe4dc4e914a7"
     },
     {
-      "path": "genie/records.csv",
-      "bytes": 343993,
-      "sha256": "86fbf4992860403c97e05ebe8b1968c8dfaf9f1ccf59fcc5342e1f3852b01d03"
+      "bytes": 471756,
+      "path": "authoring/records.csv",
+      "rows": 663,
+      "sha256": "87d121688bf1f0831cf5146eef47e925974391c274b5b6df4914914472f2556a"
     },
     {
-      "path": "genie/relationships.csv",
-      "bytes": 319645,
-      "sha256": "01908eb7b949d1e5607b550536f1e298c1f71e282d93b4fb46db4c9fe602e98c"
+      "bytes": 1096325,
+      "path": "authoring/record_attributes.csv",
+      "rows": 7672,
+      "sha256": "041232f4313cea198a001fa9a55574ae1da6309f8e48693231543f16620d0b40"
     },
     {
-      "path": "metadata/source_README.md",
-      "bytes": 610,
-      "sha256": "6adf9196c9e181378d6432f1b9e9493964f04e33806831047a463419bc4550d4"
+      "bytes": 581074,
+      "path": "authoring/relationships.csv",
+      "rows": 2049,
+      "sha256": "4176b869a38ed849c63be254616eaa661efdf4fd205186e8cce394185ffa4d93"
     },
     {
-      "path": "metadata/source_case.yaml",
-      "bytes": 449,
-      "sha256": "11e9098a980ee2cfb884080cec17088dfb64b7a8d1c83b5b64490ac603907b35"
+      "bytes": 13691,
+      "path": "analytics/entity_resolution_candidates.csv",
+      "rows": 36,
+      "sha256": "8cf76125febb16983a4fbcd55f3268c7bd8409fa3d7a26d022230675e40a9302"
     },
     {
-      "path": "metadata/source_data_dictionary.json",
-      "bytes": 146984,
-      "sha256": "89de796ef8fd1afe621ec122ea88daa93bb7c4813b0f751612a3fc1cba0d9881"
+      "bytes": 23794,
+      "path": "analytics/exact_matches.csv",
+      "rows": 56,
+      "sha256": "0eb67ba56f01e2b20ecb5080a19d7eaa5b2f4aca7485bae5787dc033513dd5d0"
     },
     {
-      "path": "metadata/source_manifest.json",
-      "bytes": 11775,
-      "sha256": "0ce2bfef66c47e64762ada17d043ee7fbd7ec4c84ea2b20b2dc8d1d4a9d761a6"
+      "bytes": 776,
+      "path": "analytics/tool_fixtures.csv",
+      "rows": 2,
+      "sha256": "55d30c40dd54b9375e39736e72d6da0dec0a21bff749bc04f453fa1ea222d6f3"
     },
     {
-      "path": "metadata/source_validation_report.json",
-      "bytes": 2001,
-      "sha256": "c0220b259598d9113c1826a0a225b5bc2ead80a3851dc38cbc2d42ab8c20f3b4"
-    },
-    {
-      "path": "published/entity_resolution_candidates.csv",
-      "bytes": 9303,
-      "sha256": "690ee1ce1c2fbf320309e171efd375ddc47ffa7d8923296af395524e42e94c71"
-    },
-    {
-      "path": "published/exact_matches.csv",
-      "bytes": 17089,
-      "sha256": "533b4830d1372cfce9061a380a616c649ca6c75ec28605faac6e31b5c33c030d"
-    },
-    {
-      "path": "published/records.csv",
       "bytes": 236875,
+      "path": "published/records.csv",
+      "rows": 642,
       "sha256": "92dc01c013d15c7f8e2db159e9d4ba294a10e2b01a0b9907c964d4d167e97da8"
     },
     {
-      "path": "published/relationships.csv",
       "bytes": 153066,
+      "path": "published/relationships.csv",
+      "rows": 721,
       "sha256": "bc8cd06f31cfaeaded2c6a88546554973c74af377f5bdd0e23b119b110f9e11c"
     },
     {
-      "path": "scripts/validate_canonical_package.py",
-      "bytes": 6999,
-      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+      "bytes": 9303,
+      "path": "published/entity_resolution_candidates.csv",
+      "rows": 36,
+      "sha256": "690ee1ce1c2fbf320309e171efd375ddc47ffa7d8923296af395524e42e94c71"
     },
     {
-      "path": "truth/allowed_alternatives.csv",
-      "bytes": 1152,
-      "sha256": "1ec9622e1a50e1fb0a75dfdc0dde042322a82455d9e09378ab850b97b630fcc0"
+      "bytes": 17089,
+      "path": "published/exact_matches.csv",
+      "rows": 56,
+      "sha256": "533b4830d1372cfce9061a380a616c649ca6c75ec28605faac6e31b5c33c030d"
     },
     {
-      "path": "truth/assertions.csv",
-      "bytes": 136,
-      "sha256": "daa3760dc887e77e2ab50c4478d1ac223bd3dc0ecd2c05c120ab3331fde58d58"
+      "bytes": 343993,
+      "path": "genie/records.csv",
+      "rows": 622,
+      "sha256": "86fbf4992860403c97e05ebe8b1968c8dfaf9f1ccf59fcc5342e1f3852b01d03"
     },
     {
-      "path": "truth/claims.csv",
-      "bytes": 1766,
-      "sha256": "3452fdd103562294fa54d76d28d6bde392f233625f11f4fe582c8d684d479e92"
+      "bytes": 836839,
+      "path": "genie/record_attributes.csv",
+      "rows": 6004,
+      "sha256": "8edfc0a89ece754767c6489e138867bff7abaac9ad071599784af1a278ff35ae"
     },
     {
-      "path": "truth/ending_rules.csv",
-      "bytes": 1027,
-      "sha256": "36c501996d025f992b6187c2309f8196af0f02802ec715f226f6c5575f4beecb"
+      "bytes": 319645,
+      "path": "genie/relationships.csv",
+      "rows": 1039,
+      "sha256": "01908eb7b949d1e5607b550536f1e298c1f71e282d93b4fb46db4c9fe602e98c"
     },
     {
-      "path": "truth/entities.csv",
       "bytes": 4169,
+      "path": "truth/entities.csv",
+      "rows": 22,
       "sha256": "91d0b6d5e7ce5058cb2c85428eba62b20254641ac99dbe9cdb9427ca1c861d07"
     },
     {
-      "path": "truth/evidence_requirements.csv",
+      "bytes": 1766,
+      "path": "truth/claims.csv",
+      "rows": 10,
+      "sha256": "3452fdd103562294fa54d76d28d6bde392f233625f11f4fe582c8d684d479e92"
+    },
+    {
       "bytes": 2005,
+      "path": "truth/evidence_requirements.csv",
+      "rows": 10,
       "sha256": "2f633d5c7923a3d3d2ec5f89b54dc06355ea706e38af12cd7cb4731d5f94deaa"
     },
     {
-      "path": "truth/evidence_routes.csv",
       "bytes": 2113,
+      "path": "truth/evidence_routes.csv",
+      "rows": 17,
       "sha256": "351e920ae29775d7dd710f7d6165be8ba652afabbf4b707d65bfb8b4c06966fe"
     },
     {
-      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 1152,
+      "path": "truth/allowed_alternatives.csv",
+      "rows": 7,
+      "sha256": "1ec9622e1a50e1fb0a75dfdc0dde042322a82455d9e09378ab850b97b630fcc0"
+    },
+    {
       "bytes": 659,
+      "path": "truth/forbidden_conclusions.csv",
+      "rows": 5,
       "sha256": "c68f49b2064317245c89492f8a9c1e0e36125f132a0c3d8664e938cb7b900656"
     },
     {
-      "path": "truth/scoring_rules.csv",
       "bytes": 1088,
+      "path": "truth/scoring_rules.csv",
+      "rows": 8,
       "sha256": "1686c7dd0deaaaf349fdf8bb36ef4cce49be66b04a520c60932128767a68a278"
     },
     {
-      "path": "truth/test_scenarios.csv",
+      "bytes": 1027,
+      "path": "truth/ending_rules.csv",
+      "rows": 6,
+      "sha256": "36c501996d025f992b6187c2309f8196af0f02802ec715f226f6c5575f4beecb"
+    },
+    {
       "bytes": 170,
+      "path": "truth/test_scenarios.csv",
+      "rows": 0,
       "sha256": "bccb4722918cdb299476defc3db1a87b31475e57d430c00e3ddc4816b81c039d"
     },
     {
-      "path": "validation/checks.csv",
+      "bytes": 136,
+      "path": "truth/assertions.csv",
+      "rows": 0,
+      "sha256": "daa3760dc887e77e2ab50c4478d1ac223bd3dc0ecd2c05c120ab3331fde58d58"
+    },
+    {
       "bytes": 1616,
+      "path": "validation/checks.csv",
+      "rows": 15,
       "sha256": "491d1af74f29d9884d5bcd646bb812eb3b7bf21789171ec09e1c349c19c32c82"
     },
     {
-      "path": "validation/metrics.csv",
       "bytes": 3722,
+      "path": "validation/metrics.csv",
+      "rows": 19,
       "sha256": "f05edb55263e1bc74ea0f97cedec10b2a936d4dbcfba9b91d71b8804bbb6dc9f"
     }
-  ]
+  ],
+  "package_name": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+  "package_version": "2.0.0-canonical.1",
+  "profile_code": "PUPPY",
+  "short_id": "P2",
+  "snapshot_version": "2026.07.19.2",
+  "source_archive": "P2_CEO_BARKED_TWICE_PUPPY_case_datasets_v1(1).zip",
+  "title": "The CEO Who Barked Twice",
+  "validation_status": "PASS"
 }

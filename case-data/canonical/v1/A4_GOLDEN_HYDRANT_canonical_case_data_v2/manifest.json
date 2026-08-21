@@ -1,220 +1,210 @@
 {
-  "package_name": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
-  "package_version": "2.0.0-canonical.1",
-  "case_id": "GOLDEN_HYDRANT",
-  "short_id": "A4",
-  "title": "The Golden Fire Hydrant Contract",
-  "profile_code": "ADULT",
-  "canonical_model_version": "1.0.0",
-  "snapshot_version": "2026.07.18.1",
-  "source_archive": "A4_GOLDEN_HYDRANT_ADULT_case_datasets_v1(1).zip",
-  "validation_status": "PASS",
   "canonical_csv_table_count": 32,
+  "canonical_model_version": "1.0.0",
+  "case_id": "GOLDEN_HYDRANT",
+  "case_version": "1.0.0",
+  "converter": "adult.csv.v1",
+  "family": "ADULT",
   "files": [
     {
-      "path": "README.md",
-      "bytes": 643,
-      "sha256": "2b65580c3a24e305ed189514c509af5c7e563769486576e06b949dee42199f43"
-    },
-    {
-      "path": "analytics/entity_resolution_candidates.csv",
-      "bytes": 52071,
-      "sha256": "5d3a052b5785386c6da2f855de589b352dff9e8be152dd1a3cf708db44c1f008"
-    },
-    {
-      "path": "analytics/exact_matches.csv",
-      "bytes": 123269,
-      "sha256": "43628902af6fce1d95ee341e94345248d961f213968dd938f23b803119eebf83"
-    },
-    {
-      "path": "analytics/tool_fixtures.csv",
-      "bytes": 780,
-      "sha256": "4eaae59d85bfda8eb20e1d90626edb3707f3db853080d17483e09a416df11568"
-    },
-    {
-      "path": "authoring/record_attributes.csv",
-      "bytes": 5327999,
-      "sha256": "1d9048901f7f85f12cebd75302b08eec60edb226bcc1571e0162411bf31924d7"
-    },
-    {
-      "path": "authoring/records.csv",
-      "bytes": 2203670,
-      "sha256": "5452830149e7d78522f201d21b60bf926c710454a5d8d8bfed160ad7aba53441"
-    },
-    {
-      "path": "authoring/relationships.csv",
-      "bytes": 4116364,
-      "sha256": "8caa4f87e0fcc441bddd46ca1b4175dbb38404a487b22dcccb9c4bd65f7bef77"
-    },
-    {
-      "path": "config/case_initial_items.csv",
-      "bytes": 557,
-      "sha256": "31e1cb03d1899e258824ffaa2537f1796854451faf7f704014194888db65149f"
-    },
-    {
-      "path": "config/case_profiles.csv",
-      "bytes": 400,
-      "sha256": "a9261972f4f9bb8c79d4bc197945c1059340e0bcf6b8eb2a4d8b732c6a97ed01"
-    },
-    {
-      "path": "config/cases.csv",
       "bytes": 559,
+      "path": "config/cases.csv",
+      "rows": 1,
       "sha256": "301433fdf9947eddb1bb72d2dd1c02e37b87f7e57e40ad687446ae9f8256bbbe"
     },
     {
-      "path": "config/genie_benchmarks.csv",
-      "bytes": 3658,
-      "sha256": "c82ffb739af98e9c83019916f94f0abf8e7274f593303b55b80a5a96bab3bf71"
+      "bytes": 400,
+      "path": "config/case_profiles.csv",
+      "rows": 1,
+      "sha256": "a9261972f4f9bb8c79d4bc197945c1059340e0bcf6b8eb2a4d8b732c6a97ed01"
     },
     {
-      "path": "config/registries.csv",
-      "bytes": 15615,
-      "sha256": "56767519330a62e72e36b48f4359091d7ea8bcbe2d4732343516bead0d4f3393"
+      "bytes": 557,
+      "path": "config/case_initial_items.csv",
+      "rows": 8,
+      "sha256": "31e1cb03d1899e258824ffaa2537f1796854451faf7f704014194888db65149f"
     },
     {
-      "path": "config/reveal_steps.csv",
-      "bytes": 153,
-      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
-    },
-    {
-      "path": "config/ui_contracts.csv",
       "bytes": 56,
+      "path": "config/ui_contracts.csv",
+      "rows": 0,
       "sha256": "b3000aa0c0582a1dd2987d5514cdf7ee47941ca01a2585d8373dbe870e4fc86b"
     },
     {
-      "path": "conversion_report.json",
-      "bytes": 2199,
-      "sha256": "a0eda83a96905d0b23353e74050e3c26b20087a484ab5e9d6d0582d330256f8a"
+      "bytes": 15615,
+      "path": "config/registries.csv",
+      "rows": 90,
+      "sha256": "56767519330a62e72e36b48f4359091d7ea8bcbe2d4732343516bead0d4f3393"
     },
     {
-      "path": "fga_canonical_schema_registry_v1.json",
-      "bytes": 70166,
-      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+      "bytes": 153,
+      "path": "config/reveal_steps.csv",
+      "rows": 0,
+      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
     },
     {
-      "path": "genie/record_attributes.csv",
-      "bytes": 3092138,
-      "sha256": "9684c2bf9a8deaf055443a3585065fcf4e47775fb7112d614b618bc184e45372"
+      "bytes": 3658,
+      "path": "config/genie_benchmarks.csv",
+      "rows": 14,
+      "sha256": "c82ffb739af98e9c83019916f94f0abf8e7274f593303b55b80a5a96bab3bf71"
     },
     {
-      "path": "genie/records.csv",
-      "bytes": 1260955,
-      "sha256": "4ee34c2f6c6514e52d49d0f12098e39c3152ede568e2e747e3eaf27549ce9962"
+      "bytes": 2203670,
+      "path": "authoring/records.csv",
+      "rows": 3090,
+      "sha256": "5452830149e7d78522f201d21b60bf926c710454a5d8d8bfed160ad7aba53441"
     },
     {
-      "path": "genie/relationships.csv",
-      "bytes": 1894413,
-      "sha256": "526087523ddc2f3b5a43af2c3af364b47d0372bb3cb6e86d293a3098a71a65ba"
+      "bytes": 5327999,
+      "path": "authoring/record_attributes.csv",
+      "rows": 36286,
+      "sha256": "1d9048901f7f85f12cebd75302b08eec60edb226bcc1571e0162411bf31924d7"
     },
     {
-      "path": "metadata/source_README.md",
-      "bytes": 613,
-      "sha256": "465b59fc5b915495062180c156b57505077be8ece75aea00d74132427ba9154e"
+      "bytes": 4116364,
+      "path": "authoring/relationships.csv",
+      "rows": 15227,
+      "sha256": "8caa4f87e0fcc441bddd46ca1b4175dbb38404a487b22dcccb9c4bd65f7bef77"
     },
     {
-      "path": "metadata/source_case.yaml",
-      "bytes": 388,
-      "sha256": "04f1cf72d2bd451b1aeb17c11a57a90bacdb2b2194386e996b20552b3a4b9b92"
+      "bytes": 52071,
+      "path": "analytics/entity_resolution_candidates.csv",
+      "rows": 124,
+      "sha256": "5d3a052b5785386c6da2f855de589b352dff9e8be152dd1a3cf708db44c1f008"
     },
     {
-      "path": "metadata/source_data_dictionary.json",
-      "bytes": 165213,
-      "sha256": "1802df915e59851b7289c72526a93a2504bd04915eab557f5ddc76c290f9120b"
+      "bytes": 123269,
+      "path": "analytics/exact_matches.csv",
+      "rows": 284,
+      "sha256": "43628902af6fce1d95ee341e94345248d961f213968dd938f23b803119eebf83"
     },
     {
-      "path": "metadata/source_manifest.json",
-      "bytes": 13383,
-      "sha256": "3f1894f8313d71a3d261bf486cdcf02bfe0f12dfee277702412c43d7f06a0d06"
+      "bytes": 780,
+      "path": "analytics/tool_fixtures.csv",
+      "rows": 2,
+      "sha256": "4eaae59d85bfda8eb20e1d90626edb3707f3db853080d17483e09a416df11568"
     },
     {
-      "path": "metadata/source_validation_report.json",
-      "bytes": 2036,
-      "sha256": "f23c19fe1325b7e467acbf0402e4d8ddfac5cd6a342af28dbc3c52b04c40f82a"
-    },
-    {
-      "path": "published/entity_resolution_candidates.csv",
-      "bytes": 35549,
-      "sha256": "210b3fa139d56f32cfd5a729ab57687842a247e01e07cff925b35de71ad35d67"
-    },
-    {
-      "path": "published/exact_matches.csv",
-      "bytes": 88398,
-      "sha256": "f5e1083036e422fcd6bd0134570435f5a29c94573e51fe4b34df2590319ea3b0"
-    },
-    {
-      "path": "published/records.csv",
       "bytes": 1142099,
+      "path": "published/records.csv",
+      "rows": 3018,
       "sha256": "ad0fe764d6cf70ba37dc2f8da7af85071e1051d626cf88fdfb2c94c4f9493ee9"
     },
     {
-      "path": "published/relationships.csv",
       "bytes": 1555911,
+      "path": "published/relationships.csv",
+      "rows": 7444,
       "sha256": "3d2cde857cd2e48556747a54873344c7bb4cbaf933421de32e5ddbb57a46961b"
     },
     {
-      "path": "scripts/validate_canonical_package.py",
-      "bytes": 6999,
-      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+      "bytes": 35549,
+      "path": "published/entity_resolution_candidates.csv",
+      "rows": 124,
+      "sha256": "210b3fa139d56f32cfd5a729ab57687842a247e01e07cff925b35de71ad35d67"
     },
     {
-      "path": "truth/allowed_alternatives.csv",
-      "bytes": 738,
-      "sha256": "76ff1c9926ffa3b1a2d951de13ad031905e187e5aa7a7007b039eb25fc7e92b3"
+      "bytes": 88398,
+      "path": "published/exact_matches.csv",
+      "rows": 284,
+      "sha256": "f5e1083036e422fcd6bd0134570435f5a29c94573e51fe4b34df2590319ea3b0"
     },
     {
-      "path": "truth/assertions.csv",
-      "bytes": 136,
-      "sha256": "daa3760dc887e77e2ab50c4478d1ac223bd3dc0ecd2c05c120ab3331fde58d58"
+      "bytes": 1260955,
+      "path": "genie/records.csv",
+      "rows": 2190,
+      "sha256": "4ee34c2f6c6514e52d49d0f12098e39c3152ede568e2e747e3eaf27549ce9962"
     },
     {
-      "path": "truth/claims.csv",
-      "bytes": 1527,
-      "sha256": "72c212f317a3c0b1d162d6a054a3fc2f745905fcb5a337d695affc5898e5fcaf"
+      "bytes": 3092138,
+      "path": "genie/record_attributes.csv",
+      "rows": 21438,
+      "sha256": "9684c2bf9a8deaf055443a3585065fcf4e47775fb7112d614b618bc184e45372"
     },
     {
-      "path": "truth/ending_rules.csv",
-      "bytes": 1110,
-      "sha256": "57bdbe209472ff6929a252e56de5fe3f2f94772f4f4abac7508960bafb9af06e"
+      "bytes": 1894413,
+      "path": "genie/relationships.csv",
+      "rows": 6042,
+      "sha256": "526087523ddc2f3b5a43af2c3af364b47d0372bb3cb6e86d293a3098a71a65ba"
     },
     {
-      "path": "truth/entities.csv",
       "bytes": 15122,
+      "path": "truth/entities.csv",
+      "rows": 74,
       "sha256": "af9b256a21a28253cdea90f67f7c78778fb8333c65c030f85fcd7e5bdcc55b2d"
     },
     {
-      "path": "truth/evidence_requirements.csv",
+      "bytes": 1527,
+      "path": "truth/claims.csv",
+      "rows": 8,
+      "sha256": "72c212f317a3c0b1d162d6a054a3fc2f745905fcb5a337d695affc5898e5fcaf"
+    },
+    {
       "bytes": 1734,
+      "path": "truth/evidence_requirements.csv",
+      "rows": 8,
       "sha256": "94466900f9125af3d9bfe2bf9b052ae985176e897b37a782353fee68742fc974"
     },
     {
-      "path": "truth/evidence_routes.csv",
       "bytes": 911,
+      "path": "truth/evidence_routes.csv",
+      "rows": 6,
       "sha256": "ef1c64c46ccff9c28994133873578046959d3865ff80a7062e7582520cbc977c"
     },
     {
-      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 738,
+      "path": "truth/allowed_alternatives.csv",
+      "rows": 4,
+      "sha256": "76ff1c9926ffa3b1a2d951de13ad031905e187e5aa7a7007b039eb25fc7e92b3"
+    },
+    {
       "bytes": 860,
+      "path": "truth/forbidden_conclusions.csv",
+      "rows": 7,
       "sha256": "0388d13c294f663f075137c0d6b7f923acb26f4bd0dedba7b32004479320cf4a"
     },
     {
-      "path": "truth/scoring_rules.csv",
       "bytes": 1165,
+      "path": "truth/scoring_rules.csv",
+      "rows": 8,
       "sha256": "1d196fe8925996c21b8f3188fb6b765489435b6df914aeeccc9f44372f3e217c"
     },
     {
-      "path": "truth/test_scenarios.csv",
+      "bytes": 1110,
+      "path": "truth/ending_rules.csv",
+      "rows": 6,
+      "sha256": "57bdbe209472ff6929a252e56de5fe3f2f94772f4f4abac7508960bafb9af06e"
+    },
+    {
       "bytes": 170,
+      "path": "truth/test_scenarios.csv",
+      "rows": 0,
       "sha256": "bccb4722918cdb299476defc3db1a87b31475e57d430c00e3ddc4816b81c039d"
     },
     {
-      "path": "validation/checks.csv",
+      "bytes": 136,
+      "path": "truth/assertions.csv",
+      "rows": 0,
+      "sha256": "daa3760dc887e77e2ab50c4478d1ac223bd3dc0ecd2c05c120ab3331fde58d58"
+    },
+    {
       "bytes": 1954,
+      "path": "validation/checks.csv",
+      "rows": 18,
       "sha256": "9ed4c306266c754e6f9c8c18816b4ca00929cc7b2fe52b110c18458ff7ecc1f0"
     },
     {
-      "path": "validation/metrics.csv",
       "bytes": 4400,
+      "path": "validation/metrics.csv",
+      "rows": 23,
       "sha256": "aa23b01262970af23227bcef055eda4e0902d7c99027647f08929937ea12c8ba"
     }
-  ]
+  ],
+  "package_name": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+  "package_version": "2.0.0-canonical.1",
+  "profile_code": "ADULT",
+  "short_id": "A4",
+  "snapshot_version": "2026.07.18.1",
+  "source_archive": "A4_GOLDEN_HYDRANT_ADULT_case_datasets_v1(1).zip",
+  "title": "The Golden Fire Hydrant Contract",
+  "validation_status": "PASS"
 }

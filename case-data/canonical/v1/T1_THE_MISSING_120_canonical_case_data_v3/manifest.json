@@ -1,230 +1,210 @@
 {
-  "package_name": "T1_THE_MISSING_120_canonical_case_data_v3",
-  "package_version": "3.0.0-canonical.1",
-  "case_id": "ACADEMY_T01",
-  "short_id": "T1",
-  "title": "The Missing 120",
-  "profile_code": "ACADEMY",
-  "canonical_model_version": "1.0.0",
-  "snapshot_version": "2026.07.19.3",
-  "source_archive": "T01_THE_MISSING_120_case_datasets_v2(2).zip",
-  "validation_status": "PASS",
   "canonical_csv_table_count": 32,
+  "canonical_model_version": "1.0.0",
+  "case_id": "ACADEMY_T01",
+  "case_version": "3.0.0-canonical.1",
+  "converter": "academy.csv.v1",
+  "family": "ACADEMY",
   "files": [
     {
-      "path": "README.md",
-      "bytes": 416,
-      "sha256": "10d7bc24bc5b1d938bfcd50872793c8fea930a472e33629a5e8ff589d3ab3722"
-    },
-    {
-      "path": "analytics/entity_resolution_candidates.csv",
-      "bytes": 331,
-      "sha256": "158888b2511d0572c0855879b002efc81fb3f236138f1f05216f4f6b3a1c8b11"
-    },
-    {
-      "path": "analytics/exact_matches.csv",
-      "bytes": 309,
-      "sha256": "13fd28c78dcb848f97e42a60a65efe50c1036e4bb00842082f9647229cbe4eb4"
-    },
-    {
-      "path": "analytics/tool_fixtures.csv",
-      "bytes": 3583,
-      "sha256": "26f7b4c70632dcbeed0ca8926f4e0bf90dcb04e80d5e55780ecbeb34ee5077c5"
-    },
-    {
-      "path": "authoring/record_attributes.csv",
-      "bytes": 3772,
-      "sha256": "29b4ab48277b216b2fb9ec49a20b6d0b027adb239ad9c09459158f48cc5f915b"
-    },
-    {
-      "path": "authoring/records.csv",
-      "bytes": 3838,
-      "sha256": "674429a47f1e37dd422b1a0e4e360bd94ddff8c52525640a0ea6f087b4786f04"
-    },
-    {
-      "path": "authoring/relationships.csv",
-      "bytes": 3534,
-      "sha256": "9ecc88a6bb8d84ebaa567a3f56ffb6df7d1d38745a85f33112f1d67217baaffe"
-    },
-    {
-      "path": "config/case_initial_items.csv",
-      "bytes": 259,
-      "sha256": "d84e13a5cead2b895b8eae7f58ea567363b0134bcc7e4b958859500060ca3289"
-    },
-    {
-      "path": "config/case_profiles.csv",
-      "bytes": 361,
-      "sha256": "dccc351838f8aaa9f586a9dd7347343ba3ba3589b42966b311c09d41bf153efc"
-    },
-    {
-      "path": "config/cases.csv",
       "bytes": 553,
+      "path": "config/cases.csv",
+      "rows": 1,
       "sha256": "23fd2bfd872575c1c7ab6c9b700c926cc731540c4c2f58a65a96d3c3033d89d0"
     },
     {
-      "path": "config/genie_benchmarks.csv",
-      "bytes": 816,
-      "sha256": "cb6846d54cf1a296123ad03aa6110c5732f3e721c8b576a06d1c4ca03c7d8031"
+      "bytes": 361,
+      "path": "config/case_profiles.csv",
+      "rows": 1,
+      "sha256": "dccc351838f8aaa9f586a9dd7347343ba3ba3589b42966b311c09d41bf153efc"
     },
     {
-      "path": "config/registries.csv",
-      "bytes": 3481,
-      "sha256": "cc4852b1f27027d56d1e5ef76f99d9267e68a5aa9cd99b97259618af6ab37108"
+      "bytes": 259,
+      "path": "config/case_initial_items.csv",
+      "rows": 4,
+      "sha256": "d84e13a5cead2b895b8eae7f58ea567363b0134bcc7e4b958859500060ca3289"
     },
     {
-      "path": "config/reveal_steps.csv",
-      "bytes": 1172,
-      "sha256": "7e597e2affa6e02d2966258bed7b78a7e29b20febc09bc83975df78f775ab0c2"
-    },
-    {
-      "path": "config/ui_contracts.csv",
       "bytes": 854,
+      "path": "config/ui_contracts.csv",
+      "rows": 11,
       "sha256": "b9ed18a7ed32bdbcf43be23d9eaf4995be59b7ee8c5697242bce067efb55282e"
     },
     {
-      "path": "content/case_briefing.md",
-      "bytes": 1308,
-      "sha256": "b14067ce4aa6bab0f0b9c0858e97934c9ad1b78aee4b14a7c448cd706dbd8334"
+      "bytes": 3481,
+      "path": "config/registries.csv",
+      "rows": 24,
+      "sha256": "cc4852b1f27027d56d1e5ef76f99d9267e68a5aa9cd99b97259618af6ab37108"
     },
     {
-      "path": "content/closing_dialogue.json",
-      "bytes": 2159,
-      "sha256": "5de0a5a7c4c30beb0a31710e2ec6642a3d32e9a6a5f53d09fdbc5ea4d8452654"
+      "bytes": 1172,
+      "path": "config/reveal_steps.csv",
+      "rows": 3,
+      "sha256": "7e597e2affa6e02d2966258bed7b78a7e29b20febc09bc83975df78f775ab0c2"
     },
     {
-      "path": "content/image_prompts.md",
-      "bytes": 5806,
-      "sha256": "cfad7ff8b3cf1d1758750ef9bc73976cab4b505ba1222e07cf79799690f6d49a"
+      "bytes": 816,
+      "path": "config/genie_benchmarks.csv",
+      "rows": 2,
+      "sha256": "cb6846d54cf1a296123ad03aa6110c5732f3e721c8b576a06d1c4ca03c7d8031"
     },
     {
-      "path": "content/opening_dialogue.json",
-      "bytes": 1860,
-      "sha256": "610987fe8b55f2cc0823565878386c20a7332133a872927d6c5f4ef883c9c054"
+      "bytes": 3838,
+      "path": "authoring/records.csv",
+      "rows": 10,
+      "sha256": "674429a47f1e37dd422b1a0e4e360bd94ddff8c52525640a0ea6f087b4786f04"
     },
     {
-      "path": "content/tutorial_steps.json",
-      "bytes": 5453,
-      "sha256": "5131a8856c0f70595b8c3d12a229d12d26a81953a19195a9ffce4de9d742f304"
+      "bytes": 3772,
+      "path": "authoring/record_attributes.csv",
+      "rows": 26,
+      "sha256": "29b4ab48277b216b2fb9ec49a20b6d0b027adb239ad9c09459158f48cc5f915b"
     },
     {
-      "path": "conversion_report.json",
-      "bytes": 2141,
-      "sha256": "509d6b424ae344d7fac56c29b3e80dc6559ce483759e55d43f5762f9d242e388"
+      "bytes": 3534,
+      "path": "authoring/relationships.csv",
+      "rows": 14,
+      "sha256": "9ecc88a6bb8d84ebaa567a3f56ffb6df7d1d38745a85f33112f1d67217baaffe"
     },
     {
-      "path": "fga_canonical_schema_registry_v1.json",
-      "bytes": 70166,
-      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+      "bytes": 331,
+      "path": "analytics/entity_resolution_candidates.csv",
+      "rows": 0,
+      "sha256": "158888b2511d0572c0855879b002efc81fb3f236138f1f05216f4f6b3a1c8b11"
     },
     {
-      "path": "genie/record_attributes.csv",
-      "bytes": 3961,
-      "sha256": "b7e6d30d7d8ed1c159beaf2a86bb8c75181f0907c194841b2bf8a1ecd24d5b90"
+      "bytes": 309,
+      "path": "analytics/exact_matches.csv",
+      "rows": 0,
+      "sha256": "13fd28c78dcb848f97e42a60a65efe50c1036e4bb00842082f9647229cbe4eb4"
     },
     {
-      "path": "genie/records.csv",
-      "bytes": 3109,
-      "sha256": "e64732b0049fe9b20652d3a2f36264a6b2c2a4e45c802c4067682704ff1ca52a"
+      "bytes": 3583,
+      "path": "analytics/tool_fixtures.csv",
+      "rows": 6,
+      "sha256": "26f7b4c70632dcbeed0ca8926f4e0bf90dcb04e80d5e55780ecbeb34ee5077c5"
     },
     {
-      "path": "genie/relationships.csv",
-      "bytes": 3406,
-      "sha256": "6acafdf8cd98f55c7780b90da8c53b788cca8b00d67ba51f39d7fb0c5ac8a6d9"
-    },
-    {
-      "path": "metadata/source_data_dictionary.json",
-      "bytes": 59612,
-      "sha256": "078ae5bf1412f5870b69de91679b57c84d111efaa3f9ee16fac445e6927482a9"
-    },
-    {
-      "path": "metadata/source_expected_solution_contract.json",
-      "bytes": 4408,
-      "sha256": "be09d3631fb0047e817e7519a50259faab253bdea23aafeafeb13890de312f03"
-    },
-    {
-      "path": "published/entity_resolution_candidates.csv",
-      "bytes": 263,
-      "sha256": "3ecbb80a9d80521930f34137cb7d68d27b1b794ed8ca8432de9d83d13f9e4ff5"
-    },
-    {
-      "path": "published/exact_matches.csv",
-      "bytes": 256,
-      "sha256": "90b7adc10bcbf88abb0398be55ec0eb08535742d4844b95928abadd2e761f986"
-    },
-    {
-      "path": "published/records.csv",
       "bytes": 2688,
+      "path": "published/records.csv",
+      "rows": 10,
       "sha256": "b74b066fcbe56539e74d935f4072054134e9031c66a3b7c65381b70cada36101"
     },
     {
-      "path": "published/relationships.csv",
       "bytes": 3413,
+      "path": "published/relationships.csv",
+      "rows": 14,
       "sha256": "38cde7d214fad89eec4f39139e4fc2909427c0fc1ab1c110ef42a1afe504dc87"
     },
     {
-      "path": "scripts/validate_canonical_package.py",
-      "bytes": 6999,
-      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+      "bytes": 263,
+      "path": "published/entity_resolution_candidates.csv",
+      "rows": 0,
+      "sha256": "3ecbb80a9d80521930f34137cb7d68d27b1b794ed8ca8432de9d83d13f9e4ff5"
     },
     {
-      "path": "truth/allowed_alternatives.csv",
-      "bytes": 95,
-      "sha256": "935d451912b1b4100c20074e63270a3d23d78872b286e6fd167bf6b31f8183a6"
+      "bytes": 256,
+      "path": "published/exact_matches.csv",
+      "rows": 0,
+      "sha256": "90b7adc10bcbf88abb0398be55ec0eb08535742d4844b95928abadd2e761f986"
     },
     {
-      "path": "truth/assertions.csv",
-      "bytes": 5471,
-      "sha256": "10e09c65b5f056bdadf8fe3dcd7dd51fe6e366738540907d58e4f26e7f4b9ca3"
+      "bytes": 3109,
+      "path": "genie/records.csv",
+      "rows": 10,
+      "sha256": "e64732b0049fe9b20652d3a2f36264a6b2c2a4e45c802c4067682704ff1ca52a"
     },
     {
-      "path": "truth/claims.csv",
-      "bytes": 504,
-      "sha256": "a49b8b592df8e4117939cbe4e92d7ce474dbf105fadd5847bec04d0d3de8b7be"
+      "bytes": 3961,
+      "path": "genie/record_attributes.csv",
+      "rows": 26,
+      "sha256": "b7e6d30d7d8ed1c159beaf2a86bb8c75181f0907c194841b2bf8a1ecd24d5b90"
     },
     {
-      "path": "truth/ending_rules.csv",
-      "bytes": 1062,
-      "sha256": "412c026d4df4f9b73aa4ee24856365352d754cf226d4dfcdfa37ce9ceb5bad3b"
+      "bytes": 3406,
+      "path": "genie/relationships.csv",
+      "rows": 14,
+      "sha256": "6acafdf8cd98f55c7780b90da8c53b788cca8b00d67ba51f39d7fb0c5ac8a6d9"
     },
     {
-      "path": "truth/entities.csv",
       "bytes": 778,
+      "path": "truth/entities.csv",
+      "rows": 4,
       "sha256": "4180496aa02709a2d2aa353907042e44adf4acef12d89429eaf8c3476cd6d744"
     },
     {
-      "path": "truth/evidence_requirements.csv",
+      "bytes": 504,
+      "path": "truth/claims.csv",
+      "rows": 4,
+      "sha256": "a49b8b592df8e4117939cbe4e92d7ce474dbf105fadd5847bec04d0d3de8b7be"
+    },
+    {
       "bytes": 730,
+      "path": "truth/evidence_requirements.csv",
+      "rows": 4,
       "sha256": "031ee2fc08c3b06e740cd686551e8c50e2cee1b6d59f2e4ad2d8c3693ba8403c"
     },
     {
-      "path": "truth/evidence_routes.csv",
       "bytes": 96,
+      "path": "truth/evidence_routes.csv",
+      "rows": 0,
       "sha256": "c10eeb68ea14a56d783cdaf58370940a50291746d542c37fc7326335791ac902"
     },
     {
-      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 95,
+      "path": "truth/allowed_alternatives.csv",
+      "rows": 0,
+      "sha256": "935d451912b1b4100c20074e63270a3d23d78872b286e6fd167bf6b31f8183a6"
+    },
+    {
       "bytes": 77,
+      "path": "truth/forbidden_conclusions.csv",
+      "rows": 0,
       "sha256": "9f6d7ec9620e5775918c6b1e5996e5ab97a69c596e433741aeb60fb4782c4f2e"
     },
     {
-      "path": "truth/scoring_rules.csv",
       "bytes": 754,
+      "path": "truth/scoring_rules.csv",
+      "rows": 5,
       "sha256": "26155a8785d163430d65ae880e8195f271e96773bc1a463b46cd02935a85bd74"
     },
     {
-      "path": "truth/test_scenarios.csv",
+      "bytes": 1062,
+      "path": "truth/ending_rules.csv",
+      "rows": 6,
+      "sha256": "412c026d4df4f9b73aa4ee24856365352d754cf226d4dfcdfa37ce9ceb5bad3b"
+    },
+    {
       "bytes": 1640,
+      "path": "truth/test_scenarios.csv",
+      "rows": 6,
       "sha256": "9c187b85c5074c6c6d8e89487c6f872962ced9dc6bc7a10c76c080153737da7a"
     },
     {
-      "path": "validation/checks.csv",
+      "bytes": 5471,
+      "path": "truth/assertions.csv",
+      "rows": 4,
+      "sha256": "10e09c65b5f056bdadf8fe3dcd7dd51fe6e366738540907d58e4f26e7f4b9ca3"
+    },
+    {
       "bytes": 2107,
+      "path": "validation/checks.csv",
+      "rows": 17,
       "sha256": "1e0c123108f2ecaec031a5f7b470b7f838dd424bea8cc8b1f40d784580bad78e"
     },
     {
-      "path": "validation/metrics.csv",
       "bytes": 3659,
+      "path": "validation/metrics.csv",
+      "rows": 36,
       "sha256": "11ebbe39090b3b9d36fce08eed93abe30ba2dd6bd419f637bce7a586cee59627"
     }
-  ]
+  ],
+  "package_name": "T1_THE_MISSING_120_canonical_case_data_v3",
+  "package_version": "3.0.0-canonical.1",
+  "profile_code": "ACADEMY",
+  "short_id": "T1",
+  "snapshot_version": "2026.07.19.3",
+  "source_archive": "T01_THE_MISSING_120_case_datasets_v2(2).zip",
+  "title": "The Missing 120",
+  "validation_status": "PASS"
 }
