@@ -9,6 +9,7 @@ def main() -> int:
     parts = ["-- Generated from Canonical Model v1 registry. Do not hand-edit.\n"]
     for path, table in PHYSICAL_TARGETS.items():
         cols = ", ".join(f"{column} {sql_type}" for column, sql_type in zip(headers(path), sql_types(path), strict=True))
+        cols += ", _publication_id STRING, _load_run_id STRING"
         parts.append(f"CREATE TABLE IF NOT EXISTS {table} ({cols}); -- {path}\n")
     parts.append("-- Operational DDL: sql/lakehouse/fga_import_ledger_v1.sql\n")
     args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text("\n".join(parts), encoding="utf-8"); return 0

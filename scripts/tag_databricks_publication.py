@@ -13,6 +13,7 @@ def execute(profile, warehouse, catalog, schema, statement):
     if output.get("status", {}).get("state") != "SUCCEEDED": raise RuntimeError(json.dumps(output))
 
 def main():
+    raise SystemExit("post-load tagging is retired; use scripts/import_databricks_candidate.py")
     p = argparse.ArgumentParser(); p.add_argument("package", type=Path); p.add_argument("--run-id", required=True); p.add_argument("--profile", default="sda"); p.add_argument("--warehouse", default="e444f39962128242"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--workers", type=int, default=8); args = p.parse_args()
     import hashlib
     publication = "pub_" + hashlib.sha256((args.package.name + content_digest(args.package)).encode()).hexdigest()
