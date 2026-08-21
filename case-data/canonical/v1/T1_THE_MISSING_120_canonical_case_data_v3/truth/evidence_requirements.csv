@@ -1,0 +1,5 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+ACADEMY_T01,T1-EV-001,T1-CLAIM-ACCESS,,ACCESS,2,,true,"[""T1-EVT-LOGIN"",""T1-EVT-OPEN""]",Buster’s login and the manual opening establish access and action.,2026.07.19.3
+ACADEMY_T01,T1-EV-002,T1-CLAIM-LOSS,,LOSS,1,,true,"[""T1-REC-SHORT""]",The reconciliation establishes a 120 BSC loss.,2026.07.19.3
+ACADEMY_T01,T1-EV-003,T1-CLAIM-ADMISSION,,ADMISSION,1,,true,"[""T1-MSG-ADMIT""]",Buster admits taking the same amount.,2026.07.19.3
+ACADEMY_T01,T1-EV-004,T1-CLAIM-PROTECT-NELL,,GENERAL,1,,true,"[""T1-DOC-REPORT""]",Nell documented and reported the shortage.,2026.07.19.3

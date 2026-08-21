@@ -1,0 +1,230 @@
+{
+  "package_name": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+  "package_version": "3.0.0-canonical.1",
+  "case_id": "ACADEMY_T02",
+  "short_id": "T2",
+  "title": "The Circular Collar",
+  "profile_code": "ACADEMY",
+  "canonical_model_version": "1.0.0",
+  "snapshot_version": "2026.07.19.1",
+  "source_archive": "T02_THE_CIRCULAR_COLLAR_case_datasets_v2(1).zip",
+  "validation_status": "PASS",
+  "canonical_csv_table_count": 32,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 420,
+      "sha256": "4b9ef65609c3eb5959ae2cb7d59248f09255f7d9b9f197e5d4665965eb4b888d"
+    },
+    {
+      "path": "analytics/entity_resolution_candidates.csv",
+      "bytes": 1079,
+      "sha256": "ce1abe195921f4d145e8ff584b851d5a362cf0c8f5c658c87a811592c3a66189"
+    },
+    {
+      "path": "analytics/exact_matches.csv",
+      "bytes": 2157,
+      "sha256": "f66f1de058553c66cfa53cb4378ea89f69826820c35d208a9181233529ec87aa"
+    },
+    {
+      "path": "analytics/tool_fixtures.csv",
+      "bytes": 5143,
+      "sha256": "b81edcb4435cafa5e69e8f5c26c569655dac6a9fad045e36f06009cb635f32d1"
+    },
+    {
+      "path": "authoring/record_attributes.csv",
+      "bytes": 9025,
+      "sha256": "53bde8560b0a76288ac694dd3a003233461efca9e7b1858e60e294316c004617"
+    },
+    {
+      "path": "authoring/records.csv",
+      "bytes": 8093,
+      "sha256": "c77359d7dfc55a370d322fd356552d0476be4d07b92c2f8496bd55bac60b6873"
+    },
+    {
+      "path": "authoring/relationships.csv",
+      "bytes": 5261,
+      "sha256": "b77a7d04946fc456a908c4b7fd8a1f27cf25299a38fdb6363b2d4ae38d87da26"
+    },
+    {
+      "path": "config/case_initial_items.csv",
+      "bytes": 409,
+      "sha256": "f13d46b7b54885b4b1e02977fa33e5b72884dfd9d7459ee37b08ad6f80b93997"
+    },
+    {
+      "path": "config/case_profiles.csv",
+      "bytes": 398,
+      "sha256": "dc6671acdbd5c724a4c3957366f5380a3e7fb28242d3a8977b859b26f8cb8acf"
+    },
+    {
+      "path": "config/cases.csv",
+      "bytes": 578,
+      "sha256": "3348910d4b70ab98fb237566c405de58db2d6a3e4462112de4ef8ba2a3882c5e"
+    },
+    {
+      "path": "config/genie_benchmarks.csv",
+      "bytes": 135,
+      "sha256": "fb7c3a20ac0689f7eab166f175060b345d9d0e9762bb45ef49be39362a0103c8"
+    },
+    {
+      "path": "config/registries.csv",
+      "bytes": 4231,
+      "sha256": "55c830a76ac955f8c6e74139845bbeeddb568ccfbe5889c803718d7144001356"
+    },
+    {
+      "path": "config/reveal_steps.csv",
+      "bytes": 2214,
+      "sha256": "8c31c9b66dce54efdafb6eda4c5a0e619554e29b3af9a1c207bc7891c683de53"
+    },
+    {
+      "path": "config/ui_contracts.csv",
+      "bytes": 1261,
+      "sha256": "a62463a52c2b8d5faca3ae694e85e7d13727144822b28416fef0bf8d69aaaf60"
+    },
+    {
+      "path": "content/case_briefing.md",
+      "bytes": 1567,
+      "sha256": "98ae94e72ed37b6d22085d71a52cc65cd6341c12907b93fb093c1762d9c493b3"
+    },
+    {
+      "path": "content/closing_dialogue.json",
+      "bytes": 2822,
+      "sha256": "cc36405b23ca222d1c267c0ac772cd8b5d19a5c19f3e999da58dc2da808e4f31"
+    },
+    {
+      "path": "content/image_prompts.md",
+      "bytes": 6334,
+      "sha256": "1a9d1f9309618cd1816aba55f35d62a330cf49a8b6a5efe608b6c1e316db9172"
+    },
+    {
+      "path": "content/opening_dialogue.json",
+      "bytes": 2289,
+      "sha256": "c152ca65ef61133c10fc11e292cb35473108f437f0f161aa0f73274afee6b29e"
+    },
+    {
+      "path": "content/tutorial_steps.json",
+      "bytes": 8484,
+      "sha256": "9cf5c3a730884a140444e99e260e9efcb556ff9cd9ec1e5be9d0f54d853f29aa"
+    },
+    {
+      "path": "conversion_report.json",
+      "bytes": 2011,
+      "sha256": "84bd8206a7a6ec30e6a45a77d3e9282ec110265f27ab704d0427b29e3f0ef148"
+    },
+    {
+      "path": "fga_canonical_schema_registry_v1.json",
+      "bytes": 70166,
+      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+    },
+    {
+      "path": "genie/record_attributes.csv",
+      "bytes": 9501,
+      "sha256": "a818ebf0a50a4ad598f8fbc1878d9108a2b9de4cf52a14c07d4a8355eee3715e"
+    },
+    {
+      "path": "genie/records.csv",
+      "bytes": 6622,
+      "sha256": "0ae8908bd016e2be4eac3baeebe2ea4910341b8b917f939c1165949700b8ff8a"
+    },
+    {
+      "path": "genie/relationships.csv",
+      "bytes": 5032,
+      "sha256": "29345f11a2b1061f00130ebd3516f5b99512a6793936a6b7ca1f03bb210eb949"
+    },
+    {
+      "path": "metadata/source_data_dictionary.json",
+      "bytes": 62282,
+      "sha256": "291985f87eed970afbc47d5b249532bd25a77e633e02aa78ced926266b355a27"
+    },
+    {
+      "path": "metadata/source_expected_solution_contract.json",
+      "bytes": 5653,
+      "sha256": "37e132353795c06a1e742d7994384b0e971ff2cedd43db6fa4e46ca4b90fd384"
+    },
+    {
+      "path": "published/entity_resolution_candidates.csv",
+      "bytes": 908,
+      "sha256": "3a70d7574ef6903c396e4452b42f8c38514785583c1beec18b5438187c8d75b5"
+    },
+    {
+      "path": "published/exact_matches.csv",
+      "bytes": 1878,
+      "sha256": "60967187c858cb36ba6ed1f4215cfbb891ca606610769e14db0c07412d66783b"
+    },
+    {
+      "path": "published/records.csv",
+      "bytes": 5804,
+      "sha256": "b9b86e2d46110f139e05b43fdf8e80661f6d4541c62d6b9e3a962ea52f843652"
+    },
+    {
+      "path": "published/relationships.csv",
+      "bytes": 5039,
+      "sha256": "1a6f5fd36c8c61e3c4b325ee0e9c85e4aa58ac36351d792b1562ca8b33b771ad"
+    },
+    {
+      "path": "scripts/validate_canonical_package.py",
+      "bytes": 6999,
+      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+    },
+    {
+      "path": "truth/allowed_alternatives.csv",
+      "bytes": 95,
+      "sha256": "935d451912b1b4100c20074e63270a3d23d78872b286e6fd167bf6b31f8183a6"
+    },
+    {
+      "path": "truth/assertions.csv",
+      "bytes": 6545,
+      "sha256": "ea55f416b29219d240a907d47d9737a53c663061ece3d7c270f671cd2a0aba62"
+    },
+    {
+      "path": "truth/claims.csv",
+      "bytes": 840,
+      "sha256": "c1d4d44b7c8e77e03fa475cc8c868dff2393feb8d98acc8b11355612010e0784"
+    },
+    {
+      "path": "truth/ending_rules.csv",
+      "bytes": 1063,
+      "sha256": "2a29cae9a783e0183ffeebe279aeb4a8d4b090618e2feca74a4425d80aec220a"
+    },
+    {
+      "path": "truth/entities.csv",
+      "bytes": 1532,
+      "sha256": "3a9872f0cb27a1110dd33b81b61362ba62ebf60cf21b2871bb212fb9d1695139"
+    },
+    {
+      "path": "truth/evidence_requirements.csv",
+      "bytes": 1281,
+      "sha256": "d1d29ee887138a9187cc97d9b4ce69525e2bba07e4367cb36dd6b01e3ad4b2f7"
+    },
+    {
+      "path": "truth/evidence_routes.csv",
+      "bytes": 96,
+      "sha256": "c10eeb68ea14a56d783cdaf58370940a50291746d542c37fc7326335791ac902"
+    },
+    {
+      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 77,
+      "sha256": "9f6d7ec9620e5775918c6b1e5996e5ab97a69c596e433741aeb60fb4782c4f2e"
+    },
+    {
+      "path": "truth/scoring_rules.csv",
+      "bytes": 777,
+      "sha256": "1ffe617adabcaceb46a1013556179db950259b559b190e6329f42c6061c503e0"
+    },
+    {
+      "path": "truth/test_scenarios.csv",
+      "bytes": 2415,
+      "sha256": "4926604d7a30d0f0267fd4db8ed91313560a64d82ea8ef38125d5319f99736cd"
+    },
+    {
+      "path": "validation/checks.csv",
+      "bytes": 2408,
+      "sha256": "b22f220fd8472034fafd4c93272d0fd0516a67930005e4919cd2789eb7c70895"
+    },
+    {
+      "path": "validation/metrics.csv",
+      "bytes": 3660,
+      "sha256": "dd379f34e7d322341c4528773d47ab6a1055dbe1fdeba61e9412def1ee9aad3a"
+    }
+  ]
+}

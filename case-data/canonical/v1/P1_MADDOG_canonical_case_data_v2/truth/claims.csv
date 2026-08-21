@@ -1,0 +1,8 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+MADDOG,CLAIM-DIVERSION,ACCOUNT_OWNERSHIP_AND_TRANSFER,Funds were diverted to Maxwell account 9921.,P-MAXWELL,true,2026.07.19.1
+MADDOG,CLAIM-FALSE-STATEMENTS,STATEMENT_CUSTODY,Reported positions and gains lacked underlying confirmations.,O-MIK,true,2026.07.19.1
+MADDOG,CLAIM-HAZEL-VICTIM,LOSS_AND_NO_BENEFIT,Hazel was an unwitting connector and victim.,P-HAZEL,true,2026.07.19.1
+MADDOG,CLAIM-MAX-CONTROL,CONTROL_OWNERSHIP,Maxwell controlled both Maddog and Blue Bone.,P-MAXWELL,true,2026.07.19.1
+MADDOG,CLAIM-NINA-INNOCENT,EXCULPATORY_ACCESS_AND_COMMUNICATION,Nina lacked financial authority and knowledge.,P-NINA,true,2026.07.19.1
+MADDOG,CLAIM-PONZI-FLOW,BANK_CHRONOLOGY,Later deposits funded earlier investor payouts.,O-BLUE,true,2026.07.19.1
+MADDOG,CLAIM-SILAS-KNOWING,TEMPORAL_SALES_COMMUNICATION,Silas recruited after withdrawal problems were known.,P-SILAS,true,2026.07.19.1

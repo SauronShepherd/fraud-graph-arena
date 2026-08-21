@@ -1,0 +1,2 @@
+case_id,profile_code,profile_name,cumulative,starting_credits,manual_cost,zingg_cost,graphframes_cost,genie_cost,genie_row_limit,quote_required,no_result_charged,initial_item_count,description,snapshot_version
+ACADEMY_T03,ACADEMY,Detective Academy,false,15,0,3,3,3,,true,true,5,"Guided advanced Genie investigation with four precise queries, explicit uncertainty and budget discipline.",2026.07.19.1

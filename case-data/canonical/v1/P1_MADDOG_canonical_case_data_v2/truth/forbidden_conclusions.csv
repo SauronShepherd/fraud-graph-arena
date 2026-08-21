@@ -1,0 +1,5 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+MADDOG,FFP-001,P-NINA,Culpable because she sent statements or used office IP.,140,2026.07.19.1
+MADDOG,FFP-002,P-HAZEL,Culpable because she has high referral degree.,160,2026.07.19.1
+MADDOG,FFP-003,P-OSCAR,Knowing auditor solely from compilation workpapers.,80,2026.07.19.1
+MADDOG,FFP-004,P-MARTHA,Bank accomplice solely because she serviced account.,80,2026.07.19.1

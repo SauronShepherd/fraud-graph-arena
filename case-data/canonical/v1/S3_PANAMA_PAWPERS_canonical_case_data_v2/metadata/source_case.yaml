@@ -1,0 +1,11 @@
+case_id: PANAMA_PAWPERS
+case_order: S3
+canonical_plan_alias: V3
+title: The Panama Pawpers
+difficulty: SENIOR_DOG
+snapshot_version: 2026.07.19.2
+generation_seed: 771903
+single_difficulty_only: true
+zingg_generation_mode: CURATED_APPROXIMATION
+graphframes_generation_mode: CURATED_APPROXIMATION
+actual_engine_run: false

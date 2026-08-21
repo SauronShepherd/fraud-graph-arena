@@ -1,0 +1,9 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+PANAMA_PAWPERS,FFP-001,P-JUNE,Culpable solely because she filed many companies.,180,2026.07.19.2
+PANAMA_PAWPERS,FFP-002,P-VERA,Culpable solely because she is a trustee.,160,2026.07.19.2
+PANAMA_PAWPERS,FFP-003,P-HOPE,Culpable solely because she is a beneficiary.,180,2026.07.19.2
+PANAMA_PAWPERS,FFP-004,P-TESSA,Knowing facilitator solely because she handled documents.,170,2026.07.19.2
+PANAMA_PAWPERS,FFP-005,F-REGISTRY,Controlled firm solely because it is a high-degree registered agent.,150,2026.07.19.2
+PANAMA_PAWPERS,FFP-006,CE-FUND,Fraudulent solely because it is offshore.,150,2026.07.19.2
+PANAMA_PAWPERS,FFP-007,O-CROWNLOOK,Same organization as Crown Harbor Industries.,110,2026.07.19.2
+PANAMA_PAWPERS,FFP-008,P-427C53F7,Same person as Marcellus Mastiff.,110,2026.07.19.2

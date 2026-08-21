@@ -1,0 +1,142 @@
+{
+  "case_id": "ACADEMY_T03",
+  "short_id": "T3",
+  "title": "The Ghost Invoice",
+  "mode": "DETECTIVE_ACADEMY",
+  "ranked": false,
+  "career_unlock": false,
+  "seed": 3003,
+  "snapshot_version": "2026.07.19.1",
+  "principal_contract": "Advanced Genie investigation: precise queries, progressive reveal, normalized chronology, conflicting evidence, nulls, unavailable records, no-result charging, explicit uncertainty and budget efficiency.",
+  "expected": {
+    "primary_suspects": [
+      "T3-P-VERA"
+    ],
+    "classifications": {
+      "T3-P-VERA": "PRIMARY_CULPRIT",
+      "T3-P-TARA": "PROTECTED_EMPLOYEE",
+      "T3-P-MILO": "UNRESOLVED_WITNESS",
+      "T3-O-MOONLIT": "FRAUD_VEHICLE",
+      "T3-O-CITY": "VICTIM_ORGANIZATION"
+    },
+    "query_conclusions": {
+      "T3-GENIE-001": "VERA_CONTROLS_RECIPIENT_NULL_KYC_IS_UNKNOWN",
+      "T3-GENIE-002": "GI401_VALID_GI404_IMPOSSIBLE_CHRONOLOGY",
+      "T3-GENIE-003": "UNAVAILABLE_AND_PARTIAL_EVIDENCE_LIMITS",
+      "T3-GENIE-004": "TARA_PROTECTED_HIGH_CONFIDENCE_WITH_RESIDUAL_UNCERTAINTY"
+    },
+    "required_evidence": [
+      "T3-EV-001",
+      "T3-EV-002",
+      "T3-EV-003",
+      "T3-EV-004",
+      "T3-EV-005",
+      "T3-EV-006"
+    ],
+    "expected_ending": "CLEAN_COLLAR",
+    "score_range": {
+      "minimum": 900,
+      "maximum": 1000
+    },
+    "max_optimal_paid_actions": 4,
+    "optimal_query_ids": [
+      "T3-GENIE-001",
+      "T3-GENIE-002",
+      "T3-GENIE-003",
+      "T3-GENIE-004"
+    ],
+    "expected_confidence": "HIGH",
+    "residual_uncertainty_required": true,
+    "golden_credits_remaining": 3
+  },
+  "coverage": [
+    "genie.precise_queries",
+    "genie.quote_confirmation",
+    "genie.progressive_reveal",
+    "chronology.utc_normalization",
+    "source.provenance",
+    "null_semantics",
+    "unavailable_evidence",
+    "partial_archive",
+    "conflicting_evidence",
+    "confidence.explicit",
+    "uncertainty.explicit",
+    "no_result.charged",
+    "budget.efficiency",
+    "submission.immutable"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "T3-DOOR-1",
+      "title": "Clean Collar",
+      "action_sequence_json": "[\"quote:T3-GENIE-001\",\"run:T3-GENIE-001\",\"classify_null:T3-DOC-KYC=UNKNOWN_IN_SOURCE\",\"quote:T3-GENIE-002\",\"run:T3-GENIE-002\",\"classify_timeline:T3-INV-401=VALID_TIMEZONE_CROSSING\",\"classify_timeline:T3-INV-404=IMPOSSIBLE_SOURCE_CHRONOLOGY\",\"quote:T3-GENIE-003\",\"run:T3-GENIE-003\",\"record_limitations:T3-DOC-CONTRACT,T3-DOC-WORK\",\"quote:T3-GENIE-004\",\"run:T3-GENIE-004\",\"protect:T3-P-TARA\",\"confidence:HIGH\",\"record_uncertainty:T3-DOC-CAMERA,T3-STMT-MILO\",\"quote:T3-GENIE-005\",\"decline:T3-GENIE-005\",\"pin:T3-EV-001,T3-EV-002,T3-EV-003,T3-EV-004,T3-EV-005,T3-EV-006\",\"submit:T3-P-VERA\"]",
+      "submitted_suspects_json": "[\"T3-P-VERA\"]",
+      "expected_score": 1000,
+      "expected_ending": "CLEAN_COLLAR",
+      "expected_credits_remaining": 3,
+      "false_accusations": 0,
+      "notes": "Four precise Genie queries, broad query declined, Tara protected and uncertainty retained.",
+      "case_id": "ACADEMY_T03"
+    },
+    {
+      "scenario_id": "T3-DOOR-2",
+      "title": "Case Closed, Kennel Wrecked",
+      "action_sequence_json": "[\"run:T3-GENIE-001\",\"run:T3-GENIE-002\",\"run:T3-GENIE-003\",\"run:T3-GENIE-004\",\"submit:T3-P-VERA+T3-P-TARA\"]",
+      "submitted_suspects_json": "[\"T3-P-VERA\",\"T3-P-TARA\"]",
+      "expected_score": 760,
+      "expected_ending": "CASE_CLOSED_KENNEL_WRECKED",
+      "expected_credits_remaining": 3,
+      "false_accusations": 1,
+      "notes": "Correct culprit plus false accusation of the protected clerk.",
+      "case_id": "ACADEMY_T03"
+    },
+    {
+      "scenario_id": "T3-DOOR-3",
+      "title": "The Scent Went Cold",
+      "action_sequence_json": "[\"run:T3-GENIE-002\",\"run:T3-GENIE-003\",\"record_uncertainty\",\"submit:no_suspects\"]",
+      "submitted_suspects_json": "[]",
+      "expected_score": 520,
+      "expected_ending": "THE_SCENT_WENT_COLD",
+      "expected_credits_remaining": 9,
+      "false_accusations": 0,
+      "notes": "The impossible chronology and missing evidence are found, but ownership and attribution remain incomplete.",
+      "case_id": "ACADEMY_T03"
+    },
+    {
+      "scenario_id": "T3-DOOR-4",
+      "title": "Biscuit Budget Blown",
+      "action_sequence_json": "[\"quote:T3-GENIE-005\",\"run:T3-GENIE-005\",\"run:GRAPHFRAMES\",\"run:ZINGG\",\"run:T3-GENIE-003\",\"submit:no_suspects\"]",
+      "submitted_suspects_json": "[]",
+      "expected_score": 280,
+      "expected_ending": "BISCUIT_BUDGET_BLOWN",
+      "expected_credits_remaining": 0,
+      "false_accusations": 0,
+      "notes": "Broad and unnecessary no-result runs exhaust the budget before the required ownership and chronology claims are completed.",
+      "case_id": "ACADEMY_T03"
+    },
+    {
+      "scenario_id": "T3-DOOR-5",
+      "title": "Chased Every Squirrel",
+      "action_sequence_json": "[\"run:T3-GENIE-005\",\"select_all_accusable\",\"submit\"]",
+      "submitted_suspects_json": "[\"T3-P-VERA\",\"T3-P-TARA\",\"T3-P-MILO\",\"T3-O-MOONLIT\",\"T3-O-CITY\"]",
+      "expected_score": 120,
+      "expected_ending": "CHASED_EVERY_SQUIRREL",
+      "expected_credits_remaining": 9,
+      "false_accusations": 3,
+      "notes": "A broad query is followed by indiscriminate accusations against the clerk, witness and victim.",
+      "case_id": "ACADEMY_T03"
+    },
+    {
+      "scenario_id": "T3-DOOR-6",
+      "title": "Barking Up the Wrong Tree",
+      "action_sequence_json": "[\"run:T3-GENIE-004\",\"submit:T3-P-TARA\"]",
+      "submitted_suspects_json": "[\"T3-P-TARA\"]",
+      "expected_score": 40,
+      "expected_ending": "BARKING_UP_THE_WRONG_TREE",
+      "expected_credits_remaining": 12,
+      "false_accusations": 1,
+      "notes": "The unsupported vendor allegation is treated as the primary attribution despite contradictory system records.",
+      "case_id": "ACADEMY_T03"
+    }
+  ]
+}

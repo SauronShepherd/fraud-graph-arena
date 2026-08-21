@@ -1,0 +1,5 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+GOLDEN_HYDRANT,ALT-001,CLAIM-PETRA-BID-RIGGING,"Use prepublication matrix plus biased scoring, or coordinated-bid communication plus award/change approvals.",,2026.07.18.1
+GOLDEN_HYDRANT,ALT-002,CLAIM-COORDINATED-BIDS,"Use template and price fingerprint with timing/IP, or communications plus companion-bid economics.",,2026.07.18.1
+GOLDEN_HYDRANT,ALT-003,CLAIM-PHANTOM-WORK,"Use serial/photo/GPS evidence plus missing excavation, or complaints plus field/payment contradictions.",,2026.07.18.1
+GOLDEN_HYDRANT,ALT-004,CLAIM-KICKBACKS,"Use shell-to-person transfers plus KYC, or shell payments plus Pointer account and messages.",,2026.07.18.1

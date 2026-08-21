@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "source_archive": "A4_GOLDEN_HYDRANT_ADULT_case_datasets_v1(1).zip",
+  "case_id": "GOLDEN_HYDRANT",
+  "short_id": "A4",
+  "profile_code": "ADULT",
+  "canonical_model_version": "1.0.0",
+  "canonical_table_count": 32,
+  "row_counts": {
+    "config/cases.csv": 1,
+    "config/case_profiles.csv": 1,
+    "config/case_initial_items.csv": 8,
+    "config/ui_contracts.csv": 0,
+    "config/registries.csv": 90,
+    "config/reveal_steps.csv": 0,
+    "config/genie_benchmarks.csv": 14,
+    "authoring/records.csv": 3090,
+    "authoring/record_attributes.csv": 36286,
+    "authoring/relationships.csv": 15227,
+    "analytics/entity_resolution_candidates.csv": 124,
+    "analytics/exact_matches.csv": 284,
+    "analytics/tool_fixtures.csv": 2,
+    "published/records.csv": 3018,
+    "published/relationships.csv": 7444,
+    "published/entity_resolution_candidates.csv": 124,
+    "published/exact_matches.csv": 284,
+    "genie/records.csv": 2190,
+    "genie/record_attributes.csv": 21438,
+    "genie/relationships.csv": 6042,
+    "truth/entities.csv": 74,
+    "truth/claims.csv": 8,
+    "truth/evidence_requirements.csv": 8,
+    "truth/evidence_routes.csv": 6,
+    "truth/allowed_alternatives.csv": 4,
+    "truth/forbidden_conclusions.csv": 7,
+    "truth/scoring_rules.csv": 8,
+    "truth/ending_rules.csv": 6,
+    "truth/test_scenarios.csv": 0,
+    "truth/assertions.csv": 0,
+    "validation/checks.csv": 18,
+    "validation/metrics.csv": 23
+  },
+  "empty_tables_with_headers": [
+    "config/reveal_steps.csv",
+    "config/ui_contracts.csv",
+    "truth/assertions.csv",
+    "truth/test_scenarios.csv"
+  ],
+  "zero_byte_csv_count": 0,
+  "conversion_notes": [
+    "Canonical physical table names are shared by all cases.",
+    "Every canonical CSV is present and retains its exact header when empty.",
+    "Case-specific authoring rows were normalized into records, record_attributes, and relationships.",
+    "Published and Genie-safe layers were converted from their original safe sources.",
+    "The package contains one non-cumulative ADULT profile."
+  ],
+  "validator_output": [
+    "PASS",
+    "Canonical model: 1.0.0",
+    "Validated tables: 32"
+  ],
+  "strict_validation": "PASS"
+}

@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+PHANTOM_VET,SCORE-001,Principal and mechanism,250,0.25,Correct principal and phantom-provider mechanism.,2026.07.18.1
+PHANTOM_VET,SCORE-002,Roles and protected actors,190,0.19,"Correct Mira/Dexter roles and protection of Elena, owners, insurer and legitimate providers.",2026.07.18.1
+PHANTOM_VET,SCORE-003,Claim and medical-evidence reconstruction,190,0.19,"Connect policies, pets, appointments, encounters, procedure lines, lab and image evidence.",2026.07.18.1
+PHANTOM_VET,SCORE-004,Payment-flow reconstruction,150,0.15,"Trace insurer payments, shell transfers and personal diversions.",2026.07.18.1
+PHANTOM_VET,SCORE-005,Identity conclusions,90,0.09,Resolve real aliases and pet identities while rejecting lookalikes.,2026.07.18.1
+PHANTOM_VET,SCORE-006,Relationship interpretation,60,0.06,"Interpret licenses, microchips, devices, IP, images and templates without overclaiming.",2026.07.18.1
+PHANTOM_VET,SCORE-007,Evidence diversity,40,0.04,"Use independent owner, medical, licensing and financial evidence.",2026.07.18.1
+PHANTOM_VET,SCORE-008,Efficiency,30,0.03,Defensible case without excessive paid actions.,2026.07.18.1

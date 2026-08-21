@@ -1,0 +1,392 @@
+{
+  "case_id": "BISCUIT_RELIEF",
+  "case_order": "P3",
+  "case_version": "1.1.0",
+  "snapshot_version": "2026.07.19.3",
+  "difficulty": "PUPPY",
+  "single_difficulty_only": true,
+  "source_publication_level": 1,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 613,
+      "sha256": "846353edbc71ae27af6221d806d7ab961bfa364c5ce71710ba7f0e04efb2b9b8"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 269,
+      "sha256": "06bb69a275ea3dddba385b31fba7fe2bc6b5240da2f24bd6ac8ba4fac9077f0e"
+    },
+    {
+      "path": "analytics/relief_graphframes_exact_relationships.csv",
+      "bytes": 17316,
+      "sha256": "409220862030cfe9e9de9049bf086fd47348d07e3e8834a1a85c21843c385d42"
+    },
+    {
+      "path": "analytics/relief_zingg_candidate_relationships.csv",
+      "bytes": 9153,
+      "sha256": "257f6c4c7706a82e9dba3e6d623567a76c5acd48455ab438a4ed679f155d2e73"
+    },
+    {
+      "path": "authoring/relief_accounts.csv",
+      "bytes": 1625,
+      "sha256": "758a947ac2ee131861b370ace6d0f683bbd857e790c52e636da6fe3bbe6eab2a"
+    },
+    {
+      "path": "authoring/relief_addresses.csv",
+      "bytes": 1488,
+      "sha256": "d30f074f5bca695a36c1251e096ac84acd13058930d5768f905cb760380b8be6"
+    },
+    {
+      "path": "authoring/relief_advertisements.csv",
+      "bytes": 1938,
+      "sha256": "96cf43f81698ba53ca5ac42668c9209f6f14f140f75a03fc03d8f44e91ff7514"
+    },
+    {
+      "path": "authoring/relief_beneficiary_programs.csv",
+      "bytes": 1636,
+      "sha256": "29778a5427c25d06b527459a210cc88bbb12484054cca048955ced2699cd6d21"
+    },
+    {
+      "path": "authoring/relief_campaign_posts.csv",
+      "bytes": 3885,
+      "sha256": "cebbdfbfa84673547f975e39d3662a033f34d5859cce7a862db01387673de73f"
+    },
+    {
+      "path": "authoring/relief_campaigns.csv",
+      "bytes": 2652,
+      "sha256": "70958f4b106b23b37246ff1326af8e52c4e6776a7e00d1ef494d6bfe144f1e6a"
+    },
+    {
+      "path": "authoring/relief_communications.csv",
+      "bytes": 14830,
+      "sha256": "673686a5ccdac3997aad92864d4ab94501fc4ff01ba00645d28957e53ecd817b"
+    },
+    {
+      "path": "authoring/relief_complaints.csv",
+      "bytes": 1289,
+      "sha256": "a66db07c3bead94ecdf92c2b31ce9714f75ae9a45ed0aa63c3c52ccb72614efe"
+    },
+    {
+      "path": "authoring/relief_devices.csv",
+      "bytes": 670,
+      "sha256": "08bd5d692367830a0d98cc6f0db7872b1ebcb7bc4e84b0dee270a27d172da344"
+    },
+    {
+      "path": "authoring/relief_direct_relationships.csv",
+      "bytes": 197307,
+      "sha256": "87446f78dd6bd484c5114746f8faba9e9cc6d0c79fd6c03b5d4104305a08d1a3"
+    },
+    {
+      "path": "authoring/relief_distributions.csv",
+      "bytes": 3246,
+      "sha256": "f6db8917eeeec478ce90583efd1e16b92f25b70ca1336a8d4c767e014c86ea62"
+    },
+    {
+      "path": "authoring/relief_documents.csv",
+      "bytes": 8174,
+      "sha256": "837ba2a94753ce22aa65f824de622e1d0a35aa3cfde86e58c09cb76a0466991e"
+    },
+    {
+      "path": "authoring/relief_domains.csv",
+      "bytes": 962,
+      "sha256": "eea003095ad9604c9852e36293892d51638ed60fa73314fe1e9dd9bcec1392ac"
+    },
+    {
+      "path": "authoring/relief_donation_pages.csv",
+      "bytes": 2857,
+      "sha256": "5818200b817e58dff4b536eb876b7e525f3a37c0b2b077d57717c243c63de34f"
+    },
+    {
+      "path": "authoring/relief_donations.csv",
+      "bytes": 9519,
+      "sha256": "6eac87ca6fe8ea9d06b6d4f00a6f41eac81445934164814ca4def60ca71cc2e8"
+    },
+    {
+      "path": "authoring/relief_grant_requests.csv",
+      "bytes": 1648,
+      "sha256": "e87bd0471475eefebb42ede1addfd8291016e7a7d58620f742dba80d96b70326"
+    },
+    {
+      "path": "authoring/relief_login_events.csv",
+      "bytes": 5680,
+      "sha256": "86dddfd1e9a476be7824d7796240f247eb9f30586288f2a7168e5f75d8e924b6"
+    },
+    {
+      "path": "authoring/relief_organization_records.csv",
+      "bytes": 5875,
+      "sha256": "82a37195df9ec3c442c1863b6b44f5f76d6c912cfec3538b66cf766ca241d914"
+    },
+    {
+      "path": "authoring/relief_organizations.csv",
+      "bytes": 813,
+      "sha256": "c4d014e5cdb453c280a7f1d879e5356e51b7349bfe75099460461936da133899"
+    },
+    {
+      "path": "authoring/relief_people.csv",
+      "bytes": 945,
+      "sha256": "0bef5583fe018c876b8e12b7d531b0fb13e2fbd1541349e85a4fb3dad51468d8"
+    },
+    {
+      "path": "authoring/relief_person_records.csv",
+      "bytes": 7364,
+      "sha256": "24e60b6bd6afe03b1fd8949e2c30a19fdd1c59be424935b1ea981e32311e3e94"
+    },
+    {
+      "path": "authoring/relief_processor_settlements.csv",
+      "bytes": 7099,
+      "sha256": "d04cff2e8c2ff5b8cd0b39e64f246a1b535e188845c0f16eb2a4915a28ed9be0"
+    },
+    {
+      "path": "authoring/relief_reposts.csv",
+      "bytes": 3777,
+      "sha256": "680d455a7a566a11cc7ea72d70e20df577a814f6f4f320bbf7593afe073d2ad4"
+    },
+    {
+      "path": "authoring/relief_transactions.csv",
+      "bytes": 17494,
+      "sha256": "20696b0c211e67448458563ba807529737d4a38f8a23620f6c3b62723881c3c5"
+    },
+    {
+      "path": "authoring/relief_vendor_invoices.csv",
+      "bytes": 5571,
+      "sha256": "7357dc59684b582c0c2f4c1f92fcb04f6fc48fd29d6f3e67ef9b379a699095f8"
+    },
+    {
+      "path": "authoring/relief_volunteer_memberships.csv",
+      "bytes": 2200,
+      "sha256": "c6595b5c2d4b1fc06921b53a734a987e8ef1caf65f13a8359e88d9b775a428a6"
+    },
+    {
+      "path": "catalog/P3_BISCUIT_RELIEF_PUPPY_data_catalog_v1.xlsx",
+      "bytes": 39145,
+      "sha256": "163028df34860585b44c9ac06dda8d3401d7ddc632e63a5a4920cbf7a83ed82e"
+    },
+    {
+      "path": "config/biscuit_relief_genie_benchmarks.csv",
+      "bytes": 1666,
+      "sha256": "681b10a8014098fe549e31f1eb83865fb5f380731635704bfb9b44279857db32"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 452,
+      "sha256": "32daaa7a387ea3bb4b8f7ae81c129aac8017c713a965d63efaa2d7c424d0e0c9"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 554,
+      "sha256": "6e2c42fd2ef5012a093348e96b0d1be76cdcbdd06fb57c0746e5a988b40e6ecf"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 52174,
+      "sha256": "e30d0b16527d094d868af25488cc7fe83f853344b4c43faed6ad3f5674b43710"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 265,
+      "sha256": "4788a92115548bb5c3fa8c06df792e04d778f6e70677e719a82c37c609b82c7d"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 492,
+      "sha256": "ea039a30b3429c488a391ee16125f9434ac02f8a250113442d178950e3b838a1"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 1206,
+      "sha256": "e1a653266ae8220bcb05a6e9d3689860abd59897116204fd42bf5763fbb0f85b"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 2008,
+      "sha256": "fb5081d659d28ea177d72d09dd2cd20faba8748918be7c92640eb3243115d963"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 846,
+      "sha256": "e90cc74a1c01b4f5a87032a2c121a57a7b8f8e1c9418ce4580350d65d94f2d62"
+    },
+    {
+      "path": "genie/puppy/advertisements.csv",
+      "bytes": 1569,
+      "sha256": "5bf85782cf8b5d0a577cb29cd9ab7c031e50dc85e167ea33f7d4ca97aee88ced"
+    },
+    {
+      "path": "genie/puppy/beneficiaries.csv",
+      "bytes": 1183,
+      "sha256": "40a643eb8878d201d5fd920d9390ae4430f7cc1ad4ca1cf3ea3ea782aff86aeb"
+    },
+    {
+      "path": "genie/puppy/campaign_pages.csv",
+      "bytes": 2488,
+      "sha256": "8c4dd9c869be6aaa9875de712fb689fa9e2b387ab676945a95acfc9d10a319cf"
+    },
+    {
+      "path": "genie/puppy/campaign_posts.csv",
+      "bytes": 3371,
+      "sha256": "acf8e84f1c6c806f8f9f7be1f63bfa4479b0453729f6568d5b6e926e7362cfa1"
+    },
+    {
+      "path": "genie/puppy/campaigns.csv",
+      "bytes": 2283,
+      "sha256": "c1b5e65423a36500305c11e4288970d1cbd1ff09d9d4479ac9d9e5a0d449c153"
+    },
+    {
+      "path": "genie/puppy/communications.csv",
+      "bytes": 12882,
+      "sha256": "93d02d4600160f99347023f377598a8106d8db1d34b81ae968be0ee779173a90"
+    },
+    {
+      "path": "genie/puppy/complaints.csv",
+      "bytes": 1123,
+      "sha256": "51bea28a683007e7934a883800576842936268c154c8353b589eee61f394d3f8"
+    },
+    {
+      "path": "genie/puppy/distributions.csv",
+      "bytes": 2469,
+      "sha256": "df5d28fd8372de4145e53291c8c4e8c8e5fc88552e25e5cee0077f33e33936d1"
+    },
+    {
+      "path": "genie/puppy/documents.csv",
+      "bytes": 7018,
+      "sha256": "83ea7c009a849a899f6f5bab68e3cfc83d6f0154786d9ca2fc761c8e7d51329c"
+    },
+    {
+      "path": "genie/puppy/donations.csv",
+      "bytes": 7874,
+      "sha256": "2021e40c04d52fad744da83b035ab568418c6945b2b59b3f3c7d395bf42ea5ec"
+    },
+    {
+      "path": "genie/puppy/entities.csv",
+      "bytes": 7662,
+      "sha256": "4a05741e237867f9b68a4731d0463819f5c5c0d700d5b284be2f56ad745edcf5"
+    },
+    {
+      "path": "genie/puppy/financial_events.csv",
+      "bytes": 14896,
+      "sha256": "a9bc4e9160181151b3739c9fe30762be883d092e3593da3c9bea641beaf775a9"
+    },
+    {
+      "path": "genie/puppy/grant_requests.csv",
+      "bytes": 1279,
+      "sha256": "4dcd684e073e6a828725d87e2d298da0c596793d5391f5b33d23a8c716330e92"
+    },
+    {
+      "path": "genie/puppy/login_events.csv",
+      "bytes": 4305,
+      "sha256": "013913cc66b464a54a954c705f30725df56e04036a43b7cbd13b85bbc334c3f6"
+    },
+    {
+      "path": "genie/puppy/processor_settlements.csv",
+      "bytes": 5918,
+      "sha256": "c8c3a4cebb796572a2aafef5a4c13c7cc27c11c8848b1b6c3828080c124f79d8"
+    },
+    {
+      "path": "genie/puppy/vendor_invoices.csv",
+      "bytes": 4912,
+      "sha256": "51735f39bd6342190fb76df9f8768c0612dd730b498cf09580df4826b2e2fbd9"
+    },
+    {
+      "path": "genie/puppy/volunteer_network.csv",
+      "bytes": 3624,
+      "sha256": "efb76f9bbd506d3240f24c464c705f0c9ecd90e9b4a68d8190e1fd877506d35b"
+    },
+    {
+      "path": "published/puppy/graphframes_exact_relationships.csv",
+      "bytes": 17075,
+      "sha256": "8fbe42e3cdd42039d77342cacf5f03f6ea2ff524e9d0f22a38be32805e574ec5"
+    },
+    {
+      "path": "published/puppy/initial_case_items.csv",
+      "bytes": 176,
+      "sha256": "b62a3daa6a8409f055e22b9bf6f7559c88b2a8acd2c97703a80b249ac0c0be06"
+    },
+    {
+      "path": "published/puppy/player_safe_direct_relationships.csv",
+      "bytes": 195484,
+      "sha256": "1e0b82ec3b19e440ac561114d7e8f3299a80451c7d0677e53cccfc3d0b22ddda"
+    },
+    {
+      "path": "published/puppy/player_safe_records.csv",
+      "bytes": 240833,
+      "sha256": "ec4d3f04bfdad869f274c052ceb65ec894010ae82f98b36d0e2a9ae89fee2ed1"
+    },
+    {
+      "path": "published/puppy/zingg_candidate_relationships.csv",
+      "bytes": 8514,
+      "sha256": "f0d73d138c2bbf9c2dcd05d012501d85d44ac7a95b534bc66fba9b0309f7d145"
+    },
+    {
+      "path": "scripts/conversion_metadata.py",
+      "bytes": 119,
+      "sha256": "3627b34b79df8793d0befd690dde2f9091ce9d38dcfdabef02047729e1957294"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 885,
+      "sha256": "b98c9f1e6298d2ea78a3818898ef0d692e20a845f92e089e02e6271df8000a19"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 2640,
+      "sha256": "709551ebd88d25ca20134c4655351bb2c306ecfb33b51f2c7bdd6a5ccb42dd01"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 321,
+      "sha256": "6bce0caf16a20249642803a9eb7f45d4b61b3d1878ee49a2e3169231b466e72b"
+    },
+    {
+      "path": "truth/relief_allowed_alternatives.csv",
+      "bytes": 1027,
+      "sha256": "7750a5ddae85c1d8f662ef461a01377e0acdec74752f38d8262aa406507cd664"
+    },
+    {
+      "path": "truth/relief_ending_thresholds.csv",
+      "bytes": 844,
+      "sha256": "00da2ae60f1aeed3598457cd781521bf840f82a83f274172f090862c634e9e1f"
+    },
+    {
+      "path": "truth/relief_evaluator_truth.csv",
+      "bytes": 2348,
+      "sha256": "41291f36fd4f4a2b3207b54e58a3ee6d8a01b262473be43955403c0c5133e2d7"
+    },
+    {
+      "path": "truth/relief_evidence_route_matrix.csv",
+      "bytes": 1652,
+      "sha256": "5cac07de37c0eb514ee9a36bed2ce72868eb2aa8fbb18f14b86b62441a602ab3"
+    },
+    {
+      "path": "truth/relief_forbidden_false_positives.csv",
+      "bytes": 551,
+      "sha256": "7f99e32671daed886cf6b01b7e16c7534a34a185f01dcb2f189643f6842af593"
+    },
+    {
+      "path": "truth/relief_required_evidence.csv",
+      "bytes": 1312,
+      "sha256": "34e9eb0c913f527bfc7a7e3d84bd2a8ea6ddf0b75677b3a1b3e989f11eaa680c"
+    },
+    {
+      "path": "truth/relief_scoring_rules.csv",
+      "bytes": 733,
+      "sha256": "806ceb91fc3e35676c53b88cc05deeb76e112127dc058aa45cb3304a5a388d0a"
+    },
+    {
+      "path": "validation/publication_counts.csv",
+      "bytes": 538,
+      "sha256": "ac12c90961560355f9d811270517de1d3174337463dc27ccf3d478531775fa88"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1029,
+      "sha256": "299708b37fe5a5090c46c739b242a027ad3ac52e1c112c13946966ab87b6774f"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 2315,
+      "sha256": "2ce2a03c19135e5911436072b6f52d0c9948e576eba08eeb56e4df4969d145de"
+    }
+  ]
+}

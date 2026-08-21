@@ -1,0 +1,19 @@
+case_id: CRYPTO_KENNEL_LONG_CON
+case_version: 1.0.0
+snapshot_version: 2026.07.18.1
+case_order: S2
+difficulty: SENIOR_DOG
+single_difficulty_only: true
+canonical_plan_alias: V2
+title: The Long Con at Crypto Kennel
+generation_seed: 982451
+currency: BSC
+base_asset: USDB
+analytical_relationships:
+  zingg_generation_mode: CURATED_APPROXIMATION
+  graphframes_generation_mode: CURATED_APPROXIMATION
+  actual_engine_run: false
+investor_protection:
+  forbid_victim_blaming: true
+  require_agent_role_differentiation: true
+  require_legitimate_crypto_comparator: true

@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+PHANTOM_VET,CLEAN_COLLAR,1,850,,0,"[""ALL""]",,"Precise clinic, actors, credential misuse, claim evidence and payment diversion.",2026.07.18.1
+PHANTOM_VET,CASE_CLOSED_KENNEL_WRECKED,2,700,,1,"[""PRINCIPAL"",""MECHANISM"",""PAYMENT_FLOW""]",,Fraud proven but a legitimate credential holder or provider is overstated.,2026.07.18.1
+PHANTOM_VET,THE_SCENT_WENT_COLD,3,450,,2,"[""PARTIAL""]",,Claim anomalies found without connecting clinic control and money.,2026.07.18.1
+PHANTOM_VET,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,Resources spent without a defensible claim and payment chain.,2026.07.18.1
+PHANTOM_VET,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,"Every owner, veterinarian, lab and clinic is accused.",2026.07.18.1
+PHANTOM_VET,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""CREDENTIAL_VICTIM_OR_LEGITIMATE_PROVIDER_PRIMARY_TARGET""]",,Elena or a legitimate provider is blamed while the clinic controllers remain weakly linked.,2026.07.18.1

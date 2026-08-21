@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "source_archive": "T02_THE_CIRCULAR_COLLAR_case_datasets_v2(1).zip",
+  "case_id": "ACADEMY_T02",
+  "profile_code": "ACADEMY",
+  "canonical_model_version": "1.0.0",
+  "canonical_table_count": 32,
+  "row_counts": {
+    "analytics/entity_resolution_candidates.csv": 2,
+    "analytics/exact_matches.csv": 5,
+    "analytics/tool_fixtures.csv": 10,
+    "authoring/record_attributes.csv": 64,
+    "authoring/records.csv": 20,
+    "authoring/relationships.csv": 21,
+    "config/case_initial_items.csv": 7,
+    "config/case_profiles.csv": 1,
+    "config/cases.csv": 1,
+    "config/genie_benchmarks.csv": 0,
+    "config/registries.csv": 29,
+    "config/reveal_steps.csv": 6,
+    "config/ui_contracts.csv": 16,
+    "genie/record_attributes.csv": 64,
+    "genie/records.csv": 20,
+    "genie/relationships.csv": 21,
+    "published/entity_resolution_candidates.csv": 2,
+    "published/exact_matches.csv": 5,
+    "published/records.csv": 20,
+    "published/relationships.csv": 21,
+    "truth/allowed_alternatives.csv": 0,
+    "truth/assertions.csv": 4,
+    "truth/claims.csv": 5,
+    "truth/ending_rules.csv": 6,
+    "truth/entities.csv": 7,
+    "truth/evidence_requirements.csv": 5,
+    "truth/evidence_routes.csv": 0,
+    "truth/forbidden_conclusions.csv": 0,
+    "truth/scoring_rules.csv": 5,
+    "truth/test_scenarios.csv": 6,
+    "validation/checks.csv": 20,
+    "validation/metrics.csv": 36
+  },
+  "empty_tables_with_headers": [
+    "config/genie_benchmarks.csv",
+    "truth/allowed_alternatives.csv",
+    "truth/evidence_routes.csv",
+    "truth/forbidden_conclusions.csv"
+  ],
+  "conversion_notes": [
+    "Canonical physical table names are shared by all cases.",
+    "Empty datasets retain exact headers.",
+    "Legacy tutorial and narrative CSVs are preserved as JSON content assets.",
+    "Missing optional values remain empty; no schema union is required."
+  ],
+  "validator_output": [
+    "PASS",
+    "Canonical model: 1.0.0",
+    "Validated tables: 32"
+  ],
+  "strict_validation": "PASS"
+}

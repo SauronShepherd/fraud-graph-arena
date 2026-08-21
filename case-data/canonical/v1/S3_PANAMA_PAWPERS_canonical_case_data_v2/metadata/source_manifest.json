@@ -1,0 +1,364 @@
+{
+  "case_id": "PANAMA_PAWPERS",
+  "case_version": "1.0.0",
+  "snapshot_version": "2026.07.19.2",
+  "difficulty": "SENIOR_DOG",
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 517,
+      "sha256": "d828179bb5591364bf5f3317b1883f6edfbdd3d3e8fd109fcb886b6dac8ed4ab"
+    },
+    {
+      "path": "analytics/graphframes_exact_relationships.csv",
+      "bytes": 423017,
+      "sha256": "546ab0bbfcd8cf0991afdf4e27d96c50970743c54a06e916febe8f8ec9326124"
+    },
+    {
+      "path": "analytics/zingg_candidate_relationships.csv",
+      "bytes": 88342,
+      "sha256": "5103d31463687ca7a4facdf2044aa2664c92f713b83725d9e4914f425649f68c"
+    },
+    {
+      "path": "authoring/addresses.csv",
+      "bytes": 11745,
+      "sha256": "652b922a29a27ae0555bffac5166e1a2b9e82d33e743e8658622db4a274c57ad"
+    },
+    {
+      "path": "authoring/bank_accounts.csv",
+      "bytes": 18110,
+      "sha256": "ea02e6940e162965c65e8fa2af36e99301c6991e40d9be829f732fd57b631ba3"
+    },
+    {
+      "path": "authoring/bank_transactions.csv",
+      "bytes": 205000,
+      "sha256": "75dc049d5c32696bf6bd9f3e4ee74f26baa06df3523548b4ebc7830ff2726876"
+    },
+    {
+      "path": "authoring/beneficial_ownership_declarations.csv",
+      "bytes": 32650,
+      "sha256": "6c2d99675d2aedb7ab7ccdb3d830da1e81173547bfa61c26d7948cbcaf8fb113"
+    },
+    {
+      "path": "authoring/communications.csv",
+      "bytes": 126813,
+      "sha256": "edf046a7b536fe39acc0b7a6d1fe6a3d6d0905e6196e3f353b7736769de9ada5"
+    },
+    {
+      "path": "authoring/complaints.csv",
+      "bytes": 18684,
+      "sha256": "37a4960cc256b6b2530af357d0e4773e35b94d0c4bd85b50f063f4f9eaf61875"
+    },
+    {
+      "path": "authoring/compliance_reviews.csv",
+      "bytes": 25909,
+      "sha256": "3c83b925d792bef81799a513bb238bff1c05aeeb0bd72738fa00d8d8f1c5b721"
+    },
+    {
+      "path": "authoring/corporate_entities.csv",
+      "bytes": 42138,
+      "sha256": "03d5af59a36ca60075c6cd22678cfd6b1bd5db08f20a62257c84c048d6855967"
+    },
+    {
+      "path": "authoring/corporate_filings.csv",
+      "bytes": 127328,
+      "sha256": "d2a58c2c8ded8eec6fd9609cbee1cc98070a836ea9771665b20cb53c7fc12b8d"
+    },
+    {
+      "path": "authoring/direct_relationships.csv",
+      "bytes": 2036750,
+      "sha256": "fe71a58e5a89550a13fe4cccd49891826ced856594e683c2b22d16eb9c61d55d"
+    },
+    {
+      "path": "authoring/documents.csv",
+      "bytes": 32687,
+      "sha256": "98545b62c58c6d5ea7cfe2eea0de475a5e4c5c7ce06c9d4ec19bdfe8b2a09163"
+    },
+    {
+      "path": "authoring/filing_portal_logins.csv",
+      "bytes": 45519,
+      "sha256": "6b1f34654e98026a70ccc1d690eae1132828c37b81b92377246eec490f0c3964"
+    },
+    {
+      "path": "authoring/invoices.csv",
+      "bytes": 33393,
+      "sha256": "a075a51a2e56ab99b6719245d61d7f17b83697a372bf28cdfb294279151b87b5"
+    },
+    {
+      "path": "authoring/jurisdictions.csv",
+      "bytes": 664,
+      "sha256": "5efdc8e07bffc42777064463727532fc78fea042be02047dad54693f022e8990"
+    },
+    {
+      "path": "authoring/kyc_documents.csv",
+      "bytes": 30954,
+      "sha256": "258296a05732afbbd2c6bc8ffc8485aadd5fb50304cccea48d58b6fff7f95ab0"
+    },
+    {
+      "path": "authoring/nominee_agreements.csv",
+      "bytes": 54156,
+      "sha256": "3c7d812ad4aeef9f34342c489240ed8dd1e3a0b266bad6649233e4479603da95"
+    },
+    {
+      "path": "authoring/officer_appointments.csv",
+      "bytes": 84920,
+      "sha256": "2c02e7d314f6f28a88c86770dbdada9a4b1f7299697efa3e8e14dae6c8062e74"
+    },
+    {
+      "path": "authoring/organization_records.csv",
+      "bytes": 24030,
+      "sha256": "aed281c30158934c789c17550e692322c62edef50c1e2878770b684daa52e13a"
+    },
+    {
+      "path": "authoring/organizations.csv",
+      "bytes": 5299,
+      "sha256": "24651f2376403f5dae1722fca6683865714993d691f8608684423fae366a3f63"
+    },
+    {
+      "path": "authoring/people.csv",
+      "bytes": 17463,
+      "sha256": "d0ec13681a46bed3e397f1caf83de59f96d2478a48ada591ac2f60d4a2e4b241"
+    },
+    {
+      "path": "authoring/person_records.csv",
+      "bytes": 50849,
+      "sha256": "f8e59d82766c00b58054c3d16edd1b51096dcab008bc19d770233b6123982b13"
+    },
+    {
+      "path": "authoring/professional_engagements.csv",
+      "bytes": 23902,
+      "sha256": "3941f234ded0373fd6a8e73501a7950ea5736100889fdcec98b8f896977bd04d"
+    },
+    {
+      "path": "authoring/professional_firms.csv",
+      "bytes": 3093,
+      "sha256": "c34a717371e0f2d13446985a3608cd19c7d6a4ecd4883ca18fd89ab7f4789530"
+    },
+    {
+      "path": "authoring/registered_agent_appointments.csv",
+      "bytes": 23098,
+      "sha256": "c7ead9f65a4a76bcf73afbe3ee7c522ed20ca3a44eff7ffd23fbe3fff50f4882"
+    },
+    {
+      "path": "authoring/trust_parties.csv",
+      "bytes": 31212,
+      "sha256": "e45dbc54ed1a6be2d70cd466e3175338387d1656933d8a1e64479ebb36f443d8"
+    },
+    {
+      "path": "authoring/trusts.csv",
+      "bytes": 8885,
+      "sha256": "bbb303c5e3e9b4f30b24609ef0449fc5c6d7aee9a3010934e777d9c7bb5a8e28"
+    },
+    {
+      "path": "catalog/PANAMA_PAWPERS_SENIOR_data_catalog_v1.xlsx",
+      "bytes": 50593,
+      "sha256": "ca461d23a5cc750057de74b80fa595b8c3b0571b1eb00e807b17a3548be0ea61"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 318,
+      "sha256": "348fb22d763fffe4a15e6addc793aaf61ca1539d8c992495d407852d99d549a6"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 588,
+      "sha256": "2ed4fdfb0e99c4176adaae476167f9ce759dbf3e915b834e28e20532153ce5d0"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 42752,
+      "sha256": "89e2ca9913fc6199a52efb9ee2f9bc667db8ebe38bee6765fcbc46e76e105cca"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 278,
+      "sha256": "054b9a01adad562e0f1ed11665e846364b966a69462837683bf66391271e1451"
+    },
+    {
+      "path": "config/genie_benchmarks.csv",
+      "bytes": 1226,
+      "sha256": "da8a7f3c3ef924fc78e521c88dc3eb316d6155c55364b98209a0054984cc426e"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 257,
+      "sha256": "b0b0822ddafea0f0e67e64cabb1f9f30b36d1a394990f91221dfc83743cac15f"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 506,
+      "sha256": "a0e9d4cdc6e912d1c0fc7e513e92ccad4720a225edc657061702f6bd47b22445"
+    },
+    {
+      "path": "genie/senior/bank_accounts.csv",
+      "bytes": 15016,
+      "sha256": "c605a5564b5f880685c39df1690f2099c6eeeeae2f85908d9ebb864bb4d08455"
+    },
+    {
+      "path": "genie/senior/bank_transactions.csv",
+      "bytes": 183547,
+      "sha256": "df31228fffe6056e712a4f594f2a8a834c699f83e18c865efa75b4c4994ae075"
+    },
+    {
+      "path": "genie/senior/communications.csv",
+      "bytes": 118960,
+      "sha256": "4bd20b102d7924ea5c3c2d8807cb5fc9d154991265564d20944858979949989a"
+    },
+    {
+      "path": "genie/senior/complaints.csv",
+      "bytes": 16991,
+      "sha256": "29b3c2d2cd2321922b0828234934a3602a3f8b511cae9b10214606d5adac5829"
+    },
+    {
+      "path": "genie/senior/compliance_reviews.csv",
+      "bytes": 22746,
+      "sha256": "f0982aa2ac650e4cb19201cb7e418c10c2592cc08d03f76863e3cf80a37991a8"
+    },
+    {
+      "path": "genie/senior/corporate_filings.csv",
+      "bytes": 114418,
+      "sha256": "2961db60f41651d6332893b2dcb6be4b15b29645975b152a6d2c37d8438ca820"
+    },
+    {
+      "path": "genie/senior/documents.csv",
+      "bytes": 30014,
+      "sha256": "c0b0efc19a2a667963ac50ab0b809403b2f3eb556effc837f215741a167dee3c"
+    },
+    {
+      "path": "genie/senior/entities.csv",
+      "bytes": 67703,
+      "sha256": "1eafe187e28d4a5059eb5b4d0fe66529f0f3a4f9b1b06dc9ad8c5aa8f54b01bb"
+    },
+    {
+      "path": "genie/senior/filing_portal_logins.csv",
+      "bytes": 39458,
+      "sha256": "a4fad966d7785331520f9f61468600b505edc0a45ab0bf8d06160baed5341657"
+    },
+    {
+      "path": "genie/senior/invoices.csv",
+      "bytes": 29460,
+      "sha256": "ee5ad7d561ed604013a2dcac015f76c27facb342e8308cb1e830a5d4263b37c0"
+    },
+    {
+      "path": "genie/senior/kyc_documents.csv",
+      "bytes": 26531,
+      "sha256": "f5c7e1dbda8a940a87f9b318a6ff30ad15ee372a8558760502ef973da41846f5"
+    },
+    {
+      "path": "genie/senior/nominee_agreements.csv",
+      "bytes": 47943,
+      "sha256": "aa65cd736435ebb082062aee716888fef3e753ec43a231b73979d867755ad000"
+    },
+    {
+      "path": "genie/senior/officer_appointments.csv",
+      "bytes": 61216,
+      "sha256": "aea1fa8008b83c4681386e2db2304384d8db85b3897ac770b89a692ddb6f4cab"
+    },
+    {
+      "path": "genie/senior/ownership_declarations.csv",
+      "bytes": 25923,
+      "sha256": "3596b1c240fbb42fdbe826a85cedd3c32147cce9249eb8eee2c15de2d8c53413"
+    },
+    {
+      "path": "genie/senior/professional_services.csv",
+      "bytes": 19520,
+      "sha256": "da1bcf85ff2afc39b94e2f844b8dd2840ee09883ce0760f3d9d2681f63a31984"
+    },
+    {
+      "path": "genie/senior/trust_parties.csv",
+      "bytes": 26099,
+      "sha256": "f19011159c38d46472a63e8238033c2f6c786fcad322680777da08ec35833995"
+    },
+    {
+      "path": "genie/senior/trusts.csv",
+      "bytes": 7133,
+      "sha256": "a8f0bb1e6218f445d196c2b394d0de16efb664a93be2ddb5f9164271e13e4484"
+    },
+    {
+      "path": "published/senior/graphframes_exact_relationships.csv",
+      "bytes": 392824,
+      "sha256": "9c81c52b17700e06d8e54ab93a84fe0a66f830743bf251e8fc026ed3a3ac05f2"
+    },
+    {
+      "path": "published/senior/initial_case_items.csv",
+      "bytes": 100,
+      "sha256": "fa9749b4f5776d481fbade3299c55c742cddd1937d56348e2aac34c6315c1294"
+    },
+    {
+      "path": "published/senior/player_safe_direct_relationships.csv",
+      "bytes": 1850866,
+      "sha256": "1dede95f5d83cf4175bba2542f8504df1640181e15042604c15902e1d1fe4ad5"
+    },
+    {
+      "path": "published/senior/player_safe_records.csv",
+      "bytes": 2202930,
+      "sha256": "0991e79d730f96cdfe5b6230835df42c9ad064963ba766ba8b346eb3822baef5"
+    },
+    {
+      "path": "published/senior/zingg_candidate_relationships.csv",
+      "bytes": 79225,
+      "sha256": "af185fa78a6efb6c2d5a31ae89874ce73d21af2ce40efc7b41af85984ca9995e"
+    },
+    {
+      "path": "scripts/generate_panama_pawpers_senior_bundle_full.py",
+      "bytes": 63679,
+      "sha256": "730e1a9bba5bfbedb2bfe2d47d2140cd08ce182b88e11362993254f7f563ad23"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 284,
+      "sha256": "afd29c92b40180427cecb7b559589db836bbde368e79cfed5b157c0b45df6249"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 196,
+      "sha256": "4a5030088d04faf7bbaed6afb8840de3e7b795bd1b89c9fa4fe5473f4a780ff0"
+    },
+    {
+      "path": "truth/ending_thresholds.csv",
+      "bytes": 851,
+      "sha256": "016b9152a422b645f362455e4bba3ab11cbf054194d30abc0687068abcae98c4"
+    },
+    {
+      "path": "truth/entity_control_truth.csv",
+      "bytes": 13934,
+      "sha256": "d366d97ac146d98acdc581ae3dfade1eaab80e6d9efe92fb974e4ca7eb32caf1"
+    },
+    {
+      "path": "truth/evaluator_truth.csv",
+      "bytes": 19226,
+      "sha256": "2cdec7f9ec803546445bfe968274bcb856d10bfb4bd5fc779b2bc2eeb7ec19c6"
+    },
+    {
+      "path": "truth/forbidden_false_positives.csv",
+      "bytes": 743,
+      "sha256": "79e14c5109dbe50a47e32ac1317e80da09614e24e370d6a7061b8a203c281bb9"
+    },
+    {
+      "path": "truth/required_evidence.csv",
+      "bytes": 1687,
+      "sha256": "5a266eb2258fa6d16b3bf35687bf21d4ff0ad9b9e4469811dd86ef62fe863ecf"
+    },
+    {
+      "path": "truth/scoring_rules.csv",
+      "bytes": 1010,
+      "sha256": "c1e4e2e103dfee09b4b2cddefc080c44521ae84e6393260ae11ad2e7362a06df"
+    },
+    {
+      "path": "validation/account_reconciliation.csv",
+      "bytes": 664,
+      "sha256": "41e13c6d01b1183f90bc9d4ef521f21d71c868341830a571b80d0eaf5ff6fedd"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1089,
+      "sha256": "f42837f1f08a65171d78934d9c209b586f1e96f05b2ed3033f48065c369df982"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 1443,
+      "sha256": "9dbeee5dac05e16eb4deb258a6adce46a95514951b3a396cf233ab66ad7d1e73"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+case_id,profile_code,fixture_id,fixture_type,tool_family,selected_record_ids_json,input_payload_json,expected_result_count,expected_payload_json,description,snapshot_version
+CEO_BARKED_TWICE,PUPPY,NR-Z-001,NO_RESULT_FIXTURES,ZINGG,"[""PR-PENNY-01"",""PR-VICTOR-01"",""PR-MABEL-01""]","{""criterion"":""HIGH"",""fixture_id"":""NR-Z-001"",""selected_record_ids"":""PR-PENNY-01;PR-VICTOR-01;PR-MABEL-01"",""tool_family"":""ZINGG""}",0,,HIGH,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,NR-GF-001,NO_RESULT_FIXTURES,GRAPHFRAMES,"[""PR-PENNY-01"",""PR-VICTOR-01""]","{""criterion"":""accounts,devices,domains,addresses"",""fixture_id"":""NR-GF-001"",""selected_record_ids"":""PR-PENNY-01;PR-VICTOR-01"",""tool_family"":""GRAPHFRAMES""}",0,,"accounts,devices,domains,addresses",2026.07.19.2

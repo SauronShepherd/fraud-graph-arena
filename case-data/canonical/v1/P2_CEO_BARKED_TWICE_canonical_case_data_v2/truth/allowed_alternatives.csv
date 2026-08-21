@@ -1,0 +1,8 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+CEO_BARKED_TWICE,ALT-001,CLAIM-MECHANISM,"Use domain, mailbox, invoice and bank chronology, or equivalent independent combinations.",,2026.07.19.2
+CEO_BARKED_TWICE,ALT-002,CLAIM-ROWAN,"Use identity resolution plus internal split messages, or corporate control plus beneficiary evidence.",,2026.07.19.2
+CEO_BARKED_TWICE,ALT-003,CLAIM-IVY,"Use domain registration overlaps plus mail rule/device evidence, or authentication plus internal communications.",,2026.07.19.2
+CEO_BARKED_TWICE,ALT-004,CLAIM-GRANT,"Use KYC ownership plus transfer chain, or internal split message plus account movements.",,2026.07.19.2
+CEO_BARKED_TWICE,ALT-005,CLAIM-SUBSTITUTION,Compare genuine/forged invoice pairs or use vendor denial plus beneficiary change records.,,2026.07.19.2
+CEO_BARKED_TWICE,ALT-006,CLAIM-BEA-INNOCENT,"Travel/control message plus explicit denial, or authentication absence plus denial.",,2026.07.19.2
+CEO_BARKED_TWICE,ALT-007,CLAIM-PENNY-INNOCENT,"External rule-creation telemetry plus no benefit, or incident statement plus access evidence.",,2026.07.19.2

@@ -1,0 +1,86 @@
+[
+  {
+    "sequence": "1",
+    "speaker": "TARA",
+    "line": "Detective, City Kennels paid 4,800 BSC for invoice GI-404.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "2",
+    "speaker": "DETECTIVE",
+    "line": "And the invoice file appeared in the repository two days after the payment.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "3",
+    "speaker": "TARA",
+    "line": "That is what the alert says. We also have another invoice whose local date looks one day earlier than its UTC receipt.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "4",
+    "speaker": "DETECTIVE",
+    "line": "Then one warning may be a timezone display issue and the other may be an impossible chronology.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "5",
+    "speaker": "TARA",
+    "line": "A Moonlit representative says I asked for GI-404 to be backdated.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "6",
+    "speaker": "DETECTIVE",
+    "line": "A statement records a claim. It does not turn the claim into a verified fact.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "7",
+    "speaker": "TARA",
+    "line": "The graph is still sparse. How will you find what is missing?",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "8",
+    "speaker": "DETECTIVE",
+    "line": "With precise Genie queries: who controls the recipient, what the normalized timeline shows, what supporting documents exist, and which sources conflict.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "9",
+    "speaker": "TARA",
+    "line": "The Academy gave you fifteen credits.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "10",
+    "speaker": "DETECTIVE",
+    "line": "Enough for four good questions and one decision not to ask a bad one.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "11",
+    "speaker": "TARA",
+    "line": "And if a search returns nothing?",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "12",
+    "speaker": "DETECTIVE",
+    "line": "The run still costs credits. A no-result is information, not a refund.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "13",
+    "speaker": "TARA",
+    "line": "Then please follow the sources, not the accusation.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "14",
+    "speaker": "DETECTIVE",
+    "line": "And record what remains unknown instead of filling it with a guess.",
+    "case_id": "ACADEMY_T03"
+  }
+]

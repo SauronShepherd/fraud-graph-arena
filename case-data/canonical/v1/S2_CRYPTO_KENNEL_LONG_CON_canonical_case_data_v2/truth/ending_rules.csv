@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+CRYPTO_KENNEL_LONG_CON,CLEAN_COLLAR,1,870,,0,"[""ALL""]",,"Long con, fake ledger, fees and offshore flow proven without false accusations.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CASE_CLOSED_KENNEL_WRECKED,2,720,,1,"[""PRINCIPAL"",""FAKE_PLATFORM"",""OFFSHORE_FLOW""]",,Core network exposed but one role is overstated.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,THE_SCENT_WENT_COLD,3,480,,2,"[""PARTIAL""]",,Suspicious prices or wallets found without the full chain.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,Resources expire before the network is resolved.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,"Every investor, exchange and developer is accused.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""VICTIM_OR_UNWITTING_AGENT_PRIMARY_TARGET""]",,"A victim, Tessa or Nora is blamed while controllers are missed.",2026.07.18.1

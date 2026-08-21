@@ -1,0 +1,82 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+CEO_BARKED_TWICE,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,DOMAIN,Domain,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,DOMAIN_REGISTRATION,Domain Registration,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,BANK_ACCOUNT,Bank Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,EMPLOYMENT,Employment,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,VENDOR_RELATIONSHIP,Vendor Relationship,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,PURCHASE_ORDER,Purchase Order,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,INVOICE,Invoice,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,INVOICE_LINE,Invoice Line,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,VENDOR_CHANGE_REQUEST,Vendor Change Request,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,MAILBOX_RULE,Mailbox Rule,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,COMMUNICATION,Communication,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,TRANSACTION,Transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,INCIDENT,Incident,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,DIRECTOR_OF,Director Of,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,REGISTERED_AT,Registered At,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,USES_DOMAIN,Uses Domain,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,VENDOR_OF,Vendor Of,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,REQUESTED_CHANGE,Requested Change,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,APPROVED_CHANGE,Approved Change,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,CREATED,Created,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,ATTACHED,Attached,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,REFERENCES_PO,References Po,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,BILLS_TO,Bills To,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,PAYABLE_TO,Payable To,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,LOGGED_IN_FROM,Logged In From,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,USED_DEVICE,Used Device,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,CREATED_RULE,Created Rule,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,AFFECTED_MAILBOX,Affected Mailbox,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,REPORTED,Reported,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,INVESTIGATED,Investigated,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SUPPORTS,Supports,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_REGISTRAR_ACCOUNT,Same Registrar Account,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_RECOVERY_EMAIL,Same Recovery Email,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_HOSTING_IP,Same Hosting Ip,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_TLS_FINGERPRINT,Same Tls Fingerprint,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_IP,Same Ip,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_RECEIVING_ACCOUNT,Same Receiving Account,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_INVOICE_NUMBER,Same Invoice Number,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_PURCHASE_ORDER,Same Purchase Order,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_INVOICE_AMOUNT,Same Invoice Amount,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_ATTACHMENT_HASH,Same Attachment Hash,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_CORPORATE_IP,Same Corporate Ip,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_ADDRESS,Same Address,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_SUPPORT_PHONE,Same Support Phone,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,MAY_BE_IMPERSONATING,May Be Impersonating,"{""directed"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,MAY_HAVE_DIVERTED,May Have Diverted,"{""directed"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,MAY_CONTROL_ACCOUNT,May Control Account,"{""directed"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,MAY_HAVE_COMPROMISED,May Have Compromised,"{""directed"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,RELATIONSHIP_TYPE,SAME_SENDER_DOMAIN,Same Sender Domain,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,HR,Human resources,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,CORP_REGISTRY,Corporate registry,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,VENDOR_MASTER,Vendor master,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,PROCUREMENT,Procurement system,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,INVOICE_SYSTEM,Invoice archive,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,EMAIL,Mail archive,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,MAIL_ADMIN,Mail administration telemetry,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,DEVICE_LOG,Authentication and device telemetry,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,BANK_LEDGER,Bank ledger,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,BANK_KYC,Bank KYC,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,DOMAIN_REGISTRY,Domain registry snapshot,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,TLS_SCAN,TLS and hosting snapshot,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,INCIDENT_SYSTEM,Incident response system,"{""trust_level"":""HIGH""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Document repository,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,AUDIT_FILE,Audit workpapers,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.19.2
+CEO_BARKED_TWICE,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.19.2

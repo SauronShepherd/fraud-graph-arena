@@ -1,0 +1,23 @@
+case_id,entity_id,entity_type,canonical_name,operational_role,expected_classification,culpability,harm_status,fraud_network_membership,protected_notes,snapshot_version
+CEO_BARKED_TWICE,P-ROWAN,PERSON,Rowan Rook,principal/impersonation coordinator,principal/impersonation coordinator,intentional,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.2
+CEO_BARKED_TWICE,P-IVY,PERSON,Ivy Ibizan,technical operator/mailbox intruder,technical operator/mailbox intruder,intentional,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.2
+CEO_BARKED_TWICE,P-GRANT,PERSON,Grant Greyhound,mule account controller,mule account controller,knowing,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.2
+CEO_BARKED_TWICE,P-BEA,PERSON,"Beatrice ""Bea"" Barkley",real chief executive officer,real chief executive officer,none,impersonated victim,false,Legacy fraud_network_membership=PROTECTED,2026.07.19.2
+CEO_BARKED_TWICE,P-PENNY,PERSON,Penny Pug,accounts payable specialist,accounts payable specialist,unwitting,victim employee,false,Legacy fraud_network_membership=PROTECTED,2026.07.19.2
+CEO_BARKED_TWICE,P-CONRAD,PERSON,Conrad Corgi,chief financial officer,chief financial officer,unwitting,non-victim,false,Legacy fraud_network_membership=PROTECTED,2026.07.19.2
+CEO_BARKED_TWICE,P-OWEN,PERSON,Owen Old English Sheepdog,legitimate vendor finance director,legitimate vendor finance director,none,non-victim,false,Legacy fraud_network_membership=PROTECTED,2026.07.19.2
+CEO_BARKED_TWICE,P-THEO,PERSON,Theo Terrier,mail security administrator,mail security administrator,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,P-VICTOR,PERSON,Victor Vizsla,legitimate vendor account manager,legitimate vendor account manager,none,non-victim,false,Legacy fraud_network_membership=PROTECTED,2026.07.19.2
+CEO_BARKED_TWICE,P-MABEL,PERSON,Mabel Mastiff,bank fraud analyst,bank fraud analyst,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,P-IDA,PERSON,Ida Irish Setter,procurement manager,procurement manager,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,P-RHEA,PERSON,Rhea Retriever,internal auditor,internal auditor,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,O-SCC,ORGANIZATION,Silver Collar Components Ltd,victim company,victim company,none,victim organization,false,Legacy fraud_network_membership=PROTECTED,2026.07.19.2
+CEO_BARKED_TWICE,O-COPPER,ORGANIZATION,Copper Paw Industrial Supply Ltd,legitimate primary vendor,legitimate primary vendor,none,non-victim,false,Legacy fraud_network_membership=PROTECTED,2026.07.19.2
+CEO_BARKED_TWICE,O-NIGHTJAR,ORGANIZATION,Nightjar Consulting LLC,fraud shell and beneficiary entity,fraud shell and beneficiary entity,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.2
+CEO_BARKED_TWICE,O-HARBOR,ORGANIZATION,Harbor Hound Remittance Ltd,payment intermediary,payment intermediary,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.2
+CEO_BARKED_TWICE,O-LANTERNBANK,ORGANIZATION,Lantern Community Bank,victim company bank,victim company bank,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,O-COPPERBANK,ORGANIZATION,Copper Paw Commercial Bank,vendor bank,vendor bank,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,O-CLOUDMAIL,ORGANIZATION,Cloud Kennel Mail Services,mail hosting provider,mail hosting provider,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,O-REGISTRY,ORGANIZATION,Noir City Corporate Registry,registry operator,registry operator,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,O-AUDIT,ORGANIZATION,Retrieve & Ledger LLP,external auditor,external auditor,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2
+CEO_BARKED_TWICE,O-PAYMENTS,ORGANIZATION,Pawline Payment Services,payment processor,payment processor,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.2

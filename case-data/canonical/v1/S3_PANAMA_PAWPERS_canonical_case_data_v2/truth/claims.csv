@@ -1,0 +1,11 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+PANAMA_PAWPERS,CLAIM-DISTRIBUTION,TRANSACTION_ACCOUNT_KYC,Layered funds return to Marcellus and Felix.,P-MARCELLUS,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-FALSE-INVOICES,INVOICE_TRANSACTION_ACCOUNT,"Controlled entities issue false consulting, IP and management invoices.",CE-CROWN,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-FILING-OPERATION,FILING_LOGIN_TEMPLATE_COMMUNICATION,Iris coordinates formations and repeated filings.,P-IRIS,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-HARD-NEGATIVES,IDENTITY_REGISTRATION_ADDRESS,Lookalike people and companies remain distinct.,O-CROWNLOOK,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-LAWFUL-OFFSHORE,DECLARATION_AUDIT_KYC_TRANSACTION,Legitimate offshore trusts and funds have supported owners and purposes.,CE-FUND,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-LAYERING,BANK_FLOW_ACCOUNT_JURISDICTION,"Funds are layered through shells, trusts and offshore accounts.",P-FELIX,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-LEGAL-STRUCTURE,ENGAGEMENT_COMMUNICATION_KYC,Beatrice knowingly designs concealment while legitimate agents remain protected.,P-BEATRICE,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-NOMINEES,APPOINTMENT_AGREEMENT_DECLARATION,Nolan coordinates nominee directors and incomplete declarations.,P-NOLAN,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-PRINCIPAL,OWNERSHIP_NOMINEE_COMMUNICATION_PAYMENT,Marcellus is the concealed beneficial owner and economic beneficiary.,P-MARCELLUS,true,2026.07.19.2
+PANAMA_PAWPERS,CLAIM-PROTECTED-AGENTS,ROLE_PERMISSION_PROCEEDS_COMPARATOR,"June, Vera, Colin, Hope, Tessa and legitimate firms are not culpable by association.",P-JUNE,true,2026.07.19.2

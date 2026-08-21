@@ -1,0 +1,11 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+CEO_BARKED_TWICE,REQ-001,CLAIM-MECHANISM,O-SCC,MECHANISM_AND_TIMELINE,2,170,true,[],"The fraud used CEO impersonation, business email compromise, invoice substitution, and payment diversion.",2026.07.19.2
+CEO_BARKED_TWICE,REQ-002,CLAIM-ROWAN,P-ROWAN,IDENTITY_CONTROL_COMMUNICATION,2,150,true,[],Rowan Rook coordinated the impersonation and payment-diversion campaign.,2026.07.19.2
+CEO_BARKED_TWICE,REQ-003,CLAIM-IVY,P-IVY,DOMAIN_MAILBOX_AUTHENTICATION,2,120,true,[],Ivy Ibizan operated the lookalike domains and compromised mailbox infrastructure.,2026.07.19.2
+CEO_BARKED_TWICE,REQ-004,CLAIM-GRANT,P-GRANT,ACCOUNT_OWNERSHIP_AND_FUNDS_FLOW,2,100,true,[],Grant Greyhound controlled the mule stage and dispersed the first payment.,2026.07.19.2
+CEO_BARKED_TWICE,REQ-005,CLAIM-SUBSTITUTION,O-NIGHTJAR,INVOICE_COMPARISON_AND_VENDOR_CONFIRMATION,2,140,true,[],The beneficiary on genuine Copper Paw invoices was substituted from account 2207 to account 8842.,2026.07.19.2
+CEO_BARKED_TWICE,REQ-006,CLAIM-FLOW,O-NIGHTJAR,BANK_FLOW,2,120,true,[],"The 420,000 BSC payment was split from 8842 to Grant, Rowan, Ivy, and Harbor Hound.",2026.07.19.2
+CEO_BARKED_TWICE,REQ-007,CLAIM-PENNY-COMPROMISE,P-PENNY,MAILBOX_RULE_AND_LOGIN,2,80,true,[],Penny Pug’s mailbox was compromised by external sessions and forwarding rules.,2026.07.19.2
+CEO_BARKED_TWICE,REQ-008,CLAIM-BEA-INNOCENT,P-BEA,EXCULPATORY_COMMUNICATION_AND_TRAVEL,2,50,true,[],Bea Barkley was impersonated and did not authorize the payments.,2026.07.19.2
+CEO_BARKED_TWICE,REQ-009,CLAIM-PENNY-INNOCENT,P-PENNY,EXCULPATORY_ACCESS_AND_BENEFIT,2,35,true,[],Penny Pug was deceived and did not create the malicious rule.,2026.07.19.2
+CEO_BARKED_TWICE,REQ-011,CLAIM-VENDOR-INNOCENT,O-COPPER,VENDOR_CONFIRMATION_AND_DOMAIN,2,15,true,[],Copper Paw and Victor Vizsla did not request the changed account.,2026.07.19.2

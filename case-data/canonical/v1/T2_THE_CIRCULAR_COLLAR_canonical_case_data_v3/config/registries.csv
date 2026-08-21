@@ -1,0 +1,30 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+ACADEMY_T02,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,OBJECT_TYPE,BANK_TRANSACTION,Bank Transaction,"{""accusable"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,ACCESSES,ACCESSES,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,ASSIGNED_DEVICE,ASSIGNED_DEVICE,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,AVAILABLE_AT,AVAILABLE_AT,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,DIRECTOR_OF,DIRECTOR_OF,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,PAYS,PAYS,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,PORTAL_ADMIN_OF,PORTAL_ADMIN_OF,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,REGISTERED_AT,REGISTERED_AT,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,SUPPORTS,SUPPORTS,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,USES_DEVICE,USES_DEVICE,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,WORKS_FOR,WORKS_FOR,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,POSSIBLE_SAME_IDENTITY,"{""directed"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,SAME_DEVICE,SAME_DEVICE,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,SAME_LOGIN_IP,SAME_LOGIN_IP,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,RELATIONSHIP_TYPE,SAME_REGISTERED_ADDRESS,SAME_REGISTERED_ADDRESS,"{""directed"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,ADDRESS_REGISTRY,Address Registry,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,BANK_LEDGER,Bank Ledger,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,CIVIL_REGISTRY,Civil Registry,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,CORP_REGISTRY,Corporate Registry,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,DEVICE_INVENTORY,Device Inventory,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,DEVICE_LOG,Device Log,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,KYC_PROVIDER,KYC Provider,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1
+ACADEMY_T02,SOURCE_SYSTEM,VENDOR_PORTAL,Vendor Portal,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.1

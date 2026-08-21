@@ -1,0 +1,9 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+DOWNLINE,CLAIM-COMMISSION-OPERATOR,COMMISSION_AUTHORSHIP_AND_MESSAGE,Quincy knowingly operated the concentrated commission and payout system.,P-QUINCY,true,2026.07.18.1
+DOWNLINE,CLAIM-ELITE-RECRUITER,SPONSOR_SEMINAR_AND_COMMISSION,Bruno knowingly recruited through stage events and downline incentives.,P-BRUNO,true,2026.07.18.1
+DOWNLINE,CLAIM-GROWTH-OPERATOR,MESSAGES_SEMINARS_AND_SOCIAL,"Celeste knowingly directed recruitment pressure, rank deadlines and testimonial messaging.",P-CELESTE,true,2026.07.18.1
+DOWNLINE,CLAIM-MIXED-ROLES,SPONSOR_ECONOMICS_COMPLAINTS,"Tilly, Marco and Daisy recruited others while remaining net-loss victims rather than core operators.",P-TILLY,true,2026.07.18.1
+DOWNLINE,CLAIM-PRINCIPAL,CONTROL_IDENTITY_AND_PAYMENT,"Rex controlled the operating, seminar and marketing entities.",P-REX,true,2026.07.18.1
+DOWNLINE,CLAIM-PYRAMID-MECHANISM,SPONSOR_ORDER_COMMISSION_AND_ECONOMICS,"Compensation depended mainly on recruitment, starter packages and downline volume rather than external retail.",O-EVERYDOG,true,2026.07.18.1
+DOWNLINE,CLAIM-RETAIL-REAL,RETAIL_SALES_PRODUCTS_AND_SUPPLIER,"Genuine products and real external sales existed, especially Rosie’s retail-led business.",P-ROSIE,true,2026.07.18.1
+DOWNLINE,CLAIM-TESTIMONIAL-BIAS,TESTIMONIAL_TEMPLATE_AND_ECONOMICS,Testimonials emphasized gross success and omitted participant costs and recruitment dependence.,O-PACK-MEDIA,true,2026.07.18.1

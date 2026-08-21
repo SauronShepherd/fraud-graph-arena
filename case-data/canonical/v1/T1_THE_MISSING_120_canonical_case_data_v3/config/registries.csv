@@ -1,0 +1,25 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+ACADEMY_T01,OBJECT_TYPE,CASH_ACCOUNT,Cash Account,"{""accusable"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,OBJECT_TYPE,MESSAGE,Message,"{""accusable"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,OBJECT_TYPE,RECONCILIATION,Reconciliation,"{""accusable"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,OBJECT_TYPE,REGISTER_EVENT,Register Event,"{""accusable"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,ADMITS,ADMITS,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,AFFECTS,AFFECTS,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,ASSIGNED_TO,ASSIGNED_TO,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,EMPLOYED_BY,EMPLOYED_BY,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,FILED,FILED,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,MANAGES,MANAGES,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,ON_REGISTER,ON_REGISTER,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,PERFORMED,PERFORMED,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,PRECEDES,PRECEDES,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,SENT,SENT,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,RELATIONSHIP_TYPE,SUPPORTS,SUPPORTS,"{""directed"":""true"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+ACADEMY_T01,SOURCE_SYSTEM,CHAT_PLATFORM,Chat Platform,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.3
+ACADEMY_T01,SOURCE_SYSTEM,CORP_REGISTRY,Corporate Registry,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.3
+ACADEMY_T01,SOURCE_SYSTEM,HR_SYSTEM,HR System,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.3
+ACADEMY_T01,SOURCE_SYSTEM,MANAGER_PORTAL,Manager Portal,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.3
+ACADEMY_T01,SOURCE_SYSTEM,POS_SYSTEM,POS System,"{""trust_level"":""CASE_DEPENDENT""}",2026.07.19.3

@@ -1,0 +1,2 @@
+case_id,profile_code,profile_name,cumulative,starting_credits,manual_cost,zingg_cost,graphframes_cost,genie_cost,genie_row_limit,quote_required,no_result_charged,initial_item_count,description,snapshot_version
+ACADEMY_T02,ACADEMY,Detective Academy,false,9,0,3,3,4,,true,true,7,"Guided Zingg and GraphFrames connection analysis with merge discipline, cycles and shared infrastructure.",2026.07.19.1

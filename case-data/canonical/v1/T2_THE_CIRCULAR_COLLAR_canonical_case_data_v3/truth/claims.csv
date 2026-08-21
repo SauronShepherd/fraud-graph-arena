@@ -1,0 +1,6 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+ACADEMY_T02,BENIGN_SHARED_INFRASTRUCTURE,SHARED_INFRASTRUCTURE,"The registered address and public kiosk are shared infrastructure, protecting Blue Bowl Bakery and Cypher.",,true,2026.07.19.1
+ACADEMY_T02,COORDINATED_ADMINISTRATION,GENERAL,Exact device and IP relationships support coordinated administration under the merged controller.,,true,2026.07.19.1
+ACADEMY_T02,DIRECTED_PAYMENT_CYCLE,CYCLE,The bank-ledger payments form Alpha → Beta → Gamma → Alpha.,,true,2026.07.19.1
+ACADEMY_T02,FALSE_MERGE_REJECTION,GENERAL,Distinct identifiers and contacts require keeping Cypher separate.,T2-P-CIPHER-A,true,2026.07.19.1
+ACADEMY_T02,IDENTITY_MERGE,IDENTITY,Verified email and phone support merging Cipher Corgi and C. Corgi.,T2-P-CIPHER-A,true,2026.07.19.1

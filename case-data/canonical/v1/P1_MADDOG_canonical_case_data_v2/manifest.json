@@ -1,0 +1,220 @@
+{
+  "package_name": "P1_MADDOG_canonical_case_data_v2",
+  "package_version": "2.0.0-canonical.1",
+  "case_id": "MADDOG",
+  "short_id": "P1",
+  "title": "The Maddog Investment Kennel",
+  "profile_code": "PUPPY",
+  "canonical_model_version": "1.0.0",
+  "snapshot_version": "2026.07.19.1",
+  "source_archive": "P1_MADDOG_PUPPY_case_datasets_v1(1).zip",
+  "validation_status": "PASS",
+  "canonical_csv_table_count": 32,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 623,
+      "sha256": "d136f4baf6cf9704bce61e5479fd91d7f32d55be7143b3a6bbddd29a15594984"
+    },
+    {
+      "path": "analytics/entity_resolution_candidates.csv",
+      "bytes": 10321,
+      "sha256": "23a6b40f8f1e6cb69eff8e44a01ff193a9159e53b971f90cbd6f59f705653c91"
+    },
+    {
+      "path": "analytics/exact_matches.csv",
+      "bytes": 15667,
+      "sha256": "2480fa98e36a51ad75fac5bf31ee57b99812f0de22b4a591a7b77845bb3f1954"
+    },
+    {
+      "path": "analytics/tool_fixtures.csv",
+      "bytes": 782,
+      "sha256": "993025ff57fc99ffeb5213b83067f1968dc0e0dc01c3a18934b4e779b6e31eaa"
+    },
+    {
+      "path": "authoring/record_attributes.csv",
+      "bytes": 778281,
+      "sha256": "baed4fbf7f6a5f6bf338275949875c3ae9d5ea2469d43ca114b394e5b21b7341"
+    },
+    {
+      "path": "authoring/records.csv",
+      "bytes": 346050,
+      "sha256": "9cc4d1cc7bc4a3c24b548e5403413571fc61f282bbf7b6e87c6d476c75db1b5e"
+    },
+    {
+      "path": "authoring/relationships.csv",
+      "bytes": 369635,
+      "sha256": "69edfd560c241a92bc339749a046bb46bccb86d640ff24d024ec4a1ed13d6b8a"
+    },
+    {
+      "path": "config/case_initial_items.csv",
+      "bytes": 789,
+      "sha256": "27507c54b1aa0782e793b90345a0e5befcccd9c0e040bdd4009bc04a8cb0e30d"
+    },
+    {
+      "path": "config/case_profiles.csv",
+      "bytes": 352,
+      "sha256": "e68d502e85d1ae7d1497908d254641ecb7ec5cfa4e5c58e3c40548b2b6b8652d"
+    },
+    {
+      "path": "config/cases.csv",
+      "bytes": 428,
+      "sha256": "79bb42cd58b2c6381c239ccaeeeab65c44cd699461c7fa32e16581ef98fea2ca"
+    },
+    {
+      "path": "config/genie_benchmarks.csv",
+      "bytes": 2436,
+      "sha256": "e1b7a1d123bc2b6a3bd33dcadc19c8c554ceca1737fa7ebef89ec7f767b4a1a0"
+    },
+    {
+      "path": "config/registries.csv",
+      "bytes": 8604,
+      "sha256": "0caf3bfc0aadb35fa6385e48d08a4d1f4a2b1ed33a8cf776a20257fca4a101fa"
+    },
+    {
+      "path": "config/reveal_steps.csv",
+      "bytes": 153,
+      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
+    },
+    {
+      "path": "config/ui_contracts.csv",
+      "bytes": 56,
+      "sha256": "b3000aa0c0582a1dd2987d5514cdf7ee47941ca01a2585d8373dbe870e4fc86b"
+    },
+    {
+      "path": "conversion_report.json",
+      "bytes": 2234,
+      "sha256": "1821b1db0e4175c2db97ae6afb0a6e4559dae3d85343a9cfd36b0e1cdb112023"
+    },
+    {
+      "path": "fga_canonical_schema_registry_v1.json",
+      "bytes": 70166,
+      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+    },
+    {
+      "path": "genie/record_attributes.csv",
+      "bytes": 510410,
+      "sha256": "83eebb3592fe52fce5d3bc1e138b6dbd09dccd50d078402765427eb755a3a5b7"
+    },
+    {
+      "path": "genie/records.csv",
+      "bytes": 215790,
+      "sha256": "bff1e4368e8215b69df399658a560bc75227cd80f1e2841cc1829e26bbc9a24a"
+    },
+    {
+      "path": "genie/relationships.csv",
+      "bytes": 161329,
+      "sha256": "0e3582cda16be2ed87938ff58266ebeb53f8a792a2801edf451319a3109e62f4"
+    },
+    {
+      "path": "metadata/source_README.md",
+      "bytes": 604,
+      "sha256": "e5179be08202eb66b96c2d3dd22565a32cd865d19f29ac4ac674ead65b5b3179"
+    },
+    {
+      "path": "metadata/source_case.yaml",
+      "bytes": 443,
+      "sha256": "b2262c81fd7eb39f8f2c40f0ff9a700308dd870067676bdfe8ba2ec76455f7fd"
+    },
+    {
+      "path": "metadata/source_data_dictionary.json",
+      "bytes": 111330,
+      "sha256": "5e4834d16c372abe64f091c65f33a839bef0f64e24c0928dbd4800b59d41dd3c"
+    },
+    {
+      "path": "metadata/source_manifest.json",
+      "bytes": 9992,
+      "sha256": "e6283d4aa13bef24c231298dd1dc3e5656ce36e4f98860bc4993b5c38b542261"
+    },
+    {
+      "path": "metadata/source_validation_report.json",
+      "bytes": 1724,
+      "sha256": "0bb785e9011c758f512aceb29deb94fe0b74f16278aa909722db4734a8c0ebb2"
+    },
+    {
+      "path": "published/entity_resolution_candidates.csv",
+      "bytes": 6743,
+      "sha256": "e1e334ba87f84170cb971c5a731ff3ba9f95f8419ef887df5f76670b0daf3dcf"
+    },
+    {
+      "path": "published/exact_matches.csv",
+      "bytes": 10618,
+      "sha256": "5407e720db66d858f2ef851a4a41f3d4a3fd7719ec15bb6087d17ccb054461d0"
+    },
+    {
+      "path": "published/records.csv",
+      "bytes": 107186,
+      "sha256": "093ee85e49bf7b5931baeb4f36d66e80e180765269bfc7aaacf071fe6eef5711"
+    },
+    {
+      "path": "published/relationships.csv",
+      "bytes": 77024,
+      "sha256": "63f6d3ce3d0080a203c4490c7b96c21f4eb984d4f876fee630600bdbd84bb101"
+    },
+    {
+      "path": "scripts/validate_canonical_package.py",
+      "bytes": 6999,
+      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+    },
+    {
+      "path": "truth/allowed_alternatives.csv",
+      "bytes": 750,
+      "sha256": "5c7650c0d81414a5a700d5bbaee95b159c787ad43c749e1dce8699d8024f1fd4"
+    },
+    {
+      "path": "truth/assertions.csv",
+      "bytes": 136,
+      "sha256": "daa3760dc887e77e2ab50c4478d1ac223bd3dc0ecd2c05c120ab3331fde58d58"
+    },
+    {
+      "path": "truth/claims.csv",
+      "bytes": 962,
+      "sha256": "50d8e738c84c7edf73c9794ca9b5d9d50895d471a11bf1f4e31e9e18bffaaf9f"
+    },
+    {
+      "path": "truth/ending_rules.csv",
+      "bytes": 141,
+      "sha256": "95199a009b0657c4f67b126af3b6037be9b7b83335a4fd34545e5572686b0820"
+    },
+    {
+      "path": "truth/entities.csv",
+      "bytes": 2932,
+      "sha256": "78496a52afa6df5eee64f2346bda8fec38921efb50bba888cfbdf668017557e1"
+    },
+    {
+      "path": "truth/evidence_requirements.csv",
+      "bytes": 1151,
+      "sha256": "baa3bd9b77aa53423898efaf106877cc8c5a8aad7bf8301d6f7447a56a6721cc"
+    },
+    {
+      "path": "truth/evidence_routes.csv",
+      "bytes": 1758,
+      "sha256": "ee5bd7b30dcfb85f723b9c15f12f28a07af166c840e8a8205486b0e314375115"
+    },
+    {
+      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 443,
+      "sha256": "64b8e256c8b1c218349596088c521ea89e5bdb4ed91760881e26435f214090e1"
+    },
+    {
+      "path": "truth/scoring_rules.csv",
+      "bytes": 87,
+      "sha256": "4f08e7c03b3a7bfd0b8810a5648ce72be671409c9041889b7cdfe27ad651c0ba"
+    },
+    {
+      "path": "truth/test_scenarios.csv",
+      "bytes": 170,
+      "sha256": "bccb4722918cdb299476defc3db1a87b31475e57d430c00e3ddc4816b81c039d"
+    },
+    {
+      "path": "validation/checks.csv",
+      "bytes": 1466,
+      "sha256": "c5cd0c7e074ea43ac1359f82e7a28493871fbe69d955b2b538610dcc4156b6ec"
+    },
+    {
+      "path": "validation/metrics.csv",
+      "bytes": 2442,
+      "sha256": "d85f953e97f30ce12c71bf3ac64716196a4c9c0bad7dc339e5278ef33cc97852"
+    }
+  ]
+}

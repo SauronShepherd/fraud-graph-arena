@@ -1,0 +1,8 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+PHANTOM_VET,FFP-001,P-ELENA,Culpable solely because her valid license appears on claims.,190,2026.07.18.1
+PHANTOM_VET,FFP-002,P-TESSA,Culpable because she shared an IP or scheduled legitimate appointments.,130,2026.07.18.1
+PHANTOM_VET,FFP-003,P-HENRY,Culpable because he adjudicated or investigated claims.,100,2026.07.18.1
+PHANTOM_VET,FFP-004,P-INGRID,Culpable because rescue microchip records were reused.,110,2026.07.18.1
+PHANTOM_VET,FFP-005,O-LANTERN-VET,Part of the scheme because its templates or employee credential were copied.,130,2026.07.18.1
+PHANTOM_VET,FFP-009,O-EMERGENCY,Fraudulent because it bills high-cost emergency procedures.,110,2026.07.18.1
+PHANTOM_VET,FFP-010,O-MICROCHIP,Fraud participant because duplicate microchips exist after migration.,80,2026.07.18.1

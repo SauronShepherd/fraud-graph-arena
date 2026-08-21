@@ -1,0 +1,1 @@
+case_id,profile_code,benchmark_id,prompt,expected_columns_json,expected_min_rows,expected_max_rows,expected_semantics,snapshot_version

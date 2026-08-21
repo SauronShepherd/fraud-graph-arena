@@ -1,0 +1,9 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+DOWNLINE,REQ-001,CLAIM-PRINCIPAL,P-REX,CONTROL_IDENTITY_AND_PAYMENT,3,150,true,[],"Rex controlled the operating, seminar and marketing entities.",2026.07.18.1
+DOWNLINE,REQ-002,CLAIM-PYRAMID-MECHANISM,O-EVERYDOG,SPONSOR_ORDER_COMMISSION_AND_ECONOMICS,4,190,true,[],"Compensation depended mainly on recruitment, starter packages and downline volume rather than external retail.",2026.07.18.1
+DOWNLINE,REQ-003,CLAIM-COMMISSION-OPERATOR,P-QUINCY,COMMISSION_AUTHORSHIP_AND_MESSAGE,2,90,true,[],Quincy knowingly operated the concentrated commission and payout system.,2026.07.18.1
+DOWNLINE,REQ-004,CLAIM-GROWTH-OPERATOR,P-CELESTE,MESSAGES_SEMINARS_AND_SOCIAL,2,90,true,[],"Celeste knowingly directed recruitment pressure, rank deadlines and testimonial messaging.",2026.07.18.1
+DOWNLINE,REQ-005,CLAIM-ELITE-RECRUITER,P-BRUNO,SPONSOR_SEMINAR_AND_COMMISSION,2,80,true,[],Bruno knowingly recruited through stage events and downline incentives.,2026.07.18.1
+DOWNLINE,REQ-006,CLAIM-RETAIL-REAL,P-ROSIE,RETAIL_SALES_PRODUCTS_AND_SUPPLIER,3,90,true,[],"Genuine products and real external sales existed, especially Rosie’s retail-led business.",2026.07.18.1
+DOWNLINE,REQ-007,CLAIM-MIXED-ROLES,P-TILLY,SPONSOR_ECONOMICS_COMPLAINTS,3,90,true,[],"Tilly, Marco and Daisy recruited others while remaining net-loss victims rather than core operators.",2026.07.18.1
+DOWNLINE,REQ-008,CLAIM-TESTIMONIAL-BIAS,O-PACK-MEDIA,TESTIMONIAL_TEMPLATE_AND_ECONOMICS,3,80,true,[],Testimonials emphasized gross success and omitted participant costs and recruitment dependence.,2026.07.18.1

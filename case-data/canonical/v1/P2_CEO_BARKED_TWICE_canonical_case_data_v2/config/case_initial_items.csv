@@ -1,0 +1,13 @@
+case_id,profile_code,sequence,record_id,reason_internal,snapshot_version
+CEO_BARKED_TWICE,PUPPY,1,COM-002,Urgent CEO impersonation message,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,2,COM-003,Vendor bank change message,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,3,INV-COPPER-1048-G,Genuine vendor invoice,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,4,INV-COPPER-1048-F,Substituted invoice,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,5,TX-FRAUD-001,First diverted payment,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,6,VCR-001,Vendor bank change request,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,7,MR-001,Malicious mailbox rule,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,8,DOM-SCC-TYPO,CEO lookalike domain,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,9,PR-PENNY-01,Accounts payable employee,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,10,PR-BEA-01,Real CEO record,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,11,OR-SCC-01,Victim company,2026.07.19.2
+CEO_BARKED_TWICE,PUPPY,12,OR-COPPER-01,Legitimate vendor,2026.07.19.2

@@ -1,0 +1,7 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+BONE_LEDGER,FFP-001,P-AMELIA,Culpable because the auditor knew about the issues.,180,2026.07.18.1
+BONE_LEDGER,FFP-002,P-LUCY,Culpable because she uploaded journal support or shared the office IP.,160,2026.07.18.1
+BONE_LEDGER,FFP-003,P-NORA,Culpable because a legitimate subsidiary appears in intercompany entries.,110,2026.07.18.1
+BONE_LEDGER,FFP-004,P-HUGO,Culpable because warehouse records show missing assets.,100,2026.07.18.1
+BONE_LEDGER,FFP-005,P-BEATRICE,Culpable solely because board approvals exist.,90,2026.07.18.1
+BONE_LEDGER,FFP-010,O-HARBOR-SPV,Fraudulent solely because it is a special-purpose lease vehicle.,120,2026.07.18.1

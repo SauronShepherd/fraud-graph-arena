@@ -1,0 +1,8 @@
+case_id,entity_id,entity_type,canonical_name,operational_role,expected_classification,culpability,harm_status,fraud_network_membership,protected_notes,snapshot_version
+ACADEMY_T02,T2-P-CIPHER-A,PERSON_RECORD,Cipher Corgi,MERGE_WITH_T2-P-CIPHER-B_AND_PRIMARY_CONTROLLER,MERGE_WITH_T2-P-CIPHER-B_AND_PRIMARY_CONTROLLER,intentional,non-victim,true,Canonical source record for the merged controller.,2026.07.19.1
+ACADEMY_T02,T2-P-CIPHER-B,PERSON_RECORD,Cipher Corgi portal alias,MERGE_WITH_T2-P-CIPHER-A,MERGE_WITH_T2-P-CIPHER-A,intentional,non-victim,true,Alias record for the same controller.,2026.07.19.1
+ACADEMY_T02,T2-P-CYPHER,PERSON_RECORD,Cypher Corgi,PROTECTED_FALSE_CANDIDATE,PROTECTED_FALSE_CANDIDATE,none,non-victim,false,"Similar name, distinct verified identity.",2026.07.19.1
+ACADEMY_T02,T2-O-BAKERY,ORGANIZATION_RECORD,Blue Bowl Bakery,PROTECTED_SHARED_INFRA,PROTECTED_SHARED_INFRA,none,non-victim,false,Legitimate tenant sharing address and kiosk.,2026.07.19.1
+ACADEMY_T02,T2-O-ALPHA,ORGANIZATION_RECORD,Alpha Bone Ltd,FRAUD_MECHANISM_ENTITY,FRAUD_MECHANISM_ENTITY,controlled,non-victim,,Part of the directed payment cycle.,2026.07.19.1
+ACADEMY_T02,T2-O-BETA,ORGANIZATION_RECORD,Beta Bone Ltd,FRAUD_MECHANISM_ENTITY,FRAUD_MECHANISM_ENTITY,controlled,non-victim,,Part of the directed payment cycle.,2026.07.19.1
+ACADEMY_T02,T2-O-GAMMA,ORGANIZATION_RECORD,Gamma Bone Ltd,FRAUD_MECHANISM_ENTITY,FRAUD_MECHANISM_ENTITY,controlled,non-victim,,Part of the cycle; shared address is not the reason for culpability.,2026.07.19.1

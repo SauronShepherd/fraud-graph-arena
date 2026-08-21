@@ -1,0 +1,6 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+ACADEMY_T02,T2-EV-001,IDENTITY_MERGE,T2-P-CIPHER-A,IDENTITY,3,,true,"[""T2-P-CIPHER-A"",""T2-P-CIPHER-B"",""T2-DOC-CIPHER-ID""]",Verified email and phone support merging Cipher Corgi and C. Corgi.,2026.07.19.1
+ACADEMY_T02,T2-EV-002,FALSE_MERGE_REJECTION,T2-P-CIPHER-A,GENERAL,3,,true,"[""T2-P-CIPHER-A"",""T2-P-CYPHER"",""T2-DOC-CYPHER-ID""]",Distinct identifiers and contacts require keeping Cypher separate.,2026.07.19.1
+ACADEMY_T02,T2-EV-003,DIRECTED_PAYMENT_CYCLE,,CYCLE,3,,true,"[""T2-TX-AB"",""T2-TX-BC"",""T2-TX-CA""]",The bank-ledger payments form Alpha → Beta → Gamma → Alpha.,2026.07.19.1
+ACADEMY_T02,T2-EV-004,COORDINATED_ADMINISTRATION,,GENERAL,4,,true,"[""T2-DEV-ADMIN"",""T2-LOGIN-A"",""T2-LOGIN-B"",""T2-LOGIN-C""]",Exact device and IP relationships support coordinated administration under the merged controller.,2026.07.19.1
+ACADEMY_T02,T2-EV-005,BENIGN_SHARED_INFRASTRUCTURE,,SHARED_INFRASTRUCTURE,4,,true,"[""T2-ADDR-HUB"",""T2-DEV-KIOSK"",""T2-FILE-GAMMA"",""T2-FILE-BAKERY""]","The registered address and public kiosk are shared infrastructure, protecting Blue Bowl Bakery and Cypher.",2026.07.19.1

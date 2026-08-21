@@ -1,0 +1,401 @@
+{
+  "case_id": "GOLDEN_HYDRANT",
+  "case_version": "1.0.0",
+  "snapshot_version": "2026.07.18.1",
+  "difficulty": "ADULT_DOG",
+  "single_difficulty_only": true,
+  "source_publication_level": 2,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 613,
+      "sha256": "465b59fc5b915495062180c156b57505077be8ece75aea00d74132427ba9154e"
+    },
+    {
+      "path": "analytics/hydrant_graphframes_exact_relationships.csv",
+      "bytes": 77043,
+      "sha256": "fa8b298b4f938c78e28e8c1f7d70e98ddcdb1be8dbdd89f1d328205b6ee79eaf"
+    },
+    {
+      "path": "analytics/hydrant_zingg_candidate_relationships.csv",
+      "bytes": 29771,
+      "sha256": "ec7f28d0a2f42285de0d1c631c39f20ec24f8d460099fc5f3af5557b537d0202"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 265,
+      "sha256": "fb9da1f0f2f314987aae3d25359a8a6c26e70781d01131cd332922345930abbc"
+    },
+    {
+      "path": "authoring/hydrant_accounts.csv",
+      "bytes": 2867,
+      "sha256": "b260e36ad37e83eb24c3fdada2db94167c188aa820438bcd497bcac4cbd36df1"
+    },
+    {
+      "path": "authoring/hydrant_addresses.csv",
+      "bytes": 1649,
+      "sha256": "2af27e49586ee43c17745bdb21a4723f33bc23d100dc89778f8586a71b7c6592"
+    },
+    {
+      "path": "authoring/hydrant_assets.csv",
+      "bytes": 29678,
+      "sha256": "bec7e894ecb353dfeaee5c220e42084403b2f1d2b8be6a538380287563caf148"
+    },
+    {
+      "path": "authoring/hydrant_bank_transactions.csv",
+      "bytes": 53722,
+      "sha256": "735acafd2046d6bac9ca2f3f48e788529179db70c631f81ec33c521a482e323d"
+    },
+    {
+      "path": "authoring/hydrant_bid_evaluations.csv",
+      "bytes": 51673,
+      "sha256": "f854721604d5ae5298d88502386cd9481a66b86d0f99d9f80903bbb8428812e1"
+    },
+    {
+      "path": "authoring/hydrant_bid_lines.csv",
+      "bytes": 40894,
+      "sha256": "b8529ab82d87a852464e76c9291325bf0b1dea2fb82844372b9e4ca2a5a2e9a5"
+    },
+    {
+      "path": "authoring/hydrant_bids.csv",
+      "bytes": 15926,
+      "sha256": "fbe9c6b463260fe1f11877a9f588e9268545b9f9e1297420b324cf49c07da635"
+    },
+    {
+      "path": "authoring/hydrant_change_orders.csv",
+      "bytes": 18529,
+      "sha256": "94277a12c0b9bda6543ebbefe8487c8ffa05fd77b0a201b47366fc9f4e931ffa"
+    },
+    {
+      "path": "authoring/hydrant_communications.csv",
+      "bytes": 25037,
+      "sha256": "288bf7776407bb41506a0a3859ced127061aa09c2feeec2d322e2e05c4799fa6"
+    },
+    {
+      "path": "authoring/hydrant_complaints.csv",
+      "bytes": 7106,
+      "sha256": "1cd72ba6fbd03e2653a5247942765c0248c5b707a919dcec44e78f59b1b512b8"
+    },
+    {
+      "path": "authoring/hydrant_contracts.csv",
+      "bytes": 3084,
+      "sha256": "186807fdcfa4c83e335a9ac517b9cd0aa9154f6835628b0ea3c68c0f41177bb5"
+    },
+    {
+      "path": "authoring/hydrant_devices.csv",
+      "bytes": 1520,
+      "sha256": "7f567e040f7ff4b8bf8cafe634bfa25fdd411d4db0783e4c742c9a164ff871c0"
+    },
+    {
+      "path": "authoring/hydrant_direct_relationships.csv",
+      "bytes": 1369583,
+      "sha256": "c1263fdc2f541b385f902ea4113156f947fba268e5c69ec7fe85cac1d11cc322"
+    },
+    {
+      "path": "authoring/hydrant_documents.csv",
+      "bytes": 15089,
+      "sha256": "7e44e8ed81a3c3daba1ff1bc12021f682a33f01a79a1fde9308c6226c205a377"
+    },
+    {
+      "path": "authoring/hydrant_inspection_events.csv",
+      "bytes": 30831,
+      "sha256": "86a2148b54c9bda4019eae9bc63f6c7bfbc7dc5a759d44725bd0cd6f0839d33f"
+    },
+    {
+      "path": "authoring/hydrant_installation_events.csv",
+      "bytes": 31412,
+      "sha256": "b2ee6991fc968b838d8a1edc625a02378ff166a6b97bcd36d59fd27fb60c518c"
+    },
+    {
+      "path": "authoring/hydrant_invoice_lines.csv",
+      "bytes": 50427,
+      "sha256": "3e9dda852888f17b033499f86da4461ef820d9c1bd5b037d7534c142e468f30c"
+    },
+    {
+      "path": "authoring/hydrant_login_events.csv",
+      "bytes": 9904,
+      "sha256": "eaa9baec8821a67c5d273dae7ea0a75efe40c18fc7a08d89db1eb432b316369e"
+    },
+    {
+      "path": "authoring/hydrant_organization_records.csv",
+      "bytes": 13577,
+      "sha256": "25e7894e5195b20e108be4391f8db0ced3a4c2d81ba36413c2f7fe13226930d8"
+    },
+    {
+      "path": "authoring/hydrant_organizations.csv",
+      "bytes": 1658,
+      "sha256": "cfb4abbececd81b5c5d44ec7dc294fa428fddfbe8dc4904caaee86d55604c8ea"
+    },
+    {
+      "path": "authoring/hydrant_payment_certificates.csv",
+      "bytes": 16604,
+      "sha256": "4f47880aefd7d4ef00569bc0bc39ed2a9274eee241b52244f08df962f183fb0f"
+    },
+    {
+      "path": "authoring/hydrant_people.csv",
+      "bytes": 5245,
+      "sha256": "481cc42ca068ab37ea81c22e845dc242e563663e88c0b0289378f56dec2639e5"
+    },
+    {
+      "path": "authoring/hydrant_person_records.csv",
+      "bytes": 27975,
+      "sha256": "198d3b111a9212216c8c45bd67faca0e4d1ab813e291a11701a302172247ac63"
+    },
+    {
+      "path": "authoring/hydrant_subcontracts.csv",
+      "bytes": 5209,
+      "sha256": "d9c7d3ea1a0d3334e60cc2cfe84964a83a78aa8fae970cd5fd5ac5705a38b534"
+    },
+    {
+      "path": "authoring/hydrant_tenders.csv",
+      "bytes": 3866,
+      "sha256": "71dd8a12a8ba559c27b6d34c373379f22f58b204bede193e886020220b9aa550"
+    },
+    {
+      "path": "authoring/hydrant_vendor_invoices.csv",
+      "bytes": 28562,
+      "sha256": "b7451dafb00946c84c5d7f97d8e1982c0cf4ffa067179246a049ee09a8c5dfcb"
+    },
+    {
+      "path": "authoring/hydrant_work_orders.csv",
+      "bytes": 23393,
+      "sha256": "6a3ecfe6ec6ed8314c3677e66a0043afa956034252084179648055f4c11fc014"
+    },
+    {
+      "path": "catalog/A4_GOLDEN_HYDRANT_ADULT_data_catalog_v1.xlsx",
+      "bytes": 35865,
+      "sha256": "b7d6aae4ba5de37ff2c1a2613604f01bd0e9aab2a1c42f34447e42f8bb3b318a"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 388,
+      "sha256": "04f1cf72d2bd451b1aeb17c11a57a90bacdb2b2194386e996b20552b3a4b9b92"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 532,
+      "sha256": "84e072014ca4eef17b53f8cabf07a8fab949bdb41eee2f6e751be6cc60038dfe"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 51647,
+      "sha256": "11d6601d4d65c0feb2f9e22dee06041313723840a51a5aae179e172a91878f69"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 321,
+      "sha256": "04e69a6dba346261352fa7006c7c49f345c7cfd1839f1fcd64c382dd07d2112b"
+    },
+    {
+      "path": "config/golden_hydrant_genie_benchmarks.csv",
+      "bytes": 2243,
+      "sha256": "e01ad94b38462685b839596955b8b2b65679750850e683537ee01e4eb2ed2639"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 256,
+      "sha256": "27c17c5657144cc0454ee2c8eab8624528d36ec3a88e5eb270a9d40244d0642f"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 1216,
+      "sha256": "d5c256a02e09483051972ec16fd3e3db94afde9f4b29e51808b47126cb1b9413"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 1938,
+      "sha256": "d727d60ada10cc4922dd3dc0e54d9ab7ad0f9f7f5f2015f6825a4cd7a062435f"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 890,
+      "sha256": "345142347bf4d80979b90ac3768107e22ed97ecfae8e70231101ab4e8fc9ded8"
+    },
+    {
+      "path": "genie/adult/bid_evaluations.csv",
+      "bytes": 39611,
+      "sha256": "c920d8e763c8bdea7d0b49e32deb7553043f6de951b7c216e926a25df98ecf42"
+    },
+    {
+      "path": "genie/adult/bids.csv",
+      "bytes": 12027,
+      "sha256": "ed63039f83c98e1bd4d1f060d6436c8a5dbfde08bc14f8bba1e1651152e36716"
+    },
+    {
+      "path": "genie/adult/change_orders.csv",
+      "bytes": 12866,
+      "sha256": "c7bb14a6507ffb3407afceda23b43f07c1bfb8e599b476812388863808847739"
+    },
+    {
+      "path": "genie/adult/communications.csv",
+      "bytes": 21064,
+      "sha256": "2827f466f4cd7caa8e40a52faf085481a27a6879653c2d5d876e480a229c725d"
+    },
+    {
+      "path": "genie/adult/complaints.csv",
+      "bytes": 5528,
+      "sha256": "04c450f375de1c461f83ba3f207f519d84f7d807b1e1ac6be4bb88414d585232"
+    },
+    {
+      "path": "genie/adult/contracts.csv",
+      "bytes": 1696,
+      "sha256": "8217dac0daaf6d6f8574e781d9c3531e49dd266c63de876d2d2bc28e5e9dc506"
+    },
+    {
+      "path": "genie/adult/documents.csv",
+      "bytes": 6697,
+      "sha256": "8694a47298071c4400b895f90848c1cfbb061d712a826f61520ca73f4db0debd"
+    },
+    {
+      "path": "genie/adult/entities.csv",
+      "bytes": 21663,
+      "sha256": "5ff8922a6c16b9d2b2f10d9da4be2fc506d7db9d79111fb34c0791af09b0e804"
+    },
+    {
+      "path": "genie/adult/financial_events.csv",
+      "bytes": 41255,
+      "sha256": "40c11427f0971699375adf92ba056e9dd469a7648da2983ba779b85b55097c1a"
+    },
+    {
+      "path": "genie/adult/hydrant_assets.csv",
+      "bytes": 22164,
+      "sha256": "385d306c0a42f6d5524258fcd7977022444e39fc4d14cec6b220b0796d580d2b"
+    },
+    {
+      "path": "genie/adult/inspection_events.csv",
+      "bytes": 24217,
+      "sha256": "ae55179e5dc1ae2636920c644fd937bd62111e962a9de85a35346e096fc91755"
+    },
+    {
+      "path": "genie/adult/installation_events.csv",
+      "bytes": 24798,
+      "sha256": "8c47f5f9bef1d88c8237a7819da4cbb0b816f670ccd574938372dd7622732d13"
+    },
+    {
+      "path": "genie/adult/login_events.csv",
+      "bytes": 6610,
+      "sha256": "53645e4bd6e9fc6c6e4d1c36517a2ad7860184d415c1afcad1d5a4a35f3e3244"
+    },
+    {
+      "path": "genie/adult/payment_certificates.csv",
+      "bytes": 11237,
+      "sha256": "64e784cd5ea943edb3def0c0bbb826ad86f79184555a5b5cdfd991cb8bf2b98b"
+    },
+    {
+      "path": "genie/adult/subcontracts.csv",
+      "bytes": 3385,
+      "sha256": "93078252c8417f33b1aca9a9abc9d524cefcbda52bf51198a0fb7086bf940547"
+    },
+    {
+      "path": "genie/adult/tenders.csv",
+      "bytes": 2444,
+      "sha256": "584b7019e42872135fc396817d4a0a5be7b36b5286722e26e89010b05b0c3807"
+    },
+    {
+      "path": "genie/adult/vendor_invoices.csv",
+      "bytes": 24040,
+      "sha256": "ff64417074acc71e49440677b83c53e2d920eba8f67fc33f5411580b4c586a6f"
+    },
+    {
+      "path": "genie/adult/work_orders.csv",
+      "bytes": 15395,
+      "sha256": "ef5e63c2fc241b1cc336ed04f09cd6b21f08d64abc81526d939341d149b20af8"
+    },
+    {
+      "path": "published/adult/graphframes_exact_relationships.csv",
+      "bytes": 76877,
+      "sha256": "a88c54220cbca817a485942f0ccf1a4478e6ba0d24ba61678be3f35eb4c8e9d5"
+    },
+    {
+      "path": "published/adult/initial_case_items.csv",
+      "bytes": 125,
+      "sha256": "ef5848f5252d388734d654c1026177c389523a14f1c2f15ec16f0425f501ce57"
+    },
+    {
+      "path": "published/adult/player_safe_direct_relationships.csv",
+      "bytes": 1392089,
+      "sha256": "17172fd95323b4140109b7dfbae5fa64f2077b6912fd949c8466b31b9d7643dc"
+    },
+    {
+      "path": "published/adult/player_safe_records.csv",
+      "bytes": 1119116,
+      "sha256": "22c658d86011144fc71c13d20274c548914b88b201c3616fc5dd427d96329512"
+    },
+    {
+      "path": "published/adult/zingg_candidate_relationships.csv",
+      "bytes": 28046,
+      "sha256": "8c983b732b2bf59e7545d01552c1bdb992ef3308daca160222fb866d8bc32c0e"
+    },
+    {
+      "path": "scripts/adult_package_metadata.py",
+      "bytes": 150,
+      "sha256": "b05b7d64736a0f2b598a65ca40e223199f617bec6d592bde4e5040725a9e5c89"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 296,
+      "sha256": "8df2f056963ad072ec2b357f3fe27cdcac0709fc7e95a7fe52d937fb17dcf257"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 240,
+      "sha256": "d90c905a2c233d5b974edb615316bd074de9f9e92e55afd108366a3b8766805c"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 310,
+      "sha256": "9258f7e07dc78db36b8dd3c536923ea84325fa9a48a37aae1dac0420e9b09f7d"
+    },
+    {
+      "path": "truth/hydrant_allowed_alternatives.csv",
+      "bytes": 648,
+      "sha256": "87446c4772db40fa7d0c16b07df2193d4bced763450c731cff2dfbd5b75e6eba"
+    },
+    {
+      "path": "truth/hydrant_ending_thresholds.csv",
+      "bytes": 918,
+      "sha256": "56c2402434610ed27f6ac8922d105bf1e37fc532276192777c27433ad87d58b2"
+    },
+    {
+      "path": "truth/hydrant_evaluator_truth.csv",
+      "bytes": 8580,
+      "sha256": "a04c97acdbfa7209e9a2d144bb49c423fefc86d9c0cc79f60ca16c21874e424b"
+    },
+    {
+      "path": "truth/hydrant_evidence_route_matrix.csv",
+      "bytes": 725,
+      "sha256": "1bfe4a611d90fc9f4e22e7324d9828176e2f6a858170bfbed02646f6c9006d4e"
+    },
+    {
+      "path": "truth/hydrant_forbidden_false_positives.csv",
+      "bytes": 760,
+      "sha256": "40b828e29c6e91933ed34a4998ede487f55166e03c40c8c224bca6a8dbdbe0b4"
+    },
+    {
+      "path": "truth/hydrant_required_evidence.csv",
+      "bytes": 1538,
+      "sha256": "cf7984d5e0cd8cc8d15c28b3c713a119025187e28647875b2171de134e660057"
+    },
+    {
+      "path": "truth/hydrant_scoring_rules.csv",
+      "bytes": 1000,
+      "sha256": "4c2704ebca9e1d48e2ea9a8443a3e1fe4dab7be0ba1553b3667e67ad70d88ce6"
+    },
+    {
+      "path": "validation/adult_counts.csv",
+      "bytes": 568,
+      "sha256": "926d2af2996ce6736f41f2d602b9741edcee3055500b4fda9c66275f9b45c24e"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1291,
+      "sha256": "85544907885607c2449704ec42b2b43c538fe6c75acc9c38608b40f1c5575de3"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 2036,
+      "sha256": "f23c19fe1325b7e467acbf0402e4d8ddfac5cd6a342af28dbc3c52b04c40f82a"
+    }
+  ]
+}

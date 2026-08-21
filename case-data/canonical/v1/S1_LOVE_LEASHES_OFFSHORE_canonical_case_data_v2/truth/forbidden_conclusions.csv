@@ -1,0 +1,11 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+LOVE_LEASHES_OFFSHORE,FFP-001,P-EVELYN,Culpable because she sent money or trusted a persona.,190,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-002,P-BERNARD,Culpable because he continued communicating after a warning sign.,180,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-003,P-THEO,Knowing mule solely because money passed through his account.,180,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-004,P-NINA,Fraud operator solely because she forwarded one parcel.,160,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-005,P-CLARA,Victim or accomplice solely because the relationship is long-distance.,150,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-006,P-HENRY,Fraud persona solely because he lives abroad and received a remittance.,150,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-007,O-CIVICPARCEL,Controlled parcel front solely because it handles international parcels.,110,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-008,O-SEABREEZE,Illicit solely because it processes cross-border transfers.,110,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-009,P-1BE6E9B0,Same person as Serena Saluki.,100,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,FFP-010,O-MOONLIGHT,Same organization as Moonlit Leash Media.,110,2026.07.18.1

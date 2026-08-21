@@ -1,0 +1,5312 @@
+[
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "1",
+    "column_name": "match_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "2",
+    "column_name": "rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "4",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "5",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "6",
+    "column_name": "exact_field",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "7",
+    "column_name": "masked_exact_value",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "8",
+    "column_name": "normalization_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "10",
+    "column_name": "framework_semantics",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "11",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "12",
+    "column_name": "authoring_method_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "13",
+    "column_name": "review_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "14",
+    "column_name": "ambiguity_warning",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "15",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "16",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "analytics/ceo_graphframes_exact_relationships.csv",
+    "column_order": "17",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "1",
+    "column_name": "candidate_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "2",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "3",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "4",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "5",
+    "column_name": "confidence_band",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "6",
+    "column_name": "estimated_score",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "7",
+    "column_name": "agreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "8",
+    "column_name": "disagreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "9",
+    "column_name": "missing_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "10",
+    "column_name": "expected_truth",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "11",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "12",
+    "column_name": "framework_semantics",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "13",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "14",
+    "column_name": "authoring_method_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "15",
+    "column_name": "review_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "16",
+    "column_name": "provenance_note",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "17",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "analytics/ceo_zingg_candidate_relationships.csv",
+    "column_order": "18",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "1",
+    "column_name": "fixture_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "2",
+    "column_name": "tool_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "3",
+    "column_name": "selected_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "4",
+    "column_name": "criterion",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "5",
+    "column_name": "expected_result_count",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "6",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "1",
+    "column_name": "account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "2",
+    "column_name": "holder_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "3",
+    "column_name": "holder_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "4",
+    "column_name": "account_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "5",
+    "column_name": "masked_account",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "6",
+    "column_name": "account_number_synthetic",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "7",
+    "column_name": "bank_org_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "8",
+    "column_name": "opening_balance",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "9",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "10",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_accounts.csv",
+    "column_order": "11",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "1",
+    "column_name": "address_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "2",
+    "column_name": "street",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "3",
+    "column_name": "city",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "4",
+    "column_name": "region",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "5",
+    "column_name": "postal_code",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "6",
+    "column_name": "country",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "7",
+    "column_name": "normalized_address",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "8",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_addresses.csv",
+    "column_order": "9",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "1",
+    "column_name": "communication_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "2",
+    "column_name": "communication_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "3",
+    "column_name": "sent_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "4",
+    "column_name": "sender_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "5",
+    "column_name": "recipient_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "6",
+    "column_name": "sender_domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "7",
+    "column_name": "subject",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "8",
+    "column_name": "safe_body",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "9",
+    "column_name": "thread_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "10",
+    "column_name": "attachment_document_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "11",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "12",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_communications.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_devices.csv",
+    "column_order": "1",
+    "column_name": "device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_devices.csv",
+    "column_order": "2",
+    "column_name": "device_fingerprint",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_devices.csv",
+    "column_order": "3",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_devices.csv",
+    "column_order": "4",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_devices.csv",
+    "column_order": "5",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "1",
+    "column_name": "relationship_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "2",
+    "column_name": "relationship_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "4",
+    "column_name": "source_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "5",
+    "column_name": "target_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "6",
+    "column_name": "event_time",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "7",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "8",
+    "column_name": "player_safe_summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "9",
+    "column_name": "provenance",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "10",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_direct_relationships.csv",
+    "column_order": "11",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "1",
+    "column_name": "document_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "2",
+    "column_name": "document_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "3",
+    "column_name": "title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "4",
+    "column_name": "issued_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "5",
+    "column_name": "issuer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "6",
+    "column_name": "signer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "7",
+    "column_name": "related_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "8",
+    "column_name": "related_invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "9",
+    "column_name": "document_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "10",
+    "column_name": "template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "11",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "12",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "14",
+    "column_name": "extracted_support_phone",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "15",
+    "column_name": "extracted_beneficiary_account",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_documents.csv",
+    "column_order": "16",
+    "column_name": "extracted_invoice_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "1",
+    "column_name": "domain_registration_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "2",
+    "column_name": "domain_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "3",
+    "column_name": "registrar",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "4",
+    "column_name": "registrar_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "5",
+    "column_name": "registrant_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "6",
+    "column_name": "registrant_email",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "7",
+    "column_name": "recovery_email",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "8",
+    "column_name": "hosting_ip",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "9",
+    "column_name": "tls_fingerprint",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "10",
+    "column_name": "registered_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "11",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_domain_registrations.csv",
+    "column_order": "12",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "1",
+    "column_name": "domain_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "2",
+    "column_name": "domain_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "3",
+    "column_name": "normalized_domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "4",
+    "column_name": "declared_holder_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "5",
+    "column_name": "domain_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "6",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "7",
+    "column_name": "first_seen",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "8",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_domains.csv",
+    "column_order": "9",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "1",
+    "column_name": "employment_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "3",
+    "column_name": "organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "4",
+    "column_name": "job_title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "5",
+    "column_name": "start_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "6",
+    "column_name": "end_date",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "7",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_employment.csv",
+    "column_order": "8",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "1",
+    "column_name": "incident_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "2",
+    "column_name": "incident_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "3",
+    "column_name": "opened_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "4",
+    "column_name": "reported_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "5",
+    "column_name": "summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "6",
+    "column_name": "severity",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "7",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "8",
+    "column_name": "related_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "9",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_incidents.csv",
+    "column_order": "10",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "1",
+    "column_name": "invoice_line_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "2",
+    "column_name": "invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "3",
+    "column_name": "line_number",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "4",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "5",
+    "column_name": "quantity",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "6",
+    "column_name": "unit_price",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "7",
+    "column_name": "line_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "8",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "9",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "10",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_invoice_lines.csv",
+    "column_order": "11",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "1",
+    "column_name": "invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "2",
+    "column_name": "invoice_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "3",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "4",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "5",
+    "column_name": "buyer_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "6",
+    "column_name": "issued_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "7",
+    "column_name": "due_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "8",
+    "column_name": "total_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "9",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "10",
+    "column_name": "beneficiary_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "11",
+    "column_name": "sender_domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "12",
+    "column_name": "attachment_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "13",
+    "column_name": "approval_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "14",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "15",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_invoices.csv",
+    "column_order": "16",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "1",
+    "column_name": "login_event_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "3",
+    "column_name": "device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "4",
+    "column_name": "login_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "5",
+    "column_name": "ip_address",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "6",
+    "column_name": "geolocation_hint",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "7",
+    "column_name": "authentication_result",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "8",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "9",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_login_events.csv",
+    "column_order": "10",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "1",
+    "column_name": "mailbox_rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "2",
+    "column_name": "mailbox_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "3",
+    "column_name": "rule_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "4",
+    "column_name": "created_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "5",
+    "column_name": "created_from_ip",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "6",
+    "column_name": "created_from_device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "7",
+    "column_name": "condition_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "8",
+    "column_name": "action_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "9",
+    "column_name": "forwarding_target",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "10",
+    "column_name": "enabled",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "11",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "12",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_mailbox_rules.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "1",
+    "column_name": "organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "2",
+    "column_name": "organization_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "3",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "4",
+    "column_name": "source_record_key",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "5",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "6",
+    "column_name": "domain_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "7",
+    "column_name": "domain_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "8",
+    "column_name": "phone_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "9",
+    "column_name": "phone_normalized",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "10",
+    "column_name": "address_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "11",
+    "column_name": "address_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "12",
+    "column_name": "registration_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "13",
+    "column_name": "recorded_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "14",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_organization_records.csv",
+    "column_order": "15",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_organizations.csv",
+    "column_order": "1",
+    "column_name": "organization_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organizations.csv",
+    "column_order": "2",
+    "column_name": "canonical_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organizations.csv",
+    "column_order": "3",
+    "column_name": "organization_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_organizations.csv",
+    "column_order": "4",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_people.csv",
+    "column_order": "1",
+    "column_name": "person_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_people.csv",
+    "column_order": "2",
+    "column_name": "canonical_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_people.csv",
+    "column_order": "3",
+    "column_name": "truth_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_people.csv",
+    "column_order": "4",
+    "column_name": "culpability",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_people.csv",
+    "column_order": "5",
+    "column_name": "harm_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_people.csv",
+    "column_order": "6",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "1",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "2",
+    "column_name": "person_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "3",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "4",
+    "column_name": "source_record_key",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "5",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "6",
+    "column_name": "email_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "7",
+    "column_name": "email_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "8",
+    "column_name": "phone_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "9",
+    "column_name": "phone_normalized",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "10",
+    "column_name": "address_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "11",
+    "column_name": "address_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "12",
+    "column_name": "partial_identifier",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "13",
+    "column_name": "recorded_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "14",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_person_records.csv",
+    "column_order": "15",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "1",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "2",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "3",
+    "column_name": "buyer_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "4",
+    "column_name": "created_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "5",
+    "column_name": "requested_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "6",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "7",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "8",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "9",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "10",
+    "column_name": "cost_center",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "11",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "12",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_purchase_orders.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "1",
+    "column_name": "transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "2",
+    "column_name": "occurred_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "3",
+    "column_name": "transaction_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "4",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "5",
+    "column_name": "destination_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "6",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "8",
+    "column_name": "reference",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "9",
+    "column_name": "invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "10",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "11",
+    "column_name": "entered_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "12",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "13",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "14",
+    "column_name": "reversed_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "15",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "16",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_transactions.csv",
+    "column_order": "17",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "1",
+    "column_name": "vendor_change_request_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "2",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "3",
+    "column_name": "old_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "4",
+    "column_name": "new_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "5",
+    "column_name": "requested_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "6",
+    "column_name": "requested_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "7",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "8",
+    "column_name": "request_domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "9",
+    "column_name": "verification_method",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "10",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "11",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_change_requests.csv",
+    "column_order": "12",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "1",
+    "column_name": "vendor_relationship_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "2",
+    "column_name": "buyer_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "3",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "4",
+    "column_name": "vendor_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "5",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "6",
+    "column_name": "approved_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "7",
+    "column_name": "onboarding_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "8",
+    "column_name": "callback_phone",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "9",
+    "column_name": "risk_rating",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "10",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/ceo_vendor_relationships.csv",
+    "column_order": "11",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "1",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "2",
+    "column_name": "case_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "3",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "4",
+    "column_name": "title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "5",
+    "column_name": "case_order",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "6",
+    "column_name": "mechanism",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "8",
+    "column_name": "generation_seed",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "10",
+    "column_name": "disclaimer",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "11",
+    "column_name": "difficulty",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "12",
+    "column_name": "single_difficulty_only",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "13",
+    "column_name": "source_publication_level",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/ceo_barked_twice_genie_benchmarks.csv",
+    "column_order": "1",
+    "column_name": "benchmark_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/ceo_barked_twice_genie_benchmarks.csv",
+    "column_order": "2",
+    "column_name": "prompt_es",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/ceo_barked_twice_genie_benchmarks.csv",
+    "column_order": "3",
+    "column_name": "target_view",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/ceo_barked_twice_genie_benchmarks.csv",
+    "column_order": "4",
+    "column_name": "expected_shape",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/ceo_barked_twice_genie_benchmarks.csv",
+    "column_order": "5",
+    "column_name": "forbidden_truth_access",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/ceo_barked_twice_genie_benchmarks.csv",
+    "column_order": "6",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "1",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "2",
+    "column_name": "difficulty",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "3",
+    "column_name": "difficulty_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "4",
+    "column_name": "label",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "5",
+    "column_name": "starting_credits",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "6",
+    "column_name": "zingg_cost",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "7",
+    "column_name": "graphframes_cost",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "8",
+    "column_name": "genie_cost",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "9",
+    "column_name": "genie_row_limit",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "10",
+    "column_name": "initial_item_count",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "11",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/initial_case_items.csv",
+    "column_order": "1",
+    "column_name": "sequence",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/initial_case_items.csv",
+    "column_order": "2",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/initial_case_items.csv",
+    "column_order": "3",
+    "column_name": "reason_internal",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "1",
+    "column_name": "object_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "2",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "3",
+    "column_name": "accusable",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "4",
+    "column_name": "can_receive_role",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "5",
+    "column_name": "is_infrastructure",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "6",
+    "column_name": "schema_version",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "1",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "2",
+    "column_name": "relationship_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "3",
+    "column_name": "directed",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "4",
+    "column_name": "schema_version",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/source_system_registry.csv",
+    "column_order": "1",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/source_system_registry.csv",
+    "column_order": "2",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/source_system_registry.csv",
+    "column_order": "3",
+    "column_name": "trust_level",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "1",
+    "column_name": "communication_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "2",
+    "column_name": "communication_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "3",
+    "column_name": "sent_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "4",
+    "column_name": "sender_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "5",
+    "column_name": "recipient_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "6",
+    "column_name": "sender_domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "7",
+    "column_name": "subject",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "8",
+    "column_name": "safe_body",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "9",
+    "column_name": "thread_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "10",
+    "column_name": "attachment_document_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "1",
+    "column_name": "document_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "2",
+    "column_name": "document_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "3",
+    "column_name": "title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "4",
+    "column_name": "issued_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "5",
+    "column_name": "issuer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "6",
+    "column_name": "signer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "7",
+    "column_name": "related_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "8",
+    "column_name": "related_invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "9",
+    "column_name": "document_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "10",
+    "column_name": "template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "11",
+    "column_name": "extracted_support_phone",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "12",
+    "column_name": "extracted_beneficiary_account",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "13",
+    "column_name": "extracted_invoice_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "1",
+    "column_name": "domain_registration_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "2",
+    "column_name": "domain_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "3",
+    "column_name": "registrar",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "4",
+    "column_name": "registrar_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "5",
+    "column_name": "registrant_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "6",
+    "column_name": "registrant_email",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "7",
+    "column_name": "recovery_email",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "8",
+    "column_name": "hosting_ip",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "9",
+    "column_name": "tls_fingerprint",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/domain_registrations.csv",
+    "column_order": "10",
+    "column_name": "registered_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/employment.csv",
+    "column_order": "1",
+    "column_name": "employment_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/employment.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/employment.csv",
+    "column_order": "3",
+    "column_name": "organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/employment.csv",
+    "column_order": "4",
+    "column_name": "job_title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/employment.csv",
+    "column_order": "5",
+    "column_name": "start_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/employment.csv",
+    "column_order": "6",
+    "column_name": "end_date",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "1",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "2",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "3",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "4",
+    "column_name": "source_system",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "5",
+    "column_name": "email",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "6",
+    "column_name": "phone",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "7",
+    "column_name": "address",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "8",
+    "column_name": "domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "9",
+    "column_name": "recorded_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "1",
+    "column_name": "transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "2",
+    "column_name": "occurred_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "3",
+    "column_name": "transaction_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "4",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "5",
+    "column_name": "destination_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "6",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "8",
+    "column_name": "reference",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "9",
+    "column_name": "invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "10",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "11",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "12",
+    "column_name": "reversed_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "1",
+    "column_name": "incident_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "2",
+    "column_name": "incident_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "3",
+    "column_name": "opened_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "4",
+    "column_name": "reported_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "5",
+    "column_name": "summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "6",
+    "column_name": "severity",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "7",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/incidents.csv",
+    "column_order": "8",
+    "column_name": "related_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "1",
+    "column_name": "invoice_line_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "2",
+    "column_name": "invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "3",
+    "column_name": "line_number",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "4",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "5",
+    "column_name": "quantity",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "6",
+    "column_name": "unit_price",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "7",
+    "column_name": "line_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoice_lines.csv",
+    "column_order": "8",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "1",
+    "column_name": "invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "2",
+    "column_name": "invoice_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "3",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "4",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "5",
+    "column_name": "buyer_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "6",
+    "column_name": "issued_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "7",
+    "column_name": "due_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "8",
+    "column_name": "total_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "9",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "10",
+    "column_name": "beneficiary_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "11",
+    "column_name": "sender_domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "12",
+    "column_name": "attachment_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/invoices.csv",
+    "column_order": "13",
+    "column_name": "approval_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "1",
+    "column_name": "login_event_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "3",
+    "column_name": "device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "4",
+    "column_name": "login_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "5",
+    "column_name": "ip_address",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "6",
+    "column_name": "geolocation_hint",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "7",
+    "column_name": "authentication_result",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "1",
+    "column_name": "mailbox_rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "2",
+    "column_name": "mailbox_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "3",
+    "column_name": "rule_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "4",
+    "column_name": "created_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "5",
+    "column_name": "created_from_ip",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "6",
+    "column_name": "created_from_device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "7",
+    "column_name": "condition_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "8",
+    "column_name": "action_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "9",
+    "column_name": "forwarding_target",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/mailbox_rules.csv",
+    "column_order": "10",
+    "column_name": "enabled",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "1",
+    "column_name": "purchase_order_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "2",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "3",
+    "column_name": "buyer_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "4",
+    "column_name": "created_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "5",
+    "column_name": "requested_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "6",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "7",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "8",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "9",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "10",
+    "column_name": "cost_center",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/purchase_orders.csv",
+    "column_order": "11",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "1",
+    "column_name": "vendor_change_request_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "2",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "3",
+    "column_name": "old_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "4",
+    "column_name": "new_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "5",
+    "column_name": "requested_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "6",
+    "column_name": "requested_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "7",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "8",
+    "column_name": "request_domain",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "9",
+    "column_name": "verification_method",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_changes.csv",
+    "column_order": "10",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "1",
+    "column_name": "vendor_relationship_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "2",
+    "column_name": "buyer_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "3",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "4",
+    "column_name": "vendor_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "5",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "6",
+    "column_name": "approved_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "7",
+    "column_name": "onboarding_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "8",
+    "column_name": "callback_phone",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_relationships.csv",
+    "column_order": "9",
+    "column_name": "risk_rating",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "1",
+    "column_name": "match_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "2",
+    "column_name": "rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "4",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "5",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "6",
+    "column_name": "exact_field",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "7",
+    "column_name": "masked_exact_value",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "8",
+    "column_name": "normalization_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "10",
+    "column_name": "framework_semantics",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "11",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "12",
+    "column_name": "ambiguity_warning",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "13",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "14",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "15",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/initial_case_items.csv",
+    "column_order": "1",
+    "column_name": "sequence",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/initial_case_items.csv",
+    "column_order": "2",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "1",
+    "column_name": "relationship_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "2",
+    "column_name": "relationship_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "4",
+    "column_name": "source_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "5",
+    "column_name": "target_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "6",
+    "column_name": "event_time",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "7",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "8",
+    "column_name": "player_safe_summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "9",
+    "column_name": "provenance",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "10",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "11",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "1",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "2",
+    "column_name": "record_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "3",
+    "column_name": "display_label",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "4",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "5",
+    "column_name": "occurred_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "6",
+    "column_name": "safe_summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "7",
+    "column_name": "safe_attributes_json",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "8",
+    "column_name": "provenance_ref",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "9",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "10",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "1",
+    "column_name": "candidate_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "2",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "3",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "4",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "5",
+    "column_name": "confidence_band",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "6",
+    "column_name": "agreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "7",
+    "column_name": "disagreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "8",
+    "column_name": "missing_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "10",
+    "column_name": "framework_semantics",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "11",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "12",
+    "column_name": "provenance_note",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "14",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_allowed_alternatives.csv",
+    "column_order": "1",
+    "column_name": "alternative_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_allowed_alternatives.csv",
+    "column_order": "2",
+    "column_name": "claim_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_allowed_alternatives.csv",
+    "column_order": "3",
+    "column_name": "alternative_description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_allowed_alternatives.csv",
+    "column_order": "4",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/ceo_ending_thresholds.csv",
+    "column_order": "1",
+    "column_name": "ending_code",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_ending_thresholds.csv",
+    "column_order": "2",
+    "column_name": "priority",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_ending_thresholds.csv",
+    "column_order": "3",
+    "column_name": "min_score",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_ending_thresholds.csv",
+    "column_order": "4",
+    "column_name": "max_false_accusations",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_ending_thresholds.csv",
+    "column_order": "5",
+    "column_name": "required_gates",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_ending_thresholds.csv",
+    "column_order": "6",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_ending_thresholds.csv",
+    "column_order": "7",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "1",
+    "column_name": "entity_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "2",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "3",
+    "column_name": "canonical_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "4",
+    "column_name": "operational_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "5",
+    "column_name": "culpability",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "6",
+    "column_name": "harm_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "7",
+    "column_name": "fraud_network_membership",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evaluator_truth.csv",
+    "column_order": "8",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/ceo_evidence_route_matrix.csv",
+    "column_order": "1",
+    "column_name": "route_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evidence_route_matrix.csv",
+    "column_order": "2",
+    "column_name": "claim_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evidence_route_matrix.csv",
+    "column_order": "3",
+    "column_name": "route_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evidence_route_matrix.csv",
+    "column_order": "4",
+    "column_name": "step_order",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evidence_route_matrix.csv",
+    "column_order": "5",
+    "column_name": "evidence_reference",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evidence_route_matrix.csv",
+    "column_order": "6",
+    "column_name": "tool_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_evidence_route_matrix.csv",
+    "column_order": "7",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/ceo_forbidden_false_positives.csv",
+    "column_order": "1",
+    "column_name": "forbidden_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_forbidden_false_positives.csv",
+    "column_order": "2",
+    "column_name": "entity_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_forbidden_false_positives.csv",
+    "column_order": "3",
+    "column_name": "forbidden_conclusion",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_forbidden_false_positives.csv",
+    "column_order": "4",
+    "column_name": "penalty",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_forbidden_false_positives.csv",
+    "column_order": "5",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "1",
+    "column_name": "required_evidence_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "2",
+    "column_name": "claim_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "3",
+    "column_name": "claim_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "4",
+    "column_name": "target_entity_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "5",
+    "column_name": "evidence_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "6",
+    "column_name": "minimum_distinct_items",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "7",
+    "column_name": "score_weight",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_required_evidence.csv",
+    "column_order": "8",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/ceo_scoring_rules.csv",
+    "column_order": "1",
+    "column_name": "scoring_rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_scoring_rules.csv",
+    "column_order": "2",
+    "column_name": "component",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_scoring_rules.csv",
+    "column_order": "3",
+    "column_name": "max_points",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_scoring_rules.csv",
+    "column_order": "4",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/ceo_scoring_rules.csv",
+    "column_order": "5",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "1",
+    "column_name": "difficulty",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "2",
+    "column_name": "difficulty_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "3",
+    "column_name": "player_safe_records",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "4",
+    "column_name": "direct_relationships",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "5",
+    "column_name": "zingg_candidates",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "6",
+    "column_name": "graphframes_matches",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "7",
+    "column_name": "initial_items",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "8",
+    "column_name": "genie_communications",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "9",
+    "column_name": "genie_documents",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "10",
+    "column_name": "genie_domain_registrations",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "11",
+    "column_name": "genie_employment",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "12",
+    "column_name": "genie_entities",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "13",
+    "column_name": "genie_financial_events",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "14",
+    "column_name": "genie_incidents",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "15",
+    "column_name": "genie_invoice_lines",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "16",
+    "column_name": "genie_invoices",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "17",
+    "column_name": "genie_login_events",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "18",
+    "column_name": "genie_mailbox_rules",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "19",
+    "column_name": "genie_purchase_orders",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "20",
+    "column_name": "genie_vendor_changes",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "21",
+    "column_name": "genie_vendor_relationships",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/validation_checks.csv",
+    "column_order": "1",
+    "column_name": "check",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/validation_checks.csv",
+    "column_order": "2",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/validation_checks.csv",
+    "column_order": "3",
+    "column_name": "details",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  }
+]

@@ -1,0 +1,92 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+BONE_LEDGER,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,BANK_ACCOUNT,Bank Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,COST_CENTER,Cost Center,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,GENERAL_LEDGER_ACCOUNT,General Ledger Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,PURCHASE_ORDER,Purchase Order,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,VENDOR_INVOICE,Vendor Invoice,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,INVOICE_LINE,Invoice Line,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,LOAN_AGREEMENT,Loan Agreement,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,GUARANTEE,Guarantee,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,BOARD_APPROVAL,Board Approval,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,RELATED_PARTY_DISCLOSURE,Related Party Disclosure,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,JOURNAL_ENTRY,Journal Entry,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,JOURNAL_LINE,Journal Line,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,FIXED_ASSET,Fixed Asset,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,ASSET_MOVEMENT,Asset Movement,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,BANK_TRANSACTION,Bank Transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,AUDIT_FINDING,Audit Finding,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,COMMUNICATION,Communication,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,COMPLAINT,Complaint,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,DIRECTOR_OF,Director Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,CONTROLS,Controls,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,REGISTERED_AT,Registered At,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,USES_COST_CENTER,Uses Cost Center,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,USES_GL_ACCOUNT,Uses Gl Account,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,POSTED,Posted,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,CONTAINS,Contains,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,DEBITS,Debits,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,CREDITS,Credits,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,REQUESTED,Requested,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,ISSUED,Issued,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,APPROVED,Approved,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,PAID_TO,Paid To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,BORROWER,Borrower,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,LENDER,Lender,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,GUARANTEES,Guarantees,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SECURES,Secures,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,CAPITALIZES,Capitalizes,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,MOVED_TO,Moved To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,DECLARED_BY,Declared By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,RAISED_BY,Raised By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,USED_DEVICE,Used Device,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SUPPORTS,Supports,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_VENDOR_ACCOUNT,Same Vendor Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_PERSONAL_ACCOUNT,Same Personal Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_REGISTERED_ADDRESS,Same Registered Address,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_OFFICE_IP,Same Office Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_INVOICE_TEMPLATE,Same Invoice Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_JOURNAL_BATCH,Same Journal Batch,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_LOAN_REFERENCE,Same Loan Reference,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_GUARANTEE_REFERENCE,Same Guarantee Reference,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_ASSET_SERIAL,Same Asset Serial,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_APPROVER_SIGNATURE,Same Approver Signature,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_CLOSE_MAILBOX,Same Close Mailbox,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_PAYMENT_BATCH,Same Payment Batch,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,SAME_COST_CENTER,Same Cost Center,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,MAY_HAVE_CONCEALED_LIABILITY,May Have Concealed Liability,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,RELATIONSHIP_TYPE,MAY_HAVE_MISAPPROPRIATED_ASSET,May Have Misappropriated Asset,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,CORP_REGISTRY,Fictional corporate registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,HR_PAYROLL,Group HR and payroll,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,ERP_GL,Group general ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,AP_SYSTEM,Accounts payable system,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,PROCUREMENT,Purchase-order system,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,BANK_LEDGER,Lantern Community Bank ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,BANK_KYC,Bank KYC records,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,LOAN_REPOSITORY,Loan and guarantee repository,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,BOARD_PORTAL,Board and committee portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,ASSET_REGISTER,Fixed-asset register,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,WAREHOUSE_LOG,Asset custody log,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,AUDIT_FILE,Independent audit workpapers,"{""trust_level"":""HIGH""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,EMAIL,Email archive,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,DEVICE_LOG,Device telemetry,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,DISCLOSURE_PORTAL,Related-party disclosures,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,COMPLAINT_PORTAL,Whistleblower portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Corporate document repository,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.18.1
+BONE_LEDGER,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.18.1

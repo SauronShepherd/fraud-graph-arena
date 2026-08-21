@@ -1,0 +1,7 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+CRYPTO_KENNEL_LONG_CON,ROUTE-001,CLAIM-LONG-CON,Campaign chronology,1,"Campaigns, threads, templates, deposits and upgrades",GENIE,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ROUTE-002,CLAIM-FAKE-PLATFORM,Ledger-price mismatch,1,Platform ledger versus independent prices,GENIE,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ROUTE-003,CLAIM-WALLET-SWEEPS,Wallet provenance,1,"Deposit, sweep, bridge and distribution transactions",GRAPHFRAMES,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ROUTE-004,CLAIM-TOKEN-CONTROL,Contract control,1,"Bytecode, admin wallets and contract events",GRAPHFRAMES,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ROUTE-005,CLAIM-AGENT-DIFFERENTIATION,Knowledge and role,1,"Bank/wallet flows, permissions and complaints",GENIE,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ROUTE-006,CLAIM-LEGITIMATE-CRYPTO,Legitimate comparator,1,"Independent prices, audited contracts and completed withdrawals",GENIE,2026.07.18.1

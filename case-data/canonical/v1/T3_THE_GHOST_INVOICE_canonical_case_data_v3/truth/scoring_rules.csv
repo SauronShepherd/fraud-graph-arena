@@ -1,0 +1,6 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+ACADEMY_T03,T3-SCORE-001,Conclusion accuracy,350,350,Identify Vera as primary culprit and Moonlit Advisory as the fraud vehicle with high confidence.,2026.07.19.1
+ACADEMY_T03,T3-SCORE-002,Evidence quality,250,250,"Pin control, chronology, comparison, limitations, conflict and uncertainty evidence.",2026.07.19.1
+ACADEMY_T03,T3-SCORE-003,Source and uncertainty interpretation,150,150,"Normalize timestamps, distinguish claimed dates from system timestamps and preserve source limitations.",2026.07.19.1
+ACADEMY_T03,T3-SCORE-004,Protected actor discipline,150,150,Protect Tara and avoid unsupported attribution to Milo or the victim organization.,2026.07.19.1
+ACADEMY_T03,T3-SCORE-005,Efficiency,100,100,"Use four precise Genie queries, decline the broad query and avoid unnecessary no-result engine runs.",2026.07.19.1

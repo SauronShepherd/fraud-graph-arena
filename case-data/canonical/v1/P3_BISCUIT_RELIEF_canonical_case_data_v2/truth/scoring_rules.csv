@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+BISCUIT_RELIEF,SCORE-001,Mechanism and principal,250,0.25,Mechanism and principal,2026.07.19.3
+BISCUIT_RELIEF,SCORE-002,"Roles, culpability, and protected actors",190,0.19,"Roles, culpability, and protected actors",2026.07.19.3
+BISCUIT_RELIEF,SCORE-003,Donation flow and beneficiary shortfall,190,0.19,Donation flow and beneficiary shortfall,2026.07.19.3
+BISCUIT_RELIEF,SCORE-004,Identity conclusions,100,0.1,Identity conclusions,2026.07.19.3
+BISCUIT_RELIEF,SCORE-005,Relationship interpretation,90,0.09,Relationship interpretation,2026.07.19.3
+BISCUIT_RELIEF,SCORE-006,Evidence quality and diversity,120,0.12,Evidence quality and diversity,2026.07.19.3
+BISCUIT_RELIEF,SCORE-007,Manipulation tactics,30,0.03,Manipulation tactics,2026.07.19.3
+BISCUIT_RELIEF,SCORE-008,Efficiency,30,0.03,Efficiency,2026.07.19.3

@@ -1,0 +1,6 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+BISCUIT_RELIEF,FFP-001,P-HOPE,Culpable because she reposted frequently or shared the volunteer code.,170,2026.07.19.3
+BISCUIT_RELIEF,FFP-002,P-VIOLET,Culpable because she used shared IP or devices.,150,2026.07.19.3
+BISCUIT_RELIEF,FFP-003,P-BENNY,Culpable because beneficiary ledgers use campaign branding.,90,2026.07.19.3
+BISCUIT_RELIEF,FFP-004,P-PRIYA,Processor accomplice solely because donations passed through merchant 6104.,100,2026.07.19.3
+BISCUIT_RELIEF,FFP-005,P-COLIN,Shell vendor solely because a legitimate invoice exists.,80,2026.07.19.3

@@ -1,0 +1,2 @@
+case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version
+CEO_BARKED_TWICE,P2,The CEO Who Barked Twice,PUPPY,2,1.1.0,2026.07.19.2,CEO_IMPERSONATION_BEC_INVOICE_SUBSTITUTION_PAYMENT_DIVERSION,BSC,,842201,DETERMINISTIC_SYNTHETIC_CURATED,true,true,"All characters, organizations, messages, invoices, domains, accounts, and transactions are fictional and synthetically generated.",1.0.0

@@ -1,0 +1,470 @@
+{
+  "case_id": "CRYPTO_KENNEL_LONG_CON",
+  "case_version": "1.0.0",
+  "snapshot_version": "2026.07.18.1",
+  "difficulty": "SENIOR_DOG",
+  "single_difficulty_only": true,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 614,
+      "sha256": "f5813451280ebf9082d35be308a02fad8e86ed72622e47639105ebd5924c31de"
+    },
+    {
+      "path": "analytics/crypto_graphframes_exact_relationships.csv",
+      "bytes": 452718,
+      "sha256": "d5aea96eb65587a32e176ab842510215313a7f4df3f0ae6d88d53c0ce96240b3"
+    },
+    {
+      "path": "analytics/crypto_zingg_candidate_relationships.csv",
+      "bytes": 81054,
+      "sha256": "e2afb18a88d40cf75736943e62a01a6b3d4b53534b8aa3d8d7e1db8ac797da3e"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 492,
+      "sha256": "ba378677e4a5b302ce41858bc618395c9afa09705a509bd25113e0a1e898f5a1"
+    },
+    {
+      "path": "authoring/crypto_addresses.csv",
+      "bytes": 2139,
+      "sha256": "caa33bd4bb86a39ab42d0b9c67c53b20bdaedb04235e51404b0b25918f01ef6b"
+    },
+    {
+      "path": "authoring/crypto_app_builds.csv",
+      "bytes": 4536,
+      "sha256": "d0d16beea93a5228af2acd007645aca0f40a1a135c2842ba31bddab8a6f91366"
+    },
+    {
+      "path": "authoring/crypto_bank_accounts.csv",
+      "bytes": 20439,
+      "sha256": "2af3981f570b346d5f990f8eea76e3741b90111c7ff667add3503b3a1d6493ac"
+    },
+    {
+      "path": "authoring/crypto_bank_transactions.csv",
+      "bytes": 187172,
+      "sha256": "5ed69ae76ba7df03838201ba855625d1719831fcbcae05c6bbae2bf154eac601"
+    },
+    {
+      "path": "authoring/crypto_blockchain_transactions.csv",
+      "bytes": 314616,
+      "sha256": "c87bc865ab79d71897278d54c651fd670ecd9d0de146307b176cc35de05885c8"
+    },
+    {
+      "path": "authoring/crypto_campaigns.csv",
+      "bytes": 10043,
+      "sha256": "8bbd147cbd8bf74d339f26cf9e6becab40a4a36193daf29afa82777c34b1bfbe"
+    },
+    {
+      "path": "authoring/crypto_chat_threads.csv",
+      "bytes": 28956,
+      "sha256": "7cd7d26ff7cf047427f92cb33770e5a2a4a8e5436000c4baadfc7da84c80ea8a"
+    },
+    {
+      "path": "authoring/crypto_complaints.csv",
+      "bytes": 16184,
+      "sha256": "190fc9f3602a786cfe2de343dbf8582c91fcb8fa774c416571423ccfdba4ae17"
+    },
+    {
+      "path": "authoring/crypto_deposit_requests.csv",
+      "bytes": 47271,
+      "sha256": "3a8b3a5e18f8dde7279f2689d71f5d93f5792277d6e48b13e4b9fa92dcd6e03d"
+    },
+    {
+      "path": "authoring/crypto_devices.csv",
+      "bytes": 10960,
+      "sha256": "32376ca32204017dd9519989e754cf80c99e823306005305f5620b89330a034f"
+    },
+    {
+      "path": "authoring/crypto_direct_relationships.csv",
+      "bytes": 5152890,
+      "sha256": "be52d0bebc43e262614adc7b1de6c500678d322c960a823a2e41981eeb36a00d"
+    },
+    {
+      "path": "authoring/crypto_documents.csv",
+      "bytes": 36835,
+      "sha256": "417afa434a7935b09db09064cfdfe5e311b2f9e0d18227f72c81a1daf8dcaf56"
+    },
+    {
+      "path": "authoring/crypto_domains.csv",
+      "bytes": 10707,
+      "sha256": "63baf691ffe200c4de5bce649a614f4e7b1abd7eb899a91782f1ab03a77efd05"
+    },
+    {
+      "path": "authoring/crypto_investor_profiles.csv",
+      "bytes": 39152,
+      "sha256": "5483a106c2ee7c16eb62eb9b126c612c481372612245a80a2e2a8f1fe55d9adf"
+    },
+    {
+      "path": "authoring/crypto_kyc_documents.csv",
+      "bytes": 30179,
+      "sha256": "77c67cebb232b415606158530320915e3e0c401926f2b72dab05e00441d33f5f"
+    },
+    {
+      "path": "authoring/crypto_login_events.csv",
+      "bytes": 63639,
+      "sha256": "82abd6138f01ccb422063794b97bd960c856ff9b7843fc30d970ca9cac2c52c4"
+    },
+    {
+      "path": "authoring/crypto_message_templates.csv",
+      "bytes": 9817,
+      "sha256": "34e47e71e7e54a815a10b08ce82866ce32a8d38626b26ff1829fe501f10ebc5c"
+    },
+    {
+      "path": "authoring/crypto_messages.csv",
+      "bytes": 427250,
+      "sha256": "a25705caad4d996ef8b78e2fecfa91a88a4bf412f9ad2e131a338f853b02e15a"
+    },
+    {
+      "path": "authoring/crypto_organization_records.csv",
+      "bytes": 21585,
+      "sha256": "ee516dc1751ec8ab19c5f87db81b2825026efe85591b65e835e259a515259279"
+    },
+    {
+      "path": "authoring/crypto_organizations.csv",
+      "bytes": 3341,
+      "sha256": "6766787c563c60049f2774c61d9636b4e35a7b3d1fdc5d26b1069ea40ee096ab"
+    },
+    {
+      "path": "authoring/crypto_people.csv",
+      "bytes": 17426,
+      "sha256": "14451aaf72fc266608eed88e90d16b6e9a8475c32f6cc7c23a93aa8e78b684b2"
+    },
+    {
+      "path": "authoring/crypto_person_records.csv",
+      "bytes": 60235,
+      "sha256": "69655174533444dfc05349869d2a727971df4fb1d580425061a829ac50bd7a6c"
+    },
+    {
+      "path": "authoring/crypto_platform_accounts.csv",
+      "bytes": 40553,
+      "sha256": "2e85f1d0a444292a0c6f15336bb7d93651e07a8883927ae2fdda681c01163a00"
+    },
+    {
+      "path": "authoring/crypto_platform_ledger_events.csv",
+      "bytes": 209769,
+      "sha256": "42194e25d0aca06ebfb6fd933a94bd966b216cdd4c46c260507b2516b87511c0"
+    },
+    {
+      "path": "authoring/crypto_price_snapshots.csv",
+      "bytes": 96724,
+      "sha256": "553c0adfbd45f4a181203dcda927d01b210bee2e4f5e980fb33727828cda0269"
+    },
+    {
+      "path": "authoring/crypto_smart_contract_events.csv",
+      "bytes": 142972,
+      "sha256": "a6dda4eddc6b2c71211ae629a9f92ff08ded0c08f3e6efe8a295c3c8bba84580"
+    },
+    {
+      "path": "authoring/crypto_smart_contracts.csv",
+      "bytes": 1954,
+      "sha256": "5ba197114867e3c06379e789ad85ccfbddb403b4046a6b184ac0feb906951d98"
+    },
+    {
+      "path": "authoring/crypto_support_tickets.csv",
+      "bytes": 48332,
+      "sha256": "c02299b95c3f953229922d4ad0782b34d51c8d9c27a7ac9ce73deb4490850eb1"
+    },
+    {
+      "path": "authoring/crypto_tokens.csv",
+      "bytes": 1395,
+      "sha256": "6eb553cae4f71e0b7c0cea5ae1555118eb866bf61e043b0eef266a4d8321cb36"
+    },
+    {
+      "path": "authoring/crypto_wallets.csv",
+      "bytes": 29368,
+      "sha256": "531fa159128e92d2558bdf77c99db95d1b1394cff5389ec5858a0c438a52d196"
+    },
+    {
+      "path": "authoring/crypto_withdrawal_requests.csv",
+      "bytes": 34145,
+      "sha256": "3e0c85a5e486e3c825f8795571391f8655250189fb5893846353116fb292e46f"
+    },
+    {
+      "path": "catalog/S2_CRYPTO_KENNEL_LONG_CON_SENIOR_data_catalog_v1.xlsx",
+      "bytes": 40220,
+      "sha256": "dfa9e1262e6d40b7d6b8a1e03b2b943b331d5ba667841b5d07f0bf6af76a3ee1"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 559,
+      "sha256": "835ab4513911aa4971380aec31518b7a7ba50cab84f226399ac0bf8c114db11c"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 576,
+      "sha256": "03ae0e0d095489a78345a2e6ca1f2bfd3fa94a813aac6c4533e9048dc75b9e72"
+    },
+    {
+      "path": "config/crypto_kennel_genie_benchmarks.csv",
+      "bytes": 2844,
+      "sha256": "af092f566b25749978b0a7223def7e728c78b1bf845d10666b4da155b66d3778"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 59042,
+      "sha256": "a1b7c20ea314b8e720bfcf4dc2e2b81682c937e7770367db74a8caafeb62a778"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 286,
+      "sha256": "340ac58a8af65c3afbdebf1f715f8a10e0a50bd92456e64734530e9aeb7552c8"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 244,
+      "sha256": "2005c35ea677381cd99d146b55dddd069dcd06614c1756ab8c985b1983deb2c6"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 1463,
+      "sha256": "7eea28961a4cea81a5d65a4afa9707d6751a36a775fe778fd32ac591367ef5a5"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 2576,
+      "sha256": "2e9910062f04052caab7f9d36ef31f0762e1664cb1f5ed58db5294b6276b4159"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 888,
+      "sha256": "b5c1d3f940abd620e1c99b898ddb40657d598a12986e6ecfad549ae7044c3412"
+    },
+    {
+      "path": "genie/senior/app_builds.csv",
+      "bytes": 2990,
+      "sha256": "2e83a5a11ef158aa4bb1ed4acdf845f7efcf50d5aae3a5951e13e14204bdc174"
+    },
+    {
+      "path": "genie/senior/bank_transactions.csv",
+      "bytes": 144794,
+      "sha256": "37f65bbb5d10f5396e8b8cbb267119ae22dcaa12281f1853efcc33b272865ed3"
+    },
+    {
+      "path": "genie/senior/blockchain_transactions.csv",
+      "bytes": 244528,
+      "sha256": "951df391eff10ea8f1fb93d59e2950b56adec66bad9cc843fb76e309b65d6d1a"
+    },
+    {
+      "path": "genie/senior/campaigns.csv",
+      "bytes": 6870,
+      "sha256": "9af1c0c9ebfc4334a826b2cc377e36e20626491bbb04ceaa520fc22b10356222"
+    },
+    {
+      "path": "genie/senior/chat_threads.csv",
+      "bytes": 19063,
+      "sha256": "a2a1286ad14b88016ac389d942e1f266f81660a699ac1ba910b1c40c07542cb9"
+    },
+    {
+      "path": "genie/senior/complaints.csv",
+      "bytes": 12585,
+      "sha256": "7d4f44494aacb19989aef16a776dfaa49bc2a7ed311b9f3291e64b08f80a8557"
+    },
+    {
+      "path": "genie/senior/deposit_requests.csv",
+      "bytes": 31273,
+      "sha256": "9b80ddc3ab3c918e02950e6151e3a7ab386f79e9bd3fe40d9e8d8b3b69f2024b"
+    },
+    {
+      "path": "genie/senior/digital_domains.csv",
+      "bytes": 7309,
+      "sha256": "d45e42285cffea1240ea10b8395b0e23c26c51f0edbb9af66249e6743b2b693a"
+    },
+    {
+      "path": "genie/senior/documents.csv",
+      "bytes": 19159,
+      "sha256": "49d807eef60a1824836465541bcbb493b5e0b458198646799d49631b21b18a45"
+    },
+    {
+      "path": "genie/senior/entities.csv",
+      "bytes": 61373,
+      "sha256": "d0b64162f3221c6ba900005b332dd86bf2718555b2aba13386cbea659afa6dda"
+    },
+    {
+      "path": "genie/senior/investor_profiles.csv",
+      "bytes": 29304,
+      "sha256": "d21c800b7e5d9985e3f9fac50ea2f88b549bb992c5bae159c639ac67970c1b56"
+    },
+    {
+      "path": "genie/senior/kyc_documents.csv",
+      "bytes": 20420,
+      "sha256": "e94c42122f3b1ece01a41ef40dcd1d0c76c83331eb0117c4d571e739fa146b1b"
+    },
+    {
+      "path": "genie/senior/login_events.csv",
+      "bytes": 40447,
+      "sha256": "52b1fb07905c86795b92d02a99646058f9ad2b94677fd0ff722a607b3f4f461c"
+    },
+    {
+      "path": "genie/senior/message_templates.csv",
+      "bytes": 6467,
+      "sha256": "ec2438017092cf4c352f26176c23d4ac531ba0d022f3423c192d53586f84b731"
+    },
+    {
+      "path": "genie/senior/messages.csv",
+      "bytes": 328662,
+      "sha256": "da704a54e1167798fc02a8e1322a86d8e5b578dea56116184c70f16c039109df"
+    },
+    {
+      "path": "genie/senior/platform_accounts.csv",
+      "bytes": 27875,
+      "sha256": "47fc35034468b351abcba2785134c0893df194ca9519a06e1fdc5f8f9949600b"
+    },
+    {
+      "path": "genie/senior/platform_ledger.csv",
+      "bytes": 135671,
+      "sha256": "5636359396881f00c78be721ff531ed25c9e25b4f41ca035d4c55b0b531b791a"
+    },
+    {
+      "path": "genie/senior/price_snapshots.csv",
+      "bytes": 68959,
+      "sha256": "7a71b0d5f7e622c4415a3adb46318aed1b0b57449f02e4ab5635ad69c3b9dbbe"
+    },
+    {
+      "path": "genie/senior/smart_contract_events.csv",
+      "bytes": 107384,
+      "sha256": "ce396c7fd2c2bc1c38bb5fc4ecae053ca7c5cfe8d28e9eeaf6326445376a4c51"
+    },
+    {
+      "path": "genie/senior/smart_contracts.csv",
+      "bytes": 1442,
+      "sha256": "02e7d174359f2059b1a5fe59c0287d4addeecd807f848b9671b0fa62966dec41"
+    },
+    {
+      "path": "genie/senior/support_tickets.csv",
+      "bytes": 38799,
+      "sha256": "98f626e198fda097a7731c480e82855d9750b3efc488f4107d99c4f3b3ce569e"
+    },
+    {
+      "path": "genie/senior/tokens.csv",
+      "bytes": 961,
+      "sha256": "8c37674e094afdf23c67f04e748aefcaf3b94cb3dbbf0ee61ad5305911d72b48"
+    },
+    {
+      "path": "genie/senior/withdrawals.csv",
+      "bytes": 24612,
+      "sha256": "2bb01a16412c6f314911bb90f3edf0b2d02685ca780376e5f3b36a218e2ba55f"
+    },
+    {
+      "path": "published/senior/graphframes_exact_relationships.csv",
+      "bytes": 446340,
+      "sha256": "2b07651da4aa7768117bb6b0b9369354f6f1837e00a0c769003870b372109fec"
+    },
+    {
+      "path": "published/senior/initial_case_items.csv",
+      "bytes": 119,
+      "sha256": "2c99f1dbda2bdb8d6beeb76ebef70ad64588fd4778b632135dd6e512aef5f079"
+    },
+    {
+      "path": "published/senior/player_safe_direct_relationships.csv",
+      "bytes": 5112783,
+      "sha256": "e4ec1256a15b2b5c7765821b34da917e9fee35f75889dde1890887fc19d58ea2"
+    },
+    {
+      "path": "published/senior/player_safe_records.csv",
+      "bytes": 4131987,
+      "sha256": "2916a58d5f574025c6f022aca9db43425a5e0b17dd217e5724d1cfd2033e2ccb"
+    },
+    {
+      "path": "published/senior/zingg_candidate_relationships.csv",
+      "bytes": 75501,
+      "sha256": "3c99d542ae4a55b20c68f5e3a3a0a4f168788428e8825d5d677a371b3ac73445"
+    },
+    {
+      "path": "scripts/generator_metadata.py",
+      "bytes": 98,
+      "sha256": "a38186cf73372f3bd55224d698165fd88c503fc4f410560771658c5f8fa21bf0"
+    },
+    {
+      "path": "scripts/senior_package_metadata.py",
+      "bytes": 132,
+      "sha256": "6191932c6dfec36925070f3243386ceb10a23bb113457b9abe93467604e10824"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 297,
+      "sha256": "aaf126b131b6f65aad0a0e7f8dfe90b0b4e7e9dfa6c317761dd2da023b99101b"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 1330,
+      "sha256": "6c4ad3cd5b87f666bb5a98f152204b3d583c68d43917908808391ae6d3e25d09"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 310,
+      "sha256": "9258f7e07dc78db36b8dd3c536923ea84325fa9a48a37aae1dac0420e9b09f7d"
+    },
+    {
+      "path": "truth/crypto_allowed_alternatives.csv",
+      "bytes": 857,
+      "sha256": "b698430d9ccd0d24f8a549ba7773c499e10b3d520a18d37ae95d326002905edc"
+    },
+    {
+      "path": "truth/crypto_ending_thresholds.csv",
+      "bytes": 905,
+      "sha256": "46dff86f7d17a75397d3f12b3fafa9e82702b1462e0cafbb56a3b296ba3575cc"
+    },
+    {
+      "path": "truth/crypto_evaluator_truth.csv",
+      "bytes": 23959,
+      "sha256": "e25004517422dbf5fe2ef28c6e04fe5130c5133c255b8970f93bb8974a91380d"
+    },
+    {
+      "path": "truth/crypto_evidence_route_matrix.csv",
+      "bytes": 755,
+      "sha256": "91caec5ec0d9534773d1348c36575814d35f3980b24d269e1f6d62aa2074fa64"
+    },
+    {
+      "path": "truth/crypto_forbidden_false_positives.csv",
+      "bytes": 1088,
+      "sha256": "0bee4541834ba6e34b9507ae3866ba33921814f185b93f2f410cb96f3280251c"
+    },
+    {
+      "path": "truth/crypto_platform_truth.csv",
+      "bytes": 19012,
+      "sha256": "56606493be69e0716771e64fce9b71ee852908a0e48f06dd612d36a21146d6b3"
+    },
+    {
+      "path": "truth/crypto_required_evidence.csv",
+      "bytes": 1918,
+      "sha256": "65e79ed82c2ab69b9c725cf2ef2d8c8c6418f2fd53f3b4e2acdd168616678b68"
+    },
+    {
+      "path": "truth/crypto_scoring_rules.csv",
+      "bytes": 1122,
+      "sha256": "cd25a593d2f788a26d3a15ab15ac98fe3cf735e4fa77cec51009ca62d37d717f"
+    },
+    {
+      "path": "truth/crypto_wallet_control_truth.csv",
+      "bytes": 12481,
+      "sha256": "bb67fbc632b85bfdf343c7f1af39431cb780b5fcc16f24a708a33cfe9da3dd6e"
+    },
+    {
+      "path": "validation/bank_reconciliation.csv",
+      "bytes": 1018,
+      "sha256": "f807b6146b269ad04f20f1c35e70f6f07aa50cb08613f24e7fd02df732e110cb"
+    },
+    {
+      "path": "validation/senior_counts.csv",
+      "bytes": 694,
+      "sha256": "f5d8ca5b6020f2d7931bc6af96d446abafb72e1243cec84835fffce27a92ce64"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 2395,
+      "sha256": "c5104e2fa22663e0f2c8abf6ad06f435a553dea941f36d0bfad6ecdf60952b12"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 3000,
+      "sha256": "40d3c38007e0ebe46b1baa0a021e1d577f60f4b841eb4933d2e6cb5abd5331e6"
+    },
+    {
+      "path": "validation/wallet_reconciliation.csv",
+      "bytes": 1426,
+      "sha256": "504c3f6703300ce905f9a91aa79a9776033d4fbbac03442fdcd4bb0ce9dc8abe"
+    }
+  ]
+}

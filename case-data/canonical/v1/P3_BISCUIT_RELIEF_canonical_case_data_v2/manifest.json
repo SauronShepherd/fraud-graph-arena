@@ -1,0 +1,220 @@
+{
+  "package_name": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+  "package_version": "2.0.0-canonical.1",
+  "case_id": "BISCUIT_RELIEF",
+  "short_id": "P3",
+  "title": "The Great Biscuit Relief Fund",
+  "profile_code": "PUPPY",
+  "canonical_model_version": "1.0.0",
+  "snapshot_version": "2026.07.19.3",
+  "source_archive": "P3_BISCUIT_RELIEF_PUPPY_case_datasets_v1(1).zip",
+  "validation_status": "PASS",
+  "canonical_csv_table_count": 32,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 640,
+      "sha256": "03cc4056e74f28107b2a58278516ad2265be48af7e025dfbd28fa433d60acc3e"
+    },
+    {
+      "path": "analytics/entity_resolution_candidates.csv",
+      "bytes": 16409,
+      "sha256": "537bec5fa81c89f99589ddde14ea7fcee45adf162a892149d85791fb6a4aa32f"
+    },
+    {
+      "path": "analytics/exact_matches.csv",
+      "bytes": 28566,
+      "sha256": "814c4c3046444dc3b007d1d3c8e0c6df9a9fb99e254f1139bcef0b5d648ee44a"
+    },
+    {
+      "path": "analytics/tool_fixtures.csv",
+      "bytes": 788,
+      "sha256": "b1bfc8d25136742863bb183c3503e9287d463e347558a4099de380678c96e9c6"
+    },
+    {
+      "path": "authoring/record_attributes.csv",
+      "bytes": 1033508,
+      "sha256": "ab691d306423d79f1dc915a3a69f1c7cfcc5ed04630f2ed88dac90b70254461b"
+    },
+    {
+      "path": "authoring/records.csv",
+      "bytes": 454443,
+      "sha256": "7568d32b248f8cf60bc6e7e94f4682b98fc45f850c0676daf77840dff9fca91b"
+    },
+    {
+      "path": "authoring/relationships.csv",
+      "bytes": 745435,
+      "sha256": "770bd8f4d4d8faf0d07e8b0acfc6d6a16a8379ba7aecabd9257572ca945f2b26"
+    },
+    {
+      "path": "config/case_initial_items.csv",
+      "bytes": 925,
+      "sha256": "2fc14ec86e5c21273a60ad3174c7d210a0e7a36062c480d407e73788e0b6912c"
+    },
+    {
+      "path": "config/case_profiles.csv",
+      "bytes": 360,
+      "sha256": "6142c8ec4eedca6cd578a43dac5ca97c6072f1d923dd7535a343413c7c087fc5"
+    },
+    {
+      "path": "config/cases.csv",
+      "bytes": 585,
+      "sha256": "9d86da70584125ef0a2ddd3bf8512d00904a7ed2002220915d49ace3836d7a40"
+    },
+    {
+      "path": "config/genie_benchmarks.csv",
+      "bytes": 2790,
+      "sha256": "328deb52cdce7fa4bfe2fa7663d725c454fd79f547c1c1943b27c4955614746b"
+    },
+    {
+      "path": "config/registries.csv",
+      "bytes": 15614,
+      "sha256": "a04ac03779eb9b60a2969596ae9ac41dae3e12394e52efd0441c1d236f3e167d"
+    },
+    {
+      "path": "config/reveal_steps.csv",
+      "bytes": 153,
+      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
+    },
+    {
+      "path": "config/ui_contracts.csv",
+      "bytes": 56,
+      "sha256": "b3000aa0c0582a1dd2987d5514cdf7ee47941ca01a2585d8373dbe870e4fc86b"
+    },
+    {
+      "path": "conversion_report.json",
+      "bytes": 2191,
+      "sha256": "f07a8b8f100e97bac06bd1c0f7f587b3ee7dc7db7aaf97e9a1884d5a6eee65a5"
+    },
+    {
+      "path": "fga_canonical_schema_registry_v1.json",
+      "bytes": 70166,
+      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+    },
+    {
+      "path": "genie/record_attributes.csv",
+      "bytes": 842771,
+      "sha256": "9ad2be9bb6f875c332bb3730fab0da494e74c34fba84db1937c23d983bb369d7"
+    },
+    {
+      "path": "genie/records.csv",
+      "bytes": 350565,
+      "sha256": "d36eeabe607a84a9b4cf85954af4254a799ef15a4e982ddc2474acecde95939a"
+    },
+    {
+      "path": "genie/relationships.csv",
+      "bytes": 458459,
+      "sha256": "9aae2221e40953e0a24087af9088ff9b059553b15e1f3c2e1eebc095f2aa3341"
+    },
+    {
+      "path": "metadata/source_README.md",
+      "bytes": 613,
+      "sha256": "846353edbc71ae27af6221d806d7ab961bfa364c5ce71710ba7f0e04efb2b9b8"
+    },
+    {
+      "path": "metadata/source_case.yaml",
+      "bytes": 452,
+      "sha256": "32daaa7a387ea3bb4b8f7ae81c129aac8017c713a965d63efaa2d7c424d0e0c9"
+    },
+    {
+      "path": "metadata/source_data_dictionary.json",
+      "bytes": 168508,
+      "sha256": "1e41a43512c17488bae11cd8023bf389dd9900646067860e83dcad522045d571"
+    },
+    {
+      "path": "metadata/source_manifest.json",
+      "bytes": 13030,
+      "sha256": "9e43b830d55d2ac6b942e375ce1b330d7d0d4fad758d95e7d63913f6359b3692"
+    },
+    {
+      "path": "metadata/source_validation_report.json",
+      "bytes": 2315,
+      "sha256": "2ce2a03c19135e5911436072b6f52d0c9948e576eba08eeb56e4df4969d145de"
+    },
+    {
+      "path": "published/entity_resolution_candidates.csv",
+      "bytes": 10773,
+      "sha256": "dc20ba9aa106ebac316240853c97bde7eb1507727d1f778b4a1399fa07b68ab6"
+    },
+    {
+      "path": "published/exact_matches.csv",
+      "bytes": 19798,
+      "sha256": "284a5bc1c9f2a184c5db40f1dc64103b31a4b89b2172a4881e7e5dfc095533f6"
+    },
+    {
+      "path": "published/records.csv",
+      "bytes": 246388,
+      "sha256": "318640c044dbc804b30a9171d35b790a1bd8e2499aba562fc9547b3575310e7f"
+    },
+    {
+      "path": "published/relationships.csv",
+      "bytes": 218484,
+      "sha256": "7531fc540311814a2f08874aa7e05ae60d42f9a4bbb15cf6d512657a08cae975"
+    },
+    {
+      "path": "scripts/validate_canonical_package.py",
+      "bytes": 6999,
+      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+    },
+    {
+      "path": "truth/allowed_alternatives.csv",
+      "bytes": 1156,
+      "sha256": "7a003b0fb827a0db55745aafaeb6fa87e8964244bb6c00c453eab89c13aa004a"
+    },
+    {
+      "path": "truth/assertions.csv",
+      "bytes": 136,
+      "sha256": "daa3760dc887e77e2ab50c4478d1ac223bd3dc0ecd2c05c120ab3331fde58d58"
+    },
+    {
+      "path": "truth/claims.csv",
+      "bytes": 1304,
+      "sha256": "da3fde9f6de28a6299250e560bf524a2150d64b2f03a3c88669ceda24c776d09"
+    },
+    {
+      "path": "truth/ending_rules.csv",
+      "bytes": 1036,
+      "sha256": "12cc4d118518f50cd79a5efcdb690ccfc2a511abb3837a6f54b1da27d82a25b1"
+    },
+    {
+      "path": "truth/entities.csv",
+      "bytes": 3985,
+      "sha256": "41d835dbc5ab415ea43b703698136999400d502deabec6d3fd0a7b3841f4ae21"
+    },
+    {
+      "path": "truth/evidence_requirements.csv",
+      "bytes": 1508,
+      "sha256": "d23b8d0306ba44e400713b376b3261123d2f53eaf0c3e4a4b96bdd46a6307895"
+    },
+    {
+      "path": "truth/evidence_routes.csv",
+      "bytes": 1836,
+      "sha256": "e1d012a212e453b0aa99dc17cb0ab3dacb755591d9f91a32e62cdb22ee73518c"
+    },
+    {
+      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 627,
+      "sha256": "f2ca4ab51be066eb2849631bfced15e10e47887d539b438219ab71ff43b154f2"
+    },
+    {
+      "path": "truth/scoring_rules.csv",
+      "bytes": 897,
+      "sha256": "7f9e2dc4277426bcda7b1635365be5415a0a1eefcaaab516387cceecde130859"
+    },
+    {
+      "path": "truth/test_scenarios.csv",
+      "bytes": 170,
+      "sha256": "bccb4722918cdb299476defc3db1a87b31475e57d430c00e3ddc4816b81c039d"
+    },
+    {
+      "path": "validation/checks.csv",
+      "bytes": 1587,
+      "sha256": "6248fb670d08ed259ab9f6adb11ec1bdc7b7fef8409de4b5690ca84f557c9ac6"
+    },
+    {
+      "path": "validation/metrics.csv",
+      "bytes": 4254,
+      "sha256": "7800083985f0462020b0d9eaaf4a6122996c626c1de80a60112e51141da21b3a"
+    }
+  ]
+}

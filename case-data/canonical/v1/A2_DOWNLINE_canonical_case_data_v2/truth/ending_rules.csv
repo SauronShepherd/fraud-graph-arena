@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+DOWNLINE,CLEAN_COLLAR,1,850,,0,"[""ALL""]",,"Recruitment economics, operators, mixed roles and real retail are all correctly resolved.",2026.07.18.1
+DOWNLINE,CASE_CLOSED_KENNEL_WRECKED,2,700,,1,"[""PRINCIPAL"",""MECHANISM"",""ECONOMICS""]",,Core scheme proved but some participant roles are overstated.,2026.07.18.1
+DOWNLINE,THE_SCENT_WENT_COLD,3,450,,2,"[""PARTIAL""]",,Recruitment pressure noticed without proving compensation dependence.,2026.07.18.1
+DOWNLINE,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,"Credits spent before reconciling orders, retail and commissions.",2026.07.18.1
+DOWNLINE,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,"Every participant, customer and supplier is treated as an operator.",2026.07.18.1
+DOWNLINE,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""RETAIL_SELLER_OR_VICTIM_PRIMARY_TARGET""]",,A retail-led seller or mixed-role victim is blamed while the upline is weakly linked.,2026.07.18.1

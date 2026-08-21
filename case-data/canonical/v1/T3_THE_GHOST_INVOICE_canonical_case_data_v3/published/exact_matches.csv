@@ -1,0 +1,1 @@
+case_id,profile_code,match_id,rule_id,relationship_type,left_record_id,right_record_id,exact_field,masked_exact_value,normalization_version,generation_mode,framework_semantics,actual_engine_run,ambiguity_warning,supporting_record_ids_json,snapshot_version

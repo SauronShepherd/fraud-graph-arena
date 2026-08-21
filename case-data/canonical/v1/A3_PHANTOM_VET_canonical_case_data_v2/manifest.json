@@ -1,0 +1,220 @@
+{
+  "package_name": "A3_PHANTOM_VET_canonical_case_data_v2",
+  "package_version": "2.0.0-canonical.1",
+  "case_id": "PHANTOM_VET",
+  "short_id": "A3",
+  "title": "The Phantom Veterinary Clinic",
+  "profile_code": "ADULT",
+  "canonical_model_version": "1.0.0",
+  "snapshot_version": "2026.07.18.1",
+  "source_archive": "A3_PHANTOM_VET_ADULT_case_datasets_v1(1).zip",
+  "validation_status": "PASS",
+  "canonical_csv_table_count": 32,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 634,
+      "sha256": "eebb4212fd016d4b7b8431546f000098e17c154bd8410d90ed35952d33dfcd39"
+    },
+    {
+      "path": "analytics/entity_resolution_candidates.csv",
+      "bytes": 147642,
+      "sha256": "16090370778909be433466569f943d28d801707b36b57eb197a0b847d0ecde4e"
+    },
+    {
+      "path": "analytics/exact_matches.csv",
+      "bytes": 72709,
+      "sha256": "bbe8645d0703053415dcd11590f93036dd2e4ab245f35e02e8f74d55978396e4"
+    },
+    {
+      "path": "analytics/tool_fixtures.csv",
+      "bytes": 758,
+      "sha256": "5de2117e91cea6563a08d6cc959f68a6c6092e97b050aa18fc714f60bd82bba8"
+    },
+    {
+      "path": "authoring/record_attributes.csv",
+      "bytes": 5906484,
+      "sha256": "edf28f04b70a206bc6c342f16cd42c4585c89892e329b3defe44440b5cda48bc"
+    },
+    {
+      "path": "authoring/records.csv",
+      "bytes": 2417419,
+      "sha256": "2ec7f188e02bca678c6e9bc5ac34bfd9107d7201acf77c29f89339e5ad43492d"
+    },
+    {
+      "path": "authoring/relationships.csv",
+      "bytes": 4348173,
+      "sha256": "c2e8d4a8518cb77eb291043f483eef8a7a737e469ee05af2b4d7f0214435a0f9"
+    },
+    {
+      "path": "config/case_initial_items.csv",
+      "bytes": 551,
+      "sha256": "bc099d6f857eb791dbd4d05cfb28804c38785b6005d69eb58a5a329430f5b508"
+    },
+    {
+      "path": "config/case_profiles.csv",
+      "bytes": 425,
+      "sha256": "98cf04bd6303cc591b6214f27e77d644f9d0adec33a2f4cd7bfb70687461662f"
+    },
+    {
+      "path": "config/cases.csv",
+      "bytes": 542,
+      "sha256": "eb18a704a113f777e485fa43eedae961580dfaf87ff22ba1ca154b30dbd52bd8"
+    },
+    {
+      "path": "config/genie_benchmarks.csv",
+      "bytes": 3726,
+      "sha256": "21f433e08bc7d85dc3cd90ae24e8692d89c5ae084618b10ddd44b10c53407759"
+    },
+    {
+      "path": "config/registries.csv",
+      "bytes": 16845,
+      "sha256": "2dafe026086afcec480bbed9e6313061ba78920dbf7dbae4bbe7f1c386593cf5"
+    },
+    {
+      "path": "config/reveal_steps.csv",
+      "bytes": 153,
+      "sha256": "46efdaea7477f3761fc887d74290dbad6ede30305d0e4970a186855317785953"
+    },
+    {
+      "path": "config/ui_contracts.csv",
+      "bytes": 56,
+      "sha256": "b3000aa0c0582a1dd2987d5514cdf7ee47941ca01a2585d8373dbe870e4fc86b"
+    },
+    {
+      "path": "conversion_report.json",
+      "bytes": 2195,
+      "sha256": "c211931d7287f5c98a2c36ef7fa2d0e8395646314a599127e264d1e5d33bc2db"
+    },
+    {
+      "path": "fga_canonical_schema_registry_v1.json",
+      "bytes": 70166,
+      "sha256": "14985bb39cd16c3d09fdb238fe9f01015f2614b5bb64b23c49ef7d8bc37a63ef"
+    },
+    {
+      "path": "genie/record_attributes.csv",
+      "bytes": 4169158,
+      "sha256": "331c63eff77967848367dca59ed6b14526dae78d7b860cad2edb4b867545b891"
+    },
+    {
+      "path": "genie/records.csv",
+      "bytes": 1627065,
+      "sha256": "e4afa04bfda130a22b74c4835007218efab48bbd4b9d8a54f47ee7873583a290"
+    },
+    {
+      "path": "genie/relationships.csv",
+      "bytes": 2208685,
+      "sha256": "4d2188827ad650a888cb8c0c51460c3ea20f44d54e6a91f68a50323e3a66bf3e"
+    },
+    {
+      "path": "metadata/source_README.md",
+      "bytes": 607,
+      "sha256": "1419ff1fed18f57dba38a7db9fa1efe9680141d5e687fb78e26a3765bcebede4"
+    },
+    {
+      "path": "metadata/source_case.yaml",
+      "bytes": 382,
+      "sha256": "2d3c95952458de8d16638f49a8b98bae01accec01a52e571b9d373607825293d"
+    },
+    {
+      "path": "metadata/source_data_dictionary.json",
+      "bytes": 174752,
+      "sha256": "de2f2559eefaa0b8bdfee1583b8013ae85d1699e80b45f30b49dcafcf78e3e39"
+    },
+    {
+      "path": "metadata/source_manifest.json",
+      "bytes": 13706,
+      "sha256": "509efd1a56396a27b4cc418233f68870241314d1330afed0d8b04208e9e9b7e0"
+    },
+    {
+      "path": "metadata/source_validation_report.json",
+      "bytes": 2076,
+      "sha256": "db6b5ce7aaeeec3aaf21d9283f7b6ce27e433f5954f65a8926f5054a32b6896d"
+    },
+    {
+      "path": "published/entity_resolution_candidates.csv",
+      "bytes": 98788,
+      "sha256": "19c431fad3a3b51012575976c2e87e85dabeab440a141f767c154d50710a4545"
+    },
+    {
+      "path": "published/exact_matches.csv",
+      "bytes": 51704,
+      "sha256": "cb0f45e50196f147b4ffa77beb5dd5e187e0fe50a0a9aaf3b20dfb2ce55ba208"
+    },
+    {
+      "path": "published/records.csv",
+      "bytes": 1052709,
+      "sha256": "d14bfe8af46380f80e4f480067edde3d86ee04dd71aa2974c37e3b72a44ad421"
+    },
+    {
+      "path": "published/relationships.csv",
+      "bytes": 1573905,
+      "sha256": "036e0f0a21cbf301eff32946cdc26e1dc21f138802e65281e3dab7bf01d04faa"
+    },
+    {
+      "path": "scripts/validate_canonical_package.py",
+      "bytes": 6999,
+      "sha256": "b6061ff7d652226e97332bc4257d201b1402348bc56586d075704d7eff906741"
+    },
+    {
+      "path": "truth/allowed_alternatives.csv",
+      "bytes": 1370,
+      "sha256": "8b17d56c6e4b7b97e430b49bdae2f0255972345b7ee87925381ae15fb1ec51c5"
+    },
+    {
+      "path": "truth/assertions.csv",
+      "bytes": 136,
+      "sha256": "daa3760dc887e77e2ab50c4478d1ac223bd3dc0ecd2c05c120ab3331fde58d58"
+    },
+    {
+      "path": "truth/claims.csv",
+      "bytes": 1438,
+      "sha256": "a8dabc4c14efd2d95484afb1d6a60530af51d62d68b8067f17d8f0065c377942"
+    },
+    {
+      "path": "truth/ending_rules.csv",
+      "bytes": 1118,
+      "sha256": "c5582487024d3600e21c8291863194f9d00b0943cd14900fadca0c327abf2e50"
+    },
+    {
+      "path": "truth/entities.csv",
+      "bytes": 34172,
+      "sha256": "3eb10c9208f038679b24e4842cd879c635ed3fd00abd3cd4dac99b730cdca359"
+    },
+    {
+      "path": "truth/evidence_requirements.csv",
+      "bytes": 1643,
+      "sha256": "c0fb5f6932e28885c067a2f84c3568543af884d554bbec13c487b424d546e8d0"
+    },
+    {
+      "path": "truth/evidence_routes.csv",
+      "bytes": 1659,
+      "sha256": "0782c221c27451c547d3dff107f20556ae21b25a24306fe03ea2ff6604aeb8d6"
+    },
+    {
+      "path": "truth/forbidden_conclusions.csv",
+      "bytes": 857,
+      "sha256": "fe21abd56c797f0fdda800cb618f6b6a022c0f1cb2a6f2596dc238c8b6249a41"
+    },
+    {
+      "path": "truth/scoring_rules.csv",
+      "bytes": 1214,
+      "sha256": "fcf693a88429a9b290fe91b81d09d1157acb56687c62ac331d9c099695222107"
+    },
+    {
+      "path": "truth/test_scenarios.csv",
+      "bytes": 170,
+      "sha256": "bccb4722918cdb299476defc3db1a87b31475e57d430c00e3ddc4816b81c039d"
+    },
+    {
+      "path": "validation/checks.csv",
+      "bytes": 1900,
+      "sha256": "a5157d53535c89f672941dd4238f6f0823f5353998ed7dd1849486a0845af8a9"
+    },
+    {
+      "path": "validation/metrics.csv",
+      "bytes": 4310,
+      "sha256": "a0183865fca199ae92f8c9aa96dd9eb81c4b684474d3d1cb0103748a41724f8c"
+    }
+  ]
+}

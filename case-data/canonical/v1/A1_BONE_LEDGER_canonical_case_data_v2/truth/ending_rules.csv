@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+BONE_LEDGER,CLEAN_COLLAR,1,850,,0,"[""ALL""]",,"Concealed liabilities, shell invoices, assets and protected actors correctly resolved.",2026.07.18.1
+BONE_LEDGER,CASE_CLOSED_KENNEL_WRECKED,2,700,,1,"[""PRINCIPAL"",""MECHANISM"",""LIABILITY_CHAIN""]",,Essential chain proven but lawful entities or roles are overstated.,2026.07.18.1
+BONE_LEDGER,THE_SCENT_WENT_COLD,3,450,,2,"[""PARTIAL""]",,"Contradictions found without connecting ownership, journals and liability movement.",2026.07.18.1
+BONE_LEDGER,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,Credits spent while decisive reconciliation remains incomplete.,2026.07.18.1
+BONE_LEDGER,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,"Every subsidiary, director and auditor is treated as culpable.",2026.07.18.1
+BONE_LEDGER,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""AUDITOR_OR_INNOCENT_PRIMARY_TARGET""]",,The auditor or protected staff are accused while controllers remain weakly linked.,2026.07.18.1

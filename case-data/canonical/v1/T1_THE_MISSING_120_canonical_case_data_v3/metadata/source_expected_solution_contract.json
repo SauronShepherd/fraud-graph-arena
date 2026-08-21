@@ -1,0 +1,126 @@
+{
+  "case_id": "ACADEMY_T01",
+  "short_id": "T1",
+  "title": "The Missing 120",
+  "mode": "DETECTIVE_ACADEMY",
+  "ranked": false,
+  "career_unlock": false,
+  "seed": 1002,
+  "snapshot_version": "2026.07.19.3",
+  "principal_contract": "Investigation Board basics, a guided Genie query, evidence pinning, protected actors, submission and score.",
+  "expected": {
+    "primary_suspects": [
+      "T1-P-BUSTER"
+    ],
+    "classifications": {
+      "T1-P-BUSTER": "PRIMARY_CULPRIT",
+      "T1-P-NELL": "PROTECTED_REPORTER",
+      "T1-P-POPPY": "PROTECTED_RED_HERRING",
+      "T1-O-SHOP": "VICTIM_ORGANIZATION"
+    },
+    "relationship_conclusions": {
+      "T1-REL-004": "ASSIGNMENT",
+      "T1-REL-007": "ACTION_ATTRIBUTION",
+      "T1-REL-009": "TEMPORAL_SEQUENCE",
+      "T1-REL-012": "ADMISSION"
+    },
+    "required_evidence": [
+      "T1-EV-001",
+      "T1-EV-002",
+      "T1-EV-003",
+      "T1-EV-004"
+    ],
+    "expected_ending": "CLEAN_COLLAR",
+    "score_range": {
+      "minimum": 900,
+      "maximum": 1000
+    },
+    "max_optimal_paid_actions": 1,
+    "optimal_query_id": "T1-GENIE-001"
+  },
+  "coverage": [
+    "board.navigation",
+    "node.details",
+    "relationship.direction",
+    "provenance",
+    "genie.guided_query",
+    "evidence.pinning",
+    "protected_actor",
+    "submission.immutable",
+    "scoring.six_endings"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "T1-DOOR-1",
+      "title": "Clean Collar",
+      "action_sequence_json": "[\"inspect:T1-P-BUSTER\",\"select_relationship:T1-REL-004\",\"quote:T1-GENIE-001\",\"run:T1-GENIE-001\",\"pin:T1-EV-001\",\"pin:T1-EV-002\",\"pin:T1-EV-003\",\"protect:T1-P-NELL\",\"submit:T1-P-BUSTER\"]",
+      "submitted_suspects_json": "[\"T1-P-BUSTER\"]",
+      "expected_score": 1000,
+      "expected_ending": "CLEAN_COLLAR",
+      "expected_credits_remaining": 4,
+      "false_accusations": 0,
+      "notes": "Complete guided solve with one necessary paid query.",
+      "case_id": "ACADEMY_T01"
+    },
+    {
+      "scenario_id": "T1-DOOR-2",
+      "title": "Case Closed, Kennel Wrecked",
+      "action_sequence_json": "[\"run:T1-GENIE-001\",\"submit:T1-P-BUSTER+T1-P-NELL\"]",
+      "submitted_suspects_json": "[\"T1-P-BUSTER\",\"T1-P-NELL\"]",
+      "expected_score": 760,
+      "expected_ending": "CASE_CLOSED_KENNEL_WRECKED",
+      "expected_credits_remaining": 4,
+      "false_accusations": 1,
+      "notes": "Correct culprit plus false accusation of the reporter.",
+      "case_id": "ACADEMY_T01"
+    },
+    {
+      "scenario_id": "T1-DOOR-3",
+      "title": "The Scent Went Cold",
+      "action_sequence_json": "[\"run:T1-GENIE-001\",\"inspect:T1-REC-SHORT\",\"submit:no_suspects\"]",
+      "submitted_suspects_json": "[]",
+      "expected_score": 520,
+      "expected_ending": "THE_SCENT_WENT_COLD",
+      "expected_credits_remaining": 4,
+      "false_accusations": 0,
+      "notes": "Loss identified without attribution.",
+      "case_id": "ACADEMY_T01"
+    },
+    {
+      "scenario_id": "T1-DOOR-4",
+      "title": "Biscuit Budget Blown",
+      "action_sequence_json": "[\"quote:T1-GENIE-002\",\"run:T1-GENIE-002\",\"submit:no_suspects\"]",
+      "submitted_suspects_json": "[]",
+      "expected_score": 280,
+      "expected_ending": "BISCUIT_BUDGET_BLOWN",
+      "expected_credits_remaining": 0,
+      "false_accusations": 0,
+      "notes": "A broad query consumes the budget and does not complete the claims.",
+      "case_id": "ACADEMY_T01"
+    },
+    {
+      "scenario_id": "T1-DOOR-5",
+      "title": "Chased Every Squirrel",
+      "action_sequence_json": "[\"run:T1-GENIE-002\",\"select_all_accusable\",\"submit\"]",
+      "submitted_suspects_json": "[\"T1-P-BUSTER\",\"T1-P-NELL\",\"T1-P-POPPY\",\"T1-O-SHOP\"]",
+      "expected_score": 120,
+      "expected_ending": "CHASED_EVERY_SQUIRREL",
+      "expected_credits_remaining": 0,
+      "false_accusations": 3,
+      "notes": "Bulk unsupported accusation.",
+      "case_id": "ACADEMY_T01"
+    },
+    {
+      "scenario_id": "T1-DOOR-6",
+      "title": "Barking Up the Wrong Tree",
+      "action_sequence_json": "[\"inspect:T1-DOC-REPORT\",\"submit:T1-P-NELL\"]",
+      "submitted_suspects_json": "[\"T1-P-NELL\"]",
+      "expected_score": 40,
+      "expected_ending": "BARKING_UP_THE_WRONG_TREE",
+      "expected_credits_remaining": 6,
+      "false_accusations": 1,
+      "notes": "The reporter is treated as the primary culprit.",
+      "case_id": "ACADEMY_T01"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+BISCUIT_RELIEF,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,DOMAIN,Domain,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,BANK_ACCOUNT,Bank Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,RELIEF_CAMPAIGN,Relief Campaign,"{""accusable"":""false"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,DONATION_PAGE,Donation Page,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,CAMPAIGN_POST,Campaign Post,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,DONATION,Donation,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,PROCESSOR_SETTLEMENT,Processor Settlement,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,FINANCIAL_TRANSACTION,Financial Transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,BENEFICIARY_PROGRAM,Beneficiary Program,"{""accusable"":""false"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,GRANT_REQUEST,Grant Request,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,AID_DISTRIBUTION,Aid Distribution,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,ADVERTISEMENT,Advertisement,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,VENDOR_INVOICE,Vendor Invoice,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,VOLUNTEER_MEMBERSHIP,Volunteer Membership,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,REPOST_EVENT,Repost Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,COMMUNICATION,Communication,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,COMPLAINT,Complaint,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,FOUNDER_OF,Founder Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,CONTROLS,Controls,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,VOLUNTEERS_FOR,Volunteers For,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,REGISTERED_AT,Registered At,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,OPERATES,Operates,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,PUBLISHED,Published,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,HOSTED_AT,Hosted At,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,MADE_DONATION,Made Donation,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,DONATED_THROUGH,Donated Through,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SETTLED_TO,Settled To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,REQUESTED_GRANT,Requested Grant,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,PAID_TO,Paid To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,BENEFITS,Benefits,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,ISSUED_INVOICE,Issued Invoice,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,APPROVED,Approved,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,CREATED,Created,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,REPOSTED,Reposted,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,MEMBER_OF,Member Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,USED_DEVICE,Used Device,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,LOGGED_IN_FROM,Logged In From,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SUPPORTS,Supports,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_PROCESSOR_MERCHANT,Same Processor Merchant,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_PAYOUT_ACCOUNT,Same Payout Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_BENEFICIARY_ACCOUNT,Same Beneficiary Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_PERSONAL_ACCOUNT,Same Personal Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_COWORKING_IP,Same Coworking Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_AD_ACCOUNT,Same Ad Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_IMAGE_HASH,Same Image Hash,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_CAMPAIGN_TEMPLATE,Same Campaign Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_VOLUNTEER_CODE,Same Volunteer Code,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_SETTLEMENT_BATCH,Same Settlement Batch,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_MAILBOX,Same Mailbox,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_DOMAIN,Same Domain,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,SAME_ADDRESS,Same Address,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,MAY_CONTROL,May Control,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,MAY_HAVE_DIVERTED,May Have Diverted,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,RELATIONSHIP_TYPE,MAY_HAVE_INFLATED_CLAIMS,May Have Inflated Claims,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,CHARITY_REGISTRY,Fictional charity registry,"{""trust_level"":""HIGH""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,CAMPAIGN_PLATFORM,Fundraising campaign platform,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,PAYMENT_PROCESSOR,Northstar Donation Services,"{""trust_level"":""HIGH""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,BANK_LEDGER,Lantern Community Bank ledger,"{""trust_level"":""HIGH""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,BANK_KYC,Bank KYC records,"{""trust_level"":""HIGH""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,VOLUNTEER_PORTAL,Biscuit Brigade volunteer portal,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,SOCIAL_ARCHIVE,Campaign and repost archive,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,AD_PLATFORM,Advertising platform export,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,EMAIL,Email archive,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,DEVICE_LOG,Device and login telemetry,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,BENEFICIARY_LEDGER,Beneficiary requests and distributions,"{""trust_level"":""HIGH""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,WAREHOUSE_LOG,Relief warehouse inventory log,"{""trust_level"":""HIGH""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,INVOICE_REPOSITORY,Vendor invoice repository,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,COMPLAINT_PORTAL,Donor and beneficiary complaints,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Document repository,"{""trust_level"":""MEDIUM""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,DOMAIN_REGISTRY,Synthetic domain registration archive,"{""trust_level"":""HIGH""}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.19.3
+BISCUIT_RELIEF,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.19.3

@@ -1,0 +1,98 @@
+[
+  {
+    "sequence": "1",
+    "speaker": "CIPHER",
+    "line": "C. Corgi is only an abbreviated portal user. You cannot assume that record is mine.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "2",
+    "speaker": "DETECTIVE",
+    "line": "I did not assume it. Zingg proposed the candidate, and the verified email and phone confirmed the merge.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "3",
+    "speaker": "CIPHER",
+    "line": "Then perhaps Cypher Corgi is another version of the same identity.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "4",
+    "speaker": "DETECTIVE",
+    "line": "No. Cypher has a different identifier, email, phone and employer. That candidate was rejected.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "5",
+    "speaker": "CIPHER",
+    "line": "Names are unreliable. What about the companies?",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "6",
+    "speaker": "DETECTIVE",
+    "line": "Alpha paid Beta. Beta paid Gamma. Gamma paid Alpha. The directed cycle returns the funds to their starting company.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "7",
+    "speaker": "CIPHER",
+    "line": "A commercial circle does not prove common administration.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "8",
+    "speaker": "DETECTIVE",
+    "line": "GraphFrames linked the three portal logins through the same administrative device and IP.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "9",
+    "speaker": "CIPHER",
+    "line": "Gamma also shares an address and a device with Blue Bowl Bakery.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "10",
+    "speaker": "DETECTIVE",
+    "line": "A registered-office hub and a public kiosk. Exact matches, but benign shared infrastructure.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "11",
+    "speaker": "CIPHER",
+    "line": "So you kept the bakery and Cypher outside the accusation.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "12",
+    "speaker": "DETECTIVE",
+    "line": "Yes. Their connections explain proximity, not participation.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "13",
+    "speaker": "CIPHER",
+    "line": "And the identity merged across Alpha, Beta and Gamma?",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "14",
+    "speaker": "DETECTIVE",
+    "line": "One controller represented by two source records.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "15",
+    "speaker": "CIPHER",
+    "line": "Then every relevant connection converges on me.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "16",
+    "speaker": "DETECTIVE",
+    "line": "Correct merge. False merge prevented. Directed cycle established. Cipher Corgi: primary controller. Case closed.",
+    "case_id": "ACADEMY_T02"
+  }
+]

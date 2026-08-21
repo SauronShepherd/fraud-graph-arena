@@ -1,0 +1,9 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+GOLDEN_HYDRANT,REQ-001,CLAIM-GIDEON-PRINCIPAL,P-GIDEON,CONTROL_OWNERSHIP_AND_PAYMENTS,3,130,true,[],Gideon controlled the favoured contractor and shell network.,2026.07.18.1
+GOLDEN_HYDRANT,REQ-002,CLAIM-PETRA-BID-RIGGING,P-PETRA,PREPUBLICATION_SCORING_EVALUATION_AND_APPROVAL,3,125,true,[],Petra manipulated tender scoring and approved coordinated awards and changes.,2026.07.18.1
+GOLDEN_HYDRANT,REQ-003,CLAIM-COORDINATED-BIDS,O-GOLDEN,BID_TEMPLATE_PRICE_IP_AND_COMMUNICATION,3,110,true,[],"Golden and companion bidders coordinated templates, pricing and infrastructure.",2026.07.18.1
+GOLDEN_HYDRANT,REQ-004,CLAIM-PHANTOM-WORK,O-GOLDEN,SERIAL_GPS_PHOTO_EXCAVATION_AND_INSPECTION,4,140,true,[],A material population of hydrants and field certifications was duplicated or unsupported.,2026.07.18.1
+GOLDEN_HYDRANT,REQ-005,CLAIM-INFLATED-CHANGES,O-GOLDEN,CHANGE_ORDER_PAYMENT_AND_FIELD_RECONCILIATION,3,105,true,[],Change orders increased contract value without corresponding verified work.,2026.07.18.1
+GOLDEN_HYDRANT,REQ-006,CLAIM-KICKBACKS,O-POINTER,SUBCONTRACT_BANK_KYC_AND_COMMUNICATION,3,115,true,[],Shell subcontractor funds returned to principals and Pointer Civic Advisory.,2026.07.18.1
+GOLDEN_HYDRANT,REQ-007,CLAIM-IRIS-PROTECTED,P-IRIS,WHISTLEBLOWER_AND_AUTHORITY_LIMITS,2,70,true,[],Iris identified anomalies and lacked procurement or payment control.,2026.07.18.1
+GOLDEN_HYDRANT,REQ-008,CLAIM-HAZEL-PROTECTED,P-HAZEL,NEED_ASSESSMENT_AND_AUTHORITY_LIMITS,2,55,true,[],Hazel documented genuine operational need but did not select vendors or approve invoices.,2026.07.18.1

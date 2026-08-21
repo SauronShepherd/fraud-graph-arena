@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "source_archive": "T01_THE_MISSING_120_case_datasets_v2(2).zip",
+  "case_id": "ACADEMY_T01",
+  "profile_code": "ACADEMY",
+  "canonical_model_version": "1.0.0",
+  "canonical_table_count": 32,
+  "row_counts": {
+    "analytics/entity_resolution_candidates.csv": 0,
+    "analytics/exact_matches.csv": 0,
+    "analytics/tool_fixtures.csv": 6,
+    "authoring/record_attributes.csv": 26,
+    "authoring/records.csv": 10,
+    "authoring/relationships.csv": 14,
+    "config/case_initial_items.csv": 4,
+    "config/case_profiles.csv": 1,
+    "config/cases.csv": 1,
+    "config/genie_benchmarks.csv": 2,
+    "config/registries.csv": 24,
+    "config/reveal_steps.csv": 3,
+    "config/ui_contracts.csv": 11,
+    "genie/record_attributes.csv": 26,
+    "genie/records.csv": 10,
+    "genie/relationships.csv": 14,
+    "published/entity_resolution_candidates.csv": 0,
+    "published/exact_matches.csv": 0,
+    "published/records.csv": 10,
+    "published/relationships.csv": 14,
+    "truth/allowed_alternatives.csv": 0,
+    "truth/assertions.csv": 4,
+    "truth/claims.csv": 4,
+    "truth/ending_rules.csv": 6,
+    "truth/entities.csv": 4,
+    "truth/evidence_requirements.csv": 4,
+    "truth/evidence_routes.csv": 0,
+    "truth/forbidden_conclusions.csv": 0,
+    "truth/scoring_rules.csv": 5,
+    "truth/test_scenarios.csv": 6,
+    "validation/checks.csv": 17,
+    "validation/metrics.csv": 36
+  },
+  "empty_tables_with_headers": [
+    "analytics/entity_resolution_candidates.csv",
+    "analytics/exact_matches.csv",
+    "published/entity_resolution_candidates.csv",
+    "published/exact_matches.csv",
+    "truth/allowed_alternatives.csv",
+    "truth/evidence_routes.csv",
+    "truth/forbidden_conclusions.csv"
+  ],
+  "conversion_notes": [
+    "Canonical physical table names are shared by all cases.",
+    "Empty datasets retain exact headers.",
+    "Legacy tutorial and narrative CSVs are preserved as JSON content assets.",
+    "Missing optional values remain empty; no schema union is required."
+  ],
+  "validator_output": [
+    "PASS",
+    "Canonical model: 1.0.0",
+    "Validated tables: 32"
+  ],
+  "strict_validation": "PASS"
+}

@@ -1,0 +1,11 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+CRYPTO_KENNEL_LONG_CON,CLAIM-AGENT-DIFFERENTIATION,COMMUNICATION_BANK_WALLET_AND_COMPLAINT,Gavin and Vera knowingly facilitated while Tessa lacked platform control.,P-TESSA,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-BANK-OFFSHORE,BANK_CHAIN_BENEFICIARY_AND_SETTLEMENT,Domestic funding moved through cash-out agents to offshore accounts.,P-MARA,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-FAKE-PLATFORM,PLATFORM_LEDGER_PRICE_AND_WALLET_RECONCILIATION,Displayed balances and gains did not match external assets and prices.,O-CRYPTOKENNEL,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-LEGITIMATE-CRYPTO,MARKET_PRICE_AUDIT_OPEN_SOURCE_AND_WITHDRAWAL,"Clara, Henry, ClearChain and Open Paw provide legitimate comparison activity.",P-CLARA,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-LONG-CON,CAMPAIGN_THREAD_TEMPLATE_AND_DEPOSIT,"The network used trust, small wins, upgrades and urgency to increase deposits.",P-DEXTER,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-LYRA-PRINCIPAL,CORPORATE_KYC_DOMAIN_DEVICE_AND_PAYMENT,Lyra controlled Crypto Kennel and related fronts.,P-LYRA,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-NORA-PROTECTED,ROLE_DEVICE_PERMISSION_AND_NO_PROCEEDS,"Nora moderated messages but did not control prices, wallets or withdrawals.",P-NORA,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-TOKEN-CONTROL,TOKEN_CONTRACT_ADMIN_BYTECODE_AND_EVENTS,Bone Vault tokens and contracts used common admin infrastructure.,P-BRUNO,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-WALLET-SWEEPS,BLOCKCHAIN_SWEEP_BRIDGE_KYC_AND_DISTRIBUTION,"Deposits were swept, bridged offshore and distributed to operators.",P-QUINN,true,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,CLAIM-WITHDRAWAL-FEES,WITHDRAWAL_SUPPORT_MESSAGE_AND_FEE_DESTINATION,Withdrawals were blocked and conditioned on external release fees.,P-SILAS,true,2026.07.18.1

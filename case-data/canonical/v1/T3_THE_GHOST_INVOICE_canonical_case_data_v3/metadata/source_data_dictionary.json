@@ -1,0 +1,278 @@
+[
+  {
+    "path": "README.md",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "analytics/connection_classification_fixtures.csv",
+    "visibility": "INTERNAL",
+    "description": "Expected interpretation of query-derived conclusions.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "analytics/genie_query_fixtures.csv",
+    "visibility": "INTERNAL",
+    "description": "Deterministic advanced Genie query contracts, quoted costs and reveal payloads.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "analytics/graphframes_exact_relationships.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "analytics/no_result_fixtures.csv",
+    "visibility": "INTERNAL",
+    "description": "Charged no-result fixtures for Genie, GraphFrames and Zingg.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "analytics/zingg_candidate_relationships.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "authoring/direct_relationships.csv",
+    "visibility": "INTERNAL",
+    "description": "Full direct-source relationships including internal content roles.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "authoring/records.csv",
+    "visibility": "INTERNAL",
+    "description": "Full synthetic authoring records including internal content roles.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/case.yaml",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/case_definition.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/difficulty_profiles.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/economy.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/initial_case_items.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/object_type_registry.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/relationship_type_registry.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/reveal_plan.csv",
+    "visibility": "INTERNAL",
+    "description": "Progressive reveal triggers for each precise query.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/schema_contract.json",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/source_system_registry.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/tool_availability.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "config/ui_contract.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "genie/academy/entities.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "genie/academy/relationships.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "narrative/case_briefing.md",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "narrative/closing_dialogue.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "narrative/image_prompts.md",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "narrative/opening_dialogue.csv",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "published/academy/genie_query_fixtures.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "published/academy/graphframes_exact_relationships.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "published/academy/initial_case_items.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "published/academy/player_safe_direct_relationships.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "published/academy/player_safe_records.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "published/academy/zingg_candidate_relationships.csv",
+    "visibility": "PLAYER_SAFE",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "scripts/generate_case_bundle.py",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "scripts/generator_metadata.py",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "scripts/validate_bundle.py",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "sql/create_genie_views.sql",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "sql/create_schemas.sql",
+    "visibility": "INTERNAL",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/ending_thresholds.csv",
+    "visibility": "TRUTH_ONLY",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/evaluator_truth.csv",
+    "visibility": "TRUTH_ONLY",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/expected_solution_contract.json",
+    "visibility": "TRUTH_ONLY",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/required_evidence.csv",
+    "visibility": "TRUTH_ONLY",
+    "description": "Evaluator-only evidence bundles required for the optimal conclusion.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/restart_fixtures.csv",
+    "visibility": "TRUTH_ONLY",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/scoring_rules.csv",
+    "visibility": "TRUTH_ONLY",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/submission_immutability_fixtures.csv",
+    "visibility": "TRUTH_ONLY",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "truth/test_scenarios.csv",
+    "visibility": "TRUTH_ONLY",
+    "description": "Synthetic Academy bundle resource.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "path": "tutorial/tutorial_steps.csv",
+    "visibility": "INTERNAL",
+    "description": "Blocking and informational tutorial sequence.",
+    "case_id": "ACADEMY_T03"
+  }
+]

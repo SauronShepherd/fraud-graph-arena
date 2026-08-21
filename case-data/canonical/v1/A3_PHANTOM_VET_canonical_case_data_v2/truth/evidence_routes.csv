@@ -1,0 +1,13 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+PHANTOM_VET,ROUTE-001,CLAIM-PHANTOM-CLAIMS,Owner and schedule contradiction,1,Owner complaints and policy records,GENIE,2026.07.18.1
+PHANTOM_VET,ROUTE-001,CLAIM-PHANTOM-CLAIMS,Owner and schedule contradiction,2,"Appointments, encounters, repeated templates and images",GRAPHFRAMES,2026.07.18.1
+PHANTOM_VET,ROUTE-002,CLAIM-CREDENTIAL-MISUSE,Credential and location,1,Provider-license exact matches,GRAPHFRAMES,2026.07.18.1
+PHANTOM_VET,ROUTE-002,CLAIM-CREDENTIAL-MISUSE,Credential and location,2,"Lantern schedule, board report and device logs",GENIE,2026.07.18.1
+PHANTOM_VET,ROUTE-003,CLAIM-DIVERSION,Claim-to-bank flow,1,Claim payments to 6622 and 6623,GENIE,2026.07.18.1
+PHANTOM_VET,ROUTE-003,CLAIM-DIVERSION,Claim-to-bank flow,2,"Transfers to 7755, 8841, 9920, 4433 and 5514",GENIE,2026.07.18.1
+PHANTOM_VET,ROUTE-004,CLAIM-ROWAN-PRINCIPAL,Identity and control,1,Rowan source-record candidate group,ZINGG,2026.07.18.1
+PHANTOM_VET,ROUTE-004,CLAIM-ROWAN-PRINCIPAL,Identity and control,2,"Control, account ownership and approvals",DIRECT,2026.07.18.1
+PHANTOM_VET,ROUTE-005,CLAIM-MIRA-KNOWING,Claim authorship,1,Mira identity and claims workstation logins,ZINGG,2026.07.18.1
+PHANTOM_VET,ROUTE-005,CLAIM-MIRA-KNOWING,Claim authorship,2,"COM-001/002, COM-008/009 and batch records",COMMUNICATION,2026.07.18.1
+PHANTOM_VET,ROUTE-006,CLAIM-ELENA-PROTECTED,Credential victim,1,COM-005/006 and board credential records,COMMUNICATION,2026.07.18.1
+PHANTOM_VET,ROUTE-006,CLAIM-ELENA-PROTECTED,Credential victim,2,Lantern appointments and separate device/IP,GENIE,2026.07.18.1

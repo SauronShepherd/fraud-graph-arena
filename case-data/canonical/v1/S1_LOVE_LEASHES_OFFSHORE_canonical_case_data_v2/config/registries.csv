@@ -1,0 +1,123 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,BANK_ACCOUNT,Bank Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,PERSONA_PROFILE,Persona Profile,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,SOCIAL_ACCOUNT,Social Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,PROFILE_MEDIA,Profile Media,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,MESSAGE_TEMPLATE,Message Template,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,MESSAGE_THREAD,Message Thread,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,MESSAGE,Message,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,VICTIM_REPORT,Victim Report,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,PARCEL,Parcel,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,PARCEL_EVENT,Parcel Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,LEGAL_LETTER,Legal Letter,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,FEE_INVOICE,Fee Invoice,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,BANK_TRANSACTION,Bank Transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,COMPLAINT,Complaint,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,DIRECTOR_OF,Director Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,CONTROLS,Controls,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,PROFILE_FOR,Profile For,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,OPERATES_ACCOUNT,Operates Account,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,USES_PROFILE_MEDIA,Uses Profile Media,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,USES_DEVICE,Uses Device,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,LOGGED_INTO,Logged Into,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,PARTICIPATES_IN,Participates In,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,CONTAINS,Contains,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,BASED_ON_TEMPLATE,Based On Template,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REPORTED_BY,Reported By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SENT_PARCEL,Sent Parcel,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,RECEIVED_PARCEL,Received Parcel,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,FORWARDED_PARCEL,Forwarded Parcel,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,ISSUED,Issued,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,INVOICES,Invoices,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,PAID_TO,Paid To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SUPPORTS,Supports,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,RAISED_BY,Raised By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,ASSOCIATED_WITH,Associated With,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,APPROVED,Approved,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_PROFILE_IMAGE,Same Profile Image,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_MESSAGE_TEMPLATE,Same Message Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_LOGIN_IP,Same Login Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_CONTACT_PHONE,Same Contact Phone,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_RECOVERY_EMAIL,Same Recovery Email,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_BENEFICIARY_ACCOUNT,Same Beneficiary Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_OFFSHORE_ROUTING,Same Offshore Routing,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_PARCEL_LABEL_TEMPLATE,Same Parcel Label Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_TRACKING_PREFIX,Same Tracking Prefix,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_LEGAL_LETTER_TEMPLATE,Same Legal Letter Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_INVOICE_TEMPLATE,Same Invoice Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_REGISTERED_ADDRESS,Same Registered Address,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,SAME_PAYMENT_REFERENCE_PATTERN,Same Payment Reference Pattern,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,POSSIBLE_SAME_PERSONA,Possible Same Persona,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,MAY_CONTROL_PERSONA,May Control Persona,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,CIVIL_REGISTRY,Civil registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,CORP_REGISTRY,Corporate registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,SOCIAL_PLATFORM,Social platform export,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,DATING_PLATFORM,Dating platform export,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,MESSAGING_PLATFORM,Messaging export,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,PROFILE_MEDIA_STORE,Profile media metadata,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,DEVICE_LOG,Device telemetry,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,BANK_KYC,Bank KYC,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,BANK_LEDGER,Domestic bank ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,OFFSHORE_LEDGER,Offshore ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,PARCEL_CARRIER,Parcel carrier,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,CUSTOMS_PORTAL,Customs portal,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,LEGAL_REGISTRY,Legal registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,EMAIL,Email archive,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,VICTIM_SUPPORT,Victim support records,"{""trust_level"":""HIGH""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,COMPLAINT_PORTAL,Complaint portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Document repository,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,ORGANIZATION,Organization,"{""derived_from_canonical_records"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,OBJECT_TYPE,PERSON,Person,"{""derived_from_canonical_records"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_APPROVED_BY_RECORD_ID,References Approved By Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_BENEFICIARY_ACCOUNT_ID,References Beneficiary Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_CARRIER_ORGANIZATION_RECORD_ID,References Carrier Organization Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_COMPLAINANT_RECORD_ID,References Complainant Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_CONTROLLER_ENTITY_ID,References Controller Entity Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_COUNTERPARTY_PERSON_RECORD_ID,References Counterparty Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_CREATED_BY_RECORD_ID,References Created By Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_DESTINATION_ACCOUNT_ID,References Destination Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_DEVICE_ID,References Device Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_ENTERED_BY_RECORD_ID,References Entered By Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_FORWARDER_PERSON_RECORD_ID,References Forwarder Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_HOLDER_ID,References Holder Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_ISSUER_ORGANIZATION_RECORD_ID,References Issuer Organization Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_ISSUER_RECORD_ID,References Issuer Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_LEGAL_LETTER_ID,References Legal Letter Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_MESSAGE_TEMPLATE_ID,References Message Template Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_MESSAGE_THREAD_ID,References Message Thread Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_ORGANIZATION_ID,References Organization Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_PARCEL_ID,References Parcel Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_PERSONA_PROFILE_ID,References Persona Profile Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_PERSON_ID,References Person Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_PERSON_RECORD_ID,References Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_RECIPIENT_PERSON_RECORD_ID,References Recipient Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_RECIPIENT_RECORD_ID,References Recipient Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_RELATED_INVOICE_ID,References Related Invoice Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_RELATED_OBJECT_ID,References Related Object Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_RELATED_PARCEL_ID,References Related Parcel Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_RELATED_THREAD_ID,References Related Thread Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_REPORTED_PERSONA_PROFILE_ID,References Reported Persona Profile Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_REPORTING_PERSON_RECORD_ID,References Reporting Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_REVERSED_TRANSACTION_ID,References Reversed Transaction Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_SENDER_RECORD_ID,References Sender Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_SIGNER_RECORD_ID,References Signer Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_SOCIAL_ACCOUNT_ID,References Social Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,RELATIONSHIP_TYPE,REFERENCES_SOURCE_ACCOUNT_ID,References Source Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1

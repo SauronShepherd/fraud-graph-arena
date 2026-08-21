@@ -1,0 +1,8 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+BISCUIT_RELIEF,ALT-001,CLAIM-DONATION-DIVERSION,"Use processor settlements plus bank totals, or settlement batches plus paid shell invoices.",,2026.07.19.3
+BISCUIT_RELIEF,ALT-002,CLAIM-FALSE-IMPACT,"Use campaign claims versus warehouse distributions, or claims versus beneficiary paid amounts.",,2026.07.19.3
+BISCUIT_RELIEF,ALT-003,CLAIM-ARLO-PRINCIPAL,"Use registry control plus shell ownership, or control plus approval and personal-account evidence.",,2026.07.19.3
+BISCUIT_RELIEF,ALT-004,CLAIM-MINA-KNOWING,"Use authored posts plus impact-count messages, or ad-account control plus reuse instructions.",,2026.07.19.3
+BISCUIT_RELIEF,ALT-005,CLAIM-FELIX-KNOWING,"Use payment approvals plus priority messages, or Red Roof control plus invoice routing.",,2026.07.19.3
+BISCUIT_RELIEF,ALT-006,CLAIM-HOPE-PROTECTED,"Use own donation and no benefits, or complaint plus unpaid volunteer records.",,2026.07.19.3
+BISCUIT_RELIEF,ALT-007,CLAIM-VIOLET-PROTECTED,"Use verified distributions and no payment authority, or warning messages plus volunteer role.",,2026.07.19.3

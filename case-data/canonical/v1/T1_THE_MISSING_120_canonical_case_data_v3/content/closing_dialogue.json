@@ -1,0 +1,86 @@
+[
+  {
+    "sequence": "1",
+    "speaker": "BUSTER",
+    "line": "You found a shortage. That does not prove I took it.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "2",
+    "speaker": "DETECTIVE",
+    "line": "Your shift assignment links you to Register 2.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "3",
+    "speaker": "BUSTER",
+    "line": "I worked there all evening.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "4",
+    "speaker": "DETECTIVE",
+    "line": "The POS audit records a manual no-sale opening under your active session at 9:14.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "5",
+    "speaker": "BUSTER",
+    "line": "A drawer can be opened for many reasons.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "6",
+    "speaker": "DETECTIVE",
+    "line": "The closing reconciliation then records exactly 120 BSC missing.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "7",
+    "speaker": "BUSTER",
+    "line": "That still does not identify where the money went.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "8",
+    "speaker": "DETECTIVE",
+    "line": "Your message does. You admitted taking the same 120 BSC and offered to return it.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "9",
+    "speaker": "BUSTER",
+    "line": "I made a mistake.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "10",
+    "speaker": "DETECTIVE",
+    "line": "The graph establishes access, action, loss, and admission.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "11",
+    "speaker": "BUSTER",
+    "line": "And Nell?",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "12",
+    "speaker": "DETECTIVE",
+    "line": "She filed the report and requested the investigation. No evidence connects her to the loss.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "13",
+    "speaker": "BUSTER",
+    "line": "So every relevant path ends at my node.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "14",
+    "speaker": "DETECTIVE",
+    "line": "Buster Bulldog: primary culprit. Nell Newf: protected reporter. Case closed.",
+    "case_id": "ACADEMY_T01"
+  }
+]

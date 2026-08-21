@@ -1,0 +1,2 @@
+case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version
+LOVE_LEASHES_OFFSHORE,S1,"Love, Leashes & Offshore Transfers",SENIOR,1,1.0.0,2026.07.18.1,ROMANCE_SCAM_PERSONA_FACTORY_MULE_NETWORK_OFFSHORE_TRANSFERS,BSC,,859217,DETERMINISTIC_SYNTHETIC_CURATED,true,true,"All people, personas, companies, banks, jurisdictions, communications, parcels and transfers are fictional and synthetic.",1.0.0

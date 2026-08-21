@@ -1,0 +1,17 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+MADDOG,ROUTE-001,CLAIM-PONZI-FLOW,Bank chronology,1,Genie deposits and payouts within 72 hours,GENIE,2026.07.19.1
+MADDOG,ROUTE-001,CLAIM-PONZI-FLOW,Bank chronology,2,GF-BATCH-01,GRAPHFRAMES,2026.07.19.1
+MADDOG,ROUTE-002,CLAIM-PONZI-FLOW,Liquidity reconstruction,1,A-BLUE-7714 inflows/outflows,GENIE,2026.07.19.1
+MADDOG,ROUTE-002,CLAIM-PONZI-FLOW,Liquidity reconstruction,2,No corresponding asset sale settlements,DOCUMENTS,2026.07.19.1
+MADDOG,ROUTE-003,CLAIM-FALSE-STATEMENTS,Statement/custody,1,Statement claimed trade IDs,GENIE,2026.07.19.1
+MADDOG,ROUTE-003,CLAIM-FALSE-STATEMENTS,Statement/custody,2,No MIK custody confirmation,DOCUMENTS,2026.07.19.1
+MADDOG,ROUTE-004,CLAIM-MAX-CONTROL,Identity and filings,1,Z-MAX group,ZINGG,2026.07.19.1
+MADDOG,ROUTE-004,CLAIM-MAX-CONTROL,Identity and filings,2,DIRECTOR_OF and CONTROLS,DIRECT,2026.07.19.1
+MADDOG,ROUTE-005,CLAIM-DIVERSION,Beneficiary account,1,GF-ACCOUNT-02,GRAPHFRAMES,2026.07.19.1
+MADDOG,ROUTE-005,CLAIM-DIVERSION,Beneficiary account,2,KYC ownership of 9921,DIRECT,2026.07.19.1
+MADDOG,ROUTE-006,CLAIM-SILAS-KNOWING,Warning then solicitation,1,COM-009,COMMUNICATION,2026.07.19.1
+MADDOG,ROUTE-006,CLAIM-SILAS-KNOWING,Warning then solicitation,2,COM-010,COMMUNICATION,2026.07.19.1
+MADDOG,ROUTE-007,CLAIM-NINA-INNOCENT,Access and instructions,1,COM-004,COMMUNICATION,2026.07.19.1
+MADDOG,ROUTE-007,CLAIM-NINA-INNOCENT,Access and instructions,2,COM-019/020,COMMUNICATION,2026.07.19.1
+MADDOG,ROUTE-008,CLAIM-HAZEL-VICTIM,Own loss and no commission,1,Hazel deposit and complaint,GENIE,2026.07.19.1
+MADDOG,ROUTE-008,CLAIM-HAZEL-VICTIM,Own loss and no commission,2,No referral payment to Hazel,GENIE,2026.07.19.1

@@ -1,0 +1,3 @@
+case_id,profile_code,fixture_id,fixture_type,tool_family,selected_record_ids_json,input_payload_json,expected_result_count,expected_payload_json,description,snapshot_version
+PHANTOM_VET,ADULT,NR-Z-001,NO_RESULT_FIXTURES,ZINGG,"[""PR-TESSA-01"",""PR-OLIVE-01"",""PR-BENNY-01""]","{""criterion"":""HIGH"",""fixture_id"":""NR-Z-001"",""selected_record_ids"":""PR-TESSA-01;PR-OLIVE-01;PR-BENNY-01"",""tool_family"":""ZINGG""}",0,,HIGH,2026.07.18.1
+PHANTOM_VET,ADULT,NR-GF-001,NO_RESULT_FIXTURES,GRAPHFRAMES,"[""PR-OLIVE-01"",""PR-BENNY-01""]","{""criterion"":""accounts,devices,phones,licenses"",""fixture_id"":""NR-GF-001"",""selected_record_ids"":""PR-OLIVE-01;PR-BENNY-01"",""tool_family"":""GRAPHFRAMES""}",0,,"accounts,devices,phones,licenses",2026.07.18.1

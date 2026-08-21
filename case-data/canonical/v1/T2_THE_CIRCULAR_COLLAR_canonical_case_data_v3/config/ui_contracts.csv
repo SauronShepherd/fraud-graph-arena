@@ -1,0 +1,17 @@
+case_id,semantic_name,data_testid,role,snapshot_version
+ACADEMY_T02,Investigation graph,academy-investigation-graph,region,2026.07.19.1
+ACADEMY_T02,Connection provenance legend,academy-connection-legend,region,2026.07.19.1
+ACADEMY_T02,Zingg candidate panel,academy-zingg-candidates,region,2026.07.19.1
+ACADEMY_T02,GraphFrames results panel,academy-graphframes-results,region,2026.07.19.1
+ACADEMY_T02,Run Zingg candidates,academy-action-zingg,button,2026.07.19.1
+ACADEMY_T02,Run GraphFrames exact matches,academy-action-graphframes,button,2026.07.19.1
+ACADEMY_T02,Ask Genie,academy-action-genie,button,2026.07.19.1
+ACADEMY_T02,Accept identity merge,academy-accept-merge,button,2026.07.19.1
+ACADEMY_T02,Reject identity merge,academy-reject-merge,button,2026.07.19.1
+ACADEMY_T02,Classify connection,academy-classify-connection,button,2026.07.19.1
+ACADEMY_T02,Filter by provenance,academy-filter-provenance,button,2026.07.19.1
+ACADEMY_T02,Trace directed cycle,academy-trace-cycle,button,2026.07.19.1
+ACADEMY_T02,Protect actor,academy-protect-actor,button,2026.07.19.1
+ACADEMY_T02,Case evidence file,academy-case-file,button,2026.07.19.1
+ACADEMY_T02,Submit case,academy-submit,button,2026.07.19.1
+ACADEMY_T02,Restart Academy case,academy-restart,button,2026.07.19.1

@@ -1,0 +1,9 @@
+case_id,profile_code,sequence,record_id,reason_internal,snapshot_version
+BONE_LEDGER,ADULT,1,AF-001,Audit warning,2026.07.18.1
+BONE_LEDGER,ADULT,2,JE-0001,Manual journal,2026.07.18.1
+BONE_LEDGER,ADULT,3,LOAN-001,Loan,2026.07.18.1
+BONE_LEDGER,ADULT,4,INV-0001,Invoice,2026.07.18.1
+BONE_LEDGER,ADULT,5,ASSET-0001,Asset,2026.07.18.1
+BONE_LEDGER,ADULT,6,LOGIN-0001,Shared close device,2026.07.18.1
+BONE_LEDGER,ADULT,7,OR-HARBOR-SPV-01,Lawful SPV complexity,2026.07.18.1
+BONE_LEDGER,ADULT,8,OR-IRON-01,Legitimate project vendor,2026.07.18.1

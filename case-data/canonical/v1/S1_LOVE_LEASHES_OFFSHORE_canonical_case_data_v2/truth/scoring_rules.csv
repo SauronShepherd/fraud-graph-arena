@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+LOVE_LEASHES_OFFSHORE,SCORE-001,Principal and operating network,190,0.19,"Correct principal, operators and controlled organizations.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SCORE-002,Persona resolution and provenance,160,0.16,"Connect profiles, media, devices, accounts and controllers without over-merging.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SCORE-003,Grooming and demand mechanism,130,0.13,Reconstruct staged manipulation and fee requests respectfully.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SCORE-004,Financial and offshore flow,190,0.19,"Trace intermediaries, offshore layering and distributions.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SCORE-005,Mule-role differentiation,120,0.12,"Distinguish knowing, unwitting and innocent roles.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SCORE-006,Victim and legitimate-actor protection,100,0.1,Avoid victim blame and preserve lawful comparators.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SCORE-007,Evidence diversity,70,0.07,"Use identity, communication, parcel, legal, device and financial evidence.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,SCORE-008,Efficiency,40,0.04,Reach a defensible result under the Senior economy.,2026.07.18.1

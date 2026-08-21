@@ -1,0 +1,2266 @@
+[
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "1",
+    "column_name": "query_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "2",
+    "column_name": "query_text",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Canonical or semantically matched Genie query."
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "3",
+    "column_name": "query_class",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "4",
+    "column_name": "match_mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "5",
+    "column_name": "quoted_cost",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "6",
+    "column_name": "result_status",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "7",
+    "column_name": "revealed_record_ids",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Semicolon-delimited records revealed by the action."
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "8",
+    "column_name": "revealed_relationship_ids",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Semicolon-delimited relationships revealed by the action."
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "9",
+    "column_name": "player_message",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "10",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "analytics/genie_query_fixtures.csv",
+    "column_position": "11",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "1",
+    "column_name": "match_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "2",
+    "column_name": "rule_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "3",
+    "column_name": "relationship_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "4",
+    "column_name": "left_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "5",
+    "column_name": "right_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "6",
+    "column_name": "exact_field",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "7",
+    "column_name": "masked_exact_value",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "8",
+    "column_name": "normalization_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "9",
+    "column_name": "generation_mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "10",
+    "column_name": "actual_engine_run",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "11",
+    "column_name": "ambiguity_warning",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "12",
+    "column_name": "supporting_record_ids",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "13",
+    "column_name": "content_role",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Authoring-only narrative or truth role."
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "14",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "analytics/graphframes_exact_relationships.csv",
+    "column_position": "15",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "1",
+    "column_name": "fixture_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "2",
+    "column_name": "tool",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "3",
+    "column_name": "query_or_rule",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "4",
+    "column_name": "cost",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "5",
+    "column_name": "result_status",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "6",
+    "column_name": "result_count",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "7",
+    "column_name": "player_message",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "8",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "analytics/no_result_fixtures.csv",
+    "column_position": "9",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "1",
+    "column_name": "candidate_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "2",
+    "column_name": "left_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "3",
+    "column_name": "right_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "4",
+    "column_name": "entity_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "5",
+    "column_name": "confidence_band",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "6",
+    "column_name": "agreement_fields",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "7",
+    "column_name": "disagreement_fields",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "8",
+    "column_name": "missing_fields",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "9",
+    "column_name": "generation_mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "10",
+    "column_name": "actual_engine_run",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "11",
+    "column_name": "provenance_note",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "12",
+    "column_name": "expected_truth",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "13",
+    "column_name": "content_role",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Authoring-only narrative or truth role."
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "14",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "analytics/zingg_candidate_relationships.csv",
+    "column_position": "15",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "1",
+    "column_name": "relationship_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable relationship identifier."
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "2",
+    "column_name": "relationship_family",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "3",
+    "column_name": "relationship_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "4",
+    "column_name": "source_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Source endpoint of a relationship."
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "5",
+    "column_name": "target_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Target endpoint of a relationship."
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "6",
+    "column_name": "directed",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Whether relationship direction is semantically meaningful."
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "7",
+    "column_name": "event_time",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "8",
+    "column_name": "supporting_record_ids",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "9",
+    "column_name": "player_safe_summary",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "10",
+    "column_name": "provenance",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "11",
+    "column_name": "content_role",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Authoring-only narrative or truth role."
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "12",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "authoring/direct_relationships.csv",
+    "column_position": "13",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "1",
+    "column_name": "record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable record identifier."
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "2",
+    "column_name": "record_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "3",
+    "column_name": "display_label",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "4",
+    "column_name": "source_system_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "5",
+    "column_name": "occurred_at",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "6",
+    "column_name": "safe_summary",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "7",
+    "column_name": "safe_attributes_json",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Player-safe JSON attributes."
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "8",
+    "column_name": "provenance_ref",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "9",
+    "column_name": "content_role",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Authoring-only narrative or truth role."
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "10",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "authoring/records.csv",
+    "column_position": "11",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "1",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "2",
+    "column_name": "short_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "3",
+    "column_name": "title",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "4",
+    "column_name": "mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "5",
+    "column_name": "ranked",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "6",
+    "column_name": "career_unlock",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "7",
+    "column_name": "seed",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "8",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "9",
+    "column_name": "principal_contract",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "10",
+    "column_name": "first_attempt_guidance",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/case_definition.csv",
+    "column_position": "11",
+    "column_name": "replay_medals_noncompetitive",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/difficulty_profiles.csv",
+    "column_position": "1",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "config/difficulty_profiles.csv",
+    "column_position": "2",
+    "column_name": "difficulty",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/difficulty_profiles.csv",
+    "column_position": "3",
+    "column_name": "difficulty_name",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/difficulty_profiles.csv",
+    "column_position": "4",
+    "column_name": "label",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/difficulty_profiles.csv",
+    "column_position": "5",
+    "column_name": "cumulative",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/difficulty_profiles.csv",
+    "column_position": "6",
+    "column_name": "starting_credits",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/difficulty_profiles.csv",
+    "column_position": "7",
+    "column_name": "description",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "1",
+    "column_name": "starting_credits",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "2",
+    "column_name": "manual_cost",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "3",
+    "column_name": "zingg_cost",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "4",
+    "column_name": "graphframes_cost",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "5",
+    "column_name": "genie_cost",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "6",
+    "column_name": "quote_required",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "7",
+    "column_name": "no_result_charged",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "8",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "config/economy.csv",
+    "column_position": "9",
+    "column_name": "mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/initial_case_items.csv",
+    "column_position": "1",
+    "column_name": "sequence",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/initial_case_items.csv",
+    "column_position": "2",
+    "column_name": "record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable record identifier."
+  },
+  {
+    "file_path": "config/initial_case_items.csv",
+    "column_position": "3",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "config/object_type_registry.csv",
+    "column_position": "1",
+    "column_name": "object_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/object_type_registry.csv",
+    "column_position": "2",
+    "column_name": "display_name",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/object_type_registry.csv",
+    "column_position": "3",
+    "column_name": "accusable",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/object_type_registry.csv",
+    "column_position": "4",
+    "column_name": "is_infrastructure",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/object_type_registry.csv",
+    "column_position": "5",
+    "column_name": "schema_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/relationship_type_registry.csv",
+    "column_position": "1",
+    "column_name": "relationship_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/relationship_type_registry.csv",
+    "column_position": "2",
+    "column_name": "relationship_family",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/relationship_type_registry.csv",
+    "column_position": "3",
+    "column_name": "directed",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Whether relationship direction is semantically meaningful."
+  },
+  {
+    "file_path": "config/relationship_type_registry.csv",
+    "column_position": "4",
+    "column_name": "schema_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "1",
+    "column_name": "reveal_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "2",
+    "column_name": "sequence",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "3",
+    "column_name": "trigger_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "4",
+    "column_name": "trigger_value",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "5",
+    "column_name": "reveal_record_ids",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "6",
+    "column_name": "reveal_relationship_ids",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "7",
+    "column_name": "tutorial_step_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/reveal_plan.csv",
+    "column_position": "8",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "config/source_system_registry.csv",
+    "column_position": "1",
+    "column_name": "source_system_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/source_system_registry.csv",
+    "column_position": "2",
+    "column_name": "display_name",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/source_system_registry.csv",
+    "column_position": "3",
+    "column_name": "trust_level",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/tool_availability.csv",
+    "column_position": "1",
+    "column_name": "tool",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/tool_availability.csv",
+    "column_position": "2",
+    "column_name": "available",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/tool_availability.csv",
+    "column_position": "3",
+    "column_name": "tutorial_state",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/tool_availability.csv",
+    "column_position": "4",
+    "column_name": "reason",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/tool_availability.csv",
+    "column_position": "5",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "config/ui_contract.csv",
+    "column_position": "1",
+    "column_name": "semantic_name",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/ui_contract.csv",
+    "column_position": "2",
+    "column_name": "data_testid",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/ui_contract.csv",
+    "column_position": "3",
+    "column_name": "role",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "config/ui_contract.csv",
+    "column_position": "4",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "1",
+    "column_name": "record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable record identifier."
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "2",
+    "column_name": "record_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "3",
+    "column_name": "display_label",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "4",
+    "column_name": "source_system_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "5",
+    "column_name": "occurred_at",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "6",
+    "column_name": "safe_summary",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "7",
+    "column_name": "safe_attributes_json",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Player-safe JSON attributes."
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "8",
+    "column_name": "provenance_ref",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "9",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "genie/academy/entities.csv",
+    "column_position": "10",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "1",
+    "column_name": "relationship_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable relationship identifier."
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "2",
+    "column_name": "relationship_family",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "3",
+    "column_name": "relationship_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "4",
+    "column_name": "source_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Source endpoint of a relationship."
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "5",
+    "column_name": "target_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Target endpoint of a relationship."
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "6",
+    "column_name": "directed",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Whether relationship direction is semantically meaningful."
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "7",
+    "column_name": "event_time",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "8",
+    "column_name": "supporting_record_ids",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "9",
+    "column_name": "player_safe_summary",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "10",
+    "column_name": "provenance",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "11",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "genie/academy/relationships.csv",
+    "column_position": "12",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "narrative/closing_dialogue.csv",
+    "column_position": "1",
+    "column_name": "sequence",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "narrative/closing_dialogue.csv",
+    "column_position": "2",
+    "column_name": "speaker",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "narrative/closing_dialogue.csv",
+    "column_position": "3",
+    "column_name": "line",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "narrative/closing_dialogue.csv",
+    "column_position": "4",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "narrative/opening_dialogue.csv",
+    "column_position": "1",
+    "column_name": "sequence",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "narrative/opening_dialogue.csv",
+    "column_position": "2",
+    "column_name": "speaker",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "narrative/opening_dialogue.csv",
+    "column_position": "3",
+    "column_name": "line",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "narrative/opening_dialogue.csv",
+    "column_position": "4",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "1",
+    "column_name": "query_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "2",
+    "column_name": "query_text",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Canonical or semantically matched Genie query."
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "3",
+    "column_name": "query_class",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "4",
+    "column_name": "match_mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "5",
+    "column_name": "quoted_cost",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "6",
+    "column_name": "result_status",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "7",
+    "column_name": "revealed_record_ids",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Semicolon-delimited records revealed by the action."
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "8",
+    "column_name": "revealed_relationship_ids",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Semicolon-delimited relationships revealed by the action."
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "9",
+    "column_name": "player_message",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "10",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "published/academy/genie_query_fixtures.csv",
+    "column_position": "11",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "1",
+    "column_name": "match_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "2",
+    "column_name": "rule_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "3",
+    "column_name": "relationship_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "4",
+    "column_name": "left_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "5",
+    "column_name": "right_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "6",
+    "column_name": "exact_field",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "7",
+    "column_name": "masked_exact_value",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "8",
+    "column_name": "normalization_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "9",
+    "column_name": "generation_mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "10",
+    "column_name": "actual_engine_run",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "11",
+    "column_name": "ambiguity_warning",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "12",
+    "column_name": "supporting_record_ids",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "13",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "published/academy/graphframes_exact_relationships.csv",
+    "column_position": "14",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "published/academy/initial_case_items.csv",
+    "column_position": "1",
+    "column_name": "sequence",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/initial_case_items.csv",
+    "column_position": "2",
+    "column_name": "record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable record identifier."
+  },
+  {
+    "file_path": "published/academy/initial_case_items.csv",
+    "column_position": "3",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "1",
+    "column_name": "relationship_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable relationship identifier."
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "2",
+    "column_name": "relationship_family",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "3",
+    "column_name": "relationship_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "4",
+    "column_name": "source_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Source endpoint of a relationship."
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "5",
+    "column_name": "target_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Target endpoint of a relationship."
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "6",
+    "column_name": "directed",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Whether relationship direction is semantically meaningful."
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "7",
+    "column_name": "event_time",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "8",
+    "column_name": "supporting_record_ids",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "9",
+    "column_name": "player_safe_summary",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "10",
+    "column_name": "provenance",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "11",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "published/academy/player_safe_direct_relationships.csv",
+    "column_position": "12",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "1",
+    "column_name": "record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable record identifier."
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "2",
+    "column_name": "record_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "3",
+    "column_name": "display_label",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "4",
+    "column_name": "source_system_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "5",
+    "column_name": "occurred_at",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "6",
+    "column_name": "safe_summary",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "7",
+    "column_name": "safe_attributes_json",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Player-safe JSON attributes."
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "8",
+    "column_name": "provenance_ref",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "9",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "published/academy/player_safe_records.csv",
+    "column_position": "10",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "1",
+    "column_name": "candidate_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "2",
+    "column_name": "left_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "3",
+    "column_name": "right_record_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "4",
+    "column_name": "entity_type",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "5",
+    "column_name": "confidence_band",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "6",
+    "column_name": "agreement_fields",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "7",
+    "column_name": "disagreement_fields",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "8",
+    "column_name": "missing_fields",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "9",
+    "column_name": "generation_mode",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "10",
+    "column_name": "actual_engine_run",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "11",
+    "column_name": "provenance_note",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "12",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "published/academy/zingg_candidate_relationships.csv",
+    "column_position": "13",
+    "column_name": "snapshot_version",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Dataset snapshot version."
+  },
+  {
+    "file_path": "truth/ending_thresholds.csv",
+    "column_position": "1",
+    "column_name": "ending_code",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/ending_thresholds.csv",
+    "column_position": "2",
+    "column_name": "priority",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/ending_thresholds.csv",
+    "column_position": "3",
+    "column_name": "condition",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/ending_thresholds.csv",
+    "column_position": "4",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "1",
+    "column_name": "entity_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "2",
+    "column_name": "entity_type",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "3",
+    "column_name": "canonical_name",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "4",
+    "column_name": "expected_classification",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "5",
+    "column_name": "culpability",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "6",
+    "column_name": "harm_status",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "7",
+    "column_name": "protected_notes",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/evaluator_truth.csv",
+    "column_position": "8",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "truth/required_evidence.csv",
+    "column_position": "1",
+    "column_name": "evidence_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/required_evidence.csv",
+    "column_position": "2",
+    "column_name": "claim_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/required_evidence.csv",
+    "column_position": "3",
+    "column_name": "record_ids",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/required_evidence.csv",
+    "column_position": "4",
+    "column_name": "description",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/required_evidence.csv",
+    "column_position": "5",
+    "column_name": "required",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/required_evidence.csv",
+    "column_position": "6",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "truth/restart_fixtures.csv",
+    "column_position": "1",
+    "column_name": "fixture_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/restart_fixtures.csv",
+    "column_position": "2",
+    "column_name": "initial_round_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/restart_fixtures.csv",
+    "column_position": "3",
+    "column_name": "initial_submission_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/restart_fixtures.csv",
+    "column_position": "4",
+    "column_name": "restart_operation",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/restart_fixtures.csv",
+    "column_position": "5",
+    "column_name": "new_round_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/restart_fixtures.csv",
+    "column_position": "6",
+    "column_name": "original_submission_unchanged",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/restart_fixtures.csv",
+    "column_position": "7",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "truth/scoring_rules.csv",
+    "column_position": "1",
+    "column_name": "scoring_rule_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/scoring_rules.csv",
+    "column_position": "2",
+    "column_name": "component",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/scoring_rules.csv",
+    "column_position": "3",
+    "column_name": "max_points",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/scoring_rules.csv",
+    "column_position": "4",
+    "column_name": "description",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/scoring_rules.csv",
+    "column_position": "5",
+    "column_name": "score_weight",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/scoring_rules.csv",
+    "column_position": "6",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "truth/submission_immutability_fixtures.csv",
+    "column_position": "1",
+    "column_name": "fixture_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/submission_immutability_fixtures.csv",
+    "column_position": "2",
+    "column_name": "submission_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/submission_immutability_fixtures.csv",
+    "column_position": "3",
+    "column_name": "original_payload_hash",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/submission_immutability_fixtures.csv",
+    "column_position": "4",
+    "column_name": "attempted_operation",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/submission_immutability_fixtures.csv",
+    "column_position": "5",
+    "column_name": "expected_result",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/submission_immutability_fixtures.csv",
+    "column_position": "6",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "1",
+    "column_name": "scenario_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "2",
+    "column_name": "title",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "3",
+    "column_name": "action_sequence_json",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "4",
+    "column_name": "submitted_suspects_json",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "5",
+    "column_name": "expected_score",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "6",
+    "column_name": "expected_ending",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "7",
+    "column_name": "expected_credits_remaining",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "8",
+    "column_name": "false_accusations",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "9",
+    "column_name": "notes",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": ""
+  },
+  {
+    "file_path": "truth/test_scenarios.csv",
+    "column_position": "10",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "true",
+    "description": "Stable Academy case identifier."
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "1",
+    "column_name": "step_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "2",
+    "column_name": "sequence",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "3",
+    "column_name": "title",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "4",
+    "column_name": "instruction",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "5",
+    "column_name": "focus_testid",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "6",
+    "column_name": "required_action",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "7",
+    "column_name": "completion_condition",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "8",
+    "column_name": "hint_text",
+    "nullable": "true",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "9",
+    "column_name": "blocking",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": ""
+  },
+  {
+    "file_path": "tutorial/tutorial_steps.csv",
+    "column_position": "10",
+    "column_name": "case_id",
+    "nullable": "false",
+    "truth_only": "false",
+    "description": "Stable Academy case identifier."
+  }
+]

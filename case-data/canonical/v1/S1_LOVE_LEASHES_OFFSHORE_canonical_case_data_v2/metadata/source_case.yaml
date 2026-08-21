@@ -1,0 +1,17 @@
+case_id: LOVE_LEASHES_OFFSHORE
+case_version: 1.0.0
+snapshot_version: 2026.07.18.1
+case_order: S1
+difficulty: SENIOR_DOG
+single_difficulty_only: true
+canonical_plan_alias: V1
+title: Love, Leashes & Offshore Transfers
+generation_seed: 859217
+currency: BSC
+analytical_relationships:
+  generation_mode: CURATED_APPROXIMATION
+  actual_engine_run: false
+victim_respect:
+  forbid_victim_blaming: true
+  require_mule_role_differentiation: true
+  require_genuine_relationship_comparator: true

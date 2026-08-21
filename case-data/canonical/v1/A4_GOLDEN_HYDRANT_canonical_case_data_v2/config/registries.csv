@@ -1,0 +1,91 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+GOLDEN_HYDRANT,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,BANK_ACCOUNT,Bank Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,TENDER_PACKAGE,Tender Package,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,BID,Bid,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,BID_LINE,Bid Line,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,BID_EVALUATION,Bid Evaluation,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,PUBLIC_CONTRACT,Public Contract,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,CHANGE_ORDER,Change Order,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,SUBCONTRACT,Subcontract,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,HYDRANT_ASSET,Hydrant Asset,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,WORK_ORDER,Work Order,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,INSTALLATION_EVENT,Installation Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,INSPECTION_EVENT,Inspection Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,VENDOR_INVOICE,Vendor Invoice,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,INVOICE_LINE,Invoice Line,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,PAYMENT_CERTIFICATE,Payment Certificate,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,BANK_TRANSACTION,Bank Transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,COMMUNICATION,Communication,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,COMPLAINT,Complaint,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,DIRECTOR_OF,Director Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,CONTROLS,Controls,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,ISSUED,Issued,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SUBMITTED,Submitted,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,BIDS_FOR,Bids For,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,CONTAINS,Contains,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,EVALUATED,Evaluated,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,AWARDED,Awarded,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,MODIFIES,Modifies,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SUBCONTRACTED_TO,Subcontracted To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,LOCATED_AT,Located At,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,REQUESTED,Requested,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,INSTALLED,Installed,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,INSPECTED,Inspected,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,CERTIFIED,Certified,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,APPROVED,Approved,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,PAID_TO,Paid To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,RAISED_BY,Raised By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,USED_DEVICE,Used Device,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SUPPORTS,Supports,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_BID_TEMPLATE,Same Bid Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_UNIT_PRICE_FINGERPRINT,Same Unit Price Fingerprint,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_BIDDER_IP,Same Bidder Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_APPROVAL_SIGNATURE,Same Approval Signature,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_PAYMENT_ACCOUNT,Same Payment Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_PAYMENT_BATCH,Same Payment Batch,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_HYDRANT_SERIAL,Same Hydrant Serial,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_GPS_POINT,Same Gps Point,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_INSTALLATION_PHOTO,Same Installation Photo,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_INSPECTION_PHOTO,Same Inspection Photo,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_INSPECTION_SIGNATURE,Same Inspection Signature,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_OFFICE_IP,Same Office Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_REGISTERED_ADDRESS,Same Registered Address,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,SAME_CONTACT_PHONE,Same Contact Phone,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,RELATIONSHIP_TYPE,MAY_HAVE_RIGGED_BID,May Have Rigged Bid,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,CITY_HR,Noir City human resources,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,CORP_REGISTRY,Fictional corporate registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,PROCUREMENT_PORTAL,Municipal procurement portal,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,BID_VAULT,Sealed-bid archive,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,EVALUATION_SYSTEM,Tender scoring system,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,CONTRACT_REPOSITORY,Public contract repository,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,PUBLIC_WORKS_ERP,Public works ERP,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,ASSET_REGISTER,Municipal hydrant asset register,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,GIS_SYSTEM,Municipal GIS,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,FIELD_APP,Field installation and inspection app,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,FIRE_DEPARTMENT,Fire-department operations records,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,AP_SYSTEM,Accounts payable system,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,BANK_LEDGER,Lantern Community Bank ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,BANK_KYC,Bank KYC records,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,EMAIL,Email archive,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,DEVICE_LOG,Device telemetry,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,AUDIT_FILE,Municipal audit workpapers,"{""trust_level"":""HIGH""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,COMPLAINT_PORTAL,Complaint portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Municipal document repository,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.18.1
+GOLDEN_HYDRANT,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.18.1

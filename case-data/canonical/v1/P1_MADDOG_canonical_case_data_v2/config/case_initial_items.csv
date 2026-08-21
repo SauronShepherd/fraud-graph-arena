@@ -1,0 +1,13 @@
+case_id,profile_code,sequence,record_id,reason_internal,snapshot_version
+MADDOG,PUPPY,1,CMP-001,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,2,ST-001,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,3,TX-001-D,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,4,TX-001-P,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,5,OR-MIK-01,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,6,COM-008,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,7,REF-001,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,8,COM-004,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,9,DOC-031,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,10,A-BLUE-7714,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,11,PR-MAXWELL-01,Curated starting item,2026.07.19.1
+MADDOG,PUPPY,12,PR-HAZEL-01,Curated starting item,2026.07.19.1

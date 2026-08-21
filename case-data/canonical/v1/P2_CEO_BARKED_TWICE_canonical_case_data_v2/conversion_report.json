@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "source_archive": "P2_CEO_BARKED_TWICE_PUPPY_case_datasets_v1(1).zip",
+  "case_id": "CEO_BARKED_TWICE",
+  "short_id": "P2",
+  "profile_code": "PUPPY",
+  "canonical_model_version": "1.0.0",
+  "canonical_table_count": 32,
+  "row_counts": {
+    "config/cases.csv": 1,
+    "config/case_profiles.csv": 1,
+    "config/case_initial_items.csv": 12,
+    "config/ui_contracts.csv": 0,
+    "config/registries.csv": 81,
+    "config/reveal_steps.csv": 0,
+    "config/genie_benchmarks.csv": 13,
+    "authoring/records.csv": 663,
+    "authoring/record_attributes.csv": 7672,
+    "authoring/relationships.csv": 2049,
+    "analytics/entity_resolution_candidates.csv": 36,
+    "analytics/exact_matches.csv": 56,
+    "analytics/tool_fixtures.csv": 2,
+    "published/records.csv": 642,
+    "published/relationships.csv": 721,
+    "published/entity_resolution_candidates.csv": 36,
+    "published/exact_matches.csv": 56,
+    "genie/records.csv": 622,
+    "genie/record_attributes.csv": 6004,
+    "genie/relationships.csv": 1039,
+    "truth/entities.csv": 22,
+    "truth/claims.csv": 10,
+    "truth/evidence_requirements.csv": 10,
+    "truth/evidence_routes.csv": 17,
+    "truth/allowed_alternatives.csv": 7,
+    "truth/forbidden_conclusions.csv": 5,
+    "truth/scoring_rules.csv": 8,
+    "truth/ending_rules.csv": 6,
+    "truth/test_scenarios.csv": 0,
+    "truth/assertions.csv": 0,
+    "validation/checks.csv": 15,
+    "validation/metrics.csv": 19
+  },
+  "empty_tables_with_headers": [
+    "config/reveal_steps.csv",
+    "config/ui_contracts.csv",
+    "truth/assertions.csv",
+    "truth/test_scenarios.csv"
+  ],
+  "zero_byte_csv_count": 0,
+  "conversion_notes": [
+    "Canonical physical table names are shared by all cases.",
+    "Every canonical CSV is present and retains its exact header when empty.",
+    "Case-specific authoring rows were normalized into records, record_attributes, and relationships.",
+    "Published and Genie-safe layers were converted from their original safe sources.",
+    "The package contains one non-cumulative PUPPY profile."
+  ],
+  "validator_output": [
+    "PASS",
+    "Canonical model: 1.0.0",
+    "Validated tables: 32"
+  ],
+  "strict_validation": "PASS"
+}

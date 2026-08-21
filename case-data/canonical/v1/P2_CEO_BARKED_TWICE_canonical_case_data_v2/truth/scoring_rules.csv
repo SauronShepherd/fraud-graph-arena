@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+CEO_BARKED_TWICE,SCORE-001,Mechanism and principal,250,0.25,Correct mechanism and Rowan as principal.,2026.07.19.2
+CEO_BARKED_TWICE,SCORE-002,"Roles, culpability, and protected actors",190,0.19,Correct Ivy/Grant roles and protection of Bea/Penny/Conrad/vendor.,2026.07.19.2
+CEO_BARKED_TWICE,SCORE-003,Invoice substitution and money flow,190,0.19,Reconstruct 2207-to-8842 substitution and split.,2026.07.19.2
+CEO_BARKED_TWICE,SCORE-004,Identity conclusions,100,0.1,Resolve real aliases and reject hard negatives.,2026.07.19.2
+CEO_BARKED_TWICE,SCORE-005,Relationship interpretation,90,0.09,Use exact/shared infrastructure without overclaiming.,2026.07.19.2
+CEO_BARKED_TWICE,SCORE-006,Evidence quality and diversity,120,0.12,Use independent evidence families.,2026.07.19.2
+CEO_BARKED_TWICE,SCORE-007,Manipulation tactics,30,0.03,"Urgency, authority, secrecy, fear and control bypass.",2026.07.19.2
+CEO_BARKED_TWICE,SCORE-008,Efficiency,30,0.03,Efficient use of credits and bounded requests.,2026.07.19.2

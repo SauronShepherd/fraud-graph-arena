@@ -1,0 +1,6059 @@
+[
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "1",
+    "column_name": "fixture_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "2",
+    "column_name": "tool_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "3",
+    "column_name": "selected_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "4",
+    "column_name": "criterion",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "5",
+    "column_name": "expected_result_count",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/no_result_fixtures.csv",
+    "column_order": "6",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "1",
+    "column_name": "match_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "2",
+    "column_name": "rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "4",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "5",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "6",
+    "column_name": "exact_field",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "7",
+    "column_name": "masked_exact_value",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "8",
+    "column_name": "normalization_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "10",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "11",
+    "column_name": "ambiguity_warning",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "12",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "13",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "analytics/relief_graphframes_exact_relationships.csv",
+    "column_order": "14",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "1",
+    "column_name": "candidate_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "2",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "3",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "4",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "5",
+    "column_name": "confidence_band",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "6",
+    "column_name": "estimated_score",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "7",
+    "column_name": "agreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "8",
+    "column_name": "disagreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "9",
+    "column_name": "missing_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "10",
+    "column_name": "expected_truth",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "11",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "12",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "13",
+    "column_name": "provenance_note",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "14",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "analytics/relief_zingg_candidate_relationships.csv",
+    "column_order": "15",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "1",
+    "column_name": "account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "2",
+    "column_name": "holder_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "3",
+    "column_name": "holder_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "4",
+    "column_name": "account_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "5",
+    "column_name": "account_number_synthetic",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "6",
+    "column_name": "masked_account",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "7",
+    "column_name": "opening_balance",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "8",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "9",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_accounts.csv",
+    "column_order": "10",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "1",
+    "column_name": "address_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "2",
+    "column_name": "street",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "3",
+    "column_name": "city",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "4",
+    "column_name": "region",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "5",
+    "column_name": "postal_code",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "6",
+    "column_name": "country",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "7",
+    "column_name": "normalized_address",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "8",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_addresses.csv",
+    "column_order": "9",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "1",
+    "column_name": "advertisement_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "2",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "3",
+    "column_name": "ad_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "4",
+    "column_name": "created_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "5",
+    "column_name": "published_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "6",
+    "column_name": "spend_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "7",
+    "column_name": "impressions",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "8",
+    "column_name": "clicks",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "9",
+    "column_name": "image_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "10",
+    "column_name": "claim_theme",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "11",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "12",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_advertisements.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "1",
+    "column_name": "beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "2",
+    "column_name": "beneficiary_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "3",
+    "column_name": "program_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "4",
+    "column_name": "service_area",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "5",
+    "column_name": "requested_families",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "6",
+    "column_name": "verified_capacity",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "7",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "8",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_beneficiary_programs.csv",
+    "column_order": "9",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "1",
+    "column_name": "campaign_post_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "2",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "3",
+    "column_name": "author_person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "4",
+    "column_name": "published_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "5",
+    "column_name": "platform",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "6",
+    "column_name": "claim_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "7",
+    "column_name": "claim_value",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "8",
+    "column_name": "image_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "9",
+    "column_name": "campaign_template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "10",
+    "column_name": "ad_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "11",
+    "column_name": "safe_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "13",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_campaign_posts.csv",
+    "column_order": "14",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "1",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "2",
+    "column_name": "campaign_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "3",
+    "column_name": "operator_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "4",
+    "column_name": "launch_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "5",
+    "column_name": "close_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "6",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "7",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "8",
+    "column_name": "campaign_template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "9",
+    "column_name": "ad_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "10",
+    "column_name": "claimed_families_helped",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "11",
+    "column_name": "claimed_aid_value",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "12",
+    "column_name": "campaign_truth_category",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "13",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "14",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_campaigns.csv",
+    "column_order": "15",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "1",
+    "column_name": "communication_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "2",
+    "column_name": "communication_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "3",
+    "column_name": "sent_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "4",
+    "column_name": "sender_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "5",
+    "column_name": "recipient_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "6",
+    "column_name": "subject",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "7",
+    "column_name": "safe_body",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "8",
+    "column_name": "thread_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "9",
+    "column_name": "attachment_document_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "11",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_communications.csv",
+    "column_order": "12",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "1",
+    "column_name": "complaint_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "2",
+    "column_name": "complainant_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "3",
+    "column_name": "submitted_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "4",
+    "column_name": "complaint_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "5",
+    "column_name": "summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "6",
+    "column_name": "related_campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "7",
+    "column_name": "related_donation_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "8",
+    "column_name": "related_beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "9",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "11",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_complaints.csv",
+    "column_order": "12",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_devices.csv",
+    "column_order": "1",
+    "column_name": "device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_devices.csv",
+    "column_order": "2",
+    "column_name": "device_fingerprint",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_devices.csv",
+    "column_order": "3",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_devices.csv",
+    "column_order": "4",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_devices.csv",
+    "column_order": "5",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "1",
+    "column_name": "relationship_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "2",
+    "column_name": "relationship_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "4",
+    "column_name": "source_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "5",
+    "column_name": "target_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "6",
+    "column_name": "event_time",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "7",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "8",
+    "column_name": "player_safe_summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "9",
+    "column_name": "provenance",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "10",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_direct_relationships.csv",
+    "column_order": "11",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "1",
+    "column_name": "distribution_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "2",
+    "column_name": "beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "3",
+    "column_name": "distributed_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "4",
+    "column_name": "aid_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "5",
+    "column_name": "units_distributed",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "6",
+    "column_name": "estimated_value",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "7",
+    "column_name": "warehouse_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "8",
+    "column_name": "funding_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "9",
+    "column_name": "verified_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "11",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_distributions.csv",
+    "column_order": "12",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "1",
+    "column_name": "document_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "2",
+    "column_name": "document_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "3",
+    "column_name": "title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "4",
+    "column_name": "issued_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "5",
+    "column_name": "issuer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "6",
+    "column_name": "signer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "7",
+    "column_name": "related_campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "8",
+    "column_name": "related_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "9",
+    "column_name": "related_beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "10",
+    "column_name": "document_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "11",
+    "column_name": "template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "13",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_documents.csv",
+    "column_order": "14",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "1",
+    "column_name": "domain_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "2",
+    "column_name": "domain_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "3",
+    "column_name": "organization_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "4",
+    "column_name": "domain_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "5",
+    "column_name": "registered_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "6",
+    "column_name": "registrar",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "7",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_domains.csv",
+    "column_order": "8",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "1",
+    "column_name": "donation_page_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "2",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "3",
+    "column_name": "page_url",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "4",
+    "column_name": "domain_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "5",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "6",
+    "column_name": "payout_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "7",
+    "column_name": "page_template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "8",
+    "column_name": "contact_mailbox",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "9",
+    "column_name": "created_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "11",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_donation_pages.csv",
+    "column_order": "12",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "1",
+    "column_name": "donation_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "2",
+    "column_name": "donor_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "3",
+    "column_name": "donation_page_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "4",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "5",
+    "column_name": "donated_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "6",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "8",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "9",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "10",
+    "column_name": "processor_clearing_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "11",
+    "column_name": "donor_message",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "13",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_donations.csv",
+    "column_order": "14",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "1",
+    "column_name": "grant_request_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "2",
+    "column_name": "beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "3",
+    "column_name": "requested_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "4",
+    "column_name": "requested_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "5",
+    "column_name": "approved_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "6",
+    "column_name": "paid_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "7",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "8",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "9",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "10",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_grant_requests.csv",
+    "column_order": "11",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "1",
+    "column_name": "login_event_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "3",
+    "column_name": "device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "4",
+    "column_name": "login_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "5",
+    "column_name": "ip_address",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "6",
+    "column_name": "authentication_result",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "7",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "8",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_login_events.csv",
+    "column_order": "9",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "1",
+    "column_name": "organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "2",
+    "column_name": "organization_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "3",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "4",
+    "column_name": "source_record_key",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "5",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "6",
+    "column_name": "domain_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "7",
+    "column_name": "domain_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "8",
+    "column_name": "phone_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "9",
+    "column_name": "phone_normalized",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "10",
+    "column_name": "address_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "11",
+    "column_name": "address_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "12",
+    "column_name": "registration_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "13",
+    "column_name": "recorded_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "14",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_organization_records.csv",
+    "column_order": "15",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_organizations.csv",
+    "column_order": "1",
+    "column_name": "organization_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organizations.csv",
+    "column_order": "2",
+    "column_name": "canonical_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organizations.csv",
+    "column_order": "3",
+    "column_name": "organization_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_organizations.csv",
+    "column_order": "4",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_people.csv",
+    "column_order": "1",
+    "column_name": "person_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_people.csv",
+    "column_order": "2",
+    "column_name": "canonical_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_people.csv",
+    "column_order": "3",
+    "column_name": "truth_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_people.csv",
+    "column_order": "4",
+    "column_name": "culpability",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_people.csv",
+    "column_order": "5",
+    "column_name": "harm_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_people.csv",
+    "column_order": "6",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "1",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "2",
+    "column_name": "person_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "3",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "4",
+    "column_name": "source_record_key",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "5",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "6",
+    "column_name": "email_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "7",
+    "column_name": "email_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "8",
+    "column_name": "phone_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "9",
+    "column_name": "phone_normalized",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "10",
+    "column_name": "address_original",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "11",
+    "column_name": "address_normalized",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "12",
+    "column_name": "partial_identifier",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "13",
+    "column_name": "recorded_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "14",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_person_records.csv",
+    "column_order": "15",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "1",
+    "column_name": "settlement_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "2",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "3",
+    "column_name": "settled_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "4",
+    "column_name": "gross_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "5",
+    "column_name": "processor_fee",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "6",
+    "column_name": "net_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "8",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "9",
+    "column_name": "destination_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "10",
+    "column_name": "donation_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "11",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "12",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_processor_settlements.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "1",
+    "column_name": "repost_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "3",
+    "column_name": "campaign_post_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "4",
+    "column_name": "reposted_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "5",
+    "column_name": "platform",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "6",
+    "column_name": "volunteer_code",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "7",
+    "column_name": "benefit_received",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "8",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "9",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_reposts.csv",
+    "column_order": "10",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "1",
+    "column_name": "transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "2",
+    "column_name": "occurred_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "3",
+    "column_name": "transaction_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "4",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "5",
+    "column_name": "destination_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "6",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "8",
+    "column_name": "reference",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "9",
+    "column_name": "settlement_batch_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "10",
+    "column_name": "entered_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "11",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "12",
+    "column_name": "related_object_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "13",
+    "column_name": "is_reversal",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "14",
+    "column_name": "reversed_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "15",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "16",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_transactions.csv",
+    "column_order": "17",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "1",
+    "column_name": "vendor_invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "2",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "3",
+    "column_name": "invoice_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "4",
+    "column_name": "invoice_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "5",
+    "column_name": "invoice_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "6",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "7",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "8",
+    "column_name": "beneficiary_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "9",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "10",
+    "column_name": "payment_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "11",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "13",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_vendor_invoices.csv",
+    "column_order": "14",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "1",
+    "column_name": "membership_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "3",
+    "column_name": "organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "4",
+    "column_name": "membership_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "5",
+    "column_name": "joined_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "6",
+    "column_name": "volunteer_code",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "7",
+    "column_name": "benefits_received",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "8",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "9",
+    "column_name": "content_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": "Protected authoring purpose."
+  },
+  {
+    "dataset_path": "authoring/relief_volunteer_memberships.csv",
+    "column_order": "10",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/biscuit_relief_genie_benchmarks.csv",
+    "column_order": "1",
+    "column_name": "benchmark_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/biscuit_relief_genie_benchmarks.csv",
+    "column_order": "2",
+    "column_name": "prompt_es",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/biscuit_relief_genie_benchmarks.csv",
+    "column_order": "3",
+    "column_name": "target_view",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/biscuit_relief_genie_benchmarks.csv",
+    "column_order": "4",
+    "column_name": "expected_shape",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/biscuit_relief_genie_benchmarks.csv",
+    "column_order": "5",
+    "column_name": "forbidden_truth_access",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/biscuit_relief_genie_benchmarks.csv",
+    "column_order": "6",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "1",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "2",
+    "column_name": "case_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "3",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "4",
+    "column_name": "title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "5",
+    "column_name": "case_order",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "6",
+    "column_name": "mechanism",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "8",
+    "column_name": "generation_seed",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "10",
+    "column_name": "disclaimer",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "11",
+    "column_name": "difficulty",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "12",
+    "column_name": "single_difficulty_only",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/case_definition.csv",
+    "column_order": "13",
+    "column_name": "source_publication_level",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "1",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "2",
+    "column_name": "difficulty",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "3",
+    "column_name": "difficulty_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "4",
+    "column_name": "label",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "5",
+    "column_name": "starting_credits",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "6",
+    "column_name": "zingg_cost",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "7",
+    "column_name": "graphframes_cost",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "8",
+    "column_name": "genie_cost",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "9",
+    "column_name": "genie_row_limit",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "10",
+    "column_name": "initial_item_count",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/difficulty_profiles.csv",
+    "column_order": "11",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/initial_case_items.csv",
+    "column_order": "1",
+    "column_name": "sequence",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/initial_case_items.csv",
+    "column_order": "2",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/initial_case_items.csv",
+    "column_order": "3",
+    "column_name": "reason_internal",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "1",
+    "column_name": "object_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "2",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "3",
+    "column_name": "accusable",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "4",
+    "column_name": "can_receive_role",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "5",
+    "column_name": "is_infrastructure",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/object_type_registry.csv",
+    "column_order": "6",
+    "column_name": "schema_version",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "1",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "2",
+    "column_name": "relationship_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "3",
+    "column_name": "directed",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "4",
+    "column_name": "player_creatable",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/relationship_type_registry.csv",
+    "column_order": "5",
+    "column_name": "schema_version",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/source_system_registry.csv",
+    "column_order": "1",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/source_system_registry.csv",
+    "column_order": "2",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "config/source_system_registry.csv",
+    "column_order": "3",
+    "column_name": "trust_level",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "1",
+    "column_name": "advertisement_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "2",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "3",
+    "column_name": "ad_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "4",
+    "column_name": "created_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "5",
+    "column_name": "published_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "6",
+    "column_name": "spend_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "7",
+    "column_name": "impressions",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "8",
+    "column_name": "clicks",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "9",
+    "column_name": "image_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "10",
+    "column_name": "claim_theme",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/advertisements.csv",
+    "column_order": "11",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/beneficiaries.csv",
+    "column_order": "1",
+    "column_name": "beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/beneficiaries.csv",
+    "column_order": "2",
+    "column_name": "beneficiary_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/beneficiaries.csv",
+    "column_order": "3",
+    "column_name": "program_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/beneficiaries.csv",
+    "column_order": "4",
+    "column_name": "service_area",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/beneficiaries.csv",
+    "column_order": "5",
+    "column_name": "requested_families",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/beneficiaries.csv",
+    "column_order": "6",
+    "column_name": "verified_capacity",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/beneficiaries.csv",
+    "column_order": "7",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "1",
+    "column_name": "donation_page_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "2",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "3",
+    "column_name": "page_url",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "4",
+    "column_name": "domain_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "5",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "6",
+    "column_name": "payout_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "7",
+    "column_name": "page_template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "8",
+    "column_name": "contact_mailbox",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "9",
+    "column_name": "created_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_pages.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "1",
+    "column_name": "campaign_post_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "2",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "3",
+    "column_name": "author_person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "4",
+    "column_name": "published_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "5",
+    "column_name": "platform",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "6",
+    "column_name": "claim_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "7",
+    "column_name": "claim_value",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "8",
+    "column_name": "image_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "9",
+    "column_name": "campaign_template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "10",
+    "column_name": "ad_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "11",
+    "column_name": "safe_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaign_posts.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "1",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "2",
+    "column_name": "campaign_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "3",
+    "column_name": "operator_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "4",
+    "column_name": "launch_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "5",
+    "column_name": "close_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "6",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "7",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "8",
+    "column_name": "campaign_template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "9",
+    "column_name": "ad_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "10",
+    "column_name": "claimed_families_helped",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "11",
+    "column_name": "claimed_aid_value",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "12",
+    "column_name": "campaign_truth_category",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/campaigns.csv",
+    "column_order": "13",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "1",
+    "column_name": "communication_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "2",
+    "column_name": "communication_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "3",
+    "column_name": "sent_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "4",
+    "column_name": "sender_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "5",
+    "column_name": "recipient_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "6",
+    "column_name": "subject",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "7",
+    "column_name": "safe_body",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "8",
+    "column_name": "thread_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "9",
+    "column_name": "attachment_document_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/communications.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "1",
+    "column_name": "complaint_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "2",
+    "column_name": "complainant_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "3",
+    "column_name": "submitted_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "4",
+    "column_name": "complaint_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "5",
+    "column_name": "summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "6",
+    "column_name": "related_campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "7",
+    "column_name": "related_donation_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "8",
+    "column_name": "related_beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "9",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/complaints.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "1",
+    "column_name": "distribution_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "2",
+    "column_name": "beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "3",
+    "column_name": "distributed_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "4",
+    "column_name": "aid_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "5",
+    "column_name": "units_distributed",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "6",
+    "column_name": "estimated_value",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "7",
+    "column_name": "warehouse_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "8",
+    "column_name": "funding_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "9",
+    "column_name": "verified_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/distributions.csv",
+    "column_order": "10",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "1",
+    "column_name": "document_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "2",
+    "column_name": "document_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "3",
+    "column_name": "title",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "4",
+    "column_name": "issued_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "5",
+    "column_name": "issuer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "6",
+    "column_name": "signer_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "7",
+    "column_name": "related_campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "8",
+    "column_name": "related_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "9",
+    "column_name": "related_beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "10",
+    "column_name": "document_hash",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "11",
+    "column_name": "template_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/documents.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "1",
+    "column_name": "donation_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "2",
+    "column_name": "donor_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "3",
+    "column_name": "donation_page_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "4",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "5",
+    "column_name": "donated_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "6",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "8",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "9",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "10",
+    "column_name": "processor_clearing_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "11",
+    "column_name": "donor_message",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/donations.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "1",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "2",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "3",
+    "column_name": "display_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "4",
+    "column_name": "source_system",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "5",
+    "column_name": "email",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "6",
+    "column_name": "phone",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "7",
+    "column_name": "address",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/entities.csv",
+    "column_order": "8",
+    "column_name": "recorded_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "1",
+    "column_name": "transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "2",
+    "column_name": "occurred_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "3",
+    "column_name": "transaction_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "4",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "5",
+    "column_name": "destination_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "6",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "8",
+    "column_name": "reference",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "9",
+    "column_name": "settlement_batch_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "10",
+    "column_name": "entered_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "11",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "12",
+    "column_name": "related_object_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "13",
+    "column_name": "is_reversal",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "14",
+    "column_name": "reversed_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/financial_events.csv",
+    "column_order": "15",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "1",
+    "column_name": "grant_request_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "2",
+    "column_name": "beneficiary_program_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "3",
+    "column_name": "requested_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "4",
+    "column_name": "requested_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "5",
+    "column_name": "approved_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "6",
+    "column_name": "paid_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "7",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "8",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/grant_requests.csv",
+    "column_order": "9",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "1",
+    "column_name": "login_event_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "2",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "3",
+    "column_name": "device_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "4",
+    "column_name": "login_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "5",
+    "column_name": "ip_address",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "6",
+    "column_name": "authentication_result",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/login_events.csv",
+    "column_order": "7",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "1",
+    "column_name": "settlement_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "2",
+    "column_name": "processor_merchant_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "3",
+    "column_name": "settled_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "4",
+    "column_name": "gross_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "5",
+    "column_name": "processor_fee",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "6",
+    "column_name": "net_amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "7",
+    "column_name": "currency",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "8",
+    "column_name": "source_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "9",
+    "column_name": "destination_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "10",
+    "column_name": "donation_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/processor_settlements.csv",
+    "column_order": "11",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "1",
+    "column_name": "vendor_invoice_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "2",
+    "column_name": "vendor_organization_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "3",
+    "column_name": "invoice_number",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "4",
+    "column_name": "invoice_date",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "5",
+    "column_name": "invoice_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "6",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "7",
+    "column_name": "amount",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "8",
+    "column_name": "beneficiary_account_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "9",
+    "column_name": "campaign_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "10",
+    "column_name": "payment_transaction_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "11",
+    "column_name": "approved_by_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/vendor_invoices.csv",
+    "column_order": "12",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/volunteer_network.csv",
+    "column_order": "1",
+    "column_name": "network_event_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/volunteer_network.csv",
+    "column_order": "2",
+    "column_name": "event_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/volunteer_network.csv",
+    "column_order": "3",
+    "column_name": "occurred_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/volunteer_network.csv",
+    "column_order": "4",
+    "column_name": "person_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/volunteer_network.csv",
+    "column_order": "5",
+    "column_name": "target_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/volunteer_network.csv",
+    "column_order": "6",
+    "column_name": "volunteer_code",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "genie/puppy/volunteer_network.csv",
+    "column_order": "7",
+    "column_name": "benefit_received",
+    "inferred_type": "DECIMAL",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "1",
+    "column_name": "match_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "2",
+    "column_name": "rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "4",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "5",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "6",
+    "column_name": "exact_field",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "7",
+    "column_name": "masked_exact_value",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "8",
+    "column_name": "normalization_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "10",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "11",
+    "column_name": "ambiguity_warning",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "12",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "13",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/graphframes_exact_relationships.csv",
+    "column_order": "14",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/initial_case_items.csv",
+    "column_order": "1",
+    "column_name": "sequence",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/initial_case_items.csv",
+    "column_order": "2",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "1",
+    "column_name": "relationship_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "2",
+    "column_name": "relationship_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "3",
+    "column_name": "relationship_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "4",
+    "column_name": "source_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "5",
+    "column_name": "target_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "6",
+    "column_name": "event_time",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "7",
+    "column_name": "supporting_record_ids",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "8",
+    "column_name": "player_safe_summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "9",
+    "column_name": "provenance",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "10",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_direct_relationships.csv",
+    "column_order": "11",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "1",
+    "column_name": "record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "2",
+    "column_name": "record_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "3",
+    "column_name": "display_label",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "4",
+    "column_name": "source_system_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "5",
+    "column_name": "occurred_at",
+    "inferred_type": "DATE_OR_TIMESTAMP_STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "6",
+    "column_name": "safe_summary",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "7",
+    "column_name": "safe_attributes_json",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "8",
+    "column_name": "provenance_ref",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "9",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/player_safe_records.csv",
+    "column_order": "10",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "1",
+    "column_name": "candidate_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "2",
+    "column_name": "left_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "3",
+    "column_name": "right_record_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "4",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "5",
+    "column_name": "confidence_band",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "6",
+    "column_name": "agreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "7",
+    "column_name": "disagreement_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "8",
+    "column_name": "missing_fields",
+    "inferred_type": "STRING",
+    "nullable_observed": "true",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "9",
+    "column_name": "generation_mode",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "10",
+    "column_name": "actual_engine_run",
+    "inferred_type": "BOOLEAN",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "False for deterministic curated analytical approximations."
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "11",
+    "column_name": "provenance_note",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "12",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "published/puppy/zingg_candidate_relationships.csv",
+    "column_order": "13",
+    "column_name": "snapshot_version",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_allowed_alternatives.csv",
+    "column_order": "1",
+    "column_name": "alternative_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_allowed_alternatives.csv",
+    "column_order": "2",
+    "column_name": "claim_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_allowed_alternatives.csv",
+    "column_order": "3",
+    "column_name": "alternative_description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_allowed_alternatives.csv",
+    "column_order": "4",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/relief_ending_thresholds.csv",
+    "column_order": "1",
+    "column_name": "ending_code",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_ending_thresholds.csv",
+    "column_order": "2",
+    "column_name": "priority",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_ending_thresholds.csv",
+    "column_order": "3",
+    "column_name": "min_score",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_ending_thresholds.csv",
+    "column_order": "4",
+    "column_name": "max_false_accusations",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_ending_thresholds.csv",
+    "column_order": "5",
+    "column_name": "required_gates",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_ending_thresholds.csv",
+    "column_order": "6",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_ending_thresholds.csv",
+    "column_order": "7",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "1",
+    "column_name": "entity_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "2",
+    "column_name": "entity_type",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "3",
+    "column_name": "canonical_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "4",
+    "column_name": "operational_role",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "5",
+    "column_name": "culpability",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "6",
+    "column_name": "harm_status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "7",
+    "column_name": "fraud_network_membership",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evaluator_truth.csv",
+    "column_order": "8",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/relief_evidence_route_matrix.csv",
+    "column_order": "1",
+    "column_name": "route_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evidence_route_matrix.csv",
+    "column_order": "2",
+    "column_name": "claim_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evidence_route_matrix.csv",
+    "column_order": "3",
+    "column_name": "route_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evidence_route_matrix.csv",
+    "column_order": "4",
+    "column_name": "step_order",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evidence_route_matrix.csv",
+    "column_order": "5",
+    "column_name": "evidence_reference",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evidence_route_matrix.csv",
+    "column_order": "6",
+    "column_name": "tool_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_evidence_route_matrix.csv",
+    "column_order": "7",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/relief_forbidden_false_positives.csv",
+    "column_order": "1",
+    "column_name": "forbidden_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_forbidden_false_positives.csv",
+    "column_order": "2",
+    "column_name": "entity_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_forbidden_false_positives.csv",
+    "column_order": "3",
+    "column_name": "forbidden_conclusion",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_forbidden_false_positives.csv",
+    "column_order": "4",
+    "column_name": "penalty",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_forbidden_false_positives.csv",
+    "column_order": "5",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "1",
+    "column_name": "required_evidence_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "2",
+    "column_name": "claim_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "3",
+    "column_name": "claim_text",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "4",
+    "column_name": "target_entity_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "5",
+    "column_name": "evidence_family",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "6",
+    "column_name": "minimum_distinct_items",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "7",
+    "column_name": "score_weight",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "true",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_required_evidence.csv",
+    "column_order": "8",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "truth/relief_scoring_rules.csv",
+    "column_order": "1",
+    "column_name": "scoring_rule_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_scoring_rules.csv",
+    "column_order": "2",
+    "column_name": "component",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_scoring_rules.csv",
+    "column_order": "3",
+    "column_name": "max_points",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_scoring_rules.csv",
+    "column_order": "4",
+    "column_name": "description",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "truth/relief_scoring_rules.csv",
+    "column_order": "5",
+    "column_name": "case_id",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": "Stable case identifier."
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "1",
+    "column_name": "difficulty",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "2",
+    "column_name": "difficulty_name",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "3",
+    "column_name": "player_safe_records",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "4",
+    "column_name": "direct_relationships",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "5",
+    "column_name": "zingg_candidates",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "6",
+    "column_name": "graphframes_matches",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "7",
+    "column_name": "initial_items",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "8",
+    "column_name": "genie_advertisements",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "9",
+    "column_name": "genie_beneficiaries",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "10",
+    "column_name": "genie_campaign_pages",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "11",
+    "column_name": "genie_campaign_posts",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "12",
+    "column_name": "genie_campaigns",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "13",
+    "column_name": "genie_communications",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "14",
+    "column_name": "genie_complaints",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "15",
+    "column_name": "genie_distributions",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "16",
+    "column_name": "genie_documents",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "17",
+    "column_name": "genie_donations",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "18",
+    "column_name": "genie_entities",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "19",
+    "column_name": "genie_financial_events",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "20",
+    "column_name": "genie_grant_requests",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "21",
+    "column_name": "genie_login_events",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "22",
+    "column_name": "genie_processor_settlements",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "23",
+    "column_name": "genie_vendor_invoices",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/publication_counts.csv",
+    "column_order": "24",
+    "column_name": "genie_volunteer_network",
+    "inferred_type": "BIGINT",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/validation_checks.csv",
+    "column_order": "1",
+    "column_name": "check",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/validation_checks.csv",
+    "column_order": "2",
+    "column_name": "status",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  },
+  {
+    "dataset_path": "validation/validation_checks.csv",
+    "column_order": "3",
+    "column_name": "details",
+    "inferred_type": "STRING",
+    "nullable_observed": "false",
+    "internal_only": "false",
+    "description": ""
+  }
+]

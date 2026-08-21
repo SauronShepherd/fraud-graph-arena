@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+CEO_BARKED_TWICE,CLEAN_COLLAR,1,850,,0,"[""ALL""]",,"Precise principal, mechanism, roles, flow, and protected actors.",2026.07.19.2
+CEO_BARKED_TWICE,CASE_CLOSED_KENNEL_WRECKED,2,700,,1,"[""PRINCIPAL"",""MECHANISM"",""FLOW""]",,"Fraud stopped, but the investigation caused avoidable damage.",2026.07.19.2
+CEO_BARKED_TWICE,THE_SCENT_WENT_COLD,3,450,,2,"[""PARTIAL""]",,"Some evidence found, but the principal or flow remains incomplete.",2026.07.19.2
+CEO_BARKED_TWICE,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,Resources were spent without a defensible file.,2026.07.19.2
+CEO_BARKED_TWICE,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,Too many weak suspicions and duplicated evidence.,2026.07.19.2
+CEO_BARKED_TWICE,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""WRONG_PRINCIPAL_OR_MAJOR_INNOCENT_ACCUSATION""]",,The case targets the wrong actors.,2026.07.19.2

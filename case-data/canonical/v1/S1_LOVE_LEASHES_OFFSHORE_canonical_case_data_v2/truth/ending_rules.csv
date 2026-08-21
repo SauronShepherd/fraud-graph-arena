@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+LOVE_LEASHES_OFFSHORE,CLEAN_COLLAR,1,860,,0,"[""ALL""]",,"Persona factory, offshore flow and role distinctions are proven without victim blame.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CASE_CLOSED_KENNEL_WRECKED,2,710,,1,"[""PRINCIPAL"",""PERSONAS"",""OFFSHORE_FLOW""]",,Network exposed but one victim or mule role is overstated.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,THE_SCENT_WENT_COLD,3,470,,2,"[""PARTIAL""]",,Suspicious profiles or transfers found without the complete chain.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,Senior resources expire before resolution.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,"Victims, genuine couples and lawful providers are accused indiscriminately.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""VICTIM_OR_UNWITTING_MULE_PRIMARY_TARGET""]",,"A victim, Theo or Nina is blamed while operators are missed.",2026.07.18.1

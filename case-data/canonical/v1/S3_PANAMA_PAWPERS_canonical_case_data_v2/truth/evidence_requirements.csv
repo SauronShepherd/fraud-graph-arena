@@ -1,0 +1,11 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+PANAMA_PAWPERS,REQ-001,CLAIM-PRINCIPAL,P-MARCELLUS,OWNERSHIP_NOMINEE_COMMUNICATION_PAYMENT,5,150,true,[],Marcellus is the concealed beneficial owner and economic beneficiary.,2026.07.19.2
+PANAMA_PAWPERS,REQ-002,CLAIM-FILING-OPERATION,P-IRIS,FILING_LOGIN_TEMPLATE_COMMUNICATION,4,100,true,[],Iris coordinates formations and repeated filings.,2026.07.19.2
+PANAMA_PAWPERS,REQ-003,CLAIM-NOMINEES,P-NOLAN,APPOINTMENT_AGREEMENT_DECLARATION,4,100,true,[],Nolan coordinates nominee directors and incomplete declarations.,2026.07.19.2
+PANAMA_PAWPERS,REQ-004,CLAIM-LEGAL-STRUCTURE,P-BEATRICE,ENGAGEMENT_COMMUNICATION_KYC,4,90,true,[],Beatrice knowingly designs concealment while legitimate agents remain protected.,2026.07.19.2
+PANAMA_PAWPERS,REQ-005,CLAIM-FALSE-INVOICES,CE-CROWN,INVOICE_TRANSACTION_ACCOUNT,5,130,true,[],"Controlled entities issue false consulting, IP and management invoices.",2026.07.19.2
+PANAMA_PAWPERS,REQ-006,CLAIM-LAYERING,P-FELIX,BANK_FLOW_ACCOUNT_JURISDICTION,5,150,true,[],"Funds are layered through shells, trusts and offshore accounts.",2026.07.19.2
+PANAMA_PAWPERS,REQ-007,CLAIM-DISTRIBUTION,P-MARCELLUS,TRANSACTION_ACCOUNT_KYC,4,100,true,[],Layered funds return to Marcellus and Felix.,2026.07.19.2
+PANAMA_PAWPERS,REQ-008,CLAIM-PROTECTED-AGENTS,P-JUNE,ROLE_PERMISSION_PROCEEDS_COMPARATOR,4,80,true,[],"June, Vera, Colin, Hope, Tessa and legitimate firms are not culpable by association.",2026.07.19.2
+PANAMA_PAWPERS,REQ-009,CLAIM-LAWFUL-OFFSHORE,CE-FUND,DECLARATION_AUDIT_KYC_TRANSACTION,4,50,true,[],Legitimate offshore trusts and funds have supported owners and purposes.,2026.07.19.2
+PANAMA_PAWPERS,REQ-010,CLAIM-HARD-NEGATIVES,O-CROWNLOOK,IDENTITY_REGISTRATION_ADDRESS,3,50,true,[],Lookalike people and companies remain distinct.,2026.07.19.2

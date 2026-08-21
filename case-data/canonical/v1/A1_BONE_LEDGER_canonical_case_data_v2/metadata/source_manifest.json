@@ -1,0 +1,396 @@
+{
+  "case_id": "BONE_LEDGER",
+  "case_version": "1.0.0",
+  "snapshot_version": "2026.07.18.1",
+  "difficulty": "ADULT_DOG",
+  "single_difficulty_only": true,
+  "source_publication_level": 2,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 593,
+      "sha256": "bb84ef03e83c3ff1fc94343741c5bfa327d9ee95b61bc733d501ba4432a6b75c"
+    },
+    {
+      "path": "analytics/bone_graphframes_exact_relationships.csv",
+      "bytes": 37738,
+      "sha256": "90bf75242e75433ac46d667edaa8be01db49022e1e193139c83c29992bb54e21"
+    },
+    {
+      "path": "analytics/bone_zingg_candidate_relationships.csv",
+      "bytes": 10445,
+      "sha256": "04e3b371ee70c38647dc33a5e46658aacf7cb2b2b50c9a54ad85fe1ef7d8897f"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 266,
+      "sha256": "239b51990b738c66fa853c4a4418be6dbedd411bf4ac89e3c9f91ca28ec3a2b6"
+    },
+    {
+      "path": "authoring/bone_accounts.csv",
+      "bytes": 3058,
+      "sha256": "6032562e70ac46d317535da69e27c0650c6ac13b687f5824b400a505879d9fe1"
+    },
+    {
+      "path": "authoring/bone_addresses.csv",
+      "bytes": 1924,
+      "sha256": "1dcf7df41837d368b7f932ce1e4f5e7b8ac8d20faf9573feb772055104b03bfd"
+    },
+    {
+      "path": "authoring/bone_asset_movements.csv",
+      "bytes": 24739,
+      "sha256": "38c47ed59fb35157e47d702f10576f1adc7bb19d266a73c598c25d347ae9dbb7"
+    },
+    {
+      "path": "authoring/bone_audit_findings.csv",
+      "bytes": 8203,
+      "sha256": "9f8c7a4cb3d47d6b42511a70166b4b985f41267edfe900b75e599004ac601cc4"
+    },
+    {
+      "path": "authoring/bone_bank_transactions.csv",
+      "bytes": 39198,
+      "sha256": "f65885cc6e09155b4cbc7ffd366cfacbee5fb5f875bd42b6847fa756f600ee49"
+    },
+    {
+      "path": "authoring/bone_board_approvals.csv",
+      "bytes": 6860,
+      "sha256": "617379d1d50b0f80df7695ebf92d79904e8d5e9a21d7ee78cb5b34517c5650c0"
+    },
+    {
+      "path": "authoring/bone_communications.csv",
+      "bytes": 24888,
+      "sha256": "48aa146120d54e832dde3ecc71a6369af75ad1780ad2ba6e0d25c038cf96d8dd"
+    },
+    {
+      "path": "authoring/bone_complaints.csv",
+      "bytes": 5104,
+      "sha256": "d38541f804d756ba2e562acfeafa2c59adf0b5a2b5f8d4837de0a0f2a9e5d933"
+    },
+    {
+      "path": "authoring/bone_cost_centers.csv",
+      "bytes": 688,
+      "sha256": "b60ced9263f71488084e2d7b467331b472dbbf8a3d8f3c0bb89fc02ca78288be"
+    },
+    {
+      "path": "authoring/bone_devices.csv",
+      "bytes": 1348,
+      "sha256": "52345cffa4093f5fc0969ac2b82aa5668bd411c739575007c681424031a6d11c"
+    },
+    {
+      "path": "authoring/bone_direct_relationships.csv",
+      "bytes": 953162,
+      "sha256": "15992ebff4ccfd92c1b5cd7bf924c3e1a466e18e7f68f8fa1acf4d587f768d4c"
+    },
+    {
+      "path": "authoring/bone_documents.csv",
+      "bytes": 13630,
+      "sha256": "b363f076f522a502288e862ae9229f22022aa20271e3ac8d3da09d3bf8f89036"
+    },
+    {
+      "path": "authoring/bone_fixed_assets.csv",
+      "bytes": 20791,
+      "sha256": "32e032e5f639753d310c1a1dcdca6b8b5fcfb5b1a4231d6ef39a7d658b93fe7a"
+    },
+    {
+      "path": "authoring/bone_gl_accounts.csv",
+      "bytes": 1181,
+      "sha256": "3e5d14a5cb9fe994507c94f7496a905e0be9212d4b1e101f7306de09b449faf0"
+    },
+    {
+      "path": "authoring/bone_guarantees.csv",
+      "bytes": 5978,
+      "sha256": "d0586cfc78c5b0f2a150360840d1e150969042c61613c7b7794c8b03bc97cad4"
+    },
+    {
+      "path": "authoring/bone_invoice_lines.csv",
+      "bytes": 45617,
+      "sha256": "ab7a783856d361b56cbb90ef277490aa621476ff0b524393f8774e0f5f13be35"
+    },
+    {
+      "path": "authoring/bone_journal_entries.csv",
+      "bytes": 29092,
+      "sha256": "37789be5e99802581369f1baa9e431ee6812cae2783edbca085eb7a362b2fd6b"
+    },
+    {
+      "path": "authoring/bone_journal_lines.csv",
+      "bytes": 83052,
+      "sha256": "2506d70a1a18d556bf99c6393fc0687e2e2e0a0a41e86f317c88c8347f687146"
+    },
+    {
+      "path": "authoring/bone_loan_agreements.csv",
+      "bytes": 6049,
+      "sha256": "fb32590d22e4595866d3c47043a17a062a001ad206467e7eea8ea9c96a8499fb"
+    },
+    {
+      "path": "authoring/bone_login_events.csv",
+      "bytes": 9651,
+      "sha256": "d8c047188ee985bb14b9be716dfbaa8be7a3c16fb2fa2fa0dd92f3cdf7d3973b"
+    },
+    {
+      "path": "authoring/bone_organization_records.csv",
+      "bytes": 8478,
+      "sha256": "9ebd91dbfac716128fc58a531cf1af11c13cb748869fa97aaa3dc72cef722763"
+    },
+    {
+      "path": "authoring/bone_organizations.csv",
+      "bytes": 1211,
+      "sha256": "1289e4c4958db236f5a1aef23fe211abbc4a165e8808e96e17a3ae6d2177df23"
+    },
+    {
+      "path": "authoring/bone_people.csv",
+      "bytes": 1691,
+      "sha256": "fb4227ffe15b027220d72757232c2345784c59963b5cb1cfd71470ef80c5f3c9"
+    },
+    {
+      "path": "authoring/bone_person_records.csv",
+      "bytes": 10213,
+      "sha256": "b5caee99e0f49dd9f1f29c14798cc511b356b66a5d7c85cf92d07987f0ee490b"
+    },
+    {
+      "path": "authoring/bone_purchase_orders.csv",
+      "bytes": 18510,
+      "sha256": "1220daab5ef785ef0d17b6bf3d609e903e3aca26ff87e251634ca9e19e91f2a2"
+    },
+    {
+      "path": "authoring/bone_related_party_disclosures.csv",
+      "bytes": 3912,
+      "sha256": "684465930d2a4d33e3644a29830cece316dbc52565e9621801069a25e1b16beb"
+    },
+    {
+      "path": "authoring/bone_vendor_invoices.csv",
+      "bytes": 22663,
+      "sha256": "a75d94aa33e058044c912073b12690aa31ccfbad26674729f6b64ce0bfd09a17"
+    },
+    {
+      "path": "catalog/A1_BONE_LEDGER_ADULT_data_catalog_v1.xlsx",
+      "bytes": 35389,
+      "sha256": "b1fa6ec343b2b0649fd129851010a133d8126c61470ec36c94f92520fbae089c"
+    },
+    {
+      "path": "config/bone_ledger_genie_benchmarks.csv",
+      "bytes": 2391,
+      "sha256": "2357bb9787619032b4d48b01ee6121d7e88eef6a7451ffabdfbc90a7fa353b2f"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 368,
+      "sha256": "e2202220a557cf88c795c14c6da49e4e2c8d34691177e3664149f90064c43dab"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 533,
+      "sha256": "c123ca7eec8d7423344b6962b5bb2a8326aee00876383d4594ff4c86f5710d75"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 49519,
+      "sha256": "81bda2f7d782a87e8b18b67cf74a2b78dbfa534bfe633b82fbc4119261b92fd0"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 324,
+      "sha256": "8a2757510b9833c15cb81ebfb8faa0b321aa61bf6ad2860ebadfb0e9eb175dae"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 259,
+      "sha256": "1a9ce0cf0cc18c1b5283f834ab3fd4b8f2f46b0984cf52a36aec40ba71f915d4"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 1251,
+      "sha256": "364c9a8adab4fc6733ca7aecd7cdbb741143a9725c70f82ffb2a958744b90d0b"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 2062,
+      "sha256": "f96abbdb62e6863a33d6f3289517ae0e39d15769832f4011c318d35850872ec5"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 772,
+      "sha256": "bf6207aa5f9992aa53f2f153b30ffecbfb8f7a765e2dee8308d5d14a333a8e31"
+    },
+    {
+      "path": "genie/adult/asset_movements.csv",
+      "bytes": 18471,
+      "sha256": "8081ec0bf04adfad3c9d7904eb8cdc984788c3d804f0d9d024a643ad312f95d6"
+    },
+    {
+      "path": "genie/adult/audit_findings.csv",
+      "bytes": 6773,
+      "sha256": "84162570ad822e3c4788c0f837815ddddb33e8e016ec3233d5e37d607399223a"
+    },
+    {
+      "path": "genie/adult/board_approvals.csv",
+      "bytes": 4966,
+      "sha256": "e3d9411fc5df78ac9e434ce5fc39024c097883cc5527c789812ad3bbb791d29a"
+    },
+    {
+      "path": "genie/adult/communications.csv",
+      "bytes": 21254,
+      "sha256": "efa1227d769a425c6385b1b9a641a0485e6b010615be79f41a8b4e46945c6cda"
+    },
+    {
+      "path": "genie/adult/documents.csv",
+      "bytes": 6135,
+      "sha256": "66e574705f79be20eb24b9dd57eec5faebb206d3f0abcd877c7561ea7d8b6089"
+    },
+    {
+      "path": "genie/adult/entities.csv",
+      "bytes": 10551,
+      "sha256": "772f1e1d0523f545bbcba23c76874e6c26cc4069ac9e34f0b1c1b9c3c0c7af44"
+    },
+    {
+      "path": "genie/adult/financial_events.csv",
+      "bytes": 31473,
+      "sha256": "c6f402906a0571993604afe8d468047dc28ac5cbc935b04bd12605ad55260d68"
+    },
+    {
+      "path": "genie/adult/fixed_assets.csv",
+      "bytes": 16043,
+      "sha256": "211cdc20bffb01620232087398841869f9160038bd5d30b96451c4f85104d2cb"
+    },
+    {
+      "path": "genie/adult/guarantees.csv",
+      "bytes": 4144,
+      "sha256": "757b7a83dda3b2c77e7cecb9309a9b6e239abf90899adcd2776bf2d4c69cd5e8"
+    },
+    {
+      "path": "genie/adult/invoice_lines.csv",
+      "bytes": 31971,
+      "sha256": "e26ba9eba6365da447c62584eda7cef33cfc6378de98ddb8266d8f73b8cef2ff"
+    },
+    {
+      "path": "genie/adult/journal_entries.csv",
+      "bytes": 24014,
+      "sha256": "50ae03d14dbe559833fce91596f701bfc837ed2a106aa872dfc9f80adbd700f5"
+    },
+    {
+      "path": "genie/adult/journal_lines.csv",
+      "bytes": 62854,
+      "sha256": "63043f885e5ab3ff008d13e28593c185641ab554a6c16c6b234f0d12e4bfe91c"
+    },
+    {
+      "path": "genie/adult/loans.csv",
+      "bytes": 4359,
+      "sha256": "ed929b38a6c1775ed1bfe4bd87004ab8bcb01f814ed6646773436f32fd9837bc"
+    },
+    {
+      "path": "genie/adult/login_events.csv",
+      "bytes": 6637,
+      "sha256": "331c11fcbc212af649c7d81608d42527232b0932ee91a8c550bd1892fc2c8c47"
+    },
+    {
+      "path": "genie/adult/purchase_orders.csv",
+      "bytes": 14870,
+      "sha256": "604a4bb957822c0cf4305d4bf6be5d49275371242dd6fd8da31ce22a803da9bb"
+    },
+    {
+      "path": "genie/adult/related_party_disclosures.csv",
+      "bytes": 2484,
+      "sha256": "a752cb08f9baae52ba212506e22b7c54c3903ea8b7fb1504944f70907efadcec"
+    },
+    {
+      "path": "genie/adult/vendor_invoices.csv",
+      "bytes": 19223,
+      "sha256": "862d0a14428932c097eaf926429cc82872a774d8db0ca2ebc63b9e82c6f03273"
+    },
+    {
+      "path": "published/adult/graphframes_exact_relationships.csv",
+      "bytes": 37668,
+      "sha256": "83e4038a3793566e8f95a6e2c32b28f786472d0f2573a8882c325509d6cd3351"
+    },
+    {
+      "path": "published/adult/initial_case_items.csv",
+      "bytes": 127,
+      "sha256": "b50c3ca4831a18f4a4b63c2a1f530c0bb64523b1f0448489c57847eee2357e72"
+    },
+    {
+      "path": "published/adult/player_safe_direct_relationships.csv",
+      "bytes": 967727,
+      "sha256": "9bb275e31a1ea24499ce2e6dc0b431211371c32a4fc77d2ded3afdb7bc24df39"
+    },
+    {
+      "path": "published/adult/player_safe_records.csv",
+      "bytes": 937989,
+      "sha256": "7f8c09d6d4a7f71ff6542e3b663b0aaefe87615c9cc0f3bc0352c4a876cb9896"
+    },
+    {
+      "path": "published/adult/zingg_candidate_relationships.csv",
+      "bytes": 9845,
+      "sha256": "bc3eb5b2a47f170dbc60e68a956fbcb8dcc91514ea8cf58f4d4748f6034323e9"
+    },
+    {
+      "path": "scripts/adult_package_metadata.py",
+      "bytes": 147,
+      "sha256": "8867131b313c6aa61efb358054f98fb088603aad342adb3da57c8d2dddb9647a"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 296,
+      "sha256": "8df2f056963ad072ec2b357f3fe27cdcac0709fc7e95a7fe52d937fb17dcf257"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 237,
+      "sha256": "33c5e44fafe181eb5f5ffa984e0e9b9e18df993da38a7925195a8bd7b149973a"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 365,
+      "sha256": "5b5e788a33b1b8cadc1d7c7d903af2885f4caa8c55e9dffa8e88385e17f9ed94"
+    },
+    {
+      "path": "truth/bone_allowed_alternatives.csv",
+      "bytes": 1219,
+      "sha256": "1d867371d38d1880ec52cdfb496b25216eaf71330fe356198193c3a064cd879a"
+    },
+    {
+      "path": "truth/bone_ending_thresholds.csv",
+      "bytes": 928,
+      "sha256": "1bdbc0d6eeba38febd541b7a11c6896f2b4799288eb88014c6d54a8853a3a465"
+    },
+    {
+      "path": "truth/bone_evaluator_truth.csv",
+      "bytes": 3775,
+      "sha256": "bf67886e3a06df0c54eda3a01b699edd9fe30b33c76f846bfb632090eb6c8f4d"
+    },
+    {
+      "path": "truth/bone_evidence_route_matrix.csv",
+      "bytes": 1745,
+      "sha256": "f6e06236ad00849671978346c70c0e8a61e4dfb23dcaf2f11f793800386fa8f9"
+    },
+    {
+      "path": "truth/bone_forbidden_false_positives.csv",
+      "bytes": 629,
+      "sha256": "aa74a8c4286679536252bbec782112e6cde9fe98ab4bd3d73685d74d4d88f384"
+    },
+    {
+      "path": "truth/bone_required_evidence.csv",
+      "bytes": 1456,
+      "sha256": "999e20ce294ccaa3e824cd4d0b431df7f75b88b6991a304d3cb80127712d00b3"
+    },
+    {
+      "path": "truth/bone_scoring_rules.csv",
+      "bytes": 729,
+      "sha256": "bdd9ab30fbd93ffc5cea664bbaa3f95ffae16e05346e908e9372d14e8f509d54"
+    },
+    {
+      "path": "validation/adult_counts.csv",
+      "bytes": 558,
+      "sha256": "5c70c14eeda2543beb8a9f0e17c06fef6b5ebe9ee521250a50a3204d48d58658"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1356,
+      "sha256": "9d5508257b402efe9eb11e9c410f9f952c3c5119b40df591eae0ae7e0644fb97"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 2041,
+      "sha256": "db8e8c4dccb82849cc94eb07100b8f6f7cd290bbf276edaeadf16243f1133e7a"
+    }
+  ]
+}

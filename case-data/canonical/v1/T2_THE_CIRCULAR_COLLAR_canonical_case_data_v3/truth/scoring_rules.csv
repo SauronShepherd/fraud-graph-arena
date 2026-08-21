@@ -1,0 +1,6 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+ACADEMY_T02,T2-SCORE-001,Conclusion accuracy,350,350,Merge the correct identity and identify Cipher as primary controller.,2026.07.19.1
+ACADEMY_T02,T2-SCORE-002,Evidence quality,250,250,"Pin identity, cycle, exact-match and shared-infrastructure evidence.",2026.07.19.1
+ACADEMY_T02,T2-SCORE-003,Relationship interpretation,150,150,Preserve payment direction and distinguish direct-source from derived relationships.,2026.07.19.1
+ACADEMY_T02,T2-SCORE-004,Protected actor discipline,150,150,Reject the false merge and protect the legitimate shared-infrastructure tenant.,2026.07.19.1
+ACADEMY_T02,T2-SCORE-005,Efficiency,100,100,Use exactly one Zingg run and one GraphFrames run.,2026.07.19.1

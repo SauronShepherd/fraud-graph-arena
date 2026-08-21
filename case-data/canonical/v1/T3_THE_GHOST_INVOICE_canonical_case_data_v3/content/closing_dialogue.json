@@ -1,0 +1,110 @@
+[
+  {
+    "sequence": "1",
+    "speaker": "VERA",
+    "line": "Your KYC extract does not name a beneficial owner.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "2",
+    "speaker": "DETECTIVE",
+    "line": "It contains a null field in a legacy incomplete record. Corporate Registry identifies you as Moonlit’s sole director.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "3",
+    "speaker": "VERA",
+    "line": "The payment went to the company, not to me personally.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "4",
+    "speaker": "DETECTIVE",
+    "line": "Moonlit owns the receiving account, and you control Moonlit.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "5",
+    "speaker": "VERA",
+    "line": "The invoice is dated before the payment.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "6",
+    "speaker": "DETECTIVE",
+    "line": "The date written in the invoice is a claim. The repository created the file on April sixth, more than two days after the payment.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "7",
+    "speaker": "VERA",
+    "line": "There was still an approval.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "8",
+    "speaker": "DETECTIVE",
+    "line": "Created at 6:10 p.m. after your vendor-admin login from your assigned laptop.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "9",
+    "speaker": "VERA",
+    "line": "Milo says Tara requested the backdating.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "10",
+    "speaker": "DETECTIVE",
+    "line": "Tara left the office before that login. Independent system records do not support Milo’s allegation.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "11",
+    "speaker": "VERA",
+    "line": "The camera could have settled that.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "12",
+    "speaker": "DETECTIVE",
+    "line": "It is unavailable. That uncertainty remains recorded.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "13",
+    "speaker": "VERA",
+    "line": "And you found no contract or work product.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "14",
+    "speaker": "DETECTIVE",
+    "line": "The contract is unavailable and the archive is partial. I will not claim that no service ever existed.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "15",
+    "speaker": "VERA",
+    "line": "Yet you are still naming me.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "16",
+    "speaker": "DETECTIVE",
+    "line": "High confidence, not invented certainty: control of the recipient, payment before file creation, and an approval created through your vendor session.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "17",
+    "speaker": "VERA",
+    "line": "So the missing records do not erase the records that exist.",
+    "case_id": "ACADEMY_T03"
+  },
+  {
+    "sequence": "18",
+    "speaker": "DETECTIVE",
+    "line": "Exactly. Vera Vizsla: primary culprit. Tara Terrier: protected employee. Residual uncertainty retained. Case closed.",
+    "case_id": "ACADEMY_T03"
+  }
+]

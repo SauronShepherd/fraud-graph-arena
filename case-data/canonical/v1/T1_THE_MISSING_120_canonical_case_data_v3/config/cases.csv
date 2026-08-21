@@ -1,0 +1,2 @@
+case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version
+ACADEMY_T01,T1,The Missing 120,ACADEMY,1,3.0.0-canonical.1,2026.07.19.3,"Investigation Board basics, a guided Genie query, evidence pinning, protected actors, submission and score.",BSC,,1002,SYNTHETIC_CURATED,false,false,"All characters, organizations, records, events, and evidence are fictional and synthetically generated for Fraud Graph Arena.",1.0.0

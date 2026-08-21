@@ -1,0 +1,13 @@
+case_id,profile_code,sequence,record_id,reason_internal,snapshot_version
+BISCUIT_RELIEF,PUPPY,1,CMP-001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,2,CAMP-001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,3,PAGE-001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,4,DON-00001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,5,SETTLE-0001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,6,TX-AD-001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,7,GR-001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,8,POST-0001,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,9,COM-005,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,10,PR-HOPE-01,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,11,OR-GBRF-01,Configured starting item,2026.07.19.3
+BISCUIT_RELIEF,PUPPY,12,A-GBRF-6401,Configured starting item,2026.07.19.3

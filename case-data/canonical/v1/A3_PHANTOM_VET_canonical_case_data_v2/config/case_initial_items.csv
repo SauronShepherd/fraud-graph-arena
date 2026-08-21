@@ -1,0 +1,9 @@
+case_id,profile_code,sequence,record_id,reason_internal,snapshot_version
+PHANTOM_VET,ADULT,1,CMP-001,Complaint,2026.07.18.1
+PHANTOM_VET,ADULT,2,CLM-00001,Claim,2026.07.18.1
+PHANTOM_VET,ADULT,3,CRED-002,Credential,2026.07.18.1
+PHANTOM_VET,ADULT,4,PAY-00001,Payment,2026.07.18.1
+PHANTOM_VET,ADULT,5,LABO-0001,Lab evidence,2026.07.18.1
+PHANTOM_VET,ADULT,6,LOGIN-0001,Claims device,2026.07.18.1
+PHANTOM_VET,ADULT,7,OR-EMERGENCY-01,Legitimate emergency comparator,2026.07.18.1
+PHANTOM_VET,ADULT,8,OR-COWORK-01,Shared telehealth infrastructure,2026.07.18.1

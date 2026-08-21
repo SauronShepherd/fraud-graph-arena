@@ -1,0 +1,6 @@
+case_id,entity_id,entity_type,canonical_name,operational_role,expected_classification,culpability,harm_status,fraud_network_membership,protected_notes,snapshot_version
+ACADEMY_T03,T3-P-VERA,PERSON,Vera Vizsla,PRIMARY_CULPRIT,PRIMARY_CULPRIT,intentional,non-victim,true,"Controls Moonlit, owns the receiving path and created the post-payment approval through her vendor-admin session.",2026.07.19.1
+ACADEMY_T03,T3-P-TARA,PERSON,Tara Terrier,PROTECTED_EMPLOYEE,PROTECTED_EMPLOYEE,none,victim_of_false_attribution,false,"A vendor statement accuses her, but access control and vendor-session provenance do not support the allegation.",2026.07.19.1
+ACADEMY_T03,T3-P-MILO,PERSON,Milo Mutt,UNRESOLVED_WITNESS,UNRESOLVED_WITNESS,unknown,non-victim,,His statement conflicts with independent records; do not convert uncertainty into a criminal accusation.,2026.07.19.1
+ACADEMY_T03,T3-O-MOONLIT,ORGANIZATION,Moonlit Advisory,FRAUD_VEHICLE,FRAUD_VEHICLE,organizational_mechanism,non-victim,,Supplier and account recipient controlled by Vera.,2026.07.19.1
+ACADEMY_T03,T3-O-CITY,ORGANIZATION,City Kennels Department,VICTIM_ORGANIZATION,VICTIM_ORGANIZATION,none,victim,false,"Paid 4,800 BSC before the supporting file and approval existed.",2026.07.19.1

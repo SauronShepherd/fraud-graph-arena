@@ -1,0 +1,9 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+GOLDEN_HYDRANT,CLAIM-COORDINATED-BIDS,BID_TEMPLATE_PRICE_IP_AND_COMMUNICATION,"Golden and companion bidders coordinated templates, pricing and infrastructure.",O-GOLDEN,true,2026.07.18.1
+GOLDEN_HYDRANT,CLAIM-GIDEON-PRINCIPAL,CONTROL_OWNERSHIP_AND_PAYMENTS,Gideon controlled the favoured contractor and shell network.,P-GIDEON,true,2026.07.18.1
+GOLDEN_HYDRANT,CLAIM-HAZEL-PROTECTED,NEED_ASSESSMENT_AND_AUTHORITY_LIMITS,Hazel documented genuine operational need but did not select vendors or approve invoices.,P-HAZEL,true,2026.07.18.1
+GOLDEN_HYDRANT,CLAIM-INFLATED-CHANGES,CHANGE_ORDER_PAYMENT_AND_FIELD_RECONCILIATION,Change orders increased contract value without corresponding verified work.,O-GOLDEN,true,2026.07.18.1
+GOLDEN_HYDRANT,CLAIM-IRIS-PROTECTED,WHISTLEBLOWER_AND_AUTHORITY_LIMITS,Iris identified anomalies and lacked procurement or payment control.,P-IRIS,true,2026.07.18.1
+GOLDEN_HYDRANT,CLAIM-KICKBACKS,SUBCONTRACT_BANK_KYC_AND_COMMUNICATION,Shell subcontractor funds returned to principals and Pointer Civic Advisory.,O-POINTER,true,2026.07.18.1
+GOLDEN_HYDRANT,CLAIM-PETRA-BID-RIGGING,PREPUBLICATION_SCORING_EVALUATION_AND_APPROVAL,Petra manipulated tender scoring and approved coordinated awards and changes.,P-PETRA,true,2026.07.18.1
+GOLDEN_HYDRANT,CLAIM-PHANTOM-WORK,SERIAL_GPS_PHOTO_EXCAVATION_AND_INSPECTION,A material population of hydrants and field certifications was duplicated or unsupported.,O-GOLDEN,true,2026.07.18.1

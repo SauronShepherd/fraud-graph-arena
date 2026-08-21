@@ -1,0 +1,7 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+GOLDEN_HYDRANT,ROUTE-001,CLAIM-PETRA-BID-RIGGING,Scoring manipulation,1,Prepublication scoring communication and draft matrix,COMMUNICATION,2026.07.18.1
+GOLDEN_HYDRANT,ROUTE-001,CLAIM-PETRA-BID-RIGGING,Scoring manipulation,2,"Bid prices, scores and approvals",GENIE,2026.07.18.1
+GOLDEN_HYDRANT,ROUTE-002,CLAIM-COORDINATED-BIDS,Bid fingerprint,1,"Same template, unit-price fingerprint and IP",GRAPHFRAMES,2026.07.18.1
+GOLDEN_HYDRANT,ROUTE-003,CLAIM-PHANTOM-WORK,Field contradiction,1,"Serials, GPS and repeated photographs",GRAPHFRAMES,2026.07.18.1
+GOLDEN_HYDRANT,ROUTE-003,CLAIM-PHANTOM-WORK,Field contradiction,2,"Excavation tickets, complaints and verification",GENIE,2026.07.18.1
+GOLDEN_HYDRANT,ROUTE-004,CLAIM-KICKBACKS,Shell-to-person flow,1,Golden-to-shell and shell-to-person transactions,GENIE,2026.07.18.1

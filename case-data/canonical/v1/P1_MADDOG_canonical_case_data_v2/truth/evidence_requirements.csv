@@ -1,0 +1,8 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+MADDOG,REQ-001,CLAIM-MAX-CONTROL,P-MAXWELL,CONTROL_OWNERSHIP,2,120,true,[],Maxwell controlled both Maddog and Blue Bone.,2026.07.19.1
+MADDOG,REQ-002,CLAIM-PONZI-FLOW,O-BLUE,BANK_CHRONOLOGY,2,140,true,[],Later deposits funded earlier investor payouts.,2026.07.19.1
+MADDOG,REQ-003,CLAIM-FALSE-STATEMENTS,O-MIK,STATEMENT_CUSTODY,2,120,true,[],Reported positions and gains lacked underlying confirmations.,2026.07.19.1
+MADDOG,REQ-004,CLAIM-DIVERSION,P-MAXWELL,ACCOUNT_OWNERSHIP_AND_TRANSFER,2,100,true,[],Funds were diverted to Maxwell account 9921.,2026.07.19.1
+MADDOG,REQ-006,CLAIM-SILAS-KNOWING,P-SILAS,TEMPORAL_SALES_COMMUNICATION,2,90,true,[],Silas recruited after withdrawal problems were known.,2026.07.19.1
+MADDOG,REQ-007,CLAIM-NINA-INNOCENT,P-NINA,EXCULPATORY_ACCESS_AND_COMMUNICATION,2,70,true,[],Nina lacked financial authority and knowledge.,2026.07.19.1
+MADDOG,REQ-008,CLAIM-HAZEL-VICTIM,P-HAZEL,LOSS_AND_NO_BENEFIT,2,70,true,[],Hazel was an unwitting connector and victim.,2026.07.19.1

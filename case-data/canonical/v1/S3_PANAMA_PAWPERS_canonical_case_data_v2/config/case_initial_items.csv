@@ -1,0 +1,7 @@
+case_id,profile_code,sequence,record_id,reason_internal,snapshot_version
+PANAMA_PAWPERS,SENIOR,1,CE-CROWN,Operating company,2026.07.19.2
+PANAMA_PAWPERS,SENIOR,2,BO-0001,Incomplete ownership declaration,2026.07.19.2
+PANAMA_PAWPERS,SENIOR,3,NOM-0001,Nominee agreement,2026.07.19.2
+PANAMA_PAWPERS,SENIOR,4,INV-0001,Related-party invoice,2026.07.19.2
+PANAMA_PAWPERS,SENIOR,5,TX-RELATED-0001,Related-party payment,2026.07.19.2
+PANAMA_PAWPERS,SENIOR,6,PR-JUNE-01,Protected high-degree agent,2026.07.19.2
