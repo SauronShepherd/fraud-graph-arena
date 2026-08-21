@@ -8,6 +8,10 @@ def reconcile_import_runs(warehouse) -> list[str]:
     reconciled = []
     for run in warehouse.runs.values():
         if run.status not in TERMINAL:
+            published = [publication for publication in warehouse.publications.values() if publication.identity == run.identity and warehouse.active.get(run.identity.key) == publication.publication_id]
+            if published:
+                run.status = ImportStatus.PUBLISHED
+                continue
             run.status = ImportStatus.FAILED
             run.error_code = "PROCESS_RESTART_RECONCILED"
             reconciled.append(run.run_id)

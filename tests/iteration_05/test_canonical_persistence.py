@@ -71,6 +71,12 @@ def test_reconcile_interrupted_run_preserves_active_publication():
     assert reconcile_import_runs(warehouse) == [run.run_id]
     assert warehouse.active[warehouse.publications[first.publication_id].identity.key] == first.publication_id
 
+def test_reconcile_stale_run_with_active_publication_is_published():
+    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(PACKAGES[0])
+    warehouse.runs[result.run_id].status = "PUBLISHING"
+    assert reconcile_import_runs(warehouse) == []
+    assert warehouse.runs[result.run_id].status == ImportStatus.PUBLISHED
+
 def test_rollback_restores_validated_publication_without_rewriting_rows():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
     first = importer.import_package(PACKAGES[0]); second = importer.import_package(PACKAGES[1])
