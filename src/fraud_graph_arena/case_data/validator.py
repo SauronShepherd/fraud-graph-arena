@@ -60,6 +60,9 @@ def validate_package(root: Path) -> list[dict]:
             manifest_family = manifest.get('family')
             if manifest_family and manifest_family != case_rows[0].get('path_code'):
                 err('PKG.FAMILY', 'manifest.json', 'Manifest family disagrees with config/cases.csv.')
+            for field in ('case_id', 'case_version', 'snapshot_version'):
+                if manifest.get(field) != case_rows[0].get(field):
+                    err('PKG.IDENTITY', 'manifest.json', f'Manifest {field} disagrees with config/cases.csv.')
         for row in profile_rows: require_controlled(row.get('profile_code', ''), FAMILIES, 'profile_code')
         for row in loaded.get('authoring/relationships.csv', []): require_controlled(row.get('relationship_family', ''), RELATIONSHIP_FAMILIES, 'relationship_family')
         for row in loaded.get('analytics/entity_resolution_candidates.csv', []): require_controlled(row.get('confidence_band', ''), CONFIDENCE_BANDS, 'confidence_band'); require_controlled(row.get('generation_mode', ''), GENERATION_MODES, 'generation_mode')
