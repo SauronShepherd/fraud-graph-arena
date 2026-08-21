@@ -13,3 +13,16 @@ def parse_timestamp(value: str, field: str='timestamp') -> datetime:
     except ValueError as exc: raise ValueError(f'{field}: invalid timestamp') from exc
     if result.tzinfo != timezone.utc: raise ValueError(f'{field}: timestamp must be UTC')
     return result
+
+def validate_sql_value(value: str, sql_type: str, field: str = "value") -> None:
+    if value == "":
+        return
+    normalized = sql_type.upper()
+    try:
+        if normalized in {"INT", "BIGINT"}: int(value)
+        elif normalized == "BOOLEAN" and value.lower() not in {"true", "false"}: raise ValueError
+        elif normalized.startswith("DECIMAL("): float(value)
+        elif normalized == "DATE":
+            datetime.fromisoformat(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{field}: invalid {sql_type}") from exc

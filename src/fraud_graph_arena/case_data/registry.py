@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+from functools import lru_cache
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
 CONTRACT=ROOT/'contracts/canonical/v1/canonical-model.json'
@@ -40,6 +41,7 @@ _HEADERS={
 def headers(path: str)->tuple[str,...]: return tuple(_HEADERS[path].split(','))
 def load_registry()->dict[str,tuple[str,...]]: return {p:headers(p) for p in TABLE_PATHS}
 
+@lru_cache(maxsize=1)
 def load_typed_registry() -> dict[str, dict]:
     """Load the checked-in typed Canonical Model v1 registry artifact."""
     packages = sorted((ROOT / "case-data/canonical/v1").glob("*/fga_canonical_schema_registry_v1.json"))

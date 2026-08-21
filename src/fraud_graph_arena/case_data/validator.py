@@ -1,8 +1,8 @@
 from __future__ import annotations
 import csv, json, hashlib
 from pathlib import Path
-from .registry import TABLE_PATHS, headers
-from .types import parse_json, parse_timestamp
+from .registry import TABLE_PATHS, headers, sql_types
+from .types import parse_json, parse_timestamp, validate_sql_value
 FORBIDDEN=('canonical_entity','culpability','solve_gate','mastermind','guilty','scoring_rule','ending_rule')
 def validate_package(root: Path) -> list[dict]:
     errors=[]; root=Path(root)
@@ -26,7 +26,10 @@ def validate_package(root: Path) -> list[dict]:
                     if layer in {'published','genie'}:
                         if any(k.lower() in FORBIDDEN for k in row): err('SAFE.TRUTH.LEAK',rel,'Protected truth field found.'); break
                         if 'DO_NOT_SHOW_HERCULE_THIS' in str(row): err('SAFE.TRUTH.LEAK',rel,'Protected truth sentinel found.'); break
+                    typed = dict(zip(headers(rel), sql_types(rel), strict=True))
                     for key,value in row.items():
+                        try: validate_sql_value(value, typed[key], key)
+                        except ValueError as exc: err('CANONICAL.TYPE', rel, str(exc))
                         if key.endswith('_json') and value:
                             try: parse_json(value,key)
                             except ValueError as exc: err('CANONICAL.JSON',rel,str(exc))
