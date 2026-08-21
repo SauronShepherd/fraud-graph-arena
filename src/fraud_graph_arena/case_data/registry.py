@@ -38,16 +38,17 @@ _HEADERS={
 'truth/assertions.csv':'case_id,assertion_id,assertion_type,subject_record_id,related_record_ids_json,expected_value_json,severity,description,snapshot_version',
 'validation/checks.csv':'case_id,check_id,scope,status,details,snapshot_version',
 'validation/metrics.csv':'case_id,metric_name,metric_value_decimal,metric_value_string,dimensions_json,status,snapshot_version'}
-def headers(path: str)->tuple[str,...]: return tuple(_HEADERS[path].split(','))
+def headers(path: str)->tuple[str,...]:
+    """Return columns from the repository's authoritative typed registry."""
+    return tuple(column["name"] for column in load_typed_registry()[path]["columns"])
 def load_registry()->dict[str,tuple[str,...]]: return {p:headers(p) for p in TABLE_PATHS}
 
 @lru_cache(maxsize=1)
 def load_typed_registry() -> dict[str, dict]:
     """Load the checked-in typed Canonical Model v1 registry artifact."""
-    packages = sorted((ROOT / "case-data/canonical/v1").glob("*/fga_canonical_schema_registry_v1.json"))
-    if not packages:
-        raise FileNotFoundError("typed canonical registry artifact is missing")
-    data = json.loads(packages[0].read_text(encoding="utf-8"))
+    if not (ROOT / "contracts/canonical/v1/schema-registry.json").exists():
+        raise FileNotFoundError("authoritative typed canonical registry artifact is missing")
+    data = json.loads((ROOT / "contracts/canonical/v1/schema-registry.json").read_text(encoding="utf-8"))
     if set(data.get("tables", {})) != set(TABLE_PATHS):
         raise ValueError("typed canonical registry does not define exactly 32 tables")
     return data["tables"]
