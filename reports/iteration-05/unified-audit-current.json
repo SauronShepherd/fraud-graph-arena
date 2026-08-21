@@ -1,0 +1,17 @@
+{
+  "closure_allowed": false,
+  "generated_at_utc": "2026-08-21T21:06:12.325605+00:00",
+  "live_databricks": {
+    "source_sha": "56871442298be0aebfc5c631d868faa1d22e38c9",
+    "status": "unavailable"
+  },
+  "local_evidence": {
+    "canonical_packages": "13",
+    "frontend_tests": "npx vitest run --pool=forks --no-file-parallelism --maxWorkers=1 --testTimeout=5000",
+    "frontend_typecheck": "npm run typecheck",
+    "python_tests": "python -m pytest -q tests/iteration_04 tests/iteration_05"
+  },
+  "manifest_version": "1.0",
+  "scope": "FGA unified static implementation gap audit",
+  "source_sha": "56871442298be0aebfc5c631d868faa1d22e38c9"
+}
