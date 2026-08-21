@@ -1,11 +1,15 @@
 {
   "template_id": "FGA_I02_DETECTIVE_OFFICE",
   "template_version": "1.0.0",
-  "artwork_status": "EXTERNAL_APPROVAL_REQUIRED",
-  "approved_source": null,
+  "artwork_status": "APPROVED",
+  "approved_source": "Project-owner approval recorded in task conversation on 2026-08-21; supplied file renamed to fga-investigation-board-canonical-v1.png",
   "canvas": { "width": 1600, "height": 900 },
   "regions_version": "1.0.0",
   "assets": [
-    { "id": "board-neutral-fallback", "version": "1.0.0", "path": "fallback.svg", "sha256": "89e7c5c8d3e1009a516afbe8b007b3539d3d6e940e86f4a4aebb1934d49c7ebd", "dimensions": { "width": 1600, "height": 900 }, "layer": "scene", "purpose": "nonfatal neutral fallback", "transparency": false, "decorative": true, "fatal": false }
+    { "id": "fga-investigation-board-canonical-v1", "version": "1.0.0", "path": "fga-investigation-board-canonical-v1.png", "sha256": "a7794a31973fc6ee7270846a50f57c9004b17efd30257bcb781a211302b0f6f1", "dimensions": { "width": 1672, "height": 941 }, "layer": "scene", "purpose": "approved canonical supplied board artwork", "transparency": false, "decorative": true, "fatal": false },
+    { "id": "board-neutral-fallback", "version": "1.0.0", "path": "fallback.svg", "sha256": "89e7c5c8d3e1009a516afbe8b007b3539d3d6e940e86f4a4aebb1934d49c7ebd", "dimensions": { "width": 1600, "height": 900 }, "layer": "scene", "purpose": "nonfatal neutral fallback", "transparency": false, "decorative": true, "fatal": false },
+    { "id": "detective-office-variant-01", "version": "1.0.0", "path": "candidates/detective-office-variant-01.png", "sha256": "ef1792ed4173d2a14013a3bb8363bc7ac719389b3c54e8f330ed32fb3dbac8ca", "dimensions": { "width": 1672, "height": 941 }, "layer": "scene", "purpose": "decorative randomized office atmosphere", "transparency": false, "decorative": true, "fatal": false },
+    { "id": "detective-office-variant-02", "version": "1.0.0", "path": "candidates/detective-office-variant-02.png", "sha256": "4345dcea6249c4f1021a431db82f72c4bfa89930198ac4d1d3e603d9d7863326", "dimensions": { "width": 1672, "height": 941 }, "layer": "scene", "purpose": "decorative randomized office atmosphere", "transparency": false, "decorative": true, "fatal": false },
+    { "id": "detective-office-variant-03", "version": "1.0.0", "path": "candidates/detective-office-variant-03.png", "sha256": "8809a1b8613160b358a9e8b22641c2c87f3c33196826bc1dc5b35297a1a77f0e", "dimensions": { "width": 1672, "height": 941 }, "layer": "scene", "purpose": "decorative randomized office atmosphere", "transparency": false, "decorative": true, "fatal": false }
   ]
 }

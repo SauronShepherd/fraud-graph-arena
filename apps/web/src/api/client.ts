@@ -61,12 +61,12 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return (await response.json()) as T;
 }
 
-export function listSections(): Promise<CatalogueSections> {
-  return request<CatalogueSections>("/catalogue/sections");
+export function listSections(signal?: AbortSignal): Promise<CatalogueSections> {
+  return request<CatalogueSections>("/catalogue/sections", { signal });
 }
 
-export function getSection(pathId: string): Promise<CatalogueSection> {
-  return request<CatalogueSection>(`/catalogue/${encodeURIComponent(pathId)}`);
+export function getSection(pathId: string, signal?: AbortSignal): Promise<CatalogueSection> {
+  return request<CatalogueSection>(`/catalogue/${encodeURIComponent(pathId)}`, { signal });
 }
 
 export async function createAndStartRound(pathId: string, caseId: string): Promise<RoundSummary> {
@@ -83,8 +83,8 @@ export async function createAndStartRound(pathId: string, caseId: string): Promi
   });
 }
 
-export function getOpening(roundId: string): Promise<Opening> {
-  return request<Opening>(`/rounds/${encodeURIComponent(roundId)}/opening`);
+export function getOpening(roundId: string, signal?: AbortSignal): Promise<Opening> {
+  return request<Opening>(`/rounds/${encodeURIComponent(roundId)}/opening`, { signal });
 }
 
 export function completeOpening(roundId: string, completion: "FINISHED" | "SKIPPED" = "FINISHED"): Promise<RoundSummary> {
@@ -94,6 +94,6 @@ export function completeOpening(roundId: string, completion: "FINISHED" | "SKIPP
   });
 }
 
-export function getWorkspace(roundId: string): Promise<Workspace> {
-  return request<Workspace>(`/rounds/${encodeURIComponent(roundId)}/workspace`);
+export function getWorkspace(roundId: string, signal?: AbortSignal): Promise<Workspace> {
+  return request<Workspace>(`/rounds/${encodeURIComponent(roundId)}/workspace`, { signal });
 }

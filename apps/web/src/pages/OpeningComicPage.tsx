@@ -1,35 +1,26 @@
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { ApiProblem, completeOpening, getOpening } from "../api/client";
+import { useSearchParams } from "react-router-dom";
 import type { Opening, ProblemDetails } from "../api/contracts";
 import { Loading } from "../components/Loading";
 import { ProblemPanel } from "../components/ProblemPanel";
 import { rememberRound } from "../state/session";
+import { ScreenLink } from "../screen-system/ScreenLink";
+import { apiProblem, useScreenData } from "../screen-system/useScreenData";
+import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
+import { actions } from "../screen-system/actions";
 
 export function OpeningComicPage() {
-  const { roundId = "" } = useParams();
-  const navigate = useNavigate();
+  const { context: routeContext } = useScreenLocation();
+  const roundId = String(routeContext.roundId ?? "");
   const [searchParams, setSearchParams] = useSearchParams();
-  const [opening, setOpening] = useState<Opening | null>(null);
+  const { model: opening, problem: loadProblem, retry } = useScreenData<Opening>("ROUND_OPENING", { roundId }, roundId);
   const [problem, setProblem] = useState<ProblemDetails | null>(null);
   const [finishing, setFinishing] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
+  const [completedRoundId, setCompletedRoundId] = useState<string | null>(null);
   const pageNumber = Number(searchParams.get("page") ?? "1");
 
-  useEffect(() => {
-    let active = true;
-    setProblem(null);
-    getOpening(roundId)
-      .then((result) => {
-        if (!active) return;
-        rememberRound(result.round.id);
-        setOpening(result);
-      })
-      .catch((error: unknown) => {
-        if (active && error instanceof ApiProblem) setProblem(error.problem);
-      });
-    return () => { active = false; };
-  }, [roundId]);
+  useEffect(() => { if (opening) rememberRound(opening.round.id); }, [opening]);
 
   const currentIndex = useMemo(() => {
     if (!opening) return 0;
@@ -45,15 +36,18 @@ export function OpeningComicPage() {
     setFinishing(true);
     setProblem(null);
     try {
-      const round = await completeOpening(roundId, completion);
-      navigate(`/rounds/${encodeURIComponent(round.id)}/board`, { replace: true });
+      const result = completion === "SKIPPED"
+        ? await actions.SKIP_INTRO({ context: { roundId } })
+        : await actions.COMPLETE_INTRO({ context: { roundId } });
+      setCompletedRoundId(String(result.context?.roundId ?? roundId));
     } catch (error: unknown) {
-      if (error instanceof ApiProblem) setProblem(error.problem);
+      const details = apiProblem(error);
+      if (details) setProblem(details);
       setFinishing(false);
     }
   }
 
-  if (problem) return <ProblemPanel problem={problem} />;
+  if (problem || loadProblem) return <ProblemPanel problem={problem ?? loadProblem!} onRetry={loadProblem ? retry : undefined} />;
   if (!opening) return <Loading message="Projecting the Academy briefing…" />;
 
   const page = opening.sequence.pages[currentIndex];
@@ -103,9 +97,11 @@ export function OpeningComicPage() {
             Next page
           </button>
         ) : (
-          <button className="button" type="button" disabled={finishing} onClick={() => void finish()}>
-            {finishing ? "Opening the board…" : "Enter the Academy"}
-          </button>
+          completedRoundId ? (
+            <ScreenLink auto className="button" to={`/rounds/${encodeURIComponent(completedRoundId)}/board`}>Enter the Academy</ScreenLink>
+          ) : (
+            <button className="button" type="button" disabled={finishing} onClick={() => void finish()}>{finishing ? "Opening the board…" : "Enter the Academy"}</button>
+          )
         )}
         {opening.sequence.skippable && !isLast ? (
             <button className="text-button" type="button" disabled={finishing} onClick={() => void finish("SKIPPED")}>

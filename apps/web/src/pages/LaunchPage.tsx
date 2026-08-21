@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { recalledRound } from "../state/session";
+import { ScreenLink } from "../screen-system/ScreenLink";
 
 export function LaunchPage() {
   const lastRoundId = recalledRound();
@@ -11,11 +11,11 @@ export function LaunchPage() {
         The office is open. The board is empty. Please keep your accusations provisional.
       </p>
       <div className="actions">
-        <Link className="button" to="/paths">Choose your trench coat</Link>
+        <ScreenLink className="button" to="/paths">Choose your trench coat</ScreenLink>
         {lastRoundId ? (
-          <Link className="button secondary" to={`/rounds/${lastRoundId}/board`}>
+          <ScreenLink className="button secondary" to={`/rounds/${lastRoundId}/board`}>
             Return to the empty board
-          </Link>
+          </ScreenLink>
         ) : null}
       </div>
     </main>

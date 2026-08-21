@@ -717,7 +717,12 @@
       "title": "Test Windows and Unix line-ending equivalence",
       "path": "tests/governance/test_iteration_00.py",
       "status": "implemented"
-    }
+    },
+    {"id":"REQ-FGA03-CONTRACT-001","kind":"requirement","title":"FGA03 finite declarative screen contract","status":"implemented"},
+    {"id":"REQ-FGA03-MACHINE-002","kind":"requirement","title":"FGA03 deterministic screen state machine","status":"implemented"},
+    {"id":"REQ-FGA03-REGISTRIES-003","kind":"requirement","title":"FGA03 closed capability registries","status":"implemented"},
+    {"id":"REQ-FGA03-ARCHITECTURE-004","kind":"requirement","title":"FGA03 frontend-owned navigation boundary","status":"verified"},
+    {"id":"TEST-FGA03-SCREEN-SYSTEM","kind":"test","title":"FGA03 screen, architecture, graph and browser qualification tests","path":"tests/iteration_03","status":"verified"}
   ],
   "edges": [
     {
@@ -1729,7 +1734,11 @@
       "from": "I00-S04-T31",
       "to": "TEST-I00-DIGESTS",
       "relationship": "verified_by"
-    }
+    },
+    {"from":"REQ-FGA03-CONTRACT-001","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"},
+    {"from":"REQ-FGA03-MACHINE-002","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"},
+    {"from":"REQ-FGA03-REGISTRIES-003","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"},
+    {"from":"REQ-FGA03-ARCHITECTURE-004","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"}
   ],
   "coverage_rules": {
     "required_modules": [

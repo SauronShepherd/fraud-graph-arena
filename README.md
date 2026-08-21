@@ -1,10 +1,12 @@
 # Fraud Graph Arena
 
-This repository contains the `I02 — Typewriter of the Living Dead` candidate on top of the qualified Iteration 00 governance baseline. The implementation is substantially complete for the empty Academy board, but it is not yet a closed release: approved layered artwork and final I01/I02 qualification lineage remain outstanding.
+This repository contains the `I03 — Screen Me Up Before You Go-Go` candidate on top of the qualified Iteration 00 governance baseline. The Academy journey now uses a frontend-owned declarative screen system, while approved artwork and final release lineage remain external closure prerequisites.
 
 ## Playable result
 
 `launch → select Detective Academy → select training case → create/start round → opening comic → enter board → retain context`
+
+Every production screen is resolved through the versioned screen set, closed registries, semantic action boundary, deterministic machine, route codec, shared lifecycle host, and centralized transition effect. `CASE_RESOLUTION` is registered as an internal reusable family but remains unreachable in I03.
 
 The Academy board is intentionally almost empty. The route, comic contract, state ownership, persistence boundary, composition root and tests are real.
 
@@ -43,7 +45,9 @@ The only playable file is the spoiler-free `ACADEMY_001 — The Case of the Empt
 - explicit WEB, MAINTENANCE, EVALUATOR and MIGRATE runtime roots;
 - a 1600×900 board geometry mapper, semantic board regions, asset hashes and release validation;
 - keyboard-reachable unavailable investigation controls with typed semantic action IDs;
-- Python, React component and Playwright Academy walking-skeleton tests.
+- Python, React component, screen-system and Playwright qualification tests;
+- versioned declarative screen definitions with schema and graph validation;
+- centralized navigation, cancellable screen data loading, semantic actions, lifecycle hooks and transition effects.
 
 ## Install the Python application and tests
 
@@ -78,6 +82,9 @@ cd apps/web
 npm run typecheck
 npm run test
 npm run test:e2e
+
+python scripts/validate_screen_definitions.py
+python scripts/run_iteration_03_gate.py --report reports/iteration-03/gate.json
 ```
 
 The Playwright test proves that Hercule can enter Detective Academy, select `ACADEMY_001`, read multiple opening pages, refresh on page two, enter the empty board, refresh again and recover the same training case from authoritative state. It also proves that Puppy is not selectable yet.
@@ -123,7 +130,7 @@ There is no real ranked case content, evidence, graph, entity resolution, retrie
 
 ## Release status
 
-The current branch is a candidate, not a 100% compliant immutable release. Run `python scripts/validate_board_manifest.py --require-approved-artwork` to see the artwork closure dependency. The cumulative gate also requires a clean source checkout, current frontend/browser evidence, and I00→I01→I02 release lineage.
+The current branch is a candidate, not a 100% compliant immutable release. Run `python scripts/validate_board_manifest.py --require-approved-artwork` to see the artwork closure dependency. The I03 gate also requires a clean source checkout, two independent candidate runs, current frontend/browser evidence, and prior immutable release lineage.
 
 Iteration 01 proves architectural continuity without spending any real-case spoilers.
 

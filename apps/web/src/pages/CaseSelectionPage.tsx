@@ -1,42 +1,37 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { ApiProblem, createAndStartRound, getSection } from "../api/client";
+import { useState } from "react";
 import type { CatalogueSection, ProblemDetails } from "../api/contracts";
 import { Loading } from "../components/Loading";
 import { ProblemPanel } from "../components/ProblemPanel";
 import { rememberRound } from "../state/session";
+import { ScreenLink } from "../screen-system/ScreenLink";
+import { apiProblem, useScreenData } from "../screen-system/useScreenData";
+import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
+import { actions } from "../screen-system/actions";
 
 export function CaseSelectionPage() {
-  const { pathId = "" } = useParams();
-  const navigate = useNavigate();
-  const [section, setSection] = useState<CatalogueSection | null>(null);
+  const { context: routeContext } = useScreenLocation();
+  const pathId = String(routeContext.pathId ?? "");
+  const { model: section, problem: loadProblem, retry } = useScreenData<CatalogueSection>("CATALOGUE_SECTION", { pathId }, pathId);
   const [problem, setProblem] = useState<ProblemDetails | null>(null);
   const [openingCase, setOpeningCase] = useState<string | null>(null);
-
-  useEffect(() => {
-    let active = true;
-    getSection(pathId)
-      .then((result) => active && setSection(result))
-      .catch((error: unknown) => {
-        if (active && error instanceof ApiProblem) setProblem(error.problem);
-      });
-    return () => { active = false; };
-  }, [pathId]);
+  const [openedRoundId, setOpenedRoundId] = useState<string | null>(null);
 
   async function openCase(caseId: string) {
     setOpeningCase(caseId);
     setProblem(null);
     try {
-      const round = await createAndStartRound(pathId, caseId);
-      rememberRound(round.id);
-      navigate(`/rounds/${encodeURIComponent(round.id)}/intro?page=1`);
+      const result = await actions.OPEN_CASE({ context: { pathId }, payload: { caseId } });
+      const roundId = String(result.context?.roundId ?? "");
+      rememberRound(roundId);
+      setOpenedRoundId(roundId);
     } catch (error: unknown) {
-      if (error instanceof ApiProblem) setProblem(error.problem);
+      const details = apiProblem(error);
+      if (details) setProblem(details);
       setOpeningCase(null);
     }
   }
 
-  if (problem) return <ProblemPanel problem={problem} />;
+  if (problem || loadProblem) return <ProblemPanel problem={problem ?? loadProblem!} onRetry={loadProblem ? retry : undefined} />;
   if (!section) return <Loading message="Opening the catalogue…" />;
 
   return (
@@ -48,7 +43,7 @@ export function CaseSelectionPage() {
         <section className="empty-state">
           <h2>No published cases yet</h2>
           <p>{section.path.access_message}</p>
-          <Link className="button secondary" to="/paths">Choose another path</Link>
+          <ScreenLink className="button secondary" to="/paths">Choose another path</ScreenLink>
         </section>
       ) : (
         <div className="card-grid" aria-label={`${section.path.name} cases`}>
@@ -66,6 +61,7 @@ export function CaseSelectionPage() {
               >
                 {openingCase === caseItem.id ? "Carrying the training file…" : "Open training case"}
               </button>
+              {openedRoundId ? <ScreenLink auto className="button" to={`/rounds/${encodeURIComponent(openedRoundId)}/intro?page=1`}>Continue to introduction</ScreenLink> : null}
             </article>
           ))}
         </div>

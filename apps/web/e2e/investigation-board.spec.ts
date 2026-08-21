@@ -19,7 +19,7 @@ test.describe("I02 investigation board", () => {
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
       await openBoard(page);
       await expect(page.getByText("ACADEMY_001")).toBeVisible();
-      await expect(page.getByText("ACTIVE", { exact: true })).toBeVisible();
+      await expect(page.getByLabel("Round status ACTIVE")).toBeVisible();
       await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
       await expect(page.locator("[data-action-id]")).toHaveCount(4);
       await expect(page.locator("[data-action-id][data-state=NOT_IMPLEMENTED]")).toHaveCount(4);
