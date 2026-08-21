@@ -10,3 +10,9 @@ def test_contract_registry_is_the_complete_typed_32_table_authority():
     assert set(data["tables"]) == set(TABLE_PATHS)
     assert data["tables"] == load_typed_registry()
     assert all(column["sql_type"] and "nullable" in column for table in data["tables"].values() for column in table["columns"])
+
+def test_all_package_registry_copies_match_the_authority():
+    authority = json.loads((ROOT / "contracts/canonical/v1/schema-registry.json").read_text())["tables"]
+    copies = sorted((ROOT / "case-data/canonical/v1").glob("*/fga_canonical_schema_registry_v1.json"))
+    assert len(copies) == 13
+    assert all(json.loads(path.read_text())["tables"] == authority for path in copies)
