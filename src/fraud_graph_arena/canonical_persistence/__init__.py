@@ -3,6 +3,7 @@
 from .models import ImportStatus, PublicationStatus, ImportResult
 from .importer import CanonicalImporter
 from .warehouse import MemoryWarehouse
+from .databricks_warehouse import DatabricksWarehouse, DatabricksWarehouseError
 from .lifecycle import can_transition, require_transition
 from .package import CanonicalPackage
 from .planner import DatasetPlan, build_plan
