@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 import pytest
 from fraud_graph_arena.canonical_persistence import CanonicalImporter, MemoryWarehouse
+from fraud_graph_arena.canonical_persistence.importer import ResponseLostAfterActivation
 from fraud_graph_arena.canonical_persistence.models import ImportStatus
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, expected_topology
 from fraud_graph_arena.canonical_persistence.identity import topology_hash
@@ -89,6 +90,15 @@ def test_candidate_cleanup_is_scoped_and_cleanup_failure_is_explicit():
     warehouse.candidates[publication.publication_id] = publication
     with pytest.raises(RuntimeError): warehouse.cleanup_candidate(publication.publication_id, fail=True)
     assert publication.publication_id in warehouse.candidates
+
+def test_response_loss_after_activation_reconciles_as_published():
+    warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
+    with pytest.raises(ResponseLostAfterActivation):
+        importer.import_package(PACKAGES[0], lose_response_after_activation=True)
+    run = next(iter(warehouse.runs.values()))
+    assert run.status == ImportStatus.PUBLISHED
+    assert warehouse.active[run.identity.key] == next(iter(warehouse.publications))
+    assert reconcile_import_runs(warehouse) == []
 
 def test_persisted_rows_have_correlation_metadata_but_fingerprint_is_semantic():
     warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(PACKAGES[0])

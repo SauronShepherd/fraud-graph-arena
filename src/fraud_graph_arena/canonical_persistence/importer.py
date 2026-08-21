@@ -7,6 +7,7 @@ from .registry import PHYSICAL_TARGETS, validate_registry
 from .types import validate_row_types
 
 class CanonicalImportError(ValueError): pass
+class ResponseLostAfterActivation(RuntimeError): pass
 
 class CanonicalImporter:
     def __init__(self, warehouse): self.warehouse = warehouse; validate_registry(); self.warehouse.topology.update(PHYSICAL_TARGETS.values())
@@ -22,7 +23,7 @@ class CanonicalImporter:
             if len(data) != item.get("bytes") or hashlib.sha256(data).hexdigest() != item.get("sha256"):
                 raise CanonicalImportError(f"manifest digest mismatch: {rel}")
         return PackageIdentity(manifest["case_id"], manifest.get("case_version", "1.0.0"), manifest["snapshot_version"], manifest["canonical_model_version"], content_digest(root))
-    def import_package(self, root: str | Path, *, retry_of: str | None = None, fail_after: int | None = None) -> ImportResult:
+    def import_package(self, root: str | Path, *, retry_of: str | None = None, fail_after: int | None = None, lose_response_after_activation: bool = False) -> ImportResult:
         root = Path(root); identity = self._identity(root); run_id = "run_" + uuid.uuid4().hex
         run = ImportRun(run_id, identity, retry_of); self.warehouse.runs[run_id] = run
         pub_id = publication_id(identity); active = self.warehouse.active.get(identity.key)
@@ -57,6 +58,11 @@ class CanonicalImporter:
             previous = self.warehouse.active.get(identity.key)
             if previous: self.warehouse.publications[previous].status = PublicationStatus.SUPERSEDED
             candidate.status = PublicationStatus.ACTIVE; self.warehouse.active[identity.key] = pub_id; run.status = ImportStatus.PUBLISHED
+            if lose_response_after_activation:
+                raise ResponseLostAfterActivation("injected response loss after activation")
             return ImportResult(run_id, run.status, pub_id, candidate.semantic_hash)
         except Exception as exc:
+            if isinstance(exc, ResponseLostAfterActivation) and self.warehouse.active.get(identity.key) == pub_id:
+                # The commit succeeded; only the client response was lost.
+                raise
             run.status = ImportStatus.FAILED; run.error_code = type(exc).__name__; run.error_summary = str(exc)[:512]; return ImportResult(run_id, run.status, None, None)

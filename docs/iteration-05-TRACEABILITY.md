@@ -22,5 +22,5 @@ This matrix maps the plan families to implementation owners and evidence. Paths 
 | Requirement | Evidence | Status |
 |---|---|---|
 | DBX-012 / SEC-001: non-admin identity denied truth access | `reports/iteration-05/security/truth-access-negative.json` | PASS: `angel.alvarez.pascua@gmail.com` safe read passed and truth read was denied |
-| DBX-009 response-loss and cleanup-failure live fault injection | `reports/iteration-05/imports/recovery-comparison.json` plus local resilience tests | Local behavior verified; live fault-injection adapter unavailable |
+| DBX-009 response-loss and cleanup-failure fault injection | `tests/iteration_05/test_canonical_persistence.py`, `scripts/qualify_databricks_failure.py` | PASS locally; live transport fault-injection adapter unavailable |
 | Immutable closed tag | `reports/iteration-05/requirement-audit.json` sets `closure_tag_allowed=true` | Ready after final gate |
