@@ -1,11 +1,26 @@
 # FGA 05 traceability
 
-| Requirement family | Evidence |
-|---|---|
-| fixed canonical topology | `canonical_persistence/registry.py`, `test_canonical_persistence.py` |
-| immutable identity and exact retry | `identity.py`, `importer.py`, FGA 05 tests |
-| candidate activation and rollback | `warehouse.py`, FGA 05 tests |
-| manifest integrity | `importer.py`, tamper test |
-| recovery and redaction | `recovery.py`, `security.py`, FGA 05 tests |
-| local 13-package qualification | `scripts/run_iteration_05_gate.py`, `reports/iteration-05/gate.json` |
-| live platform qualification | explicitly not qualified locally |
+This matrix maps the plan families to implementation owners and evidence. Paths are repository-relative; machine-readable qualification evidence is under `reports/iteration-05/`.
+
+| Plan family | Responsibility | Primary implementation | Verification evidence | Status |
+|---|---|---|---|---|
+| S00–S01 | environment boundary and topology contract | `config/lakehouse/*.json`, `docs/architecture/adr/*` | clean recreation and gate reports | PASS |
+| S02 | executable 32-path registry and DDL | `canonical_persistence/registry.py`, `sql/lakehouse/*` | registry/DDL tests, package validation | PASS |
+| S03 | manifest/hash/header/type preflight | `package.py`, `importer.py`, `types.py` | tamper/type/archive tests, package validation | PASS |
+| S04 | run/file/dataset ledger receipts | `ledger.py`, `warehouse.py`, `models.py` | lifecycle/ledger tests, live row receipt report | PASS |
+| S05–S06 | closed planner and candidate loading | `planner.py`, `importer.py`, `load_case_datasets.py` | loader and candidate tests | PASS |
+| S07–S08 | candidate validation and pointer publication | `validator.py`, `publisher.py`, `identity.py` | publication/validation tests, idempotence evidence | PASS |
+| S09 | cleanup and restart reconciliation | `recovery.py`, `reconcile_import_runs.py` | reconciliation and failure-isolation tests | PASS |
+| S10 | fail-closed disposable recreation | `recreate_lakehouse_namespace.py`, `qualify_databricks.py` | reset safety and clean recreation reports | PASS |
+| S11 | topology/resource budget | `topology.py`, `audit_lakehouse_topology.py`, resource script | final topology/resource reports | PASS |
+| S12–S13 | loader/security/authority boundaries | `security.py`, permissions SQL, loader tests | security tests and SQL policy review | PASS locally |
+| S14 | qualification harness and cumulative gate | `qualify_databricks*.py`, `run_iteration_05_gate.py` | gate, package, repeat, row-count, failure reports | PASS |
+| S15 | operations, qualification, evidence, closure audit | `docs/iteration-05-*.md`, requirement audit | `requirement-audit.json`, closure commits | PASS with external gap |
+
+## Explicit qualification gaps
+
+| Requirement | Evidence | Status |
+|---|---|---|
+| DBX-012 / SEC-001: non-admin identity denied truth access | `reports/iteration-05/security/qualification-gap.json` | EXTERNAL GAP: both available profiles authenticate as administrator |
+| DBX-009 response-loss and cleanup-failure live fault injection | `reports/iteration-05/imports/recovery-comparison.json` plus local resilience tests | Local behavior verified; live fault-injection adapter unavailable |
+| Immutable closed tag | `reports/iteration-05/requirement-audit.json` sets `closure_tag_allowed=false` | Intentionally not created |
