@@ -1,0 +1,15 @@
+{
+  "status": "external_gap",
+  "qualified_source_sha": "7b9fcf5407c55f11dd734c8033b69c1776025423",
+  "requirements": {
+    "canonical_packages": "pass",
+    "bounded_topology": "pass",
+    "live_rows_and_receipts": "pass",
+    "repeat_qualification": "pass",
+    "resource_budget": "pass",
+    "failure_isolation": "pass",
+    "local_regression_gate": "pass",
+    "non_admin_truth_denial": "external_gap"
+  },
+  "closure_tag_allowed": false
+}
