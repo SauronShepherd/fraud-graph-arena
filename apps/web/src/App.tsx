@@ -1,29 +1,49 @@
 import { useScreenLocation } from "./screen-system/BrowserNavigationAdapter";
-import { BoardPage } from "./pages/BoardPage";
-import { CaseSelectionPage } from "./pages/CaseSelectionPage";
-import { LaunchPage } from "./pages/LaunchPage";
-import { OpeningComicPage } from "./pages/OpeningComicPage";
-import { PathSelectionPage } from "./pages/PathSelectionPage";
 import { TransitionCoordinator } from "./screen-system/TransitionCoordinator";
 import { screenDefinitions } from "./screen-system/definitions";
 import { ScreenHost } from "./screen-system/ScreenHost";
+import { resolveComponent } from "./screen-system/componentRegistry";
+import { ScreenRuntimeProvider } from "./screen-system/ScreenRuntimeContext";
+import { actions } from "./screen-system/actions";
+import { resolveTransition } from "./screen-system/machine";
+import { locationFor } from "./screen-system/routeCodec";
+import type { ActionId, TransitionPlan } from "./screen-system/contracts";
+import { useNavigate } from "react-router-dom";
+import { useCallback, useState } from "react";
 
 export function App() {
-  const { screen } = useScreenLocation();
+  const { screen, context } = useScreenLocation();
+  const navigate = useNavigate();
+  const [transitionPlan, setTransitionPlan] = useState<TransitionPlan | null>(null);
+  const [transitionLocked, setTransitionLocked] = useState(false);
+  const dispatchAction = useCallback(async (actionId: string, payload?: Record<string, string | number>): Promise<void> => {
+    if (transitionLocked) return;
+    const action = actions[actionId as ActionId];
+    if (!action) throw new Error(`UNKNOWN_SCREEN_ACTION:${actionId}`);
+    setTransitionLocked(true);
+    try {
+      const result = await action({ context, payload });
+      const plan = resolveTransition(screenDefinitions.get(screen)!, context, result.event, screenDefinitions);
+      if (!plan) throw new Error(`UNDECLARED_SCREEN_TRANSITION:${screen}:${result.event.type}`);
+      setTransitionPlan(plan);
+      navigate(locationFor(screenDefinitions.get(plan.target)!, plan.context), { replace: plan.history === "REPLACE" });
+    } finally {
+      setTransitionLocked(false);
+    }
+  }, [context, navigate, screen, transitionLocked]);
+  const Component = resolveComponent(screenDefinitions.get(screen)?.component ?? screen);
   return (
     <div className="app-shell">
-      <TransitionCoordinator />
+      <TransitionCoordinator plan={transitionPlan} onComplete={() => setTransitionPlan(null)} />
       <header className="masthead">
         <span className="paw" aria-hidden="true">🐾</span>
         <span>The Dogtective Agency</span>
       </header>
-      <ScreenHost definition={screenDefinitions.get(screen)!} screen={screen}>
-        {screen === "LAUNCH" ? <LaunchPage /> : null}
-        {screen === "PATH_SELECTION" ? <PathSelectionPage /> : null}
-        {screen === "CASE_SELECTION" ? <CaseSelectionPage /> : null}
-        {screen === "CASE_INTRODUCTION" ? <OpeningComicPage /> : null}
-        {screen === "INVESTIGATION_BOARD" ? <BoardPage /> : null}
-      </ScreenHost>
+      <ScreenRuntimeProvider value={{ context, dispatchAction, transitionLocked }}>
+        <ScreenHost definition={screenDefinitions.get(screen)!} screen={screen}>
+          <Component />
+        </ScreenHost>
+      </ScreenRuntimeProvider>
     </div>
   );
 }

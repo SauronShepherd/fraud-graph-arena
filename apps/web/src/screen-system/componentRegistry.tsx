@@ -6,6 +6,7 @@ import { LaunchPage } from "../pages/LaunchPage";
 import { OpeningComicPage } from "../pages/OpeningComicPage";
 import { PathSelectionPage } from "../pages/PathSelectionPage";
 import { CaseResolutionPage } from "../pages/CaseResolutionPage";
+import { ConfigurationFailurePage } from "../pages/ConfigurationFailurePage";
 
 export const componentRegistry: Partial<Record<ComponentId, ComponentType>> = {
   LAUNCH: LaunchPage,
@@ -15,6 +16,7 @@ export const componentRegistry: Partial<Record<ComponentId, ComponentType>> = {
   INVESTIGATION_BOARD: BoardPage,
   CASE_RESOLUTION: CaseResolutionPage
 };
+export const configurationFailureComponent = ConfigurationFailurePage;
 export function resolveComponent(id: ComponentId): ComponentType {
   const component = componentRegistry[id];
   if (!component) throw new Error(`UNKNOWN_SCREEN_COMPONENT:${id}`);

@@ -4,10 +4,9 @@ import type { Opening, ProblemDetails } from "../api/contracts";
 import { Loading } from "../components/Loading";
 import { ProblemPanel } from "../components/ProblemPanel";
 import { rememberRound } from "../state/session";
-import { ScreenLink } from "../screen-system/ScreenLink";
 import { apiProblem, useScreenData } from "../screen-system/useScreenData";
 import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
-import { actions } from "../screen-system/actions";
+import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 
 export function OpeningComicPage() {
   const { context: routeContext } = useScreenLocation();
@@ -17,7 +16,7 @@ export function OpeningComicPage() {
   const [problem, setProblem] = useState<ProblemDetails | null>(null);
   const [finishing, setFinishing] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
-  const [completedRoundId, setCompletedRoundId] = useState<string | null>(null);
+  const { dispatchAction, transitionLocked } = useScreenRuntime();
   const pageNumber = Number(searchParams.get("page") ?? "1");
 
   useEffect(() => { if (opening) rememberRound(opening.round.id); }, [opening]);
@@ -36,10 +35,7 @@ export function OpeningComicPage() {
     setFinishing(true);
     setProblem(null);
     try {
-      const result = completion === "SKIPPED"
-        ? await actions.SKIP_INTRO({ context: { roundId } })
-        : await actions.COMPLETE_INTRO({ context: { roundId } });
-      setCompletedRoundId(String(result.context?.roundId ?? roundId));
+      await dispatchAction(completion === "SKIPPED" ? "SKIP_INTRO" : "COMPLETE_INTRO");
     } catch (error: unknown) {
       const details = apiProblem(error);
       if (details) setProblem(details);
@@ -82,7 +78,7 @@ export function OpeningComicPage() {
         <button
           className="button secondary"
           type="button"
-          disabled={isFirst || finishing}
+          disabled={isFirst || finishing || transitionLocked}
           onClick={() => setSearchParams({ page: String(currentIndex) })}
         >
           Previous page
@@ -91,20 +87,16 @@ export function OpeningComicPage() {
           <button
             className="button"
             type="button"
-            disabled={finishing}
+            disabled={finishing || transitionLocked}
             onClick={() => setSearchParams({ page: String(currentIndex + 2) })}
           >
             Next page
           </button>
         ) : (
-          completedRoundId ? (
-            <ScreenLink auto className="button" to={`/rounds/${encodeURIComponent(completedRoundId)}/board`}>Enter the Academy</ScreenLink>
-          ) : (
-            <button className="button" type="button" disabled={finishing} onClick={() => void finish()}>{finishing ? "Opening the board…" : "Enter the Academy"}</button>
-          )
+          <button className="button" type="button" disabled={finishing || transitionLocked} onClick={() => void finish()}>{finishing ? "Opening the board…" : "Enter the Academy"}</button>
         )}
         {opening.sequence.skippable && !isLast ? (
-            <button className="text-button" type="button" disabled={finishing} onClick={() => void finish("SKIPPED")}>
+            <button className="text-button" type="button" disabled={finishing || transitionLocked} onClick={() => void finish("SKIPPED")}>
             Skip introduction
           </button>
         ) : null}

@@ -2,11 +2,10 @@ import { useState } from "react";
 import type { CatalogueSection, ProblemDetails } from "../api/contracts";
 import { Loading } from "../components/Loading";
 import { ProblemPanel } from "../components/ProblemPanel";
-import { rememberRound } from "../state/session";
 import { ScreenLink } from "../screen-system/ScreenLink";
 import { apiProblem, useScreenData } from "../screen-system/useScreenData";
 import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
-import { actions } from "../screen-system/actions";
+import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 
 export function CaseSelectionPage() {
   const { context: routeContext } = useScreenLocation();
@@ -14,16 +13,13 @@ export function CaseSelectionPage() {
   const { model: section, problem: loadProblem, retry } = useScreenData<CatalogueSection>("CATALOGUE_SECTION", { pathId }, pathId);
   const [problem, setProblem] = useState<ProblemDetails | null>(null);
   const [openingCase, setOpeningCase] = useState<string | null>(null);
-  const [openedRoundId, setOpenedRoundId] = useState<string | null>(null);
+  const { dispatchAction, transitionLocked } = useScreenRuntime();
 
   async function openCase(caseId: string) {
     setOpeningCase(caseId);
     setProblem(null);
     try {
-      const result = await actions.OPEN_CASE({ context: { pathId }, payload: { caseId } });
-      const roundId = String(result.context?.roundId ?? "");
-      rememberRound(roundId);
-      setOpenedRoundId(roundId);
+      await dispatchAction("OPEN_CASE", { caseId });
     } catch (error: unknown) {
       const details = apiProblem(error);
       if (details) setProblem(details);
@@ -56,12 +52,11 @@ export function CaseSelectionPage() {
               <button
                 className="button"
                 type="button"
-                disabled={caseItem.status !== "OPEN" || openingCase !== null}
+                disabled={caseItem.status !== "OPEN" || openingCase !== null || transitionLocked}
                 onClick={() => void openCase(caseItem.id)}
               >
                 {openingCase === caseItem.id ? "Carrying the training file…" : "Open training case"}
               </button>
-              {openedRoundId ? <ScreenLink auto className="button" to={`/rounds/${encodeURIComponent(openedRoundId)}/intro?page=1`}>Continue to introduction</ScreenLink> : null}
             </article>
           ))}
         </div>

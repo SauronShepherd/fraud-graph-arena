@@ -1,19 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { effectPlan } from "./effects";
+import type { TransitionPlan } from "./contracts";
 
-export function TransitionCoordinator() {
-  const location = useLocation();
-  const previous = useRef(location.pathname);
+export function TransitionCoordinator({ plan, onComplete }: { plan: TransitionPlan | null; onComplete: () => void }) {
   const [active, setActive] = useState(false);
   useEffect(() => {
-    const isConfiguredFade = /\/rounds\/[^/]+\/intro$/.test(previous.current) && /\/rounds\/[^/]+\/board$/.test(location.pathname);
-    previous.current = location.pathname;
-    if (!isConfiguredFade) return;
-    const duration = effectPlan("FADE_TO_BLACK", window.matchMedia?.("(prefers-reduced-motion: reduce)").matches).durationMs;
+    if (!plan) return;
+    const duration = effectPlan(plan.effect, window.matchMedia?.("(prefers-reduced-motion: reduce)").matches).durationMs;
     setActive(true);
-    const timer = window.setTimeout(() => setActive(false), duration);
+    const timer = window.setTimeout(() => { setActive(false); onComplete(); }, duration);
     return () => window.clearTimeout(timer);
-  }, [location.pathname]);
-  return active ? <div className="screen-transition-overlay" data-transition-effect="FADE_TO_BLACK" aria-hidden="true" /> : null;
+  }, [onComplete, plan]);
+  return active ? <div className="screen-transition-overlay" data-transition-effect={plan?.effect} aria-hidden="true" /> : null;
 }
