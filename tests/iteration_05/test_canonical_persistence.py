@@ -6,7 +6,7 @@ from fraud_graph_arena.canonical_persistence.importer import ResponseLostAfterAc
 from fraud_graph_arena.canonical_persistence.models import ImportStatus
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, expected_topology
 from fraud_graph_arena.canonical_persistence.identity import topology_hash
-from fraud_graph_arena.canonical_persistence.recovery import reconcile_import_runs
+from fraud_graph_arena.canonical_persistence.recovery import reconcile_import_runs, cleanup_rejected_candidate
 from fraud_graph_arena.canonical_persistence.security import canonical_target, redact_error
 from fraud_graph_arena.canonical_persistence.archive import ArchiveSafetyError, safe_extract
 from zipfile import ZipFile
@@ -106,6 +106,12 @@ def test_candidate_cleanup_is_scoped_and_cleanup_failure_is_explicit():
     warehouse.candidates[publication.publication_id] = publication
     with pytest.raises(RuntimeError): warehouse.cleanup_candidate(publication.publication_id, fail=True)
     assert publication.publication_id in warehouse.candidates
+
+def test_cleanup_failure_marks_run_failed_cleanup():
+    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(PACKAGES[0])
+    warehouse.candidates[result.publication_id] = warehouse.publications[result.publication_id]
+    with pytest.raises(RuntimeError): cleanup_rejected_candidate(warehouse, result.run_id, result.publication_id, fail=True)
+    assert warehouse.runs[result.run_id].status == ImportStatus.FAILED_CLEANUP
 
 def test_response_loss_after_activation_reconciles_as_published():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
