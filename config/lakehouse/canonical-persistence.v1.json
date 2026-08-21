@@ -1,7 +1,12 @@
 {
+  "contract_version": "1.0",
   "environment": "fga_dev",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
   "canonical_model_version": "1.0.0",
   "physical_target_prefix": "fga_",
+  "publication_strategy": "ACTIVE_POINTER",
+  "metadata_columns": ["_publication_id", "_load_run_id", "_source_package", "_source_relative_path", "_source_file", "_loaded_at_utc"],
   "operational_tables": ["fga_import_runs", "fga_import_run_files", "fga_import_run_datasets", "fga_import_publications", "fga_active_publications"],
   "destructive_targets": ["fga_dev"]
 }

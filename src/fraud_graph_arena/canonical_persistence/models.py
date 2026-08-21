@@ -2,6 +2,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import StrEnum
 from typing import Any
+from datetime import datetime, timezone
 
 class ImportStatus(StrEnum):
     STARTED = "STARTED"; PREFLIGHTED = "PREFLIGHTED"; STAGING = "STAGING"; STAGED = "STAGED"
@@ -10,6 +11,11 @@ class ImportStatus(StrEnum):
 
 class PublicationStatus(StrEnum):
     CANDIDATE = "CANDIDATE"; VALIDATED = "VALIDATED"; ACTIVE = "ACTIVE"; SUPERSEDED = "SUPERSEDED"; REJECTED = "REJECTED"
+
+class LoadPolicy(StrEnum):
+    SAFE_ONLY = "SAFE_ONLY"
+    FULL_INTERNAL = "FULL_INTERNAL"
+    VALIDATION_ONLY = "VALIDATION_ONLY"
 
 @dataclass(frozen=True)
 class PackageIdentity:
@@ -24,6 +30,10 @@ class ImportRun:
     run_id: str; identity: PackageIdentity; retry_of: str | None = None
     status: ImportStatus = ImportStatus.STARTED; error_code: str | None = None
     error_summary: str | None = None
+    started_at_utc: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    finished_at_utc: str | None = None
+    actor: str = "canonical-importer"
+    load_policy: LoadPolicy = LoadPolicy.SAFE_ONLY
     files: dict[str, dict[str, Any]] = field(default_factory=dict)
     datasets: dict[str, int] = field(default_factory=dict)
     dataset_phases: dict[str, str] = field(default_factory=dict)

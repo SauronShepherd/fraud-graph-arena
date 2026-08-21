@@ -18,10 +18,13 @@ def execute(profile, warehouse, catalog, schema, statement):
 
 def main() -> int:
     p=argparse.ArgumentParser(description="Recreate only the explicitly approved disposable FGA namespace")
-    p.add_argument("--environment",required=True); p.add_argument("--profile",default="sda"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--dry-run",action="store_true"); p.add_argument("--report",type=Path)
+    p.add_argument("--environment",required=True); p.add_argument("--profile",default="sda"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--dry-run",action="store_true"); p.add_argument("--apply",action="store_true"); p.add_argument("--confirm",type=str); p.add_argument("--report",type=Path)
     args=p.parse_args()
     if args.environment != APPROVED_ENVIRONMENT or args.catalog != APPROVED_CATALOG or args.schema != APPROVED_SCHEMA:
         raise SystemExit(f"refusing destructive recreation outside approved tuple ({APPROVED_ENVIRONMENT}, {APPROVED_CATALOG}, {APPROVED_SCHEMA})")
+    confirmation = f"{args.environment}:{args.catalog}:{args.schema}"
+    if not args.dry_run and (not args.apply or args.confirm != confirmation):
+        raise SystemExit(f"refusing destructive execution: require --apply --confirm {confirmation}")
     expected=set(expected_topology()); report={"environment":args.environment,"catalog":args.catalog,"schema":args.schema,"dry_run":args.dry_run,"expected_count":len(expected),"statements":[]}
     if not args.dry_run:
         inventory=execute(args.profile,args.warehouse,args.catalog,args.schema,f"SHOW TABLES IN `{args.catalog}`.`{args.schema}`")
