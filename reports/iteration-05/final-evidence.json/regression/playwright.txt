@@ -1,3 +1,0 @@
-status=not_run
-scope=browser
-reason=FGA05 persistence gate does not alter browser behavior

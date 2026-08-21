@@ -1,2 +1,0 @@
-status=pass
-scope=tests/iteration_05
