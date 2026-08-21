@@ -1,0 +1,2 @@
+case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version
+BONE_LEDGER,A1,The Bone Ledger,ADULT,1,1.0.0,2026.07.18.1,ACCOUNTING_MANIPULATION_FALSE_INVOICES_CONCEALED_LIABILITIES_ASSET_MISAPPROPRIATION,BSC,,104729,DETERMINISTIC_SYNTHETIC_CURATED,true,true,"All people, organizations, accounts, contracts, invoices, journal entries, loans, assets, communications and events are fictional and synthetically generated.",1.0.0

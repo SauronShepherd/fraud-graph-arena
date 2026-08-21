@@ -1,0 +1,1 @@
+case_id,profile_code,candidate_id,left_record_id,right_record_id,entity_type,confidence_band,estimated_score,agreement_fields_json,disagreement_fields_json,missing_fields_json,generation_mode,framework_semantics,actual_engine_run,provenance_note,snapshot_version

@@ -1,0 +1,98 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+PHANTOM_VET,OBJECT_TYPE,PERSON_RECORD,Person source record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,ORGANIZATION_RECORD,Organization source record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,PET_RECORD,Pet source record,"{""accusable"":""false"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,ADDRESS,Physical address,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,BANK_ACCOUNT,Financial account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,DEVICE,Device or workstation,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,LOGIN_EVENT,Authentication event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,VETERINARY_CREDENTIAL,Veterinary credential,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,CLINIC_LICENSE,Clinic license,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,INSURANCE_POLICY,Pet insurance policy,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,APPOINTMENT,Appointment,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,CLINICAL_ENCOUNTER,Clinical encounter,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,PROCEDURE_CATALOG,Procedure catalog item,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,PROCEDURE_EVENT,Procedure event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,PRESCRIPTION,Prescription,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,LAB_ORDER,Laboratory order,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,LAB_RESULT,Laboratory result,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,INSURANCE_CLAIM,Insurance claim,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,CLAIM_LINE,Claim line,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,CLAIM_STATUS_EVENT,Claim status event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,CLAIM_PAYMENT,Claim payment,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,BANK_TRANSACTION,Bank transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,COMMUNICATION,Communication,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,COMPLAINT,Complaint,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,CONTROLS,Controls,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,REGISTERED_AT,Registered At,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,ISSUED_CREDENTIAL,Issued Credential,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,LICENSES,Licenses,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,OWNS_PET,Owns Pet,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,HAS_MICROCHIP,Has Microchip,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,COVERED_BY,Covered By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SCHEDULED,Scheduled,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,ATTENDED,Attended,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,TREATED,Treated,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SIGNED,Signed,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,CONTAINS,Contains,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,USES_PROCEDURE,Uses Procedure,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,PRESCRIBED,Prescribed,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,ORDERED,Ordered,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,RESULT_FOR,Result For,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,CLAIMS_FOR,Claims For,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SUBMITTED_BY,Submitted By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,ADJUDICATED_BY,Adjudicated By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,PAID_TO,Paid To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,USED_DEVICE,Used Device,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,RAISED_BY,Raised By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SUPPORTS,Supports,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,POSSIBLE_SAME_PET,Possible Same Pet,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_PROVIDER_LICENSE,Same Provider License,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_PET_MICROCHIP,Same Pet Microchip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_OWNER_PHONE,Same Owner Phone,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_CLAIM_BANK_ACCOUNT,Same Claim Bank Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_IP,Same Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_TREATMENT_TEMPLATE,Same Treatment Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_LAB_ORDER_HASH,Same Lab Order Hash,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_PRESCRIPTION_REFERENCE,Same Prescription Reference,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_IMAGE_HASH,Same Image Hash,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_APPOINTMENT_SLOT,Same Appointment Slot,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_CLAIM_BATCH,Same Claim Batch,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_ADDRESS,Same Address,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_PAYMENT_BATCH,Same Payment Batch,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,SAME_POLICY_NUMBER,Same Policy Number,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,MAY_CONTROL,May Control,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,MAY_HAVE_SUBMITTED_FALSE_CLAIM,May Have Submitted False Claim,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,RELATIONSHIP_TYPE,MAY_HAVE_MISUSED_CREDENTIAL,May Have Misused Credential,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,CORP_REGISTRY,Fictional corporate registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,VET_BOARD,Veterinary licensing board,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,CLINIC_LICENSE_REGISTRY,Clinic license registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,HR_PAYROLL,Clinic payroll and staffing,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,MICROCHIP_REGISTRY,Pet microchip registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,PET_OWNER_PORTAL,Pet-owner portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,APPOINTMENT_SYSTEM,Appointment scheduler,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,EHR,Veterinary health record,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,LAB_SYSTEM,Laboratory information system,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,PHARMACY_SYSTEM,Veterinary pharmacy system,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,INSURER_POLICY,Pet insurer policy system,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,INSURER_CLAIMS,Pet insurer claims platform,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,INSURER_PAYMENT,Insurer remittance platform,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,BANK_KYC,Bank KYC records,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,BANK_LEDGER,Bank ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,DEVICE_LOG,Device and login telemetry,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,EMAIL,Email and message archive,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,COMPLAINT_PORTAL,Owner and whistleblower complaint portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Case document repository,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.18.1
+PHANTOM_VET,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.18.1

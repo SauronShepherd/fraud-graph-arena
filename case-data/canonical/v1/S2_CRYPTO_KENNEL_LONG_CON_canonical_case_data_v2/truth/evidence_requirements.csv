@@ -1,0 +1,11 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+CRYPTO_KENNEL_LONG_CON,REQ-001,CLAIM-LYRA-PRINCIPAL,P-LYRA,CORPORATE_KYC_DOMAIN_DEVICE_AND_PAYMENT,4,125,true,[],Lyra controlled Crypto Kennel and related fronts.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-002,CLAIM-LONG-CON,P-DEXTER,CAMPAIGN_THREAD_TEMPLATE_AND_DEPOSIT,5,110,true,[],"The network used trust, small wins, upgrades and urgency to increase deposits.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-003,CLAIM-FAKE-PLATFORM,O-CRYPTOKENNEL,PLATFORM_LEDGER_PRICE_AND_WALLET_RECONCILIATION,5,140,true,[],Displayed balances and gains did not match external assets and prices.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-004,CLAIM-TOKEN-CONTROL,P-BRUNO,TOKEN_CONTRACT_ADMIN_BYTECODE_AND_EVENTS,4,95,true,[],Bone Vault tokens and contracts used common admin infrastructure.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-005,CLAIM-WITHDRAWAL-FEES,P-SILAS,WITHDRAWAL_SUPPORT_MESSAGE_AND_FEE_DESTINATION,4,110,true,[],Withdrawals were blocked and conditioned on external release fees.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-006,CLAIM-WALLET-SWEEPS,P-QUINN,BLOCKCHAIN_SWEEP_BRIDGE_KYC_AND_DISTRIBUTION,5,145,true,[],"Deposits were swept, bridged offshore and distributed to operators.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-007,CLAIM-BANK-OFFSHORE,P-MARA,BANK_CHAIN_BENEFICIARY_AND_SETTLEMENT,4,105,true,[],Domestic funding moved through cash-out agents to offshore accounts.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-008,CLAIM-AGENT-DIFFERENTIATION,P-TESSA,COMMUNICATION_BANK_WALLET_AND_COMPLAINT,4,80,true,[],Gavin and Vera knowingly facilitated while Tessa lacked platform control.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-009,CLAIM-NORA-PROTECTED,P-NORA,ROLE_DEVICE_PERMISSION_AND_NO_PROCEEDS,3,45,true,[],"Nora moderated messages but did not control prices, wallets or withdrawals.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,REQ-010,CLAIM-LEGITIMATE-CRYPTO,P-CLARA,MARKET_PRICE_AUDIT_OPEN_SOURCE_AND_WITHDRAWAL,3,45,true,[],"Clara, Henry, ClearChain and Open Paw provide legitimate comparison activity.",2026.07.18.1

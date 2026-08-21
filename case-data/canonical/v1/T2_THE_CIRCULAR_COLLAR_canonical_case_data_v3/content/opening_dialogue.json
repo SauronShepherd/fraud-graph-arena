@@ -1,0 +1,86 @@
+[
+  {
+    "sequence": "1",
+    "speaker": "ANALYST",
+    "line": "Three companies made payments in a closed chain on the same morning.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "2",
+    "speaker": "DETECTIVE",
+    "line": "Who appears to control them?",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "3",
+    "speaker": "ANALYST",
+    "line": "Corporate Registry lists Cipher Corgi over Alpha and Beta. Gamma’s portal lists an administrator named C. Corgi.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "4",
+    "speaker": "DETECTIVE",
+    "line": "Two source records that may describe one person.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "5",
+    "speaker": "ANALYST",
+    "line": "Zingg also proposed Cypher Corgi, an accountant at Blue Bowl Bakery.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "6",
+    "speaker": "DETECTIVE",
+    "line": "A similar name creates a candidate, not an identity.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "7",
+    "speaker": "ANALYST",
+    "line": "After the identity review, GraphFrames can compare exact device, IP and address values.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "8",
+    "speaker": "DETECTIVE",
+    "line": "Exact matches still need context.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "9",
+    "speaker": "ANALYST",
+    "line": "Gamma and the bakery share a registered office and a public filing kiosk.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "10",
+    "speaker": "DETECTIVE",
+    "line": "Shared infrastructure may explain a connection without creating culpability.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "11",
+    "speaker": "ANALYST",
+    "line": "And the three payments?",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "12",
+    "speaker": "DETECTIVE",
+    "line": "Those are direct bank relationships. I will follow their arrows in order.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "13",
+    "speaker": "ANALYST",
+    "line": "Genie remains locked for this lesson.",
+    "case_id": "ACADEMY_T02"
+  },
+  {
+    "sequence": "14",
+    "speaker": "DETECTIVE",
+    "line": "Good. Today we learn what connections mean before we ask for more of them.",
+    "case_id": "ACADEMY_T02"
+  }
+]

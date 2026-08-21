@@ -1,0 +1,14 @@
+case_id: PHANTOM_VET
+case_order: A3
+title: "The Phantom Veterinary Clinic"
+case_version: 1.0.0
+snapshot_version: 2026.07.18.1
+difficulty: ADULT_DOG
+single_difficulty_only: true
+source_publication_level: 2
+publication_layout:
+  - published/adult
+  - genie/adult
+zingg_generation_mode: CURATED_APPROXIMATION
+graphframes_generation_mode: CURATED_APPROXIMATION
+actual_engine_run: false

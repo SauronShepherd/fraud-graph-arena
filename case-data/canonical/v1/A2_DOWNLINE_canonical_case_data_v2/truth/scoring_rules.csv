@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+DOWNLINE,SCORE-001,Principal and scheme mechanism,250,0.25,Correct principal and recruitment-driven compensation mechanism.,2026.07.18.1
+DOWNLINE,SCORE-002,Operator roles,160,0.16,"Correct Celeste, Quincy and Bruno roles.",2026.07.18.1
+DOWNLINE,SCORE-003,Participant economics,170,0.17,Demonstrate widespread net losses and recruitment dependence.,2026.07.18.1
+DOWNLINE,SCORE-004,Retail/product nuance,120,0.12,Recognize genuine products and Rosie’s retail-led success.,2026.07.18.1
+DOWNLINE,SCORE-005,Mixed roles and victim respect,120,0.12,Classify mixed victim/recruiters without victim blame.,2026.07.18.1
+DOWNLINE,SCORE-006,Identity and exact-match discipline,80,0.08,Resolve approved aliases and reject household/lookalike merges.,2026.07.18.1
+DOWNLINE,SCORE-007,Evidence diversity,70,0.07,"Use financial, recruitment, social, seminar and documentary evidence.",2026.07.18.1
+DOWNLINE,SCORE-008,Efficiency,30,0.03,Build a defensible case without excessive paid actions.,2026.07.18.1

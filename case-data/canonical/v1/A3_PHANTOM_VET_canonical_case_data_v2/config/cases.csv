@@ -1,0 +1,2 @@
+case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version
+PHANTOM_VET,A3,The Phantom Veterinary Clinic,ADULT,3,1.0.0,2026.07.18.1,PHANTOM_PROVIDER_FALSE_MEDICAL_CLAIMS_CREDENTIAL_MISUSE_AND_PAYMENT_DIVERSION,BSC,,271828,DETERMINISTIC_SYNTHETIC_CURATED,true,true,"All people, pets, clinics, insurers, treatments, claims, credentials, accounts and events are fictional and synthetically generated.",1.0.0

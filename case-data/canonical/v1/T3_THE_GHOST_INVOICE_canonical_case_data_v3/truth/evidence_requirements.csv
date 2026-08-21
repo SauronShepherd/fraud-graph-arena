@@ -1,0 +1,7 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+ACADEMY_T03,T3-EV-001,CONTROL_AND_BENEFIT,T3-P-VERA,CONTROL_AND_BENEFIT,4,,true,"[""T3-P-VERA"",""T3-O-MOONLIT"",""T3-A-MOONLIT"",""T3-DOC-CORP""]",Corporate control and account ownership connect Vera to the payment recipient.,2026.07.19.1
+ACADEMY_T03,T3-EV-002,IMPOSSIBLE_CHRONOLOGY,,CHRONOLOGY,4,,true,"[""T3-TX-404"",""T3-FILE-404"",""T3-LOGIN-VERA"",""T3-APPROVAL-404""]",GI-404 was paid before the repository file and approval existed.,2026.07.19.1
+ACADEMY_T03,T3-EV-003,VALID_TIMEZONE_CONTROL,,CONTROL,3,,true,"[""T3-INV-401"",""T3-RECV-401"",""T3-TX-401""]",GI-401 demonstrates a legitimate date change after UTC normalization.,2026.07.19.1
+ACADEMY_T03,T3-EV-004,LIMITS_OF_SERVICE_EVIDENCE,,GENERAL,3,,true,"[""T3-DOC-CONTRACT"",""T3-DOC-WORK"",""T3-DOC-KYC""]","Unavailable, partial and null evidence must be represented as limitations rather than negative facts.",2026.07.19.1
+ACADEMY_T03,T3-EV-005,PROTECT_TARA,,GENERAL,4,,true,"[""T3-STMT-MILO"",""T3-STMT-TARA"",""T3-ACCESS-TARA"",""T3-LOGIN-VERA""]",Independent access and vendor-session records outweigh the unsupported allegation against Tara.,2026.07.19.1
+ACADEMY_T03,T3-EV-006,RESIDUAL_UNCERTAINTY,,UNCERTAINTY,2,,true,"[""T3-DOC-CAMERA"",""T3-STMT-MILO""]",The unavailable camera and conflicting statement require an explicit residual-uncertainty note.,2026.07.19.1

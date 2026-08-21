@@ -1,0 +1,302 @@
+{
+  "case_id": "MADDOG",
+  "case_order": "P1",
+  "case_version": "1.1.0",
+  "snapshot_version": "2026.07.19.1",
+  "difficulty": "PUPPY",
+  "single_difficulty_only": true,
+  "source_publication_level": 1,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 604,
+      "sha256": "e5179be08202eb66b96c2d3dd22565a32cd865d19f29ac4ac674ead65b5b3179"
+    },
+    {
+      "path": "analytics/maddog_graphframes_exact_relationships.csv",
+      "bytes": 8887,
+      "sha256": "115b0b2e5651eeed9ebc08deeccc450c0c8595187df257657519283030ea10e8"
+    },
+    {
+      "path": "analytics/maddog_zingg_candidate_relationships.csv",
+      "bytes": 5411,
+      "sha256": "78d076f04ffcd2040fef46695ebd31005d2b6bf6769bc2839305ef207867f61f"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 258,
+      "sha256": "eeb58007ec8062b025369f6a46af68228452fd6804e0261abca82aa4801d13a8"
+    },
+    {
+      "path": "authoring/maddog_accounts.csv",
+      "bytes": 1477,
+      "sha256": "9e4688a069850fa42983cd0ca4f55602af390307151e8fcaa85469f95d98c671"
+    },
+    {
+      "path": "authoring/maddog_addresses.csv",
+      "bytes": 1592,
+      "sha256": "b9a246a776bb5fc63c1b08387f0bfb259090f265a24c71ee5eee636658a0eb09"
+    },
+    {
+      "path": "authoring/maddog_affinity_memberships.csv",
+      "bytes": 979,
+      "sha256": "59ebffc0bb5fe6ca40eeaaccdbe73616efe56f456be30beac2d26ed516fe0c72"
+    },
+    {
+      "path": "authoring/maddog_communications.csv",
+      "bytes": 10714,
+      "sha256": "682fce19d6cd39bff2e9146a2b4060dd2bda096d3293c8cdf852141675db8bef"
+    },
+    {
+      "path": "authoring/maddog_complaints.csv",
+      "bytes": 1077,
+      "sha256": "2aefe2b16b9e32e6a3857594c16d56a50cfbbf6cbb419c3e2d32684abfd20db3"
+    },
+    {
+      "path": "authoring/maddog_devices.csv",
+      "bytes": 443,
+      "sha256": "7eaa3d5ee386037e56700414fbcc0f7280ba87b8f300fae72ceb637c113918b2"
+    },
+    {
+      "path": "authoring/maddog_direct_relationships.csv",
+      "bytes": 69546,
+      "sha256": "45e5189d53dcc9be5694f90a388e8bda362abbb9825bccfa89717cba00f52e55"
+    },
+    {
+      "path": "authoring/maddog_documents.csv",
+      "bytes": 6344,
+      "sha256": "c0355e5e50399b055eec54129dafd18f5dd6d9ce9a5042d60968ee9146307373"
+    },
+    {
+      "path": "authoring/maddog_employment.csv",
+      "bytes": 657,
+      "sha256": "2b85b49db6455bced02b497e6496e206f15930f7cc3a80ef6c1df49425658a10"
+    },
+    {
+      "path": "authoring/maddog_login_events.csv",
+      "bytes": 4407,
+      "sha256": "3bddb73ac4ec0ac525023ebe8204dc44f97a2062c24f4af05920187114e268f1"
+    },
+    {
+      "path": "authoring/maddog_organization_records.csv",
+      "bytes": 2629,
+      "sha256": "fd9f422da7073540e2a1e8da1485a86ff32e259faff4836c379c83b36bfa701e"
+    },
+    {
+      "path": "authoring/maddog_organizations.csv",
+      "bytes": 401,
+      "sha256": "68302eb3077b6790289d9b7be4facce41764916b72d7e325b6cf842f5e2d77aa"
+    },
+    {
+      "path": "authoring/maddog_people.csv",
+      "bytes": 777,
+      "sha256": "faab7d1c6e4f69a8ae0db1ff24f3fe9cc64f95b5a44c779a9175b48dced84a9a"
+    },
+    {
+      "path": "authoring/maddog_person_records.csv",
+      "bytes": 6078,
+      "sha256": "b7c02139d7774f511ad8255633ba184335eaf21090f581a0ba751425c49c4817"
+    },
+    {
+      "path": "authoring/maddog_referrals.csv",
+      "bytes": 1083,
+      "sha256": "2f1ca2fe8fdaa80d05f77439ae8346785bcc9cf385432e2b0335cfb30f08b792"
+    },
+    {
+      "path": "authoring/maddog_sales_assignments.csv",
+      "bytes": 490,
+      "sha256": "d9eb2531cc3a0db80b837c8030dc06bedfd9cb76c93cb4271aaa320eb8aefb0f"
+    },
+    {
+      "path": "authoring/maddog_statement_lines.csv",
+      "bytes": 17585,
+      "sha256": "1b0315af96f3aace17f34e9a24cc51149ec7f2e68e7f8b5d63d77108dd7b2834"
+    },
+    {
+      "path": "authoring/maddog_statements.csv",
+      "bytes": 3155,
+      "sha256": "57f3661e4c5a9cd8740fc305ceed35e8310b513b90afc2ae6952cdb87562614f"
+    },
+    {
+      "path": "authoring/maddog_transactions.csv",
+      "bytes": 18394,
+      "sha256": "c7f4e70d1b2f5e78e40fe1228a73aed27c2d64c71369feda375e8259fdbc3cc4"
+    },
+    {
+      "path": "catalog/P1_MADDOG_PUPPY_data_catalog_v1.xlsx",
+      "bytes": 30909,
+      "sha256": "574c283cb8a5de35e3d957999abdcf8a6b446316f96b4ef4a57f67246501610d"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 443,
+      "sha256": "b2262c81fd7eb39f8f2c40f0ff9a700308dd870067676bdfe8ba2ec76455f7fd"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 313,
+      "sha256": "2442be4388d4667575694bf4ec1b56d34507d8a4cda6c7bd7540c9acf996619d"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 34613,
+      "sha256": "a1393ae4ad0c308a43b87cd1603d3cb2fbe8cf8e0debc006a79274e9d294955a"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 224,
+      "sha256": "6ce0402e075417648ae8a2e8f77f1b3a0b8682b8d4aa6d122c2a7da9a5f3d50b"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 452,
+      "sha256": "5e2d6ed47c78f31cc89caaa06e6eb412663b0055b1f41f9f3ebc1d06346c1a2d"
+    },
+    {
+      "path": "config/maddog_genie_benchmarks.csv",
+      "bytes": 1409,
+      "sha256": "617ac36489804569b06fa00b503c57b10f925169d92c6edb0d81b2ad82fea0db"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 649,
+      "sha256": "93fb89e3ad2197777e761bafc741430f8922bafd4d60c9e475208ffc1665ef03"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 1224,
+      "sha256": "6b574acd8c83c8d5605445f93433e0a83fb7b235a1b5daaea44d2312532c8f18"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 463,
+      "sha256": "34571bf793bc0f9db01729b7064c7e59cc3e251f57ee260b7b43bfaebc797fe2"
+    },
+    {
+      "path": "genie/puppy/activity_events.csv",
+      "bytes": 1121,
+      "sha256": "6f1c9f18210bad85382bada52e8e6a552d2e56593f89c16bd73f79302349b579"
+    },
+    {
+      "path": "genie/puppy/communications.csv",
+      "bytes": 9235,
+      "sha256": "49199808f832626451549d85f1b5f9a0277f04128ee843b95c07bb4f83a088e0"
+    },
+    {
+      "path": "genie/puppy/complaints.csv",
+      "bytes": 851,
+      "sha256": "4351a4121eb79fcdd3777a008053abf8f5330ad3070cd86431f78003da868317"
+    },
+    {
+      "path": "genie/puppy/documents.csv",
+      "bytes": 2968,
+      "sha256": "6b6f1793e9500f987a224071a629c158d0f54eb8e35aa145ecaaebc08cb93f0d"
+    },
+    {
+      "path": "genie/puppy/entities.csv",
+      "bytes": 5131,
+      "sha256": "f32557be4ccee57d16c4a49c050185c9f06d94b4a261d39b996c62212079e929"
+    },
+    {
+      "path": "genie/puppy/financial_events.csv",
+      "bytes": 12169,
+      "sha256": "67d4461d8bdc80d697103f0445c74ebcb3db160b01738e4e58ba200acae39bc6"
+    },
+    {
+      "path": "genie/puppy/statement_lines.csv",
+      "bytes": 12987,
+      "sha256": "f1fece563d8799a16164a1e98451a4edea1d279a524818d8e1d9344ffef25dee"
+    },
+    {
+      "path": "genie/puppy/statements.csv",
+      "bytes": 2013,
+      "sha256": "090a201268b2e5ce0a247dd12ef422208ff6f841490c4f217b46029f5f55b5d3"
+    },
+    {
+      "path": "published/puppy/graphframes_exact_relationships.csv",
+      "bytes": 8735,
+      "sha256": "50ee51d2241a0617f7b215b04d073ea45a63de41e07c7bbc5dc0eaba1c94607d"
+    },
+    {
+      "path": "published/puppy/initial_case_items.csv",
+      "bytes": 172,
+      "sha256": "3d26484f6ca6f1bf5da7a274d7116d60521eb8089a4bb230891b6d888b04fd59"
+    },
+    {
+      "path": "published/puppy/player_safe_direct_relationships.csv",
+      "bytes": 68390,
+      "sha256": "9d1a826ca0f863dd04af3fa38e8fdacb1aef7b2707310feef48a4f0e07649eaf"
+    },
+    {
+      "path": "published/puppy/player_safe_records.csv",
+      "bytes": 104225,
+      "sha256": "c3a97069693e54b6fa8c1b3c10688f3b5cd4f4555f52260a58c1db4a86e4089b"
+    },
+    {
+      "path": "published/puppy/zingg_candidate_relationships.csv",
+      "bytes": 5060,
+      "sha256": "c71dfcd8898d938b330f92262290851b3b3e595d25720bca88b05945afa02bf0"
+    },
+    {
+      "path": "scripts/conversion_metadata.py",
+      "bytes": 111,
+      "sha256": "cd815b3a6c2d99168c95c80ea397cc2bbc4ee0ffd3d402e95d81830fa4fdde61"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 885,
+      "sha256": "b98c9f1e6298d2ea78a3818898ef0d692e20a845f92e089e02e6271df8000a19"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 1137,
+      "sha256": "646920986eaf855b5197b37822349093dc140cecab876b4adaedf3d642c3e681"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 321,
+      "sha256": "6bce0caf16a20249642803a9eb7f45d4b61b3d1878ee49a2e3169231b466e72b"
+    },
+    {
+      "path": "truth/maddog_allowed_alternatives.csv",
+      "bytes": 634,
+      "sha256": "0352292f595781b9c05d43d60ae9fa63a7f80ae1ec9a32085759ff334a36bd4a"
+    },
+    {
+      "path": "truth/maddog_evaluator_truth.csv",
+      "bytes": 1646,
+      "sha256": "f738ca8f2867da6c62e7aeea77ad0b9faa474a5f27e0c951855613fc0ff6c838"
+    },
+    {
+      "path": "truth/maddog_evidence_route_matrix.csv",
+      "bytes": 1550,
+      "sha256": "a2117a1f054ed78401c389d46e0b8097eeb615d1f87dfb7db9bf5d9a4f4f3b85"
+    },
+    {
+      "path": "truth/maddog_forbidden_false_positives.csv",
+      "bytes": 379,
+      "sha256": "6cba3722605b7705eb7579faa0868f6302b73ffdd403a34c1275a5e920240cbe"
+    },
+    {
+      "path": "truth/maddog_required_evidence.csv",
+      "bytes": 975,
+      "sha256": "bae93975523216f0c173e607c3b31a246ee690303beba241ed28cf2ed22960ec"
+    },
+    {
+      "path": "validation/publication_counts.csv",
+      "bytes": 324,
+      "sha256": "be98294702e9474e31f9590fe9aaac387cead6804890eaf90ef03a0a0bcd0cff"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1028,
+      "sha256": "998c3ef41bf2cc2db25b152a65e1a0242e6cfddcd4e446df70d063fd0588ea38"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 1724,
+      "sha256": "0bb785e9011c758f512aceb29deb94fe0b74f16278aa909722db4734a8c0ebb2"
+    }
+  ]
+}

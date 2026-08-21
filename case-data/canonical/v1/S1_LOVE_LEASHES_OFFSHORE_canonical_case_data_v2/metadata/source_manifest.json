@@ -1,0 +1,385 @@
+{
+  "case_id": "LOVE_LEASHES_OFFSHORE",
+  "case_version": "1.0.0",
+  "snapshot_version": "2026.07.18.1",
+  "difficulty": "SENIOR_DOG",
+  "single_difficulty_only": true,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 618,
+      "sha256": "dd9ff0f56d91c19856492ebe2fe27662b99563732670344e3f723b9be8fb56cb"
+    },
+    {
+      "path": "analytics/love_graphframes_exact_relationships.csv",
+      "bytes": 502305,
+      "sha256": "a5a66f7db004c91e6e9b9d875e7b7ea58bd7e42f61a8d9d4b8a856de47b9034b"
+    },
+    {
+      "path": "analytics/love_zingg_candidate_relationships.csv",
+      "bytes": 72747,
+      "sha256": "2330f369466684f102404aac92476c98505b5509542807bb50c4ff40bd3d9b3f"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 471,
+      "sha256": "e376756c4e8776cbe54d10aedb264e987a32f0db071b9f127ec3422b6bbd078d"
+    },
+    {
+      "path": "authoring/love_addresses.csv",
+      "bytes": 2138,
+      "sha256": "38ee95bcca2b6e2e5a09bb257fb160380839d3157ddd61dff79fc04666cbf5fe"
+    },
+    {
+      "path": "authoring/love_bank_accounts.csv",
+      "bytes": 18775,
+      "sha256": "179de77bf5b0ec555a4806339c367f543c644ab53bb198113f040f128b478061"
+    },
+    {
+      "path": "authoring/love_bank_transactions.csv",
+      "bytes": 285496,
+      "sha256": "be7c904ee7aa87c59331371f3653cbd419cc7762b92702b0fd6a8db07e5681fc"
+    },
+    {
+      "path": "authoring/love_complaints.csv",
+      "bytes": 17358,
+      "sha256": "2717526505e649fc4e809f91c755bc64291c0fc5783fb9b7ba8067d8e596bebe"
+    },
+    {
+      "path": "authoring/love_devices.csv",
+      "bytes": 9347,
+      "sha256": "0fe26983fa2a1fcaac4f5533b0240e884f79aa8156b09dcca24a99c2d0f6af04"
+    },
+    {
+      "path": "authoring/love_direct_relationships.csv",
+      "bytes": 3249510,
+      "sha256": "aac6632466593903436499fcfaca9fd3f2bf91d41d781b42e8a009a8d24bf4c2"
+    },
+    {
+      "path": "authoring/love_documents.csv",
+      "bytes": 31497,
+      "sha256": "96a78791d81527dc67c34e6db661c20b5df496bfff81567947aeabaa09e8b12e"
+    },
+    {
+      "path": "authoring/love_fee_invoices.csv",
+      "bytes": 24832,
+      "sha256": "8f0ed7893fc5d06aad4ff89acc66cd62594ec03f6cc6bfe0623efd13f9ad2bc9"
+    },
+    {
+      "path": "authoring/love_legal_letters.csv",
+      "bytes": 29542,
+      "sha256": "c40209d686f0271fc28a5fc4ca759a3c6f784aba99ec68627c2226526e9801b6"
+    },
+    {
+      "path": "authoring/love_login_events.csv",
+      "bytes": 50718,
+      "sha256": "90a0a73a68804de2c375882f752f662a2fabeda568f1d6165bcd7b17b32d5114"
+    },
+    {
+      "path": "authoring/love_message_templates.csv",
+      "bytes": 9799,
+      "sha256": "a0ca3f8fc86c99826fea293c5ab2fa22441cb12457bbbf962bb7675cb7d720c9"
+    },
+    {
+      "path": "authoring/love_message_threads.csv",
+      "bytes": 27477,
+      "sha256": "cb5fb601a1d96a820ed320d3f579ea7bd30295e34a38166f61f978a178b98822"
+    },
+    {
+      "path": "authoring/love_messages.csv",
+      "bytes": 452427,
+      "sha256": "d9ac91b32c5c7b9ddd2cf5af38555c3f82cab7f433218d6ef81d1bb8e246769b"
+    },
+    {
+      "path": "authoring/love_organization_records.csv",
+      "bytes": 18815,
+      "sha256": "7f67815015dcc78dccdff82305051e46f07a264e2ac2e5f7418ee2c2882e2fa3"
+    },
+    {
+      "path": "authoring/love_organizations.csv",
+      "bytes": 2588,
+      "sha256": "0b1956ea2f3aff4c1395066ceb404dbe98566fccd30957e25b754cfe11bccafe"
+    },
+    {
+      "path": "authoring/love_parcel_events.csv",
+      "bytes": 112624,
+      "sha256": "a1f03b0ed3d3dc01472b11d8dd54c22e9b6339d99efe22bde6be80b33f717c0b"
+    },
+    {
+      "path": "authoring/love_parcels.csv",
+      "bytes": 40008,
+      "sha256": "9953191f231703d3e38e2dae11f5cca29a03e7a15997390d9e887af0671b4675"
+    },
+    {
+      "path": "authoring/love_people.csv",
+      "bytes": 12786,
+      "sha256": "03edf720514838aa2500ea54c24ff4abd5e72a5226b747b9dd7a405a2c4e5af5"
+    },
+    {
+      "path": "authoring/love_person_records.csv",
+      "bytes": 54898,
+      "sha256": "e29cfae8f53e703fe19f32a58e30770864ef36480c8022ca54747c37855058b4"
+    },
+    {
+      "path": "authoring/love_persona_profiles.csv",
+      "bytes": 43459,
+      "sha256": "ddb527732d3712258b4ec9cc3e4c81dd00cfac17a1d8b18e1d53a0b7260325af"
+    },
+    {
+      "path": "authoring/love_profile_media.csv",
+      "bytes": 42981,
+      "sha256": "6aaa868147d59fdc79d687c9cfbfdfbd9241e6256a24fb20ff1841b011759570"
+    },
+    {
+      "path": "authoring/love_social_accounts.csv",
+      "bytes": 38940,
+      "sha256": "fc60c603e8d056a58802b610d4447e47328df40955b368434a3bba10c771ae04"
+    },
+    {
+      "path": "authoring/love_victim_reports.csv",
+      "bytes": 22318,
+      "sha256": "7d657e22335bff5ea699e1238d1a5c1e337514973c3e398bc4d7356ad60dabf4"
+    },
+    {
+      "path": "catalog/S1_LOVE_LEASHES_OFFSHORE_SENIOR_data_catalog_v1.xlsx",
+      "bytes": 34039,
+      "sha256": "ce7970b0cd156c0a5975b09a1be2055a6ee9039a6a96ef12c666d899c79bf2a5"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 484,
+      "sha256": "7f82acb87154ba93968b068588aaa78e5168b2206c769cda13426b258e255179"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 502,
+      "sha256": "1f9720c3ceba8338c41e4825e5f9439d54a7754490c23a88049ae6123d647a4d"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 45197,
+      "sha256": "59138fbe7d5476b98846d50481fd343384e230b0fa139126724dbea20d63c70c"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 285,
+      "sha256": "6df1e63033bc1668c8155686ff351f8ae7d517d11cbf14f2d73143510ca90c0e"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 232,
+      "sha256": "98286a217463611cfeb0d26154b58e23b7c71945c746b3bc6be28575fdab2f9c"
+    },
+    {
+      "path": "config/love_leashes_genie_benchmarks.csv",
+      "bytes": 2604,
+      "sha256": "eb686f10270539ad1a53d986850f4354b381592d3da1698c4555b6fa4de1b743"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 1006,
+      "sha256": "68ec596eed8d8d3f8e75c656236a158ddb3a35c4fc36f9dc47973ff0f8ecc8db"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 2047,
+      "sha256": "17c4dd1c2bc37136e667fa2029d92d0cbe3d7b51cde6d60521634a02925af74b"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 714,
+      "sha256": "f361453d9c67609b4a7cd90a22e05a55aac63c5f5cc1184a5743ac7a71bf7a65"
+    },
+    {
+      "path": "genie/senior/complaints.csv",
+      "bytes": 13828,
+      "sha256": "9339dad49e99d885650d731ff040afd3d2af9d21b9ca9709406dab71fff869c5"
+    },
+    {
+      "path": "genie/senior/documents.csv",
+      "bytes": 16459,
+      "sha256": "02b1e52a6d9a18d9182c731a358887bf5fd8ad4294ba4c0512728411e93d5c0c"
+    },
+    {
+      "path": "genie/senior/entities.csv",
+      "bytes": 43707,
+      "sha256": "4d4f529e5444c39d85c33aa38b54b2e3e2894629c13b7057c702d0b135f96a59"
+    },
+    {
+      "path": "genie/senior/fee_invoices.csv",
+      "bytes": 17220,
+      "sha256": "4aa10a05d0be351281d9dd940415eb53d228de9df17fa7ec1b492aa1c7793532"
+    },
+    {
+      "path": "genie/senior/financial_events.csv",
+      "bytes": 222830,
+      "sha256": "8b16a0c3fa539c89dbd456af40942d862991ba99e2b079a9a48672dc673eadda"
+    },
+    {
+      "path": "genie/senior/legal_letters.csv",
+      "bytes": 23784,
+      "sha256": "f56467faa89cc803a5ceb10443ad099c9460bf3197c372d68aaf3b5196e97f33"
+    },
+    {
+      "path": "genie/senior/login_events.csv",
+      "bytes": 32500,
+      "sha256": "febc4d886c31937dd408e9083a8284e2ff78d616c6b7bb8ffd42cdbf72a14bb6"
+    },
+    {
+      "path": "genie/senior/message_templates.csv",
+      "bytes": 6209,
+      "sha256": "2c312e074acc26da05f09d79b40957b7c44273adf77d7c314f40f84fb47d889f"
+    },
+    {
+      "path": "genie/senior/message_threads.csv",
+      "bytes": 16944,
+      "sha256": "1b76b257e7f3361e70c48c2d6ca97a9c1fa20d6cbe2c7b362aa66f77011afb2d"
+    },
+    {
+      "path": "genie/senior/messages.csv",
+      "bytes": 347439,
+      "sha256": "c2c5048755fbbddd0d0ad75c1216779fb2f75b694be8d1fae8be9b3a75db2955"
+    },
+    {
+      "path": "genie/senior/parcel_events.csv",
+      "bytes": 73586,
+      "sha256": "df2d3e4bbb49ea694a79eb180f6e8ef1bf3c8bfbe39f558fb474cec2dcc7d984"
+    },
+    {
+      "path": "genie/senior/parcels.csv",
+      "bytes": 29491,
+      "sha256": "01644a9a2a0d235eceab7469df748549e225150c76a1cbc2f735033f853195ce"
+    },
+    {
+      "path": "genie/senior/personas.csv",
+      "bytes": 34789,
+      "sha256": "1ca9d946e9b085e1ccbdcd19d08efc1e7cddf1a8040e6897bfabd5ce2f262ddd"
+    },
+    {
+      "path": "genie/senior/profile_media.csv",
+      "bytes": 27883,
+      "sha256": "aec41ef1fd6d403e40d5b56c88d6b4ec9bd1137ae9add1c73660071b0387e828"
+    },
+    {
+      "path": "genie/senior/social_accounts.csv",
+      "bytes": 26892,
+      "sha256": "ea70f8e591eedb5d222484387079fe7cbbec1342154d424698b2a7697cbc0050"
+    },
+    {
+      "path": "genie/senior/victim_reports.csv",
+      "bytes": 18800,
+      "sha256": "cf45ad4036ed78e67c2c10cd392f3dca3e486142977bd49fe8f6f85228e91058"
+    },
+    {
+      "path": "published/senior/graphframes_exact_relationships.csv",
+      "bytes": 500491,
+      "sha256": "0afc1f38fd430775f5dad944465682ec29e9067367c1fde1d6a66983faaa677e"
+    },
+    {
+      "path": "published/senior/initial_case_items.csv",
+      "bytes": 111,
+      "sha256": "0f3370baa0cb7079c2e98f042ab3ee8e2ce18cc156973a8b0a0783fc525706ca"
+    },
+    {
+      "path": "published/senior/player_safe_direct_relationships.csv",
+      "bytes": 3224171,
+      "sha256": "e2d45384830eb1fcd90a0209798a59ea6841ccd0501eb6da7e755ca21bb5029e"
+    },
+    {
+      "path": "published/senior/player_safe_records.csv",
+      "bytes": 2631898,
+      "sha256": "07394e6878614ce7c46a36d20514e08c97e1b093826c95319f25cae0d4f46795"
+    },
+    {
+      "path": "published/senior/zingg_candidate_relationships.csv",
+      "bytes": 68040,
+      "sha256": "5b61b84541faa1fc7359436b1b9f5749e86674c42c0952d0a92b945ccd8f9379"
+    },
+    {
+      "path": "scripts/generator_metadata.py",
+      "bytes": 97,
+      "sha256": "246916e81ebc9b52b70fa487ea240cc91ff4d5280190ed0562b6968e72db6980"
+    },
+    {
+      "path": "scripts/senior_package_metadata.py",
+      "bytes": 131,
+      "sha256": "c65b3f3908c9080178450e0444f247a951035eac7d262f1a4e36fef7ec0ed6ab"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 297,
+      "sha256": "aaf126b131b6f65aad0a0e7f8dfe90b0b4e7e9dfa6c317761dd2da023b99101b"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 726,
+      "sha256": "97480aebdaafaf4db53ba7af7c7c0ff91d30f839bc2875078694e438b8e9af42"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 302,
+      "sha256": "769252b7d1a3e930d0004ac7fdec51db0bc9d59c30ea946f9a670d72b060c1d3"
+    },
+    {
+      "path": "truth/love_allowed_alternatives.csv",
+      "bytes": 834,
+      "sha256": "30339a103ea0be2baf0623fb038a9b975120ec73253f562a1707986120fd997d"
+    },
+    {
+      "path": "truth/love_ending_thresholds.csv",
+      "bytes": 933,
+      "sha256": "d493c1cbbdf3346304b21cb4a6efd98e44b5a8841f106dbeb52c2d2965578743"
+    },
+    {
+      "path": "truth/love_evaluator_truth.csv",
+      "bytes": 18291,
+      "sha256": "48d77b2c92b1b0ffc39264f57095fd32e21fb46b3a371e0cbfe3ac3b84620bcd"
+    },
+    {
+      "path": "truth/love_evidence_route_matrix.csv",
+      "bytes": 750,
+      "sha256": "ab7f8aa0a8575824c0455b78b1e47dc0053b1ccac240f4729dfcda3976bcb68b"
+    },
+    {
+      "path": "truth/love_forbidden_false_positives.csv",
+      "bytes": 1095,
+      "sha256": "73811f0b9b880e9d37ad671efc6521124aef4911322bbd3178ca81433754c7ec"
+    },
+    {
+      "path": "truth/love_persona_control_truth.csv",
+      "bytes": 10162,
+      "sha256": "6f614f381d28f4ce1c89819e03723ded1fd4adc1272051442685d70c091ca5b5"
+    },
+    {
+      "path": "truth/love_required_evidence.csv",
+      "bytes": 1881,
+      "sha256": "bcda3a89d981dfb0778ebb7ad8c09eca8b2357bc6301d5e1146d2a447b319065"
+    },
+    {
+      "path": "truth/love_scoring_rules.csv",
+      "bytes": 1073,
+      "sha256": "cbd4286ce0890c285df67b5881cd2d685be4cf5a4e46bdc01293951563c31eba"
+    },
+    {
+      "path": "validation/financial_reconciliation.csv",
+      "bytes": 1008,
+      "sha256": "5479183be47be3e3ddd9c908cdc0f34bc459e0fa111dc36b9890a4cde4cae756"
+    },
+    {
+      "path": "validation/senior_counts.csv",
+      "bytes": 521,
+      "sha256": "2179e1a39b988e6d716af740fd7f280f075c091fcdca90776bf2c312482e126c"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1910,
+      "sha256": "61ee1dc00e5fe823e2db0b0a503580437847b92efc32f8c8531380a75ddca814"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 2280,
+      "sha256": "543f4483d82f82d78097463743a940b10a8f2ce2eb9e42bf1f9b2b0ca8f930af"
+    }
+  ]
+}

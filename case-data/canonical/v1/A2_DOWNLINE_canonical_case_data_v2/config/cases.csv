@@ -1,0 +1,2 @@
+case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version
+DOWNLINE,A2,Every Dog Gets a Downline,ADULT,2,1.0.0,2026.07.18.1,RECRUITMENT_DRIVEN_PYRAMID_SCHEME_WITH_PRODUCT_FRONT,BSC,,161803,DETERMINISTIC_SYNTHETIC_CURATED,true,true,"All people, organizations, products, orders, sales, commissions, messages, seminars and events are fictional and synthetically generated.",1.0.0

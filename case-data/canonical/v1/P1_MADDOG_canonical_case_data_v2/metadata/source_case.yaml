@@ -1,0 +1,16 @@
+case_id: MADDOG
+case_order: P1
+title: The Maddog Investment Kennel
+case_version: 1.1.0
+snapshot_version: 2026.07.19.1
+difficulty: PUPPY
+single_difficulty_only: true
+source_publication_level: 1
+starting_credits: 100
+publication_directories:
+  published: published/puppy
+  genie: genie/puppy
+analytical_relationships:
+  zingg_generation_mode: CURATED_APPROXIMATION
+  graphframes_generation_mode: CURATED_APPROXIMATION
+  actual_engine_run: false

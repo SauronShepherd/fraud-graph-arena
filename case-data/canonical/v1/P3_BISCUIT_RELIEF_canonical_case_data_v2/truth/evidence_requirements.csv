@@ -1,0 +1,9 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+BISCUIT_RELIEF,REQ-001,CLAIM-ARLO-PRINCIPAL,P-ARLO,CONTROL_AND_OWNERSHIP,2,130,true,[],Arlo controlled the fund and diversion network.,2026.07.19.3
+BISCUIT_RELIEF,REQ-002,CLAIM-DONATION-DIVERSION,O-GBRF,DONATION_SETTLEMENT_AND_BANK_FLOW,3,150,true,[],Most proceeds were diverted to shell vendors and personal accounts.,2026.07.19.3
+BISCUIT_RELIEF,REQ-003,CLAIM-FALSE-IMPACT,O-GBRF,CAMPAIGN_VS_BENEFICIARY_AND_WAREHOUSE,3,130,true,[],Campaign impact claims exceeded verified aid.,2026.07.19.3
+BISCUIT_RELIEF,REQ-004,CLAIM-MINA-KNOWING,P-MINA,AUTHORSHIP_AND_COMMUNICATION,2,95,true,[],Mina knowingly produced inflated claims and reused assets.,2026.07.19.3
+BISCUIT_RELIEF,REQ-005,CLAIM-FELIX-KNOWING,P-FELIX,PAYMENT_APPROVAL_AND_COMMUNICATION,2,95,true,[],Felix knowingly prioritized shell invoices and routed payouts.,2026.07.19.3
+BISCUIT_RELIEF,REQ-006,CLAIM-HOPE-PROTECTED,P-HOPE,NO_BENEFIT_AND_OWN_LOSS,2,80,true,[],Hope was an unpaid volunteer/donor and victim.,2026.07.19.3
+BISCUIT_RELIEF,REQ-007,CLAIM-VIOLET-PROTECTED,P-VIOLET,ACCESS_LIMITS_AND_VERIFIED_DISTRIBUTION,2,70,true,[],Violet performed legitimate work without payment authority.,2026.07.19.3
+BISCUIT_RELIEF,REQ-008,CLAIM-BENEFICIARIES-UNDERFUNDED,O-PAWBRIDGE,GRANT_REQUEST_AND_DISTRIBUTION,2,70,true,[],Legitimate beneficiaries received a small fraction of advertised aid.,2026.07.19.3

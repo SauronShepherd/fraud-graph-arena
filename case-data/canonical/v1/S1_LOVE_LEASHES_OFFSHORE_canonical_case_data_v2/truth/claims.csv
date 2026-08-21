@@ -1,0 +1,10 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+LOVE_LEASHES_OFFSHORE,CLAIM-FAKE-LEGAL,LEGAL_REGISTRY_LETTER_INVOICE_ACCOUNT,Kendra and Harbor Heart issued unverified legal and recovery demands linked to controlled accounts.,P-KENDRA,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-GENUINE-RELATIONSHIP,COMMUNICATION_TRAVEL_PARCEL_AND_REMITTANCE,Clara and Henry form a genuine relationship with independent support.,P-CLARA,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-GROOMING-MECHANISM,MESSAGE_THREAD_TEMPLATE_AND_VICTIM_REPORT,"The network used repeated grooming stages followed by emergency, parcel, legal or recovery demands.",P-ADRIAN,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-MULE-DIFFERENTIATION,MULE_COMMUNICATION_BANK_AND_COMPLAINT,"Basil and Vera knowingly facilitated transfers, while Theo was manipulated without knowing the fraud.",P-THEO,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-NINA-PROTECTED,PARCEL_ROLE_DEVICE_AND_NO_PROCEEDS,"Nina forwarded a parcel without controlling the persona, payment request or proceeds.",P-NINA,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-OFFSHORE-FLOW,BANK_CHAIN_KYC_AND_ROUTING,Victim funds moved through domestic intermediaries to offshore accounts and operator distributions.,P-QUINN,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-PARCEL-MECHANISM,PARCEL_LABEL_TRACKING_EVENT_AND_MESSAGE,Star Paw parcel records and fee demands were reused across unrelated victims.,P-MILO,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-PERSONA-FACTORY,PROFILE_MEDIA_LOGIN_TEMPLATE_AND_PLATFORM,"Multiple romantic personas were coordinated using reused images, recovery data, devices and templates.",O-MOONLIT,true,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,CLAIM-SERENA-PRINCIPAL,KYC_CORPORATE_DEVICE_AND_PAYMENT,Serena controlled the persona factory and related corporate network.,P-SERENA,true,2026.07.18.1

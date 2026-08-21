@@ -1,0 +1,9 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+PHANTOM_VET,CLAIM-CREDENTIAL-MISUSE,LICENSE_SCHEDULE_DEVICE_AND_COMPLAINT,Elena credential VET-NC-44119 was used without her participation.,P-ELENA,true,2026.07.18.1
+PHANTOM_VET,CLAIM-DEXTER-KNOWING,SIGNATURE_ENCOUNTER_AND_COMMUNICATION,Dexter knowingly signed template encounters and repeated procedure bundles.,P-DEXTER,true,2026.07.18.1
+PHANTOM_VET,CLAIM-DIVERSION,CLAIM_PAYMENT_KYC_AND_BANK_FLOW,"Claim proceeds moved to shell laboratory, pharmacy and personal accounts.",O-PHANTOM,true,2026.07.18.1
+PHANTOM_VET,CLAIM-ELENA-PROTECTED,BOARD_REPORT_SCHEDULE_AND_DEVICE,Elena reported misuse and was working elsewhere during the Phantom submissions.,P-ELENA,true,2026.07.18.1
+PHANTOM_VET,CLAIM-MIRA-KNOWING,AUTHORSHIP_LOGIN_AND_COMMUNICATION,Mira knowingly assembled and submitted repeated claim batches.,P-MIRA,true,2026.07.18.1
+PHANTOM_VET,CLAIM-OWNERS-PROTECTED,OWNER_COMPLAINT_POLICY_AND_REGISTRY,Owners and rescue records show treatment was not received or authorized.,P-OLIVE,true,2026.07.18.1
+PHANTOM_VET,CLAIM-PHANTOM-CLAIMS,CLAIM_OWNER_APPOINTMENT_AND_MEDICAL_EVIDENCE,"Phantom submitted treatment claims unsupported by appointments, owners or source medical evidence.",O-PHANTOM,true,2026.07.18.1
+PHANTOM_VET,CLAIM-ROWAN-PRINCIPAL,CONTROL_KYC_AND_PAYMENT_FLOW,Rowan controlled the clinic and downstream shell accounts.,P-ROWAN,true,2026.07.18.1

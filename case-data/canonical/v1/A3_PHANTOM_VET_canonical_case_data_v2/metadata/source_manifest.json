@@ -1,0 +1,411 @@
+{
+  "case_id": "PHANTOM_VET",
+  "case_version": "1.0.0",
+  "snapshot_version": "2026.07.18.1",
+  "difficulty": "ADULT_DOG",
+  "single_difficulty_only": true,
+  "source_publication_level": 2,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 607,
+      "sha256": "1419ff1fed18f57dba38a7db9fa1efe9680141d5e687fb78e26a3765bcebede4"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 251,
+      "sha256": "42bc4660f118bec1b97c5ebc905b0800a41873c2298dcf020cf0495ff9676912"
+    },
+    {
+      "path": "analytics/phantom_graphframes_exact_relationships.csv",
+      "bytes": 45169,
+      "sha256": "57ea893fed99af9a11509a183456ec7ebcd8ce4728e96e131dcee15929e5957a"
+    },
+    {
+      "path": "analytics/phantom_zingg_candidate_relationships.csv",
+      "bytes": 82606,
+      "sha256": "43d1d40fb0e2f2c6f6ca0adaffabc7ac65f30c17e86c963d16a8e65afd037b73"
+    },
+    {
+      "path": "authoring/phantom_accounts.csv",
+      "bytes": 2618,
+      "sha256": "4897e74b3e17b6c2290772ae576cbe03e4b1a8359e367c9588b1e113b74694e3"
+    },
+    {
+      "path": "authoring/phantom_addresses.csv",
+      "bytes": 1633,
+      "sha256": "1e3a0aa3a1f537260db9901f6400089c5a982e05d4a83d33f95059bcb2ebcc22"
+    },
+    {
+      "path": "authoring/phantom_appointments.csv",
+      "bytes": 18916,
+      "sha256": "00078cb7b42746283860737089292d156b754d224b430083b6dcf06e29ba15d4"
+    },
+    {
+      "path": "authoring/phantom_bank_transactions.csv",
+      "bytes": 40024,
+      "sha256": "a2402c707257a61dbf10c5b1e59a22918bfb2f92c50e41ff5d5477091bb2485f"
+    },
+    {
+      "path": "authoring/phantom_claim_lines.csv",
+      "bytes": 66717,
+      "sha256": "f21dbd23953ea0e9b5f86f59b841a9e78783ecdd856b861447911a381a0ce1cf"
+    },
+    {
+      "path": "authoring/phantom_claim_payments.csv",
+      "bytes": 19533,
+      "sha256": "436e55bde80f8b9a23589604983e337aefa5f4426426b9136eae5bc182cabea4"
+    },
+    {
+      "path": "authoring/phantom_claim_status_events.csv",
+      "bytes": 40237,
+      "sha256": "5080ee28b4694a3376c5b242b356de2f5466f2422ed7a9743d8b0e8ef79b0a42"
+    },
+    {
+      "path": "authoring/phantom_claims.csv",
+      "bytes": 36031,
+      "sha256": "373efcbeed3d955c8a13f15fb5b147d1096db4f2586f5da6e84e9afff7a0301b"
+    },
+    {
+      "path": "authoring/phantom_clinic_licenses.csv",
+      "bytes": 1205,
+      "sha256": "4ba328e4ecadcc2fc9240e07acfe4379521d5c7fe3d66603d0d2ac3a3b400604"
+    },
+    {
+      "path": "authoring/phantom_communications.csv",
+      "bytes": 23858,
+      "sha256": "de04fdd8dda69f41c356263c4c351d8932818d6eda7b0560016caa24a11fee4c"
+    },
+    {
+      "path": "authoring/phantom_complaints.csv",
+      "bytes": 8053,
+      "sha256": "d590933cc66fe7feebc10e9d532a20dd67e54604edcbda57148a3d89fa3f75ee"
+    },
+    {
+      "path": "authoring/phantom_devices.csv",
+      "bytes": 1490,
+      "sha256": "7ed23a84c510c3681a8e671cd9e99c8f250cc38ee6135c7f5030410ac5c554da"
+    },
+    {
+      "path": "authoring/phantom_direct_relationships.csv",
+      "bytes": 1394978,
+      "sha256": "1ade11f0fb8382619c5cfb4c7a1f3101671b4dc5f675ce9770d7695bf00a0c1a"
+    },
+    {
+      "path": "authoring/phantom_documents.csv",
+      "bytes": 14076,
+      "sha256": "efcf4b09fe347e3da6aaa94cabe638f4d5ce796f1a03e361b5c6eb14e9b2a679"
+    },
+    {
+      "path": "authoring/phantom_encounters.csv",
+      "bytes": 24552,
+      "sha256": "1941791a8f637aada1b8552e669fde042e8bfdcdc3ee8cb061d8cb8f9d2ac376"
+    },
+    {
+      "path": "authoring/phantom_lab_orders.csv",
+      "bytes": 18295,
+      "sha256": "eb3622037facedc5756f50ef12e46fdb649b05ed835723273ba38294bc68018b"
+    },
+    {
+      "path": "authoring/phantom_lab_results.csv",
+      "bytes": 16669,
+      "sha256": "38654e8259a3560fe89f3210c01abfc315ec6407e2d81ea8de403cc1c5ae120c"
+    },
+    {
+      "path": "authoring/phantom_login_events.csv",
+      "bytes": 9581,
+      "sha256": "2b114e072b117332548230f7540d9f22bf212d11f8badbe89de5d32545c1bfc9"
+    },
+    {
+      "path": "authoring/phantom_organization_records.csv",
+      "bytes": 9525,
+      "sha256": "ae1fb559731cef7f9a6be9f1702ce62d79984c89b3a17f87a4621a56007ba09c"
+    },
+    {
+      "path": "authoring/phantom_organizations.csv",
+      "bytes": 1398,
+      "sha256": "f560c08c7f54e75e24bb0b61cdefd61dcf315adff403c9da57ca21817fdcd6eb"
+    },
+    {
+      "path": "authoring/phantom_people.csv",
+      "bytes": 3647,
+      "sha256": "fadff13937f6fa19d1f6da607168dc04dc531ac02f59a2c78c848de8b7dd6774"
+    },
+    {
+      "path": "authoring/phantom_person_records.csv",
+      "bytes": 24708,
+      "sha256": "cb674413e6cba2dd68d1aa0c5f02ffe99a8e1354de2019f4c1da1506dc878c2f"
+    },
+    {
+      "path": "authoring/phantom_pet_entities.csv",
+      "bytes": 12823,
+      "sha256": "de95041f354caaaa6e99a4abcc25cd5b9933a34d038f1677bcfab3b7fc6b04f7"
+    },
+    {
+      "path": "authoring/phantom_pet_records.csv",
+      "bytes": 57143,
+      "sha256": "f0efea904351386c05ac0416cf938b37f34b86a01b217af3025f4000a12585a7"
+    },
+    {
+      "path": "authoring/phantom_policies.csv",
+      "bytes": 17364,
+      "sha256": "02b71d9e8cf699a74544b31193d76fa4356912ecd5b2b7243b5b9f659cbdaca3"
+    },
+    {
+      "path": "authoring/phantom_prescriptions.csv",
+      "bytes": 18089,
+      "sha256": "2b7a67d91e8ad10463fa1b904e0eb44e830b354f24f13fd55edc45efd27695a8"
+    },
+    {
+      "path": "authoring/phantom_procedure_catalog.csv",
+      "bytes": 2353,
+      "sha256": "4ff6138ee08c4f15c3c9f5ce3c44d217c6669188da1839b0597b7af933aaf939"
+    },
+    {
+      "path": "authoring/phantom_procedure_events.csv",
+      "bytes": 58812,
+      "sha256": "0416cdad11f7217f5429cba205057af33d54970df7c7b106abd36413820e6760"
+    },
+    {
+      "path": "authoring/phantom_veterinary_credentials.csv",
+      "bytes": 1433,
+      "sha256": "d6696aeea874bef0b091f90c667c5e54e53ee3c6309065642e4bf520625670a7"
+    },
+    {
+      "path": "catalog/A3_PHANTOM_VET_ADULT_data_catalog_v1.xlsx",
+      "bytes": 37056,
+      "sha256": "d03eb74d52dc10fa0c9a984341324f696cf8bfc0d233a7bb84ce05c6f2c00bd2"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 382,
+      "sha256": "2d3c95952458de8d16638f49a8b98bae01accec01a52e571b9d373607825293d"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 515,
+      "sha256": "8972bcc0d5403861f814caa31ca29feff5596b293109810cb0e08474540c98ae"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 53920,
+      "sha256": "6a3c42dd79b1152d4a5427deb906944f68e81bab6515391efad4fdcf845ad126"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 346,
+      "sha256": "fbfab5d895331e5c5f732a3b4a689d8b1a93c6edd1f463254547867ab3137935"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 274,
+      "sha256": "df2955b9c9a3427c24570dad1f80f08d7833dca503b286d15361238ae9e22b5f"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 1380,
+      "sha256": "3bb6944d8032cb2541fd4c4a4c6eb44d8f7f879eae403740037fa9dce302894e"
+    },
+    {
+      "path": "config/phantom_vet_genie_benchmarks.csv",
+      "bytes": 2214,
+      "sha256": "df194d7033d15fa3ef0fcca3415904ccdacaa94c88d008d0e78fa0fc011ad0f0"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 2181,
+      "sha256": "de40d6468a89352fcc3bc63d2d64ecdf9f17f8ddf8382523bd6ac43c727eb1f1"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 919,
+      "sha256": "e21162bf26943b0aedaf6926b9658bf904b66ce796e241c267f74a37fc1eb0f1"
+    },
+    {
+      "path": "genie/adult/appointments.csv",
+      "bytes": 14077,
+      "sha256": "c0f71a5c68ac34376c2be496fe103a61bea8a28faa286728cb7bcc7fb0e028e4"
+    },
+    {
+      "path": "genie/adult/claim_lines.csv",
+      "bytes": 47831,
+      "sha256": "98f29e8faf17cac0586f0827cd3ce7e36e86b23e2436131055ba8d2a6e591378"
+    },
+    {
+      "path": "genie/adult/claim_payments.csv",
+      "bytes": 14065,
+      "sha256": "823f54d27aa3a1b2222076fdfeb4ca5175217827560c07e2188e912820570036"
+    },
+    {
+      "path": "genie/adult/claim_status_events.csv",
+      "bytes": 24269,
+      "sha256": "bcfc2ff4ec9cf4b68a821c5cc9c645169f7a3f37745f5d6adee9d36be37536fd"
+    },
+    {
+      "path": "genie/adult/claims.csv",
+      "bytes": 27915,
+      "sha256": "50bf9bd88e398f70cdef41f43b98c94b1fab0899ef56eed3c22b03276e5a6b4f"
+    },
+    {
+      "path": "genie/adult/clinic_licenses.csv",
+      "bytes": 779,
+      "sha256": "b67eebb5d39db383da51dc834bda5c52ec97be6c5368a53531d93f06626cd473"
+    },
+    {
+      "path": "genie/adult/communications.csv",
+      "bytes": 20218,
+      "sha256": "0b6f7f06275d2d49827691099eadf581b6fe83930a2b7cd1790396d5ef650818"
+    },
+    {
+      "path": "genie/adult/complaints.csv",
+      "bytes": 6571,
+      "sha256": "6b9371d52084cadebe737720be40e1e2c0c4aae35bad03216fc034c954fbe24a"
+    },
+    {
+      "path": "genie/adult/credentials.csv",
+      "bytes": 1026,
+      "sha256": "c9929ed4fef8bae7d0d8e5e116446bef3df196d6a0d9443ea2e02df4ab2ec620"
+    },
+    {
+      "path": "genie/adult/documents.csv",
+      "bytes": 6581,
+      "sha256": "4ed4ad95d767ce2097b0cc4ac4fb6817192d4272ccacd76bbf3d3bb7713e719a"
+    },
+    {
+      "path": "genie/adult/encounters.csv",
+      "bytes": 21381,
+      "sha256": "4fcdc85ffd5805a7d6c6a08781061f7878b5d27ffd04cd043f1dc49f8e347453"
+    },
+    {
+      "path": "genie/adult/entities.csv",
+      "bytes": 41458,
+      "sha256": "70c4bce75ec7d2963615a0b2cba94477e0726d367ece4e7887358a2b2243bc0d"
+    },
+    {
+      "path": "genie/adult/financial_events.csv",
+      "bytes": 31806,
+      "sha256": "f38ffd0c49ffd47bdfe914e9ad90944359edb0395ef08b90b9c83d060d0011c8"
+    },
+    {
+      "path": "genie/adult/labs.csv",
+      "bytes": 21453,
+      "sha256": "9d312f1a7aca1a84bd1b4b0d3dff9b110bec993bd9299126bc507d1e25f4f2f7"
+    },
+    {
+      "path": "genie/adult/login_events.csv",
+      "bytes": 6519,
+      "sha256": "52f7d68702069c6be4f98fa1f14c73d9dc03f0ad4252c2f941fee92221bc58e3"
+    },
+    {
+      "path": "genie/adult/policies.csv",
+      "bytes": 13133,
+      "sha256": "d3ba9cd0309595e984161c29d92939e68fafc2b55da4a38b834b9fa29e8a0385"
+    },
+    {
+      "path": "genie/adult/prescriptions.csv",
+      "bytes": 13598,
+      "sha256": "e349aebcd23fb18f2f573de59991a221b2693216a81c4ab9092a458bdcb8627f"
+    },
+    {
+      "path": "genie/adult/procedures.csv",
+      "bytes": 46262,
+      "sha256": "8ea4b9da4f43e678c41cfa98bdc85d2ae2100ac9437881bf008802e8a2270930"
+    },
+    {
+      "path": "published/adult/graphframes_exact_relationships.csv",
+      "bytes": 44961,
+      "sha256": "93a161da6fc999284393903e71352227d5c740976ca30988b953eaff30e88afb"
+    },
+    {
+      "path": "published/adult/initial_case_items.csv",
+      "bytes": 131,
+      "sha256": "cd8d6fa38e3214ddf40adb926e8ab01d12915667b215c548159ce29ac308b9ca"
+    },
+    {
+      "path": "published/adult/player_safe_direct_relationships.csv",
+      "bytes": 1410325,
+      "sha256": "f449b8f6a5f3462b6836ada48f431ee1bb893b69027cdc3f6dbc5fc7d6d0cca6"
+    },
+    {
+      "path": "published/adult/player_safe_records.csv",
+      "bytes": 1029403,
+      "sha256": "643120d08ba2d284afaa450fc2a38c802406fac9e08fb5c301683f55cb509167"
+    },
+    {
+      "path": "published/adult/zingg_candidate_relationships.csv",
+      "bytes": 78061,
+      "sha256": "7a1b0daa9c2a2e82d90fe513716e06ab93309990576384e2003b4ea6e8619ca8"
+    },
+    {
+      "path": "scripts/adult_package_metadata.py",
+      "bytes": 147,
+      "sha256": "21e8e6c1549f3012d17f4d5f366cc6c971fdaf1abee0d081314d4184d16fc550"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 296,
+      "sha256": "8df2f056963ad072ec2b357f3fe27cdcac0709fc7e95a7fe52d937fb17dcf257"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 237,
+      "sha256": "607b128c752584dd8f82383936a1037da6022403762df15a0c66422c1894f604"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 310,
+      "sha256": "9258f7e07dc78db36b8dd3c536923ea84325fa9a48a37aae1dac0420e9b09f7d"
+    },
+    {
+      "path": "truth/phantom_allowed_alternatives.csv",
+      "bytes": 1228,
+      "sha256": "debd2d60bbc496be8a638843abd498eed19ef2550620944674347166df2382bc"
+    },
+    {
+      "path": "truth/phantom_ending_thresholds.csv",
+      "bytes": 926,
+      "sha256": "0c4858fa8b11df63c8fdfc1bc3ca93b8e7442091f2e13b37f76dd385318af350"
+    },
+    {
+      "path": "truth/phantom_evaluator_truth.csv",
+      "bytes": 19502,
+      "sha256": "cc8148a1f3e0e6c4091188090cb5fbd47186f2e48848a8e4f0e36dfc236bee48"
+    },
+    {
+      "path": "truth/phantom_evidence_route_matrix.csv",
+      "bytes": 1347,
+      "sha256": "9e8aa7d16d16f6454d8271b651782ea48a0b6cf7ac63a17bde5e6380db10a2f8"
+    },
+    {
+      "path": "truth/phantom_forbidden_false_positives.csv",
+      "bytes": 757,
+      "sha256": "91921393e551365644658b25338d754c2dc2dc1923e7fb8428e298cdb197bbde"
+    },
+    {
+      "path": "truth/phantom_required_evidence.csv",
+      "bytes": 1447,
+      "sha256": "cc08cbdea71c6956cf589fe15b093fad835a72f4abf1e98a3c45693e64b81498"
+    },
+    {
+      "path": "truth/phantom_scoring_rules.csv",
+      "bytes": 1049,
+      "sha256": "34d4ab734c1a5abf2b1f5fe8f74d5ade87ac59ad326304ee957965ab30554e7b"
+    },
+    {
+      "path": "validation/adult_counts.csv",
+      "bytes": 547,
+      "sha256": "6e957d7c4717934057e950cd10cd946fe186f739288f34b63fd71ef7c7d38ba0"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1291,
+      "sha256": "a74eeac306d54c584bb3d871f960e6fc551a9a10aadc65d4ed01b994a7d287b2"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 2076,
+      "sha256": "db6b5ce7aaeeec3aaf21d9283f7b6ce27e433f5954f65a8926f5054a32b6896d"
+    }
+  ]
+}

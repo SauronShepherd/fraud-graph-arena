@@ -1,0 +1,6 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+CRYPTO_KENNEL_LONG_CON,ALT-001,CLAIM-FAKE-PLATFORM,"Use internal-versus-independent prices plus ledger events, or displayed balances versus on-chain and withdrawal evidence.",,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ALT-002,CLAIM-WALLET-SWEEPS,"Use direct wallet chains, or sweep destinations plus bridge routes and distributions.",,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ALT-003,CLAIM-WITHDRAWAL-FEES,"Use withdrawal records with support templates, or adviser messages plus fee destinations.",,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ALT-004,CLAIM-AGENT-DIFFERENTIATION,"Use repeated cash-out for knowing agents and Tessa's recruitment, limited retention and complaint chronology.",,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,ALT-005,CLAIM-LEGITIMATE-CRYPTO,"Use independent prices and completed withdrawals, or audited open-source contracts and transparent custody.",,2026.07.18.1

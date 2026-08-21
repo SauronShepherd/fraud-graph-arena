@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+BISCUIT_RELIEF,CLEAN_COLLAR,1,850,,0,"[""ALL""]",,"Precise principal, mechanism, flow, roles and protected actors.",2026.07.19.3
+BISCUIT_RELIEF,CASE_CLOSED_KENNEL_WRECKED,2,700,,1,"[""PRINCIPAL"",""MECHANISM"",""FLOW""]",,"Fraud stopped, but the investigation caused avoidable harm.",2026.07.19.3
+BISCUIT_RELIEF,THE_SCENT_WENT_COLD,3,450,,2,"[""PARTIAL""]",,"Some evidence found, but diversion or control remains incomplete.",2026.07.19.3
+BISCUIT_RELIEF,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,Resources were spent without a defensible file.,2026.07.19.3
+BISCUIT_RELIEF,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,Too many weak suspicions and duplicated evidence.,2026.07.19.3
+BISCUIT_RELIEF,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""WRONG_PRINCIPAL_OR_MAJOR_INNOCENT_ACCUSATION""]",,"The case targets volunteers, beneficiaries or lookalikes.",2026.07.19.3

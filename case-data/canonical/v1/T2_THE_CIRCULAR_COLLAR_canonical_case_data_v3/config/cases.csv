@@ -1,0 +1,2 @@
+case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version
+ACADEMY_T02,T2,The Circular Collar,ACADEMY,2,3.0.0-canonical.1,2026.07.19.1,"Connections Lab: Zingg merge discipline, GraphFrames exact relationships, directed cycles, provenance and shared infrastructure.",BSC,,2002,SYNTHETIC_CURATED,false,false,"All characters, organizations, records, events, and evidence are fictional and synthetically generated for Fraud Graph Arena.",1.0.0

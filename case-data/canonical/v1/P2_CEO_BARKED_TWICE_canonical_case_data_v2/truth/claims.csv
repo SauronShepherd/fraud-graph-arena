@@ -1,0 +1,11 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+CEO_BARKED_TWICE,CLAIM-BEA-INNOCENT,EXCULPATORY_COMMUNICATION_AND_TRAVEL,Bea Barkley was impersonated and did not authorize the payments.,P-BEA,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-FLOW,BANK_FLOW,"The 420,000 BSC payment was split from 8842 to Grant, Rowan, Ivy, and Harbor Hound.",O-NIGHTJAR,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-GRANT,ACCOUNT_OWNERSHIP_AND_FUNDS_FLOW,Grant Greyhound controlled the mule stage and dispersed the first payment.,P-GRANT,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-IVY,DOMAIN_MAILBOX_AUTHENTICATION,Ivy Ibizan operated the lookalike domains and compromised mailbox infrastructure.,P-IVY,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-MECHANISM,MECHANISM_AND_TIMELINE,"The fraud used CEO impersonation, business email compromise, invoice substitution, and payment diversion.",O-SCC,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-PENNY-COMPROMISE,MAILBOX_RULE_AND_LOGIN,Penny Pug’s mailbox was compromised by external sessions and forwarding rules.,P-PENNY,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-PENNY-INNOCENT,EXCULPATORY_ACCESS_AND_BENEFIT,Penny Pug was deceived and did not create the malicious rule.,P-PENNY,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-ROWAN,IDENTITY_CONTROL_COMMUNICATION,Rowan Rook coordinated the impersonation and payment-diversion campaign.,P-ROWAN,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-SUBSTITUTION,INVOICE_COMPARISON_AND_VENDOR_CONFIRMATION,The beneficiary on genuine Copper Paw invoices was substituted from account 2207 to account 8842.,O-NIGHTJAR,true,2026.07.19.2
+CEO_BARKED_TWICE,CLAIM-VENDOR-INNOCENT,VENDOR_CONFIRMATION_AND_DOMAIN,Copper Paw and Victor Vizsla did not request the changed account.,O-COPPER,true,2026.07.19.2

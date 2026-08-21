@@ -1,0 +1,26 @@
+{
+  "model_version": "1.0.0",
+  "tables": [
+    {"path":"config/cases.csv","layer":"config","columns":["case_id","case_version","family","snapshot_version","canonical_model_version"]},
+    {"path":"config/case_profiles.csv","layer":"config","columns":["case_id","profile_id","family","description"]},
+    {"path":"config/case_initial_items.csv","layer":"config","columns":["case_id","item_id","item_type","record_id"]},
+    {"path":"config/ui_contracts.csv","layer":"config","columns":["case_id","contract_key","contract_value_json"]},
+    {"path":"config/registries.csv","layer":"config","columns":["registry_name","registry_key","registry_value"]},
+    {"path":"config/reveal_steps.csv","layer":"config","columns":["case_id","step_id","sequence","record_id"]},
+    {"path":"config/genie_benchmarks.csv","layer":"config","columns":["case_id","benchmark_id","question","answer_type"]},
+    {"path":"authoring/records.csv","layer":"authoring","columns":["record_id","case_id","record_type","source_record_id","label","snapshot_version","source_dataset","provenance_json"]},
+    {"path":"authoring/record_attributes.csv","layer":"authoring","columns":["attribute_id","record_id","attribute_name","raw_value","normalized_value","value_type","source_dataset","source_column","provenance_json"]},
+    {"path":"authoring/relationships.csv","layer":"authoring","columns":["relationship_id","case_id","source_record_id","target_record_id","relationship_family","direction","valid_from","valid_to","snapshot_version","provenance_json"]},
+    {"path":"analytics/entity_resolution_candidates.csv","layer":"analytics","columns":["id","case_id","snapshot_version","source_dataset","provenance_json"]},
+    {"path":"analytics/exact_matches.csv","layer":"analytics","columns":["id","case_id","snapshot_version","source_dataset","provenance_json"]},
+    {"path":"analytics/tool_fixtures.csv","layer":"analytics","columns":["id","case_id","snapshot_version","source_dataset","provenance_json"]},
+    {"path":"published/records.csv","layer":"published","columns":["record_id","case_id","record_type","label","snapshot_version","source_dataset"]},
+    {"path":"published/relationships.csv","layer":"published","columns":["relationship_id","case_id","source_record_id","target_record_id","relationship_family","direction","snapshot_version","provenance_json"]},
+    {"path":"published/entity_resolution_candidates.csv","layer":"published","columns":["id","case_id","snapshot_version","source_dataset","provenance_json"]},
+    {"path":"published/exact_matches.csv","layer":"published","columns":["id","case_id","snapshot_version","source_dataset","provenance_json"]},
+    {"path":"genie/records.csv","layer":"genie","columns":["record_id","case_id","record_type","label","snapshot_version","source_dataset"]},
+    {"path":"genie/record_attributes.csv","layer":"genie","columns":["attribute_id","record_id","attribute_name","normalized_value","value_type","source_dataset"]},
+    {"path":"genie/relationships.csv","layer":"genie","columns":["relationship_id","case_id","source_record_id","target_record_id","relationship_family","direction","snapshot_version","provenance_json"]}
+  ],
+  "remaining_tables_use_registry_headers": true
+}

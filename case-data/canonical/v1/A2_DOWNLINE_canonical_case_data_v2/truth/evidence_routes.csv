@@ -1,0 +1,10 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+DOWNLINE,ROUTE-001,CLAIM-PYRAMID-MECHANISM,Sponsor and commission route,1,Sponsor tree and sponsor codes,DIRECT,2026.07.18.1
+DOWNLINE,ROUTE-001,CLAIM-PYRAMID-MECHANISM,Sponsor and commission route,2,Recruitment and team-volume commissions,GENIE,2026.07.18.1
+DOWNLINE,ROUTE-001,CLAIM-PYRAMID-MECHANISM,Sponsor and commission route,3,Participant economics showing widespread losses,GENIE,2026.07.18.1
+DOWNLINE,ROUTE-002,CLAIM-PYRAMID-MECHANISM,Order and payout route,1,Starter kits and autoship orders,GENIE,2026.07.18.1
+DOWNLINE,ROUTE-002,CLAIM-PYRAMID-MECHANISM,Order and payout route,2,Payout concentration to upline accounts,GRAPHFRAMES,2026.07.18.1
+DOWNLINE,ROUTE-003,CLAIM-PRINCIPAL,Identity and control,1,Rex source-record identity group,ZINGG,2026.07.18.1
+DOWNLINE,ROUTE-003,CLAIM-PRINCIPAL,Identity and control,2,"Control, sponsor and payout records",DIRECT,2026.07.18.1
+DOWNLINE,ROUTE-004,CLAIM-RETAIL-REAL,Retail exception,1,Rosie external retail sales and product fulfillment,GENIE,2026.07.18.1
+DOWNLINE,ROUTE-004,CLAIM-RETAIL-REAL,Retail exception,2,Retail-margin commission and positive retail economics,GENIE,2026.07.18.1

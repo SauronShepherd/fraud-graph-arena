@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+ACADEMY_T02,CLEAN_COLLAR,1,850,,0,"[""required_claims_complete""]",score>=850 and false_accusations=0 and required_claims_complete,,2026.07.19.1
+ACADEMY_T02,CASE_CLOSED_KENNEL_WRECKED,2,700,,,"[""primary_controller_correct"",""protected_actor_accused""]",score>=700 and primary_controller_correct and protected_actor_accused,,2026.07.19.1
+ACADEMY_T02,THE_SCENT_WENT_COLD,3,400,,,"[""controller_not_submitted""]",score>=400 and controller_not_submitted,,2026.07.19.1
+ACADEMY_T02,BISCUIT_BUDGET_BLOWN,4,,,,"[""credits=0"",""required_claims_incomplete""]",credits=0 and required_claims_incomplete,,2026.07.19.1
+ACADEMY_T02,CHASED_EVERY_SQUIRREL,5,,,,"[""false_accusations>=2 or bulk_unsupported_accusation""]",false_accusations>=2 or bulk_unsupported_accusation,,2026.07.19.1
+ACADEMY_T02,BARKING_UP_THE_WRONG_TREE,6,,,,"[""false_identity_selected_as_primary_target""]",false_identity_selected_as_primary_target,,2026.07.19.1

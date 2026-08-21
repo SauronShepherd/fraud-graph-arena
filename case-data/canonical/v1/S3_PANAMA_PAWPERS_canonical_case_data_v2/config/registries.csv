@@ -1,0 +1,101 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+PANAMA_PAWPERS,SOURCE_SYSTEM,CIVIL_REGISTRY,Fictional civil registry,"{""trust_level"":""HIGH""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,CORP_REGISTRY,Fictional corporate registry,"{""trust_level"":""HIGH""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,OFFSHORE_ARCHIVE,Synthetic offshore archive,"{""trust_level"":""HIGH""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,BANK_KYC,Fictional bank KYC,"{""trust_level"":""HIGH""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,BANK_LEDGER,Fictional bank ledger,"{""trust_level"":""HIGH""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,FILING_PORTAL,Fictional filing portal,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Case document repository,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,COMMUNICATIONS,Synthetic communications export,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,COMPLIANCE_UNIT,Fictional compliance unit,"{""trust_level"":""HIGH""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,COMPLAINT_PORTAL,Complaint portal,"{""trust_level"":""MEDIUM""}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.19.2
+PANAMA_PAWPERS,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,ADDRESS,Address,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,BANK_ACCOUNT,Bank Account,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,BANK_TRANSACTION,Bank Transaction,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,BENEFICIAL_OWNERSHIP_DECLARATION,Beneficial Ownership Declaration,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,COMMUNICATION,Communication,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,COMPLAINT,Complaint,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,COMPLIANCE_REVIEW,Compliance Review,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,CORPORATE_ENTITY,Corporate Entity,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,CORPORATE_FILING,Corporate Filing,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,DOCUMENT,Document,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,FILING_PORTAL_LOGIN,Filing Portal Login,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,INVOICE,Invoice,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,JURISDICTION,Jurisdiction,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,KYC_DOCUMENT,Kyc Document,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,NOMINEE_AGREEMENT,Nominee Agreement,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,OFFICER_APPOINTMENT,Officer Appointment,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,ORGANIZATION,Organization,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,PERSON,Person,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,PROFESSIONAL_ENGAGEMENT,Professional Engagement,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,PROFESSIONAL_FIRM,Professional Firm,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,REGISTERED_AGENT_APPOINTMENT,Registered Agent Appointment,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,TRUST,Trust,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,OBJECT_TYPE,TRUST_PARTY,Trust Party,"{""derived_from_canonical_records"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,AGENT_FOR,Agent For,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,APPOINTED_AS,Appointed As,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,BENEFICIARY_OF,Beneficiary Of,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,DECLARES_OWNER,Declares Owner,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,ENGAGED_BY,Engaged By,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,FILED,Filed,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,HOLDS_ACCOUNT,Holds Account,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,ISSUED,Issued,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,NOMINEE_FOR,Nominee For,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,PAID_BY,Paid By,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,PROTECTOR_OF,Protector Of,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,RAISED_BY,Raised By,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_BENEFICIAL_OWNER_TRUTH_ID,References Beneficial Owner Truth Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_COMPLAINANT_RECORD_ID,References Complainant Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_CORPORATE_ENTITY_ID,References Corporate Entity Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_CUSTOMER_ENTITY_ID,References Customer Entity Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_DECLARED_OWNER_PERSON_RECORD_ID,References Declared Owner Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_DESTINATION_ACCOUNT_ID,References Destination Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_FILED_BY_PERSON_RECORD_ID,References Filed By Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_FILING_AGENT_FIRM_ID,References Filing Agent Firm Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_HOLDER_ID,References Holder Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_INSTRUCTING_PERSON_RECORD_ID,References Instructing Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_ISSUER_ENTITY_ID,References Issuer Entity Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_ISSUER_RECORD_ID,References Issuer Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_JURISDICTION_ID,References Jurisdiction Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_NOMINEE_PERSON_RECORD_ID,References Nominee Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_ORGANIZATION_ID,References Organization Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_ORGANIZATION_RECORD_ID,References Organization Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_PERSON_ID,References Person Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_PERSON_RECORD_ID,References Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_PROFESSIONAL_FIRM_ID,References Professional Firm Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_RECIPIENT_RECORD_ID,References Recipient Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_REGISTERED_ADDRESS_ID,References Registered Address Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_RELATED_OBJECT_ID,References Related Object Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_REVIEWER_PERSON_RECORD_ID,References Reviewer Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_REVIEWER_RECORD_ID,References Reviewer Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_SENDER_RECORD_ID,References Sender Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_SIGNER_RECORD_ID,References Signer Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_SOURCE_ACCOUNT_ID,References Source Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_TARGET_ENTITY_ID,References Target Entity Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_TRUSTEE_FIRM_ID,References Trustee Firm Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REFERENCES_TRUST_ID,References Trust Id,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REGISTERED_AT,Registered At,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REGISTERED_IN,Registered In,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,REVIEWED,Reviewed,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_COMMUNICATION_TEMPLATE,Same Communication Template,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_DECLARED_OWNER,Same Declared Owner,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_FILING_TEMPLATE,Same Filing Template,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_INVOICE_TEMPLATE,Same Invoice Template,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_NOMINEE_TEMPLATE,Same Nominee Template,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_PAYMENT_REFERENCE_PATTERN,Same Payment Reference Pattern,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_PORTAL_IP,Same Portal Ip,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SAME_REGISTERED_ADDRESS,Same Registered Address,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SENT,Sent,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SETTLOR_OF,Settlor Of,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SIGNATORY_FOR,Signatory For,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,TRUSTEE_OF,Trustee Of,"{""derived_from_canonical_relationships"":true}",2026.07.19.2
+PANAMA_PAWPERS,RELATIONSHIP_TYPE,USES_LOGIN,Uses Login,"{""derived_from_canonical_relationships"":true}",2026.07.19.2

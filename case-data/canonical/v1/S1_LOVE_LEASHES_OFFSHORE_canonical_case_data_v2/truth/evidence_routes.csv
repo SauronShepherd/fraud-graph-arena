@@ -1,0 +1,7 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+LOVE_LEASHES_OFFSHORE,ROUTE-001,CLAIM-PERSONA-FACTORY,Profile provenance,1,"Profile images, recovery email and device/login reuse",GRAPHFRAMES,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,ROUTE-001,CLAIM-PERSONA-FACTORY,Profile provenance,2,Real-person and company KYC links,ZINGG,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,ROUTE-002,CLAIM-GROOMING-MECHANISM,Grooming chronology,1,Threads and repeated templates,GENIE,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,ROUTE-003,CLAIM-OFFSHORE-FLOW,Financial layering,1,"Victim, intermediary, offshore and distribution transfers",GENIE,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,ROUTE-004,CLAIM-MULE-DIFFERENTIATION,Mule knowledge,1,"Account activity, retained value, messages and complaint timing",GENIE,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,ROUTE-005,CLAIM-GENUINE-RELATIONSHIP,Protected comparator,1,"Unique communications, parcel, travel and remittance",GENIE,2026.07.18.1

@@ -1,0 +1,19 @@
+case_id,entity_id,entity_type,canonical_name,operational_role,expected_classification,culpability,harm_status,fraud_network_membership,protected_notes,snapshot_version
+MADDOG,P-MAXWELL,PERSON,"Maxwell ""Maddog"" Mutt",principal/controller,principal/controller,intentional,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.1
+MADDOG,P-VERA,PERSON,Vera Vellum,financial operator/bookkeeper,financial operator/bookkeeper,knowing,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.1
+MADDOG,P-SILAS,PERSON,Silas Setter,salesperson/recruiter,salesperson/recruiter,knowing,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.1
+MADDOG,P-NINA,PERSON,Nina Newf,administrative employee,administrative employee,none,non-victim,false,Legacy fraud_network_membership=CONTEXT,2026.07.19.1
+MADDOG,P-HAZEL,PERSON,Hazel Hound,affinity connector/investor,affinity connector/investor,unwitting,victim,false,Legacy fraud_network_membership=CONTEXT,2026.07.19.1
+MADDOG,P-BERNARD,PERSON,Bernard Beagle,investor,investor,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,P-CLARA,PERSON,Clara Collie,investor,investor,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,P-GIDEON,PERSON,Gideon Greyhound,investor,investor,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,P-ELLA,PERSON,Ella Eskie,investor,investor,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,P-OSCAR,PERSON,Oscar Otterhound,external accountant,external accountant,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,P-MARTHA,PERSON,Martha Mastiff,bank contact,bank contact,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,O-MIK,ORGANIZATION,Maddog Investment Kennel LLC,investment firm,investment firm,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.1
+MADDOG,O-BLUE,ORGANIZATION,Blue Bone Partners LLC,feeder and payout entity,feeder and payout entity,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.1
+MADDOG,O-BANK,ORGANIZATION,Lantern Community Bank,bank,bank,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,O-HOUND,ORGANIZATION,Hound Circle Association,affinity association,affinity association,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,O-CUSTODY,ORGANIZATION,Lantern Custody Services,claimed custodian,claimed custodian,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,O-AUDIT,ORGANIZATION,Paws & Ledger CPAs,external accountant,external accountant,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1
+MADDOG,O-MMS,ORGANIZATION,Maddog Market Services,legitimate market-services business,legitimate market-services business,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.1

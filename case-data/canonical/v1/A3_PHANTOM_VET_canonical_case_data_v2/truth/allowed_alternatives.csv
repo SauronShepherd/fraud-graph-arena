@@ -1,0 +1,9 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+PHANTOM_VET,ALT-001,CLAIM-PHANTOM-CLAIMS,"Use owner denial plus impossible appointment and repeated image/template, or missing lab/anesthesia evidence plus common payout account.",,2026.07.18.1
+PHANTOM_VET,ALT-002,CLAIM-CREDENTIAL-MISUSE,"Use board credential plus Elena work schedule, or credential match plus device and employer records.",,2026.07.18.1
+PHANTOM_VET,ALT-003,CLAIM-DIVERSION,"Use claim payments plus bank transfers, or remittance batches plus KYC ownership and personal-account transfers.",,2026.07.18.1
+PHANTOM_VET,ALT-004,CLAIM-ROWAN-PRINCIPAL,"Use corporate control plus account ownership, or control plus approval and personal diversion.",,2026.07.18.1
+PHANTOM_VET,ALT-005,CLAIM-MIRA-KNOWING,"Use claim-system identity and messages, or claims-device login and repeated batch authorship.",,2026.07.18.1
+PHANTOM_VET,ALT-006,CLAIM-DEXTER-KNOWING,"Use signed encounters plus messages, or provider-license usage plus repeated templates and personal payment.",,2026.07.18.1
+PHANTOM_VET,ALT-007,CLAIM-ELENA-PROTECTED,"Use misuse report plus Lantern schedule, or board/employer/device evidence.",,2026.07.18.1
+PHANTOM_VET,ALT-008,CLAIM-OWNERS-PROTECTED,"Use complaint and appointment absence, or rescue authorization records and policy-limit harm.",,2026.07.18.1

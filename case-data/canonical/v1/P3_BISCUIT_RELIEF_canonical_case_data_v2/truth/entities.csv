@@ -1,0 +1,23 @@
+case_id,entity_id,entity_type,canonical_name,operational_role,expected_classification,culpability,harm_status,fraud_network_membership,protected_notes,snapshot_version
+BISCUIT_RELIEF,P-ARLO,PERSON,Arlo Airedale,principal/controller,principal/controller,intentional,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.3
+BISCUIT_RELIEF,P-MINA,PERSON,Mina Maltese,campaign/content operator,campaign/content operator,knowing,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.3
+BISCUIT_RELIEF,P-FELIX,PERSON,Felix Foxhound,financial operator,financial operator,knowing,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.3
+BISCUIT_RELIEF,P-VIOLET,PERSON,Violet Vizsla,volunteer coordinator,volunteer coordinator,none,non-victim,false,Legacy fraud_network_membership=PROTECTED_CONTEXT,2026.07.19.3
+BISCUIT_RELIEF,P-HOPE,PERSON,Hope Hound,high-degree volunteer and donor,high-degree volunteer and donor,unwitting,victim,false,Legacy fraud_network_membership=PROTECTED_CONTEXT,2026.07.19.3
+BISCUIT_RELIEF,P-BENNY,PERSON,Benny Beagle,beneficiary director,beneficiary director,none,victim,false,Legacy fraud_network_membership=PROTECTED_CONTEXT,2026.07.19.3
+BISCUIT_RELIEF,P-PRIYA,PERSON,Priya Poodle,processor compliance analyst,processor compliance analyst,none,non-victim,false,Legacy fraud_network_membership=PROTECTED_CONTEXT,2026.07.19.3
+BISCUIT_RELIEF,P-COLIN,PERSON,Colin Collie,legitimate logistics vendor,legitimate logistics vendor,none,non-victim,false,Legacy fraud_network_membership=PROTECTED_CONTEXT,2026.07.19.3
+BISCUIT_RELIEF,P-ADA,PERSON,Ada Akita,journalist and complainant,journalist and complainant,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,P-LEO,PERSON,Leo Labrador,donor,donor,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,P-RUBY,PERSON,Ruby Retriever,donor,donor,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,P-GIDEON,PERSON,Gideon Greyhound,donor,donor,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,O-GBRF,ORGANIZATION,Great Biscuit Relief Fund,fraudulent fundraising front,fraudulent fundraising front,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.3
+BISCUIT_RELIEF,O-EMBER,ORGANIZATION,Emberlight Campaign Studio,campaign operator controlled by Mina,campaign operator controlled by Mina,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.3
+BISCUIT_RELIEF,O-GILDED,ORGANIZATION,Gilded Leash Media LLC,shell advertising vendor,shell advertising vendor,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.3
+BISCUIT_RELIEF,O-REDROOF,ORGANIZATION,Red Roof Logistics LLC,shell logistics vendor,shell logistics vendor,controlled instrument,non-victim,true,Legacy fraud_network_membership=CORE,2026.07.19.3
+BISCUIT_RELIEF,O-PAWBRIDGE,ORGANIZATION,Pawbridge Relief Alliance,legitimate beneficiary,legitimate beneficiary,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,O-HARBOR,ORGANIZATION,Harbor Bowl Community Pantry,legitimate beneficiary,legitimate beneficiary,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,O-WARM,ORGANIZATION,Warm Kennel Mutual Aid,legitimate beneficiary,legitimate beneficiary,none,victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,O-PROCESSOR,ORGANIZATION,Northstar Donation Services,legitimate payment processor,legitimate payment processor,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,O-BANK,ORGANIZATION,Lantern Community Bank,bank,bank,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3
+BISCUIT_RELIEF,O-CIVIC,ORGANIZATION,Civic Relief Coordination Office,neutral coordinating office,neutral coordinating office,none,non-victim,false,Legacy fraud_network_membership=NONE,2026.07.19.3

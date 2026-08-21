@@ -1,0 +1,15 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+BONE_LEDGER,ROUTE-001,CLAIM-CONCEALED-LIABILITIES,Loan and guarantee chain,1,Hollow Bone loans and parent guarantees,GENIE,2026.07.18.1
+BONE_LEDGER,ROUTE-001,CLAIM-CONCEALED-LIABILITIES,Loan and guarantee chain,2,Journal treatment and missing consolidation,GENIE,2026.07.18.1
+BONE_LEDGER,ROUTE-002,CLAIM-CONCEALED-LIABILITIES,Cash and reporting path,1,Hollow drawdowns and transfers to parent,GENIE,2026.07.18.1
+BONE_LEDGER,ROUTE-002,CLAIM-CONCEALED-LIABILITIES,Cash and reporting path,2,Audit warning and absent disclosure,DOCUMENTS,2026.07.18.1
+BONE_LEDGER,ROUTE-003,CLAIM-FALSE-INVOICES,Invoice and beneficiary path,1,Brass Collar and Lantern Asset invoices,GENIE,2026.07.18.1
+BONE_LEDGER,ROUTE-003,CLAIM-FALSE-INVOICES,Invoice and beneficiary path,2,Exact vendor-account matches and shell payments,GRAPHFRAMES,2026.07.18.1
+BONE_LEDGER,ROUTE-004,CLAIM-ASSET-MISAPPROPRIATION,Serial and custody,1,Duplicate serials and unverified assets,GRAPHFRAMES,2026.07.18.1
+BONE_LEDGER,ROUTE-004,CLAIM-ASSET-MISAPPROPRIATION,Serial and custody,2,Warehouse movements and missing confirmations,GENIE,2026.07.18.1
+BONE_LEDGER,ROUTE-005,CLAIM-CHESTER-PRINCIPAL,Identity and control,1,Chester identity group,ZINGG,2026.07.18.1
+BONE_LEDGER,ROUTE-005,CLAIM-CHESTER-PRINCIPAL,Identity and control,2,"DIRECTOR_OF, CONTROLS and approvals",DIRECT,2026.07.18.1
+BONE_LEDGER,ROUTE-006,CLAIM-GRETA-KNOWING,Posting and reversal,1,Journal batches posted by Greta,GENIE,2026.07.18.1
+BONE_LEDGER,ROUTE-006,CLAIM-GRETA-KNOWING,Posting and reversal,2,Close and reversal messages,COMMUNICATION,2026.07.18.1
+BONE_LEDGER,ROUTE-007,CLAIM-AUDITOR-PROTECTED,Warning and escalation,1,Auditor warning memo and findings,DOCUMENTS,2026.07.18.1
+BONE_LEDGER,ROUTE-007,CLAIM-AUDITOR-PROTECTED,Warning and escalation,2,Board escalation communications,COMMUNICATION,2026.07.18.1

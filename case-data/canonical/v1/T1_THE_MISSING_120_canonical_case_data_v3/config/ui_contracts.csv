@@ -1,0 +1,12 @@
+case_id,semantic_name,data_testid,role,snapshot_version
+ACADEMY_T01,Investigation graph,academy-investigation-graph,region,2026.07.19.3
+ACADEMY_T01,Conversation and query paper,academy-query-paper,region,2026.07.19.3
+ACADEMY_T01,Case evidence file,academy-case-file,button,2026.07.19.3
+ACADEMY_T01,Ask Genie,academy-action-genie,button,2026.07.19.3
+ACADEMY_T01,Run Zingg candidates,academy-action-zingg,button,2026.07.19.3
+ACADEMY_T01,Run GraphFrames exact matches,academy-action-graphframes,button,2026.07.19.3
+ACADEMY_T01,Add manual hypothesis,academy-action-manual,button,2026.07.19.3
+ACADEMY_T01,Select suspect,academy-select-suspect,button,2026.07.19.3
+ACADEMY_T01,Protect actor,academy-protect-actor,button,2026.07.19.3
+ACADEMY_T01,Submit case,academy-submit,button,2026.07.19.3
+ACADEMY_T01,Restart Academy case,academy-restart,button,2026.07.19.3

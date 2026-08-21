@@ -1,0 +1,5 @@
+case_id,entity_id,entity_type,canonical_name,operational_role,expected_classification,culpability,harm_status,fraud_network_membership,protected_notes,snapshot_version
+ACADEMY_T01,T1-P-BUSTER,PERSON,Buster Bulldog,PRIMARY_CULPRIT,PRIMARY_CULPRIT,intentional,non-victim,true,"POS attribution, shortage and admission align.",2026.07.19.3
+ACADEMY_T01,T1-P-NELL,PERSON,Nell Newf,PROTECTED_REPORTER,PROTECTED_REPORTER,none,non-victim,false,Reported and documented the loss.,2026.07.19.3
+ACADEMY_T01,T1-P-POPPY,PERSON,Poppy Poodle,PROTECTED_RED_HERRING,PROTECTED_RED_HERRING,none,non-victim,false,Morning cashier with no relevant path.,2026.07.19.3
+ACADEMY_T01,T1-O-SHOP,ORGANIZATION,Biscuit Corner,VICTIM_ORGANIZATION,VICTIM_ORGANIZATION,none,victim,false,Lost 120 BSC.,2026.07.19.3

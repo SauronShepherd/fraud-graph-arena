@@ -1,0 +1,9 @@
+{
+  "iteration": "FGA04",
+  "canonical_model_version": "1.0.0",
+  "authority": "contracts/canonical/v1",
+  "approved_external_artifacts_found": true,
+  "source_archive_root": "C:/Users/angel.alvarez/PycharmProjects/fraud-graph-arena-old/datasets",
+  "imported_package_root": "case-data/canonical/v1",
+  "blockers": []
+}

@@ -1,0 +1,9 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+BONE_LEDGER,REQ-001,CLAIM-CHESTER-PRINCIPAL,P-CHESTER,CONTROL_OWNERSHIP_AND_APPROVAL,3,130,true,[],"Chester controlled the reporting entity, financing SPE and shell vendors.",2026.07.18.1
+BONE_LEDGER,REQ-002,CLAIM-CONCEALED-LIABILITIES,O-HOLLOW,LOAN_GUARANTEE_JOURNAL_AND_DISCLOSURE,3,150,true,[],Hollow Bone borrowings and parent guarantees were kept outside group reporting.,2026.07.18.1
+BONE_LEDGER,REQ-003,CLAIM-FALSE-INVOICES,O-BRASS,PO_INVOICE_PAYMENT_AND_EXISTENCE,3,120,true,[],Brass Collar and Lantern Asset invoices lacked supported services or assets.,2026.07.18.1
+BONE_LEDGER,REQ-004,CLAIM-ASSET-MISAPPROPRIATION,O-LANTERN-ASSET,ASSET_REGISTER_SERIAL_AND_MOVEMENT,3,120,true,[],"Capitalized assets were duplicated, missing or moved outside normal custody.",2026.07.18.1
+BONE_LEDGER,REQ-005,CLAIM-GRETA-KNOWING,P-GRETA,JOURNAL_AUTHORSHIP_AND_COMMUNICATION,2,95,true,[],Greta knowingly posted and preserved misleading close entries.,2026.07.18.1
+BONE_LEDGER,REQ-006,CLAIM-MARVIN-KNOWING,P-MARVIN,PROCUREMENT_CONTROL_AND_CUSTODY,2,95,true,[],Marvin knowingly arranged shell invoices and unsupported asset movements.,2026.07.18.1
+BONE_LEDGER,REQ-007,CLAIM-AUDITOR-PROTECTED,P-AMELIA,AUDIT_WARNING_AND_ESCALATION,2,75,true,[],Amelia raised documented warnings and was not part of concealment.,2026.07.18.1
+BONE_LEDGER,REQ-008,CLAIM-LUCY-PROTECTED,P-LUCY,ACCESS_LIMITS_AND_WHISTLEBLOWER,2,65,true,[],"Lucy lacked approval authority, challenged journals and preserved evidence.",2026.07.18.1

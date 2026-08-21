@@ -1,0 +1,165 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,PERSON_RECORD,Person Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,ORGANIZATION_RECORD,Organization Record,"{""accusable"":""true"",""can_receive_role"":""true"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,BANK_ACCOUNT,Bank Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,CRYPTO_WALLET,Crypto Wallet,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,LOGIN_EVENT,Login Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,DIGITAL_DOMAIN,Digital Domain,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,APP_BUILD,App Build,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""true"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,INVESTOR_PROFILE,Investor Profile,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,PLATFORM_ACCOUNT,Platform Account,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,CAMPAIGN,Campaign,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,CHAT_THREAD,Chat Thread,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,MESSAGE_TEMPLATE,Message Template,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,MESSAGE,Message,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,TOKEN,Token,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,TOKEN_PRICE_SNAPSHOT,Token Price Snapshot,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,SMART_CONTRACT,Smart Contract,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,SMART_CONTRACT_EVENT,Smart Contract Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,DEPOSIT_REQUEST,Deposit Request,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,PLATFORM_LEDGER_EVENT,Platform Ledger Event,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,WITHDRAWAL_REQUEST,Withdrawal Request,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,SUPPORT_TICKET,Support Ticket,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,BANK_TRANSACTION,Bank Transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,BLOCKCHAIN_TRANSACTION,Blockchain Transaction,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,KYC_DOCUMENT,Kyc Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,COMPLAINT,Complaint,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""can_receive_role"":""false"",""is_infrastructure"":""false"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,DIRECTOR_OF,Director Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,CONTROLS,Controls,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REGISTERED_AT,Registered At,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,HOSTS,Hosts,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,PUBLISHED,Published,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,USES_BUILD,Uses Build,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,USES_DEVICE,Uses Device,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,LOGGED_INTO,Logged Into,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,PROFILE_FOR,Profile For,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,OPERATES_ACCOUNT,Operates Account,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,TARGETED_BY,Targeted By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,PARTICIPATES_IN,Participates In,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,CONTAINS,Contains,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,BASED_ON_TEMPLATE,Based On Template,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,ISSUED,Issued,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,DEPOSITED_TO,Deposited To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,CREDITED_TO,Credited To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,PRICED_AS,Priced As,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,DEPLOYED,Deployed,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,EMITTED,Emitted,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REQUESTED_BY,Requested By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,DENIED_BY,Denied By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SOURCE_OF,Source Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,DESTINATION_OF,Destination Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SWEEPS_TO,Sweeps To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,BRIDGES_TO,Bridges To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SUPPORTS,Supports,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,RAISED_BY,Raised By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,ASSOCIATED_WITH,Associated With,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,PAID_TO,Paid To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,APPROVED,Approved,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_LOGIN_IP,Same Login Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_TLS_CERTIFICATE,Same Tls Certificate,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_DOMAIN_REGISTRANT,Same Domain Registrant,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_APP_BUILD_HASH,Same App Build Hash,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_SUPPORT_TEMPLATE,Same Support Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_MESSAGE_TEMPLATE,Same Message Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_DEPOSIT_WALLET,Same Deposit Wallet,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_FEE_WALLET,Same Fee Wallet,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_BANK_BENEFICIARY,Same Bank Beneficiary,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_PAYMENT_REFERENCE_PATTERN,Same Payment Reference Pattern,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_SMART_CONTRACT_BYTECODE,Same Smart Contract Bytecode,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_TOKEN_ADMIN,Same Token Admin,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_PRICE_CURVE_FINGERPRINT,Same Price Curve Fingerprint,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_SWEEP_WALLET,Same Sweep Wallet,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_BRIDGE_ROUTE,Same Bridge Route,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_OFFSHORE_SETTLEMENT,Same Offshore Settlement,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_KYC_TEMPLATE,Same Kyc Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,SAME_REGISTERED_ADDRESS,Same Registered Address,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,POSSIBLE_SAME_INVESTOR_PROFILE,Possible Same Investor Profile,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,MAY_CONTROL_PLATFORM,May Control Platform,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,CIVIL_REGISTRY,Fictional civil registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,CORP_REGISTRY,Fictional corporate registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,DOMAIN_REGISTRY,Fictional domain registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,APP_STORE,Fictional app-store metadata,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,PLATFORM_DB,Crypto Kennel platform export,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,CHAT_PLATFORM,Fictional chat export,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,DEVICE_LOG,Device telemetry,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,BANK_KYC,Fictional bank KYC,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,BANK_LEDGER,Fictional domestic bank ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,BLOCKCHAIN_LEDGER,Synthetic blockchain ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,BRIDGE_LEDGER,Synthetic bridge ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,OFFSHORE_LEDGER,Fictional offshore settlement ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,TOKEN_INDEX,Independent fictional token index,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,SMART_CONTRACT_INDEX,Synthetic contract index,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,KYC_PROVIDER,Fictional KYC provider,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,VICTIM_SUPPORT,Victim-support records,"{""trust_level"":""HIGH""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,COMPLAINT_PORTAL,Complaint portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Case document repository,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,DOMAIN,Domain,"{""derived_from_canonical_records"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,ORGANIZATION,Organization,"{""derived_from_canonical_records"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,PERSON,Person,"{""derived_from_canonical_records"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,PRICE_SNAPSHOT,Price Snapshot,"{""derived_from_canonical_records"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,OBJECT_TYPE,WALLET,Wallet,"{""derived_from_canonical_records"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ADMIN_ACTOR_WALLET_ID,References Admin Actor Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ADMIN_WALLET_ID,References Admin Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ADVISER_PERSON_RECORD_ID,References Adviser Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_API_BASE_DOMAIN_ID,References Api Base Domain Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_APPROVED_BY_RECORD_ID,References Approved By Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_APP_BUILD_ID,References App Build Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ASSIGNED_ADVISER_RECORD_ID,References Assigned Adviser Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ASSIGNED_AGENT_RECORD_ID,References Assigned Agent Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ASSIGNED_BANK_ACCOUNT_ID,References Assigned Bank Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ASSIGNED_WALLET_ID,References Assigned Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_CAMPAIGN_ID,References Campaign Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_CHAT_THREAD_ID,References Chat Thread Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_COMPLAINANT_RECORD_ID,References Complainant Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_CONTROLLER_ENTITY_ID,References Controller Entity Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_CONTROLLER_PERSON_RECORD_ID,References Controller Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_CREATED_BY_RECORD_ID,References Created By Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_DECISION_ACTOR_RECORD_ID,References Decision Actor Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_DEPOSIT_WALLET_ID,References Deposit Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_DESTINATION_ACCOUNT_ID,References Destination Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_DESTINATION_WALLET_ID,References Destination Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_DEVICE_ID,References Device Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_DOMAIN_ID,References Domain Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ENTERED_BY_RECORD_ID,References Entered By Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_FEE_BANK_ACCOUNT_ID,References Fee Bank Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_FEE_WALLET_ID,References Fee Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_HOLDER_ID,References Holder Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_HOSTING_ORGANIZATION_RECORD_ID,References Hosting Organization Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_INVESTOR_PROFILE_ID,References Investor Profile Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ISSUER_ORGANIZATION_RECORD_ID,References Issuer Organization Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ISSUER_RECORD_ID,References Issuer Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_LANDING_DOMAIN_ID,References Landing Domain Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_MESSAGE_TEMPLATE_ID,References Message Template Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_ORGANIZATION_ID,References Organization Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_PERSON_ID,References Person Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_PERSON_RECORD_ID,References Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_PLATFORM_ACCOUNT_ID,References Platform Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_PRICE_SNAPSHOT_ID,References Price Snapshot Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_PUBLISHER_ORGANIZATION_RECORD_ID,References Publisher Organization Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_RECIPIENT_RECORD_ID,References Recipient Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_REGISTRANT_ORGANIZATION_RECORD_ID,References Registrant Organization Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_RELATED_DEPOSIT_REQUEST_ID,References Related Deposit Request Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_RELATED_OBJECT_ID,References Related Object Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_RELATED_WITHDRAWAL_REQUEST_ID,References Related Withdrawal Request Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_REVERSED_TRANSACTION_ID,References Reversed Transaction Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_REVIEWER_PERSON_RECORD_ID,References Reviewer Person Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_SENDER_RECORD_ID,References Sender Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_SIGNER_RECORD_ID,References Signer Record Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_SMART_CONTRACT_ID,References Smart Contract Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_SOURCE_ACCOUNT_ID,References Source Account Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_SOURCE_WALLET_ID,References Source Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_TOKEN_ID,References Token Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,RELATIONSHIP_TYPE,REFERENCES_WALLET_ID,References Wallet Id,"{""derived_from_canonical_relationships"":true}",2026.07.18.1

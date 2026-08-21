@@ -1,0 +1,357 @@
+{
+  "case_id": "CEO_BARKED_TWICE",
+  "case_order": "P2",
+  "case_version": "1.1.0",
+  "snapshot_version": "2026.07.19.2",
+  "difficulty": "PUPPY",
+  "single_difficulty_only": true,
+  "source_publication_level": 1,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 610,
+      "sha256": "6adf9196c9e181378d6432f1b9e9493964f04e33806831047a463419bc4550d4"
+    },
+    {
+      "path": "analytics/ceo_graphframes_exact_relationships.csv",
+      "bytes": 18103,
+      "sha256": "1da845dfad1922c4b90d89beea6fb8d40319f4bfc563d7859da4ec0ad8174d6c"
+    },
+    {
+      "path": "analytics/ceo_zingg_candidate_relationships.csv",
+      "bytes": 9578,
+      "sha256": "f516e8b329e533dfb8aa16316e29c989285c97aec160e4317de99723c86de710"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 265,
+      "sha256": "4ee2c55e3bdb3136cacf624a89ca5386fb10d9ee842d42778074f14ceba23334"
+    },
+    {
+      "path": "authoring/ceo_accounts.csv",
+      "bytes": 1476,
+      "sha256": "afa410db031e764d35b9e460b9ac34d9fcf18dd5e8cb29420a9cabcccb83dbbf"
+    },
+    {
+      "path": "authoring/ceo_addresses.csv",
+      "bytes": 1559,
+      "sha256": "597d5d4f97626e4001cc197797d307060df100ed22d007dcd2d7818aa90e94a4"
+    },
+    {
+      "path": "authoring/ceo_communications.csv",
+      "bytes": 16964,
+      "sha256": "c06babbe81702a07a740c5680522ce9b809a95e75ccbfdc9163d6e0a5d95ef93"
+    },
+    {
+      "path": "authoring/ceo_devices.csv",
+      "bytes": 819,
+      "sha256": "e51bb6e6bd5bc567adeff6edaf4a4f7709f890ea8d938dc0e7da0a0509b06711"
+    },
+    {
+      "path": "authoring/ceo_direct_relationships.csv",
+      "bytes": 136978,
+      "sha256": "2f7f0f92018749445597a8d380d8fe79cf55fe6728092b5f0328d01416912ec4"
+    },
+    {
+      "path": "authoring/ceo_documents.csv",
+      "bytes": 7784,
+      "sha256": "909234767373fb7b06dd39e83f4d64a30de57e2df9020d40e6497556c8f51379"
+    },
+    {
+      "path": "authoring/ceo_domain_registrations.csv",
+      "bytes": 2129,
+      "sha256": "52e15c9c64e52a2446dfdae0ed3a8bce455e836fcb35043aef9375237d88d2df"
+    },
+    {
+      "path": "authoring/ceo_domains.csv",
+      "bytes": 1381,
+      "sha256": "124687c5f8ac7b4f93a76eac218bceb362bf30f1d2ad817841695f3a0112c05f"
+    },
+    {
+      "path": "authoring/ceo_employment.csv",
+      "bytes": 1283,
+      "sha256": "a87e666fe0133a519005c9f693ae4cd8b32337605000af368844e7d518d445da"
+    },
+    {
+      "path": "authoring/ceo_incidents.csv",
+      "bytes": 2276,
+      "sha256": "4c1954d642262c530d534214e399990d7b60a075eedf6e4fa19649155e8f3485"
+    },
+    {
+      "path": "authoring/ceo_invoice_lines.csv",
+      "bytes": 23327,
+      "sha256": "babd5238c89548c77ad45a63d22f67d308f7507fd58c660d9a631e5c409974c1"
+    },
+    {
+      "path": "authoring/ceo_invoices.csv",
+      "bytes": 11990,
+      "sha256": "93b88d13336a660364846cd12237d6ed7106bdf6c66bad25ccdd496e029c362d"
+    },
+    {
+      "path": "authoring/ceo_login_events.csv",
+      "bytes": 7064,
+      "sha256": "6952de7c54d3dc8b249f4d5ec97cb9597023ae1f8a2d4c18d3be3f0b2823e776"
+    },
+    {
+      "path": "authoring/ceo_mailbox_rules.csv",
+      "bytes": 1630,
+      "sha256": "3cebccc6868f7180619b2d3e7fa23271de0bc389b7816d3dd78073d4590552d0"
+    },
+    {
+      "path": "authoring/ceo_organization_records.csv",
+      "bytes": 4302,
+      "sha256": "c4d3164ce9204e3b810f3bb9c53a37d4c616cdba703285d283c270f8673c77fb"
+    },
+    {
+      "path": "authoring/ceo_organizations.csv",
+      "bytes": 741,
+      "sha256": "0c40dca4ef96b4d20531b7a4c8639da2faa90660981b8966e83149465c444503"
+    },
+    {
+      "path": "authoring/ceo_people.csv",
+      "bytes": 1124,
+      "sha256": "bde781d4c37930e7bac401dad44e3db9d33d96e534333d30a865f289acf02897"
+    },
+    {
+      "path": "authoring/ceo_person_records.csv",
+      "bytes": 6701,
+      "sha256": "37b2679bf331ef57f7d465d07cfe9270966a06e0501b47329846473c985bfd07"
+    },
+    {
+      "path": "authoring/ceo_purchase_orders.csv",
+      "bytes": 2886,
+      "sha256": "ce602057ef451abc4ecdf37b59b7a0b3c98ec8883454e2ba1ea33184d3a96482"
+    },
+    {
+      "path": "authoring/ceo_transactions.csv",
+      "bytes": 17456,
+      "sha256": "a9b097a7c19e61953a236e38d057aef86715fdd98b8ae18398e862b9eacc658f"
+    },
+    {
+      "path": "authoring/ceo_vendor_change_requests.csv",
+      "bytes": 1919,
+      "sha256": "0dbe34771a2079f7bf89dd36c3a14853e6dc26e79106a43adca3ed4efbb7633d"
+    },
+    {
+      "path": "authoring/ceo_vendor_relationships.csv",
+      "bytes": 428,
+      "sha256": "936edf43e6966541b64ce7ecbbdb67e6e760a6c3cfeca05fe4b7ad6b85f44b03"
+    },
+    {
+      "path": "catalog/P2_CEO_BARKED_TWICE_PUPPY_data_catalog_v1.xlsx",
+      "bytes": 36384,
+      "sha256": "5f98170203a7f231024d71efbe476a246a963d7cefb31cfa1d9f5031e51a21ab"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 449,
+      "sha256": "11e9098a980ee2cfb884080cec17088dfb64b7a8d1c83b5b64490ac603907b35"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 491,
+      "sha256": "916ac2486d50a2b5f95ebd36f0f200f47c9a66ece34dc60de20126d673df69ca"
+    },
+    {
+      "path": "config/ceo_barked_twice_genie_benchmarks.csv",
+      "bytes": 1972,
+      "sha256": "ae30d2f2710970a3589b54afd2bf36673d29f87ed0f62b7f73a167121dc9cac7"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 45009,
+      "sha256": "4485397978af8d33d18df22ab5632fba79065b808836d391b2d8c2cbc3528721"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 267,
+      "sha256": "43694921ecf4e69dbb1b63db83a6a9bbc97ac713d86265653ac6fa9530e7053b"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 485,
+      "sha256": "e93ca3143152894f1382fc356c0ac991a99f4de918ad99a453159a6507653fe2"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 968,
+      "sha256": "c6084938cf8d31b35e2b58f9903b104955471a583d413886910bccca7fe71bb5"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 1674,
+      "sha256": "0e756e116dcfe7f05a97fa39b50151dcca49452da5e322c40b43693b70c1aa3b"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 620,
+      "sha256": "ba053373cd6d8ea581d29b76cdf225a64f386a3debb0149cf4c88d1378980992"
+    },
+    {
+      "path": "genie/puppy/communications.csv",
+      "bytes": 14211,
+      "sha256": "528567a419b4bffaeda1a07ee57625015d0485ab577644400dc700f58eff3485"
+    },
+    {
+      "path": "genie/puppy/documents.csv",
+      "bytes": 5987,
+      "sha256": "4261ee9d7388ba875627b063422b5bb01481bd5476f20e6d6891ce1fbd46da49"
+    },
+    {
+      "path": "genie/puppy/domain_registrations.csv",
+      "bytes": 1819,
+      "sha256": "536749dba14ba7cdd2a3ab0b81144a58c06e8d70ffb5ecbd034c5187418dc8a9"
+    },
+    {
+      "path": "genie/puppy/employment.csv",
+      "bytes": 874,
+      "sha256": "33d33723c273b26802d34bdc47c1e03f1bfd178767b8302822598784467f0f29"
+    },
+    {
+      "path": "genie/puppy/entities.csv",
+      "bytes": 7856,
+      "sha256": "0555ed05b298f7d4936f74a94d2678f8961e45b346b4115bb03a3517b2087608"
+    },
+    {
+      "path": "genie/puppy/financial_events.csv",
+      "bytes": 11495,
+      "sha256": "d265c9cb510376b0e5380a80ae398e4b4f925dc23da366a4bee9be580a1bc003"
+    },
+    {
+      "path": "genie/puppy/incidents.csv",
+      "bytes": 1954,
+      "sha256": "9ffa6d9c9ffcfe1d4f1008a1e7650657766c162ee495e6b49d5867c36e544c14"
+    },
+    {
+      "path": "genie/puppy/invoice_lines.csv",
+      "bytes": 14961,
+      "sha256": "c6c3fbc6cdd1c5a51025c965f9946b44a4032402c0c59379efbe037bf82854e0"
+    },
+    {
+      "path": "genie/puppy/invoices.csv",
+      "bytes": 9870,
+      "sha256": "ebe5a46b284781d2eea60a662e18f3ae9f7ef907c75b837c992dc6231b8d99d4"
+    },
+    {
+      "path": "genie/puppy/login_events.csv",
+      "bytes": 4994,
+      "sha256": "e21d59f59bbe2ef86673c80b6450ee2298b60f9c2a476002f4f4b8e007346867"
+    },
+    {
+      "path": "genie/puppy/mailbox_rules.csv",
+      "bytes": 1304,
+      "sha256": "1a923dae34a6510179fabc2eb765766079843603a884ed2d3fef5d5106e55753"
+    },
+    {
+      "path": "genie/puppy/purchase_orders.csv",
+      "bytes": 2355,
+      "sha256": "0b53225a0f33b71d803a85626f3b2a38a7ad4b756bf7cec27d6fbae7e7080a10"
+    },
+    {
+      "path": "genie/puppy/vendor_changes.csv",
+      "bytes": 1609,
+      "sha256": "c53d7b8d1d6af2b8b5d565be2250aea4a5f0896147b9e674b6f08f22adff508e"
+    },
+    {
+      "path": "genie/puppy/vendor_relationships.csv",
+      "bytes": 348,
+      "sha256": "9f61394dced2b40c5dfff1924416a4f1842c143b51d9ddba4165719ce908175d"
+    },
+    {
+      "path": "published/puppy/graphframes_exact_relationships.csv",
+      "bytes": 16120,
+      "sha256": "b835082c3aa9ee78e3207d077c47dc174af5d2af2a75f070b13e17f9a5466043"
+    },
+    {
+      "path": "published/puppy/initial_case_items.csv",
+      "bytes": 197,
+      "sha256": "6f971651666a7baa8e2969f46449f066af595a3f47e5bb354c92fe8653c299c0"
+    },
+    {
+      "path": "published/puppy/player_safe_direct_relationships.csv",
+      "bytes": 137150,
+      "sha256": "ef91ea3ec31cd99f786502e0b19adbd8d709305b5f1f2cebf6424ed39f517f60"
+    },
+    {
+      "path": "published/puppy/player_safe_records.csv",
+      "bytes": 229354,
+      "sha256": "d832028e97a12bcddeb9670af62fc17caebdbc8f1cf88f969d53d44c356733c5"
+    },
+    {
+      "path": "published/puppy/zingg_candidate_relationships.csv",
+      "bytes": 8108,
+      "sha256": "3e43d82a3d98b2232f0fdeeb04a3da4ae87adaff52e76ae680d3824ab21397cf"
+    },
+    {
+      "path": "scripts/conversion_metadata.py",
+      "bytes": 121,
+      "sha256": "9e185a3a6a081331d464ba9f75f163740c4c62543412c697796dcd84139870e5"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 885,
+      "sha256": "b98c9f1e6298d2ea78a3818898ef0d692e20a845f92e089e02e6271df8000a19"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 2239,
+      "sha256": "d02161709f6aa5264f35b70255278082561340244fb55d9f3a8840bc30ca45e4"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 321,
+      "sha256": "6bce0caf16a20249642803a9eb7f45d4b61b3d1878ee49a2e3169231b466e72b"
+    },
+    {
+      "path": "truth/ceo_allowed_alternatives.csv",
+      "bytes": 1023,
+      "sha256": "6a567ec75cdf3c02c33af49a4b43e82bd300b90989f2f96d5e75bc814393db7c"
+    },
+    {
+      "path": "truth/ceo_ending_thresholds.csv",
+      "bytes": 835,
+      "sha256": "dfc57a3867b50fbbca88e9f9041d146571f047d7507c72c43e92133fba2f7fae"
+    },
+    {
+      "path": "truth/ceo_evaluator_truth.csv",
+      "bytes": 2484,
+      "sha256": "55f9091892bdb5cec3eb716bf9b0a4c7a9bbb3ea1390e31eec1190b3d24f19e0"
+    },
+    {
+      "path": "truth/ceo_evidence_route_matrix.csv",
+      "bytes": 1893,
+      "sha256": "0f085a847fcd8e02e2ae00dd2be2c1f2d1adb4b1092cc2a56520e30b18f30c23"
+    },
+    {
+      "path": "truth/ceo_forbidden_false_positives.csv",
+      "bytes": 583,
+      "sha256": "a0e2248a785c8df768f1f7defa1e8a43ebc91d2981fc1f2cc18d0ca41a5fe42e"
+    },
+    {
+      "path": "truth/ceo_required_evidence.csv",
+      "bytes": 1769,
+      "sha256": "dccb209f1caa0b7386a6fe8be2a55e75d0bc08c06c3fe949b12655868a6f5309"
+    },
+    {
+      "path": "truth/ceo_scoring_rules.csv",
+      "bytes": 924,
+      "sha256": "437629e46b1f933682245337d5f5e6a1edb9bde5256f88d9c8316655c782b140"
+    },
+    {
+      "path": "validation/publication_counts.csv",
+      "bytes": 466,
+      "sha256": "6872f2e8553ae25e34a0fde99eee322a2b15e3714f147e65d6d8090f037f9bed"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1028,
+      "sha256": "3c8038a03a5133e948fb5977b1e3182789a7085b904361e34f447c943b9594d0"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 2001,
+      "sha256": "c0220b259598d9113c1826a0a225b5bc2ead80a3851dc38cbc2d42ab8c20f3b4"
+    }
+  ]
+}

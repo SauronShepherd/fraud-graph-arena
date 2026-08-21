@@ -1,0 +1,431 @@
+{
+  "case_id": "DOWNLINE",
+  "case_version": "1.0.0",
+  "snapshot_version": "2026.07.18.1",
+  "difficulty": "ADULT_DOG",
+  "single_difficulty_only": true,
+  "source_publication_level": 2,
+  "validation_status": "PASS",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 600,
+      "sha256": "26a2ea87e8f23dd68de956ec4a01f29197488415e12d6a5c6729ebb058d0a24e"
+    },
+    {
+      "path": "analytics/downline_graphframes_exact_relationships.csv",
+      "bytes": 50466,
+      "sha256": "fc00cd21d049935c394d0996a5016c61bda794f15ddfcaee007eacecdb648b95"
+    },
+    {
+      "path": "analytics/downline_zingg_candidate_relationships.csv",
+      "bytes": 34086,
+      "sha256": "012db7d01da4515143acc9c8422e1331a0a97ec3deffb68c4bed80e9730d3256"
+    },
+    {
+      "path": "analytics/no_result_fixtures.csv",
+      "bytes": 249,
+      "sha256": "0a2c33d36f13c4c0c90880010290c01b8489c07c50e7f73cb677497f1fedf461"
+    },
+    {
+      "path": "authoring/downline_addresses.csv",
+      "bytes": 1898,
+      "sha256": "912b9342023234dd2bdaa46cd3a1fadbaee2809b6c74eb9c2e6587519d3d3fb2"
+    },
+    {
+      "path": "authoring/downline_commissions.csv",
+      "bytes": 68122,
+      "sha256": "f449a525787859e8fcecf4fca26ba225dc4c319b2718d85b5f8b1951cb881b3a"
+    },
+    {
+      "path": "authoring/downline_complaints.csv",
+      "bytes": 7537,
+      "sha256": "de36884acabee2d5c73893e0c521b4f6c21de8cec90337b575ac923fe86b4c58"
+    },
+    {
+      "path": "authoring/downline_devices.csv",
+      "bytes": 1488,
+      "sha256": "dc77f1908ad6208ffbd4850062896bd68dc3d57aa946c7fd6e9371ab5336c41f"
+    },
+    {
+      "path": "authoring/downline_direct_relationships.csv",
+      "bytes": 962740,
+      "sha256": "b0d3965c13d6eea994cb107b34756f7b19a1e8c901fd50f986f659707af134d7"
+    },
+    {
+      "path": "authoring/downline_documents.csv",
+      "bytes": 14110,
+      "sha256": "7c40aa7fe516a7b1f2cbfe8705df23c5098294eeb76c0eb5efbfd0f79a4bff53"
+    },
+    {
+      "path": "authoring/downline_inventory_movements.csv",
+      "bytes": 37873,
+      "sha256": "8bbf8fc57b13f1fc7581b9f3d623c69ddb0e221dfb64cca9328bbbc1d8dc9118"
+    },
+    {
+      "path": "authoring/downline_login_events.csv",
+      "bytes": 8748,
+      "sha256": "81681eaf69ca5e9ecac6bffd574628bcfc51cdecc6617be6c15631c6793fc977"
+    },
+    {
+      "path": "authoring/downline_order_lines.csv",
+      "bytes": 48782,
+      "sha256": "2f95cb3e47af2165a81d11ae66de9c5973189c6b305218dc7204eee26d8c31e2"
+    },
+    {
+      "path": "authoring/downline_organization_records.csv",
+      "bytes": 10511,
+      "sha256": "0b94607b6870ac46d0134e083a93d745fba0a7f7914a99e099b28ddf9bfb5e19"
+    },
+    {
+      "path": "authoring/downline_organizations.csv",
+      "bytes": 1364,
+      "sha256": "52a55870be4dad8cd609a57d4ff1b9238c2c1f68806677234bed5c4900dac69d"
+    },
+    {
+      "path": "authoring/downline_participant_economics.csv",
+      "bytes": 7532,
+      "sha256": "b23ac58ebc75df15859bbe472cd201a49a98794ae3b48272fe31f4a9c4ed99e0"
+    },
+    {
+      "path": "authoring/downline_payment_accounts.csv",
+      "bytes": 7035,
+      "sha256": "dc1465c7e15936d88e05932b9cae5f4a7f96cb53ea53a22f57c8fcb5efd63661"
+    },
+    {
+      "path": "authoring/downline_payouts.csv",
+      "bytes": 57917,
+      "sha256": "9a5a79c178bc505c789456873e25bd4d55bd91ebae75cfc3e9ef223015d858cd"
+    },
+    {
+      "path": "authoring/downline_people.csv",
+      "bytes": 4698,
+      "sha256": "d1c6373d1176d6e4aaf2b6fe77945e2893fff20c6f53b2f0f5a4a0ebdc67ad36"
+    },
+    {
+      "path": "authoring/downline_person_records.csv",
+      "bytes": 37615,
+      "sha256": "b9713d8b756b2266f6dcca71d986fd057f699017e6864f1bae7696c3af73e0d2"
+    },
+    {
+      "path": "authoring/downline_price_schedules.csv",
+      "bytes": 4440,
+      "sha256": "38530b5035052b4b544e422d62070860738573a16c04b91d001b2329c9952dae"
+    },
+    {
+      "path": "authoring/downline_product_orders.csv",
+      "bytes": 33524,
+      "sha256": "bcb5797bd4088c0a97c610d3e8f70e8c64f2775546bb7ffddc2b74e5df3437c8"
+    },
+    {
+      "path": "authoring/downline_products.csv",
+      "bytes": 2659,
+      "sha256": "834ea1c00897049e8924c4c0f7ce18e6f7fbe2dcd4c1926114863ce9e5493766"
+    },
+    {
+      "path": "authoring/downline_recruitment_messages.csv",
+      "bytes": 16147,
+      "sha256": "b18e02d96764416d49bfaf9907457382dc92f6a7267be600c566164068bbd8ea"
+    },
+    {
+      "path": "authoring/downline_refunds.csv",
+      "bytes": 6116,
+      "sha256": "708f9453dc5c757c68ee670fd212e474251ee5256f327044153f9a912179ad0d"
+    },
+    {
+      "path": "authoring/downline_retail_sales.csv",
+      "bytes": 26546,
+      "sha256": "e13014d186c35cb1104d5dd2d76e835be2f740ad7ae74128f3c17e29f8fed9b1"
+    },
+    {
+      "path": "authoring/downline_seminar_attendance.csv",
+      "bytes": 27272,
+      "sha256": "a087cd21d156c1dba9875e5eb2be1a97ed4a59d4a08707f4fce433b5ef5a8e97"
+    },
+    {
+      "path": "authoring/downline_seminars.csv",
+      "bytes": 8606,
+      "sha256": "10d7b821303337bf6ead95ebc3a1af31ab6de2cfece43c67df009fceacc656bf"
+    },
+    {
+      "path": "authoring/downline_social_groups.csv",
+      "bytes": 2877,
+      "sha256": "72e5286ae905f94363e7637820bf890d243a2bb8a8d5f4cf51461562b80d9420"
+    },
+    {
+      "path": "authoring/downline_social_memberships.csv",
+      "bytes": 9621,
+      "sha256": "e9bcc40d09b7aee0d18e38b56a35a3c67552930d1943ead1bfc27531f709e5ac"
+    },
+    {
+      "path": "authoring/downline_social_posts.csv",
+      "bytes": 31604,
+      "sha256": "e7d053f8ec29b44b5424a68c64d307989dd7c8c4691c998d1c0e54718352d7c7"
+    },
+    {
+      "path": "authoring/downline_sponsor_relationships.csv",
+      "bytes": 5582,
+      "sha256": "5d30e4e71e12290986995f1e60c0f61b7e0eec3211f712e1e4e471d23fbdfb16"
+    },
+    {
+      "path": "authoring/downline_testimonials.csv",
+      "bytes": 13723,
+      "sha256": "8a99272dda4163100f55cc6e99315889d1c6e328765e04f4dac37bb719822628"
+    },
+    {
+      "path": "catalog/A2_DOWNLINE_ADULT_data_catalog_v1.xlsx",
+      "bytes": 37024,
+      "sha256": "7bfe3625f688a70cee78095ef33c99256cf4a9b4b474862ab87ef5224b6a6b6d"
+    },
+    {
+      "path": "config/case.yaml",
+      "bytes": 375,
+      "sha256": "1b3a420cdb06a143d5b5a5c3b12b7a53a1529f39d7a886b30419c908b58deca6"
+    },
+    {
+      "path": "config/case_definition.csv",
+      "bytes": 488,
+      "sha256": "e0effd4e97c922665fd5511931671b7dddd3338547fc430d5a860e323504a589"
+    },
+    {
+      "path": "config/data_dictionary.csv",
+      "bytes": 54448,
+      "sha256": "0c0216d317a2125f7d1f881e4d97519f00810d7d2c163d4af6be11114a5f62d2"
+    },
+    {
+      "path": "config/difficulty_profiles.csv",
+      "bytes": 337,
+      "sha256": "876575bf14871cd7be33ef57849ce56cf18cad4d78cd8b98a062c72a8749af1f"
+    },
+    {
+      "path": "config/downline_genie_benchmarks.csv",
+      "bytes": 2153,
+      "sha256": "022634ec31b990a2ae110ba1f56bc955cc225d86cf2e5bf31fef6e5fe67815fd"
+    },
+    {
+      "path": "config/initial_case_items.csv",
+      "bytes": 261,
+      "sha256": "5e2a873744ca75a0fae3aadbc62f2b347696e35470a18d6eba9f384980372795"
+    },
+    {
+      "path": "config/object_type_registry.csv",
+      "bytes": 995,
+      "sha256": "1d452aa5cf51f88451d0884add489339fd7e4ee43e46513637802ca8880bb245"
+    },
+    {
+      "path": "config/relationship_type_registry.csv",
+      "bytes": 1627,
+      "sha256": "e2e6e2fb1702ba8d9307dc7afd9510f6d6dd3a3b9b3cde61fb3b4d1ad1dcda33"
+    },
+    {
+      "path": "config/source_system_registry.csv",
+      "bytes": 611,
+      "sha256": "df37ef27d511575c0d444f7a6acaab6efe302b5949282e835f29bfdab19ee865"
+    },
+    {
+      "path": "genie/adult/commissions.csv",
+      "bytes": 58871,
+      "sha256": "f67d7f050b3a6ffff6d200b2b1f954004e9ca4e4819ba2ceb0a202ec42af2aca"
+    },
+    {
+      "path": "genie/adult/complaints.csv",
+      "bytes": 6588,
+      "sha256": "661b96828748d2fde16be140c0d4dfe17c43cd7bb68e778b420f590968d11595"
+    },
+    {
+      "path": "genie/adult/documents.csv",
+      "bytes": 12194,
+      "sha256": "70c7ceb7847dfee8066a05831fd906017e3d5e20f7387b3eb474fe8e5f7855e1"
+    },
+    {
+      "path": "genie/adult/entities.csv",
+      "bytes": 33809,
+      "sha256": "86a1e4b16172b1dca81eb9ee4fb20a67ae908584f461a18584c9419dfdea9c79"
+    },
+    {
+      "path": "genie/adult/inventory_movements.csv",
+      "bytes": 32374,
+      "sha256": "58c5f0e3e68efa4dbe3ee7fa8aa668ed17131014cb1438f9956f4456c3695375"
+    },
+    {
+      "path": "genie/adult/login_events.csv",
+      "bytes": 6983,
+      "sha256": "3bafaa35e2ed723e21a4dbde7e619e16d307c7cce5832cdf5e18504d734a3e6a"
+    },
+    {
+      "path": "genie/adult/order_lines.csv",
+      "bytes": 36920,
+      "sha256": "ac6e55a69213b875acbe4a6e3293d3a0c30239b1b247f9bcbf81d8d2ebc9b3df"
+    },
+    {
+      "path": "genie/adult/orders.csv",
+      "bytes": 29603,
+      "sha256": "bc6f80135eda139359ef78e07a61e59bf0702dc6ff3fd51da47775cf8699e964"
+    },
+    {
+      "path": "genie/adult/participant_economics.csv",
+      "bytes": 5700,
+      "sha256": "3ddd85f1a0e479e816feda03953f156fcfd5d24926dbbde87033b2ada7574cad"
+    },
+    {
+      "path": "genie/adult/payouts.csv",
+      "bytes": 51132,
+      "sha256": "44397b143707292a29ff78789705a20dcaa08c73e05158f6623133f5336957b0"
+    },
+    {
+      "path": "genie/adult/price_schedules.csv",
+      "bytes": 3251,
+      "sha256": "28104f41b117da1512230aa8bdc298e6eabd0fa1ae0d7d0df82648307d390ef3"
+    },
+    {
+      "path": "genie/adult/products.csv",
+      "bytes": 2054,
+      "sha256": "82d03a8d55738be894649e655a7a822218c6f0ad45f00cc90bcec08ee080c746"
+    },
+    {
+      "path": "genie/adult/recruitment_messages.csv",
+      "bytes": 14555,
+      "sha256": "2f1a61899806e5ca47465fed08df46ebc42737c7c5d818b60a891933c8923795"
+    },
+    {
+      "path": "genie/adult/refunds.csv",
+      "bytes": 4848,
+      "sha256": "d745aa770b944e3dd8f170fdae5d3596a9f3429e9ff9b85e5e5d339656151a95"
+    },
+    {
+      "path": "genie/adult/retail_sales.csv",
+      "bytes": 22135,
+      "sha256": "5b36f98e711c975fc8f231a578a40d9e237bfbf706029d475518fc233dc650de"
+    },
+    {
+      "path": "genie/adult/seminar_attendance.csv",
+      "bytes": 22711,
+      "sha256": "593f30633c6c17bb5e2efa9bc45f37ae10211d8ac2ca232ad63aa6f73a7793bb"
+    },
+    {
+      "path": "genie/adult/seminars.csv",
+      "bytes": 7397,
+      "sha256": "a0b3b3310b612050ccee3212dffb9649a05d8fea3a01c9cf7359300439478c58"
+    },
+    {
+      "path": "genie/adult/social_groups.csv",
+      "bytes": 2232,
+      "sha256": "7fae84847b21786e0280649ab2e6cfdb8401c3e58086e03b33392a1b710c6f12"
+    },
+    {
+      "path": "genie/adult/social_memberships.csv",
+      "bytes": 7320,
+      "sha256": "4014f3cfee8808ff2142203764d7e9b5c8ae7ba4dcd86ad2e0e0047e92d741d9"
+    },
+    {
+      "path": "genie/adult/social_posts.csv",
+      "bytes": 27267,
+      "sha256": "f9dd752ae392b7de7592c366f23dfef7adf6db884c4ecb039ee5ce4c55a674ba"
+    },
+    {
+      "path": "genie/adult/sponsor_relationships.csv",
+      "bytes": 4344,
+      "sha256": "939e8e87e3327f6cba08cef66adabc48226cad84f56b37341329c3eacc3c531e"
+    },
+    {
+      "path": "genie/adult/testimonials.csv",
+      "bytes": 12168,
+      "sha256": "c0e631d3d088dfaa890b2df45953fc5ae12c448421c77e89248742bbf4c001c4"
+    },
+    {
+      "path": "published/adult/graphframes_exact_relationships.csv",
+      "bytes": 50010,
+      "sha256": "16342b5507b8abe8c5d54791e2e4a6f3310fe29c4024c516dd1a510476f941ea"
+    },
+    {
+      "path": "published/adult/initial_case_items.csv",
+      "bytes": 121,
+      "sha256": "c66783c8ce3504c49f9869283a1dcba6dbf9d2282b9c3579f2c9aa341bce95a4"
+    },
+    {
+      "path": "published/adult/player_safe_direct_relationships.csv",
+      "bytes": 971280,
+      "sha256": "7d5492a11696b31e8d58a02d8eaad2dda139e1e36ae7523f38536f48038efd1a"
+    },
+    {
+      "path": "published/adult/player_safe_records.csv",
+      "bytes": 1084381,
+      "sha256": "639aa9e82b328c2e62d94221ff38e5946103216bfb82092ba34370db2b986b0a"
+    },
+    {
+      "path": "published/adult/zingg_candidate_relationships.csv",
+      "bytes": 32868,
+      "sha256": "29cf2356664bfa4c423f25d4f3e1c4b4b56e1b744c1a26106274e55f9ffa4263"
+    },
+    {
+      "path": "scripts/adult_package_metadata.py",
+      "bytes": 144,
+      "sha256": "2e3431b601e940676eb9250c56b9273735559df98b8971e8e02fea3a32165984"
+    },
+    {
+      "path": "scripts/validate_bundle.py",
+      "bytes": 296,
+      "sha256": "8df2f056963ad072ec2b357f3fe27cdcac0709fc7e95a7fe52d937fb17dcf257"
+    },
+    {
+      "path": "sql/create_genie_views.sql",
+      "bytes": 234,
+      "sha256": "0984532fab8962f36aa2a45fc5710cc79e0dcaf95e39992f2c33f36d63ee2756"
+    },
+    {
+      "path": "sql/create_schemas.sql",
+      "bytes": 345,
+      "sha256": "cb1de07a17cf3041b7df75661580b7e7ef01684ee6ea576bd0c89308b4a1a287"
+    },
+    {
+      "path": "truth/downline_allowed_alternatives.csv",
+      "bytes": 677,
+      "sha256": "3ae0ea37e731908c1dfa860c72469edfd49d4fbdbcf73db7002aa3ccd56b771e"
+    },
+    {
+      "path": "truth/downline_ending_thresholds.csv",
+      "bytes": 900,
+      "sha256": "6425751513c1786b4295a468ce5ec34ea548101e593cb33fa02e232da3bf794a"
+    },
+    {
+      "path": "truth/downline_evaluator_truth.csv",
+      "bytes": 7474,
+      "sha256": "6a2f537412e44c5c33f8e0c175823a66e97675b3a81314463445f80974377769"
+    },
+    {
+      "path": "truth/downline_evidence_route_matrix.csv",
+      "bytes": 1018,
+      "sha256": "9bd17241a075f6ea20851b599b940562cb7b8bc4fe61be8aa6627ca2f0450ee1"
+    },
+    {
+      "path": "truth/downline_forbidden_false_positives.csv",
+      "bytes": 703,
+      "sha256": "2e4c67fa80c1c87aedbc7338bd009c1c6c1c1026fb67201591d8c9e2053b3d6c"
+    },
+    {
+      "path": "truth/downline_required_evidence.csv",
+      "bytes": 1516,
+      "sha256": "30a18cbcf748fb0b10fa475de766332dafcd02d45317b0db772237e9e1e35420"
+    },
+    {
+      "path": "truth/downline_scoring_rules.csv",
+      "bytes": 912,
+      "sha256": "b0073c7f771b87e50a31a9a4976799272d2956cbec7813b9341e3789756178c0"
+    },
+    {
+      "path": "validation/adult_counts.csv",
+      "bytes": 584,
+      "sha256": "f5308b90ee655fa23cca46e3dcf7441c08d6b05c51e5fb4edfbd9146b70ca8cd"
+    },
+    {
+      "path": "validation/validation_checks.csv",
+      "bytes": 1291,
+      "sha256": "bc6b990e2369efb28053a8edf886ce262a9b4da78266af1b5d31a79ff99fa5dc"
+    },
+    {
+      "path": "validation/validation_report.json",
+      "bytes": 2130,
+      "sha256": "39a1e978f720f519659195aa9c95d5e17606bee4a3cbf0343ea8419f7dc068c3"
+    }
+  ]
+}

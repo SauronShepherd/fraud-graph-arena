@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+PANAMA_PAWPERS,CLEAN_COLLAR,1,870,,0,"[""ALL""]",,Concealed ownership and flows proven without accusing lawful offshore actors.,2026.07.19.2
+PANAMA_PAWPERS,CASE_CLOSED_KENNEL_WRECKED,2,720,,1,"[""PRINCIPAL"",""OWNERSHIP"",""FLOW""]",,Core scheme proven with one role overstated.,2026.07.19.2
+PANAMA_PAWPERS,THE_SCENT_WENT_COLD,3,480,,2,"[""PARTIAL""]",,Shells and nominees found but beneficial ownership or distributions remain incomplete.,2026.07.19.2
+PANAMA_PAWPERS,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED""]",,Resources expire before the ownership maze is resolved.,2026.07.19.2
+PANAMA_PAWPERS,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,"Every offshore entity, nominee and agent is accused.",2026.07.19.2
+PANAMA_PAWPERS,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""PROTECTED_PRIMARY_TARGET""]",,"A legitimate agent, beneficiary or lookalike becomes the primary target.",2026.07.19.2

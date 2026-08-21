@@ -1,0 +1,8 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+DOWNLINE,FFP-001,P-ROSIE,Core operator solely because she is profitable and highly connected.,180,2026.07.18.1
+DOWNLINE,FFP-002,P-TILLY,Core operator solely because she recruited participants.,130,2026.07.18.1
+DOWNLINE,FFP-003,P-MARCO,Core operator solely because he received small recruitment commissions.,120,2026.07.18.1
+DOWNLINE,FFP-004,P-DAISY,Core operator solely because she appears in seminars and groups.,120,2026.07.18.1
+DOWNLINE,FFP-005,P-TESSA,"Same identity as Tilly because they share account, address and device.",160,2026.07.18.1
+DOWNLINE,FFP-006,P-PRIYA,Culpable because the processor handled payments.,100,2026.07.18.1
+DOWNLINE,FFP-007,P-COLIN,Culpable because he supplied genuine products.,100,2026.07.18.1

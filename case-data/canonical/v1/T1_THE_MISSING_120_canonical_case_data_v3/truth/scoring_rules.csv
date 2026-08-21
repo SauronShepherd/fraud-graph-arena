@@ -1,0 +1,6 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+ACADEMY_T01,T1-SCORE-001,Conclusion accuracy,350,350,Correctly identify Buster or submit a justified alternative conclusion.,2026.07.19.3
+ACADEMY_T01,T1-SCORE-002,Evidence quality,250,250,"Pin the records that establish access, action, loss and admission.",2026.07.19.3
+ACADEMY_T01,T1-SCORE-003,Relationship interpretation,150,150,Read directed relationships and source provenance correctly.,2026.07.19.3
+ACADEMY_T01,T1-SCORE-004,Protected actor discipline,150,150,"Protect Nell, Poppy and the victim organization from unsupported accusation.",2026.07.19.3
+ACADEMY_T01,T1-SCORE-005,Efficiency,100,100,Use the guided query without unnecessary paid tools.,2026.07.19.3

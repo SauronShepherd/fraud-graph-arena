@@ -1,0 +1,1 @@
+case_id,scenario_id,title,action_sequence_json,submitted_suspects_json,expected_score,expected_ending,expected_credits_remaining,false_accusations,notes,snapshot_version

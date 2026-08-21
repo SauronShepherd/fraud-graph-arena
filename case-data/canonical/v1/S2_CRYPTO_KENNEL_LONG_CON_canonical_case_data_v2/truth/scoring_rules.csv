@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+CRYPTO_KENNEL_LONG_CON,SCORE-001,Principal and operating network,170,0.17,"Correct principal, operators and controlled companies.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SCORE-002,Long-con chronology,130,0.13,"Reconstruct trust, small wins, upgrades, urgency and fee demands.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SCORE-003,Platform and price manipulation,160,0.16,Show internal balances and prices diverge from independent assets.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SCORE-004,Wallet and offshore flow,190,0.19,"Trace deposits, sweeps, bridges, settlement and distributions.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SCORE-005,Withdrawal and fee mechanism,120,0.12,"Connect blocked withdrawals, scripts and fee destinations.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SCORE-006,Agent-role differentiation,95,0.095,"Separate knowing agents, unwitting participants and moderators.",2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SCORE-007,Victim and legitimate-actor protection,75,0.075,Avoid victim blame and preserve legitimate crypto activity.,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,SCORE-008,Evidence diversity and efficiency,60,0.06,"Use identity, platform, price, contract, wallet and bank evidence efficiently.",2026.07.18.1

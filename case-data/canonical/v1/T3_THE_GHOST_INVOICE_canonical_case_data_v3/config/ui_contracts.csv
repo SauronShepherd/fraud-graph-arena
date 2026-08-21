@@ -1,0 +1,18 @@
+case_id,semantic_name,data_testid,role,snapshot_version
+ACADEMY_T03,Investigation graph,academy-investigation-graph,region,2026.07.19.1
+ACADEMY_T03,Typewriter query console,academy-genie-console,region,2026.07.19.1
+ACADEMY_T03,Query suggestions,academy-genie-suggestions,region,2026.07.19.1
+ACADEMY_T03,Query quote modal,academy-query-quote,dialog,2026.07.19.1
+ACADEMY_T03,Confirm paid query,academy-confirm-query,button,2026.07.19.1
+ACADEMY_T03,Run Genie query,academy-action-genie,button,2026.07.19.1
+ACADEMY_T03,Run GraphFrames exact matches,academy-action-graphframes,button,2026.07.19.1
+ACADEMY_T03,Run Zingg candidates,academy-action-zingg,button,2026.07.19.1
+ACADEMY_T03,Normalized timeline,academy-normalized-timeline,region,2026.07.19.1
+ACADEMY_T03,Evidence limitation panel,academy-evidence-limitations,region,2026.07.19.1
+ACADEMY_T03,Conflict comparison panel,academy-conflict-panel,region,2026.07.19.1
+ACADEMY_T03,Confidence selector,academy-confidence-selector,control,2026.07.19.1
+ACADEMY_T03,Residual uncertainty note,academy-uncertainty-note,control,2026.07.19.1
+ACADEMY_T03,Protect actor,academy-protect-actor,button,2026.07.19.1
+ACADEMY_T03,Case evidence file,academy-case-file,button,2026.07.19.1
+ACADEMY_T03,Submit case,academy-submit,button,2026.07.19.1
+ACADEMY_T03,Restart Academy case,academy-restart,button,2026.07.19.1

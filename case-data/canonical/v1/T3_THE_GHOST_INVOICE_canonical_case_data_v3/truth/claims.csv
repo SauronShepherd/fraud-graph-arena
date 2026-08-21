@@ -1,0 +1,7 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+ACADEMY_T03,CONTROL_AND_BENEFIT,CONTROL_AND_BENEFIT,Corporate control and account ownership connect Vera to the payment recipient.,T3-P-VERA,true,2026.07.19.1
+ACADEMY_T03,IMPOSSIBLE_CHRONOLOGY,CHRONOLOGY,GI-404 was paid before the repository file and approval existed.,,true,2026.07.19.1
+ACADEMY_T03,LIMITS_OF_SERVICE_EVIDENCE,GENERAL,"Unavailable, partial and null evidence must be represented as limitations rather than negative facts.",,true,2026.07.19.1
+ACADEMY_T03,PROTECT_TARA,GENERAL,Independent access and vendor-session records outweigh the unsupported allegation against Tara.,,true,2026.07.19.1
+ACADEMY_T03,RESIDUAL_UNCERTAINTY,UNCERTAINTY,The unavailable camera and conflicting statement require an explicit residual-uncertainty note.,,true,2026.07.19.1
+ACADEMY_T03,VALID_TIMEZONE_CONTROL,CONTROL,GI-401 demonstrates a legitimate date change after UTC normalization.,,true,2026.07.19.1

@@ -1,0 +1,74 @@
+[
+  {
+    "sequence": "1",
+    "speaker": "NELL",
+    "line": "Detective, Register 2 is short by 120 BSC.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "2",
+    "speaker": "DETECTIVE",
+    "line": "Who was assigned to it?",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "3",
+    "speaker": "NELL",
+    "line": "Buster Bulldog. He worked the evening shift.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "4",
+    "speaker": "DETECTIVE",
+    "line": "What records are available?",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "5",
+    "speaker": "NELL",
+    "line": "The employee roster, register audit, closing reconciliation, and my incident report have been loaded into the case.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "6",
+    "speaker": "DETECTIVE",
+    "line": "Good. I will start with the nodes already visible on the board.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "7",
+    "speaker": "NELL",
+    "line": "And if they do not explain the shortage?",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "8",
+    "speaker": "DETECTIVE",
+    "line": "Then I will ask a precise query and add the returned records to the graph.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "9",
+    "speaker": "NELL",
+    "line": "What should I expect you to follow?",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "10",
+    "speaker": "DETECTIVE",
+    "line": "The arrows, their direction, and the source behind each relationship.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "11",
+    "speaker": "NELL",
+    "line": "I only want the person responsible identified.",
+    "case_id": "ACADEMY_T01"
+  },
+  {
+    "sequence": "12",
+    "speaker": "DETECTIVE",
+    "line": "And everyone else protected from a guess. That is part of the same job.",
+    "case_id": "ACADEMY_T01"
+  }
+]

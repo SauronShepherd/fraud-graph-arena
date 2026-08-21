@@ -1,0 +1,5 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+ACADEMY_T01,T1-CLAIM-ACCESS,ACCESS,Buster’s login and the manual opening establish access and action.,,true,2026.07.19.3
+ACADEMY_T01,T1-CLAIM-ADMISSION,ADMISSION,Buster admits taking the same amount.,,true,2026.07.19.3
+ACADEMY_T01,T1-CLAIM-LOSS,LOSS,The reconciliation establishes a 120 BSC loss.,,true,2026.07.19.3
+ACADEMY_T01,T1-CLAIM-PROTECT-NELL,GENERAL,Nell documented and reported the shortage.,,true,2026.07.19.3

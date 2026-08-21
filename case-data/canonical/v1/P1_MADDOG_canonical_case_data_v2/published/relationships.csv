@@ -1,0 +1,391 @@
+case_id,profile_code,relationship_id,relationship_family,relationship_type,source_record_id,target_record_id,directed,event_time,weight,supporting_record_ids_json,player_safe_summary,provenance,safe_attributes_json,snapshot_version
+MADDOG,PUPPY,REL-00001,DIRECT_SOURCE,DIRECTOR_OF,PR-MAXWELL-01,OR-MIK-01,true,,,"[""EMP-001""]",Maxwell is founder and managing director of Maddog Investment Kennel.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00002,DIRECT_SOURCE,CONTROLS,PR-MAXWELL-04,OR-BLUE-01,true,,,"[""DOC-017""]",A filing records Maxwell as controlling manager of Blue Bone Partners.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00004,DIRECT_SOURCE,EMPLOYED_BY,PR-MAXWELL-01,OR-MIK-01,true,,,"[""EMP-001""]",Founder and Managing Director employment record.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00005,DIRECT_SOURCE,EMPLOYED_BY,PR-VERA-01,OR-MIK-01,true,,,"[""EMP-002""]",Financial Operations Manager employment record.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00006,DIRECT_SOURCE,EMPLOYED_BY,PR-SILAS-01,OR-MIK-01,true,,,"[""EMP-003""]",Senior Relationship Director employment record.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00007,DIRECT_SOURCE,EMPLOYED_BY,PR-NINA-01,OR-MIK-01,true,,,"[""EMP-004""]",Administrative Coordinator employment record.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00009,DIRECT_SOURCE,EMPLOYED_BY,PR-OSCAR-01,OR-AUDIT-01,true,,,"[""EMP-006""]",Engagement Accountant employment record.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00010,DIRECT_SOURCE,EMPLOYED_BY,PR-MARTHA-01,OR-BANK-01,true,,,"[""EMP-007""]",Business Banking Officer employment record.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00016,DIRECT_SOURCE,OWNS,OR-BLUE-01,A-BLUE-7714,true,,,"[""A-BLUE-7714""]",Recorded holder of account ••••7714.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00017,DIRECT_SOURCE,OWNS,PR-MAXWELL-02,A-MAX-9921,true,,,"[""A-MAX-9921""]",Recorded holder of account ••••9921.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00018,DIRECT_SOURCE,OWNS,OR-MIK-01,A-MIK-3308,true,,,"[""A-MIK-3308""]",Recorded holder of account ••••3308.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00019,DIRECT_SOURCE,OWNS,PR-SILAS-01,A-SILAS-6612,true,,,"[""A-SILAS-6612""]",Recorded holder of account ••••6612.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00022,DIRECT_SOURCE,OWNS,PR-HAZEL-01,A-HAZEL-2037,true,,,"[""A-HAZEL-2037""]",Recorded holder of account ••••2037.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00023,DIRECT_SOURCE,OWNS,PR-BERNARD-01,A-BERNARD-2074,true,,,"[""A-BERNARD-2074""]",Recorded holder of account ••••2074.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00024,DIRECT_SOURCE,OWNS,PR-CLARA-02,A-CLARA-2111,true,,,"[""A-CLARA-2111""]",Recorded holder of account ••••2111.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00025,DIRECT_SOURCE,OWNS,PR-GIDEON-02,A-GIDEON-2148,true,,,"[""A-GIDEON-2148""]",Recorded holder of account ••••2148.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00026,DIRECT_SOURCE,OWNS,PR-ELLA-01,A-ELLA-2185,true,,,"[""A-ELLA-2185""]",Recorded holder of account ••••2185.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00038,DIRECT_SOURCE,OWNS,OR-BLUE-01,A-OLD-8038,true,,,"[""A-OLD-8038""]",Recorded holder of account ••••8038.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00039,DIRECT_SOURCE,OWNS,OR-MIK-01,A-OLD-8057,true,,,"[""A-OLD-8057""]",Recorded holder of account ••••8057.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00046,DIRECT_SOURCE,REGISTERED_AT,OR-MIK-01,ADDR-LANTERN-14,true,,,"[""OR-MIK-01""]",Organization registration address.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00047,DIRECT_SOURCE,REGISTERED_AT,OR-BLUE-01,ADDR-LANTERN-14,true,,,"[""OR-BLUE-01""]",Organization registration address.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00049,DIRECT_SOURCE,REGISTERED_AT,OR-AUDIT-01,ADDR-ABACUS-3,true,,,"[""OR-AUDIT-01""]",Organization registration address.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00050,DIRECT_SOURCE,REGISTERED_AT,OR-BANK-01,ADDR-LANTERN-100,true,,,"[""OR-BANK-01""]",Organization registration address.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00053,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-BERNARD-01,true,2024-06-01,,"[""REF-001""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00054,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-CLARA-01,true,2024-06-14,,"[""REF-002""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00055,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-GIDEON-01,true,2024-06-27,,"[""REF-003""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00056,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-ELLA-01,true,2024-07-10,,"[""REF-004""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00067,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-BERNARD-01,true,2024-11-30,,"[""REF-015""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00068,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-CLARA-01,true,2024-12-13,,"[""REF-016""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00069,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-GIDEON-01,true,2024-12-26,,"[""REF-017""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00070,DIRECT_SOURCE,REFERRED,PR-HAZEL-03,PR-ELLA-01,true,2025-01-08,,"[""REF-018""]",Referral recorded with code HOUND-CIRCLE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00081,DIRECT_SOURCE,REFERRED,PR-SILAS-01,PR-BERNARD-01,true,2025-05-31,,"[""REF-029""]",Referral recorded with code SILAS-PRIVATE-1.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00082,DIRECT_SOURCE,REFERRED,PR-SILAS-01,PR-CLARA-01,true,2025-06-13,,"[""REF-030""]",Referral recorded with code SILAS-PRIVATE-2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00089,DIRECT_SOURCE,MEMBER_OF,PR-HAZEL-02,OR-HOUND-01,true,2020-01-01,,"[""MEM-001""]",Affinity membership: MEMBER.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00090,DIRECT_SOURCE,MEMBER_OF,PR-BERNARD-01,OR-HOUND-01,true,2020-02-01,,"[""MEM-002""]",Affinity membership: DONOR.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00091,DIRECT_SOURCE,MEMBER_OF,PR-CLARA-01,OR-HOUND-01,true,2020-03-03,,"[""MEM-003""]",Affinity membership: COMMITTEE_GUEST.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00092,DIRECT_SOURCE,MEMBER_OF,PR-GIDEON-01,OR-HOUND-01,true,2020-04-03,,"[""MEM-004""]",Affinity membership: MEMBER.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00093,DIRECT_SOURCE,MEMBER_OF,PR-ELLA-01,OR-HOUND-01,true,2020-05-04,,"[""MEM-005""]",Affinity membership: DONOR.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00105,DIRECT_SOURCE,MEMBER_OF,PR-HAZEL-02,OR-HOUND-01,true,2021-05-11,,"[""MEM-017""]",Affinity membership: DONOR.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00106,DIRECT_SOURCE,MEMBER_OF,PR-BERNARD-01,OR-HOUND-01,true,2021-06-11,,"[""MEM-018""]",Affinity membership: COMMITTEE_GUEST.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00107,DIRECT_SOURCE,MEMBER_OF,PR-CLARA-01,OR-HOUND-01,true,2021-07-12,,"[""MEM-019""]",Affinity membership: MEMBER.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00108,DIRECT_SOURCE,MEMBER_OF,PR-GIDEON-01,OR-HOUND-01,true,2021-08-12,,"[""MEM-020""]",Affinity membership: DONOR.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00109,DIRECT_SOURCE,MEMBER_OF,PR-ELLA-01,OR-HOUND-01,true,2021-09-12,,"[""MEM-021""]",Affinity membership: COMMITTEE_GUEST.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00119,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-44A2,true,2025-01-03T08:15:00Z,,"[""LOGIN-0001""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00120,DIRECT_SOURCE,USED_DEVICE,PR-SILAS-03,DEV-44A2,true,2025-01-10T08:34:00Z,,"[""LOGIN-0002""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00121,DIRECT_SOURCE,USED_DEVICE,PR-VERA-01,DEV-DOC-09,true,2025-01-17T08:53:00Z,,"[""LOGIN-0003""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00122,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-DOC-09,true,2025-01-24T09:12:00Z,,"[""LOGIN-0004""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00123,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-MAX-P1,true,2025-01-31T09:31:00Z,,"[""LOGIN-0005""]",Login used device DEV-MAX-P1.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00124,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-NINA-DESK,true,2025-02-07T09:50:00Z,,"[""LOGIN-0006""]",Login used device DEV-NINA-DESK.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00125,DIRECT_SOURCE,USED_DEVICE,PR-HAZEL-01,DEV-HAZEL-PHONE,true,2025-02-14T10:09:00Z,,"[""LOGIN-0007""]",Login used device DEV-HAZEL-PHONE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00128,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-44A2,true,2025-03-07T11:06:00Z,,"[""LOGIN-0010""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00129,DIRECT_SOURCE,USED_DEVICE,PR-SILAS-03,DEV-44A2,true,2025-03-14T08:25:00Z,,"[""LOGIN-0011""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00130,DIRECT_SOURCE,USED_DEVICE,PR-VERA-01,DEV-DOC-09,true,2025-03-21T08:44:00Z,,"[""LOGIN-0012""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00131,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-DOC-09,true,2025-03-28T09:03:00Z,,"[""LOGIN-0013""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00132,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-MAX-P1,true,2025-04-04T09:22:00Z,,"[""LOGIN-0014""]",Login used device DEV-MAX-P1.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00133,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-NINA-DESK,true,2025-04-11T09:41:00Z,,"[""LOGIN-0015""]",Login used device DEV-NINA-DESK.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00134,DIRECT_SOURCE,USED_DEVICE,PR-HAZEL-01,DEV-HAZEL-PHONE,true,2025-04-18T10:00:00Z,,"[""LOGIN-0016""]",Login used device DEV-HAZEL-PHONE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00137,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-44A2,true,2025-05-09T10:57:00Z,,"[""LOGIN-0019""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00138,DIRECT_SOURCE,USED_DEVICE,PR-SILAS-03,DEV-44A2,true,2025-05-16T08:16:00Z,,"[""LOGIN-0020""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00139,DIRECT_SOURCE,USED_DEVICE,PR-VERA-01,DEV-DOC-09,true,2025-05-23T08:35:00Z,,"[""LOGIN-0021""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00140,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-DOC-09,true,2025-05-30T08:54:00Z,,"[""LOGIN-0022""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00141,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-MAX-P1,true,2025-06-06T09:13:00Z,,"[""LOGIN-0023""]",Login used device DEV-MAX-P1.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00142,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-NINA-DESK,true,2025-06-13T09:32:00Z,,"[""LOGIN-0024""]",Login used device DEV-NINA-DESK.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00143,DIRECT_SOURCE,USED_DEVICE,PR-HAZEL-01,DEV-HAZEL-PHONE,true,2025-06-20T09:51:00Z,,"[""LOGIN-0025""]",Login used device DEV-HAZEL-PHONE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00146,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-44A2,true,2025-07-11T10:48:00Z,,"[""LOGIN-0028""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00147,DIRECT_SOURCE,USED_DEVICE,PR-SILAS-03,DEV-44A2,true,2025-07-18T11:07:00Z,,"[""LOGIN-0029""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00148,DIRECT_SOURCE,USED_DEVICE,PR-VERA-01,DEV-DOC-09,true,2025-07-25T08:26:00Z,,"[""LOGIN-0030""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00149,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-DOC-09,true,2025-08-01T08:45:00Z,,"[""LOGIN-0031""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00150,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-MAX-P1,true,2025-08-08T09:04:00Z,,"[""LOGIN-0032""]",Login used device DEV-MAX-P1.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00151,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-NINA-DESK,true,2025-08-15T09:23:00Z,,"[""LOGIN-0033""]",Login used device DEV-NINA-DESK.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00152,DIRECT_SOURCE,USED_DEVICE,PR-HAZEL-01,DEV-HAZEL-PHONE,true,2025-08-22T09:42:00Z,,"[""LOGIN-0034""]",Login used device DEV-HAZEL-PHONE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00155,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-44A2,true,2025-09-12T10:39:00Z,,"[""LOGIN-0037""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00156,DIRECT_SOURCE,USED_DEVICE,PR-SILAS-03,DEV-44A2,true,2025-09-19T10:58:00Z,,"[""LOGIN-0038""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00157,DIRECT_SOURCE,USED_DEVICE,PR-VERA-01,DEV-DOC-09,true,2025-09-26T08:17:00Z,,"[""LOGIN-0039""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00158,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-DOC-09,true,2025-10-03T08:36:00Z,,"[""LOGIN-0040""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00159,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-MAX-P1,true,2025-10-10T08:55:00Z,,"[""LOGIN-0041""]",Login used device DEV-MAX-P1.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00160,DIRECT_SOURCE,USED_DEVICE,PR-NINA-03,DEV-NINA-DESK,true,2025-10-17T09:14:00Z,,"[""LOGIN-0042""]",Login used device DEV-NINA-DESK.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00161,DIRECT_SOURCE,USED_DEVICE,PR-HAZEL-01,DEV-HAZEL-PHONE,true,2025-10-24T09:33:00Z,,"[""LOGIN-0043""]",Login used device DEV-HAZEL-PHONE.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00164,DIRECT_SOURCE,USED_DEVICE,PR-MAXWELL-03,DEV-44A2,true,2025-11-14T10:30:00Z,,"[""LOGIN-0046""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00165,DIRECT_SOURCE,USED_DEVICE,PR-SILAS-03,DEV-44A2,true,2025-11-21T10:49:00Z,,"[""LOGIN-0047""]",Login used device DEV-44A2.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00166,DIRECT_SOURCE,USED_DEVICE,PR-VERA-01,DEV-DOC-09,true,2025-11-28T11:08:00Z,,"[""LOGIN-0048""]",Login used device DEV-DOC-09.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00167,DIRECT_SOURCE,SOURCE_OF,A-HAZEL-2037,TX-001-D,true,2025-01-03T10:00:00Z,,"[""TX-001-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00168,DIRECT_SOURCE,DESTINATION_OF,TX-001-D,A-BLUE-7714,true,2025-01-03T10:00:00Z,,"[""TX-001-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00169,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-001-P,true,2025-01-04T12:00:00Z,,"[""TX-001-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00170,DIRECT_SOURCE,DESTINATION_OF,TX-001-P,A-ELLA-2185,true,2025-01-04T12:00:00Z,,"[""TX-001-P""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00171,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-001-X,true,2025-01-05T11:00:00Z,,"[""TX-001-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00172,DIRECT_SOURCE,DESTINATION_OF,TX-001-X,A-MAX-9921,true,2025-01-05T11:00:00Z,,"[""TX-001-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00173,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-001-O,true,2025-01-05T15:00:00Z,,"[""TX-001-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00174,DIRECT_SOURCE,DESTINATION_OF,TX-001-O,A-MIK-3308,true,2025-01-05T15:00:00Z,,"[""TX-001-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00175,DIRECT_SOURCE,SOURCE_OF,A-BERNARD-2074,TX-002-D,true,2025-01-13T10:00:00Z,,"[""TX-002-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00176,DIRECT_SOURCE,DESTINATION_OF,TX-002-D,A-BLUE-7714,true,2025-01-13T10:00:00Z,,"[""TX-002-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00177,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-002-P,true,2025-01-14T12:00:00Z,,"[""TX-002-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00179,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-002-X,true,2025-01-15T11:00:00Z,,"[""TX-002-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00180,DIRECT_SOURCE,DESTINATION_OF,TX-002-X,A-MAX-9921,true,2025-01-15T11:00:00Z,,"[""TX-002-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00181,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-002-O,true,2025-01-15T15:00:00Z,,"[""TX-002-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00182,DIRECT_SOURCE,DESTINATION_OF,TX-002-O,A-MIK-3308,true,2025-01-15T15:00:00Z,,"[""TX-002-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00183,DIRECT_SOURCE,SOURCE_OF,A-CLARA-2111,TX-003-D,true,2025-01-23T10:00:00Z,,"[""TX-003-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00184,DIRECT_SOURCE,DESTINATION_OF,TX-003-D,A-BLUE-7714,true,2025-01-23T10:00:00Z,,"[""TX-003-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00185,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-003-P,true,2025-01-24T12:00:00Z,,"[""TX-003-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00187,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-003-X,true,2025-01-25T11:00:00Z,,"[""TX-003-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00188,DIRECT_SOURCE,DESTINATION_OF,TX-003-X,A-MAX-9921,true,2025-01-25T11:00:00Z,,"[""TX-003-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00189,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-003-O,true,2025-01-25T15:00:00Z,,"[""TX-003-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00190,DIRECT_SOURCE,DESTINATION_OF,TX-003-O,A-MIK-3308,true,2025-01-25T15:00:00Z,,"[""TX-003-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00191,DIRECT_SOURCE,SOURCE_OF,A-GIDEON-2148,TX-004-D,true,2025-02-02T10:00:00Z,,"[""TX-004-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00192,DIRECT_SOURCE,DESTINATION_OF,TX-004-D,A-BLUE-7714,true,2025-02-02T10:00:00Z,,"[""TX-004-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00193,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-004-P,true,2025-02-03T12:00:00Z,,"[""TX-004-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00195,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-004-X,true,2025-02-04T11:00:00Z,,"[""TX-004-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00196,DIRECT_SOURCE,DESTINATION_OF,TX-004-X,A-MAX-9921,true,2025-02-04T11:00:00Z,,"[""TX-004-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00197,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-004-O,true,2025-02-04T15:00:00Z,,"[""TX-004-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00198,DIRECT_SOURCE,DESTINATION_OF,TX-004-O,A-MIK-3308,true,2025-02-04T15:00:00Z,,"[""TX-004-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00199,DIRECT_SOURCE,SOURCE_OF,A-ELLA-2185,TX-005-D,true,2025-02-12T10:00:00Z,,"[""TX-005-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00200,DIRECT_SOURCE,DESTINATION_OF,TX-005-D,A-BLUE-7714,true,2025-02-12T10:00:00Z,,"[""TX-005-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00201,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-005-P,true,2025-02-13T12:00:00Z,,"[""TX-005-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00203,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-005-X,true,2025-02-14T11:00:00Z,,"[""TX-005-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00204,DIRECT_SOURCE,DESTINATION_OF,TX-005-X,A-MAX-9921,true,2025-02-14T11:00:00Z,,"[""TX-005-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00205,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-005-O,true,2025-02-14T15:00:00Z,,"[""TX-005-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00206,DIRECT_SOURCE,DESTINATION_OF,TX-005-O,A-MIK-3308,true,2025-02-14T15:00:00Z,,"[""TX-005-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00208,DIRECT_SOURCE,DESTINATION_OF,TX-006-D,A-BLUE-7714,true,2025-02-22T10:00:00Z,,"[""TX-006-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00209,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-006-P,true,2025-02-23T12:00:00Z,,"[""TX-006-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00211,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-006-X,true,2025-02-24T11:00:00Z,,"[""TX-006-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00212,DIRECT_SOURCE,DESTINATION_OF,TX-006-X,A-MAX-9921,true,2025-02-24T11:00:00Z,,"[""TX-006-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00213,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-006-O,true,2025-02-24T15:00:00Z,,"[""TX-006-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00214,DIRECT_SOURCE,DESTINATION_OF,TX-006-O,A-MIK-3308,true,2025-02-24T15:00:00Z,,"[""TX-006-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00216,DIRECT_SOURCE,DESTINATION_OF,TX-007-D,A-BLUE-7714,true,2025-03-04T10:00:00Z,,"[""TX-007-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00217,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-007-P,true,2025-03-05T12:00:00Z,,"[""TX-007-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00219,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-007-X,true,2025-03-06T11:00:00Z,,"[""TX-007-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00220,DIRECT_SOURCE,DESTINATION_OF,TX-007-X,A-MAX-9921,true,2025-03-06T11:00:00Z,,"[""TX-007-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00221,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-007-O,true,2025-03-06T15:00:00Z,,"[""TX-007-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00222,DIRECT_SOURCE,DESTINATION_OF,TX-007-O,A-MIK-3308,true,2025-03-06T15:00:00Z,,"[""TX-007-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00224,DIRECT_SOURCE,DESTINATION_OF,TX-008-D,A-BLUE-7714,true,2025-03-14T10:00:00Z,,"[""TX-008-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00225,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-008-P,true,2025-03-15T12:00:00Z,,"[""TX-008-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00227,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-008-X,true,2025-03-16T11:00:00Z,,"[""TX-008-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00228,DIRECT_SOURCE,DESTINATION_OF,TX-008-X,A-MAX-9921,true,2025-03-16T11:00:00Z,,"[""TX-008-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00229,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-008-O,true,2025-03-16T15:00:00Z,,"[""TX-008-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00230,DIRECT_SOURCE,DESTINATION_OF,TX-008-O,A-MIK-3308,true,2025-03-16T15:00:00Z,,"[""TX-008-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00232,DIRECT_SOURCE,DESTINATION_OF,TX-009-D,A-BLUE-7714,true,2025-03-24T10:00:00Z,,"[""TX-009-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00233,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-009-P,true,2025-03-25T12:00:00Z,,"[""TX-009-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00235,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-009-X,true,2025-03-26T11:00:00Z,,"[""TX-009-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00236,DIRECT_SOURCE,DESTINATION_OF,TX-009-X,A-MAX-9921,true,2025-03-26T11:00:00Z,,"[""TX-009-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00237,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-009-O,true,2025-03-26T15:00:00Z,,"[""TX-009-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00238,DIRECT_SOURCE,DESTINATION_OF,TX-009-O,A-MIK-3308,true,2025-03-26T15:00:00Z,,"[""TX-009-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00240,DIRECT_SOURCE,DESTINATION_OF,TX-010-D,A-BLUE-7714,true,2025-04-03T10:00:00Z,,"[""TX-010-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00241,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-010-P,true,2025-04-04T12:00:00Z,,"[""TX-010-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00243,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-010-X,true,2025-04-05T11:00:00Z,,"[""TX-010-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00244,DIRECT_SOURCE,DESTINATION_OF,TX-010-X,A-MAX-9921,true,2025-04-05T11:00:00Z,,"[""TX-010-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00245,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-010-O,true,2025-04-05T15:00:00Z,,"[""TX-010-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00246,DIRECT_SOURCE,DESTINATION_OF,TX-010-O,A-MIK-3308,true,2025-04-05T15:00:00Z,,"[""TX-010-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00248,DIRECT_SOURCE,DESTINATION_OF,TX-011-D,A-BLUE-7714,true,2025-04-13T10:00:00Z,,"[""TX-011-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00249,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-011-P,true,2025-04-14T12:00:00Z,,"[""TX-011-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00251,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-011-X,true,2025-04-15T11:00:00Z,,"[""TX-011-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00252,DIRECT_SOURCE,DESTINATION_OF,TX-011-X,A-MAX-9921,true,2025-04-15T11:00:00Z,,"[""TX-011-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00253,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-011-O,true,2025-04-15T15:00:00Z,,"[""TX-011-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00254,DIRECT_SOURCE,DESTINATION_OF,TX-011-O,A-MIK-3308,true,2025-04-15T15:00:00Z,,"[""TX-011-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00256,DIRECT_SOURCE,DESTINATION_OF,TX-012-D,A-BLUE-7714,true,2025-04-23T10:00:00Z,,"[""TX-012-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00257,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-012-P,true,2025-04-24T12:00:00Z,,"[""TX-012-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00258,DIRECT_SOURCE,DESTINATION_OF,TX-012-P,A-HAZEL-2037,true,2025-04-24T12:00:00Z,,"[""TX-012-P""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00259,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-012-X,true,2025-04-25T11:00:00Z,,"[""TX-012-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00260,DIRECT_SOURCE,DESTINATION_OF,TX-012-X,A-MAX-9921,true,2025-04-25T11:00:00Z,,"[""TX-012-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00261,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-012-O,true,2025-04-25T15:00:00Z,,"[""TX-012-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00262,DIRECT_SOURCE,DESTINATION_OF,TX-012-O,A-MIK-3308,true,2025-04-25T15:00:00Z,,"[""TX-012-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00264,DIRECT_SOURCE,DESTINATION_OF,TX-013-D,A-BLUE-7714,true,2025-05-03T10:00:00Z,,"[""TX-013-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00265,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-013-P,true,2025-05-04T12:00:00Z,,"[""TX-013-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00266,DIRECT_SOURCE,DESTINATION_OF,TX-013-P,A-BERNARD-2074,true,2025-05-04T12:00:00Z,,"[""TX-013-P""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00267,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-013-X,true,2025-05-05T11:00:00Z,,"[""TX-013-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00268,DIRECT_SOURCE,DESTINATION_OF,TX-013-X,A-MAX-9921,true,2025-05-05T11:00:00Z,,"[""TX-013-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00269,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-013-O,true,2025-05-05T15:00:00Z,,"[""TX-013-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00270,DIRECT_SOURCE,DESTINATION_OF,TX-013-O,A-MIK-3308,true,2025-05-05T15:00:00Z,,"[""TX-013-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00272,DIRECT_SOURCE,DESTINATION_OF,TX-014-D,A-BLUE-7714,true,2025-05-13T10:00:00Z,,"[""TX-014-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00273,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-014-P,true,2025-05-14T12:00:00Z,,"[""TX-014-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00274,DIRECT_SOURCE,DESTINATION_OF,TX-014-P,A-CLARA-2111,true,2025-05-14T12:00:00Z,,"[""TX-014-P""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00275,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-014-X,true,2025-05-15T11:00:00Z,,"[""TX-014-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00276,DIRECT_SOURCE,DESTINATION_OF,TX-014-X,A-MAX-9921,true,2025-05-15T11:00:00Z,,"[""TX-014-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00277,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-014-O,true,2025-05-15T15:00:00Z,,"[""TX-014-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00278,DIRECT_SOURCE,DESTINATION_OF,TX-014-O,A-MIK-3308,true,2025-05-15T15:00:00Z,,"[""TX-014-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00280,DIRECT_SOURCE,DESTINATION_OF,TX-015-D,A-BLUE-7714,true,2025-05-23T10:00:00Z,,"[""TX-015-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00281,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-015-P,true,2025-05-24T12:00:00Z,,"[""TX-015-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00282,DIRECT_SOURCE,DESTINATION_OF,TX-015-P,A-GIDEON-2148,true,2025-05-24T12:00:00Z,,"[""TX-015-P""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00283,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-015-X,true,2025-05-25T11:00:00Z,,"[""TX-015-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00284,DIRECT_SOURCE,DESTINATION_OF,TX-015-X,A-MAX-9921,true,2025-05-25T11:00:00Z,,"[""TX-015-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00285,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-015-O,true,2025-05-25T15:00:00Z,,"[""TX-015-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00286,DIRECT_SOURCE,DESTINATION_OF,TX-015-O,A-MIK-3308,true,2025-05-25T15:00:00Z,,"[""TX-015-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00287,DIRECT_SOURCE,SOURCE_OF,A-HAZEL-2037,TX-016-D,true,2025-06-02T10:00:00Z,,"[""TX-016-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00288,DIRECT_SOURCE,DESTINATION_OF,TX-016-D,A-BLUE-7714,true,2025-06-02T10:00:00Z,,"[""TX-016-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00289,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-016-P,true,2025-06-03T12:00:00Z,,"[""TX-016-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00290,DIRECT_SOURCE,DESTINATION_OF,TX-016-P,A-ELLA-2185,true,2025-06-03T12:00:00Z,,"[""TX-016-P""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00291,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-016-X,true,2025-06-04T11:00:00Z,,"[""TX-016-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00292,DIRECT_SOURCE,DESTINATION_OF,TX-016-X,A-MAX-9921,true,2025-06-04T11:00:00Z,,"[""TX-016-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00293,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-016-O,true,2025-06-04T15:00:00Z,,"[""TX-016-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00294,DIRECT_SOURCE,DESTINATION_OF,TX-016-O,A-MIK-3308,true,2025-06-04T15:00:00Z,,"[""TX-016-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00295,DIRECT_SOURCE,SOURCE_OF,A-BERNARD-2074,TX-017-D,true,2025-06-12T10:00:00Z,,"[""TX-017-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00296,DIRECT_SOURCE,DESTINATION_OF,TX-017-D,A-BLUE-7714,true,2025-06-12T10:00:00Z,,"[""TX-017-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00297,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-017-P,true,2025-06-13T12:00:00Z,,"[""TX-017-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00299,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-017-X,true,2025-06-14T11:00:00Z,,"[""TX-017-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00300,DIRECT_SOURCE,DESTINATION_OF,TX-017-X,A-MAX-9921,true,2025-06-14T11:00:00Z,,"[""TX-017-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00301,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-017-O,true,2025-06-14T15:00:00Z,,"[""TX-017-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00302,DIRECT_SOURCE,DESTINATION_OF,TX-017-O,A-MIK-3308,true,2025-06-14T15:00:00Z,,"[""TX-017-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00303,DIRECT_SOURCE,SOURCE_OF,A-CLARA-2111,TX-018-D,true,2025-06-22T10:00:00Z,,"[""TX-018-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00304,DIRECT_SOURCE,DESTINATION_OF,TX-018-D,A-BLUE-7714,true,2025-06-22T10:00:00Z,,"[""TX-018-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00305,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-018-P,true,2025-06-23T12:00:00Z,,"[""TX-018-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00307,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-018-X,true,2025-06-24T11:00:00Z,,"[""TX-018-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00308,DIRECT_SOURCE,DESTINATION_OF,TX-018-X,A-MAX-9921,true,2025-06-24T11:00:00Z,,"[""TX-018-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00309,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-018-O,true,2025-06-24T15:00:00Z,,"[""TX-018-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00310,DIRECT_SOURCE,DESTINATION_OF,TX-018-O,A-MIK-3308,true,2025-06-24T15:00:00Z,,"[""TX-018-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00311,DIRECT_SOURCE,SOURCE_OF,A-GIDEON-2148,TX-019-D,true,2025-07-02T10:00:00Z,,"[""TX-019-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00312,DIRECT_SOURCE,DESTINATION_OF,TX-019-D,A-BLUE-7714,true,2025-07-02T10:00:00Z,,"[""TX-019-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00313,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-019-P,true,2025-07-03T12:00:00Z,,"[""TX-019-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00315,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-019-X,true,2025-07-04T11:00:00Z,,"[""TX-019-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00316,DIRECT_SOURCE,DESTINATION_OF,TX-019-X,A-MAX-9921,true,2025-07-04T11:00:00Z,,"[""TX-019-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00317,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-019-O,true,2025-07-04T15:00:00Z,,"[""TX-019-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00318,DIRECT_SOURCE,DESTINATION_OF,TX-019-O,A-MIK-3308,true,2025-07-04T15:00:00Z,,"[""TX-019-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00319,DIRECT_SOURCE,SOURCE_OF,A-ELLA-2185,TX-020-D,true,2025-07-12T10:00:00Z,,"[""TX-020-D""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00320,DIRECT_SOURCE,DESTINATION_OF,TX-020-D,A-BLUE-7714,true,2025-07-12T10:00:00Z,,"[""TX-020-D""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00321,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-020-P,true,2025-07-13T12:00:00Z,,"[""TX-020-P""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00323,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-020-X,true,2025-07-14T11:00:00Z,,"[""TX-020-X""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00324,DIRECT_SOURCE,DESTINATION_OF,TX-020-X,A-MAX-9921,true,2025-07-14T11:00:00Z,,"[""TX-020-X""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00325,DIRECT_SOURCE,SOURCE_OF,A-BLUE-7714,TX-020-O,true,2025-07-14T15:00:00Z,,"[""TX-020-O""]",Account is the recorded source.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00326,DIRECT_SOURCE,DESTINATION_OF,TX-020-O,A-MIK-3308,true,2025-07-14T15:00:00Z,,"[""TX-020-O""]",Account is the recorded destination.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00387,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-001,true,2025-03-31,,"[""ST-001""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00388,DIRECT_SOURCE,SENT,PR-NINA-02,ST-001,true,2025-03-31,,"[""ST-001""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00389,DIRECT_SOURCE,SENT_TO,ST-001,PR-HAZEL-01,true,2025-03-31,,"[""ST-001""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00390,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-002,true,2025-09-30,,"[""ST-002""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00391,DIRECT_SOURCE,SENT,PR-NINA-02,ST-002,true,2025-09-30,,"[""ST-002""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00392,DIRECT_SOURCE,SENT_TO,ST-002,PR-HAZEL-01,true,2025-09-30,,"[""ST-002""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00393,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-003,true,2026-03-31,,"[""ST-003""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00394,DIRECT_SOURCE,SENT,PR-NINA-02,ST-003,true,2026-03-31,,"[""ST-003""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00395,DIRECT_SOURCE,SENT_TO,ST-003,PR-HAZEL-01,true,2026-03-31,,"[""ST-003""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00396,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-004,true,2025-03-31,,"[""ST-004""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00397,DIRECT_SOURCE,SENT,PR-NINA-02,ST-004,true,2025-03-31,,"[""ST-004""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00398,DIRECT_SOURCE,SENT_TO,ST-004,PR-BERNARD-01,true,2025-03-31,,"[""ST-004""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00399,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-005,true,2025-09-30,,"[""ST-005""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00400,DIRECT_SOURCE,SENT,PR-NINA-02,ST-005,true,2025-09-30,,"[""ST-005""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00401,DIRECT_SOURCE,SENT_TO,ST-005,PR-BERNARD-01,true,2025-09-30,,"[""ST-005""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00402,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-006,true,2026-03-31,,"[""ST-006""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00403,DIRECT_SOURCE,SENT,PR-NINA-02,ST-006,true,2026-03-31,,"[""ST-006""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00404,DIRECT_SOURCE,SENT_TO,ST-006,PR-BERNARD-01,true,2026-03-31,,"[""ST-006""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00405,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-007,true,2025-03-31,,"[""ST-007""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00406,DIRECT_SOURCE,SENT,PR-NINA-02,ST-007,true,2025-03-31,,"[""ST-007""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00407,DIRECT_SOURCE,SENT_TO,ST-007,PR-CLARA-01,true,2025-03-31,,"[""ST-007""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00408,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-008,true,2025-09-30,,"[""ST-008""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00409,DIRECT_SOURCE,SENT,PR-NINA-02,ST-008,true,2025-09-30,,"[""ST-008""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00410,DIRECT_SOURCE,SENT_TO,ST-008,PR-CLARA-01,true,2025-09-30,,"[""ST-008""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00411,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-009,true,2026-03-31,,"[""ST-009""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00412,DIRECT_SOURCE,SENT,PR-NINA-02,ST-009,true,2026-03-31,,"[""ST-009""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00413,DIRECT_SOURCE,SENT_TO,ST-009,PR-CLARA-01,true,2026-03-31,,"[""ST-009""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00414,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-010,true,2025-03-31,,"[""ST-010""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00415,DIRECT_SOURCE,SENT,PR-NINA-02,ST-010,true,2025-03-31,,"[""ST-010""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00416,DIRECT_SOURCE,SENT_TO,ST-010,PR-GIDEON-01,true,2025-03-31,,"[""ST-010""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00417,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-011,true,2025-09-30,,"[""ST-011""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00418,DIRECT_SOURCE,SENT,PR-NINA-02,ST-011,true,2025-09-30,,"[""ST-011""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00419,DIRECT_SOURCE,SENT_TO,ST-011,PR-GIDEON-01,true,2025-09-30,,"[""ST-011""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00420,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-012,true,2026-03-31,,"[""ST-012""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00421,DIRECT_SOURCE,SENT,PR-NINA-02,ST-012,true,2026-03-31,,"[""ST-012""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00422,DIRECT_SOURCE,SENT_TO,ST-012,PR-GIDEON-01,true,2026-03-31,,"[""ST-012""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00423,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-013,true,2025-03-31,,"[""ST-013""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00424,DIRECT_SOURCE,SENT,PR-NINA-02,ST-013,true,2025-03-31,,"[""ST-013""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00425,DIRECT_SOURCE,SENT_TO,ST-013,PR-ELLA-01,true,2025-03-31,,"[""ST-013""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00426,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-014,true,2025-09-30,,"[""ST-014""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00427,DIRECT_SOURCE,SENT,PR-NINA-02,ST-014,true,2025-09-30,,"[""ST-014""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00428,DIRECT_SOURCE,SENT_TO,ST-014,PR-ELLA-01,true,2025-09-30,,"[""ST-014""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00429,DIRECT_SOURCE,PREPARED,PR-VERA-02,ST-015,true,2026-03-31,,"[""ST-015""]",Statement metadata records the preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00430,DIRECT_SOURCE,SENT,PR-NINA-02,ST-015,true,2026-03-31,,"[""ST-015""]",Statement delivery metadata records the sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00431,DIRECT_SOURCE,SENT_TO,ST-015,PR-ELLA-01,true,2026-03-31,,"[""ST-015""]",Statement was delivered to the investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00549,DIRECT_SOURCE,SENT,PR-MAXWELL-03,COM-001,true,2025-02-10T10:00:00Z,,"[""COM-001""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00550,DIRECT_SOURCE,SENT_TO,COM-001,PR-VERA-01,true,2025-02-10T10:00:00Z,,"[""COM-001""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00551,DIRECT_SOURCE,SENT,PR-VERA-01,COM-002,true,2025-02-19T11:00:00Z,,"[""COM-002""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00552,DIRECT_SOURCE,SENT_TO,COM-002,PR-MAXWELL-03,true,2025-02-19T11:00:00Z,,"[""COM-002""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00553,DIRECT_SOURCE,SENT,PR-MAXWELL-03,COM-003,true,2025-02-28T12:00:00Z,,"[""COM-003""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00554,DIRECT_SOURCE,SENT_TO,COM-003,PR-VERA-01,true,2025-02-28T12:00:00Z,,"[""COM-003""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00555,DIRECT_SOURCE,SENT,PR-VERA-01,COM-004,true,2025-03-09T13:00:00Z,,"[""COM-004""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00556,DIRECT_SOURCE,SENT_TO,COM-004,PR-NINA-03,true,2025-03-09T13:00:00Z,,"[""COM-004""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00557,DIRECT_SOURCE,SENT,PR-NINA-03,COM-005,true,2025-03-18T09:00:00Z,,"[""COM-005""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00558,DIRECT_SOURCE,SENT_TO,COM-005,PR-VERA-01,true,2025-03-18T09:00:00Z,,"[""COM-005""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00559,DIRECT_SOURCE,SENT,PR-BERNARD-01,COM-006,true,2025-03-27T10:00:00Z,,"[""COM-006""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00560,DIRECT_SOURCE,SENT_TO,COM-006,PR-NINA-03,true,2025-03-27T10:00:00Z,,"[""COM-006""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00561,DIRECT_SOURCE,SENT,PR-NINA-03,COM-007,true,2025-04-05T11:00:00Z,,"[""COM-007""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00562,DIRECT_SOURCE,SENT_TO,COM-007,PR-BERNARD-01,true,2025-04-05T11:00:00Z,,"[""COM-007""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00563,DIRECT_SOURCE,SENT,PR-SILAS-03,COM-008,true,2025-04-14T12:00:00Z,,"[""COM-008""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00564,DIRECT_SOURCE,SENT_TO,COM-008,PR-ELLA-01,true,2025-04-14T12:00:00Z,,"[""COM-008""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00565,DIRECT_SOURCE,SENT,PR-VERA-01,COM-009,true,2025-04-23T13:00:00Z,,"[""COM-009""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00566,DIRECT_SOURCE,SENT_TO,COM-009,PR-SILAS-03,true,2025-04-23T13:00:00Z,,"[""COM-009""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00567,DIRECT_SOURCE,SENT,PR-SILAS-03,COM-010,true,2025-05-02T09:00:00Z,,"[""COM-010""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00568,DIRECT_SOURCE,SENT_TO,COM-010,PR-CLARA-01,true,2025-05-02T09:00:00Z,,"[""COM-010""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00569,DIRECT_SOURCE,SENT,PR-HAZEL-01,COM-011,true,2025-05-11T10:00:00Z,,"[""COM-011""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00570,DIRECT_SOURCE,SENT_TO,COM-011,PR-CLARA-01,true,2025-05-11T10:00:00Z,,"[""COM-011""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00571,DIRECT_SOURCE,SENT,PR-HAZEL-01,COM-012,true,2025-05-20T11:00:00Z,,"[""COM-012""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00572,DIRECT_SOURCE,SENT_TO,COM-012,PR-MAXWELL-03,true,2025-05-20T11:00:00Z,,"[""COM-012""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00573,DIRECT_SOURCE,SENT,PR-OSCAR-01,COM-013,true,2025-05-29T12:00:00Z,,"[""COM-013""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00574,DIRECT_SOURCE,SENT_TO,COM-013,PR-MAXWELL-03,true,2025-05-29T12:00:00Z,,"[""COM-013""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00575,DIRECT_SOURCE,SENT,PR-MARTHA-01,COM-014,true,2025-06-07T13:00:00Z,,"[""COM-014""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00576,DIRECT_SOURCE,SENT_TO,COM-014,PR-VERA-01,true,2025-06-07T13:00:00Z,,"[""COM-014""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00577,DIRECT_SOURCE,SENT,PR-VERA-01,COM-015,true,2025-06-16T09:00:00Z,,"[""COM-015""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00578,DIRECT_SOURCE,SENT_TO,COM-015,PR-MAXWELL-03,true,2025-06-16T09:00:00Z,,"[""COM-015""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00579,DIRECT_SOURCE,SENT,PR-MAXWELL-03,COM-016,true,2025-06-25T10:00:00Z,,"[""COM-016""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00580,DIRECT_SOURCE,SENT_TO,COM-016,PR-VERA-01,true,2025-06-25T10:00:00Z,,"[""COM-016""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00581,DIRECT_SOURCE,SENT,PR-SILAS-03,COM-017,true,2025-07-04T11:00:00Z,,"[""COM-017""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00582,DIRECT_SOURCE,SENT_TO,COM-017,PR-VERA-01,true,2025-07-04T11:00:00Z,,"[""COM-017""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00583,DIRECT_SOURCE,SENT,PR-VERA-01,COM-018,true,2025-07-13T12:00:00Z,,"[""COM-018""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00584,DIRECT_SOURCE,SENT_TO,COM-018,PR-SILAS-03,true,2025-07-13T12:00:00Z,,"[""COM-018""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00585,DIRECT_SOURCE,SENT,PR-NINA-03,COM-019,true,2025-07-22T13:00:00Z,,"[""COM-019""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00586,DIRECT_SOURCE,SENT_TO,COM-019,PR-MAXWELL-03,true,2025-07-22T13:00:00Z,,"[""COM-019""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00587,DIRECT_SOURCE,SENT,PR-MAXWELL-03,COM-020,true,2025-07-31T09:00:00Z,,"[""COM-020""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00588,DIRECT_SOURCE,SENT_TO,COM-020,PR-NINA-03,true,2025-07-31T09:00:00Z,,"[""COM-020""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00589,DIRECT_SOURCE,SENT,PR-SILAS-03,COM-021,true,2025-05-17T14:00:00Z,,"[""COM-021""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00590,DIRECT_SOURCE,SENT_TO,COM-021,PR-HAZEL-01,true,2025-05-17T14:00:00Z,,"[""COM-021""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00591,DIRECT_SOURCE,SENT,PR-NINA-03,COM-022,true,2025-05-22T15:00:00Z,,"[""COM-022""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00593,DIRECT_SOURCE,SENT,PR-MARTHA-01,COM-023,true,2025-05-27T16:00:00Z,,"[""COM-023""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00595,DIRECT_SOURCE,SENT,PR-NINA-03,COM-024,true,2025-06-01T09:00:00Z,,"[""COM-024""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00597,DIRECT_SOURCE,SENT,PR-BERNARD-01,COM-025,true,2025-06-06T10:00:00Z,,"[""COM-025""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00599,DIRECT_SOURCE,SENT,PR-SILAS-03,COM-026,true,2025-06-11T11:00:00Z,,"[""COM-026""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00600,DIRECT_SOURCE,SENT_TO,COM-026,PR-NINA-03,true,2025-06-11T11:00:00Z,,"[""COM-026""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00601,DIRECT_SOURCE,SENT,PR-MARTHA-01,COM-027,true,2025-06-16T12:00:00Z,,"[""COM-027""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00603,DIRECT_SOURCE,SENT,PR-OSCAR-01,COM-028,true,2025-06-21T13:00:00Z,,"[""COM-028""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00605,DIRECT_SOURCE,SENT,PR-OSCAR-01,COM-029,true,2025-06-26T14:00:00Z,,"[""COM-029""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00607,DIRECT_SOURCE,SENT,PR-MARTHA-01,COM-030,true,2025-07-01T15:00:00Z,,"[""COM-030""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00609,DIRECT_SOURCE,SENT,PR-BERNARD-01,COM-031,true,2025-07-06T16:00:00Z,,"[""COM-031""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00611,DIRECT_SOURCE,SENT,PR-BERNARD-01,COM-032,true,2025-07-11T09:00:00Z,,"[""COM-032""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00612,DIRECT_SOURCE,SENT_TO,COM-032,PR-HAZEL-01,true,2025-07-11T09:00:00Z,,"[""COM-032""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00613,DIRECT_SOURCE,SENT,PR-NINA-03,COM-033,true,2025-07-16T10:00:00Z,,"[""COM-033""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00614,DIRECT_SOURCE,SENT_TO,COM-033,PR-GIDEON-01,true,2025-07-16T10:00:00Z,,"[""COM-033""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00615,DIRECT_SOURCE,SENT,PR-HAZEL-01,COM-034,true,2025-07-21T11:00:00Z,,"[""COM-034""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00616,DIRECT_SOURCE,SENT_TO,COM-034,PR-ELLA-01,true,2025-07-21T11:00:00Z,,"[""COM-034""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00617,DIRECT_SOURCE,SENT,PR-SILAS-03,COM-035,true,2025-07-26T12:00:00Z,,"[""COM-035""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00619,DIRECT_SOURCE,SENT,PR-HAZEL-01,COM-036,true,2025-07-31T13:00:00Z,,"[""COM-036""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00620,DIRECT_SOURCE,SENT_TO,COM-036,PR-BERNARD-01,true,2025-07-31T13:00:00Z,,"[""COM-036""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00621,DIRECT_SOURCE,SENT,PR-NINA-03,COM-037,true,2025-08-05T14:00:00Z,,"[""COM-037""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00622,DIRECT_SOURCE,SENT_TO,COM-037,PR-BERNARD-01,true,2025-08-05T14:00:00Z,,"[""COM-037""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00623,DIRECT_SOURCE,SENT,PR-NINA-03,COM-038,true,2025-08-10T15:00:00Z,,"[""COM-038""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00624,DIRECT_SOURCE,SENT_TO,COM-038,PR-BERNARD-01,true,2025-08-10T15:00:00Z,,"[""COM-038""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00625,DIRECT_SOURCE,SENT,PR-BERNARD-01,COM-039,true,2025-08-15T16:00:00Z,,"[""COM-039""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00626,DIRECT_SOURCE,SENT_TO,COM-039,PR-ELLA-01,true,2025-08-15T16:00:00Z,,"[""COM-039""]",Communication recipient.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00627,DIRECT_SOURCE,SENT,PR-SILAS-03,COM-040,true,2025-08-20T09:00:00Z,,"[""COM-040""]",Communication sender.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00629,DIRECT_SOURCE,REQUESTED,PR-HAZEL-01,CMP-001,true,2025-07-01T00:00:00Z,,"[""CMP-001""]",Complaint or withdrawal escalation submitted by investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00630,DIRECT_SOURCE,REQUESTED,PR-BERNARD-02,CMP-002,true,2025-07-13T00:00:00Z,,"[""CMP-002""]",Complaint or withdrawal escalation submitted by investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00631,DIRECT_SOURCE,REQUESTED,PR-CLARA-01,CMP-003,true,2025-07-25T00:00:00Z,,"[""CMP-003""]",Complaint or withdrawal escalation submitted by investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00632,DIRECT_SOURCE,REQUESTED,PR-GIDEON-01,CMP-004,true,2025-08-06T00:00:00Z,,"[""CMP-004""]",Complaint or withdrawal escalation submitted by investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00633,DIRECT_SOURCE,REQUESTED,PR-ELLA-01,CMP-005,true,2025-08-18T00:00:00Z,,"[""CMP-005""]",Complaint or withdrawal escalation submitted by investor.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00657,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-001,true,2024-06-12,,"[""DOC-001""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00658,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-001,true,2024-06-12,,"[""DOC-001""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00659,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-002,true,2024-06-23,,"[""DOC-002""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00660,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-002,true,2024-06-23,,"[""DOC-002""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00661,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-003,true,2024-07-04,,"[""DOC-003""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00662,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-003,true,2024-07-04,,"[""DOC-003""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00663,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-004,true,2024-07-15,,"[""DOC-004""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00664,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-004,true,2024-07-15,,"[""DOC-004""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00665,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-005,true,2024-07-26,,"[""DOC-005""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00666,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-005,true,2024-07-26,,"[""DOC-005""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00667,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-006,true,2024-08-06,,"[""DOC-006""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00668,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-006,true,2024-08-06,,"[""DOC-006""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00669,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-007,true,2024-08-17,,"[""DOC-007""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00670,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-007,true,2024-08-17,,"[""DOC-007""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00671,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-008,true,2024-08-28,,"[""DOC-008""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00672,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-008,true,2024-08-28,,"[""DOC-008""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00673,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-009,true,2024-09-08,,"[""DOC-009""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00674,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-009,true,2024-09-08,,"[""DOC-009""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00675,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-010,true,2024-09-19,,"[""DOC-010""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00676,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-010,true,2024-09-19,,"[""DOC-010""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00677,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-011,true,2024-09-30,,"[""DOC-011""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00678,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-011,true,2024-09-30,,"[""DOC-011""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00679,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-012,true,2024-10-11,,"[""DOC-012""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00680,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-012,true,2024-10-11,,"[""DOC-012""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00681,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-013,true,2024-10-22,,"[""DOC-013""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00682,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-013,true,2024-10-22,,"[""DOC-013""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00683,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-014,true,2024-11-02,,"[""DOC-014""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00684,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-014,true,2024-11-02,,"[""DOC-014""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00685,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-015,true,2024-11-13,,"[""DOC-015""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00686,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-015,true,2024-11-13,,"[""DOC-015""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00687,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-016,true,2024-11-24,,"[""DOC-016""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00688,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-016,true,2024-11-24,,"[""DOC-016""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00689,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-017,true,2024-12-05,,"[""DOC-017""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00690,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-017,true,2024-12-05,,"[""DOC-017""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00691,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-018,true,2024-12-16,,"[""DOC-018""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00692,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-018,true,2024-12-16,,"[""DOC-018""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00693,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-019,true,2024-12-27,,"[""DOC-019""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00694,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-019,true,2024-12-27,,"[""DOC-019""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00695,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-020,true,2025-01-07,,"[""DOC-020""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00696,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-020,true,2025-01-07,,"[""DOC-020""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00697,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-021,true,2025-01-18,,"[""DOC-021""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00698,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-021,true,2025-01-18,,"[""DOC-021""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00699,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-022,true,2025-01-29,,"[""DOC-022""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00700,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-022,true,2025-01-29,,"[""DOC-022""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00701,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-023,true,2025-02-09,,"[""DOC-023""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00702,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-023,true,2025-02-09,,"[""DOC-023""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00703,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-024,true,2025-02-20,,"[""DOC-024""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00704,DIRECT_SOURCE,SENT,OR-BLUE-01,DOC-024,true,2025-02-20,,"[""DOC-024""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00715,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-030,true,2025-04-27,,"[""DOC-030""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00716,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-030,true,2025-04-27,,"[""DOC-030""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00717,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-031,true,2025-05-08,,"[""DOC-031""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00718,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-031,true,2025-05-08,,"[""DOC-031""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00719,DIRECT_SOURCE,PREPARED,PR-MAXWELL-02,DOC-032,true,2025-05-19,,"[""DOC-032""]",Document metadata records signer or preparer.,Recorded directly in a source dataset.,{},2026.07.19.1
+MADDOG,PUPPY,REL-00720,DIRECT_SOURCE,SENT,OR-MIK-01,DOC-032,true,2025-05-19,,"[""DOC-032""]",Document issued by organization.,Recorded directly in a source dataset.,{},2026.07.19.1

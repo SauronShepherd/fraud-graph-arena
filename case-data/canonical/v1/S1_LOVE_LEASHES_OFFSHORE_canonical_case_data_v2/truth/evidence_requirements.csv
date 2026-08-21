@@ -1,0 +1,10 @@
+case_id,requirement_id,claim_id,target_entity_id,evidence_family,minimum_distinct_items,score_weight,required,record_ids_json,description,snapshot_version
+LOVE_LEASHES_OFFSHORE,REQ-001,CLAIM-SERENA-PRINCIPAL,P-SERENA,KYC_CORPORATE_DEVICE_AND_PAYMENT,4,130,true,[],Serena controlled the persona factory and related corporate network.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-002,CLAIM-PERSONA-FACTORY,O-MOONLIT,PROFILE_MEDIA_LOGIN_TEMPLATE_AND_PLATFORM,5,135,true,[],"Multiple romantic personas were coordinated using reused images, recovery data, devices and templates.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-003,CLAIM-GROOMING-MECHANISM,P-ADRIAN,MESSAGE_THREAD_TEMPLATE_AND_VICTIM_REPORT,4,115,true,[],"The network used repeated grooming stages followed by emergency, parcel, legal or recovery demands.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-004,CLAIM-FAKE-LEGAL,P-KENDRA,LEGAL_REGISTRY_LETTER_INVOICE_ACCOUNT,4,105,true,[],Kendra and Harbor Heart issued unverified legal and recovery demands linked to controlled accounts.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-005,CLAIM-PARCEL-MECHANISM,P-MILO,PARCEL_LABEL_TRACKING_EVENT_AND_MESSAGE,4,90,true,[],Star Paw parcel records and fee demands were reused across unrelated victims.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-006,CLAIM-OFFSHORE-FLOW,P-QUINN,BANK_CHAIN_KYC_AND_ROUTING,5,145,true,[],Victim funds moved through domestic intermediaries to offshore accounts and operator distributions.,2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-007,CLAIM-MULE-DIFFERENTIATION,P-THEO,MULE_COMMUNICATION_BANK_AND_COMPLAINT,4,95,true,[],"Basil and Vera knowingly facilitated transfers, while Theo was manipulated without knowing the fraud.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-008,CLAIM-NINA-PROTECTED,P-NINA,PARCEL_ROLE_DEVICE_AND_NO_PROCEEDS,3,65,true,[],"Nina forwarded a parcel without controlling the persona, payment request or proceeds.",2026.07.18.1
+LOVE_LEASHES_OFFSHORE,REQ-009,CLAIM-GENUINE-RELATIONSHIP,P-CLARA,COMMUNICATION_TRAVEL_PARCEL_AND_REMITTANCE,3,60,true,[],Clara and Henry form a genuine relationship with independent support.,2026.07.18.1

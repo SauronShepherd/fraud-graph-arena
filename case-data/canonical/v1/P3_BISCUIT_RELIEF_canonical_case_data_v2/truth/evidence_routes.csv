@@ -1,0 +1,15 @@
+case_id,route_id,claim_id,route_name,step_order,evidence_reference,tool_family,snapshot_version
+BISCUIT_RELIEF,ROUTE-001,CLAIM-DONATION-DIVERSION,Processor-to-bank flow,1,Donations and settlements using MER-6104,GENIE,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-001,CLAIM-DONATION-DIVERSION,Processor-to-bank flow,2,"Transfers from 6401 to 4512, 7730 and 9088",GENIE,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-002,CLAIM-DONATION-DIVERSION,Invoice-beneficiary path,1,Gilded and Red Roof invoices,DOCUMENTS,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-002,CLAIM-DONATION-DIVERSION,Invoice-beneficiary path,2,GraphFrames account exact matches,GRAPHFRAMES,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-003,CLAIM-FALSE-IMPACT,Claims versus warehouse,1,Campaign claimed counts,GENIE,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-003,CLAIM-FALSE-IMPACT,Claims versus warehouse,2,Verified distribution records,GENIE,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-004,CLAIM-ARLO-PRINCIPAL,Identity and control,1,Arlo identity candidates,ZINGG,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-004,CLAIM-ARLO-PRINCIPAL,Identity and control,2,FOUNDER_OF and CONTROLS relationships,DIRECT,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-005,CLAIM-MINA-KNOWING,Campaign authorship,1,Posts and ads by Mina aliases,ZINGG,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-005,CLAIM-MINA-KNOWING,Campaign authorship,2,Impact-count and reuse messages,COMMUNICATION,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-006,CLAIM-FELIX-KNOWING,Payout priority,1,Priority and beneficiary messages,COMMUNICATION,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-006,CLAIM-FELIX-KNOWING,Payout priority,2,Approved vendor payments,GENIE,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-007,CLAIM-HOPE-PROTECTED,Volunteer victim,1,Hope donation and zero-benefit network records,GENIE,2026.07.19.3
+BISCUIT_RELIEF,ROUTE-007,CLAIM-HOPE-PROTECTED,Volunteer victim,2,Hope complaint and belief messages,COMMUNICATION,2026.07.19.3

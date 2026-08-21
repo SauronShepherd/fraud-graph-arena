@@ -1,0 +1,5 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+DOWNLINE,ALT-001,CLAIM-PYRAMID-MECHANISM,"Use sponsor tree plus recruitment commissions plus participant losses, or orders/autoship plus payout concentration plus income-disclosure gaps.",,2026.07.18.1
+DOWNLINE,ALT-002,CLAIM-PRINCIPAL,"Use corporate control plus personal/upline payouts, or identity resolution plus approval and messaging evidence.",,2026.07.18.1
+DOWNLINE,ALT-003,CLAIM-RETAIL-REAL,"Use Rosie retail sales and repeat-customer records, or supplier/inventory records plus retail-margin commissions.",,2026.07.18.1
+DOWNLINE,ALT-004,CLAIM-MIXED-ROLES,Use sponsor edges plus net-loss economics and complaints for any two mixed-role participants.,,2026.07.18.1

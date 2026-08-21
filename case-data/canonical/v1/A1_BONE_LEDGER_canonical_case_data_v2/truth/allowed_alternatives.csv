@@ -1,0 +1,9 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+BONE_LEDGER,ALT-001,CLAIM-CONCEALED-LIABILITIES,"Use loan plus guarantee plus journal treatment, or loan plus parent cash transfer plus missing disclosure.",,2026.07.18.1
+BONE_LEDGER,ALT-002,CLAIM-FALSE-INVOICES,"Use unsupported invoice lines plus shell payments, or related-party control plus missing deliverables.",,2026.07.18.1
+BONE_LEDGER,ALT-003,CLAIM-ASSET-MISAPPROPRIATION,"Use duplicate serials plus missing custody, or capitalized journal plus movement to a non-operational location.",,2026.07.18.1
+BONE_LEDGER,ALT-004,CLAIM-CHESTER-PRINCIPAL,"Use registry control plus approvals, or registry control plus personal-account diversion.",,2026.07.18.1
+BONE_LEDGER,ALT-005,CLAIM-GRETA-KNOWING,"Use posting authorship plus classification message, or batch authorship plus planned reversal.",,2026.07.18.1
+BONE_LEDGER,ALT-006,CLAIM-MARVIN-KNOWING,"Use vendor/asset control plus unsupported movements, or invoice-arrangement message plus personal transfer.",,2026.07.18.1
+BONE_LEDGER,ALT-007,CLAIM-AUDITOR-PROTECTED,"Use warning memo plus board escalation, or audit finding plus evidence request.",,2026.07.18.1
+BONE_LEDGER,ALT-008,CLAIM-LUCY-PROTECTED,"Use no approval authority plus challenge message, or preserved schedules plus restricted role.",,2026.07.18.1

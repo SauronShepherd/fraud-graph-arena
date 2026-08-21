@@ -1,0 +1,8 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+GOLDEN_HYDRANT,FFP-001,P-IRIS,Culpable because she evaluated technical criteria or used the municipal IP.,170,2026.07.18.1
+GOLDEN_HYDRANT,FFP-002,P-HAZEL,Culpable because the fire department requested urgent hydrant work.,150,2026.07.18.1
+GOLDEN_HYDRANT,FFP-003,P-COLIN,Culpable because Clear Flow submitted bids in the procurement.,110,2026.07.18.1
+GOLDEN_HYDRANT,FFP-004,P-HUGO,Culpable because excavation records contradict certifications.,100,2026.07.18.1
+GOLDEN_HYDRANT,FFP-005,O-NORTHQUAY,Shell company solely because it is a subcontractor.,100,2026.07.18.1
+GOLDEN_HYDRANT,FFP-006,O-IRON,Fraudulent solely because serials repeat in the municipal register.,90,2026.07.18.1
+GOLDEN_HYDRANT,FFP-008,O-GOLDEN-SUP,Same organization as Golden Hydrant Infrastructure.,100,2026.07.18.1

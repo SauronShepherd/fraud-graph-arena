@@ -1,0 +1,21 @@
+{
+  "iteration": "FGA04",
+  "status": "blocked",
+  "required_counts": {"ACADEMY": 3, "PUPPY": 3, "ADULT": 4, "SENIOR": 3},
+  "packages": [
+    {"family":"ADULT","case_id":"BONE_LEDGER","package":"A1_BONE_LEDGER_canonical_case_data_v2"},
+    {"family":"ADULT","case_id":"DOWNLINE","package":"A2_DOWNLINE_canonical_case_data_v2"},
+    {"family":"ADULT","case_id":"PHANTOM_VET","package":"A3_PHANTOM_VET_canonical_case_data_v2"},
+    {"family":"ADULT","case_id":"GOLDEN_HYDRANT","package":"A4_GOLDEN_HYDRANT_canonical_case_data_v2"},
+    {"family":"PUPPY","case_id":"MADDOG","package":"P1_MADDOG_canonical_case_data_v2"},
+    {"family":"PUPPY","case_id":"CEO_BARKED_TWICE","package":"P2_CEO_BARKED_TWICE_canonical_case_data_v2"},
+    {"family":"PUPPY","case_id":"BISCUIT_RELIEF","package":"P3_BISCUIT_RELIEF_canonical_case_data_v2"},
+    {"family":"SENIOR","case_id":"LOVE_LEASHES_OFFSHORE","package":"S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2"},
+    {"family":"SENIOR","case_id":"CRYPTO_KENNEL_LONG_CON","package":"S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2"},
+    {"family":"SENIOR","case_id":"PANAMA_PAWPERS","package":"S3_PANAMA_PAWPERS_canonical_case_data_v2"},
+    {"family":"ACADEMY","case_id":"ACADEMY_T01","package":"T1_THE_MISSING_120_canonical_case_data_v3"},
+    {"family":"ACADEMY","case_id":"ACADEMY_T02","package":"T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3"},
+    {"family":"ACADEMY","case_id":"ACADEMY_T03","package":"T3_THE_GHOST_INVOICE_canonical_case_data_v3"}
+  ],
+  "blockers": []
+}

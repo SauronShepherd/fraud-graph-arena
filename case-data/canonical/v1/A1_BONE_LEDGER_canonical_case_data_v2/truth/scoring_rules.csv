@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+BONE_LEDGER,SCORE-001,Principal and mechanism,250,0.25,Principal and mechanism,2026.07.18.1
+BONE_LEDGER,SCORE-002,"Roles, culpability and protected actors",190,0.19,"Roles, culpability and protected actors",2026.07.18.1
+BONE_LEDGER,SCORE-003,Liability and cash-flow reconstruction,180,0.18,Liability and cash-flow reconstruction,2026.07.18.1
+BONE_LEDGER,SCORE-004,Invoice and asset reconstruction,150,0.15,Invoice and asset reconstruction,2026.07.18.1
+BONE_LEDGER,SCORE-005,Identity conclusions,90,0.09,Identity conclusions,2026.07.18.1
+BONE_LEDGER,SCORE-006,Relationship interpretation,60,0.06,Relationship interpretation,2026.07.18.1
+BONE_LEDGER,SCORE-007,Evidence quality and diversity,100,0.1,Evidence quality and diversity,2026.07.18.1
+BONE_LEDGER,SCORE-008,Efficiency,30,0.03,Efficiency,2026.07.18.1

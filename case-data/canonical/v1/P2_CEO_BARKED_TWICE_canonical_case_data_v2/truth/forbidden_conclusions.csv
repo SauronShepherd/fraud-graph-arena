@@ -1,0 +1,6 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+CEO_BARKED_TWICE,FFP-001,P-BEA,Culpable because messages used her name or title.,160,2026.07.19.2
+CEO_BARKED_TWICE,FFP-002,P-PENNY,Culpable because she entered the payment or her mailbox sent replies.,170,2026.07.19.2
+CEO_BARKED_TWICE,FFP-003,P-CONRAD,Knowing participant solely because he approved an exception.,100,2026.07.19.2
+CEO_BARKED_TWICE,FFP-004,P-VICTOR,Vendor accomplice because the forged invoice copied his phone or invoice number.,110,2026.07.19.2
+CEO_BARKED_TWICE,FFP-005,P-THEO,Intruder because he investigated the mailbox and used the corporate IP.,80,2026.07.19.2

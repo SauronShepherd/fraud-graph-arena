@@ -1,0 +1,9 @@
+case_id,claim_id,claim_type,claim_text,target_entity_id,required,snapshot_version
+BISCUIT_RELIEF,CLAIM-ARLO-PRINCIPAL,CONTROL_AND_OWNERSHIP,Arlo controlled the fund and diversion network.,P-ARLO,true,2026.07.19.3
+BISCUIT_RELIEF,CLAIM-BENEFICIARIES-UNDERFUNDED,GRANT_REQUEST_AND_DISTRIBUTION,Legitimate beneficiaries received a small fraction of advertised aid.,O-PAWBRIDGE,true,2026.07.19.3
+BISCUIT_RELIEF,CLAIM-DONATION-DIVERSION,DONATION_SETTLEMENT_AND_BANK_FLOW,Most proceeds were diverted to shell vendors and personal accounts.,O-GBRF,true,2026.07.19.3
+BISCUIT_RELIEF,CLAIM-FALSE-IMPACT,CAMPAIGN_VS_BENEFICIARY_AND_WAREHOUSE,Campaign impact claims exceeded verified aid.,O-GBRF,true,2026.07.19.3
+BISCUIT_RELIEF,CLAIM-FELIX-KNOWING,PAYMENT_APPROVAL_AND_COMMUNICATION,Felix knowingly prioritized shell invoices and routed payouts.,P-FELIX,true,2026.07.19.3
+BISCUIT_RELIEF,CLAIM-HOPE-PROTECTED,NO_BENEFIT_AND_OWN_LOSS,Hope was an unpaid volunteer/donor and victim.,P-HOPE,true,2026.07.19.3
+BISCUIT_RELIEF,CLAIM-MINA-KNOWING,AUTHORSHIP_AND_COMMUNICATION,Mina knowingly produced inflated claims and reused assets.,P-MINA,true,2026.07.19.3
+BISCUIT_RELIEF,CLAIM-VIOLET-PROTECTED,ACCESS_LIMITS_AND_VERIFIED_DISTRIBUTION,Violet performed legitimate work without payment authority.,P-VIOLET,true,2026.07.19.3

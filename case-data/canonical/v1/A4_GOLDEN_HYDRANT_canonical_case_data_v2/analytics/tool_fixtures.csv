@@ -1,0 +1,3 @@
+case_id,profile_code,fixture_id,fixture_type,tool_family,selected_record_ids_json,input_payload_json,expected_result_count,expected_payload_json,description,snapshot_version
+GOLDEN_HYDRANT,ADULT,NR-Z-001,NO_RESULT_FIXTURES,ZINGG,"[""PR-IRIS-01"",""PR-HAZEL-01"",""PR-COLIN-01""]","{""criterion"":""HIGH"",""fixture_id"":""NR-Z-001"",""selected_record_ids"":""PR-IRIS-01;PR-HAZEL-01;PR-COLIN-01"",""tool_family"":""ZINGG""}",0,,HIGH,2026.07.18.1
+GOLDEN_HYDRANT,ADULT,NR-GF-001,NO_RESULT_FIXTURES,GRAPHFRAMES,"[""OR-CLEARFLOW-01"",""OR-NORTHQUAY-01""]","{""criterion"":""accounts,devices,phones,addresses"",""fixture_id"":""NR-GF-001"",""selected_record_ids"":""OR-CLEARFLOW-01;OR-NORTHQUAY-01"",""tool_family"":""GRAPHFRAMES""}",0,,"accounts,devices,phones,addresses",2026.07.18.1

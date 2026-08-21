@@ -1,0 +1,11 @@
+case_id,forbidden_id,entity_id,forbidden_conclusion,penalty,snapshot_version
+CRYPTO_KENNEL_LONG_CON,FFP-001,P-ALICE,Culpable because she deposited repeatedly or trusted displayed profits.,190,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-002,P-BERNARD,Culpable because he upgraded after a displayed gain.,180,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-003,P-TESSA,Knowing agent solely because funds passed through her account or wallet.,180,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-004,P-NORA,Platform controller solely because she moderated messages.,160,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-005,P-CLARA,Fraud participant solely because she owns digital assets.,150,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-006,P-HENRY,Token operator solely because he deployed audited open-source contracts.,150,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-007,O-CLEARCHAIN,Fraudulent solely because it uses omnibus wallets.,120,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-008,O-CLOUDPAW,Controlled front solely because domains share hosting.,110,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-009,P-CBFE89C4,Same person as Lyra Lurcher.,100,2026.07.18.1
+CRYPTO_KENNEL_LONG_CON,FFP-010,O-CRYPTOKENNELS,Same organization as Crypto Kennel Markets.,110,2026.07.18.1

@@ -1,0 +1,2 @@
+case_id,profile_code,profile_name,cumulative,starting_credits,manual_cost,zingg_cost,graphframes_cost,genie_cost,genie_row_limit,quote_required,no_result_charged,initial_item_count,description,snapshot_version
+MADDOG,PUPPY,Puppy,false,100,0,4,3,5,75,false,true,12,Single Puppy difficulty dataset; no Adult or Senior products are included.,2026.07.19.1

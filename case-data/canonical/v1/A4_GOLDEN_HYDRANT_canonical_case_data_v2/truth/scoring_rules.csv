@@ -1,0 +1,9 @@
+case_id,scoring_rule_id,component,max_points,score_weight,description,snapshot_version
+GOLDEN_HYDRANT,SCORE-001,Principal and procurement mechanism,240,0.24,"Correct principal, accomplices and bid-rigging mechanism.",2026.07.18.1
+GOLDEN_HYDRANT,SCORE-002,Bid coordination and scoring,150,0.15,Reconstruct coordinated bids and manipulated evaluation.,2026.07.18.1
+GOLDEN_HYDRANT,SCORE-003,"Contract, change-order and payment flow",170,0.17,"Connect awards, modifications, certificates and payments.",2026.07.18.1
+GOLDEN_HYDRANT,SCORE-004,Field and asset evidence,180,0.18,"Identify phantom, duplicate and unsupported hydrant work.",2026.07.18.1
+GOLDEN_HYDRANT,SCORE-005,Kickbacks and control,120,0.12,"Connect shells, personal accounts and related-party control.",2026.07.18.1
+GOLDEN_HYDRANT,SCORE-006,Protected actors and false positives,80,0.08,"Protect engineer, fire chief, honest bidder and legitimate vendors.",2026.07.18.1
+GOLDEN_HYDRANT,SCORE-007,Evidence diversity,40,0.04,"Use procurement, field, financial and communication evidence.",2026.07.18.1
+GOLDEN_HYDRANT,SCORE-008,Efficiency,20,0.02,Defensible result without excessive paid actions.,2026.07.18.1

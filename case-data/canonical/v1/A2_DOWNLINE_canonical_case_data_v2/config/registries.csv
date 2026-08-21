@@ -1,0 +1,81 @@
+case_id,registry_type,registry_key,display_name,properties_json,snapshot_version
+DOWNLINE,OBJECT_TYPE,PERSON_RECORD,Person source record,"{""accusable"":""true"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,ORGANIZATION_RECORD,Organization source record,"{""accusable"":""true"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,ADDRESS,Address,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,PAYMENT_ACCOUNT,Payment account,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,DEVICE,Device,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,LOGIN_EVENT,Login event,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,PRODUCT,Product,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,PRICE_SCHEDULE,Price schedule,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,SPONSOR_RELATIONSHIP,Sponsor relationship,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,PRODUCT_ORDER,Product order,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,ORDER_LINE,Order line,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,RETAIL_SALE,Retail sale,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,REFUND,Refund,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,INVENTORY_MOVEMENT,Inventory movement,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,COMMISSION,Commission,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,PAYOUT,Payout,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,SEMINAR,Seminar,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,SEMINAR_ATTENDANCE,Seminar attendance,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,SOCIAL_GROUP,Social group,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,SOCIAL_MEMBERSHIP,Social membership,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,SOCIAL_POST,Social post,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,TESTIMONIAL,Testimonial,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,RECRUITMENT_MESSAGE,Recruitment message,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,COMPLAINT,Complaint,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,DOCUMENT,Document,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,OBJECT_TYPE,PARTICIPANT_ECONOMICS,Participant economics summary,"{""accusable"":""false"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,EMPLOYED_BY,Employed By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,CONTROLS,Controls,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,OWNS,Owns,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SPONSORED,Sponsored,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,PURCHASED,Purchased,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,CONTAINS,Contains,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SOLD,Sold,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,REFUNDED,Refunded,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,MOVED,Moved,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,EARNED,Earned,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,PAID_TO,Paid To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,PAID_FROM,Paid From,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,ATTENDED,Attended,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,HOSTED,Hosted,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,MEMBER_OF,Member Of,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,POSTED,Posted,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,FEATURED_IN,Featured In,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SENT,Sent,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SENT_TO,Sent To,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,RAISED_BY,Raised By,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,MENTIONS,Mentions,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,USED_DEVICE,Used Device,"{""directed"":""true"",""player_creatable"":""false"",""relationship_family"":""DIRECT_SOURCE"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,POSSIBLE_SAME_IDENTITY,Possible Same Identity,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,POSSIBLE_SAME_ORGANIZATION,Possible Same Organization,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""ZINGG"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_EMAIL,Same Email,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_PHONE,Same Phone,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_DEVICE,Same Device,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_IP,Same Ip,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_PAYMENT_ACCOUNT,Same Payment Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_ADDRESS,Same Address,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_SPONSOR_CODE,Same Sponsor Code,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_SOCIAL_ACCOUNT,Same Social Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_PAYOUT_BENEFICIARY,Same Payout Beneficiary,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_SEMINAR_ACCOUNT,Same Seminar Account,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_TESTIMONIAL_TEMPLATE,Same Testimonial Template,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,SAME_ORDER_REFERENCE,Same Order Reference,"{""directed"":""false"",""player_creatable"":""false"",""relationship_family"":""GRAPHFRAMES"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,MAY_OPERATE,May Operate,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,MAY_BE_MIXED_VICTIM_RECRUITER,May Be Mixed Victim Recruiter,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,RELATIONSHIP_TYPE,MAY_BE_RETAIL_LED,May Be Retail Led,"{""directed"":""true"",""player_creatable"":""true"",""relationship_family"":""MANUAL"",""schema_version"":""1""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,CORP_REGISTRY,Fictional corporate registry,"{""trust_level"":""HIGH""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,PARTICIPANT_CRM,Participant CRM,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,ORDER_SYSTEM,Order management,"{""trust_level"":""HIGH""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,RETAIL_PORTAL,Retail sale portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,PAYMENT_PROCESSOR,PawPay processor ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,COMMISSION_ENGINE,Commission engine,"{""trust_level"":""HIGH""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,SEMINAR_PORTAL,Seminar booking system,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,SOCIAL_ARCHIVE,Social archive,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,MESSAGE_ARCHIVE,Message archive,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,DEVICE_LOG,Device and login telemetry,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,COMPLAINT_PORTAL,Complaint portal,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,DOCUMENT_REPOSITORY,Document repository,"{""trust_level"":""MEDIUM""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,SUPPLIER_LEDGER,Supplier and inventory ledger,"{""trust_level"":""HIGH""}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,AUTHORING,Authoring source,"{""synthetic_fallback"":true}",2026.07.18.1
+DOWNLINE,SOURCE_SYSTEM,GENIE,Genie-safe source,"{""synthetic_fallback"":true}",2026.07.18.1

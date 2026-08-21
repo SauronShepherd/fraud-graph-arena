@@ -1,0 +1,7 @@
+case_id,ending_code,priority,min_score,max_score,max_false_accusations,required_gates_json,condition_expression,description,snapshot_version
+GOLDEN_HYDRANT,CLEAN_COLLAR,1,850,,0,"[""ALL""]",,"Bid rigging, phantom work, kickbacks and protected actors correctly resolved.",2026.07.18.1
+GOLDEN_HYDRANT,CASE_CLOSED_KENNEL_WRECKED,2,700,,1,"[""PRINCIPAL"",""BID_RIGGING"",""FIELD_FRAUD""]",,Essential mechanism proven but lawful actors are overstated.,2026.07.18.1
+GOLDEN_HYDRANT,THE_SCENT_WENT_COLD,3,450,,2,"[""PARTIAL""]",,"Anomalies found without connecting procurement, field and cash flow.",2026.07.18.1
+GOLDEN_HYDRANT,BISCUIT_BUDGET_BLOWN,4,0,,3,"[""CREDITS_EXHAUSTED_AND_INCOMPLETE""]",,Resources spent before a defensible case was assembled.,2026.07.18.1
+GOLDEN_HYDRANT,CHASED_EVERY_SQUIRREL,5,0,,99,"[""BULK_UNSUPPORTED""]",,"Every bidder, inspector and subcontractor is treated as culpable.",2026.07.18.1
+GOLDEN_HYDRANT,BARKING_UP_THE_WRONG_TREE,6,0,,99,"[""ENGINEER_OR_FIRE_CHIEF_PRIMARY_TARGET""]",,Protected public servants are accused while the contractor network remains weakly linked.,2026.07.18.1

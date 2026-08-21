@@ -1,0 +1,7 @@
+case_id,alternative_id,claim_id,alternative_description,accepted_payload_json,snapshot_version
+MADDOG,ALT-001,CLAIM-PONZI-FLOW,"Repeated timing plus liquidity, or batch exact matches plus direct movements.",,2026.07.19.1
+MADDOG,ALT-002,CLAIM-FALSE-STATEMENTS,Statement-to-custody absence or statement-to-bank-settlement absence.,,2026.07.19.1
+MADDOG,ALT-003,CLAIM-MAX-CONTROL,Corporate filing plus bank signatory or instructions.,,2026.07.19.1
+MADDOG,ALT-005,CLAIM-SILAS-KNOWING,Warning plus later solicitation or later commission.,,2026.07.19.1
+MADDOG,ALT-006,CLAIM-NINA-INNOCENT,No ledger permission plus do-not-edit instruction.,,2026.07.19.1
+MADDOG,ALT-007,CLAIM-HAZEL-VICTIM,Own loss plus no commission or messages showing belief.,,2026.07.19.1

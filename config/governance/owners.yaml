@@ -17,6 +17,7 @@ assignments:
   - {path: Dockerfile, owner: developer-experience, reviewer: quality-engineering}
   - {path: compose.yaml, owner: developer-experience, reviewer: quality-engineering}
   - {path: contracts/**, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: case-data/**, owner: quality-engineering, reviewer: security-assurance}
   - {path: apps/**, owner: developer-experience, reviewer: quality-engineering}
   - {path: src/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: docs/governance/**, owner: architecture-governance, reviewer: security-assurance}
@@ -25,9 +26,11 @@ assignments:
   - {path: docs/iteration-01/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/iteration-02/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/iteration-03/**, owner: delivery-governance, reviewer: architecture-governance}
+  - {path: docs/iteration-04/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: config/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: schemas/testing/**, owner: quality-engineering, reviewer: architecture-governance}
+  - {path: schemas/canonical/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: reports/**, owner: quality-engineering, reviewer: release-management}
   - {path: scripts/**, owner: developer-experience, reviewer: quality-engineering}
   - {path: tests/**, owner: quality-engineering, reviewer: architecture-governance}

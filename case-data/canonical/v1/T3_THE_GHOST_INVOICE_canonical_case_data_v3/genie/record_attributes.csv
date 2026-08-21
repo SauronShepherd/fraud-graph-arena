@@ -1,0 +1,63 @@
+case_id,profile_code,record_id,attribute_name,attribute_type,string_value,integer_value,decimal_value,boolean_value,date_value,timestamp_value,json_value,is_masked,ordinal,source_dataset,source_column,snapshot_version
+ACADEMY_T03,ACADEMY,T3-P-VERA,director_id,STRING,DIR-404,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.director_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-VERA,email,STRING,vera@moonlit.example,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.email,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-VERA,phone,STRING,+1-555-0404,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.phone,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-VERA,role,STRING,sole director,,,,,,,false,4,genie/academy/entities.csv,safe_attributes_json.role,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-TARA,email,STRING,tara@citykennels.example,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.email,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-TARA,employee_id,STRING,AP-117,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.employee_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-TARA,role,STRING,accounts payable clerk,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.role,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-MILO,organization,STRING,T3-O-MOONLIT,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.organization,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-MILO,role,STRING,vendor representative,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.role,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-P-MILO,vendor_user_id,STRING,REP-88,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.vendor_user_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-O-MOONLIT,industry,STRING,advisory services,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.industry,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-O-MOONLIT,registration,STRING,NC-MOON-404,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.registration,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-O-MOONLIT,status,STRING,ACTIVE,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.status,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-O-CITY,department_id,STRING,CKD-01,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.department_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-O-CITY,status,STRING,ACTIVE,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.status,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-A-MOONLIT,account_holder,STRING,Moonlit Advisory,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.account_holder,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-A-MOONLIT,account_suffix,STRING,4040,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.account_suffix,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-A-MOONLIT,currency,STRING,BSC,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.currency,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DEV-VERA,assigned_to,STRING,DIR-404,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.assigned_to,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DEV-VERA,device_id,STRING,dev-moon-404,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.device_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-INV-401,amount_bsc,INTEGER,,650,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.amount_bsc,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-INV-401,claimed_issue_time,TIMESTAMP,,,,,,2026-03-31T23:30:00-04:00,,false,2,genie/academy/entities.csv,safe_attributes_json.claimed_issue_time,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-INV-401,description,STRING,routine advisory retainer,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.description,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-RECV-401,received_at_utc,TIMESTAMP,,,,,,2026-04-01T03:35:00Z,,false,1,genie/academy/entities.csv,safe_attributes_json.received_at_utc,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-TX-401,amount_bsc,INTEGER,,650,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.amount_bsc,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-TX-401,destination_account,STRING,T3-A-MOONLIT,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.destination_account,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-INV-404,amount_bsc,INTEGER,,4800,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.amount_bsc,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-INV-404,claimed_issue_time,TIMESTAMP,,,,,,2026-04-04T09:00:00Z,,false,2,genie/academy/entities.csv,safe_attributes_json.claimed_issue_time,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-INV-404,description,STRING,risk assessment,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.description,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-INV-404,purchase_order,JSON,,,,,,,null,false,4,genie/academy/entities.csv,safe_attributes_json.purchase_order,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-TX-404,amount_bsc,INTEGER,,4800,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.amount_bsc,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-TX-404,destination_account,STRING,T3-A-MOONLIT,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.destination_account,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-TX-404,reference,STRING,GI-404,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.reference,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-FILE-404,created_at_utc,TIMESTAMP,,,,,,2026-04-06T18:00:00Z,,false,1,genie/academy/entities.csv,safe_attributes_json.created_at_utc,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-FILE-404,repository_id,STRING,DOC-GI-404,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.repository_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-LOGIN-VERA,device,STRING,dev-moon-404,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.device,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-LOGIN-VERA,ip,STRING,203.0.113.44,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.ip,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-LOGIN-VERA,username,STRING,vera.admin,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.username,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-APPROVAL-404,created_at_utc,TIMESTAMP,,,,,,2026-04-06T18:10:00Z,,false,1,genie/academy/entities.csv,safe_attributes_json.created_at_utc,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-APPROVAL-404,queue,STRING,vendor exception,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.queue,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CORP,director,STRING,Vera Vizsla,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.director,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CORP,director_id,STRING,DIR-404,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.director_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CORP,verification_status,STRING,VERIFIED,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.verification_status,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-KYC,account_suffix,STRING,4040,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.account_suffix,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-KYC,beneficial_owner,JSON,,,,,,,null,false,2,genie/academy/entities.csv,safe_attributes_json.beneficial_owner,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-KYC,review_status,STRING,LEGACY_INCOMPLETE,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.review_status,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CONTRACT,availability,STRING,UNAVAILABLE,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.availability,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CONTRACT,coverage,STRING,UNKNOWN,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.coverage,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CONTRACT,reason,STRING,not retained,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.reason,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-WORK,archive_completeness,STRING,PARTIAL,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.archive_completeness,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-WORK,result,STRING,NO_MATCH,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.result,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-WORK,search_terms,STRING,GI-404 risk assessment,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.search_terms,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-STMT-MILO,claim,STRING,Tara requested backdating,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.claim,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-STMT-MILO,confidence,STRING,stated_certain,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.confidence,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-STMT-TARA,claim,STRING,first saw file on April 6; no backdating request,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.claim,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-STMT-TARA,confidence,STRING,stated_certain,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.confidence,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-ACCESS-TARA,employee_id,STRING,AP-117,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.employee_id,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-ACCESS-TARA,event,STRING,exit,,,,,,,false,2,genie/academy/entities.csv,safe_attributes_json.event,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-ACCESS-TARA,location,STRING,City Kennels finance office,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.location,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CAMERA,availability,STRING,UNAVAILABLE,,,,,,,false,1,genie/academy/entities.csv,safe_attributes_json.availability,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CAMERA,coverage_window,TIMESTAMP,,,,,,2026-04-06T17:00:00Z/2026-04-06T19:00:00Z,,false,2,genie/academy/entities.csv,safe_attributes_json.coverage_window,2026.07.19.1
+ACADEMY_T03,ACADEMY,T3-DOC-CAMERA,reason,STRING,retention expired,,,,,,,false,3,genie/academy/entities.csv,safe_attributes_json.reason,2026.07.19.1

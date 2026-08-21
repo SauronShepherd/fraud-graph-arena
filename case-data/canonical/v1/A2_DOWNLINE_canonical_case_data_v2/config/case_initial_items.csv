@@ -1,0 +1,9 @@
+case_id,profile_code,sequence,record_id,reason_internal,snapshot_version
+DOWNLINE,ADULT,1,DOC-001,Compensation plan,2026.07.18.1
+DOWNLINE,ADULT,2,SP-001,Sponsor edge,2026.07.18.1
+DOWNLINE,ADULT,3,PAYOUT-0001,Payout,2026.07.18.1
+DOWNLINE,ADULT,4,SEM-001,Seminar,2026.07.18.1
+DOWNLINE,ADULT,5,LOGIN-0001,Shared office infrastructure,2026.07.18.1
+DOWNLINE,ADULT,6,PR-TESSA-01,Household ambiguity,2026.07.18.1
+DOWNLINE,ADULT,7,SALE-0001,Retail exception,2026.07.18.1
+DOWNLINE,ADULT,8,TEST-001,Testimonial,2026.07.18.1
