@@ -1,0 +1,162 @@
+{
+  "status": "pass",
+  "package_count": 13,
+  "results": [
+    {
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_4c2dd20fd50442ef8393160ce1696b55",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_ae6be5d6b9f29cf19c0913300ad402f09fb9b039377168ebcccb5410900b739e",
+        "run_id": "dbx_run_4c2dd20fd50442ef8393160ce1696b55",
+        "tables": 32
+      }
+    },
+    {
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_92c6c89cbe6b470da7a81cc34df49e43",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_b2b553816432554a008428da1b665a344d72e38ac37225d2b74401f4f0cf455a",
+        "run_id": "dbx_run_92c6c89cbe6b470da7a81cc34df49e43",
+        "tables": 32
+      }
+    },
+    {
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_ab252dc3439046859af5a082905cb951",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_0acc75aea55f8a21ae9d7ea83c1e513ba56d8ac72c5a924e6a603c7cb649f687",
+        "run_id": "dbx_run_ab252dc3439046859af5a082905cb951",
+        "tables": 32
+      }
+    },
+    {
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_f0707e22e399428fbf3af645feaa9e7d",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_6425c3a2a233f54e59a0b7e0777700a35bc6a399c4a662d93085107ed9536c58",
+        "run_id": "dbx_run_f0707e22e399428fbf3af645feaa9e7d",
+        "tables": 32
+      }
+    },
+    {
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_1bef4e5438d74fff99909ff8ed51fcd1",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_9e2408754760ce818e218a6ab96a4b0fc09de2792f34d1949b6d506f032a80af",
+        "run_id": "dbx_run_1bef4e5438d74fff99909ff8ed51fcd1",
+        "tables": 32
+      }
+    },
+    {
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_0f457c68ccea40249763e493e029b2e4",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_20419b4565ff75d8ccda9e7194ee4f62bae03a40e655ca1921451d32768e48a3",
+        "run_id": "dbx_run_0f457c68ccea40249763e493e029b2e4",
+        "tables": 32
+      }
+    },
+    {
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_7a8aa48510a1486996eaed0b12034428",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_265db3de235c4ed5e4ec3fa256062d966b14f8644fcd2be007af2c0e5f18472a",
+        "run_id": "dbx_run_7a8aa48510a1486996eaed0b12034428",
+        "tables": 32
+      }
+    },
+    {
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_74962f77f78b4991a28d7edc39018823",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_86c686f53ab44b9fdd76a7a413b4115f22e5341ce3d5045d2ae08be0a1eb857f",
+        "run_id": "dbx_run_74962f77f78b4991a28d7edc39018823",
+        "tables": 32
+      }
+    },
+    {
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_5ef81d157a5e4909b6019bf80a7ca09f",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_e2cd641d5d09984001a6d97f35e5d7793d440ccba82d01b79deed4edf580aa79",
+        "run_id": "dbx_run_5ef81d157a5e4909b6019bf80a7ca09f",
+        "tables": 32
+      }
+    },
+    {
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_22ee199ec21745fc8207a8461d4f248f",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_9658c3207afabd3d507407040bb963a6366646c7c9e6e76731bc4b9ec4a31bf4",
+        "run_id": "dbx_run_22ee199ec21745fc8207a8461d4f248f",
+        "tables": 32
+      }
+    },
+    {
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_9f1577f8a57a4cf8bf67f0ee3ac4de3e",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_cb28cfbdcdf48173af9d7b1bc2fedd560d4bfd86f95b2f4d255f4fe6965ba964",
+        "run_id": "dbx_run_9f1577f8a57a4cf8bf67f0ee3ac4de3e",
+        "tables": 32
+      }
+    },
+    {
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_a8cc64f7fb2f4aebac41d88b3f248512",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_57e330701f66ebd0242b9e38bf6dc38b468fae04cf2ac3a4352ff30f6cf48834",
+        "run_id": "dbx_run_a8cc64f7fb2f4aebac41d88b3f248512",
+        "tables": 32
+      }
+    },
+    {
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "status": "BULK_LOADED",
+      "csv_count": 32,
+      "run_id": "dbx_run_1b5f2fac39a3436ea7a56393be88b7ea",
+      "tag": {
+        "status": "TAGGED",
+        "publication_id": "pub_c680e8271c0fa5a429dec1e8813968fdaccb3eab2e89cc36297724a2570410de",
+        "run_id": "dbx_run_1b5f2fac39a3436ea7a56393be88b7ea",
+        "tables": 32
+      }
+    }
+  ]
+}

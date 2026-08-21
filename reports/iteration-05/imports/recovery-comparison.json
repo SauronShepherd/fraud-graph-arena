@@ -1,0 +1,10 @@
+{
+  "qualified_source_sha": "8eb0dec26616d992f71e98cbeb861c5d043e7043",
+  "generated_at_utc": "2026-08-21T18:06:51.724343+00:00",
+  "status": "pass",
+  "first": "PUBLISHED",
+  "failed": "FAILED",
+  "retry": "PUBLISHED",
+  "conflict": "IMMUTABLE_SNAPSHOT_CONFLICT",
+  "active_unchanged": true
+}

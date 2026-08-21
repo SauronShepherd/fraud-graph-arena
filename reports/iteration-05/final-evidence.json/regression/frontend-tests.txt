@@ -1,0 +1,3 @@
+status=not_run
+scope=frontend
+reason=FGA05 persistence gate does not alter frontend

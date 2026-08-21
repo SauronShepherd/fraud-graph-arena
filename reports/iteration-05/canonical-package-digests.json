@@ -1,0 +1,34 @@
+{
+  "digests": {
+    "A1_BONE_LEDGER_canonical_case_data_v2": "e362a3f4f21a10651a2426679f0a340262235183549a84d8def71cf93cb78f6b",
+    "A2_DOWNLINE_canonical_case_data_v2": "2971b7a272ae39e1bf8259a4858a44b9d07dfbfa5de8463744cea8944b990762",
+    "A3_PHANTOM_VET_canonical_case_data_v2": "89608384f32fa1dfc032d33b114acc5f8d31c45e8406aee760cb59d86f23b3a7",
+    "A4_GOLDEN_HYDRANT_canonical_case_data_v2": "673025273fe004ddae7f6a9d1248107da2e1942e3e8fff34caacb2429dda0b6e",
+    "P1_MADDOG_canonical_case_data_v2": "db1dcb43c4c731e9038c1922361dbda14894adc7a7f2ada031dec654ff0e2ab1",
+    "P2_CEO_BARKED_TWICE_canonical_case_data_v2": "5f790f7a61dd63ef219bb2cb5d1475b527e5a1969e5bad81156b4305150cecea",
+    "P3_BISCUIT_RELIEF_canonical_case_data_v2": "d3156d32d60a0732702d619c03d0078f6121687d6443e73a2b7e2334532db368",
+    "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2": "82da132a0804345dc9f5c067424a158dc0cc809b91dfd552460f1e44a242b6ad",
+    "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2": "eacbd6f6b4cc6bdc7fc2bf8d1bf5efd93e72cd998a3d159123a1220cc23c6e30",
+    "S3_PANAMA_PAWPERS_canonical_case_data_v2": "72c553004cfc2204a8ee7d93639e316f282556eda9141049471107e4dafa5e2a",
+    "T1_THE_MISSING_120_canonical_case_data_v3": "89517a26bedeab6500b07e638d664ddbe4da02e69e6939d790e5bb45989b0f97",
+    "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3": "66a171a39e0de820b41c32a572411e1f4224c24fa4480dc61125a24560ec3437",
+    "T3_THE_GHOST_INVOICE_canonical_case_data_v3": "ef5761d9f8e8474157585c1859facb684b3a0b2801a5dc25d57e709163720a6a"
+  },
+  "package_count": 13,
+  "repeat_digests": {
+    "A1_BONE_LEDGER_canonical_case_data_v2": "e362a3f4f21a10651a2426679f0a340262235183549a84d8def71cf93cb78f6b",
+    "A2_DOWNLINE_canonical_case_data_v2": "2971b7a272ae39e1bf8259a4858a44b9d07dfbfa5de8463744cea8944b990762",
+    "A3_PHANTOM_VET_canonical_case_data_v2": "89608384f32fa1dfc032d33b114acc5f8d31c45e8406aee760cb59d86f23b3a7",
+    "A4_GOLDEN_HYDRANT_canonical_case_data_v2": "673025273fe004ddae7f6a9d1248107da2e1942e3e8fff34caacb2429dda0b6e",
+    "P1_MADDOG_canonical_case_data_v2": "db1dcb43c4c731e9038c1922361dbda14894adc7a7f2ada031dec654ff0e2ab1",
+    "P2_CEO_BARKED_TWICE_canonical_case_data_v2": "5f790f7a61dd63ef219bb2cb5d1475b527e5a1969e5bad81156b4305150cecea",
+    "P3_BISCUIT_RELIEF_canonical_case_data_v2": "d3156d32d60a0732702d619c03d0078f6121687d6443e73a2b7e2334532db368",
+    "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2": "82da132a0804345dc9f5c067424a158dc0cc809b91dfd552460f1e44a242b6ad",
+    "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2": "eacbd6f6b4cc6bdc7fc2bf8d1bf5efd93e72cd998a3d159123a1220cc23c6e30",
+    "S3_PANAMA_PAWPERS_canonical_case_data_v2": "72c553004cfc2204a8ee7d93639e316f282556eda9141049471107e4dafa5e2a",
+    "T1_THE_MISSING_120_canonical_case_data_v3": "89517a26bedeab6500b07e638d664ddbe4da02e69e6939d790e5bb45989b0f97",
+    "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3": "66a171a39e0de820b41c32a572411e1f4224c24fa4480dc61125a24560ec3437",
+    "T3_THE_GHOST_INVOICE_canonical_case_data_v3": "ef5761d9f8e8474157585c1859facb684b3a0b2801a5dc25d57e709163720a6a"
+  },
+  "valid": true
+}

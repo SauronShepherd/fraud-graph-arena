@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "package_count": 13,
+  "csv_attempt_count": 416,
+  "force": false,
+  "reuse_policy": "COPY INTO skips already-loaded immutable source files"
+}

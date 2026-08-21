@@ -1,0 +1,17 @@
+{
+  "qualified_source_sha": "6d7cd436d051e45803c1a7928bbb6d255ce8474a",
+  "generated_at_utc": "2026-08-21T18:22:13.006819+00:00",
+  "status": "pass",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse": "e444f39962128242",
+  "table_count": 37,
+  "view_count": 0,
+  "active_publication_rows": 13,
+  "temporary_object_count": 0,
+  "budget": {
+    "max_permanent_objects": 37,
+    "max_temporary_objects": 0
+  },
+  "within_budget": true
+}
