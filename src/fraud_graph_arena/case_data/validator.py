@@ -1,7 +1,7 @@
 from __future__ import annotations
 import csv, json, hashlib
 from pathlib import Path
-from .registry import TABLE_PATHS, headers, sql_types
+from .registry import TABLE_PATHS, headers, sql_types, load_typed_registry
 from .types import parse_json, parse_timestamp, validate_sql_value
 FORBIDDEN=('canonical_entity','culpability','solve_gate','mastermind','guilty','scoring_rule','ending_rule')
 def validate_package(root: Path) -> list[dict]:
@@ -26,9 +26,11 @@ def validate_package(root: Path) -> list[dict]:
                     if layer in {'published','genie'}:
                         if any(k.lower() in FORBIDDEN for k in row): err('SAFE.TRUTH.LEAK',rel,'Protected truth field found.'); break
                         if 'DO_NOT_SHOW_HERCULE_THIS' in str(row): err('SAFE.TRUTH.LEAK',rel,'Protected truth sentinel found.'); break
-                    typed = dict(zip(headers(rel), sql_types(rel), strict=True))
+                    typed = {column["name"]: column for column in load_typed_registry()[rel]["columns"]}
                     for key,value in row.items():
-                        try: validate_sql_value(value, typed[key], key)
+                        try:
+                            if value == "" and not typed[key]["nullable"]: raise ValueError(f"{key}: non-nullable value is empty")
+                            validate_sql_value(value, typed[key]["sql_type"], key)
                         except ValueError as exc: err('CANONICAL.TYPE', rel, str(exc))
                         if key.endswith('_json') and value:
                             try: parse_json(value,key)

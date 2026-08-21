@@ -1,2553 +1,2553 @@
 {
   "canonical_model_version": "1.0.0",
-  "physical_table_count": 32,
   "package_rule": "Every canonical case package contains exactly these CSV paths. Empty datasets retain the exact header.",
+  "physical_table_count": 32,
   "profile_rule": "Every package contains exactly one non-cumulative profile: ACADEMY, PUPPY, ADULT, or SENIOR.",
   "tables": {
-    "config/cases.csv": {
-      "layer": "CONFIG",
-      "primary_key": [
-        "case_id"
-      ],
+    "analytics/entity_resolution_candidates.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Stable case identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "short_id",
-          "sql_type": "STRING",
+          "description": "Stable candidate identifier.",
+          "name": "candidate_id",
           "nullable": false,
-          "description": "Human-facing short identifier such as T1, P2, A4, or S3."
+          "sql_type": "STRING"
         },
         {
-          "name": "title",
-          "sql_type": "STRING",
+          "description": "Left record identifier.",
+          "name": "left_record_id",
           "nullable": false,
-          "description": "Case title."
+          "sql_type": "STRING"
         },
         {
-          "name": "path_code",
-          "sql_type": "STRING",
+          "description": "Right record identifier.",
+          "name": "right_record_id",
           "nullable": false,
-          "description": "ACADEMY, PUPPY, ADULT, or SENIOR."
+          "sql_type": "STRING"
         },
         {
-          "name": "case_order",
-          "sql_type": "INT",
+          "description": "Compared entity type.",
+          "name": "entity_type",
           "nullable": true,
-          "description": "Display order inside the path."
+          "sql_type": "STRING"
         },
         {
-          "name": "case_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Version of the case content."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Immutable dataset snapshot version."
-        },
-        {
-          "name": "mechanism",
-          "sql_type": "STRING",
+          "description": "LOW, MEDIUM, HIGH, or equivalent.",
+          "name": "confidence_band",
           "nullable": true,
-          "description": "Short description of the fraud or tutorial mechanism."
+          "sql_type": "STRING"
         },
         {
-          "name": "currency_code",
-          "sql_type": "STRING",
+          "description": "Optional match score.",
+          "name": "estimated_score",
           "nullable": true,
-          "description": "ISO-like currency or in-game currency code."
+          "sql_type": "DECIMAL(18,8)"
         },
         {
-          "name": "base_asset",
-          "sql_type": "STRING",
+          "description": "JSON array of agreeing fields.",
+          "name": "agreement_fields_json",
           "nullable": true,
-          "description": "Optional base asset for crypto or asset-denominated cases."
+          "sql_type": "STRING"
         },
         {
-          "name": "generation_seed",
-          "sql_type": "BIGINT",
-          "nullable": false,
-          "description": "Deterministic generation seed."
+          "description": "JSON array of disagreeing fields.",
+          "name": "disagreement_fields_json",
+          "nullable": true,
+          "sql_type": "STRING"
         },
         {
+          "description": "JSON array of missing fields.",
+          "name": "missing_fields_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected expected resolution.",
+          "name": "expected_truth",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Generation or execution mode.",
           "name": "generation_mode",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "SYNTHETIC, CURATED, or equivalent controlled generation mode."
+          "sql_type": "STRING"
         },
         {
-          "name": "ranked",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the case affects rankings."
-        },
-        {
-          "name": "career_unlock",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the case unlocks career progression."
-        },
-        {
-          "name": "disclaimer",
-          "sql_type": "STRING",
+          "description": "Framework-specific semantics.",
+          "name": "framework_semantics",
           "nullable": true,
-          "description": "Synthetic-data disclaimer."
+          "sql_type": "STRING"
         },
         {
-          "name": "canonical_model_version",
-          "sql_type": "STRING",
+          "description": "Whether the real engine produced the result.",
+          "name": "actual_engine_run",
           "nullable": false,
-          "description": "Canonical model version used by the package."
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Authoring method version.",
+          "name": "authoring_method_version",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Review status.",
+          "name": "review_status",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Provenance note.",
+          "name": "provenance_note",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected content role.",
+          "name": "content_role",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Any additional source fields.",
+          "name": "metadata_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
         }
-      ]
-    },
-    "config/case_profiles.csv": {
-      "layer": "CONFIG",
+      ],
+      "layer": "ANALYTICS_INTERNAL",
       "primary_key": [
         "case_id",
-        "profile_code"
-      ],
+        "candidate_id"
+      ]
+    },
+    "analytics/exact_matches.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "profile_code",
-          "sql_type": "STRING",
+          "description": "Stable match identifier.",
+          "name": "match_id",
           "nullable": false,
-          "description": "ACADEMY, PUPPY, ADULT, or SENIOR."
+          "sql_type": "STRING"
         },
         {
-          "name": "profile_name",
-          "sql_type": "STRING",
+          "description": "Matching rule identifier.",
+          "name": "rule_id",
           "nullable": false,
-          "description": "Display name for the profile."
+          "sql_type": "STRING"
         },
         {
-          "name": "cumulative",
-          "sql_type": "BOOLEAN",
+          "description": "Derived relationship type.",
+          "name": "relationship_type",
           "nullable": false,
-          "description": "Must be false in canonical packages."
+          "sql_type": "STRING"
         },
         {
-          "name": "starting_credits",
-          "sql_type": "INT",
+          "description": "Left record identifier.",
+          "name": "left_record_id",
           "nullable": false,
-          "description": "Initial investigation credits."
+          "sql_type": "STRING"
         },
         {
-          "name": "manual_cost",
-          "sql_type": "INT",
+          "description": "Right record identifier.",
+          "name": "right_record_id",
           "nullable": false,
-          "description": "Manual investigation action cost."
+          "sql_type": "STRING"
         },
         {
-          "name": "zingg_cost",
-          "sql_type": "INT",
+          "description": "Normalized field used for equality.",
+          "name": "exact_field",
           "nullable": false,
-          "description": "Entity-resolution action cost."
+          "sql_type": "STRING"
         },
         {
-          "name": "graphframes_cost",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Exact-connection action cost."
-        },
-        {
-          "name": "genie_cost",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Genie query cost."
-        },
-        {
-          "name": "genie_row_limit",
-          "sql_type": "INT",
+          "description": "Masked equal value.",
+          "name": "masked_exact_value",
           "nullable": true,
-          "description": "Maximum rows exposed by Genie."
+          "sql_type": "STRING"
         },
         {
-          "name": "quote_required",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether evidence quoting is required."
-        },
-        {
-          "name": "no_result_charged",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether a no-result tool action consumes credits."
-        },
-        {
-          "name": "initial_item_count",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Expected number of initial graph items."
-        },
-        {
-          "name": "description",
-          "sql_type": "STRING",
+          "description": "Normalization rules version.",
+          "name": "normalization_version",
           "nullable": true,
-          "description": "Profile description."
+          "sql_type": "STRING"
         },
         {
+          "description": "Generation or execution mode.",
+          "name": "generation_mode",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Framework-specific semantics.",
+          "name": "framework_semantics",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether GraphFrames actually ran.",
+          "name": "actual_engine_run",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Authoring method version.",
+          "name": "authoring_method_version",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Review status.",
+          "name": "review_status",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Shared-infrastructure or ambiguity warning.",
+          "name": "ambiguity_warning",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array of supporting records.",
+          "name": "supporting_record_ids_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected content role.",
+          "name": "content_role",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Any additional source fields.",
+          "name": "metadata_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
           "name": "snapshot_version",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "STRING"
         }
+      ],
+      "layer": "ANALYTICS_INTERNAL",
+      "primary_key": [
+        "case_id",
+        "match_id"
+      ]
+    },
+    "analytics/tool_fixtures.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable fixture identifier.",
+          "name": "fixture_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "NO_RESULT, ACTION_LEDGER, FILTER, GRAPH, CHRONOLOGY, or equivalent.",
+          "name": "fixture_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "MANUAL, ZINGG, GRAPHFRAMES, GENIE, EVALUATOR, or UI.",
+          "name": "tool_family",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array of selected records.",
+          "name": "selected_record_ids_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical JSON input payload.",
+          "name": "input_payload_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Expected number of results.",
+          "name": "expected_result_count",
+          "nullable": true,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Protected expected payload.",
+          "name": "expected_payload_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Fixture description.",
+          "name": "description",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "ANALYTICS_INTERNAL",
+      "primary_key": [
+        "case_id",
+        "fixture_id"
+      ]
+    },
+    "authoring/record_attributes.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Parent record identifier.",
+          "name": "record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical attribute name.",
+          "name": "attribute_name",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "STRING, INTEGER, DECIMAL, BOOLEAN, DATE, TIMESTAMP, or JSON.",
+          "name": "attribute_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "String value.",
+          "name": "string_value",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Integer value.",
+          "name": "integer_value",
+          "nullable": true,
+          "sql_type": "BIGINT"
+        },
+        {
+          "description": "Decimal value.",
+          "name": "decimal_value",
+          "nullable": true,
+          "sql_type": "DECIMAL(38,10)"
+        },
+        {
+          "description": "Boolean value.",
+          "name": "boolean_value",
+          "nullable": true,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Date value.",
+          "name": "date_value",
+          "nullable": true,
+          "sql_type": "DATE"
+        },
+        {
+          "description": "Timestamp value.",
+          "name": "timestamp_value",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "JSON object or array value.",
+          "name": "json_value",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether the source attribute is sensitive.",
+          "name": "is_sensitive",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Whether the value is masked.",
+          "name": "is_masked",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Stable attribute order.",
+          "name": "ordinal",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Original relative CSV path.",
+          "name": "source_dataset",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Original source column.",
+          "name": "source_column",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "AUTHORING",
+      "primary_key": [
+        "case_id",
+        "record_id",
+        "attribute_name"
+      ]
+    },
+    "authoring/records.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable record identifier within the case.",
+          "name": "record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical object or event type.",
+          "name": "record_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Optional narrower type.",
+          "name": "record_subtype",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Authoring display label.",
+          "name": "display_label",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Source-system registry key.",
+          "name": "source_system_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Original relative CSV path.",
+          "name": "source_dataset",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Original source-row key.",
+          "name": "source_record_key",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Primary event timestamp normalized to UTC.",
+          "name": "occurred_at",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Optional validity start.",
+          "name": "valid_from",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Optional validity end.",
+          "name": "valid_to",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Source status.",
+          "name": "status",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Internal authoring summary.",
+          "name": "summary",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical JSON object preserving all source fields.",
+          "name": "attributes_json",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Source or synthetic provenance reference.",
+          "name": "provenance_ref",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected authoring role.",
+          "name": "content_role",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "SHA-256 of the normalized source row.",
+          "name": "source_payload_hash",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "AUTHORING",
+      "primary_key": [
+        "case_id",
+        "record_id"
+      ]
+    },
+    "authoring/relationships.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable relationship identifier.",
+          "name": "relationship_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "DIRECT_SOURCE, SOURCE_REFERENCE, CURATED, or equivalent.",
+          "name": "relationship_family",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Relationship-type registry key.",
+          "name": "relationship_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Source record identifier.",
+          "name": "source_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Target record identifier.",
+          "name": "target_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether direction is semantically meaningful.",
+          "name": "directed",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Relationship event timestamp.",
+          "name": "event_time",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Optional validity start.",
+          "name": "valid_from",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Optional validity end.",
+          "name": "valid_to",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Optional relationship weight.",
+          "name": "weight",
+          "nullable": true,
+          "sql_type": "DECIMAL(18,8)"
+        },
+        {
+          "description": "JSON array of supporting record identifiers.",
+          "name": "supporting_record_ids_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Internal relationship summary.",
+          "name": "summary",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Relationship provenance.",
+          "name": "provenance",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical JSON object with relationship-specific fields.",
+          "name": "attributes_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected authoring role.",
+          "name": "content_role",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "AUTHORING",
+      "primary_key": [
+        "case_id",
+        "relationship_id"
       ]
     },
     "config/case_initial_items.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Initial reveal order.",
+          "name": "sequence",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Published record identifier.",
+          "name": "record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected authoring reason; never exposed to the player.",
+          "name": "reason_internal",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "CONFIG",
       "primary_key": [
         "case_id",
         "profile_code",
         "sequence"
-      ],
+      ]
+    },
+    "config/case_profiles.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
+          "description": "ACADEMY, PUPPY, ADULT, or SENIOR.",
           "name": "profile_code",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Canonical profile."
+          "sql_type": "STRING"
         },
         {
-          "name": "sequence",
-          "sql_type": "INT",
+          "description": "Display name for the profile.",
+          "name": "profile_name",
           "nullable": false,
-          "description": "Initial reveal order."
+          "sql_type": "STRING"
         },
         {
-          "name": "record_id",
-          "sql_type": "STRING",
+          "description": "Must be false in canonical packages.",
+          "name": "cumulative",
           "nullable": false,
-          "description": "Published record identifier."
+          "sql_type": "BOOLEAN"
         },
         {
-          "name": "reason_internal",
-          "sql_type": "STRING",
+          "description": "Initial investigation credits.",
+          "name": "starting_credits",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Manual investigation action cost.",
+          "name": "manual_cost",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Entity-resolution action cost.",
+          "name": "zingg_cost",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Exact-connection action cost.",
+          "name": "graphframes_cost",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Genie query cost.",
+          "name": "genie_cost",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Maximum rows exposed by Genie.",
+          "name": "genie_row_limit",
           "nullable": true,
-          "description": "Protected authoring reason; never exposed to the player."
+          "sql_type": "INT"
         },
         {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
+          "description": "Whether evidence quoting is required.",
+          "name": "quote_required",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Whether a no-result tool action consumes credits.",
+          "name": "no_result_charged",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Expected number of initial graph items.",
+          "name": "initial_item_count",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Profile description.",
+          "name": "description",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
         }
-      ]
-    },
-    "config/ui_contracts.csv": {
+      ],
       "layer": "CONFIG",
       "primary_key": [
         "case_id",
-        "semantic_name"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "semantic_name",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable UI semantic name."
-        },
-        {
-          "name": "data_testid",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable test selector."
-        },
-        {
-          "name": "role",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Expected UI or accessibility role."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
+        "profile_code"
       ]
     },
-    "config/registries.csv": {
-      "layer": "CONFIG",
-      "primary_key": [
-        "case_id",
-        "registry_type",
-        "registry_key"
-      ],
+    "config/cases.csv": {
       "columns": [
         {
+          "description": "Stable case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "registry_type",
-          "sql_type": "STRING",
+          "description": "Human-facing short identifier such as T1, P2, A4, or S3.",
+          "name": "short_id",
           "nullable": false,
-          "description": "OBJECT_TYPE, RELATIONSHIP_TYPE, or SOURCE_SYSTEM."
+          "sql_type": "STRING"
         },
         {
-          "name": "registry_key",
-          "sql_type": "STRING",
+          "description": "Case title.",
+          "name": "title",
           "nullable": false,
-          "description": "Stable registry key."
+          "sql_type": "STRING"
         },
         {
-          "name": "display_name",
-          "sql_type": "STRING",
+          "description": "ACADEMY, PUPPY, ADULT, or SENIOR.",
+          "name": "path_code",
           "nullable": false,
-          "description": "Display label."
+          "sql_type": "STRING"
         },
         {
-          "name": "properties_json",
-          "sql_type": "STRING",
+          "description": "Display order inside the path.",
+          "name": "case_order",
           "nullable": true,
-          "description": "Canonical JSON object with registry-specific properties."
+          "sql_type": "INT"
         },
         {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
+          "description": "Version of the case content.",
+          "name": "case_version",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Immutable dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Short description of the fraud or tutorial mechanism.",
+          "name": "mechanism",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "ISO-like currency or in-game currency code.",
+          "name": "currency_code",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Optional base asset for crypto or asset-denominated cases.",
+          "name": "base_asset",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Deterministic generation seed.",
+          "name": "generation_seed",
+          "nullable": false,
+          "sql_type": "BIGINT"
+        },
+        {
+          "description": "SYNTHETIC, CURATED, or equivalent controlled generation mode.",
+          "name": "generation_mode",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether the case affects rankings.",
+          "name": "ranked",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Whether the case unlocks career progression.",
+          "name": "career_unlock",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Synthetic-data disclaimer.",
+          "name": "disclaimer",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical model version used by the package.",
+          "name": "canonical_model_version",
+          "nullable": false,
+          "sql_type": "STRING"
         }
-      ]
-    },
-    "config/reveal_steps.csv": {
+      ],
       "layer": "CONFIG",
       "primary_key": [
-        "case_id",
-        "profile_code",
-        "step_order"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "profile_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical profile."
-        },
-        {
-          "name": "step_order",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Reveal step order."
-        },
-        {
-          "name": "trigger_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Trigger family."
-        },
-        {
-          "name": "trigger_value",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Trigger value or identifier."
-        },
-        {
-          "name": "revealed_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of record identifiers."
-        },
-        {
-          "name": "revealed_relationship_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of relationship identifiers."
-        },
-        {
-          "name": "description_internal",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Protected authoring description."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
+        "case_id"
       ]
     },
     "config/genie_benchmarks.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable benchmark identifier.",
+          "name": "benchmark_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Benchmark prompt.",
+          "name": "prompt",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array of expected output columns.",
+          "name": "expected_columns_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Minimum accepted row count.",
+          "name": "expected_min_rows",
+          "nullable": true,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Maximum accepted row count.",
+          "name": "expected_max_rows",
+          "nullable": true,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Protected expected semantic behavior.",
+          "name": "expected_semantics",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "CONFIG",
       "primary_key": [
         "case_id",
         "profile_code",
         "benchmark_id"
-      ],
+      ]
+    },
+    "config/registries.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
+          "description": "OBJECT_TYPE, RELATIONSHIP_TYPE, or SOURCE_SYSTEM.",
+          "name": "registry_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable registry key.",
+          "name": "registry_key",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Display label.",
+          "name": "display_name",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical JSON object with registry-specific properties.",
+          "name": "properties_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "CONFIG",
+      "primary_key": [
+        "case_id",
+        "registry_type",
+        "registry_key"
+      ]
+    },
+    "config/reveal_steps.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
           "name": "profile_code",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Canonical profile."
+          "sql_type": "STRING"
         },
         {
-          "name": "benchmark_id",
-          "sql_type": "STRING",
+          "description": "Reveal step order.",
+          "name": "step_order",
           "nullable": false,
-          "description": "Stable benchmark identifier."
+          "sql_type": "INT"
         },
         {
-          "name": "prompt",
-          "sql_type": "STRING",
+          "description": "Trigger family.",
+          "name": "trigger_type",
           "nullable": false,
-          "description": "Benchmark prompt."
+          "sql_type": "STRING"
         },
         {
-          "name": "expected_columns_json",
-          "sql_type": "STRING",
+          "description": "Trigger value or identifier.",
+          "name": "trigger_value",
           "nullable": true,
-          "description": "JSON array of expected output columns."
+          "sql_type": "STRING"
         },
         {
-          "name": "expected_min_rows",
-          "sql_type": "INT",
+          "description": "JSON array of record identifiers.",
+          "name": "revealed_record_ids_json",
           "nullable": true,
-          "description": "Minimum accepted row count."
+          "sql_type": "STRING"
         },
         {
-          "name": "expected_max_rows",
-          "sql_type": "INT",
+          "description": "JSON array of relationship identifiers.",
+          "name": "revealed_relationship_ids_json",
           "nullable": true,
-          "description": "Maximum accepted row count."
+          "sql_type": "STRING"
         },
         {
-          "name": "expected_semantics",
-          "sql_type": "STRING",
+          "description": "Protected authoring description.",
+          "name": "description_internal",
           "nullable": true,
-          "description": "Protected expected semantic behavior."
+          "sql_type": "STRING"
         },
         {
+          "description": "Dataset snapshot version.",
           "name": "snapshot_version",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "STRING"
         }
-      ]
-    },
-    "authoring/records.csv": {
-      "layer": "AUTHORING",
-      "primary_key": [
-        "case_id",
-        "record_id"
       ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable record identifier within the case."
-        },
-        {
-          "name": "record_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical object or event type."
-        },
-        {
-          "name": "record_subtype",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Optional narrower type."
-        },
-        {
-          "name": "display_label",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Authoring display label."
-        },
-        {
-          "name": "source_system_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Source-system registry key."
-        },
-        {
-          "name": "source_dataset",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Original relative CSV path."
-        },
-        {
-          "name": "source_record_key",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Original source-row key."
-        },
-        {
-          "name": "occurred_at",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Primary event timestamp normalized to UTC."
-        },
-        {
-          "name": "valid_from",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Optional validity start."
-        },
-        {
-          "name": "valid_to",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Optional validity end."
-        },
-        {
-          "name": "status",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Source status."
-        },
-        {
-          "name": "summary",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Internal authoring summary."
-        },
-        {
-          "name": "attributes_json",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical JSON object preserving all source fields."
-        },
-        {
-          "name": "provenance_ref",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Source or synthetic provenance reference."
-        },
-        {
-          "name": "content_role",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected authoring role."
-        },
-        {
-          "name": "source_payload_hash",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "SHA-256 of the normalized source row."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "authoring/record_attributes.csv": {
-      "layer": "AUTHORING",
-      "primary_key": [
-        "case_id",
-        "record_id",
-        "attribute_name"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Parent record identifier."
-        },
-        {
-          "name": "attribute_name",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical attribute name."
-        },
-        {
-          "name": "attribute_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "STRING, INTEGER, DECIMAL, BOOLEAN, DATE, TIMESTAMP, or JSON."
-        },
-        {
-          "name": "string_value",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "String value."
-        },
-        {
-          "name": "integer_value",
-          "sql_type": "BIGINT",
-          "nullable": true,
-          "description": "Integer value."
-        },
-        {
-          "name": "decimal_value",
-          "sql_type": "DECIMAL(38,10)",
-          "nullable": true,
-          "description": "Decimal value."
-        },
-        {
-          "name": "boolean_value",
-          "sql_type": "BOOLEAN",
-          "nullable": true,
-          "description": "Boolean value."
-        },
-        {
-          "name": "date_value",
-          "sql_type": "DATE",
-          "nullable": true,
-          "description": "Date value."
-        },
-        {
-          "name": "timestamp_value",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Timestamp value."
-        },
-        {
-          "name": "json_value",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON object or array value."
-        },
-        {
-          "name": "is_sensitive",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the source attribute is sensitive."
-        },
-        {
-          "name": "is_masked",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the value is masked."
-        },
-        {
-          "name": "ordinal",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Stable attribute order."
-        },
-        {
-          "name": "source_dataset",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Original relative CSV path."
-        },
-        {
-          "name": "source_column",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Original source column."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "authoring/relationships.csv": {
-      "layer": "AUTHORING",
-      "primary_key": [
-        "case_id",
-        "relationship_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "relationship_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable relationship identifier."
-        },
-        {
-          "name": "relationship_family",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "DIRECT_SOURCE, SOURCE_REFERENCE, CURATED, or equivalent."
-        },
-        {
-          "name": "relationship_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Relationship-type registry key."
-        },
-        {
-          "name": "source_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Source record identifier."
-        },
-        {
-          "name": "target_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Target record identifier."
-        },
-        {
-          "name": "directed",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether direction is semantically meaningful."
-        },
-        {
-          "name": "event_time",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Relationship event timestamp."
-        },
-        {
-          "name": "valid_from",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Optional validity start."
-        },
-        {
-          "name": "valid_to",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Optional validity end."
-        },
-        {
-          "name": "weight",
-          "sql_type": "DECIMAL(18,8)",
-          "nullable": true,
-          "description": "Optional relationship weight."
-        },
-        {
-          "name": "supporting_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of supporting record identifiers."
-        },
-        {
-          "name": "summary",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Internal relationship summary."
-        },
-        {
-          "name": "provenance",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Relationship provenance."
-        },
-        {
-          "name": "attributes_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Canonical JSON object with relationship-specific fields."
-        },
-        {
-          "name": "content_role",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected authoring role."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "analytics/entity_resolution_candidates.csv": {
-      "layer": "ANALYTICS_INTERNAL",
-      "primary_key": [
-        "case_id",
-        "candidate_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "candidate_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable candidate identifier."
-        },
-        {
-          "name": "left_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Left record identifier."
-        },
-        {
-          "name": "right_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Right record identifier."
-        },
-        {
-          "name": "entity_type",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Compared entity type."
-        },
-        {
-          "name": "confidence_band",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "LOW, MEDIUM, HIGH, or equivalent."
-        },
-        {
-          "name": "estimated_score",
-          "sql_type": "DECIMAL(18,8)",
-          "nullable": true,
-          "description": "Optional match score."
-        },
-        {
-          "name": "agreement_fields_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of agreeing fields."
-        },
-        {
-          "name": "disagreement_fields_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of disagreeing fields."
-        },
-        {
-          "name": "missing_fields_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of missing fields."
-        },
-        {
-          "name": "expected_truth",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Protected expected resolution."
-        },
-        {
-          "name": "generation_mode",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Generation or execution mode."
-        },
-        {
-          "name": "framework_semantics",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Framework-specific semantics."
-        },
-        {
-          "name": "actual_engine_run",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the real engine produced the result."
-        },
-        {
-          "name": "authoring_method_version",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Authoring method version."
-        },
-        {
-          "name": "review_status",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Review status."
-        },
-        {
-          "name": "provenance_note",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Provenance note."
-        },
-        {
-          "name": "content_role",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected content role."
-        },
-        {
-          "name": "metadata_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Any additional source fields."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "analytics/exact_matches.csv": {
-      "layer": "ANALYTICS_INTERNAL",
-      "primary_key": [
-        "case_id",
-        "match_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "match_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable match identifier."
-        },
-        {
-          "name": "rule_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Matching rule identifier."
-        },
-        {
-          "name": "relationship_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Derived relationship type."
-        },
-        {
-          "name": "left_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Left record identifier."
-        },
-        {
-          "name": "right_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Right record identifier."
-        },
-        {
-          "name": "exact_field",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Normalized field used for equality."
-        },
-        {
-          "name": "masked_exact_value",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Masked equal value."
-        },
-        {
-          "name": "normalization_version",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Normalization rules version."
-        },
-        {
-          "name": "generation_mode",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Generation or execution mode."
-        },
-        {
-          "name": "framework_semantics",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Framework-specific semantics."
-        },
-        {
-          "name": "actual_engine_run",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether GraphFrames actually ran."
-        },
-        {
-          "name": "authoring_method_version",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Authoring method version."
-        },
-        {
-          "name": "review_status",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Review status."
-        },
-        {
-          "name": "ambiguity_warning",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Shared-infrastructure or ambiguity warning."
-        },
-        {
-          "name": "supporting_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of supporting records."
-        },
-        {
-          "name": "content_role",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected content role."
-        },
-        {
-          "name": "metadata_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Any additional source fields."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "analytics/tool_fixtures.csv": {
-      "layer": "ANALYTICS_INTERNAL",
-      "primary_key": [
-        "case_id",
-        "fixture_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "profile_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical profile."
-        },
-        {
-          "name": "fixture_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable fixture identifier."
-        },
-        {
-          "name": "fixture_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "NO_RESULT, ACTION_LEDGER, FILTER, GRAPH, CHRONOLOGY, or equivalent."
-        },
-        {
-          "name": "tool_family",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "MANUAL, ZINGG, GRAPHFRAMES, GENIE, EVALUATOR, or UI."
-        },
-        {
-          "name": "selected_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of selected records."
-        },
-        {
-          "name": "input_payload_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Canonical JSON input payload."
-        },
-        {
-          "name": "expected_result_count",
-          "sql_type": "INT",
-          "nullable": true,
-          "description": "Expected number of results."
-        },
-        {
-          "name": "expected_payload_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Protected expected payload."
-        },
-        {
-          "name": "description",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Fixture description."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "published/records.csv": {
-      "layer": "PUBLISHED",
+      "layer": "CONFIG",
       "primary_key": [
         "case_id",
         "profile_code",
-        "record_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "profile_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical profile."
-        },
-        {
-          "name": "record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable published record identifier."
-        },
-        {
-          "name": "record_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical record type."
-        },
-        {
-          "name": "record_subtype",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Optional narrower type."
-        },
-        {
-          "name": "display_label",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Player-safe display label."
-        },
-        {
-          "name": "source_system_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Source-system registry key."
-        },
-        {
-          "name": "occurred_at",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Primary event timestamp normalized to UTC."
-        },
-        {
-          "name": "status",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Player-safe status."
-        },
-        {
-          "name": "safe_summary",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Player-safe summary."
-        },
-        {
-          "name": "safe_attributes_json",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical player-safe JSON object."
-        },
-        {
-          "name": "provenance_ref",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Player-safe provenance reference."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
+        "step_order"
       ]
     },
-    "published/relationships.csv": {
-      "layer": "PUBLISHED",
-      "primary_key": [
-        "case_id",
-        "profile_code",
-        "relationship_id"
-      ],
+    "config/ui_contracts.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "profile_code",
-          "sql_type": "STRING",
+          "description": "Stable UI semantic name.",
+          "name": "semantic_name",
           "nullable": false,
-          "description": "Canonical profile."
+          "sql_type": "STRING"
         },
         {
-          "name": "relationship_id",
-          "sql_type": "STRING",
+          "description": "Stable test selector.",
+          "name": "data_testid",
           "nullable": false,
-          "description": "Stable relationship identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "relationship_family",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Relationship family."
-        },
-        {
-          "name": "relationship_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Relationship type."
-        },
-        {
-          "name": "source_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Source record identifier."
-        },
-        {
-          "name": "target_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Target record identifier."
-        },
-        {
-          "name": "directed",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether direction is semantically meaningful."
-        },
-        {
-          "name": "event_time",
-          "sql_type": "TIMESTAMP",
+          "description": "Expected UI or accessibility role.",
+          "name": "role",
           "nullable": true,
-          "description": "Relationship event timestamp."
+          "sql_type": "STRING"
         },
         {
-          "name": "weight",
-          "sql_type": "DECIMAL(18,8)",
-          "nullable": true,
-          "description": "Optional relationship weight."
-        },
-        {
-          "name": "supporting_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of supporting records."
-        },
-        {
-          "name": "player_safe_summary",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Player-safe relationship summary."
-        },
-        {
-          "name": "provenance",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Player-safe provenance."
-        },
-        {
-          "name": "safe_attributes_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Additional player-safe relationship attributes."
-        },
-        {
+          "description": "Dataset snapshot version.",
           "name": "snapshot_version",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "STRING"
         }
-      ]
-    },
-    "published/entity_resolution_candidates.csv": {
-      "layer": "PUBLISHED",
+      ],
+      "layer": "CONFIG",
       "primary_key": [
         "case_id",
-        "profile_code",
-        "candidate_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "profile_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical profile."
-        },
-        {
-          "name": "candidate_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable candidate identifier."
-        },
-        {
-          "name": "left_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Left published record."
-        },
-        {
-          "name": "right_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Right published record."
-        },
-        {
-          "name": "entity_type",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Compared entity type."
-        },
-        {
-          "name": "confidence_band",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Confidence band."
-        },
-        {
-          "name": "estimated_score",
-          "sql_type": "DECIMAL(18,8)",
-          "nullable": true,
-          "description": "Optional score."
-        },
-        {
-          "name": "agreement_fields_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array."
-        },
-        {
-          "name": "disagreement_fields_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array."
-        },
-        {
-          "name": "missing_fields_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array."
-        },
-        {
-          "name": "generation_mode",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Generation mode."
-        },
-        {
-          "name": "framework_semantics",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Framework semantics."
-        },
-        {
-          "name": "actual_engine_run",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the actual engine ran."
-        },
-        {
-          "name": "provenance_note",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Safe provenance note."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "published/exact_matches.csv": {
-      "layer": "PUBLISHED",
-      "primary_key": [
-        "case_id",
-        "profile_code",
-        "match_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "profile_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical profile."
-        },
-        {
-          "name": "match_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable match identifier."
-        },
-        {
-          "name": "rule_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Matching rule identifier."
-        },
-        {
-          "name": "relationship_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Derived relationship type."
-        },
-        {
-          "name": "left_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Left published record."
-        },
-        {
-          "name": "right_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Right published record."
-        },
-        {
-          "name": "exact_field",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Normalized exact field."
-        },
-        {
-          "name": "masked_exact_value",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Masked exact value."
-        },
-        {
-          "name": "normalization_version",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Normalization rules version."
-        },
-        {
-          "name": "generation_mode",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Generation mode."
-        },
-        {
-          "name": "framework_semantics",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Framework semantics."
-        },
-        {
-          "name": "actual_engine_run",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the actual engine ran."
-        },
-        {
-          "name": "ambiguity_warning",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Ambiguity warning."
-        },
-        {
-          "name": "supporting_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "genie/records.csv": {
-      "layer": "GENIE",
-      "primary_key": [
-        "case_id",
-        "profile_code",
-        "record_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "profile_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical profile."
-        },
-        {
-          "name": "record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable safe record identifier."
-        },
-        {
-          "name": "record_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical record type."
-        },
-        {
-          "name": "record_subtype",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Optional narrower type."
-        },
-        {
-          "name": "display_label",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Safe display label."
-        },
-        {
-          "name": "source_system_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Source-system registry key."
-        },
-        {
-          "name": "source_dataset",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical safe source dataset."
-        },
-        {
-          "name": "source_record_key",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Safe source-row key."
-        },
-        {
-          "name": "occurred_at",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Primary timestamp normalized to UTC."
-        },
-        {
-          "name": "status",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Safe status."
-        },
-        {
-          "name": "safe_summary",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Safe summary."
-        },
-        {
-          "name": "safe_attributes_json",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical safe JSON object."
-        },
-        {
-          "name": "provenance_ref",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Safe provenance reference."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
+        "semantic_name"
       ]
     },
     "genie/record_attributes.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Parent Genie record.",
+          "name": "record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical safe attribute name.",
+          "name": "attribute_name",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "STRING, INTEGER, DECIMAL, BOOLEAN, DATE, TIMESTAMP, or JSON.",
+          "name": "attribute_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "String value.",
+          "name": "string_value",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Integer value.",
+          "name": "integer_value",
+          "nullable": true,
+          "sql_type": "BIGINT"
+        },
+        {
+          "description": "Decimal value.",
+          "name": "decimal_value",
+          "nullable": true,
+          "sql_type": "DECIMAL(38,10)"
+        },
+        {
+          "description": "Boolean value.",
+          "name": "boolean_value",
+          "nullable": true,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Date value.",
+          "name": "date_value",
+          "nullable": true,
+          "sql_type": "DATE"
+        },
+        {
+          "description": "Timestamp value.",
+          "name": "timestamp_value",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "JSON object or array.",
+          "name": "json_value",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether the value is masked.",
+          "name": "is_masked",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Stable attribute order.",
+          "name": "ordinal",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Canonical safe source dataset.",
+          "name": "source_dataset",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Original safe source column.",
+          "name": "source_column",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "GENIE",
       "primary_key": [
         "case_id",
         "profile_code",
         "record_id",
         "attribute_name"
-      ],
+      ]
+    },
+    "genie/records.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
+          "description": "Canonical profile.",
           "name": "profile_code",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Canonical profile."
+          "sql_type": "STRING"
         },
         {
+          "description": "Stable safe record identifier.",
           "name": "record_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Parent Genie record."
+          "sql_type": "STRING"
         },
         {
-          "name": "attribute_name",
-          "sql_type": "STRING",
+          "description": "Canonical record type.",
+          "name": "record_type",
           "nullable": false,
-          "description": "Canonical safe attribute name."
+          "sql_type": "STRING"
         },
         {
-          "name": "attribute_type",
-          "sql_type": "STRING",
+          "description": "Optional narrower type.",
+          "name": "record_subtype",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Safe display label.",
+          "name": "display_label",
           "nullable": false,
-          "description": "STRING, INTEGER, DECIMAL, BOOLEAN, DATE, TIMESTAMP, or JSON."
+          "sql_type": "STRING"
         },
         {
-          "name": "string_value",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "String value."
-        },
-        {
-          "name": "integer_value",
-          "sql_type": "BIGINT",
-          "nullable": true,
-          "description": "Integer value."
-        },
-        {
-          "name": "decimal_value",
-          "sql_type": "DECIMAL(38,10)",
-          "nullable": true,
-          "description": "Decimal value."
-        },
-        {
-          "name": "boolean_value",
-          "sql_type": "BOOLEAN",
-          "nullable": true,
-          "description": "Boolean value."
-        },
-        {
-          "name": "date_value",
-          "sql_type": "DATE",
-          "nullable": true,
-          "description": "Date value."
-        },
-        {
-          "name": "timestamp_value",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Timestamp value."
-        },
-        {
-          "name": "json_value",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON object or array."
-        },
-        {
-          "name": "is_masked",
-          "sql_type": "BOOLEAN",
+          "description": "Source-system registry key.",
+          "name": "source_system_id",
           "nullable": false,
-          "description": "Whether the value is masked."
+          "sql_type": "STRING"
         },
         {
-          "name": "ordinal",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Stable attribute order."
-        },
-        {
+          "description": "Canonical safe source dataset.",
           "name": "source_dataset",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Canonical safe source dataset."
+          "sql_type": "STRING"
         },
         {
-          "name": "source_column",
-          "sql_type": "STRING",
+          "description": "Safe source-row key.",
+          "name": "source_record_key",
           "nullable": false,
-          "description": "Original safe source column."
+          "sql_type": "STRING"
         },
         {
+          "description": "Primary timestamp normalized to UTC.",
+          "name": "occurred_at",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Safe status.",
+          "name": "status",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Safe summary.",
+          "name": "safe_summary",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical safe JSON object.",
+          "name": "safe_attributes_json",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Safe provenance reference.",
+          "name": "provenance_ref",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
           "name": "snapshot_version",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "STRING"
         }
+      ],
+      "layer": "GENIE",
+      "primary_key": [
+        "case_id",
+        "profile_code",
+        "record_id"
       ]
     },
     "genie/relationships.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable safe relationship identifier.",
+          "name": "relationship_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Relationship family.",
+          "name": "relationship_family",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Relationship type.",
+          "name": "relationship_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Source Genie record.",
+          "name": "source_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Target Genie record.",
+          "name": "target_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether direction is meaningful.",
+          "name": "directed",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Relationship timestamp.",
+          "name": "event_time",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Optional weight.",
+          "name": "weight",
+          "nullable": true,
+          "sql_type": "DECIMAL(18,8)"
+        },
+        {
+          "description": "JSON array.",
+          "name": "supporting_record_ids_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Safe summary.",
+          "name": "safe_summary",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Safe provenance.",
+          "name": "provenance",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Additional safe attributes.",
+          "name": "safe_attributes_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "GENIE",
       "primary_key": [
         "case_id",
         "profile_code",
         "relationship_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "profile_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical profile."
-        },
-        {
-          "name": "relationship_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable safe relationship identifier."
-        },
-        {
-          "name": "relationship_family",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Relationship family."
-        },
-        {
-          "name": "relationship_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Relationship type."
-        },
-        {
-          "name": "source_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Source Genie record."
-        },
-        {
-          "name": "target_record_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Target Genie record."
-        },
-        {
-          "name": "directed",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether direction is meaningful."
-        },
-        {
-          "name": "event_time",
-          "sql_type": "TIMESTAMP",
-          "nullable": true,
-          "description": "Relationship timestamp."
-        },
-        {
-          "name": "weight",
-          "sql_type": "DECIMAL(18,8)",
-          "nullable": true,
-          "description": "Optional weight."
-        },
-        {
-          "name": "supporting_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array."
-        },
-        {
-          "name": "safe_summary",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Safe summary."
-        },
-        {
-          "name": "provenance",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Safe provenance."
-        },
-        {
-          "name": "safe_attributes_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Additional safe attributes."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     },
-    "truth/entities.csv": {
+    "published/entity_resolution_candidates.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable candidate identifier.",
+          "name": "candidate_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Left published record.",
+          "name": "left_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Right published record.",
+          "name": "right_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Compared entity type.",
+          "name": "entity_type",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Confidence band.",
+          "name": "confidence_band",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Optional score.",
+          "name": "estimated_score",
+          "nullable": true,
+          "sql_type": "DECIMAL(18,8)"
+        },
+        {
+          "description": "JSON array.",
+          "name": "agreement_fields_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array.",
+          "name": "disagreement_fields_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array.",
+          "name": "missing_fields_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Generation mode.",
+          "name": "generation_mode",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Framework semantics.",
+          "name": "framework_semantics",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether the actual engine ran.",
+          "name": "actual_engine_run",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Safe provenance note.",
+          "name": "provenance_note",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "PUBLISHED",
+      "primary_key": [
+        "case_id",
+        "profile_code",
+        "candidate_id"
+      ]
+    },
+    "published/exact_matches.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable match identifier.",
+          "name": "match_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Matching rule identifier.",
+          "name": "rule_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Derived relationship type.",
+          "name": "relationship_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Left published record.",
+          "name": "left_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Right published record.",
+          "name": "right_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Normalized exact field.",
+          "name": "exact_field",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Masked exact value.",
+          "name": "masked_exact_value",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Normalization rules version.",
+          "name": "normalization_version",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Generation mode.",
+          "name": "generation_mode",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Framework semantics.",
+          "name": "framework_semantics",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether the actual engine ran.",
+          "name": "actual_engine_run",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Ambiguity warning.",
+          "name": "ambiguity_warning",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array.",
+          "name": "supporting_record_ids_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "PUBLISHED",
+      "primary_key": [
+        "case_id",
+        "profile_code",
+        "match_id"
+      ]
+    },
+    "published/records.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable published record identifier.",
+          "name": "record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical record type.",
+          "name": "record_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Optional narrower type.",
+          "name": "record_subtype",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Player-safe display label.",
+          "name": "display_label",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Source-system registry key.",
+          "name": "source_system_id",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Primary event timestamp normalized to UTC.",
+          "name": "occurred_at",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Player-safe status.",
+          "name": "status",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Player-safe summary.",
+          "name": "safe_summary",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical player-safe JSON object.",
+          "name": "safe_attributes_json",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Player-safe provenance reference.",
+          "name": "provenance_ref",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "PUBLISHED",
+      "primary_key": [
+        "case_id",
+        "profile_code",
+        "record_id"
+      ]
+    },
+    "published/relationships.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical profile.",
+          "name": "profile_code",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable relationship identifier.",
+          "name": "relationship_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Relationship family.",
+          "name": "relationship_family",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Relationship type.",
+          "name": "relationship_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Source record identifier.",
+          "name": "source_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Target record identifier.",
+          "name": "target_record_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether direction is semantically meaningful.",
+          "name": "directed",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Relationship event timestamp.",
+          "name": "event_time",
+          "nullable": true,
+          "sql_type": "TIMESTAMP"
+        },
+        {
+          "description": "Optional relationship weight.",
+          "name": "weight",
+          "nullable": true,
+          "sql_type": "DECIMAL(18,8)"
+        },
+        {
+          "description": "JSON array of supporting records.",
+          "name": "supporting_record_ids_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Player-safe relationship summary.",
+          "name": "player_safe_summary",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Player-safe provenance.",
+          "name": "provenance",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Additional player-safe relationship attributes.",
+          "name": "safe_attributes_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "PUBLISHED",
+      "primary_key": [
+        "case_id",
+        "profile_code",
+        "relationship_id"
+      ]
+    },
+    "truth/allowed_alternatives.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable alternative identifier.",
+          "name": "alternative_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Parent claim identifier.",
+          "name": "claim_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Accepted alternative explanation.",
+          "name": "alternative_description",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Optional accepted structured payload.",
+          "name": "accepted_payload_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "TRUTH",
       "primary_key": [
         "case_id",
-        "entity_id"
-      ],
+        "alternative_id"
+      ]
+    },
+    "truth/assertions.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "entity_id",
-          "sql_type": "STRING",
+          "description": "Stable assertion identifier.",
+          "name": "assertion_id",
           "nullable": false,
-          "description": "Canonical truth entity identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "entity_type",
-          "sql_type": "STRING",
+          "description": "CHRONOLOGY, CONFLICT, MISSING_VALUE, RESTART, IMMUTABILITY, FILTER, GRAPH, or equivalent.",
+          "name": "assertion_type",
           "nullable": false,
-          "description": "Entity type."
+          "sql_type": "STRING"
         },
         {
-          "name": "canonical_name",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical name."
-        },
-        {
-          "name": "operational_role",
-          "sql_type": "STRING",
+          "description": "Primary subject record.",
+          "name": "subject_record_id",
           "nullable": true,
-          "description": "Operational role."
+          "sql_type": "STRING"
         },
         {
-          "name": "expected_classification",
-          "sql_type": "STRING",
+          "description": "JSON array of related records.",
+          "name": "related_record_ids_json",
           "nullable": true,
-          "description": "Expected evaluator classification."
+          "sql_type": "STRING"
         },
         {
-          "name": "culpability",
-          "sql_type": "STRING",
+          "description": "Canonical expected value payload.",
+          "name": "expected_value_json",
           "nullable": false,
-          "description": "Culpability classification."
+          "sql_type": "STRING"
         },
         {
-          "name": "harm_status",
-          "sql_type": "STRING",
+          "description": "INFO, WARNING, REQUIRED, or FATAL.",
+          "name": "severity",
           "nullable": false,
-          "description": "Victim, protected, neutral, beneficiary, or equivalent."
+          "sql_type": "STRING"
         },
         {
-          "name": "fraud_network_membership",
-          "sql_type": "BOOLEAN",
-          "nullable": true,
-          "description": "Whether the entity belongs to the fraud network."
+          "description": "Protected assertion description.",
+          "name": "description",
+          "nullable": false,
+          "sql_type": "STRING"
         },
         {
-          "name": "protected_notes",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Protected evaluator notes."
-        },
-        {
+          "description": "Dataset snapshot version.",
           "name": "snapshot_version",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "STRING"
         }
+      ],
+      "layer": "TRUTH",
+      "primary_key": [
+        "case_id",
+        "assertion_id"
       ]
     },
     "truth/claims.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable evaluator claim identifier.",
+          "name": "claim_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Claim family.",
+          "name": "claim_type",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected claim text.",
+          "name": "claim_text",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Target entity identifier.",
+          "name": "target_entity_id",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether the claim is required for a full solution.",
+          "name": "required",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "TRUTH",
       "primary_key": [
         "case_id",
         "claim_id"
-      ],
+      ]
+    },
+    "truth/ending_rules.csv": {
       "columns": [
         {
+          "description": "Case identifier.",
           "name": "case_id",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Case identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "claim_id",
-          "sql_type": "STRING",
+          "description": "Stable ending code.",
+          "name": "ending_code",
           "nullable": false,
-          "description": "Stable evaluator claim identifier."
+          "sql_type": "STRING"
         },
         {
-          "name": "claim_type",
-          "sql_type": "STRING",
+          "description": "Evaluation priority.",
+          "name": "priority",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Optional minimum score.",
+          "name": "min_score",
           "nullable": true,
-          "description": "Claim family."
+          "sql_type": "INT"
         },
         {
-          "name": "claim_text",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected claim text."
-        },
-        {
-          "name": "target_entity_id",
-          "sql_type": "STRING",
+          "description": "Optional maximum score.",
+          "name": "max_score",
           "nullable": true,
-          "description": "Target entity identifier."
+          "sql_type": "INT"
         },
         {
-          "name": "required",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the claim is required for a full solution."
+          "description": "Optional false-accusation ceiling.",
+          "name": "max_false_accusations",
+          "nullable": true,
+          "sql_type": "INT"
         },
         {
+          "description": "JSON array of required gates.",
+          "name": "required_gates_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical evaluator expression.",
+          "name": "condition_expression",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected ending description.",
+          "name": "description",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
           "name": "snapshot_version",
-          "sql_type": "STRING",
           "nullable": false,
-          "description": "Dataset snapshot version."
+          "sql_type": "STRING"
         }
+      ],
+      "layer": "TRUTH",
+      "primary_key": [
+        "case_id",
+        "ending_code"
+      ]
+    },
+    "truth/entities.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical truth entity identifier.",
+          "name": "entity_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Entity type.",
+          "name": "entity_type",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical name.",
+          "name": "canonical_name",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Operational role.",
+          "name": "operational_role",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Expected evaluator classification.",
+          "name": "expected_classification",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Culpability classification.",
+          "name": "culpability",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Victim, protected, neutral, beneficiary, or equivalent.",
+          "name": "harm_status",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Whether the entity belongs to the fraud network.",
+          "name": "fraud_network_membership",
+          "nullable": true,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "Protected evaluator notes.",
+          "name": "protected_notes",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
+      "layer": "TRUTH",
+      "primary_key": [
+        "case_id",
+        "entity_id"
       ]
     },
     "truth/evidence_requirements.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable requirement identifier.",
+          "name": "requirement_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Parent claim identifier.",
+          "name": "claim_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Target entity identifier.",
+          "name": "target_entity_id",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Evidence family.",
+          "name": "evidence_family",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Minimum distinct supporting items.",
+          "name": "minimum_distinct_items",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Optional score weight.",
+          "name": "score_weight",
+          "nullable": true,
+          "sql_type": "DECIMAL(18,8)"
+        },
+        {
+          "description": "Whether the requirement is mandatory.",
+          "name": "required",
+          "nullable": false,
+          "sql_type": "BOOLEAN"
+        },
+        {
+          "description": "JSON array of accepted record identifiers.",
+          "name": "record_ids_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected requirement description.",
+          "name": "description",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "TRUTH",
       "primary_key": [
         "case_id",
         "requirement_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "requirement_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable requirement identifier."
-        },
-        {
-          "name": "claim_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Parent claim identifier."
-        },
-        {
-          "name": "target_entity_id",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Target entity identifier."
-        },
-        {
-          "name": "evidence_family",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Evidence family."
-        },
-        {
-          "name": "minimum_distinct_items",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Minimum distinct supporting items."
-        },
-        {
-          "name": "score_weight",
-          "sql_type": "DECIMAL(18,8)",
-          "nullable": true,
-          "description": "Optional score weight."
-        },
-        {
-          "name": "required",
-          "sql_type": "BOOLEAN",
-          "nullable": false,
-          "description": "Whether the requirement is mandatory."
-        },
-        {
-          "name": "record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of accepted record identifiers."
-        },
-        {
-          "name": "description",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected requirement description."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     },
     "truth/evidence_routes.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable route identifier.",
+          "name": "route_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Parent claim identifier.",
+          "name": "claim_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Route name.",
+          "name": "route_name",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Route step order.",
+          "name": "step_order",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Record, relationship, query, or assertion reference.",
+          "name": "evidence_reference",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Tool needed for the step.",
+          "name": "tool_family",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "TRUTH",
       "primary_key": [
         "case_id",
         "route_id",
         "step_order"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "route_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable route identifier."
-        },
-        {
-          "name": "claim_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Parent claim identifier."
-        },
-        {
-          "name": "route_name",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Route name."
-        },
-        {
-          "name": "step_order",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Route step order."
-        },
-        {
-          "name": "evidence_reference",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Record, relationship, query, or assertion reference."
-        },
-        {
-          "name": "tool_family",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Tool needed for the step."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "truth/allowed_alternatives.csv": {
-      "layer": "TRUTH",
-      "primary_key": [
-        "case_id",
-        "alternative_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "alternative_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable alternative identifier."
-        },
-        {
-          "name": "claim_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Parent claim identifier."
-        },
-        {
-          "name": "alternative_description",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Accepted alternative explanation."
-        },
-        {
-          "name": "accepted_payload_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Optional accepted structured payload."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     },
     "truth/forbidden_conclusions.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable forbidden-conclusion identifier.",
+          "name": "forbidden_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Protected entity identifier.",
+          "name": "entity_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Conclusion that must be penalized.",
+          "name": "forbidden_conclusion",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Score penalty.",
+          "name": "penalty",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "TRUTH",
       "primary_key": [
         "case_id",
         "forbidden_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "forbidden_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable forbidden-conclusion identifier."
-        },
-        {
-          "name": "entity_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected entity identifier."
-        },
-        {
-          "name": "forbidden_conclusion",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Conclusion that must be penalized."
-        },
-        {
-          "name": "penalty",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Score penalty."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     },
     "truth/scoring_rules.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable scoring-rule identifier.",
+          "name": "scoring_rule_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Scoring component.",
+          "name": "component",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Maximum points.",
+          "name": "max_points",
+          "nullable": false,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Optional normalized weight.",
+          "name": "score_weight",
+          "nullable": true,
+          "sql_type": "DECIMAL(18,8)"
+        },
+        {
+          "description": "Protected scoring description.",
+          "name": "description",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "TRUTH",
       "primary_key": [
         "case_id",
         "scoring_rule_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "scoring_rule_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable scoring-rule identifier."
-        },
-        {
-          "name": "component",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Scoring component."
-        },
-        {
-          "name": "max_points",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Maximum points."
-        },
-        {
-          "name": "score_weight",
-          "sql_type": "DECIMAL(18,8)",
-          "nullable": true,
-          "description": "Optional normalized weight."
-        },
-        {
-          "name": "description",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected scoring description."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "truth/ending_rules.csv": {
-      "layer": "TRUTH",
-      "primary_key": [
-        "case_id",
-        "ending_code"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "ending_code",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable ending code."
-        },
-        {
-          "name": "priority",
-          "sql_type": "INT",
-          "nullable": false,
-          "description": "Evaluation priority."
-        },
-        {
-          "name": "min_score",
-          "sql_type": "INT",
-          "nullable": true,
-          "description": "Optional minimum score."
-        },
-        {
-          "name": "max_score",
-          "sql_type": "INT",
-          "nullable": true,
-          "description": "Optional maximum score."
-        },
-        {
-          "name": "max_false_accusations",
-          "sql_type": "INT",
-          "nullable": true,
-          "description": "Optional false-accusation ceiling."
-        },
-        {
-          "name": "required_gates_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of required gates."
-        },
-        {
-          "name": "condition_expression",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Canonical evaluator expression."
-        },
-        {
-          "name": "description",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Protected ending description."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     },
     "truth/test_scenarios.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable test-scenario identifier.",
+          "name": "scenario_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Scenario title.",
+          "name": "title",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array of actions.",
+          "name": "action_sequence_json",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "JSON array of submitted suspects.",
+          "name": "submitted_suspects_json",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Expected final score.",
+          "name": "expected_score",
+          "nullable": true,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Expected ending code.",
+          "name": "expected_ending",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Expected credits remaining.",
+          "name": "expected_credits_remaining",
+          "nullable": true,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Expected false accusation count.",
+          "name": "false_accusations",
+          "nullable": true,
+          "sql_type": "INT"
+        },
+        {
+          "description": "Protected notes.",
+          "name": "notes",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "TRUTH",
       "primary_key": [
         "case_id",
         "scenario_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "scenario_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable test-scenario identifier."
-        },
-        {
-          "name": "title",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Scenario title."
-        },
-        {
-          "name": "action_sequence_json",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "JSON array of actions."
-        },
-        {
-          "name": "submitted_suspects_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of submitted suspects."
-        },
-        {
-          "name": "expected_score",
-          "sql_type": "INT",
-          "nullable": true,
-          "description": "Expected final score."
-        },
-        {
-          "name": "expected_ending",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Expected ending code."
-        },
-        {
-          "name": "expected_credits_remaining",
-          "sql_type": "INT",
-          "nullable": true,
-          "description": "Expected credits remaining."
-        },
-        {
-          "name": "false_accusations",
-          "sql_type": "INT",
-          "nullable": true,
-          "description": "Expected false accusation count."
-        },
-        {
-          "name": "notes",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Protected notes."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
-      ]
-    },
-    "truth/assertions.csv": {
-      "layer": "TRUTH",
-      "primary_key": [
-        "case_id",
-        "assertion_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "assertion_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable assertion identifier."
-        },
-        {
-          "name": "assertion_type",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "CHRONOLOGY, CONFLICT, MISSING_VALUE, RESTART, IMMUTABILITY, FILTER, GRAPH, or equivalent."
-        },
-        {
-          "name": "subject_record_id",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Primary subject record."
-        },
-        {
-          "name": "related_record_ids_json",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "JSON array of related records."
-        },
-        {
-          "name": "expected_value_json",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical expected value payload."
-        },
-        {
-          "name": "severity",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "INFO, WARNING, REQUIRED, or FATAL."
-        },
-        {
-          "name": "description",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Protected assertion description."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     },
     "validation/checks.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Stable check identifier.",
+          "name": "check_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "CONFIG, AUTHORING, ANALYTICS, PUBLISHED, GENIE, TRUTH, or PACKAGE.",
+          "name": "scope",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "PASS, FAIL, WARN, or SKIP.",
+          "name": "status",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Validation details.",
+          "name": "details",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "VALIDATION",
       "primary_key": [
         "case_id",
         "check_id"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "check_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Stable check identifier."
-        },
-        {
-          "name": "scope",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "CONFIG, AUTHORING, ANALYTICS, PUBLISHED, GENIE, TRUTH, or PACKAGE."
-        },
-        {
-          "name": "status",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "PASS, FAIL, WARN, or SKIP."
-        },
-        {
-          "name": "details",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Validation details."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     },
     "validation/metrics.csv": {
+      "columns": [
+        {
+          "description": "Case identifier.",
+          "name": "case_id",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Metric name.",
+          "name": "metric_name",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Numeric metric value.",
+          "name": "metric_value_decimal",
+          "nullable": true,
+          "sql_type": "DECIMAL(38,10)"
+        },
+        {
+          "description": "String metric value.",
+          "name": "metric_value_string",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Canonical JSON object of metric dimensions.",
+          "name": "dimensions_json",
+          "nullable": false,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Optional metric status.",
+          "name": "status",
+          "nullable": true,
+          "sql_type": "STRING"
+        },
+        {
+          "description": "Dataset snapshot version.",
+          "name": "snapshot_version",
+          "nullable": false,
+          "sql_type": "STRING"
+        }
+      ],
       "layer": "VALIDATION",
       "primary_key": [
         "case_id",
         "metric_name",
         "dimensions_json"
-      ],
-      "columns": [
-        {
-          "name": "case_id",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Case identifier."
-        },
-        {
-          "name": "metric_name",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Metric name."
-        },
-        {
-          "name": "metric_value_decimal",
-          "sql_type": "DECIMAL(38,10)",
-          "nullable": true,
-          "description": "Numeric metric value."
-        },
-        {
-          "name": "metric_value_string",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "String metric value."
-        },
-        {
-          "name": "dimensions_json",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Canonical JSON object of metric dimensions."
-        },
-        {
-          "name": "status",
-          "sql_type": "STRING",
-          "nullable": true,
-          "description": "Optional metric status."
-        },
-        {
-          "name": "snapshot_version",
-          "sql_type": "STRING",
-          "nullable": false,
-          "description": "Dataset snapshot version."
-        }
       ]
     }
   }

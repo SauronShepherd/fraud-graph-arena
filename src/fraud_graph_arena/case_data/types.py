@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+from decimal import Decimal, InvalidOperation
 from datetime import datetime, timezone
 def parse_json(value: str, field: str='json'):
     try: return json.loads(value)
@@ -21,8 +22,8 @@ def validate_sql_value(value: str, sql_type: str, field: str = "value") -> None:
     try:
         if normalized in {"INT", "BIGINT"}: int(value)
         elif normalized == "BOOLEAN" and value.lower() not in {"true", "false"}: raise ValueError
-        elif normalized.startswith("DECIMAL("): float(value)
+        elif normalized.startswith("DECIMAL("): Decimal(value)
         elif normalized == "DATE":
             datetime.fromisoformat(value)
-    except (TypeError, ValueError) as exc:
+    except (TypeError, ValueError, InvalidOperation) as exc:
         raise ValueError(f"{field}: invalid {sql_type}") from exc

@@ -1698,7 +1698,7 @@
         {
           "description": "Source-system registry key.",
           "name": "source_system_id",
-          "nullable": false,
+          "nullable": true,
           "sql_type": "STRING"
         },
         {
