@@ -11,7 +11,7 @@ import type { ActionId, TransitionPlan } from "./screen-system/contracts";
 import { useNavigate } from "react-router-dom";
 import { ConfigurationFailurePage } from "./pages/ConfigurationFailurePage";
 import { useCallback, useRef, useState } from "react";
-import { dataSources } from "./screen-system/dataSources";
+import { ScreenLoadCoordinator } from "./screen-system/loadCoordinator";
 import type { DataSourceId } from "./screen-system/contracts";
 
 export function App() {
@@ -22,12 +22,9 @@ export function App() {
   const navigate = useNavigate();
   const [transitionPlan, setTransitionPlan] = useState<TransitionPlan | null>(null);
   const [transitionLocked, setTransitionLocked] = useState(false);
-  const loadController = useRef<AbortController | null>(null);
+  const loadCoordinator = useRef(new ScreenLoadCoordinator());
   const loadScreenModel = useCallback(async (source: DataSourceId, loadContext: typeof context) => {
-    loadController.current?.abort();
-    const controller = new AbortController();
-    loadController.current = controller;
-    return dataSources[source](loadContext, controller.signal);
+    return loadCoordinator.current.load(source, loadContext);
   }, [screen]);
   const dispatchAction = useCallback(async (actionId: string, payload?: Record<string, string | number>): Promise<void> => {
     if (transitionLocked) return;
