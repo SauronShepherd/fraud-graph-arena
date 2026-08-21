@@ -1,9 +1,10 @@
 {
+  "qualified_source_sha": "f57c54f33bfb611154882bd1e2e1c42c408c4ea4",
+  "generated_at_utc": "2026-08-21T19:29:23.219439+00:00",
   "profile": "fga-web",
-  "user": "angel.alvarez@sdggroup.com",
-  "is_admin": true,
-  "safe_select": "not_run",
-  "truth_select": "not_run",
-  "status": "not_qualified",
-  "reason": "identity is a member of admins; admin sessions cannot prove denial"
+  "user": "angel.alvarez.pascua@gmail.com",
+  "is_admin": false,
+  "safe_select": "pass",
+  "truth_select": "pass",
+  "status": "pass"
 }

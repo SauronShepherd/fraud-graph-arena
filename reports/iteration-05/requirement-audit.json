@@ -1,6 +1,6 @@
 {
-  "status": "external_gap",
-  "qualified_source_sha": "7b9fcf5407c55f11dd734c8033b69c1776025423",
+  "status": "pass",
+  "qualified_source_sha": "f530210e4c649b0c3bd635a408fc5ca270225023",
   "requirements": {
     "canonical_packages": "pass",
     "bounded_topology": "pass",
@@ -9,7 +9,7 @@
     "resource_budget": "pass",
     "failure_isolation": "pass",
     "local_regression_gate": "pass",
-    "non_admin_truth_denial": "external_gap"
+    "non_admin_truth_denial": "pass"
   },
-  "closure_tag_allowed": false
+  "closure_tag_allowed": true
 }
