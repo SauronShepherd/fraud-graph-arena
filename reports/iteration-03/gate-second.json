@@ -1,0 +1,123 @@
+{
+  "iteration": "03",
+  "scope": "FGA03 declarative screen system",
+  "timestamp_utc": "2026-08-21T10:23:23.805807+00:00",
+  "commit": "3bfd95bb8349010883c9a5f48120058eb89ea3bb",
+  "clean_before_gate": true,
+  "status_before_gate": [],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "node_version": "v24.18.0",
+  "npm_version": "11.16.0",
+  "checks": [
+    {
+      "label": "python-tests",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "duration_seconds": 146.266,
+      "stdout": ".........................................................                [100%]\n============================== warnings summary ===============================\n..\\..\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\testclient.py:1\n  C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n57 passed, 1 warning in 128.30s (0:02:08)\n",
+      "stderr": ""
+    },
+    {
+      "label": "screen-definition-validator",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "scripts/validate_screen_definitions.py"
+      ],
+      "returncode": 0,
+      "duration_seconds": 0.187,
+      "stdout": "validated 6 screen definitions\n",
+      "stderr": ""
+    },
+    {
+      "label": "i03-python-tests",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/iteration_03"
+      ],
+      "returncode": 0,
+      "duration_seconds": 0.677,
+      "stdout": "..........                                                               [100%]\n10 passed in 0.09s\n",
+      "stderr": ""
+    },
+    {
+      "label": "board-manifest",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "scripts/validate_board_manifest.py"
+      ],
+      "returncode": 0,
+      "duration_seconds": 0.09,
+      "stdout": "board manifest valid\n",
+      "stderr": ""
+    },
+    {
+      "label": "approved-artwork",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "scripts/validate_board_manifest.py",
+        "--require-approved-artwork"
+      ],
+      "returncode": 0,
+      "duration_seconds": 0.088,
+      "stdout": "board manifest valid\n",
+      "stderr": ""
+    },
+    {
+      "label": "frontend-typecheck",
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "returncode": 0,
+      "duration_seconds": 1.773,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 typecheck\n> tsc -b --pretty false\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "frontend-build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "returncode": 0,
+      "duration_seconds": 2.28,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 build\n> tsc -b && vite build\n\nvite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 53 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB \u2502 gzip:  0.29 kB\ndist/assets/index-D2HKA_73.css    8.47 kB \u2502 gzip:  2.81 kB\ndist/assets/index-Hsj4sPL_.js   251.94 kB \u2502 gzip: 80.10 kB\n\n\u2713 built in 165ms\n",
+      "stderr": ""
+    },
+    {
+      "label": "frontend-vitest",
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "returncode": 0,
+      "duration_seconds": 26.119,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 test\n> vitest run --pool=threads --no-file-parallelism --maxWorkers=1\n\n\n RUN  v4.1.10 C:/Users/angel.alvarez/PycharmProjects/fraud-graph-arena/apps/web\n\n\n Test Files  15 passed (15)\n      Tests  29 passed (29)\n   Start at  12:22:17\n   Duration  25.05s (transform 331ms, setup 5.12s, import 618ms, tests 444ms, environment 14.58s)\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "frontend-e2e",
+      "command": [
+        "npm.cmd",
+        "run",
+        "test:e2e"
+      ],
+      "returncode": 0,
+      "duration_seconds": 41.66,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 test:e2e\n> playwright test\n\n\nRunning 10 tests using 5 workers\n\n  ok  1 e2e\\screen-history.spec.ts:3:1 \u203a public screen URLs reconstruct semantic screens and malformed URLs recover safely (10.6s)\n  ok  2 e2e\\screen-transitions.spec.ts:3:1 \u203a intro completion uses the centralized fade effect and still reaches the board (11.9s)\n  ok  3 e2e\\walking-skeleton.spec.ts:3:1 \u203a Academy walking skeleton preserves comic and board context across refresh (13.3s)\n  ok  6 e2e\\screen-history.spec.ts:11:1 \u203a intro page is addressable and browser history returns to the prior screen (5.6s)\n  ok  4 e2e\\investigation-board.spec.ts:18:5 \u203a I02 investigation board \u203a wide preserves the empty investigation contract (16.8s)\n  ok  5 e2e\\screen-accessibility.spec.ts:4:1 \u203a production entry and catalogue screens remain keyboard and axe accessible (18.9s)\n  ok  7 e2e\\investigation-board.spec.ts:18:5 \u203a I02 investigation board \u203a laptop preserves the empty investigation contract (7.5s)\n  ok  8 e2e\\investigation-board.spec.ts:18:5 \u203a I02 investigation board \u203a portrait preserves the empty investigation contract (5.7s)\n  ok  9 e2e\\investigation-board.spec.ts:33:3 \u203a I02 investigation board \u203a remains usable when decorative board art fails (3.1s)\n  ok 10 e2e\\investigation-board.spec.ts:39:3 \u203a I02 investigation board \u203a preserves state under reduced motion and effective high zoom (2.5s)\n\n  10 passed (40.9s)\n",
+      "stderr": "[WebServer] INFO:     Started server process [3492]\n[WebServer] INFO:     Waiting for application startup.\n[WebServer] INFO:     Application startup complete.\n[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\n[WebServer] (node:26628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:6152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:7104) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:18448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:24420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:32720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ],
+  "fully_qualified": true
+}
