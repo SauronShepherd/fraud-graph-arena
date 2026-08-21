@@ -10,6 +10,13 @@ from .validator import validate_candidate
 class CanonicalImportError(ValueError): pass
 class ResponseLostAfterActivation(RuntimeError): pass
 
+def serialized_import(method):
+    def wrapped(self, root, **kwargs):
+        identity = self._identity(Path(root))
+        with self.warehouse.scope_lock(identity.key):
+            return method(self, root, **kwargs)
+    return wrapped
+
 class CanonicalImporter:
     def __init__(self, warehouse): self.warehouse = warehouse; validate_registry(); self.warehouse.topology.update(PHYSICAL_TARGETS.values())
     def _identity(self, root: Path) -> PackageIdentity:
@@ -24,6 +31,7 @@ class CanonicalImporter:
             if len(data) != item.get("bytes") or hashlib.sha256(data).hexdigest() != item.get("sha256"):
                 raise CanonicalImportError(f"manifest digest mismatch: {rel}")
         return PackageIdentity(manifest["case_id"], manifest.get("case_version", "1.0.0"), manifest["snapshot_version"], manifest["canonical_model_version"], content_digest(root))
+    @serialized_import
     def import_package(self, root: str | Path, *, retry_of: str | None = None, fail_after: int | None = None, lose_response_after_activation: bool = False) -> ImportResult:
         root = Path(root); identity = self._identity(root); run_id = "run_" + uuid.uuid4().hex
         run = ImportRun(run_id, identity, retry_of); self.warehouse.runs[run_id] = run

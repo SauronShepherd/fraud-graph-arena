@@ -10,6 +10,7 @@ from fraud_graph_arena.canonical_persistence.recovery import reconcile_import_ru
 from fraud_graph_arena.canonical_persistence.security import canonical_target, redact_error
 from fraud_graph_arena.canonical_persistence.archive import ArchiveSafetyError, safe_extract
 from zipfile import ZipFile
+from concurrent.futures import ThreadPoolExecutor
 from fraud_graph_arena.canonical_persistence.types import validate_row_types
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -27,6 +28,14 @@ def test_exact_retry_reuses_publication():
     assert second.status == ImportStatus.REUSED
     assert first.publication_id == second.publication_id
     assert len(warehouse.publications) == 1 and len(warehouse.runs) == 2
+
+def test_concurrent_same_scope_imports_serialize_to_one_publication():
+    warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        results = list(pool.map(lambda _: importer.import_package(PACKAGES[0]), range(4)))
+    assert {result.publication_id for result in results}.__len__() == 1
+    assert {result.status for result in results} == {ImportStatus.PUBLISHED, ImportStatus.REUSED}
+    assert len(warehouse.publications) == 1
 
 def test_failed_candidate_does_not_replace_active():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)

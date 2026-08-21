@@ -1,5 +1,6 @@
 from __future__ import annotations
 from copy import deepcopy
+from threading import RLock
 from .models import ImportRun, Publication
 from .identity import topology_hash
 
@@ -8,9 +9,13 @@ class MemoryWarehouse:
     def __init__(self) -> None:
         self.runs: dict[str, ImportRun] = {}; self.publications: dict[str, Publication] = {}
         self.active: dict[tuple[str, str], str] = {}; self.topology: set[str] = set(); self.candidates: dict[str, Publication] = {}
+        self._scope_locks: dict[tuple[str, str], RLock] = {}; self._scope_locks_guard = RLock()
         self.run_files: dict[tuple[str, str], dict] = {}; self.run_datasets: dict[tuple[str, str], dict] = {}
     def snapshot(self) -> dict: return deepcopy({"runs": self.runs, "run_files": self.run_files, "run_datasets": self.run_datasets, "publications": self.publications, "active": self.active, "topology": self.topology, "candidates": self.candidates})
     def topology_digest(self) -> str: return topology_hash(self.topology)
+    def scope_lock(self, scope: tuple[str, str]) -> RLock:
+        with self._scope_locks_guard:
+            return self._scope_locks.setdefault(scope, RLock())
     def rollback(self, scope: tuple[str, str], publication_id: str) -> None:
         publication = self.publications.get(publication_id)
         if publication is None or publication.status in ("REJECTED", "CANDIDATE"):
