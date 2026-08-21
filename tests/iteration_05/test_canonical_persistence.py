@@ -74,7 +74,8 @@ def test_topology_hash_is_order_independent():
 def test_reconcile_interrupted_run_preserves_active_publication():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
     first = importer.import_package(PACKAGES[0]); run = next(iter(warehouse.runs.values())); run.status = "STAGING"
-    assert reconcile_import_runs(warehouse) == [run.run_id]
+    assert reconcile_import_runs(warehouse) == []
+    assert run.status == ImportStatus.PUBLISHED
     assert warehouse.active[warehouse.publications[first.publication_id].identity.key] == first.publication_id
 
 def test_reconcile_stale_run_with_active_publication_is_published():
