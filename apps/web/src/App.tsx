@@ -1,6 +1,6 @@
 import { useScreenLocation } from "./screen-system/BrowserNavigationAdapter";
 import { TransitionCoordinator } from "./screen-system/TransitionCoordinator";
-import { screenDefinitions } from "./screen-system/definitions";
+import { screenConfigurationError, screenDefinitions } from "./screen-system/definitions";
 import { ScreenHost } from "./screen-system/ScreenHost";
 import { resolveComponent } from "./screen-system/componentRegistry";
 import { ScreenRuntimeProvider } from "./screen-system/ScreenRuntimeContext";
@@ -9,11 +9,15 @@ import { resolveTransition } from "./screen-system/machine";
 import { locationFor } from "./screen-system/routeCodec";
 import type { ActionId, TransitionPlan } from "./screen-system/contracts";
 import { useNavigate } from "react-router-dom";
+import { ConfigurationFailurePage } from "./pages/ConfigurationFailurePage";
 import { useCallback, useRef, useState } from "react";
 import { dataSources } from "./screen-system/dataSources";
 import type { DataSourceId } from "./screen-system/contracts";
 
 export function App() {
+  if (screenConfigurationError) {
+    return <div className="app-shell"><ConfigurationFailurePage code={screenConfigurationError.code} /></div>;
+  }
   const { screen, context } = useScreenLocation();
   const navigate = useNavigate();
   const [transitionPlan, setTransitionPlan] = useState<TransitionPlan | null>(null);

@@ -21,5 +21,15 @@ export function validateScreenSet(input: ScreenSetManifest): ReadonlyMap<ScreenI
   if (errors.length) throw new ScreenConfigurationError("INVALID_SCREEN_SET", errors);
   return map;
 }
-export const screenDefinitions = validateScreenSet(raw as ScreenSetManifest);
+export let screenConfigurationError: ScreenConfigurationError | null = null;
+let resolvedDefinitions: ReadonlyMap<ScreenId, ScreenDefinition>;
+try {
+  resolvedDefinitions = validateScreenSet(raw as ScreenSetManifest);
+} catch (error) {
+  screenConfigurationError = error instanceof ScreenConfigurationError
+    ? error
+    : new ScreenConfigurationError("INVALID_SCREEN_SET", ["UNEXPECTED_CONFIGURATION_ERROR"]);
+  resolvedDefinitions = new Map();
+}
+export const screenDefinitions = resolvedDefinitions;
 export const screenSet = raw as ScreenSetManifest;
