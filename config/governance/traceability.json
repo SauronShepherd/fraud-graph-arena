@@ -722,7 +722,19 @@
     {"id":"REQ-FGA03-MACHINE-002","kind":"requirement","title":"FGA03 deterministic screen state machine","status":"implemented"},
     {"id":"REQ-FGA03-REGISTRIES-003","kind":"requirement","title":"FGA03 closed capability registries","status":"implemented"},
     {"id":"REQ-FGA03-ARCHITECTURE-004","kind":"requirement","title":"FGA03 frontend-owned navigation boundary","status":"verified"},
-    {"id":"TEST-FGA03-SCREEN-SYSTEM","kind":"test","title":"FGA03 screen, architecture, graph and browser qualification tests","path":"tests/iteration_03","status":"verified"}
+    {"id":"TEST-FGA03-SCREEN-SYSTEM","kind":"test","title":"FGA03 screen, architecture, graph and browser qualification tests","path":"tests/iteration_03","status":"verified"},
+    {"id":"REQ-FGA04-REGISTRY-001","kind":"requirement","title":"FGA04 authoritative typed 32-table registry","status":"implemented"},
+    {"id":"REQ-FGA04-CONVERSION-002","kind":"requirement","title":"FGA04 registered conversion and source provenance","status":"implemented"},
+    {"id":"REQ-FGA05-PERSISTENCE-001","kind":"requirement","title":"FGA05 candidate-aware publication lifecycle","status":"implemented"},
+    {"id":"REQ-FGA05-SECURITY-002","kind":"requirement","title":"FGA05 protected topology and least privilege","status":"implemented"},
+    {"id":"IMPL-FGA04-REGISTRY","kind":"implementation","title":"Canonical and physical registries","status":"implemented"},
+    {"id":"IMPL-FGA04-CONVERTERS","kind":"implementation","title":"Registered family converters and provenance","status":"implemented"},
+    {"id":"IMPL-FGA05-PERSISTENCE","kind":"implementation","title":"Canonical persistence lifecycle and adapters","status":"implemented"},
+    {"id":"IMPL-FGA05-SECURITY","kind":"implementation","title":"Topology, permissions, and destructive guards","status":"implemented"},
+    {"id":"EVIDENCE-FGA04-CONTRACT","kind":"evidence","title":"FGA04 contract and governance artifacts","status":"local_static"},
+    {"id":"EVIDENCE-FGA04-PROVENANCE","kind":"evidence","title":"FGA04 converter provenance artifacts","status":"local_static"},
+    {"id":"EVIDENCE-FGA05-LOCAL","kind":"evidence","title":"FGA05 local reference qualification","status":"local_reference"},
+    {"id":"EVIDENCE-FGA05-TOPOLOGY","kind":"evidence","title":"FGA05 topology and security qualification","status":"local_static"}
   ],
   "edges": [
     {
@@ -1738,7 +1750,15 @@
     {"from":"REQ-FGA03-CONTRACT-001","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"},
     {"from":"REQ-FGA03-MACHINE-002","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"},
     {"from":"REQ-FGA03-REGISTRIES-003","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"},
-    {"from":"REQ-FGA03-ARCHITECTURE-004","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"}
+    {"from":"REQ-FGA03-ARCHITECTURE-004","to":"TEST-FGA03-SCREEN-SYSTEM","relationship":"verified_by"},
+    {"from":"REQ-FGA04-REGISTRY-001","to":"IMPL-FGA04-REGISTRY","relationship":"implemented_by"},
+    {"from":"REQ-FGA04-REGISTRY-001","to":"EVIDENCE-FGA04-CONTRACT","relationship":"evidenced_by"},
+    {"from":"REQ-FGA04-CONVERSION-002","to":"IMPL-FGA04-CONVERTERS","relationship":"implemented_by"},
+    {"from":"REQ-FGA04-CONVERSION-002","to":"EVIDENCE-FGA04-PROVENANCE","relationship":"evidenced_by"},
+    {"from":"REQ-FGA05-PERSISTENCE-001","to":"IMPL-FGA05-PERSISTENCE","relationship":"implemented_by"},
+    {"from":"REQ-FGA05-PERSISTENCE-001","to":"EVIDENCE-FGA05-LOCAL","relationship":"evidenced_by"},
+    {"from":"REQ-FGA05-SECURITY-002","to":"IMPL-FGA05-SECURITY","relationship":"implemented_by"},
+    {"from":"REQ-FGA05-SECURITY-002","to":"EVIDENCE-FGA05-TOPOLOGY","relationship":"evidenced_by"}
   ],
   "coverage_rules": {
     "required_modules": [
