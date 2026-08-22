@@ -9,7 +9,7 @@ from decimal import Decimal
 from dataclasses import dataclass
 from typing import Any, Sequence
 from .registry import expected_topology, PHYSICAL_TARGETS, OPERATIONAL_TARGETS
-from fraud_graph_arena.case_data.registry import headers
+from fraud_graph_arena.case_data.registry import headers, load_typed_registry
 from fraud_graph_arena.canonical_persistence.types import coerce_row
 from .operational_registry import columns as operational_columns
 
@@ -89,6 +89,11 @@ class DatabricksWarehouse:
                 f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)}) AS correlated FROM {qualified}",
                 f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND snapshot_version IS NULL",
             ])
+            primary_key = load_typed_registry()[path].get("primary_key", [])
+            if primary_key:
+                key_columns = ", ".join(primary_key)
+                queries.append(f"SELECT COUNT(*) AS duplicate_primary_keys FROM (SELECT {key_columns}, COUNT(*) AS key_count FROM {qualified} WHERE _publication_id = {_literal(publication_id)} GROUP BY {key_columns} HAVING COUNT(*) > 1)")
+            queries.append(f"SELECT COUNT(*) AS case_mismatches FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND case_id IS NOT NULL AND case_id <> (SELECT case_id FROM {self.qualify_table('fga_import_publications')} WHERE publication_id = {_literal(publication_id)})")
         return [self.execute(query) for query in queries]
 
     def cleanup_candidate(self, publication_id: str) -> list[dict[str, Any]]:

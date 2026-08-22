@@ -4,6 +4,7 @@ import argparse, json
 from pathlib import Path
 from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
+from fraud_graph_arena.case_data.registry import load_typed_registry
 
 def validation_queries(publication_id: str, run_id: str, catalog: str, schema: str) -> list[str]:
     prefix = f"{catalog}.{schema}."
@@ -24,13 +25,12 @@ def _rows(response: dict) -> list[list[object]]:
 
 def validate_results(responses: list[dict], publication_id: str, run_id: str) -> dict:
     """Fail closed unless every table has tagged, correlated rows and no null snapshots."""
-    expected = len(PHYSICAL_TARGETS) * 2
-    if len(responses) != expected:
-        raise ValueError(f"expected {expected} validation responses, got {len(responses)}")
+    expected = sum(4 if load_typed_registry()[path].get("primary_key") else 3 for path in PHYSICAL_TARGETS)
+    if len(responses) != expected: raise ValueError(f"expected {expected} validation responses, got {len(responses)}")
     failures = []
-    for index, path in enumerate(PHYSICAL_TARGETS):
-        counts = _rows(responses[index * 2])
-        missing = _rows(responses[index * 2 + 1])
+    cursor = 0
+    for path in PHYSICAL_TARGETS:
+        counts = _rows(responses[cursor]); missing = _rows(responses[cursor + 1]); cursor += 2
         if len(counts) != 1 or len(counts[0]) < 3:
             failures.append(f"{path}: malformed row-count response")
             continue
@@ -38,6 +38,11 @@ def validate_results(responses: list[dict], publication_id: str, run_id: str) ->
         missing_snapshot = int(missing[0][0] or 0) if len(missing) == 1 and missing[0] else -1
         if tagged != total or correlated != tagged or missing_snapshot != 0:
             failures.append(f"{path}: rows={total}, tagged={tagged}, correlated={correlated}, missing_snapshot={missing_snapshot}")
+        if load_typed_registry()[path].get("primary_key"):
+            duplicate = _rows(responses[cursor]); cursor += 1
+            if not duplicate or int(duplicate[0][0] or 0) != 0: failures.append(f"{path}: duplicate primary key")
+        mismatch = _rows(responses[cursor]); cursor += 1
+        if not mismatch or int(mismatch[0][0] or 0) != 0: failures.append(f"{path}: case identity mismatch")
     if failures:
         raise ValueError("candidate validation failed: " + "; ".join(failures))
     return {"status": "pass", "checks": expected, "publication_id": publication_id, "run_id": run_id}
