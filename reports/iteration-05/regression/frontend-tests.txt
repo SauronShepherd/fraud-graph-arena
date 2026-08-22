@@ -1,3 +1,8 @@
-status=not_run
-scope=frontend
-reason=FGA05 persistence gate does not alter frontend
+{
+  "status": "pass",
+  "command": "npx.cmd vitest run --pool=forks --no-file-parallelism --maxWorkers=1 --testTimeout=5000",
+  "exit_code": 0,
+  "started_at_utc": "2026-08-22T03:37:14.957829+00:00",
+  "finished_at_utc": "2026-08-22T03:37:38.875249+00:00",
+  "output_tail": "\n RUN  v4.1.10 C:/Users/angel.alvarez/PycharmProjects/fraud-graph-arena/apps/web\n\n\n Test Files  17 passed (17)\n      Tests  31 passed (31)\n   Start at  05:37:17\n   Duration  21.58s (transform 800ms, setup 4.33s, import 1.34s, tests 442ms, environment 11.59s)\n\n"
+}

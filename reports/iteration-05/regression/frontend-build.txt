@@ -1,3 +1,8 @@
-status=not_run
-scope=frontend
-reason=FGA05 persistence gate does not alter frontend
+{
+  "status": "pass",
+  "command": "npm.cmd run typecheck",
+  "exit_code": 0,
+  "started_at_utc": "2026-08-22T03:37:38.875352+00:00",
+  "finished_at_utc": "2026-08-22T03:37:44.191494+00:00",
+  "output_tail": "\n> @fraud-graph-arena/web@0.1.0 typecheck\n> tsc -b --pretty false\n\n"
+}

@@ -1,5 +1,5 @@
 {
-  "status": "pass",
+  "status": "external_gap",
   "qualified_source_sha": "e4184123447964e877c52102904600826f3fee70",
   "requirements": {
     "canonical_packages": "pass",
@@ -9,7 +9,8 @@
     "resource_budget": "pass",
     "failure_isolation": "pass",
     "local_regression_gate": "pass",
-    "non_admin_truth_denial": "pass"
+    "non_admin_truth_denial": "pass",
+    "live_candidate_pipeline": "external_gap"
   },
-  "closure_tag_allowed": true
+  "closure_tag_allowed": false
 }
