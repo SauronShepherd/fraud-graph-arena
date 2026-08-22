@@ -8,7 +8,8 @@ def main():
     assert model['version']=='1.0.0' and len(TABLE_PATHS)==32 and len(set(TABLE_PATHS))==32
     assert all(p.endswith('.csv') and '/' in p and not any(x in p for x in ('<','{','}')) for p in TABLE_PATHS)
     registry=json.loads((ROOT/'contracts/canonical/v1/schema-registry.json').read_text(encoding='utf-8'))
-    assert set(x['path'] for x in registry['tables']).issubset(set(TABLE_PATHS))
+    assert set(registry['tables']) == set(TABLE_PATHS)
+    assert all(table.get('columns') and all({'name','sql_type','nullable'} <= set(column) for column in table['columns']) for table in registry['tables'].values())
     assert all(load_registry()[p] for p in TABLE_PATHS)
     print(json.dumps({'valid':True,'model_version':model['version'],'table_count':len(TABLE_PATHS)},sort_keys=True))
 if __name__=='__main__':

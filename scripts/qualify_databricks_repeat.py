@@ -6,6 +6,7 @@ import subprocess
 import uuid
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
 
 
 def main() -> int:
@@ -22,22 +23,25 @@ def main() -> int:
     args = p.parse_args()
     root = Path(__file__).resolve().parents[1]
     attempted = 0
+    failures = []
     for package in sorted(args.package_root.iterdir()):
         if not package.is_dir():
             continue
         files = sorted(package.rglob("*.csv"))
         def load(file: Path) -> None:
             relative = file.relative_to(package).as_posix()
-            table = "fga_" + relative.replace("/", "_").replace(".", "_")
-            command = ["python", "scripts/databricks_copy_into.py", table, f"{package.name}/{relative}", "--profile", args.profile, "--catalog", args.catalog, "--schema", args.schema, "--warehouse", args.warehouse]
+            command = ["python", "scripts/databricks_copy_into.py", relative, f"{package.name}/{relative}", "--profile", args.profile, "--catalog", args.catalog, "--schema", args.schema, "--warehouse", args.warehouse]
             if args.force: command.append("--force")
-            subprocess.run(command, cwd=root, check=True, stdout=subprocess.DEVNULL)
+            result = subprocess.run(command, cwd=root, capture_output=True, text=True)
+            if result.returncode != 0: failures.append({"package": package.name, "path": relative, "error": (result.stderr or result.stdout)[-500:]})
         with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
             list(pool.map(load, files))
         attempted += len(files)
         if args.tag:
-            subprocess.run(["python", "scripts/tag_databricks_publication.py", str(package), "--run-id", "dbx_reload_" + uuid.uuid4().hex, "--profile", args.profile, "--catalog", args.catalog, "--schema", args.schema, "--warehouse", args.warehouse, "--workers", str(args.workers)], cwd=root, check=True, stdout=subprocess.DEVNULL)
-    result = {"status": "pass", "package_count": 13, "csv_attempt_count": attempted, "force": args.force, "tagged": args.tag, "reuse_policy": "COPY INTO skips already-loaded immutable source files unless explicit force is used"}
+            tag_result = subprocess.run(["python", "scripts/tag_databricks_publication.py", str(package), "--run-id", "dbx_reload_" + uuid.uuid4().hex, "--profile", args.profile, "--catalog", args.catalog, "--schema", args.schema, "--warehouse", args.warehouse, "--workers", str(args.workers)], cwd=root, capture_output=True, text=True)
+            if tag_result.returncode != 0: failures.append({"package": package.name, "phase": "tag", "error": (tag_result.stderr or tag_result.stdout)[-500:]})
+    package_count = len([x for x in args.package_root.iterdir() if x.is_dir()])
+    result = {"status": "pass" if not failures and package_count == 13 else "fail", "package_count": package_count, "csv_attempt_count": attempted, "force": args.force, "tagged": args.tag, "failures": failures, "reuse_policy": "COPY INTO skips already-loaded immutable source files unless explicit force is used"}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, indent=2))

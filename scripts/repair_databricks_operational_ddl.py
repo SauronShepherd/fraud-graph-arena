@@ -1,13 +1,6 @@
 from __future__ import annotations
 import json, subprocess, tempfile
-
-TABLES = {
-"fga_import_runs": ["import_run_id", "case_id", "case_version", "snapshot_version", "package_content_digest", "status", "retry_of", "error_code", "started_at_utc", "finished_at_utc"],
-"fga_import_run_files": ["import_run_id", "relative_path", "byte_length", "sha256", "observed_at_utc"],
-"fga_import_run_datasets": ["import_run_id", "dataset_path", "source_row_count", "staged_row_count", "validated_row_count", "phase"],
-"fga_import_publications": ["publication_id", "case_id", "case_version", "snapshot_version", "canonical_model_version", "package_content_digest", "semantic_hash", "status"],
-"fga_active_publications": ["case_id", "case_version", "snapshot_version", "active_publication_id", "activated_at_utc"],
-}
+from fraud_graph_arena.canonical_persistence.operational_registry import ddl, registry
 def execute(profile, warehouse, catalog, schema, statement):
     payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
     with tempfile.NamedTemporaryFile("w",suffix=".json",delete=False,encoding="utf-8") as fh: json.dump(payload,fh); path=fh.name
@@ -16,8 +9,9 @@ def execute(profile, warehouse, catalog, schema, statement):
     if output.get("status",{}).get("state") != "SUCCEEDED": raise RuntimeError(json.dumps(output))
 def main():
     import argparse
-    p=argparse.ArgumentParser(); p.add_argument("--profile",default="sda"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); args=p.parse_args()
-    for table in TABLES: execute(args.profile,args.warehouse,args.catalog,args.schema,f"DROP TABLE IF EXISTS {table}")
-    for table, columns in TABLES.items(): execute(args.profile,args.warehouse,args.catalog,args.schema,f"CREATE TABLE {table} (" + ",".join(f"{column} STRING" for column in columns) + ") USING DELTA")
-    print(json.dumps({"status":"pass","tables":list(TABLES)}))
+    p=argparse.ArgumentParser(); p.add_argument("--profile",default="sda"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--apply",action="store_true"); p.add_argument("--confirm"); args=p.parse_args()
+    token=f"{args.catalog}:{args.schema}"
+    if not args.apply or args.confirm != token: raise SystemExit(f"refusing operational DDL repair; require --apply --confirm {token}")
+    for table in registry(): execute(args.profile,args.warehouse,args.catalog,args.schema,ddl(table))
+    print(json.dumps({"status":"pass","tables":list(registry())}))
 if __name__ == "__main__": main()
