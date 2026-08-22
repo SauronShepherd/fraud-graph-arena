@@ -48,6 +48,8 @@ def main() -> int:
             if conflict.get("result", {}).get("data_array", []):
                 raise ValueError("IMMUTABLE_SNAPSHOT_CONFLICT")
             for statement in statements: warehouse.execute(statement)
+            for phase in ("PREFLIGHTED", "STAGING", "STAGED", "VALIDATING"):
+                warehouse.execute(f"UPDATE {runs} SET status={q(phase)} WHERE import_run_id={q(args.run_id)}")
             validate_results(warehouse.validate_candidate(publication, args.run_id), publication, args.run_id)
             warehouse.execute(f"UPDATE {runs} SET status='VALIDATED' WHERE import_run_id={q(args.run_id)}")
             warehouse.execute(f"UPDATE {runs} SET status='PUBLISHING' WHERE import_run_id={q(args.run_id)}")
