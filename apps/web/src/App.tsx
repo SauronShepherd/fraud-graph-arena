@@ -41,7 +41,12 @@ export function App() {
       setTransitionLocked(false);
     }
   }, [context, navigate, screen, transitionLocked]);
-  const Component = resolveComponent(screenDefinitions.get(screen)?.component ?? screen);
+  let Component: ReturnType<typeof resolveComponent>;
+  try {
+    Component = resolveComponent(screenDefinitions.get(screen)?.component ?? screen);
+  } catch {
+    return <div className="app-shell"><ConfigurationFailurePage code="SCREEN_COMPONENT_UNREGISTERED" /></div>;
+  }
   return (
     <div className="app-shell">
       <TransitionCoordinator plan={transitionPlan} onComplete={() => setTransitionPlan(null)} />
