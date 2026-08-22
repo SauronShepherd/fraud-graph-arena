@@ -82,6 +82,9 @@ class CanonicalImporter:
                 if fail_after is not None and index + 1 == fail_after: raise RuntimeError("injected failure")
             self._transition(run, ImportStatus.STAGED); self._transition(run, ImportStatus.VALIDATING)
             fingerprint = validate_candidate(rows, case_id=identity.case_id, snapshot_version=identity.snapshot_version)
+            if load_policy == LoadPolicy.VALIDATION_ONLY:
+                self._transition(run, ImportStatus.VALIDATED); run.finished_at_utc = datetime.now(timezone.utc).isoformat()
+                return ImportResult(run_id, run.status, None, fingerprint)
             persisted_rows = {path: [dict(row, _publication_id=pub_id, _load_run_id=run_id) for row in values]
                               for path, values in rows.items()
                               if load_policy != LoadPolicy.SAFE_ONLY or not path.startswith("truth/")}

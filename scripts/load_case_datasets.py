@@ -5,10 +5,11 @@ from fraud_graph_arena.canonical_persistence.importer import CanonicalImporter
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, validate_registry, expected_topology
 from fraud_graph_arena.canonical_persistence.identity import publication_id
 from fraud_graph_arena.canonical_persistence.warehouse import MemoryWarehouse
+from fraud_graph_arena.canonical_persistence.models import LoadPolicy
 
 def main() -> int:
     p = argparse.ArgumentParser(description="Canonical v1 loader; targets are registry-controlled.")
-    p.add_argument("package", type=Path); p.add_argument("--plan", action="store_true"); p.add_argument("--self-check", action="store_true"); p.add_argument("--adapter", choices=("memory", "databricks"), default="memory"); p.add_argument("--json-report", type=Path); args = p.parse_args()
+    p.add_argument("package", type=Path); p.add_argument("--plan", action="store_true"); p.add_argument("--self-check", action="store_true"); p.add_argument("--adapter", choices=("memory", "databricks"), default="memory"); p.add_argument("--load-policy", choices=[policy.value for policy in LoadPolicy], default=LoadPolicy.SAFE_ONLY.value); p.add_argument("--json-report", type=Path); args = p.parse_args()
     if args.self_check:
         validate_registry()
         report = {"schema_version":"1.0", "status":"pass", "check":"self-check", "canonical_table_count":len(PHYSICAL_TARGETS), "operational_table_count":5, "topology_count":len(expected_topology()), "adapter":args.adapter}
@@ -23,8 +24,8 @@ def main() -> int:
         rendered=json.dumps(report, indent=2)+"\n"; print(rendered,end="")
         if args.json_report: args.json_report.write_text(rendered,encoding="utf-8")
         return 0
-    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(args.package)
+    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(args.package, load_policy=LoadPolicy(args.load_policy))
     report={"schema_version":"1.0", **result.__dict__}; rendered=json.dumps(report, default=str, indent=2)+"\n"; print(rendered,end="")
     if args.json_report: args.json_report.write_text(rendered,encoding="utf-8")
-    return 0 if result.status.value in {"PUBLISHED", "REUSED"} else 1
+    return 0 if result.status.value in {"PUBLISHED", "REUSED", "VALIDATED"} else 1
 if __name__ == "__main__": raise SystemExit(main())
