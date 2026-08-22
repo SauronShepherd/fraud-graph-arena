@@ -2,7 +2,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 from pathlib import Path
-from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, OPERATIONAL_TARGETS
+from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
 from fraud_graph_arena.case_data.registry import headers, sql_types
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_REGISTRY_PATH
 

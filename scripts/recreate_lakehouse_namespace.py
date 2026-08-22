@@ -36,7 +36,7 @@ def main() -> int:
         for name in sorted(actual-expected): execute(args.profile,args.warehouse,args.catalog,args.schema,f"DROP TABLE IF EXISTS `{name}`"); report["statements"].append("DROP "+name)
         for name in sorted(actual&expected): execute(args.profile,args.warehouse,args.catalog,args.schema,f"TRUNCATE TABLE `{name}`"); report["statements"].append("TRUNCATE "+name)
         root=Path(__file__).resolve().parents[1]
-        ddl=(root/"sql/lakehouse/fga_canonical_persistence_v1.sql").read_text(encoding="utf-8")+"\n"+(root/"sql/lakehouse/fga_import_ledger_v1.sql").read_text(encoding="utf-8")
+        ddl=(root/"sql/lakehouse/fga_canonical_persistence_v1.sql").read_text(encoding="utf-8")+"\n"+(root/"sql/lakehouse/fga_import_ledger_v1.sql").read_text(encoding="utf-8")+"\n"+(root/"sql/lakehouse/fga_active_views_v1.sql").read_text(encoding="utf-8")
         for statement in (part.strip() for part in ddl.split(";") if part.strip()): execute(args.profile,args.warehouse,args.catalog,args.schema,statement); report["statements"].append("CREATE")
         final=execute(args.profile,args.warehouse,args.catalog,args.schema,f"SHOW TABLES IN `{args.catalog}`.`{args.schema}`")
         report["actual"] = sorted(row[1] for row in final.get("result",{}).get("data_array",[])); report["status"] = "pass" if set(report["actual"]) == expected else "fail"

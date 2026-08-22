@@ -6,6 +6,7 @@ _ROOT = __import__("pathlib").Path(__file__).resolve().parents[3]
 PHYSICAL_REGISTRY_PATH = _ROOT / "contracts/canonical/v1/physical-registry.json"
 PHYSICAL_TARGETS = json.loads(PHYSICAL_REGISTRY_PATH.read_text(encoding="utf-8"))["tables"]
 OPERATIONAL_TARGETS = ("fga_import_runs", "fga_import_run_files", "fga_import_run_datasets", "fga_import_publications", "fga_active_publications")
+ACTIVE_VIEW_TARGETS = {path: "fga_active_" + target.removeprefix("fga_") for path, target in PHYSICAL_TARGETS.items() if path.startswith(("published/", "genie/"))}
 
 def expected_topology() -> tuple[str, ...]: return tuple(PHYSICAL_TARGETS.values()) + OPERATIONAL_TARGETS
 
