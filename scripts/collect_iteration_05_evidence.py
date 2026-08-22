@@ -8,6 +8,11 @@ def main() -> int:
     root = Path(__file__).resolve().parents[1]; out = args.output; out.mkdir(parents=True, exist_ok=True)
     try: sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
     except Exception: sha = "unavailable"
+    status_result = subprocess.run(["git", "status", "--porcelain"], cwd=root, capture_output=True, text=True)
+    working_tree = "clean" if status_result.returncode == 0 and not status_result.stdout.strip() else "dirty"
+    def measure(command: list[str], cwd: Path = root) -> dict:
+        started = datetime.now(timezone.utc).isoformat(); result = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
+        return {"status": "pass" if result.returncode == 0 else "fail", "command": " ".join(command), "exit_code": result.returncode, "started_at_utc": started, "finished_at_utc": datetime.now(timezone.utc).isoformat(), "output_tail": (result.stdout + result.stderr)[-2000:]}
     live_root = root / "reports/iteration-05"
     gate = json.loads((live_root / "gate.json").read_text()) if (live_root / "gate.json").exists() else {}
     def read_json(path: Path) -> dict:
@@ -37,17 +42,17 @@ def main() -> int:
         "topology/resource-inventory.json": {**base, **resources} if resources else {**base, "status": "not_run"},
         "security/truth-access-negative.json": {**base, **truth_access} if truth_access else {**base, "status": "not_qualified"},
         "security/qualification-gap.json": {**base, "status": "pass" if truth_access.get("status") == "pass" else "not_qualified", "reason": "non-admin truth denial verified" if truth_access.get("status") == "pass" else "non-admin Unity Catalog principal is unavailable"},
-        "regression/local-tests.json": {**base, "command": "python -m pytest tests/iteration_05 -q", "status": "pass"},
+        "regression/local-tests.json": {**base, **measure(["python", "-m", "pytest", "-q", "tests/iteration_04", "tests/iteration_05"])},
     }
     for rel, payload in files.items():
         target = out / rel; target.parent.mkdir(parents=True, exist_ok=True); target.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     text_files = {
-        "preflight/git-state.txt": f"qualified_source_sha={sha}\nworking_tree=development_changes_present\n",
-        "regression/python-tests.txt": "status=pass\nscope=tests/iteration_05\n",
-        "regression/frontend-tests.txt": "status=not_run\nscope=frontend\nreason=FGA05 persistence gate does not alter frontend\n",
-        "regression/frontend-build.txt": "status=not_run\nscope=frontend\nreason=FGA05 persistence gate does not alter frontend\n",
-        "regression/playwright.txt": "status=not_run\nscope=browser\nreason=FGA05 persistence gate does not alter browser behavior\n",
-        "security/secret-scan.txt": "status=pass\nmethod=local repository evidence scan\n",
+        "preflight/git-state.txt": f"qualified_source_sha={sha}\nworking_tree={working_tree}\nchanged_paths={status_result.stdout.strip()}\n",
+        "regression/python-tests.txt": json.dumps(measure(["python", "-m", "pytest", "-q", "tests/iteration_04", "tests/iteration_05"]), indent=2) + "\n",
+        "regression/frontend-tests.txt": json.dumps(measure(["npx", "vitest", "run", "--pool=forks", "--no-file-parallelism", "--maxWorkers=1", "--testTimeout=5000"], root / "apps/web"), indent=2) + "\n",
+        "regression/frontend-build.txt": json.dumps(measure(["npm", "run", "typecheck"], root / "apps/web"), indent=2) + "\n",
+        "regression/playwright.txt": "status=not_run\nscope=browser\nreason=browser qualification requires an explicitly provisioned runtime\n",
+        "security/secret-scan.txt": "status=not_run\nreason=no repository secret-scanner command is configured\n",
     }
     for rel, content in text_files.items():
         target = out / rel; target.parent.mkdir(parents=True, exist_ok=True); target.write_text(content, encoding="utf-8")
