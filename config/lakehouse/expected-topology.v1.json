@@ -1,6 +1,15 @@
 {
   "canonical_source": "contracts/canonical/v1/schema-registry.json",
   "canonical_table_prefix": "fga_",
+  "active_serving_views": [
+    "fga_active_published_records_csv",
+    "fga_active_published_relationships_csv",
+    "fga_active_published_entity_resolution_candidates_csv",
+    "fga_active_published_exact_matches_csv",
+    "fga_active_genie_records_csv",
+    "fga_active_genie_record_attributes_csv",
+    "fga_active_genie_relationships_csv"
+  ],
   "operational_tables": [
     "fga_import_runs",
     "fga_import_run_files",
