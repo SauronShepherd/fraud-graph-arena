@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "model_version": "1.0.0",
+  "root": "case-data/canonical/v1",
+  "order": [
+    "T1_THE_MISSING_120_canonical_case_data_v3",
+    "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+    "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+    "P1_MADDOG_canonical_case_data_v2",
+    "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+    "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+    "A1_BONE_LEDGER_canonical_case_data_v2",
+    "A2_DOWNLINE_canonical_case_data_v2",
+    "A3_PHANTOM_VET_canonical_case_data_v2",
+    "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+    "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+    "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+    "S3_PANAMA_PAWPERS_canonical_case_data_v2"
+  ],
+  "on_failure": "continue",
+  "source": "governed-canonical-corpus"
+}
