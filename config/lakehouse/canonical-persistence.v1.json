@@ -7,6 +7,7 @@
   "physical_target_prefix": "fga_",
   "publication_strategy": "ACTIVE_POINTER",
   "metadata_columns": ["_publication_id", "_load_run_id", "_source_package", "_source_relative_path", "_source_file", "_loaded_at_utc"],
+  "temporary_object_policy": {"allowed_prefixes": ["fga_stage_", "fga_tmp_"], "max_count": 0, "owner": "maintenance", "cleanup_rule": "remove-after-run", "survive_failed_run": false},
   "operational_tables": ["fga_import_runs", "fga_import_run_files", "fga_import_run_datasets", "fga_import_publications", "fga_active_publications"],
   "destructive_targets": ["fga_dev"]
 }
