@@ -1,0 +1,11 @@
+{
+  "status": "fail",
+  "package_count": 1,
+  "results": [
+    {
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "status": "fail",
+      "error": "{'error_code': 'BAD_REQUEST', 'message': '[CAST_INVALID_INPUT] The value \\'ZINGG_ENTITY_RESOLUTION\\' of the type \"STRING\" cannot be cast to \"BOOLEAN\" because it is malformed. Correct the value as per the syntax, or change its target type. Use `try_cast` to tolerate malformed input and return NULL instead. SQLSTATE: 22018'}"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "profile": "sda",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "e444f39962128242",
+  "structural_gate": "PASS",
+  "expected_objects": 44,
+  "actual_objects": 44,
+  "schema_mismatches": 0,
+  "live_lifecycle_probe": {
+    "case_id": "BONE_LEDGER",
+    "run_id": "dbx_run_2a1794393f284899a55489a04bbb9ff2",
+    "status": "PUBLISHED",
+    "lifecycle": ["STARTED", "PREFLIGHTED", "STAGING", "STAGED", "VALIDATING", "VALIDATED", "PUBLISHING", "PUBLISHED"]
+  },
+  "all_package_qualification": "INTERRUPTED_AFTER_PROGRESS",
+  "reason": "The repository orchestrator issues hundreds of sequential SQL validation requests; the local orchestrator was stopped after live progress to avoid leaving an uncontrolled long-running process.",
+  "tests": "NOT_RUN",
+  "databricks_access": "AUTHORIZED_BY_USER"
+}

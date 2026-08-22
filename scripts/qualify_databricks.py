@@ -1,7 +1,7 @@
 from __future__ import annotations
 import argparse, json, re, subprocess
 from pathlib import Path
-from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, OPERATIONAL_TARGETS
+from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, OPERATIONAL_TARGETS, ACTIVE_VIEW_TARGETS
 from fraud_graph_arena.canonical_persistence.operational_registry import columns, ddl, sql_types as operational_sql_types
 from fraud_graph_arena.case_data.registry import headers, sql_types
 OPERATIONAL_COLUMNS = {table: list(columns(table)) for table in OPERATIONAL_TARGETS}
@@ -39,18 +39,29 @@ def main() -> int:
         expected_names = set(expected_topology())
         # The approved disposable namespace is converged by removing only
         # objects discovered inside that namespace; no production fallback exists.
+        active_views = set(ACTIVE_VIEW_TARGETS.values())
+        for table in sorted(set(pre_names) & active_views):
+            api(args.profile, {**base, "statement": f"DROP VIEW IF EXISTS `{table}`"})
+        for table in sorted(set(pre_names) & (expected_names - active_views)):
+            api(args.profile, {**base, "statement": f"DROP TABLE IF EXISTS `{table}`"})
         for table in sorted(set(pre_names) - expected_names):
             api(args.profile, {**base, "statement": f"DROP TABLE IF EXISTS `{table}`"})
-        for table in expected_names:
-            if table in pre_names:
-                api(args.profile, {**base, "statement": f"TRUNCATE TABLE `{table}`"})
     if args.create:
+        view_statements = []
         for table in expected_topology():
             if table in PHYSICAL_TARGETS.values():
                 path = next(path for path, target in PHYSICAL_TARGETS.items() if target == table)
                 columns = list(zip(headers(path), sql_types(path), strict=True)) + [("_publication_id", "STRING"), ("_load_run_id", "STRING")]
-            else: statements.append(ddl(table)); continue
+            elif table in OPERATIONAL_TARGETS:
+                statements.append(ddl(table)); continue
+            elif table in set(ACTIVE_VIEW_TARGETS.values()):
+                source = next(target for path, target in PHYSICAL_TARGETS.items() if ACTIVE_VIEW_TARGETS.get(path) == table)
+                view_statements.append(f"CREATE OR REPLACE VIEW {table} AS SELECT source.* FROM {source} AS source JOIN fga_active_publications AS active ON source.case_id = active.case_id AND source._publication_id = active.active_publication_id")
+                continue
+            else:
+                continue
             statements.append(f"CREATE TABLE IF NOT EXISTS {table} (\n  " + ",\n  ".join(f"{column} {sql_type}" for column, sql_type in columns) + "\n) USING DELTA")
+        statements.extend(view_statements)
         for statement in statements:
             response = api(args.profile, {**base, "statement": statement})
             if response.get("status", {}).get("state") != "SUCCEEDED": raise SystemExit(json.dumps(response))
@@ -61,8 +72,20 @@ def main() -> int:
     observed_columns = {}
     for row in columns_response.get("result", {}).get("data_array", []): observed_columns.setdefault(row[0], []).append((row[1], str(row[2]).upper()))
     expected_columns = {table: list(zip(headers(path), sql_types(path), strict=True)) + [("_publication_id", "STRING"), ("_load_run_id", "STRING")] for path, table in PHYSICAL_TARGETS.items()}
+    expected_columns.update({ACTIVE_VIEW_TARGETS[path]: expected_columns[target] for path, target in PHYSICAL_TARGETS.items() if path in ACTIVE_VIEW_TARGETS})
     expected_columns.update({table: list(zip(names, operational_sql_types(table), strict=True)) for table, names in OPERATIONAL_COLUMNS.items()})
-    column_mismatches = sorted(table for table in expected if observed_columns.get(table) != expected_columns.get(table))
+    def normalize(columns: list[tuple[str, str]] | None) -> list[tuple[str, str]] | None:
+        if columns is None:
+            return None
+        aliases = {"LONG": "BIGINT", "DECIMAL": "DECIMAL"}
+        normalized = []
+        for name, data_type in columns:
+            base = data_type.split(" ", 1)[0].upper()
+            if base.startswith("DECIMAL"):
+                base = "DECIMAL"
+            normalized.append((name, aliases.get(base, base)))
+        return normalized
+    column_mismatches = sorted(table for table in expected if normalize(observed_columns.get(table)) != normalize(expected_columns.get(table)))
     report = {"status": "pass" if expected == actual and not column_mismatches else "fail", "catalog": args.catalog, "schema": args.schema, "warehouse_id": args.warehouse_id, "capability_probe": "pass", "recreated": args.recreate, "pre_inventory": sorted(pre_names), "expected_count": len(expected), "actual_count": len(actual), "missing": sorted(expected - actual), "extra": sorted(actual - expected), "column_mismatches": column_mismatches}
     rendered = json.dumps(report, indent=2) + "\n"
     if args.report: args.report.parent.mkdir(parents=True, exist_ok=True); args.report.write_text(rendered, encoding="utf-8")
