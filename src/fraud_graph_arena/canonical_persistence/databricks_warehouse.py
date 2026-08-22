@@ -45,13 +45,22 @@ class DatabricksWarehouse:
             raise DatabricksWarehouseError(str(response.get("status", {}).get("error", "statement failed"))[-512:])
         return response
 
-    def select(self, columns: Sequence[str], table: str, predicate: str | None = None) -> dict[str, Any]:
+    def select(self, columns: Sequence[str], table: str, predicate: tuple[str, str, object] | None = None) -> dict[str, Any]:
+        """Select registered columns with a structured, non-injectable predicate."""
         allowed = set(operational_columns(table)) if table in OPERATIONAL_TARGETS else set(headers(next(path for path, target in PHYSICAL_TARGETS.items() if target == table)))
         if any(column not in allowed or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", column) for column in columns):
             raise ValueError("projection contains an unregistered column")
         projection = ", ".join(columns)
         statement = f"SELECT {projection} FROM {self.qualify_table(table)}"
-        if predicate: statement += f" WHERE {predicate}"
+        if predicate:
+            column, operator, value = predicate
+            if column not in allowed or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", column):
+                raise ValueError("predicate column is not registered")
+            if operator not in {"=", "!=", "<>", "IS", "IS NOT"}:
+                raise ValueError("predicate operator is not allowlisted")
+            if operator in {"IS", "IS NOT"} and value is not None:
+                raise ValueError("IS predicates only accept NULL")
+            statement += f" WHERE {column} {operator} {_literal(value)}"
         return self.execute(statement)
 
     def insert_candidate(self, path: str, rows: Sequence[dict[str, Any]], publication_id: str, run_id: str) -> dict[str, Any]:
