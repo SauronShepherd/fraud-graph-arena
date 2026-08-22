@@ -1,6 +1,7 @@
 {
   "model": "FGA Canonical Case Data Model",
   "version": "1.0.0",
+  "layers": {"config":"config/", "authoring":"authoring/", "analytics":"analytics/", "published":"published/", "genie":"genie/", "truth":"truth/", "validation":"validation/"},
   "tables": [
     "config/cases.csv", "config/case_profiles.csv", "config/case_initial_items.csv", "config/ui_contracts.csv", "config/registries.csv", "config/reveal_steps.csv", "config/genie_benchmarks.csv",
     "authoring/records.csv", "authoring/record_attributes.csv", "authoring/relationships.csv",
