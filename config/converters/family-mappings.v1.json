@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "families": {
+    "ACADEMY": {"converter": "academy.csv.v1", "source_dialect": "academy-flat-csv-v1", "identity_fields": ["id", "record_id"], "display_fields": ["name", "label"]},
+    "PUPPY": {"converter": "puppy.csv.v1", "source_dialect": "puppy-flat-csv-v1", "identity_fields": ["id", "record_id"], "display_fields": ["name", "label"]},
+    "ADULT": {"converter": "adult.csv.v1", "source_dialect": "adult-flat-csv-v1", "identity_fields": ["id", "record_id"], "display_fields": ["name", "label"]},
+    "SENIOR": {"converter": "senior.csv.v1", "source_dialect": "senior-flat-csv-v1", "identity_fields": ["id", "record_id"], "display_fields": ["name", "label"]}
+  }
+}

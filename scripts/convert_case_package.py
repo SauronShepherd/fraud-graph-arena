@@ -5,5 +5,6 @@ p=argparse.ArgumentParser(); p.add_argument('--input',required=True); p.add_argu
 converter_id = {"ACADEMY": "academy.csv.v1", "PUPPY": "puppy.csv.v1", "ADULT": "adult.csv.v1", "SENIOR": "senior.csv.v1"}.get(a.family.upper())
 if converter_id is None:
     raise SystemExit(f"unsupported family: {a.family}")
-registry.resolve(converter_id).convert(Path(a.input), Path(a.output), {"case_id": a.case_id, "case_version": a.case_version, "snapshot_version": a.snapshot_version})
+family_converter = registry.resolve(converter_id)
+family_converter.convert(Path(a.input), Path(a.output), {"case_id": a.case_id, "case_version": a.case_version, "snapshot_version": a.snapshot_version, "source_dialect": family_converter.source_dialect})
 print(json.dumps({"converter": converter_id, "case_id": a.case_id, "case_version": a.case_version, "snapshot_version": a.snapshot_version, "family": a.family}, sort_keys=True))
