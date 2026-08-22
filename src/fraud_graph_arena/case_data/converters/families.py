@@ -11,7 +11,7 @@ class FlatCsvFamilyConverter(Converter):
     def convert(self, source: Path, output: Path, mapping: dict[str, Any]) -> None:
         if mapping.get("source_dialect") not in (None, self.source_dialect):
             raise ValueError(f"unsupported source dialect for {self.family}: {mapping['source_dialect']}")
-        convert_flat_csv(source, output, case_id=str(mapping["case_id"]), family=self.family, case_version=str(mapping.get("case_version", "1.0.0")), snapshot_version=str(mapping.get("snapshot_version", "1.0.0")), converter=self.converter_id)
+        convert_flat_csv(source, output, case_id=str(mapping["case_id"]), family=self.family, case_version=str(mapping.get("case_version", "1.0.0")), snapshot_version=str(mapping.get("snapshot_version", "1.0.0")), converter=self.converter_id, source_dialect=self.source_dialect)
 
 class AcademyConverter(FlatCsvFamilyConverter):
     family = "ACADEMY"; converter_id = "academy.csv.v1"; source_dialect = "academy-flat-csv-v1"
