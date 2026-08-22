@@ -1,11 +1,12 @@
 """Strict, write-free package preflight model."""
 from __future__ import annotations
 
-import hashlib, json
+import csv, hashlib, json
 from dataclasses import dataclass
 from pathlib import Path
 from .identity import content_digest
 from .registry import PHYSICAL_TARGETS
+from fraud_graph_arena.case_data.registry import supported_model_versions
 
 @dataclass(frozen=True)
 class CanonicalPackage:
@@ -33,7 +34,21 @@ class CanonicalPackage:
             data = path.read_bytes(); entry = files[rel]
             if entry.get("bytes") != len(data) or entry.get("sha256") != hashlib.sha256(data).hexdigest():
                 raise ValueError(f"manifest digest mismatch: {rel}")
+        if manifest.get("canonical_model_version") not in supported_model_versions():
+            raise ValueError(f"unsupported canonical model version: {manifest.get('canonical_model_version')}")
+        with (root / "config/cases.csv").open(newline="", encoding="utf-8") as handle:
+            cases = list(csv.DictReader(handle))
+        matching = [row for row in cases if row.get("case_id") == manifest.get("case_id")]
+        if len(matching) != 1:
+            raise ValueError("manifest case_id must match exactly one config/cases.csv row")
+        case = matching[0]
+        for field in ("case_version", "snapshot_version", "canonical_model_version"):
+            if case.get(field) != manifest.get(field):
+                raise ValueError(f"manifest {field} disagrees with config/cases.csv")
+        with (root / "config/case_profiles.csv").open(newline="", encoding="utf-8") as handle:
+            profiles = [row for row in csv.DictReader(handle) if row.get("case_id") == manifest.get("case_id")]
+        if not profiles:
+            raise ValueError("package must contain a case profile for the manifest case")
         return cls(root, manifest["package_name"], manifest.get("package_version", ""), manifest["case_id"],
                    manifest["case_version"], manifest["snapshot_version"], manifest["canonical_model_version"],
                    content_digest(root), manifest)
-

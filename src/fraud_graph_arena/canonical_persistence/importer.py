@@ -10,6 +10,7 @@ from .validator import validate_candidate
 from .lifecycle import require_transition
 from .security import redact_error
 from .publisher import PointerPublisher
+from .package import CanonicalPackage
 
 class CanonicalImportError(ValueError): pass
 class ResponseLostAfterActivation(RuntimeError): pass
@@ -27,27 +28,11 @@ class CanonicalImporter:
     def _transition(run: ImportRun, target: ImportStatus) -> None:
         require_transition(run.status, target); run.status = target
     def _identity(self, root: Path) -> PackageIdentity:
-        import csv, json
-        manifest = json.loads((root / "manifest.json").read_text(encoding="utf-8"))
-        if not manifest.get("case_version"):
-            raise CanonicalImportError("manifest case_version is required")
-        with (root / "config/cases.csv").open(newline="", encoding="utf-8") as handle:
-            case_row = next(csv.DictReader(handle), None)
-        if not case_row or case_row.get("case_id") != manifest.get("case_id"):
-            raise CanonicalImportError("manifest case_id disagrees with config/cases.csv")
-        if case_row.get("case_version") != manifest.get("case_version"):
-            raise CanonicalImportError("manifest case_version disagrees with config/cases.csv")
-        if case_row.get("snapshot_version") != manifest.get("snapshot_version"):
-            raise CanonicalImportError("manifest snapshot_version disagrees with config/cases.csv")
-        listed = {item["path"]: item for item in manifest.get("files", [])}
-        if not set(PHYSICAL_TARGETS).issubset(listed): raise CanonicalImportError("manifest canonical file inventory mismatch")
-        import hashlib
-        for rel in PHYSICAL_TARGETS:
-            item = listed[rel]
-            data = (root / rel).read_bytes()
-            if len(data) != item.get("bytes") or hashlib.sha256(data).hexdigest() != item.get("sha256"):
-                raise CanonicalImportError(f"manifest digest mismatch: {rel}")
-        return PackageIdentity(manifest["case_id"], manifest["case_version"], manifest["snapshot_version"], manifest["canonical_model_version"], content_digest(root))
+        try:
+            package = CanonicalPackage.read(root)
+        except (KeyError, OSError, ValueError) as exc:
+            raise CanonicalImportError(str(exc)) from exc
+        return PackageIdentity(package.case_id, package.case_version, package.snapshot_version, package.canonical_model_version, package.content_digest)
     @serialized_import
     def import_package(self, root: str | Path, *, retry_of: str | None = None, fail_after: int | None = None, lose_response_after_activation: bool = False, load_policy: LoadPolicy = LoadPolicy.SAFE_ONLY) -> ImportResult:
         root = Path(root); identity = self._identity(root); run_id = "run_" + uuid.uuid4().hex
