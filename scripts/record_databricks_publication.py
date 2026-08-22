@@ -37,6 +37,16 @@ def main() -> int:
     report.update({"publication_id": publication, "identity": identity.__dict__, "statements": len(statements)})
     if args.execute:
         try:
+            existing = warehouse.execute(f"SELECT publication_id,status,package_content_digest FROM {publications} WHERE publication_id={q(publication)}")
+            existing_rows = existing.get("result", {}).get("data_array", [])
+            if existing_rows:
+                report.update({"status": "REUSED", "retry": "REUSED", "existing_status": existing_rows[0][1]})
+                rendered = json.dumps(report, indent=2) + "\n"; print(rendered, end="")
+                if args.report: args.report.parent.mkdir(parents=True, exist_ok=True); args.report.write_text(rendered, encoding="utf-8")
+                return 0
+            conflict = warehouse.execute(f"SELECT publication_id,status FROM {publications} WHERE case_id={q(identity.case_id)} AND case_version={q(identity.case_version)} AND snapshot_version={q(identity.snapshot_version)} AND canonical_model_version={q(identity.canonical_model_version)} AND package_content_digest<>{q(identity.content_digest)}")
+            if conflict.get("result", {}).get("data_array", []):
+                raise ValueError("IMMUTABLE_SNAPSHOT_CONFLICT")
             for statement in statements: warehouse.execute(statement)
             validate_results(warehouse.validate_candidate(publication, args.run_id), publication, args.run_id)
             warehouse.execute(f"UPDATE {runs} SET status='VALIDATED' WHERE import_run_id={q(args.run_id)}")
