@@ -94,6 +94,9 @@ class DatabricksWarehouse:
                 key_columns = ", ".join(primary_key)
                 queries.append(f"SELECT COUNT(*) AS duplicate_primary_keys FROM (SELECT {key_columns}, COUNT(*) AS key_count FROM {qualified} WHERE _publication_id = {_literal(publication_id)} GROUP BY {key_columns} HAVING COUNT(*) > 1)")
             queries.append(f"SELECT COUNT(*) AS case_mismatches FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND case_id IS NOT NULL AND case_id <> (SELECT case_id FROM {self.qualify_table('fga_import_publications')} WHERE publication_id = {_literal(publication_id)})")
+            if path == "authoring/relationships.csv":
+                records = self.qualify_table(PHYSICAL_TARGETS["authoring/records.csv"])
+                queries.append(f"SELECT COUNT(*) AS dangling_relationship_endpoints FROM {qualified} AS relationships WHERE relationships._publication_id = {_literal(publication_id)} AND ((relationships.source_record_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.source_record_id)) OR (relationships.target_record_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.target_record_id)))")
         return [self.execute(query) for query in queries]
 
     def cleanup_candidate(self, publication_id: str) -> list[dict[str, Any]]:

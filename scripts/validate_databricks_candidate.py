@@ -25,7 +25,7 @@ def _rows(response: dict) -> list[list[object]]:
 
 def validate_results(responses: list[dict], publication_id: str, run_id: str) -> dict:
     """Fail closed unless every table has tagged, correlated rows and no null snapshots."""
-    expected = sum(4 if load_typed_registry()[path].get("primary_key") else 3 for path in PHYSICAL_TARGETS)
+    expected = sum((5 if path == "authoring/relationships.csv" else 4 if load_typed_registry()[path].get("primary_key") else 3) for path in PHYSICAL_TARGETS)
     if len(responses) != expected: raise ValueError(f"expected {expected} validation responses, got {len(responses)}")
     failures = []
     cursor = 0
@@ -43,6 +43,9 @@ def validate_results(responses: list[dict], publication_id: str, run_id: str) ->
             if not duplicate or int(duplicate[0][0] or 0) != 0: failures.append(f"{path}: duplicate primary key")
         mismatch = _rows(responses[cursor]); cursor += 1
         if not mismatch or int(mismatch[0][0] or 0) != 0: failures.append(f"{path}: case identity mismatch")
+        if path == "authoring/relationships.csv":
+            dangling = _rows(responses[cursor]); cursor += 1
+            if not dangling or int(dangling[0][0] or 0) != 0: failures.append(f"{path}: dangling relationship endpoint")
     if failures:
         raise ValueError("candidate validation failed: " + "; ".join(failures))
     return {"status": "pass", "checks": expected, "publication_id": publication_id, "run_id": run_id}
