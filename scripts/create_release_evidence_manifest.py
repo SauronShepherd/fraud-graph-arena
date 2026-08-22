@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, json, subprocess
+import argparse, hashlib, json, subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -7,10 +7,20 @@ def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("--output", type=Path, required=True); parser.add_argument("--live-status", choices=["qualified", "unavailable", "not_run"], default="not_run"); args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     source_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+    tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=root).split(b"\0")
+    tree_parts = []
+    for raw in tracked:
+        if not raw: continue
+        path = root / raw.decode()
+        if path.is_file(): tree_parts.append({"path": raw.decode(), "sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "bytes": path.stat().st_size})
+    tree_digest = hashlib.sha256(json.dumps(tree_parts, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    dirty_paths = subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).splitlines()
     manifest = {
         "manifest_version": "1.0",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source_sha": source_sha,
+        "source_tree_sha256": tree_digest,
+        "working_tree": {"clean": not dirty_paths, "changed_paths": dirty_paths},
         "scope": "FGA unified static implementation gap audit",
         "local_evidence": {
             "python_tests": "python -m pytest -q tests/iteration_04 tests/iteration_05",
