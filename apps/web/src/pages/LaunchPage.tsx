@@ -1,6 +1,6 @@
 import { recalledRound } from "../state/session";
-import { ScreenLink } from "../screen-system/ScreenLink";
 import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
+import { ScreenLink } from "../screen-system/ScreenLink";
 
 export function LaunchPage() {
   const lastRoundId = recalledRound();
@@ -15,9 +15,9 @@ export function LaunchPage() {
       <div className="actions">
         <ScreenLink className="button" to="/paths" aria-disabled={transitionLocked} onClick={(event) => { event.preventDefault(); if (!transitionLocked) void dispatchAction("BEGIN"); }}>Choose your trench coat</ScreenLink>
         {lastRoundId ? (
-          <ScreenLink className="button secondary" to={`/rounds/${lastRoundId}/board`}>
+          <button className="button secondary" type="button" disabled={transitionLocked} onClick={() => void dispatchAction("RESUME_LAST_ROUND")}>
             Return to the empty board
-          </ScreenLink>
+          </button>
         ) : null}
       </div>
     </main>

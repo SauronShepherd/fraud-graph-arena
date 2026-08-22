@@ -1,12 +1,16 @@
 import { completeOpening, createAndStartRound } from "../api/client";
-import { rememberRound } from "../state/session";
+import { recalledRound, rememberRound } from "../state/session";
 import type { ActionId, MachineEvent, ScreenContext } from "./contracts";
 export interface ActionInput { context: ScreenContext; payload?: Record<string, string | number>; }
 export interface ActionResult { event: MachineEvent; context?: ScreenContext; }
 const pending = new Set<string>();
 export const actions: Record<ActionId, (input: ActionInput) => Promise<ActionResult>> = {
   BEGIN: async () => ({ event: { type: "PATHS_REQUESTED" } }),
-  RESUME_LAST_ROUND: async ({ context }) => ({ event: { type: "PATHS_REQUESTED" }, context }),
+  RESUME_LAST_ROUND: async () => {
+    const roundId = recalledRound();
+    if (!roundId) throw new Error("NO_LAST_ROUND");
+    return { event: { type: "ROUND_RESUMED", context: { roundId } }, context: { roundId } };
+  },
   SELECT_PATH: async ({ payload }) => ({ event: { type: "PATH_SELECTED", context: { pathId: payload?.pathId as string } } }),
   BACK_TO_PATHS: async () => ({ event: { type: "RETURNED_TO_PATHS" } }),
   OPEN_CASE: async ({ context, payload }) => {

@@ -15,6 +15,8 @@ describe("screen machine", () => {
     expect(board.target).toBe("INVESTIGATION_BOARD");
     expect(board.effect).toBe("FADE_TO_BLACK");
     expect(board.history).toBe("REPLACE");
+    const resumed = resolveTransition(launch, {}, { type: "ROUND_RESUMED", context: { roundId: "r1" } }, screenDefinitions)!;
+    expect(resumed.target).toBe("INVESTIGATION_BOARD");
   });
   it("rejects events from the wrong screen and missing context", () => {
     expect(resolveTransition(screenDefinitions.get("LAUNCH")!, {}, { type: "INTRODUCTION_COMPLETED" }, screenDefinitions)).toBeNull();
