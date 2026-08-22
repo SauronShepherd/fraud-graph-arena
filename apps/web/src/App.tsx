@@ -26,6 +26,10 @@ export function App() {
   const loadScreenModel = useCallback(async (source: DataSourceId, loadContext: typeof context) => {
     return loadCoordinator.current.load(source, loadContext);
   }, [screen]);
+  const handleTransitionComplete = useCallback(() => {
+    setTransitionPlan(null);
+    setTransitionLocked(false);
+  }, []);
   const dispatchAction = useCallback(async (actionId: string, payload?: Record<string, string | number>): Promise<void> => {
     if (transitionLocked) return;
     const action = actions[actionId as ActionId];
@@ -50,7 +54,7 @@ export function App() {
   }
   return (
     <div className="app-shell">
-      <TransitionCoordinator plan={transitionPlan} onComplete={() => { setTransitionPlan(null); setTransitionLocked(false); }} />
+      <TransitionCoordinator plan={transitionPlan} onComplete={handleTransitionComplete} />
       <header className="masthead">
         <span className="paw" aria-hidden="true">🐾</span>
         <span>The Dogtective Agency</span>
