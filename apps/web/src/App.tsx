@@ -37,8 +37,9 @@ export function App() {
       if (!plan) throw new Error(`UNDECLARED_SCREEN_TRANSITION:${screen}:${result.event.type}`);
       setTransitionPlan(plan);
       navigate(locationFor(screenDefinitions.get(plan.target)!, plan.context), { replace: plan.history === "REPLACE" });
-    } finally {
+    } catch (error) {
       setTransitionLocked(false);
+      throw error;
     }
   }, [context, navigate, screen, transitionLocked]);
   let Component: ReturnType<typeof resolveComponent>;
@@ -49,7 +50,7 @@ export function App() {
   }
   return (
     <div className="app-shell">
-      <TransitionCoordinator plan={transitionPlan} onComplete={() => setTransitionPlan(null)} />
+      <TransitionCoordinator plan={transitionPlan} onComplete={() => { setTransitionPlan(null); setTransitionLocked(false); }} />
       <header className="masthead">
         <span className="paw" aria-hidden="true">🐾</span>
         <span>The Dogtective Agency</span>
