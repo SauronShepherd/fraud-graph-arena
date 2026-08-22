@@ -19,7 +19,7 @@ PUBLICATION_TRANSITIONS: dict[PublicationStatus, frozenset[PublicationStatus]] =
     PublicationStatus.CANDIDATE: frozenset({PublicationStatus.VALIDATED, PublicationStatus.REJECTED}),
     PublicationStatus.VALIDATED: frozenset({PublicationStatus.ACTIVE, PublicationStatus.REJECTED}),
     PublicationStatus.ACTIVE: frozenset({PublicationStatus.SUPERSEDED}),
-    PublicationStatus.SUPERSEDED: frozenset(), PublicationStatus.REJECTED: frozenset(),
+    PublicationStatus.SUPERSEDED: frozenset({PublicationStatus.ACTIVE}), PublicationStatus.REJECTED: frozenset(),
 }
 
 def can_transition(current, target) -> bool:

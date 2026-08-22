@@ -9,6 +9,7 @@ from .types import validate_row_types
 from .validator import validate_candidate
 from .lifecycle import require_transition
 from .security import redact_error
+from .publisher import PointerPublisher
 
 class CanonicalImportError(ValueError): pass
 class ResponseLostAfterActivation(RuntimeError): pass
@@ -92,10 +93,7 @@ class CanonicalImporter:
             require_transition(candidate.status, PublicationStatus.VALIDATED); candidate.status = PublicationStatus.VALIDATED; self.warehouse.publications[pub_id] = candidate; self.warehouse.candidates.pop(pub_id, None)
             self._transition(run, ImportStatus.VALIDATED); self._transition(run, ImportStatus.PUBLISHING)
             for rel, count in run.datasets.items(): run.dataset_phases[rel] = "VALIDATED"; self.warehouse.record_dataset(run_id, rel, count, count, count, "VALIDATED")
-            previous = self.warehouse.active.get(identity.key)
-            self.warehouse.active[identity.key] = pub_id
-            require_transition(candidate.status, PublicationStatus.ACTIVE); candidate.status = PublicationStatus.ACTIVE
-            if previous and previous != pub_id: require_transition(self.warehouse.publications[previous].status, PublicationStatus.SUPERSEDED); self.warehouse.publications[previous].status = PublicationStatus.SUPERSEDED
+            PointerPublisher(self.warehouse).activate(pub_id)
             self._transition(run, ImportStatus.PUBLISHED); run.finished_at_utc = datetime.now(timezone.utc).isoformat()
             if lose_response_after_activation:
                 raise ResponseLostAfterActivation("injected response loss after activation")
