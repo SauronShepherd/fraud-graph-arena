@@ -46,7 +46,17 @@ def main() -> int:
             warehouse.execute(f"UPDATE {runs} SET status='PUBLISHED', finished_at_utc=current_timestamp() WHERE import_run_id={q(args.run_id)}")
             report["status"] = "pass"
         except Exception as exc:
-            report.update({"status": "fail", "error_code": "LIVE_PUBLICATION_FAILED", "error_summary": redact_error(str(exc))})
+            error_summary = redact_error(str(exc))
+            cleanup_ok = True
+            try:
+                warehouse.execute(f"UPDATE {publications} SET status='REJECTED' WHERE publication_id={q(publication)} AND status IN ('CANDIDATE','VALIDATED')")
+                warehouse.cleanup_candidate(publication)
+            except Exception as cleanup_exc:
+                cleanup_ok = False
+                error_summary = f"{error_summary}; cleanup: {redact_error(str(cleanup_exc))}"[-1024:]
+            terminal = "FAILED_CLEANUP" if not cleanup_ok else "FAILED"
+            warehouse.execute(f"UPDATE {runs} SET status={q(terminal)}, error_code={q('CANDIDATE_CLEANUP_FAILED' if not cleanup_ok else 'LIVE_PUBLICATION_FAILED')}, error_summary={q(error_summary)}, finished_at_utc=current_timestamp() WHERE import_run_id={q(args.run_id)}")
+            report.update({"status": "fail", "terminal_run_status": terminal, "error_code": "CANDIDATE_CLEANUP_FAILED" if not cleanup_ok else "LIVE_PUBLICATION_FAILED", "error_summary": error_summary})
     rendered = json.dumps(report, indent=2) + "\n"; print(rendered, end="")
     if args.report: args.report.parent.mkdir(parents=True, exist_ok=True); args.report.write_text(rendered, encoding="utf-8")
     return 0
