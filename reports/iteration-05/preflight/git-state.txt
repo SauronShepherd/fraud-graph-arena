@@ -1,13 +1,3 @@
-qualified_source_sha=4caaf5a292dc0e5e7476a4235df5c342e4381c48
-working_tree=dirty
-changed_paths=M reports/iteration-05/imports/failure-injection-summary.json
- M reports/iteration-05/imports/idempotence-comparison.json
- M reports/iteration-05/imports/repeat-10-summary.json
- M reports/iteration-05/preflight/canonical-assets.json
- M reports/iteration-05/regression/local-tests.json
- M reports/iteration-05/security/qualification-gap.json
- M reports/iteration-05/topology/after-first-import.json
- M reports/iteration-05/topology/after-repeat-10.json
- M reports/iteration-05/topology/clean-recreation.json
- M reports/iteration-05/topology/resource-inventory.json
- M reports/iteration-05/topology/topology-comparison.json
+qualified_source_sha=fe4bf7cec1cfa87a51c9f8e45f346176e8677f4f
+working_tree=clean
+changed_paths=
