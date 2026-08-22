@@ -16,12 +16,23 @@ def classify(run: dict, state: dict) -> str:
         return "recoverable-retry"
     return "manual-review-ambiguous"
 
+def actions_for(run: dict, state: dict) -> list[str]:
+    classification = classify(run, state)
+    if classification == "already-successful-response-lost":
+        return ["reconcile_run_to_published", "verify_pointer_and_publication"]
+    if classification == "cleanup-required-rejected-candidate":
+        return ["cleanup_candidate_by_publication_id", "mark_failed_cleanup_if_cleanup_fails", "block_candidate_reuse_until_clean"]
+    if classification == "recoverable-retry":
+        return ["mark_abandoned_before_activation_failed", "preserve_active_pointer", "allow_retry_after_cleanup"]
+    return ["operator_review"]
+
 def reconcile(state: dict) -> dict:
     runs=state.get("runs", [])
     if isinstance(runs, dict): runs=list(runs.values())
     reconciled=[]
     for run in runs:
         run["reconciliation_classification"] = classify(run, state)
+        run["reconciliation_actions"] = actions_for(run, state)
         if run.get("status") not in TERMINAL:
             if run["reconciliation_classification"] == "already-successful-response-lost":
                 run["status"] = "PUBLISHED"
@@ -38,7 +49,9 @@ def main() -> int:
         state["runs"] = [run for run in runs if run.get("run_id") == args.run_id]
     if args.list or args.dry_run:
         runs = state.get("runs", []); runs = list(runs.values()) if isinstance(runs, dict) else runs
-        for run in runs: run["reconciliation_classification"] = classify(run, state)
+        for run in runs:
+            run["reconciliation_classification"] = classify(run, state)
+            run["reconciliation_actions"] = actions_for(run, state)
         state["reconciled_run_ids"] = []
     elif args.repair:
         if args.confirm != "REPAIR": raise SystemExit("refusing repair: pass --confirm REPAIR")
