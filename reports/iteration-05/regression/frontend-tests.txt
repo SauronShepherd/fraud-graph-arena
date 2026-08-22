@@ -2,7 +2,7 @@
   "status": "pass",
   "command": "npx.cmd vitest run --pool=forks --no-file-parallelism --maxWorkers=1 --testTimeout=5000",
   "exit_code": 0,
-  "started_at_utc": "2026-08-22T04:36:48.750821+00:00",
-  "finished_at_utc": "2026-08-22T04:37:12.928076+00:00",
-  "output_tail": "\n RUN  v4.1.10 C:/Users/angel.alvarez/PycharmProjects/fraud-graph-arena/apps/web\n\n\n Test Files  17 passed (17)\n      Tests  31 passed (31)\n   Start at  06:36:50\n   Duration  22.05s (transform 741ms, setup 4.48s, import 1.25s, tests 748ms, environment 11.69s)\n\n"
+  "started_at_utc": "2026-08-22T04:45:38.373934+00:00",
+  "finished_at_utc": "2026-08-22T04:47:42.585970+00:00",
+  "output_tail": "\n RUN  v4.1.10 C:/Users/angel.alvarez/PycharmProjects/fraud-graph-arena/apps/web\n\n\n Test Files  17 passed (17)\n      Tests  31 passed (31)\n   Start at  06:46:27\n   Duration  75.17s (transform 1.21s, setup 18.57s, import 1.91s, tests 763ms, environment 49.20s)\n\n"
 }
