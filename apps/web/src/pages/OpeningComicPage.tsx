@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import type { Opening, ProblemDetails } from "../api/contracts";
 import { Loading } from "../components/Loading";
 import { ProblemPanel } from "../components/ProblemPanel";
@@ -11,13 +10,12 @@ import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 export function OpeningComicPage() {
   const { context: routeContext } = useScreenLocation();
   const roundId = String(routeContext.roundId ?? "");
-  const [searchParams, setSearchParams] = useSearchParams();
   const { model: opening, problem: loadProblem, retry } = useScreenData<Opening>("ROUND_OPENING", { roundId }, roundId);
   const [problem, setProblem] = useState<ProblemDetails | null>(null);
   const [finishing, setFinishing] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
   const { dispatchAction, transitionLocked } = useScreenRuntime();
-  const pageNumber = Number(searchParams.get("page") ?? "1");
+  const pageNumber = Number(routeContext.page ?? 1);
 
   useEffect(() => { if (opening) rememberRound(opening.round.id); }, [opening]);
 
@@ -79,7 +77,7 @@ export function OpeningComicPage() {
           className="button secondary"
           type="button"
           disabled={isFirst || finishing || transitionLocked}
-          onClick={() => setSearchParams({ page: String(currentIndex) })}
+          onClick={() => void dispatchAction("CHANGE_INTRO_PAGE", { page: currentIndex })}
         >
           Previous page
         </button>
@@ -88,7 +86,7 @@ export function OpeningComicPage() {
             className="button"
             type="button"
             disabled={finishing || transitionLocked}
-            onClick={() => setSearchParams({ page: String(currentIndex + 2) })}
+            onClick={() => void dispatchAction("CHANGE_INTRO_PAGE", { page: currentIndex + 2 })}
           >
             Next page
           </button>
