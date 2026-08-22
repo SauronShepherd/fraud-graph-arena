@@ -1,10 +1,13 @@
 """Guarded case-version-scoped activation for a validated candidate."""
 from __future__ import annotations
 import argparse, json
+import re
 from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse
 
 def activation_statement(catalog: str, schema: str, case_id: str, case_version: str, snapshot_version: str, publication_id: str) -> str:
-    table = f"{catalog}.{schema}.fga_active_publications"
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", catalog) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", schema):
+        raise ValueError("catalog and schema must be registered SQL identifiers")
+    table = DatabricksWarehouse(catalog=catalog, schema=schema).qualify_table("fga_active_publications")
     q = lambda value: "'" + value.replace("'", "''") + "'"
     return f"MERGE INTO {table} AS target USING (SELECT {q(case_id)} AS case_id, {q(case_version)} AS case_version, {q(snapshot_version)} AS snapshot_version, {q(publication_id)} AS active_publication_id, current_timestamp() AS activated_at_utc) AS source ON target.case_id = source.case_id AND target.case_version = source.case_version WHEN MATCHED THEN UPDATE SET * WHEN NOT MATCHED THEN INSERT *"
 

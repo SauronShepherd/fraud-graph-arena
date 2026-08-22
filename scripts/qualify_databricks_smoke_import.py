@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, csv, hashlib, json, subprocess, tempfile
+import argparse, csv, hashlib, json, subprocess, tempfile, re
 from pathlib import Path
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, headers
 from fraud_graph_arena.canonical_persistence.identity import content_digest, publication_id
@@ -21,10 +21,13 @@ def quote(value):
 
 def main():
     p = argparse.ArgumentParser(); p.add_argument("package", type=Path); p.add_argument("--profile", default="sda"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse", default="e444f39962128242"); p.add_argument("--all-rows", action="store_true"); args = p.parse_args()
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", args.catalog) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", args.schema):
+        raise SystemExit("catalog and schema must be registered SQL identifiers")
     manifest = json.loads((args.package / "manifest.json").read_text(encoding="utf-8"))
     digest = content_digest(args.package)
     publication = publication_id(PackageIdentity(manifest["case_id"], manifest["case_version"], manifest["snapshot_version"], manifest["canonical_model_version"], digest))
-    existing = sql_api(args.profile, args.warehouse, args.catalog, args.schema, f"SELECT COUNT(*) FROM {next(iter(PHYSICAL_TARGETS.values()))} WHERE _publication_id = '{publication}'")
+    first_table = next(iter(PHYSICAL_TARGETS.values()))
+    existing = sql_api(args.profile, args.warehouse, args.catalog, args.schema, f"SELECT COUNT(*) FROM {args.catalog}.{args.schema}.{first_table} WHERE _publication_id = {quote(publication)}")
     if existing.get("result", {}).get("data_array", [["0"]])[0][0] != "0":
         print(json.dumps({"status": "REUSED", "publication_id": publication, "package": str(args.package), "retry": "REUSED"}, indent=2)); return
     import uuid
@@ -38,7 +41,7 @@ def main():
         for offset in range(0, len(rows), 500):
             values_sql = []
             for row in rows[offset:offset + 500]: values_sql.append("(" + ", ".join([quote(row.get(column)) for column in headers(rel)] + [quote(publication), quote(run_id)]) + ")")
-            sql_api(args.profile, args.warehouse, args.catalog, args.schema, f"INSERT INTO {table} ({', '.join(columns)}) VALUES {', '.join(values_sql)}")
+            sql_api(args.profile, args.warehouse, args.catalog, args.schema, f"INSERT INTO {args.catalog}.{args.schema}.{table} ({', '.join(columns)}) VALUES {', '.join(values_sql)}")
         counts[rel] = len(rows)
     report = {"status": "pass", "run_id": run_id, "publication_id": publication, "package": str(args.package), "datasets_with_rows": sum(1 for n in counts.values() if n), "row_counts": counts, "retry": "not_run"}
     print(json.dumps(report, indent=2))
