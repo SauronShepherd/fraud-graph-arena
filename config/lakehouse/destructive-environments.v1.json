@@ -1,9 +1,14 @@
 {
-  "environments": {
-    "fga_dev": {
+  "version": "1.0.0",
+  "approved": [
+    {
+      "environment": "fga_dev",
+      "workspace_host": "",
       "catalog": "sda_dev",
       "schema": "sandbox",
-      "allow_destructive_recreation": true
+      "destructive_unit": "owned_objects",
+      "confirmation": "fga_dev:sda_dev:sandbox"
     }
-  }
+  ],
+  "production_is_absent": true
 }
