@@ -5,7 +5,7 @@ from pathlib import Path
 from .identity import content_digest, publication_id, semantic_hash
 from .models import ImportResult, ImportRun, ImportStatus, PackageIdentity, Publication, PublicationStatus, LoadPolicy, ImportRunFile, ImportRunDataset
 from .registry import PHYSICAL_TARGETS, validate_registry
-from .types import validate_row_types
+from .types import coerce_row
 from .validator import validate_candidate
 from .lifecycle import require_transition
 from .security import redact_error
@@ -62,7 +62,7 @@ class CanonicalImporter:
                     reader = csv.DictReader(fh); expected = __import__("fraud_graph_arena.case_data.registry", fromlist=["headers"]).headers(rel)
                     if tuple(reader.fieldnames or ()) != expected: raise CanonicalImportError(f"header mismatch: {rel}")
                     rows[rel] = [dict(row) for row in reader]
-                    for row in rows[rel]: validate_row_types(row, rel)
+                    rows[rel] = [coerce_row(row, rel) for row in rows[rel]]
                 run.datasets[rel] = ImportRunDataset(run_id, rel, len(rows[rel]), len(rows[rel]), None, "STAGED")
                 run.dataset_phases[rel] = "STAGED"; self.warehouse.record_dataset(run_id, rel, len(rows[rel]), len(rows[rel]), None, "STAGED")
                 if fail_after is not None and index + 1 == fail_after: raise RuntimeError("injected failure")
