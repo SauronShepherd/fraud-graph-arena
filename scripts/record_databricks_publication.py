@@ -8,6 +8,9 @@ from fraud_graph_arena.canonical_persistence.models import PackageIdentity
 from fraud_graph_arena.canonical_persistence.package import CanonicalPackage
 from validate_databricks_candidate import validate_results
 
+PUBLICATION_TABLE = "fga_import_publications"
+ACTIVE_POINTER_TABLE = "fga_active_publications"
+
 def q(value: object) -> str:
     if value is None: return "NULL"
     return "'" + str(value).replace("'", "''") + "'"
@@ -18,7 +21,7 @@ def main() -> int:
     package = CanonicalPackage.read(args.package)
     identity = PackageIdentity(package.case_id, package.case_version, package.snapshot_version, package.canonical_model_version, package.content_digest)
     publication = publication_id(identity); warehouse = DatabricksWarehouse(args.profile, args.warehouse, args.catalog, args.schema)
-    runs = warehouse.qualify_table("fga_import_runs"); publications = warehouse.qualify_table("fga_import_publications")
+    runs = warehouse.qualify_table("fga_import_runs"); publications = warehouse.qualify_table(PUBLICATION_TABLE); active_pointer = warehouse.qualify_table(ACTIVE_POINTER_TABLE)
     statements = [
         f"INSERT INTO {runs} (import_run_id,case_id,case_version,snapshot_version,package_content_digest,status,retry_of,error_code,error_summary,started_at_utc,finished_at_utc,actor,load_policy) VALUES ({q(args.run_id)},{q(identity.case_id)},{q(identity.case_version)},{q(identity.snapshot_version)},{q(identity.content_digest)},'STARTED',NULL,NULL,NULL,current_timestamp(),NULL,'record-publication','FULL_INTERNAL')",
         f"INSERT INTO {publications} (publication_id,case_id,case_version,snapshot_version,canonical_model_version,package_content_digest,semantic_hash,status) VALUES ({q(publication)},{q(identity.case_id)},{q(identity.case_version)},{q(identity.snapshot_version)},{q(identity.canonical_model_version)},{q(identity.content_digest)},NULL,'CANDIDATE')",
