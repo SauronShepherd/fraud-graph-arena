@@ -26,10 +26,11 @@ export function App() {
   const loadScreenModel = useCallback(async (source: DataSourceId, loadContext: typeof context) => {
     return loadCoordinator.current.load(source, loadContext);
   }, [screen]);
-  const handleTransitionComplete = useCallback(() => {
+  const handleTransitionComplete = useCallback((completedPlan: TransitionPlan) => {
+    navigate(locationFor(screenDefinitions.get(completedPlan.target)!, completedPlan.context), { replace: completedPlan.history === "REPLACE" });
     setTransitionPlan(null);
     setTransitionLocked(false);
-  }, []);
+  }, [navigate]);
   const dispatchAction = useCallback(async (actionId: string, payload?: Record<string, string | number>): Promise<void> => {
     if (transitionLocked) return;
     const action = actions[actionId as ActionId];
@@ -40,7 +41,6 @@ export function App() {
       const plan = resolveTransition(screenDefinitions.get(screen)!, context, result.event, screenDefinitions);
       if (!plan) throw new Error(`UNDECLARED_SCREEN_TRANSITION:${screen}:${result.event.type}`);
       setTransitionPlan(plan);
-      navigate(locationFor(screenDefinitions.get(plan.target)!, plan.context), { replace: plan.history === "REPLACE" });
     } catch (error) {
       setTransitionLocked(false);
       throw error;
