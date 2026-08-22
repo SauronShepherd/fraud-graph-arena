@@ -8,7 +8,7 @@ class FlatCsvFamilyConverter(Converter):
     family: str
     converter_id: str
     def convert(self, source: Path, output: Path, mapping: dict[str, Any]) -> None:
-        convert_flat_csv(source, output, case_id=str(mapping["case_id"]), family=self.family, converter=self.converter_id)
+        convert_flat_csv(source, output, case_id=str(mapping["case_id"]), family=self.family, case_version=str(mapping.get("case_version", "1.0.0")), snapshot_version=str(mapping.get("snapshot_version", "1.0.0")), converter=self.converter_id)
 
 class AcademyConverter(FlatCsvFamilyConverter):
     family = "ACADEMY"; converter_id = "academy.csv.v1"
