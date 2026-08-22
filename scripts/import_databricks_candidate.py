@@ -5,7 +5,7 @@ the closed physical target with publication/run metadata in the same write.
 No untagged target rows are created and no post-load UPDATE is required.
 """
 from __future__ import annotations
-import argparse, json
+import argparse, hashlib, json
 from pathlib import Path
 from fraud_graph_arena.canonical_persistence.identity import publication_id
 from fraud_graph_arena.canonical_persistence.models import PackageIdentity
