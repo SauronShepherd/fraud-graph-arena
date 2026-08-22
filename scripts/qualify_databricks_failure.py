@@ -6,7 +6,11 @@ def call(profile, warehouse, catalog, schema, statement):
     result=subprocess.run(["databricks","api","post","/api/2.0/sql/statements","--profile",profile,"--json","@"+path],capture_output=True,text=True,check=True)
     return json.loads(result.stdout)
 def main():
-    p=argparse.ArgumentParser(); p.add_argument("--profile",default="sda"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--report",default="reports/iteration-05/imports/failure-injection-summary.json"); args=p.parse_args()
+    p=argparse.ArgumentParser(); p.add_argument("--profile",default="sda"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--report",default="reports/iteration-05/imports/failure-injection-summary.json"); p.add_argument("--execute",action="store_true"); args=p.parse_args()
+    if not args.execute:
+        report={"status":"not_run","reason":"requires --execute and a provisioned live warehouse","qualified_source_sha":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),"catalog":args.catalog,"schema":args.schema,"warehouse":args.warehouse}
+        from pathlib import Path
+        report_path=Path(args.report); report_path.parent.mkdir(parents=True,exist_ok=True); report_path.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
     before=call(args.profile,args.warehouse,args.catalog,args.schema,"SELECT active_publication_id FROM fga_active_publications LIMIT 1")
     call(args.profile,args.warehouse,args.catalog,args.schema,"INSERT INTO fga_import_runs VALUES ('dbx_failed_run_17','BONE_LEDGER','1.0.0','2026.07.18.1','injected','FAILED',NULL,'INJECTED_FAILURE',current_timestamp(),current_timestamp())")
     after=call(args.profile,args.warehouse,args.catalog,args.schema,"SELECT active_publication_id FROM fga_active_publications LIMIT 1")
