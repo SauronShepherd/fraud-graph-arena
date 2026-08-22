@@ -17,6 +17,21 @@ class LoadPolicy(StrEnum):
     FULL_INTERNAL = "FULL_INTERNAL"
     VALIDATION_ONLY = "VALIDATION_ONLY"
 
+@dataclass
+class ImportRunFile:
+    run_id: str; relative_path: str; byte_length: int; sha256: str
+    observed_at_utc: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+@dataclass
+class ImportRunDataset:
+    run_id: str; dataset_path: str; source_row_count: int; staged_row_count: int | None = None
+    validated_row_count: int | None = None; phase: str = "OBSERVED"
+
+@dataclass
+class ActivePublication:
+    case_id: str; case_version: str; snapshot_version: str; canonical_model_version: str
+    active_publication_id: str; activated_at_utc: str; activating_run_id: str
+
 @dataclass(frozen=True)
 class PackageIdentity:
     case_id: str; case_version: str; snapshot_version: str; canonical_model_version: str; content_digest: str
@@ -34,8 +49,8 @@ class ImportRun:
     finished_at_utc: str | None = None
     actor: str = "canonical-importer"
     load_policy: LoadPolicy = LoadPolicy.SAFE_ONLY
-    files: dict[str, dict[str, Any]] = field(default_factory=dict)
-    datasets: dict[str, int] = field(default_factory=dict)
+    files: dict[str, ImportRunFile] = field(default_factory=dict)
+    datasets: dict[str, ImportRunDataset] = field(default_factory=dict)
     dataset_phases: dict[str, str] = field(default_factory=dict)
 
 @dataclass

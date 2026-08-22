@@ -3,7 +3,7 @@ import csv, uuid, hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 from .identity import content_digest, publication_id, semantic_hash
-from .models import ImportResult, ImportRun, ImportStatus, PackageIdentity, Publication, PublicationStatus, LoadPolicy
+from .models import ImportResult, ImportRun, ImportStatus, PackageIdentity, Publication, PublicationStatus, LoadPolicy, ImportRunFile, ImportRunDataset
 from .registry import PHYSICAL_TARGETS, validate_registry
 from .types import validate_row_types
 from .validator import validate_candidate
@@ -72,13 +72,13 @@ class CanonicalImporter:
             for index, rel in enumerate(PHYSICAL_TARGETS):
                 path = root / rel
                 if not path.is_file() or path.stat().st_size == 0: raise CanonicalImportError(f"missing or zero-byte canonical file: {rel}")
-                data = path.read_bytes(); digest = hashlib.sha256(data).hexdigest(); run.files[rel] = {"bytes": len(data), "sha256": digest}; self.warehouse.record_file(run_id, rel, len(data), digest)
+                data = path.read_bytes(); digest = hashlib.sha256(data).hexdigest(); run.files[rel] = ImportRunFile(run_id, rel, len(data), digest); self.warehouse.record_file(run_id, rel, len(data), digest)
                 with path.open(newline="", encoding="utf-8") as fh:
                     reader = csv.DictReader(fh); expected = __import__("fraud_graph_arena.case_data.registry", fromlist=["headers"]).headers(rel)
                     if tuple(reader.fieldnames or ()) != expected: raise CanonicalImportError(f"header mismatch: {rel}")
                     rows[rel] = [dict(row) for row in reader]
                     for row in rows[rel]: validate_row_types(row, rel)
-                run.datasets[rel] = len(rows[rel])
+                run.datasets[rel] = ImportRunDataset(run_id, rel, len(rows[rel]), len(rows[rel]), None, "STAGED")
                 run.dataset_phases[rel] = "STAGED"; self.warehouse.record_dataset(run_id, rel, len(rows[rel]), len(rows[rel]), None, "STAGED")
                 if fail_after is not None and index + 1 == fail_after: raise RuntimeError("injected failure")
             self._transition(run, ImportStatus.STAGED); self._transition(run, ImportStatus.VALIDATING)
@@ -92,8 +92,9 @@ class CanonicalImporter:
             candidate = Publication(pub_id, identity, PublicationStatus.CANDIDATE, persisted_rows, fingerprint); self.warehouse.candidates[pub_id] = candidate
             require_transition(candidate.status, PublicationStatus.VALIDATED); candidate.status = PublicationStatus.VALIDATED; self.warehouse.publications[pub_id] = candidate; self.warehouse.candidates.pop(pub_id, None)
             self._transition(run, ImportStatus.VALIDATED); self._transition(run, ImportStatus.PUBLISHING)
-            for rel, count in run.datasets.items(): run.dataset_phases[rel] = "VALIDATED"; self.warehouse.record_dataset(run_id, rel, count, count, count, "VALIDATED")
-            PointerPublisher(self.warehouse).activate(pub_id)
+            for rel, dataset in run.datasets.items():
+                dataset.validated_row_count = dataset.staged_row_count; dataset.phase = "VALIDATED"; run.dataset_phases[rel] = "VALIDATED"; self.warehouse.record_dataset(run_id, rel, dataset.source_row_count, dataset.staged_row_count, dataset.validated_row_count, "VALIDATED")
+            PointerPublisher(self.warehouse).activate(pub_id, activating_run_id=run_id)
             self._transition(run, ImportStatus.PUBLISHED); run.finished_at_utc = datetime.now(timezone.utc).isoformat()
             if lose_response_after_activation:
                 raise ResponseLostAfterActivation("injected response loss after activation")

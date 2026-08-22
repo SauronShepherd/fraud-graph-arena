@@ -15,3 +15,15 @@ def test_candidate_operations_are_registry_resolved(monkeypatch):
     warehouse.activate_publication("case_1", "1.0.0", "snap_1", "1.0.0", "pub_1", "run_1")
     assert any("fga_config_cases_csv" in statement and "case''1" in statement for statement in statements)
     assert all("fga_" in statement for statement in statements)
+
+def test_import_records_use_typed_operational_values():
+    from pathlib import Path
+    from fraud_graph_arena.canonical_persistence.importer import CanonicalImporter
+    from fraud_graph_arena.canonical_persistence.models import ImportRunDataset, ImportRunFile
+    from fraud_graph_arena.canonical_persistence.warehouse import MemoryWarehouse
+    package = sorted((Path("case-data/canonical/v1")).iterdir())[0]
+    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(package)
+    run = warehouse.runs[result.run_id]
+    assert isinstance(next(iter(run.files.values())), ImportRunFile)
+    assert isinstance(next(iter(run.datasets.values())), ImportRunDataset)
+    assert warehouse.active_records[run.identity.key].activating_run_id == result.run_id

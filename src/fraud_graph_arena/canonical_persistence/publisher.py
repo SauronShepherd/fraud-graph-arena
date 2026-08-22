@@ -2,13 +2,15 @@
 from __future__ import annotations
 from .lifecycle import require_transition
 from .models import PublicationStatus
+from datetime import datetime, timezone
+from .models import ActivePublication
 
 class PublicationError(ValueError): pass
 
 class PointerPublisher:
     def __init__(self, warehouse): self.warehouse = warehouse
 
-    def activate(self, publication_id: str) -> None:
+    def activate(self, publication_id: str, *, activating_run_id: str = "unknown") -> None:
         publication = self.warehouse.publications.get(publication_id)
         if publication is None: raise PublicationError("unknown publication")
         if publication.status == PublicationStatus.CANDIDATE:
@@ -17,6 +19,7 @@ class PointerPublisher:
         scope = publication.identity.key; previous = self.warehouse.active.get(scope)
         require_transition(publication.status, PublicationStatus.ACTIVE); publication.status = PublicationStatus.ACTIVE
         self.warehouse.active[scope] = publication_id
+        self.warehouse.active_records[scope] = ActivePublication(publication.identity.case_id, publication.identity.case_version, publication.identity.snapshot_version, publication.identity.canonical_model_version, publication_id, datetime.now(timezone.utc).isoformat(), activating_run_id)
         if previous and previous != publication_id:
             require_transition(self.warehouse.publications[previous].status, PublicationStatus.SUPERSEDED); self.warehouse.publications[previous].status = PublicationStatus.SUPERSEDED
 
@@ -28,6 +31,7 @@ class PointerPublisher:
         if publication.status != PublicationStatus.ACTIVE:
             require_transition(publication.status, PublicationStatus.ACTIVE); publication.status = PublicationStatus.ACTIVE
         self.warehouse.active[scope] = publication_id
+        self.warehouse.active_records[scope] = ActivePublication(publication.identity.case_id, publication.identity.case_version, publication.identity.snapshot_version, publication.identity.canonical_model_version, publication_id, datetime.now(timezone.utc).isoformat(), "rollback")
         if previous and previous != publication_id:
             require_transition(self.warehouse.publications[previous].status, PublicationStatus.SUPERSEDED); self.warehouse.publications[previous].status = PublicationStatus.SUPERSEDED
 
