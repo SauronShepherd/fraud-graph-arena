@@ -1,0 +1,11 @@
+{
+  "fixture_version": "1",
+  "candidates": [
+    {"name": "Cytoscape.js", "role": "NORMATIVE_INCUMBENT", "version": null, "status": "NOT_MEASURED"},
+    {"name": "Sigma.js", "role": "COMPARISON_CANDIDATE", "version": null, "status": "NOT_MEASURED"},
+    {"name": "D3", "role": "COMPARISON_CANDIDATE", "version": null, "status": "NOT_MEASURED"},
+    {"name": "React Flow", "role": "COMPARISON_CANDIDATE", "version": null, "status": "NOT_MEASURED"}
+  ],
+  "commercial_finalist": null,
+  "production_decision": "BLOCKED_PENDING_QUALIFICATION"
+}

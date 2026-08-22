@@ -2,10 +2,10 @@
 from __future__ import annotations
 import argparse, json
 from pathlib import Path
-from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse
+from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse, _literal
 from fraud_graph_arena.case_data.registry import supported_model_versions
 
-def q(value: object) -> str: return "'" + str(value).replace("'", "''") + "'"
+q = _literal
 
 def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("--case-id", required=True); parser.add_argument("--case-version", required=True); parser.add_argument("--publication-id", required=True); parser.add_argument("--run-id", required=True)

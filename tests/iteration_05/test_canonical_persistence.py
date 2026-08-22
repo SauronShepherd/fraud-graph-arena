@@ -18,7 +18,7 @@ PACKAGES = sorted((ROOT / "case-data/canonical/v1").iterdir())
 
 def test_registry_is_bounded_and_case_independent():
     assert len(PHYSICAL_TARGETS) == 32
-    assert len(expected_topology()) == 37
+    assert len(expected_topology()) == 44
     assert not any(name.startswith("fga_case_") for name in PHYSICAL_TARGETS.values())
 
 def test_exact_retry_reuses_publication():
@@ -53,7 +53,7 @@ def test_candidate_validation_is_mandatory_before_activation(monkeypatch):
 def test_all_packages_share_topology():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
     for package in PACKAGES: importer.import_package(package)
-    assert warehouse.topology == set(expected_topology()[:32])
+    assert warehouse.topology == set(expected_topology())
 
 def test_manifest_tampering_fails_before_run_staging(tmp_path):
     package = tmp_path / PACKAGES[0].name; import shutil; shutil.copytree(PACKAGES[0], package)

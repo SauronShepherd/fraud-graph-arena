@@ -4,17 +4,24 @@ import argparse, csv, hashlib, json
 from pathlib import Path
 from fraud_graph_arena.case_data.registry import TABLE_PATHS
 FAMILY_BY_PREFIX = {"T": "ACADEMY", "P": "PUPPY", "A": "ADULT", "S": "SENIOR"}
+MAPPINGS = json.loads((Path(__file__).resolve().parents[1] / "config/converters/family-mappings.v1.json").read_text(encoding="utf-8"))["families"]
 def migrate(package: Path) -> None:
     path = package / "manifest.json"; manifest = json.loads(path.read_text(encoding="utf-8"))
     with (package / "config/cases.csv").open(newline="", encoding="utf-8") as handle: row = next(csv.DictReader(handle))
     manifest["case_id"] = row["case_id"]; manifest["case_version"] = row["case_version"]
     manifest["family"] = manifest.get("family") or manifest.get("profile_code") or FAMILY_BY_PREFIX[package.name[0]]
-    manifest["canonical_model_version"] = "1.0.0"; manifest["converter"] = manifest.get("converter") or f"{manifest['family'].lower()}.csv.v1"
+    mapping = MAPPINGS[manifest["family"]]
+    manifest["canonical_model_version"] = "1.0.0"; manifest["canonical_csv_table_count"] = len(TABLE_PATHS); manifest["converter"] = mapping["converter"]
     manifest["package_name"] = package.name; manifest["package_version"] = manifest.get("package_version") or "1.0.0"
     manifest["converter_version"] = manifest.get("converter_version") or "v1"
     manifest["mapping_version"] = manifest.get("mapping_version") or "family-mappings.v1"
-    manifest["source_dialect"] = manifest.get("source_dialect") or f"{manifest['family'].lower()}-flat-csv-v1"
-    manifest["files"] = [{"path": rel, "bytes": len((package / rel).read_bytes()), "sha256": hashlib.sha256((package / rel).read_bytes()).hexdigest(), "rows": max(0, (package / rel).read_bytes().count(b"\n") - 1)} for rel in TABLE_PATHS]
+    manifest["source_dialect"] = mapping["source_dialect"]
+    receipts = []
+    for rel in TABLE_PATHS:
+        data = (package / rel).read_bytes()
+        with (package / rel).open(newline="", encoding="utf-8") as handle: rows = max(0, sum(1 for _ in csv.reader(handle)) - 1)
+        receipts.append({"path": rel, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "rows": rows})
+    manifest["files"] = receipts; manifest["source_inputs"] = manifest.get("source_inputs") or []
     path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("root", type=Path); args = parser.parse_args()

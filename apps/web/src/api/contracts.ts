@@ -72,7 +72,11 @@ export interface Workspace {
   path_name: string;
   empty_state_code: string;
   actions: ActionAvailability[];
+  graph: Graph;
 }
+export interface GraphNode { record_id: string; record_type: string; record_subtype: string; label: string; source_system_id: string; provenance_ref: string; safe_summary: string; }
+export interface GraphEdge { relationship_id: string; source_record_id: string; target_record_id: string; relationship_family: string; relationship_type: string; directed: boolean; provenance: string; event_time: string; player_safe_summary: string; }
+export interface Graph { projection_version: string; nodes: GraphNode[]; edges: GraphEdge[]; node_count: number; edge_count: number; }
 
 export type ActionState = "AVAILABLE" | "NOT_IMPLEMENTED" | "LOCKED" | "PENDING" | "FAILED";
 export interface ActionAvailability { id: string; state: ActionState; reason_code: string; reason: string; }

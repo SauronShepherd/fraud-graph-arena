@@ -91,6 +91,33 @@ class ActionAvailability(ApiModel):
     reason_code: str
     reason: str
 
+class GraphNodeResponse(ApiModel):
+    record_id: str
+    record_type: str
+    label: str
+    safe_summary: str
+    record_subtype: str
+    source_system_id: str
+    provenance_ref: str
+
+class GraphEdgeResponse(ApiModel):
+    relationship_id: str
+    source_record_id: str
+    target_record_id: str
+    relationship_family: str
+    relationship_type: str
+    directed: bool
+    provenance: str
+    player_safe_summary: str
+    event_time: str
+
+class GraphResponse(ApiModel):
+    projection_version: str
+    nodes: list[GraphNodeResponse]
+    edges: list[GraphEdgeResponse]
+    node_count: int
+    edge_count: int
+
 
 class WorkspaceResponse(ApiModel):
     round: RoundResponse
@@ -101,6 +128,7 @@ class WorkspaceResponse(ApiModel):
     path_name: str
     empty_state_code: str
     actions: list[ActionAvailability]
+    graph: GraphResponse
 
 
 class LiveHealthResponse(ApiModel):

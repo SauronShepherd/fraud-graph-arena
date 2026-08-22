@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["candidate", "candidate_version", "fixture_sha256", "environment", "runs", "hard_requirements", "license"],
+  "properties": {
+    "candidate": {"type": "string", "minLength": 1},
+    "candidate_version": {"type": "string", "minLength": 1},
+    "fixture_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "environment": {"type": "object", "required": ["browser", "os", "viewport", "node_version"], "properties": {"browser": {"type": "string"}, "os": {"type": "string"}, "viewport": {"type": "string"}, "node_version": {"type": "string"}}, "additionalProperties": true},
+    "runs": {"type": "array", "items": {"type": "object", "required": ["run_number", "mode", "measurements"], "properties": {"run_number": {"type": "integer", "minimum": 1}, "mode": {"enum": ["A_RENDERER", "B_SOLUTION"]}, "measurements": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0}}}, "additionalProperties": false}},
+    "hard_requirements": {"type": "object", "additionalProperties": {"enum": ["PASS", "FAIL", "NOT_MEASURED"]}},
+    "license": {"type": "object", "required": ["identifier", "source", "redistribution_status"], "properties": {"identifier": {"type": "string"}, "source": {"type": "string"}, "redistribution_status": {"enum": ["ALLOWED", "RESTRICTED", "UNKNOWN"]}}, "additionalProperties": true}
+  }
+}

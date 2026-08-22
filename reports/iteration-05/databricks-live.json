@@ -1,0 +1,9 @@
+{
+  "status": "not_qualified",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "e444f39962128242",
+  "capability_probe": "not_run",
+  "reason": "warehouse_unavailable",
+  "error": "Error: Cannot start warehouse 'Serverless Starter Warehouse' with Serverless Compute since it is disabled in global warehouse config. To use the warehouse, please contact your administrator."
+}

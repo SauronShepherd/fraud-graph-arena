@@ -39,6 +39,9 @@ assignments:
   - {path: src/fraud_graph_arena/case_data/**, owner: architecture-governance, reviewer: security-assurance}
   - {path: contracts/canonical/**, owner: architecture-governance, reviewer: security-assurance}
   - {path: config/canonical-corpus.v1.json, owner: architecture-governance, reviewer: release-management}
+  - {path: config/canonical-reference-rules.v1.json, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: config/canonical-validation-checks.v1.json, owner: architecture-governance, reviewer: quality-engineering}
+  - {path: config/converters/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: config/lakehouse/destructive-environments.v1.json, owner: security-assurance, reviewer: architecture-governance}
   - {path: src/fraud_graph_arena/canonical_persistence/**, owner: architecture-governance, reviewer: security-assurance}
   - {path: sql/**, owner: architecture-governance, reviewer: quality-engineering}

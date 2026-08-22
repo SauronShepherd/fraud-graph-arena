@@ -9,11 +9,17 @@ def parse_json(value: str, field: str = "json"):
     except (TypeError, json.JSONDecodeError) as exc: raise ValueError(f"{field}: invalid JSON") from exc
 
 def parse_timestamp(value: str, field: str = "timestamp") -> datetime:
-    if not value or not value.endswith("Z"): raise ValueError(f"{field}: timestamp must be UTC RFC3339 with Z")
-    try: result = datetime.fromisoformat(value[:-1] + "+00:00")
+    # Canonical day-level source events are normalized to the start of that
+    # UTC day; all timestamp output remains timezone-aware and UTC.
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value or ""):
+        try: return datetime.fromisoformat(value).replace(tzinfo=timezone.utc)
+        except ValueError as exc: raise ValueError(f"{field}: invalid timestamp") from exc
+    if not value: raise ValueError(f"{field}: timestamp is required")
+    try:
+        result = datetime.fromisoformat(value[:-1] + "+00:00" if value.endswith("Z") else value)
     except ValueError as exc: raise ValueError(f"{field}: invalid timestamp") from exc
-    if result.tzinfo != timezone.utc: raise ValueError(f"{field}: timestamp must be UTC")
-    return result
+    if result.tzinfo is None: raise ValueError(f"{field}: timestamp must include a timezone")
+    return result.astimezone(timezone.utc)
 
 def coerce_sql_value(value: str, sql_type: str, field: str = "value"):
     """Convert a canonical lexical value using its registry SQL type."""
@@ -22,7 +28,7 @@ def coerce_sql_value(value: str, sql_type: str, field: str = "value"):
     try:
         if normalized == "STRING": return value
         if normalized in {"INT", "BIGINT"}:
-            if not re.fullmatch(r"-?(0|[1-9][0-9]*)", value): raise ValueError
+            if not re.fullmatch(r"-?[0-9]+", value): raise ValueError
             return int(value)
         if normalized == "BOOLEAN":
             if value not in {"true", "false", "TRUE", "FALSE"}: raise ValueError
@@ -31,7 +37,7 @@ def coerce_sql_value(value: str, sql_type: str, field: str = "value"):
             match = re.fullmatch(r"DECIMAL\((\d+),(\d+)\)", normalized)
             if not match: raise ValueError
             precision, scale = map(int, match.groups()); number = Decimal(value)
-            if not re.fullmatch(r"-?(0|[1-9][0-9]*)(\.[0-9]+)?", value): raise ValueError
+            if not re.fullmatch(r"-?[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?", value): raise ValueError
             if -number.as_tuple().exponent > scale or len(number.as_tuple().digits) > precision: raise ValueError
             return number
         if normalized == "DATE":

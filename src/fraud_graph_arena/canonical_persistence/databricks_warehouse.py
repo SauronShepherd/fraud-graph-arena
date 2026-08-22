@@ -32,6 +32,11 @@ class DatabricksWarehouse:
     schema: str = "sandbox"
     wait_timeout: str = "50s"
 
+    def __post_init__(self) -> None:
+        for label, value in (("catalog", self.catalog), ("schema", self.schema), ("warehouse_id", self.warehouse_id)):
+            if not re.fullmatch(r"[A-Za-z0-9_][A-Za-z0-9_-]*", value):
+                raise ValueError(f"{label} is not an approved SQL identifier")
+
     def qualify_table(self, table: str) -> str:
         if table not in expected_topology():
             raise ValueError(f"table is outside the closed persistence registry: {table}")
@@ -77,26 +82,30 @@ class DatabricksWarehouse:
         if not rows: return {"status": "skipped", "row_count": 0}
         values = []
         for raw_row in rows:
-            row = coerce_row(dict(raw_row), path)
+            row = coerce_row(dict(raw_row), path, require_complete=False)
             values.append("(" + ", ".join([_literal(row.get(column)) for column in headers(path)] + [_literal(publication_id), _literal(run_id)]) + ")")
         return self.execute(f"INSERT INTO {self.qualify_table(table)} ({', '.join(columns)}) VALUES {', '.join(values)}")
 
     def validate_candidate(self, publication_id: str, run_id: str) -> list[dict[str, Any]]:
         queries = []
+        typed_registry = load_typed_registry(include_references=True)
         for path, table in PHYSICAL_TARGETS.items():
             qualified = self.qualify_table(table)
             queries.extend([
                 f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)}) AS correlated FROM {qualified}",
                 f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND snapshot_version IS NULL",
             ])
-            primary_key = load_typed_registry()[path].get("primary_key", [])
+            primary_key = typed_registry[path].get("primary_key", [])
             if primary_key:
                 key_columns = ", ".join(primary_key)
                 queries.append(f"SELECT COUNT(*) AS duplicate_primary_keys FROM (SELECT {key_columns}, COUNT(*) AS key_count FROM {qualified} WHERE _publication_id = {_literal(publication_id)} GROUP BY {key_columns} HAVING COUNT(*) > 1)")
             queries.append(f"SELECT COUNT(*) AS case_mismatches FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND case_id IS NOT NULL AND case_id <> (SELECT case_id FROM {self.qualify_table('fga_import_publications')} WHERE publication_id = {_literal(publication_id)})")
-            if path == "authoring/relationships.csv":
-                records = self.qualify_table(PHYSICAL_TARGETS["authoring/records.csv"])
-                queries.append(f"SELECT COUNT(*) AS dangling_relationship_endpoints FROM {qualified} AS relationships WHERE relationships._publication_id = {_literal(publication_id)} AND ((relationships.source_record_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.source_record_id)) OR (relationships.target_record_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.target_record_id)))")
+            for rule in typed_registry[path].get("references", []):
+                target = self.qualify_table(PHYSICAL_TARGETS[rule["to"]])
+                exception = ""
+                if path == "authoring/relationships.csv" and rule["column"] == "target_record_id":
+                    exception = " AND NOT (source.relationship_type = 'MENTIONS' AND source.target_record_id LIKE 'CE-%')"
+                queries.append(f"SELECT COUNT(*) AS dangling_reference FROM {qualified} AS source WHERE source._publication_id = {_literal(publication_id)} AND source.{rule['column']} IS NOT NULL{exception} AND NOT EXISTS (SELECT 1 FROM {target} AS target WHERE target._publication_id = {_literal(publication_id)} AND target.{rule['target_column']} = source.{rule['column']})")
         return [self.execute(query) for query in queries]
 
     def cleanup_candidate(self, publication_id: str) -> list[dict[str, Any]]:
@@ -104,6 +113,11 @@ class DatabricksWarehouse:
 
     def activate_publication(self, case_id: str, case_version: str, snapshot_version: str, model_version: str, publication_id: str, run_id: str) -> dict[str, Any]:
         table = self.qualify_table("fga_active_publications")
+        publications = self.qualify_table("fga_import_publications")
+        candidate = self.execute(f"SELECT status,case_id,case_version,snapshot_version,canonical_model_version FROM {publications} WHERE publication_id={_literal(publication_id)}")
+        rows = candidate.get("result", {}).get("data_array", [])
+        if len(rows) != 1 or rows[0][0] != "VALIDATED" or tuple(rows[0][1:]) != (case_id, case_version, snapshot_version, model_version):
+            raise DatabricksWarehouseError("PUBLICATION_NOT_VALIDATED_OR_IDENTITY_MISMATCH")
         duplicate_check = self.execute(f"SELECT COUNT(*) AS pointer_count FROM {table} WHERE case_id={_literal(case_id)} AND case_version={_literal(case_version)}")
         data = duplicate_check.get("result", {}).get("data_array", [])
         if data and int(data[0][0]) > 1:

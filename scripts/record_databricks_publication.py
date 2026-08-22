@@ -2,7 +2,7 @@
 from __future__ import annotations
 import argparse, json
 from pathlib import Path
-from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse
+from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse, _literal
 from fraud_graph_arena.canonical_persistence.identity import publication_id
 from fraud_graph_arena.canonical_persistence.models import PackageIdentity
 from fraud_graph_arena.canonical_persistence.package import CanonicalPackage
@@ -12,9 +12,7 @@ from validate_databricks_candidate import validate_results
 PUBLICATION_TABLE = "fga_import_publications"
 ACTIVE_POINTER_TABLE = "fga_active_publications"
 
-def q(value: object) -> str:
-    if value is None: return "NULL"
-    return "'" + str(value).replace("'", "''") + "'"
+q = _literal
 
 def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("package", type=Path); parser.add_argument("--run-id", required=True)
@@ -23,7 +21,7 @@ def main() -> int:
     try:
         package = CanonicalPackage.read(args.package)
     except Exception as exc:
-        report.update({"status": "fail", "error_code": "PACKAGE_PREFLIGHT_FAILED", "error_summary": redact_error(str(exc))})
+        report.update({"status": "fail", "error_code": "PACKAGE_PREFLIGHT_FAILED", "error_summary": redact_error(str(exc), (str(args.profile), str(args.warehouse), str(args.catalog), str(args.schema)))})
         rendered = json.dumps(report, indent=2) + "\n"; print(rendered, end="")
         if args.report: args.report.parent.mkdir(parents=True, exist_ok=True); args.report.write_text(rendered, encoding="utf-8")
         return 1
@@ -51,6 +49,7 @@ def main() -> int:
             for phase in ("PREFLIGHTED", "STAGING", "STAGED", "VALIDATING"):
                 warehouse.execute(f"UPDATE {runs} SET status={q(phase)} WHERE import_run_id={q(args.run_id)}")
             validate_results(warehouse.validate_candidate(publication, args.run_id), publication, args.run_id)
+            warehouse.execute(f"UPDATE {publications} SET status='VALIDATED' WHERE publication_id={q(publication)} AND status='CANDIDATE'")
             warehouse.execute(f"UPDATE {runs} SET status='VALIDATED' WHERE import_run_id={q(args.run_id)}")
             warehouse.execute(f"UPDATE {runs} SET status='PUBLISHING' WHERE import_run_id={q(args.run_id)}")
             warehouse.activate_publication(identity.case_id, identity.case_version, identity.snapshot_version, identity.canonical_model_version, publication, args.run_id)
@@ -58,14 +57,15 @@ def main() -> int:
             warehouse.execute(f"UPDATE {runs} SET status='PUBLISHED', finished_at_utc=current_timestamp() WHERE import_run_id={q(args.run_id)}")
             report["status"] = "pass"
         except Exception as exc:
-            error_summary = redact_error(str(exc))
+            secrets = (str(args.profile), str(args.warehouse), str(args.catalog), str(args.schema))
+            error_summary = redact_error(str(exc), secrets)
             cleanup_ok = True
             try:
                 warehouse.execute(f"UPDATE {publications} SET status='REJECTED' WHERE publication_id={q(publication)} AND status IN ('CANDIDATE','VALIDATED')")
                 warehouse.cleanup_candidate(publication)
             except Exception as cleanup_exc:
                 cleanup_ok = False
-                error_summary = f"{error_summary}; cleanup: {redact_error(str(cleanup_exc))}"[-1024:]
+                error_summary = f"{error_summary}; cleanup: {redact_error(str(cleanup_exc), secrets)}"[-1024:]
             terminal = "FAILED_CLEANUP" if not cleanup_ok else "FAILED"
             warehouse.execute(f"UPDATE {runs} SET status={q(terminal)}, error_code={q('CANDIDATE_CLEANUP_FAILED' if not cleanup_ok else 'LIVE_PUBLICATION_FAILED')}, error_summary={q(error_summary)}, finished_at_utc=current_timestamp() WHERE import_run_id={q(args.run_id)}")
             report.update({"status": "fail", "terminal_run_status": terminal, "error_code": "CANDIDATE_CLEANUP_FAILED" if not cleanup_ok else "LIVE_PUBLICATION_FAILED", "error_summary": error_summary})

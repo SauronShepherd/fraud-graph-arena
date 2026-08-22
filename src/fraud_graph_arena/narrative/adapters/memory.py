@@ -13,6 +13,8 @@ class InMemoryNarrativeRepository:
 
     def __init__(self) -> None:
         self._sequences = (
+            ComicSequence(id="ACADEMY_T02_OPENING", case_id="ACADEMY_T02", case_version="1.0.0-fga06", kind=ComicKind.OPENING, skippable=True, pages=(ComicPage(id="ACADEMY_T02_OPENING_01", position=1, title="The Circular Collar", narration="The Academy opens a safe graph lesson: records are evidence, not verdicts.", image_url="/assets/academy-intro-01.svg", alt_text="A detective examining a board of connected records."),)),
+            ComicSequence(id="ACADEMY_T02_CLOSING", case_id="ACADEMY_T02", case_version="1.0.0-fga06", kind=ComicKind.CLOSING, skippable=True, pages=(ComicPage(id="ACADEMY_T02_CLOSING_01", position=1, title="Lesson Complete", narration="The graph remains a projection of published evidence. Further investigation belongs to a later lesson.", image_url="/assets/academy-closing-01.svg", alt_text="A closed Academy graph lesson file."),)),
             ComicSequence(
                 id="ACADEMY_001_OPENING",
                 case_id="ACADEMY_001",

@@ -1,6 +1,6 @@
 from __future__ import annotations
 import json
-from fraud_graph_arena.case_data.registry import TABLE_PATHS, headers
+from fraud_graph_arena.case_data.registry import TABLE_PATHS, headers, load_typed_registry
 
 _ROOT = __import__("pathlib").Path(__file__).resolve().parents[3]
 PHYSICAL_REGISTRY_PATH = _ROOT / "contracts/canonical/v1/physical-registry.json"
@@ -19,3 +19,7 @@ def validate_registry() -> None:
             raise ValueError(f"invalid canonical header: {path}")
     if set(PHYSICAL_TARGETS) != set(TABLE_PATHS):
         raise ValueError("physical registry must map exactly the canonical table paths")
+    layer_prefixes = {"CONFIG": "config", "AUTHORING": "authoring", "ANALYTICS_INTERNAL": "analytics", "PUBLISHED": "published", "GENIE": "genie", "TRUTH": "truth", "VALIDATION": "validation"}
+    for path, definition in load_typed_registry().items():
+        if layer_prefixes.get(definition.get("layer")) != path.split("/", 1)[0]:
+            raise ValueError(f"typed registry layer mismatch: {path}")

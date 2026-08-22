@@ -56,10 +56,10 @@
       "sha256": "962a407cd527397e827ef9144ec9783b81e1083dd9162786b68a1b3e922e0af2"
     },
     {
-      "bytes": 9140,
+      "bytes": 9137,
       "path": "authoring/record_attributes.csv",
       "rows": 62,
-      "sha256": "9eea3670d0e94d0178757669b2d1f4f6955d1964b5f69fe17b24be087f54ca40"
+      "sha256": "dc31f12f826da1c955764120d2dd066962bfc4186c7996f2bc3b2a6a25d3f927"
     },
     {
       "bytes": 6861,
@@ -116,10 +116,10 @@
       "sha256": "44773d295fc9802228e2c7b3b2307da45c5f0bafd9c678b68528db1bd4210f54"
     },
     {
-      "bytes": 9593,
+      "bytes": 9590,
       "path": "genie/record_attributes.csv",
       "rows": 62,
-      "sha256": "122ba5910f17faf3cf58558a2d3d832af4f8cb8e4dbeb5a58ac5a6e9013178b0"
+      "sha256": "57745ab79f384406ad82623ff5c7ccb98941a1bee1a7932097c20eed504edc0e"
     },
     {
       "bytes": 6561,

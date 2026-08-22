@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "package_count": 13,
+  "expected_topology_count": 44,
+  "topology_hash": "09ccc8a4a21d2aef8c25ebc1f37c6b0ed7c0f05cdf342affdc60da7745ac37c8",
+  "runs": 130,
+  "publications": 13,
+  "failures": [],
+  "evidence_scope": "local-reference",
+  "live_databricks": "not_qualified",
+  "qualified_source_sha": "50f6b3c587e0a10a2dd780a5760ab0b013e89e26",
+  "closure_allowed": false
+}

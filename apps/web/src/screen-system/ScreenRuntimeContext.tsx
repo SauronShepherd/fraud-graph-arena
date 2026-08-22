@@ -8,6 +8,7 @@ export interface ScreenRuntimeValue {
   abortScreenLoad: () => void;
   transitionLocked: boolean;
 }
-const RuntimeContext = createContext<ScreenRuntimeValue | null>(null);
+const STANDALONE_RUNTIME: ScreenRuntimeValue = { context: {}, dispatchAction: async () => {}, loadScreenModel: async () => null, abortScreenLoad: () => {}, transitionLocked: false };
+const RuntimeContext = createContext<ScreenRuntimeValue>(STANDALONE_RUNTIME);
 export function ScreenRuntimeProvider({ value, children }: PropsWithChildren<{ value: ScreenRuntimeValue }>) { return <RuntimeContext.Provider value={value}>{children}</RuntimeContext.Provider>; }
-export function useScreenRuntime(): ScreenRuntimeValue { const value = useContext(RuntimeContext); if (!value) throw new Error("SCREEN_RUNTIME_OUTSIDE_PROVIDER"); return value; }
+export function useScreenRuntime(): ScreenRuntimeValue { return useContext(RuntimeContext); }

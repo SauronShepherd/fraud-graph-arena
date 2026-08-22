@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, hashlib, json, subprocess, tempfile
+import argparse, hashlib, json, shutil, subprocess, tempfile
 from pathlib import Path
 
 def sql(profile, warehouse, catalog, schema, statement):
@@ -10,7 +10,15 @@ def sql(profile, warehouse, catalog, schema, statement):
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--profile",required=True); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--output",type=Path,default=Path("reports/iteration-05/security/truth-access-negative.json")); args=p.parse_args()
-    identity=json.loads(subprocess.check_output(["databricks","current-user","me","--profile",args.profile],text=True))
+    cli = shutil.which("databricks")
+    if not cli:
+        report={"profile":args.profile,"principal_fingerprint":None,"is_admin":None,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run","status":"not_qualified","reason":"databricks_cli_unavailable"}
+        args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
+    try:
+        identity=json.loads(subprocess.check_output([cli,"current-user","me","--profile",args.profile],text=True))
+    except OSError as exc:
+        report={"profile":args.profile,"principal_fingerprint":None,"is_admin":None,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run","status":"not_qualified","reason":"databricks_cli_unlaunchable","error_type":type(exc).__name__}
+        args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
     groups={item.get("display") for item in identity.get("groups",[])}; user=identity.get("userName")
     principal_fingerprint = hashlib.sha256((user or "unknown").encode()).hexdigest()[:16]
     report={"profile":args.profile,"principal_fingerprint":principal_fingerprint,"is_admin":"admins" in groups,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run"}

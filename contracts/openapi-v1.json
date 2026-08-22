@@ -232,6 +232,144 @@
         "title": "CreateRoundRequest",
         "type": "object"
       },
+      "GraphEdgeResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "directed": {
+            "title": "Directed",
+            "type": "boolean"
+          },
+          "event_time": {
+            "title": "Event Time",
+            "type": "string"
+          },
+          "player_safe_summary": {
+            "title": "Player Safe Summary",
+            "type": "string"
+          },
+          "provenance": {
+            "title": "Provenance",
+            "type": "string"
+          },
+          "relationship_family": {
+            "title": "Relationship Family",
+            "type": "string"
+          },
+          "relationship_id": {
+            "title": "Relationship Id",
+            "type": "string"
+          },
+          "relationship_type": {
+            "title": "Relationship Type",
+            "type": "string"
+          },
+          "source_record_id": {
+            "title": "Source Record Id",
+            "type": "string"
+          },
+          "target_record_id": {
+            "title": "Target Record Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "relationship_id",
+          "source_record_id",
+          "target_record_id",
+          "relationship_family",
+          "relationship_type",
+          "directed",
+          "provenance",
+          "player_safe_summary",
+          "event_time"
+        ],
+        "title": "GraphEdgeResponse",
+        "type": "object"
+      },
+      "GraphNodeResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "provenance_ref": {
+            "title": "Provenance Ref",
+            "type": "string"
+          },
+          "record_id": {
+            "title": "Record Id",
+            "type": "string"
+          },
+          "record_subtype": {
+            "title": "Record Subtype",
+            "type": "string"
+          },
+          "record_type": {
+            "title": "Record Type",
+            "type": "string"
+          },
+          "safe_summary": {
+            "title": "Safe Summary",
+            "type": "string"
+          },
+          "source_system_id": {
+            "title": "Source System Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "record_id",
+          "record_type",
+          "label",
+          "safe_summary",
+          "record_subtype",
+          "source_system_id",
+          "provenance_ref"
+        ],
+        "title": "GraphNodeResponse",
+        "type": "object"
+      },
+      "GraphResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "edge_count": {
+            "title": "Edge Count",
+            "type": "integer"
+          },
+          "edges": {
+            "items": {
+              "$ref": "#/components/schemas/GraphEdgeResponse"
+            },
+            "title": "Edges",
+            "type": "array"
+          },
+          "node_count": {
+            "title": "Node Count",
+            "type": "integer"
+          },
+          "nodes": {
+            "items": {
+              "$ref": "#/components/schemas/GraphNodeResponse"
+            },
+            "title": "Nodes",
+            "type": "array"
+          },
+          "projection_version": {
+            "title": "Projection Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "projection_version",
+          "nodes",
+          "edges",
+          "node_count",
+          "edge_count"
+        ],
+        "title": "GraphResponse",
+        "type": "object"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -547,6 +685,9 @@
             "title": "Evidence Count",
             "type": "integer"
           },
+          "graph": {
+            "$ref": "#/components/schemas/GraphResponse"
+          },
           "path_name": {
             "title": "Path Name",
             "type": "string"
@@ -567,7 +708,8 @@
           "suspect_count",
           "path_name",
           "empty_state_code",
-          "actions"
+          "actions",
+          "graph"
         ],
         "title": "WorkspaceResponse",
         "type": "object"

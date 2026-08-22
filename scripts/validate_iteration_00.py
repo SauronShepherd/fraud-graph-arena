@@ -15,6 +15,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
+if sys.flags.no_site:
+    print(
+        "Iteration-00 validator dependency is missing: site-packages disabled\n"
+        "Run the validator with the normal Python environment so declared dependencies can be loaded:\n"
+        f'  "{sys.executable}" -m pip install -e ".[test]"\n'
+        f"Dependency configuration: {Path(__file__).resolve().parents[1] / 'pyproject.toml'}",
+        file=sys.stderr,
+    )
+    raise SystemExit(3)
+
 from governance_digest import canonical_sha256
 
 try:
@@ -289,7 +299,7 @@ def id_errors() -> list[str]:
         "stage": r"^I[0-9]{2}-S[0-9]{2}$",
         "task": r"^I[0-9]{2}-S[0-9]{2}-T[0-9]{2}$",
         "test": r"^TEST-[A-Z0-9-]+$",
-        "evidence": r"^EVID-I[0-9]{2}-[A-Z0-9-]+$",
+        "evidence": r"^(?:EVID-I[0-9]{2}-[A-Z0-9-]+|EVIDENCE-FGA[0-9]{2}-[A-Z0-9-]+)$",
     }
     for node in graph["nodes"]:
         pattern = patterns.get(node["kind"])

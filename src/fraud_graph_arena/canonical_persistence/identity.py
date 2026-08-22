@@ -1,5 +1,7 @@
 from __future__ import annotations
 import hashlib, json
+from datetime import date, datetime
+from decimal import Decimal
 from pathlib import Path
 from fraud_graph_arena.case_data.registry import TABLE_PATHS
 from .models import PackageIdentity
@@ -17,7 +19,11 @@ def publication_id(identity: PackageIdentity) -> str:
     return "pub_" + hashlib.sha256(value.encode()).hexdigest()
 
 def semantic_hash(rows: dict[str, list[dict]]) -> str:
-    value = json.dumps(rows, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    def encode(value):
+        if isinstance(value, (datetime, date)): return value.isoformat().replace("+00:00", "Z")
+        if isinstance(value, Decimal): return format(value, "f")
+        raise TypeError(f"unsupported semantic-hash value: {type(value).__name__}")
+    value = json.dumps(rows, sort_keys=True, separators=(",", ":"), ensure_ascii=False, default=encode)
     return hashlib.sha256(value.encode()).hexdigest()
 
 def topology_hash(names: set[str] | tuple[str, ...]) -> str:

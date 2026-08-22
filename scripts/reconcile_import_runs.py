@@ -5,10 +5,18 @@ from fraud_graph_arena.canonical_persistence.models import ImportStatus
 
 TERMINAL={status.value for status in (ImportStatus.PUBLISHED,ImportStatus.REUSED,ImportStatus.FAILED,ImportStatus.FAILED_CLEANUP)}
 
+def active_publication_for(run: dict, state: dict) -> str | None:
+    by_scope = state.get("active_publications_by_scope", {})
+    scope = f"{run.get('case_id')}:{run.get('case_version')}"
+    if isinstance(by_scope, dict) and scope in by_scope:
+        return by_scope[scope]
+    # Backward-compatible input for old local evidence fixtures.
+    return state.get("active_publication_id")
+
 def classify(run: dict, state: dict) -> str:
     if run.get("status") in {"PUBLISHED", "REUSED"}:
         return "already-successful"
-    if run.get("publication_id") and run.get("publication_id") == state.get("active_publication_id"):
+    if run.get("publication_id") and run.get("publication_id") == active_publication_for(run, state):
         return "already-successful-response-lost"
     if run.get("status") in {"REJECTED", "FAILED_CLEANUP"} or run.get("candidate_rows"):
         return "cleanup-required-rejected-candidate"

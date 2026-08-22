@@ -14,3 +14,4 @@ from .publisher import PointerPublisher, PublicationError
 __all__ = ["CanonicalImporter", "ImportResult", "ImportStatus", "MemoryWarehouse", "PublicationStatus",
            "CanonicalPackage", "DatasetPlan", "ImportLedger", "build_plan", "can_transition", "require_transition",
            "CandidateValidationError", "validate_candidate", "PointerPublisher", "PublicationError"]
+__all__ += ["DatabricksWarehouse", "DatabricksWarehouseError"]

@@ -1,0 +1,14 @@
+{
+  "gate": "scripts/run_iteration_06_local_gate.py",
+  "gate_status": "PASS",
+  "python_compileall": "PASS",
+  "frontend_typecheck": "PASS",
+  "frontend_build": "PASS",
+  "openapi_contract_export": "PASS",
+  "local_workspace_smoke": "PASS",
+  "academy_001_regression_smoke": "PASS",
+  "tests": "NOT_RUN_BY_USER_INSTRUCTION",
+  "databricks": "NOT_ACCESSED",
+  "fixture_sha256": "5f1e2fb89982926af4df8b6b0a512eb2bc516f6c4afa536bfadb358822e70a3b",
+  "t02_topology": {"nodes": 7, "edges": 7}
+}

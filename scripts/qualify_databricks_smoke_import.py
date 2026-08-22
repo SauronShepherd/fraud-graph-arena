@@ -4,6 +4,7 @@ from pathlib import Path
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, headers
 from fraud_graph_arena.canonical_persistence.identity import content_digest, publication_id
 from fraud_graph_arena.canonical_persistence.models import PackageIdentity
+from fraud_graph_arena.canonical_persistence.databricks_warehouse import _literal
 
 def sql_api(profile, warehouse, catalog, schema, statement):
     payload = json.dumps({"statement": statement, "warehouse_id": warehouse, "wait_timeout": "30s", "catalog": catalog, "schema": schema})
@@ -15,9 +16,7 @@ def sql_api(profile, warehouse, catalog, schema, statement):
     if output.get("status", {}).get("state") != "SUCCEEDED": raise RuntimeError(json.dumps(output))
     return output
 
-def quote(value):
-    if value is None or value == "": return "NULL"
-    return "'" + value.replace("'", "''") + "'"
+quote = _literal
 
 def main():
     p = argparse.ArgumentParser(); p.add_argument("package", type=Path); p.add_argument("--profile", default="sda"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse", default="e444f39962128242"); p.add_argument("--all-rows", action="store_true"); args = p.parse_args()

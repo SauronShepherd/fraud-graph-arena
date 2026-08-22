@@ -1,1 +1,45 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,"required":["package_name","package_version","case_id","case_version","family","snapshot_version","canonical_model_version","converter","converter_version","mapping_version","source_dialect","files"],"properties":{"package_name":{"type":"string","minLength":1},"package_version":{"type":"string","minLength":1},"case_id":{"type":"string","minLength":1},"case_version":{"type":"string","minLength":1},"family":{"enum":["ACADEMY","PUPPY","ADULT","SENIOR"]},"snapshot_version":{"type":"string","minLength":1},"canonical_model_version":{"const":"1.0.0"},"converter":{"type":"string","minLength":1},"converter_version":{"type":"string","minLength":1},"mapping_version":{"type":"string","minLength":1},"source_dialect":{"type":"string","minLength":1},"source_inputs":{"type":"array","items":{"type":"object","required":["path","bytes","sha256"],"properties":{"path":{"type":"string"},"bytes":{"type":"integer","minimum":0},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"additionalProperties":false}},"files":{"type":"array","minItems":32,"items":{"type":"object","required":["path","bytes","sha256","rows"],"properties":{"path":{"type":"string"},"bytes":{"type":"integer","minimum":0},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"rows":{"type":"integer","minimum":0}},"additionalProperties":false}}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["package_name", "package_version", "case_id", "case_version", "family", "snapshot_version", "canonical_model_version", "canonical_csv_table_count", "converter", "converter_version", "mapping_version", "source_dialect", "files"],
+  "properties": {
+    "package_name": {"type": "string", "minLength": 1},
+    "package_version": {"type": "string", "minLength": 1},
+    "case_id": {"type": "string", "minLength": 1},
+    "case_version": {"type": "string", "minLength": 1},
+    "family": {"enum": ["ACADEMY", "PUPPY", "ADULT", "SENIOR"]},
+    "snapshot_version": {"type": "string", "minLength": 1},
+    "canonical_model_version": {"const": "1.0.0"},
+    "canonical_csv_table_count": {"const": 32},
+    "converter": {"type": "string", "minLength": 1},
+    "converter_version": {"type": "string", "minLength": 1},
+    "mapping_version": {"type": "string", "minLength": 1},
+    "source_dialect": {"type": "string", "minLength": 1},
+    "source_inputs": {"type": "array", "items": {"$ref": "#/$defs/receipt"}},
+    "files": {"type": "array", "minItems": 32, "maxItems": 32, "uniqueItems": true, "items": {"$ref": "#/$defs/file_receipt"}}
+  },
+  "$defs": {
+    "receipt": {
+      "type": "object",
+      "required": ["path", "bytes", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "file_receipt": {
+      "type": "object",
+      "required": ["path", "bytes", "sha256", "rows"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "rows": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

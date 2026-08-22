@@ -65,6 +65,7 @@ class InMemoryCatalogueRepository:
                 ),
                 status=CaseStatus.OPEN,
             ),
+            CaseSummary(id="ACADEMY_T02", version="1.0.0-fga06", path_id=PathId.DETECTIVE_ACADEMY, name="The Circular Collar", description="A spoiler-free graph lesson about records, organizations, and directed source relationships.", status=CaseStatus.OPEN),
         )
 
     def list_paths(self) -> tuple[PathDefinition, ...]:

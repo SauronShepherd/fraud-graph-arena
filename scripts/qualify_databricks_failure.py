@@ -13,7 +13,8 @@ def main():
         from pathlib import Path
         report_path=Path(args.report); report_path.parent.mkdir(parents=True,exist_ok=True); report_path.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
     qualified = f"{args.catalog}.{args.schema}."
-    runs = qualified + OPERATIONAL_TARGETS[0]; active = qualified + "fga_active_publications"
+    # Keep the durable run ledger and active pointer explicit in the failure proof.
+    runs = qualified + "fga_import_runs"; active = qualified + "fga_active_publications"
     before=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
     call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO {runs} (import_run_id,case_id,case_version,snapshot_version,package_content_digest,status,retry_of,error_code,error_summary,started_at_utc,finished_at_utc,actor,load_policy) VALUES ('dbx_failed_run_17','BONE_LEDGER','1.0.0','2026.07.18.1','injected','FAILED',NULL,'INJECTED_FAILURE','controlled qualification failure',current_timestamp(),current_timestamp(),'qualification','FULL_INTERNAL')")
     after=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")

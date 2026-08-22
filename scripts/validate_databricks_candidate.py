@@ -19,6 +19,18 @@ def validation_queries(publication_id: str, run_id: str, catalog: str, schema: s
         qualified = prefix + table
         queries.append(f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {q(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {q(run_id)}) AS correlated FROM {qualified}")
         queries.append(f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {q(publication_id)} AND snapshot_version IS NULL")
+        primary_key = load_typed_registry()[path].get("primary_key", [])
+        if primary_key:
+            key_columns = ", ".join(primary_key)
+            queries.append(f"SELECT COUNT(*) AS duplicate_primary_keys FROM (SELECT {key_columns}, COUNT(*) AS key_count FROM {qualified} WHERE _publication_id = {q(publication_id)} GROUP BY {key_columns} HAVING COUNT(*) > 1)")
+        queries.append(f"SELECT COUNT(*) AS case_mismatches FROM {qualified} WHERE _publication_id = {q(publication_id)} AND case_id IS NOT NULL AND case_id <> (SELECT case_id FROM {prefix}fga_import_publications WHERE publication_id = {q(publication_id)})")
+        for rule in load_typed_registry(include_references=True)[path].get("references", []):
+            target = prefix + PHYSICAL_TARGETS[rule["to"]]
+            source_column, target_column = rule["column"], rule["target_column"]
+            exception = ""
+            if path == "authoring/relationships.csv" and source_column == "target_record_id":
+                exception = " AND NOT (source.relationship_type = 'MENTIONS' AND source.target_record_id LIKE 'CE-%')"
+            queries.append(f"SELECT COUNT(*) AS dangling_reference FROM {qualified} AS source WHERE source._publication_id = {q(publication_id)} AND source.{source_column} IS NOT NULL{exception} AND NOT EXISTS (SELECT 1 FROM {target} AS target WHERE target._publication_id = {q(publication_id)} AND target.{target_column} = source.{source_column})")
     return queries
 
 def _rows(response: dict) -> list[list[object]]:
@@ -31,7 +43,8 @@ def _rows(response: dict) -> list[list[object]]:
 
 def validate_results(responses: list[dict], publication_id: str, run_id: str) -> dict:
     """Fail closed unless every table has tagged, correlated rows and no null snapshots."""
-    expected = sum((5 if path == "authoring/relationships.csv" else 4 if load_typed_registry()[path].get("primary_key") else 3) for path in PHYSICAL_TARGETS)
+    registry = load_typed_registry(include_references=True)
+    expected = sum(3 + bool(registry[path].get("primary_key")) + len(registry[path].get("references", [])) for path in PHYSICAL_TARGETS)
     if len(responses) != expected: raise ValueError(f"expected {expected} validation responses, got {len(responses)}")
     failures = []
     cursor = 0
@@ -49,9 +62,9 @@ def validate_results(responses: list[dict], publication_id: str, run_id: str) ->
             if not duplicate or int(duplicate[0][0] or 0) != 0: failures.append(f"{path}: duplicate primary key")
         mismatch = _rows(responses[cursor]); cursor += 1
         if not mismatch or int(mismatch[0][0] or 0) != 0: failures.append(f"{path}: case identity mismatch")
-        if path == "authoring/relationships.csv":
+        for rule in registry[path].get("references", []):
             dangling = _rows(responses[cursor]); cursor += 1
-            if not dangling or int(dangling[0][0] or 0) != 0: failures.append(f"{path}: dangling relationship endpoint")
+            if not dangling or int(dangling[0][0] or 0) != 0: failures.append(f"{path}: dangling reference {rule['column']}")
     if failures:
         raise ValueError("candidate validation failed: " + "; ".join(failures))
     return {"status": "pass", "checks": expected, "publication_id": publication_id, "run_id": run_id}

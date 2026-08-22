@@ -1,5 +1,7 @@
 import { defineConfig } from "@playwright/test";
 
+const sqlitePath = process.env.FGA_SQLITE_PATH ?? ".fga/e2e.sqlite3";
+
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: false,
@@ -17,7 +19,7 @@ export default defineConfig({
       env: {
         FGA_ENVIRONMENT: "test",
         FGA_ROUND_REPOSITORY: "sqlite",
-        FGA_SQLITE_PATH: ".fga/e2e.sqlite3",
+        FGA_SQLITE_PATH: sqlitePath,
         FGA_FRONTEND_DIST: "apps/web/missing-dist"
       }
     },

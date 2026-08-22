@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from .identity import content_digest, publication_id, semantic_hash
 from .models import ImportResult, ImportRun, ImportStatus, PackageIdentity, Publication, PublicationStatus, LoadPolicy, ImportRunFile, ImportRunDataset
-from .registry import PHYSICAL_TARGETS, ACTIVE_VIEW_TARGETS, validate_registry
+from .registry import PHYSICAL_TARGETS, ACTIVE_VIEW_TARGETS, OPERATIONAL_TARGETS, validate_registry
 from .types import coerce_row
 from .validator import validate_candidate
 from .lifecycle import require_transition
@@ -24,7 +24,7 @@ def serialized_import(method):
     return wrapped
 
 class CanonicalImporter:
-    def __init__(self, warehouse): self.warehouse = warehouse; validate_registry(); self.warehouse.topology.update(tuple(PHYSICAL_TARGETS.values()) + tuple(ACTIVE_VIEW_TARGETS.values()))
+    def __init__(self, warehouse): self.warehouse = warehouse; validate_registry(); self.warehouse.topology.update(tuple(PHYSICAL_TARGETS.values()) + tuple(ACTIVE_VIEW_TARGETS.values()) + tuple(OPERATIONAL_TARGETS))
     @staticmethod
     def _transition(run: ImportRun, target: ImportStatus) -> None:
         require_transition(run.status, target); run.status = target
@@ -91,7 +91,8 @@ class CanonicalImporter:
                 # The commit succeeded; only the client response was lost.
                 raise
             if run.status not in (ImportStatus.FAILED, ImportStatus.FAILED_CLEANUP): self._transition(run, ImportStatus.FAILED)
-            run.error_code = "CANCELED" if isinstance(exc, ImportCancelled) else type(exc).__name__; run.error_summary = "import canceled by operator" if isinstance(exc, ImportCancelled) else redact_error(str(exc)); run.finished_at_utc = datetime.now(timezone.utc).isoformat();
+            secrets = tuple(str(getattr(self.warehouse, name, "")) for name in ("profile", "warehouse_id", "catalog", "schema"))
+            run.error_code = "CANCELED" if isinstance(exc, ImportCancelled) else type(exc).__name__; run.error_summary = "import canceled by operator" if isinstance(exc, ImportCancelled) else redact_error(str(exc), secrets); run.finished_at_utc = datetime.now(timezone.utc).isoformat();
             if pub_id in self.warehouse.candidates:
                 try: self.warehouse.cleanup_candidate(pub_id)
                 except Exception: run.status = ImportStatus.FAILED_CLEANUP

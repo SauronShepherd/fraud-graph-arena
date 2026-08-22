@@ -18,7 +18,8 @@
       "properties": {
         "layer": {"enum": ["config", "authoring", "analytics", "published", "genie", "truth", "validation"]},
         "primary_key": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-        "columns": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/column"}}
+        "columns": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/column"}},
+        "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}}
       }
     },
     "column": {
@@ -29,6 +30,17 @@
         "sql_type": {"enum": ["STRING", "INT", "BIGINT", "BOOLEAN", "DATE", "TIMESTAMP", "DECIMAL(18,8)", "DECIMAL(38,10)", "JSON"]},
         "nullable": {"type": "boolean"},
         "description": {"type": "string"}
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "column", "to", "target_column"],
+      "properties": {
+        "from": {"type": "string", "minLength": 1},
+        "column": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "to": {"type": "string", "minLength": 1},
+        "target_column": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"}
       }
     }
   }

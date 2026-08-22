@@ -7,6 +7,7 @@ from ..package import PackageBuilder
 def convert_flat_csv(source: Path, output: Path, *, case_id: str, family: str, case_version='1.0.0', snapshot_version='1.0.0', converter='common.csv.v1', source_dialect=None):
     builder=PackageBuilder(output,case_id,family,snapshot_version=snapshot_version,case_version=case_version)
     builder.add('config/cases.csv', {'case_id': case_id, 'short_id': case_id, 'title': case_id, 'path_code': family, 'case_version': case_version, 'snapshot_version': snapshot_version, 'generation_seed': 0, 'generation_mode': 'DIRECT_SOURCE', 'ranked': 'false', 'career_unlock': 'false', 'canonical_model_version': '1.0.0'})
+    builder.add('config/case_profiles.csv', {'case_id': case_id, 'profile_code': family, 'profile_name': family.title(), 'cumulative': 'false', 'starting_credits': 0, 'manual_cost': 0, 'zingg_cost': 0, 'graphframes_cost': 0, 'genie_cost': 0, 'genie_row_limit': 0, 'quote_required': 'false', 'no_result_charged': 'false', 'initial_item_count': 0, 'description': f'{family} source conversion profile', 'snapshot_version': snapshot_version})
     files=sorted(Path(source).glob('*.csv'))
     if not files:
         raise ValueError(f'NO_SOURCE_CSV:{source}')

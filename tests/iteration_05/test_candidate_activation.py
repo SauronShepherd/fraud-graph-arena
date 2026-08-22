@@ -9,5 +9,8 @@ def test_activation_is_case_version_scoped_and_uses_merge():
 
 def test_candidate_validation_covers_all_physical_targets():
     queries = validation_queries("pub_test", "run_test", "sda_dev", "sandbox")
-    assert len(queries) == 64
+    # Each physical target is checked for tagging/correlation, snapshots,
+    # primary-key uniqueness where applicable, and case identity; relationships
+    # additionally receive endpoint validation.
+    assert len(queries) == 139
     assert all("_publication_id = 'pub_test'" in query for query in queries)

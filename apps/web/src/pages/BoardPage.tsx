@@ -21,6 +21,8 @@ export function BoardPage() {
   const [attempt, setAttempt] = useState(0);
   const { model: workspace, problem: loadProblem, retry } = useScreenData<Workspace>("ROUND_WORKSPACE", { roundId }, `${roundId}:${attempt}`);
   const [compact, setCompact] = useState(false);
+  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+  const [selectedEdgeId, setSelectedEdgeId] = useState<string | null>(null);
   const [geometry, setGeometry] = useState<BoardGeometry | null>(null);
   const boardRef = useRef<HTMLElement>(null);
 
@@ -36,6 +38,7 @@ export function BoardPage() {
   }, []);
 
   useEffect(() => { if (workspace) rememberRound(workspace.round.id); else if (roundId) rememberRound(roundId); }, [workspace, roundId]);
+  useEffect(() => { setSelectedNodeId(null); setSelectedEdgeId(null); }, [workspace?.round.id]);
 
   if (loadProblem) return <ProblemPanel problem={loadProblem} onRetry={() => { setAttempt((n) => n + 1); retry(); }} />;
   if (!workspace) return <Loading message="Recovering the training file from authoritative state…" />;
@@ -45,7 +48,7 @@ export function BoardPage() {
     <section className="board-content">
       <header className="board-header" data-region="BOARD_STATUS"><div><p className="eyebrow">Active investigation · {workspace.path_name}</p><h1 id="board-title">{workspace.case.name}</h1></div><div className="round-badge" aria-label={`Round status ${workspace.round.status}`}>{workspace.round.status}</div></header>
       <div className="board-layout">
-        <div data-region="CASE_PAPER" style={geometry ? { minHeight: geometry.regions.CASE_PAPER.height } : undefined}><CasePaper workspace={workspace} /></div><div data-region="GRAPH_VIEWPORT" style={geometry ? { minHeight: geometry.regions.GRAPH_VIEWPORT.height } : undefined}><GraphViewport /></div>
+        <div data-region="CASE_PAPER" style={geometry ? { minHeight: geometry.regions.CASE_PAPER.height } : undefined}><CasePaper workspace={workspace} /></div><div data-region="GRAPH_VIEWPORT" style={geometry ? { minHeight: geometry.regions.GRAPH_VIEWPORT.height } : undefined}><GraphViewport graph={workspace.graph} selectedNodeId={selectedNodeId} selectedEdgeId={selectedEdgeId} onNodeSelect={setSelectedNodeId} onEdgeSelect={setSelectedEdgeId} /></div>
       </div>
       <div data-region="TYPEWRITER_CONTROLS"><InvestigationActions workspace={workspace} /></div>
       <footer className="board-footer"><p><strong>Training round:</strong> {workspace.round.id} · Future capabilities explain themselves when unavailable.</p><button className="button secondary" type="button" disabled={transitionLocked} onClick={() => void dispatchAction("RETURN_TO_CATALOGUE")}>Back to Academy catalogue</button></footer>

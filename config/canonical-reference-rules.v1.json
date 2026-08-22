@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "rules": [
+    {"from": "authoring/record_attributes.csv", "column": "record_id", "to": "authoring/records.csv", "target_column": "record_id"},
+    {"from": "authoring/relationships.csv", "column": "source_record_id", "to": "authoring/records.csv", "target_column": "record_id"},
+    {"from": "authoring/relationships.csv", "column": "target_record_id", "to": "authoring/records.csv", "target_column": "record_id"},
+    {"from": "analytics/entity_resolution_candidates.csv", "column": "left_record_id", "to": "authoring/records.csv", "target_column": "record_id"},
+    {"from": "analytics/entity_resolution_candidates.csv", "column": "right_record_id", "to": "authoring/records.csv", "target_column": "record_id"},
+    {"from": "analytics/exact_matches.csv", "column": "left_record_id", "to": "authoring/records.csv", "target_column": "record_id"},
+    {"from": "analytics/exact_matches.csv", "column": "right_record_id", "to": "authoring/records.csv", "target_column": "record_id"},
+    {"from": "published/relationships.csv", "column": "source_record_id", "to": "published/records.csv", "target_column": "record_id"},
+    {"from": "published/relationships.csv", "column": "target_record_id", "to": "published/records.csv", "target_column": "record_id"},
+    {"from": "genie/relationships.csv", "column": "source_record_id", "to": "genie/records.csv", "target_column": "record_id"},
+    {"from": "genie/relationships.csv", "column": "target_record_id", "to": "genie/records.csv", "target_column": "record_id"}
+  ]
+}

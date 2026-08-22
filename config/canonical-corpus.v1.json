@@ -2,6 +2,8 @@
   "version": "1.0.0",
   "model_version": "1.0.0",
   "root": "case-data/canonical/v1",
+  "source_policy": "approved-external-source-root-required",
+  "source_root": null,
   "order": [
     "T1_THE_MISSING_120_canonical_case_data_v3",
     "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",

@@ -47,15 +47,31 @@ def load_registry()->dict[str,tuple[str,...]]: return {p:headers(p) for p in TAB
 def supported_model_versions() -> frozenset[str]:
     return frozenset({MODEL_VERSION})
 
-@lru_cache(maxsize=1)
-def load_typed_registry() -> dict[str, dict]:
+@lru_cache(maxsize=2)
+def load_typed_registry(include_references: bool = False) -> dict[str, dict]:
     """Load the checked-in typed Canonical Model v1 registry artifact."""
     if not (ROOT / "contracts/canonical/v1/schema-registry.json").exists():
         raise FileNotFoundError("authoritative typed canonical registry artifact is missing")
     data = json.loads((ROOT / "contracts/canonical/v1/schema-registry.json").read_text(encoding="utf-8"))
     if set(data.get("tables", {})) != set(TABLE_PATHS):
         raise ValueError("typed canonical registry does not define exactly 32 tables")
-    return data["tables"]
+    tables = data["tables"]
+    reference_file = ROOT / "config/canonical-reference-rules.v1.json"
+    if include_references and reference_file.exists():
+        rules = json.loads(reference_file.read_text(encoding="utf-8")).get("rules", [])
+        for path in TABLE_PATHS:
+            tables[path].setdefault("references", [])
+        for rule in rules:
+            source = rule.get("from")
+            target = rule.get("to")
+            if source not in tables or target not in tables:
+                raise ValueError("canonical reference rule names an unknown table")
+            source_columns = {column["name"] for column in tables[source]["columns"]}
+            target_columns = {column["name"] for column in tables[target]["columns"]}
+            if rule.get("column") not in source_columns or rule.get("target_column") not in target_columns:
+                raise ValueError("canonical reference rule names an unknown column")
+            tables[source]["references"].append(dict(rule))
+    return tables
 
 def sql_types(path: str) -> tuple[str, ...]:
     return tuple(column["sql_type"] for column in load_typed_registry()[path]["columns"])

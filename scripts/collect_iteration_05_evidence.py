@@ -3,6 +3,7 @@ import argparse, json, subprocess
 import os
 from datetime import datetime, timezone
 from pathlib import Path
+from fraud_graph_arena.canonical_persistence.reports import safe_report
 
 def main() -> int:
     p = argparse.ArgumentParser(); p.add_argument("--output", type=Path, required=True); args = p.parse_args()
@@ -50,7 +51,7 @@ def main() -> int:
         "regression/local-tests.json": {**base, **measure(["python", "-m", "pytest", "-q", "tests/iteration_04", "tests/iteration_05"])},
     }
     for rel, payload in files.items():
-        target = out / rel; target.parent.mkdir(parents=True, exist_ok=True); target.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        target = out / rel; target.parent.mkdir(parents=True, exist_ok=True); target.write_text(json.dumps(safe_report(payload), indent=2) + "\n", encoding="utf-8")
     text_files = {
         "preflight/git-state.txt": f"qualified_source_sha={sha}\nworking_tree={working_tree}\nchanged_paths={status_result.stdout.strip()}\n",
         "regression/python-tests.txt": json.dumps(measure(["python", "-m", "pytest", "-q", "tests/iteration_04", "tests/iteration_05"]), indent=2) + "\n",

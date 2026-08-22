@@ -1,0 +1,14 @@
+{
+  "fixture_version": "1",
+  "nodes": [
+    {"id": "FIX-N-0000", "record_type": "PERSON_RECORD", "label": "Fixture record 0000", "x": 80, "y": 80},
+    {"id": "FIX-N-0001", "record_type": "ORGANIZATION_RECORD", "label": "Fixture record 0001", "x": 200, "y": 80},
+    {"id": "FIX-N-0002", "record_type": "ORGANIZATION_RECORD", "label": "Fixture record 0002", "x": 320, "y": 80},
+    {"id": "FIX-N-0003", "record_type": "PERSON_RECORD", "label": "Fixture record 0003", "x": 440, "y": 80}
+  ],
+  "edges": [
+    {"id": "FIX-E-0000", "source_id": "FIX-N-0000", "target_id": "FIX-N-0001", "relationship_family": "DIRECT_SOURCE", "relationship_type": "RELATED_TO", "directed": true},
+    {"id": "FIX-E-0001", "source_id": "FIX-N-0001", "target_id": "FIX-N-0002", "relationship_family": "DIRECT_SOURCE", "relationship_type": "RELATED_TO", "directed": true},
+    {"id": "FIX-E-0002", "source_id": "FIX-N-0002", "target_id": "FIX-N-0003", "relationship_family": "DIRECT_SOURCE", "relationship_type": "RELATED_TO", "directed": true}
+  ]
+}
