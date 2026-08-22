@@ -4,10 +4,13 @@ import json
 import subprocess
 import tempfile
 import re
+from datetime import date, datetime
+from decimal import Decimal
 from dataclasses import dataclass
 from typing import Any, Sequence
 from .registry import expected_topology, PHYSICAL_TARGETS, OPERATIONAL_TARGETS
 from fraud_graph_arena.case_data.registry import headers
+from fraud_graph_arena.canonical_persistence.types import coerce_row
 from .operational_registry import columns as operational_columns
 
 class DatabricksWarehouseError(RuntimeError): pass
@@ -15,6 +18,10 @@ class DatabricksWarehouseError(RuntimeError): pass
 def _literal(value: object) -> str:
     if value is None or value == "": return "NULL"
     if isinstance(value, bool): return "TRUE" if value else "FALSE"
+    if isinstance(value, Decimal): return format(value, "f")
+    if isinstance(value, date):
+        if isinstance(value, datetime): return f"TIMESTAMP '{value.isoformat().replace('+00:00', 'Z')}'"
+        return f"DATE '{value.isoformat()}'"
     return "'" + str(value).replace("'", "''") + "'"
 
 @dataclass(frozen=True)
@@ -69,7 +76,8 @@ class DatabricksWarehouse:
         table = PHYSICAL_TARGETS[path]; columns = list(headers(path)) + ["_publication_id", "_load_run_id"]
         if not rows: return {"status": "skipped", "row_count": 0}
         values = []
-        for row in rows:
+        for raw_row in rows:
+            row = coerce_row(dict(raw_row), path)
             values.append("(" + ", ".join([_literal(row.get(column)) for column in headers(path)] + [_literal(publication_id), _literal(run_id)]) + ")")
         return self.execute(f"INSERT INTO {self.qualify_table(table)} ({', '.join(columns)}) VALUES {', '.join(values)}")
 
