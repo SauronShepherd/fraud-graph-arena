@@ -20,6 +20,7 @@ def main() -> int:
         "non_admin_truth_denial": security.get("status","missing"),
         "live_candidate_pipeline": "pass" if unified.get("live_databricks", {}).get("status")=="qualified" else "external_gap",
     }
-    report={"status":"external_gap" if "external_gap" in requirements.values() else ("pass" if all(v=="pass" for v in requirements.values()) else "fail"),"qualified_source_sha":gate.get("qualified_source_sha"),"requirements":requirements,"closure_tag_allowed":all(v=="pass" for v in requirements.values())}
+    evidence_sha = unified.get("source_sha") or gate.get("qualified_source_sha")
+    report={"status":"external_gap" if "external_gap" in requirements.values() else ("pass" if all(v=="pass" for v in requirements.values()) else "fail"),"qualified_source_sha":evidence_sha,"requirements":requirements,"closure_tag_allowed":all(v=="pass" for v in requirements.values())}
     args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0 if report["status"] in {"pass","external_gap"} else 1
 if __name__=="__main__": raise SystemExit(main())
