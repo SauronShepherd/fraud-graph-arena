@@ -1,23 +1,40 @@
+"""Complete the live publication lifecycle after candidate rows are staged."""
 from __future__ import annotations
-import argparse, json, subprocess, tempfile
+import argparse, json
 from pathlib import Path
-from fraud_graph_arena.canonical_persistence.identity import content_digest
+from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse
+from fraud_graph_arena.canonical_persistence.identity import publication_id
+from fraud_graph_arena.canonical_persistence.models import PackageIdentity
+from fraud_graph_arena.canonical_persistence.package import CanonicalPackage
+from validate_databricks_candidate import validate_results
 
-def call(profile, warehouse, catalog, schema, statement):
-    payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
-    with tempfile.NamedTemporaryFile("w",suffix=".json",delete=False,encoding="utf-8") as fh: json.dump(payload,fh); path=fh.name
-    result=subprocess.run(["databricks","api","post","/api/2.0/sql/statements","--profile",profile,"--json","@"+path],capture_output=True,text=True,check=True)
-    output=json.loads(result.stdout)
-    if output.get("status",{}).get("state") != "SUCCEEDED": raise RuntimeError(json.dumps(output))
-def q(value): return "NULL" if value is None else "'"+str(value).replace("'","''")+"'"
-def main():
-    p=argparse.ArgumentParser(); p.add_argument("package",type=Path); p.add_argument("--run-id",required=True); p.add_argument("--profile",default="sda"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); args=p.parse_args()
-    import hashlib
-    digest=content_digest(args.package); pub="pub_"+hashlib.sha256((args.package.name+digest).encode()).hexdigest()
-    manifest=json.loads((args.package / "manifest.json").read_text(encoding="utf-8"))
-    case_id=manifest["case_id"]; case_version=manifest.get("case_version", "1.0.0"); snapshot=manifest["snapshot_version"]; model=manifest["canonical_model_version"]
-    call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO fga_import_runs VALUES ({q(args.run_id)},{q(case_id)},{q(case_version)},{q(snapshot)},{q(digest)},'PUBLISHED',NULL,NULL,current_timestamp(),current_timestamp())")
-    call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO fga_import_publications VALUES ({q(pub)},{q(case_id)},{q(case_version)},{q(snapshot)},{q(model)},{q(digest)},NULL,'ACTIVE')")
-    call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO fga_active_publications VALUES ({q(case_id)},{q(case_version)},{q(snapshot)},{q(pub)},current_timestamp())")
-    print(json.dumps({"status":"PUBLISHED","publication_id":pub,"run_id":args.run_id},indent=2))
-if __name__ == "__main__": main()
+def q(value: object) -> str:
+    if value is None: return "NULL"
+    return "'" + str(value).replace("'", "''") + "'"
+
+def main() -> int:
+    parser = argparse.ArgumentParser(); parser.add_argument("package", type=Path); parser.add_argument("--run-id", required=True)
+    parser.add_argument("--profile", default="sda"); parser.add_argument("--warehouse", default="e444f39962128242"); parser.add_argument("--catalog", default="sda_dev"); parser.add_argument("--schema", default="sandbox"); parser.add_argument("--execute", action="store_true"); parser.add_argument("--report", type=Path); args = parser.parse_args()
+    package = CanonicalPackage.read(args.package)
+    identity = PackageIdentity(package.case_id, package.case_version, package.snapshot_version, package.canonical_model_version, package.content_digest)
+    publication = publication_id(identity); warehouse = DatabricksWarehouse(args.profile, args.warehouse, args.catalog, args.schema)
+    runs = warehouse.qualify_table("fga_import_runs"); publications = warehouse.qualify_table("fga_import_publications")
+    statements = [
+        f"INSERT INTO {runs} (import_run_id,case_id,case_version,snapshot_version,package_content_digest,status,retry_of,error_code,error_summary,started_at_utc,finished_at_utc,actor,load_policy) VALUES ({q(args.run_id)},{q(identity.case_id)},{q(identity.case_version)},{q(identity.snapshot_version)},{q(identity.content_digest)},'STARTED',NULL,NULL,NULL,current_timestamp(),NULL,'record-publication','FULL_INTERNAL')",
+        f"INSERT INTO {publications} (publication_id,case_id,case_version,snapshot_version,canonical_model_version,package_content_digest,semantic_hash,status) VALUES ({q(publication)},{q(identity.case_id)},{q(identity.case_version)},{q(identity.snapshot_version)},{q(identity.canonical_model_version)},{q(identity.content_digest)},NULL,'CANDIDATE')",
+    ]
+    report = {"status": "planned", "run_id": args.run_id, "publication_id": publication, "identity": identity.__dict__, "lifecycle": ["STARTED", "PREFLIGHTED", "STAGING", "STAGED", "VALIDATING", "VALIDATED", "PUBLISHING", "PUBLISHED"], "statements": len(statements)}
+    if args.execute:
+        for statement in statements: warehouse.execute(statement)
+        validate_results(warehouse.validate_candidate(publication, args.run_id), publication, args.run_id)
+        warehouse.execute(f"UPDATE {runs} SET status='VALIDATED' WHERE import_run_id={q(args.run_id)}")
+        warehouse.execute(f"UPDATE {runs} SET status='PUBLISHING' WHERE import_run_id={q(args.run_id)}")
+        warehouse.activate_publication(identity.case_id, identity.case_version, identity.snapshot_version, identity.canonical_model_version, publication, args.run_id)
+        warehouse.execute(f"UPDATE {publications} SET status='ACTIVE' WHERE publication_id={q(publication)}")
+        warehouse.execute(f"UPDATE {runs} SET status='PUBLISHED', finished_at_utc=current_timestamp() WHERE import_run_id={q(args.run_id)}")
+        report["status"] = "pass"
+    rendered = json.dumps(report, indent=2) + "\n"; print(rendered, end="")
+    if args.report: args.report.parent.mkdir(parents=True, exist_ok=True); args.report.write_text(rendered, encoding="utf-8")
+    return 0
+
+if __name__ == "__main__": raise SystemExit(main())
