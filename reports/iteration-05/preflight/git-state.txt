@@ -1,3 +1,16 @@
-qualified_source_sha=4546dd021630c5af3f1ecb99134911e0291e9315
-working_tree=clean
-changed_paths=
+qualified_source_sha=b5cdab19800497392f61808e21afb1044ae10590
+working_tree=dirty
+changed_paths=M reports/iteration-05/imports/idempotence-comparison.json
+ M reports/iteration-05/imports/repeat-10-summary.json
+ M reports/iteration-05/preflight/canonical-assets.json
+ M reports/iteration-05/preflight/git-state.txt
+ M reports/iteration-05/regression/frontend-build.txt
+ M reports/iteration-05/regression/frontend-tests.txt
+ M reports/iteration-05/regression/local-tests.json
+ M reports/iteration-05/regression/python-tests.txt
+ M reports/iteration-05/security/qualification-gap.json
+ M reports/iteration-05/topology/after-first-import.json
+ M reports/iteration-05/topology/after-repeat-10.json
+ M reports/iteration-05/topology/clean-recreation.json
+ M reports/iteration-05/topology/resource-inventory.json
+ M reports/iteration-05/topology/topology-comparison.json
