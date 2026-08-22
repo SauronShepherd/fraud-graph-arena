@@ -1,6 +1,8 @@
 from __future__ import annotations
 import json, subprocess, tempfile
 from fraud_graph_arena.canonical_persistence.operational_registry import ddl, registry
+# Registry tables: fga_import_runs, fga_import_run_files, fga_import_run_datasets,
+# fga_import_publications, fga_active_publications.
 def execute(profile, warehouse, catalog, schema, statement):
     payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
     with tempfile.NamedTemporaryFile("w",suffix=".json",delete=False,encoding="utf-8") as fh: json.dump(payload,fh); path=fh.name
