@@ -32,3 +32,8 @@ REVOKE ALL PRIVILEGES ON TABLE fga_truth_test_scenarios_csv FROM `fga_web`;
 REVOKE ALL PRIVILEGES ON TABLE fga_truth_assertions_csv FROM `fga_web`;
 REVOKE ALL PRIVILEGES ON TABLE fga_validation_checks_csv FROM `fga_web`;
 REVOKE ALL PRIVILEGES ON TABLE fga_validation_metrics_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_import_runs FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_import_run_files FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_import_run_datasets FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_import_publications FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_active_publications FROM `fga_web`;
