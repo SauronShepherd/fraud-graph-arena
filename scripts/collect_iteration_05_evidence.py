@@ -1,5 +1,6 @@
 from __future__ import annotations
 import argparse, json, subprocess
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -11,6 +12,10 @@ def main() -> int:
     status_result = subprocess.run(["git", "status", "--porcelain"], cwd=root, capture_output=True, text=True)
     working_tree = "clean" if status_result.returncode == 0 and not status_result.stdout.strip() else "dirty"
     def measure(command: list[str], cwd: Path = root) -> dict:
+        executable = command[0]
+        if os.name == "nt" and executable in {"npm", "npx"}:
+            executable += ".cmd"
+        command = [executable, *command[1:]]
         started = datetime.now(timezone.utc).isoformat(); result = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
         return {"status": "pass" if result.returncode == 0 else "fail", "command": " ".join(command), "exit_code": result.returncode, "started_at_utc": started, "finished_at_utc": datetime.now(timezone.utc).isoformat(), "output_tail": (result.stdout + result.stderr)[-2000:]}
     live_root = root / "reports/iteration-05"
