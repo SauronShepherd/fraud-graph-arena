@@ -14,6 +14,7 @@ from .package import CanonicalPackage
 
 class CanonicalImportError(ValueError): pass
 class ResponseLostAfterActivation(RuntimeError): pass
+class ImportCancelled(RuntimeError): pass
 
 def serialized_import(method):
     def wrapped(self, root, **kwargs):
@@ -34,7 +35,7 @@ class CanonicalImporter:
             raise CanonicalImportError(str(exc)) from exc
         return PackageIdentity(package.case_id, package.case_version, package.snapshot_version, package.canonical_model_version, package.content_digest)
     @serialized_import
-    def import_package(self, root: str | Path, *, retry_of: str | None = None, fail_after: int | None = None, lose_response_after_activation: bool = False, load_policy: LoadPolicy = LoadPolicy.SAFE_ONLY) -> ImportResult:
+    def import_package(self, root: str | Path, *, retry_of: str | None = None, fail_after: int | None = None, lose_response_after_activation: bool = False, load_policy: LoadPolicy = LoadPolicy.SAFE_ONLY, cancel_check=None) -> ImportResult:
         root = Path(root); identity = self._identity(root); run_id = "run_" + uuid.uuid4().hex
         run = ImportRun(run_id, identity, retry_of, load_policy=load_policy); self.warehouse.runs[run_id] = run
         if retry_of is not None:
@@ -55,6 +56,7 @@ class CanonicalImporter:
         try:
             self._transition(run, ImportStatus.PREFLIGHTED); rows = {}; self._transition(run, ImportStatus.STAGING)
             for index, rel in enumerate(PHYSICAL_TARGETS):
+                if cancel_check is not None and cancel_check(): raise ImportCancelled("import cancellation requested")
                 path = root / rel
                 if not path.is_file() or path.stat().st_size == 0: raise CanonicalImportError(f"missing or zero-byte canonical file: {rel}")
                 data = path.read_bytes(); digest = hashlib.sha256(data).hexdigest(); run.files[rel] = ImportRunFile(run_id, rel, len(data), digest); self.warehouse.record_file(run_id, rel, len(data), digest)
@@ -89,4 +91,8 @@ class CanonicalImporter:
                 # The commit succeeded; only the client response was lost.
                 raise
             if run.status not in (ImportStatus.FAILED, ImportStatus.FAILED_CLEANUP): self._transition(run, ImportStatus.FAILED)
-            run.error_code = type(exc).__name__; run.error_summary = redact_error(str(exc)); run.finished_at_utc = datetime.now(timezone.utc).isoformat(); return ImportResult(run_id, run.status, None, None)
+            run.error_code = "CANCELED" if isinstance(exc, ImportCancelled) else type(exc).__name__; run.error_summary = "import canceled by operator" if isinstance(exc, ImportCancelled) else redact_error(str(exc)); run.finished_at_utc = datetime.now(timezone.utc).isoformat();
+            if pub_id in self.warehouse.candidates:
+                try: self.warehouse.cleanup_candidate(pub_id)
+                except Exception: run.status = ImportStatus.FAILED_CLEANUP
+            return ImportResult(run_id, run.status, None, None)
