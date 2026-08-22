@@ -8,7 +8,7 @@ modules:
   - {id: M07, responsibility: identity and account security, status: planned, locations: [], roles: [WEB], tests: []}
   - {id: M08, responsibility: catalogue and progression, status: partial, locations: [src/fraud_graph_arena/catalogue], roles: [WEB], tests: [tests/iteration_01/test_catalogue.py]}
   - {id: M09, responsibility: round and game state, status: implemented, locations: [src/fraud_graph_arena/rounds], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
-  - {id: M10, responsibility: case content and rules, status: partial, locations: [src/fraud_graph_arena/catalogue], roles: [WEB], tests: [tests/iteration_01/test_narrative.py]}
+  - {id: M10, responsibility: case content, canonical contracts, converters, and rules, status: partial, locations: [src/fraud_graph_arena/catalogue, src/fraud_graph_arena/case_data, contracts/canonical, case-data/canonical/v1], roles: [WEB, MAINTENANCE, EVALUATOR], tests: [tests/iteration_01/test_narrative.py, tests/iteration_04, tests/iteration_05]}
   - {id: M11, responsibility: investigation visibility, status: partial, locations: [src/fraud_graph_arena/workspace], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
   - {id: M12, responsibility: workspace projection, status: implemented, locations: [src/fraud_graph_arena/workspace], roles: [WEB], tests: [tests/iteration_01/test_round_journey.py]}
   - {id: M13, responsibility: action command, status: boundary_only, locations: [src/fraud_graph_arena/workspace], roles: [WEB], tests: []}
