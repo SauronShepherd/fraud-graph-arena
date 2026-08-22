@@ -26,6 +26,7 @@ class ImportRunFile:
 class ImportRunDataset:
     run_id: str; dataset_path: str; source_row_count: int; staged_row_count: int | None = None
     validated_row_count: int | None = None; phase: str = "OBSERVED"
+    validation_check_codes: tuple[str, ...] = ()
 
 @dataclass
 class ActivePublication:

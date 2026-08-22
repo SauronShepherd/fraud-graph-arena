@@ -30,5 +30,5 @@ class MemoryWarehouse:
         self.candidates.pop(publication_id, None)
     def record_file(self, run_id: str, relative_path: str, byte_length: int, sha256: str) -> None:
         self.run_files[(run_id, relative_path)] = {"run_id": run_id, "relative_path": relative_path, "byte_length": byte_length, "sha256": sha256}
-    def record_dataset(self, run_id: str, dataset_path: str, source_rows: int, staged_rows: int | None = None, validated_rows: int | None = None, phase: str = "OBSERVED") -> None:
-        self.run_datasets[(run_id, dataset_path)] = {"run_id": run_id, "dataset_path": dataset_path, "source_row_count": source_rows, "staged_row_count": staged_rows, "validated_row_count": validated_rows, "phase": phase}
+    def record_dataset(self, run_id: str, dataset_path: str, source_rows: int, staged_rows: int | None = None, validated_rows: int | None = None, phase: str = "OBSERVED", validation_check_codes: tuple[str, ...] = ()) -> None:
+        self.run_datasets[(run_id, dataset_path)] = {"run_id": run_id, "dataset_path": dataset_path, "source_row_count": source_rows, "staged_row_count": staged_rows, "validated_row_count": validated_rows, "phase": phase, "validation_check_codes": list(validation_check_codes)}

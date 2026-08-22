@@ -29,7 +29,8 @@ CREATE TABLE IF NOT EXISTS fga_import_run_datasets (
   source_row_count BIGINT NOT NULL,
   staged_row_count BIGINT NOT NULL,
   validated_row_count BIGINT,
-  phase STRING NOT NULL
+  phase STRING NOT NULL,
+  validation_check_codes STRING
 ) USING DELTA;
 
 CREATE TABLE IF NOT EXISTS fga_import_publications (

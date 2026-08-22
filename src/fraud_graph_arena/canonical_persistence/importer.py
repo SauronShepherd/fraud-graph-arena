@@ -78,7 +78,7 @@ class CanonicalImporter:
             require_transition(candidate.status, PublicationStatus.VALIDATED); candidate.status = PublicationStatus.VALIDATED; self.warehouse.publications[pub_id] = candidate; self.warehouse.candidates.pop(pub_id, None)
             self._transition(run, ImportStatus.VALIDATED); self._transition(run, ImportStatus.PUBLISHING)
             for rel, dataset in run.datasets.items():
-                dataset.validated_row_count = dataset.staged_row_count; dataset.phase = "VALIDATED"; run.dataset_phases[rel] = "VALIDATED"; self.warehouse.record_dataset(run_id, rel, dataset.source_row_count, dataset.staged_row_count, dataset.validated_row_count, "VALIDATED")
+                dataset.validated_row_count = dataset.staged_row_count; dataset.phase = "VALIDATED"; dataset.validation_check_codes = ("FGA04-HEADER-001", "FGA04-TYPE-001", "FGA04-IDENTITY-001", "FGA04-KEY-001", "FGA04-REFERENCE-001"); run.dataset_phases[rel] = "VALIDATED"; self.warehouse.record_dataset(run_id, rel, dataset.source_row_count, dataset.staged_row_count, dataset.validated_row_count, "VALIDATED", dataset.validation_check_codes)
             PointerPublisher(self.warehouse).activate(pub_id, activating_run_id=run_id)
             self._transition(run, ImportStatus.PUBLISHED); run.finished_at_utc = datetime.now(timezone.utc).isoformat()
             if lose_response_after_activation:
