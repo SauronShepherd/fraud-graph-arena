@@ -11,7 +11,8 @@ ACTIVE_VIEW_TARGETS = {path: "fga_active_" + target.removeprefix("fga_") for pat
 def expected_topology() -> tuple[str, ...]: return tuple(PHYSICAL_TARGETS.values()) + tuple(ACTIVE_VIEW_TARGETS.values()) + OPERATIONAL_TARGETS
 
 def validate_registry() -> None:
-    if len(TABLE_PATHS) != 32 or len(PHYSICAL_TARGETS) != 32 or len(set(PHYSICAL_TARGETS.values())) != 32 or len(ACTIVE_VIEW_TARGETS) != 7:
+    all_names = set(PHYSICAL_TARGETS.values()) | set(ACTIVE_VIEW_TARGETS.values()) | set(OPERATIONAL_TARGETS)
+    if len(TABLE_PATHS) != 32 or len(PHYSICAL_TARGETS) != 32 or len(set(PHYSICAL_TARGETS.values())) != 32 or len(ACTIVE_VIEW_TARGETS) != 7 or len(all_names) != 32 + 7 + len(OPERATIONAL_TARGETS):
         raise ValueError("canonical registry must contain exactly 32 unique physical targets")
     for path in TABLE_PATHS:
         if not headers(path) or "snapshot_version" not in headers(path):
