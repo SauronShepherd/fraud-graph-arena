@@ -50,8 +50,10 @@ class CanonicalPackage:
                 raise ValueError(f"manifest {field} disagrees with config/cases.csv")
         with (root / "config/case_profiles.csv").open(newline="", encoding="utf-8") as handle:
             profiles = [row for row in csv.DictReader(handle) if row.get("case_id") == manifest.get("case_id")]
-        if not profiles:
-            raise ValueError("package must contain a case profile for the manifest case")
+        if len(profiles) != 1:
+            raise ValueError("package must contain exactly one case profile for the manifest case")
+        if str(profiles[0].get("cumulative", "")).lower() != "false":
+            raise ValueError("canonical package profile must have cumulative=false")
         return cls(root, manifest["package_name"], manifest.get("package_version", ""), manifest["case_id"],
                    manifest["case_version"], manifest["snapshot_version"], manifest["canonical_model_version"],
                    content_digest(root), manifest)
