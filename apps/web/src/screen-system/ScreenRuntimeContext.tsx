@@ -5,6 +5,7 @@ export interface ScreenRuntimeValue {
   context: ScreenContext;
   dispatchAction: (action: string, payload?: Record<string, string | number>) => Promise<void>;
   loadScreenModel: (source: DataSourceId, context: ScreenContext) => Promise<unknown>;
+  abortScreenLoad: () => void;
   transitionLocked: boolean;
 }
 const RuntimeContext = createContext<ScreenRuntimeValue | null>(null);

@@ -26,6 +26,7 @@ export function App() {
   const loadScreenModel = useCallback(async (source: DataSourceId, loadContext: typeof context) => {
     return loadCoordinator.current.load(source, loadContext);
   }, [screen]);
+  const abortScreenLoad = useCallback(() => loadCoordinator.current.abort(), []);
   const handleTransitionComplete = useCallback((completedPlan: TransitionPlan) => {
     navigate(locationFor(screenDefinitions.get(completedPlan.target)!, completedPlan.context), { replace: completedPlan.history === "REPLACE" });
     setTransitionPlan(null);
@@ -59,7 +60,7 @@ export function App() {
         <span className="paw" aria-hidden="true">🐾</span>
         <span>The Dogtective Agency</span>
       </header>
-      <ScreenRuntimeProvider value={{ context, dispatchAction, loadScreenModel, transitionLocked }}>
+      <ScreenRuntimeProvider value={{ context, dispatchAction, loadScreenModel, abortScreenLoad, transitionLocked }}>
         <ScreenHost definition={screenDefinitions.get(screen)!} screen={screen}>
           <Component />
         </ScreenHost>
