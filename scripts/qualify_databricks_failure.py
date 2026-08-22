@@ -1,5 +1,6 @@
 from __future__ import annotations
 import argparse, json, subprocess, tempfile
+from fraud_graph_arena.canonical_persistence.registry import OPERATIONAL_TARGETS
 def call(profile, warehouse, catalog, schema, statement):
     payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
     with tempfile.NamedTemporaryFile("w",suffix=".json",delete=False,encoding="utf-8") as fh: json.dump(payload,fh); path=fh.name
@@ -11,9 +12,11 @@ def main():
         report={"status":"not_run","reason":"requires --execute and a provisioned live warehouse","qualified_source_sha":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),"catalog":args.catalog,"schema":args.schema,"warehouse":args.warehouse}
         from pathlib import Path
         report_path=Path(args.report); report_path.parent.mkdir(parents=True,exist_ok=True); report_path.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
-    before=call(args.profile,args.warehouse,args.catalog,args.schema,"SELECT active_publication_id FROM fga_active_publications LIMIT 1")
-    call(args.profile,args.warehouse,args.catalog,args.schema,"INSERT INTO fga_import_runs VALUES ('dbx_failed_run_17','BONE_LEDGER','1.0.0','2026.07.18.1','injected','FAILED',NULL,'INJECTED_FAILURE',current_timestamp(),current_timestamp())")
-    after=call(args.profile,args.warehouse,args.catalog,args.schema,"SELECT active_publication_id FROM fga_active_publications LIMIT 1")
+    qualified = f"{args.catalog}.{args.schema}."
+    runs = qualified + OPERATIONAL_TARGETS[0]; active = qualified + "fga_active_publications"
+    before=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
+    call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO {runs} (import_run_id,case_id,case_version,snapshot_version,package_content_digest,status,retry_of,error_code,error_summary,started_at_utc,finished_at_utc,actor,load_policy) VALUES ('dbx_failed_run_17','BONE_LEDGER','1.0.0','2026.07.18.1','injected','FAILED',NULL,'INJECTED_FAILURE','controlled qualification failure',current_timestamp(),current_timestamp(),'qualification','FULL_INTERNAL')")
+    after=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
     before_id=before["result"]["data_array"][0][0]; after_id=after["result"]["data_array"][0][0]
     report={"status":"pass" if before_id==after_id else "fail","before":before_id,"after":after_id,"failed_run":"dbx_failed_run_17","candidate_active":False}
     report["qualified_source_sha"] = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
