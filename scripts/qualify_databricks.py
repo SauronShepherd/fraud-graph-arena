@@ -2,13 +2,9 @@ from __future__ import annotations
 import argparse, json, subprocess
 from pathlib import Path
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, OPERATIONAL_TARGETS
+from fraud_graph_arena.canonical_persistence.operational_registry import columns, ddl
 from fraud_graph_arena.case_data.registry import headers
-OPERATIONAL_COLUMNS = {
-"fga_import_runs": ["import_run_id", "case_id", "case_version", "snapshot_version", "package_content_digest", "status", "retry_of", "error_code", "started_at_utc", "finished_at_utc"],
-"fga_import_run_files": ["import_run_id", "relative_path", "byte_length", "sha256", "observed_at_utc"],
-"fga_import_run_datasets": ["import_run_id", "dataset_path", "source_row_count", "staged_row_count", "validated_row_count", "phase"],
-"fga_import_publications": ["publication_id", "case_id", "case_version", "snapshot_version", "canonical_model_version", "package_content_digest", "semantic_hash", "status"],
-"fga_active_publications": ["case_id", "case_version", "snapshot_version", "active_publication_id", "activated_at_utc"]}
+OPERATIONAL_COLUMNS = {table: list(columns(table)) for table in OPERATIONAL_TARGETS}
 from fraud_graph_arena.canonical_persistence.registry import expected_topology
 
 def api(profile: str, payload: dict) -> dict:
@@ -37,7 +33,7 @@ def main() -> int:
             if table in PHYSICAL_TARGETS.values():
                 path = next(path for path, target in PHYSICAL_TARGETS.items() if target == table)
                 columns = list(headers(path)) + ["_publication_id", "_load_run_id"]
-            else: columns = OPERATIONAL_COLUMNS[table]
+            else: statements.append(ddl(table)); continue
             statements.append(f"CREATE TABLE IF NOT EXISTS {table} (\n  " + ",\n  ".join(f"{column} STRING" for column in columns) + "\n) USING DELTA")
         for statement in statements:
             response = api(args.profile, {**base, "statement": statement})
