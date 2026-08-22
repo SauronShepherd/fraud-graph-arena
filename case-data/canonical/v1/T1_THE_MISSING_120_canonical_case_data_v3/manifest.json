@@ -4,6 +4,7 @@
   "case_id": "ACADEMY_T01",
   "case_version": "3.0.0-canonical.1",
   "converter": "academy.csv.v1",
+  "converter_version": "v1",
   "family": "ACADEMY",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "11ebbe39090b3b9d36fce08eed93abe30ba2dd6bd419f637bce7a586cee59627"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "T1_THE_MISSING_120_canonical_case_data_v3",
   "package_version": "3.0.0-canonical.1",
   "profile_code": "ACADEMY",
   "short_id": "T1",
   "snapshot_version": "2026.07.19.3",
   "source_archive": "T01_THE_MISSING_120_case_datasets_v2(2).zip",
+  "source_dialect": "academy-flat-csv-v1",
   "title": "The Missing 120",
   "validation_status": "PASS"
 }

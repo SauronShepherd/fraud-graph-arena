@@ -4,6 +4,7 @@
   "case_id": "BONE_LEDGER",
   "case_version": "1.0.0",
   "converter": "adult.csv.v1",
+  "converter_version": "v1",
   "family": "ADULT",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "ea3f5d1fe9b44ba00a859dda4906f7091031c83ba1801664c0c18cd8cd0ee620"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "A1_BONE_LEDGER_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "ADULT",
   "short_id": "A1",
   "snapshot_version": "2026.07.18.1",
   "source_archive": "A1_BONE_LEDGER_ADULT_case_datasets_v1(1).zip",
+  "source_dialect": "adult-flat-csv-v1",
   "title": "The Bone Ledger",
   "validation_status": "PASS"
 }

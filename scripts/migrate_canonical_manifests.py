@@ -10,6 +10,10 @@ def migrate(package: Path) -> None:
     manifest["case_id"] = row["case_id"]; manifest["case_version"] = row["case_version"]
     manifest["family"] = manifest.get("family") or manifest.get("profile_code") or FAMILY_BY_PREFIX[package.name[0]]
     manifest["canonical_model_version"] = "1.0.0"; manifest["converter"] = manifest.get("converter") or f"{manifest['family'].lower()}.csv.v1"
+    manifest["package_name"] = package.name; manifest["package_version"] = manifest.get("package_version") or "1.0.0"
+    manifest["converter_version"] = manifest.get("converter_version") or "v1"
+    manifest["mapping_version"] = manifest.get("mapping_version") or "family-mappings.v1"
+    manifest["source_dialect"] = manifest.get("source_dialect") or f"{manifest['family'].lower()}-flat-csv-v1"
     manifest["files"] = [{"path": rel, "bytes": len((package / rel).read_bytes()), "sha256": hashlib.sha256((package / rel).read_bytes()).hexdigest(), "rows": max(0, (package / rel).read_bytes().count(b"\n") - 1)} for rel in TABLE_PATHS]
     path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 def main() -> int:

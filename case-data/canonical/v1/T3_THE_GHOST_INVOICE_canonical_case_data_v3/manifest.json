@@ -4,6 +4,7 @@
   "case_id": "ACADEMY_T03",
   "case_version": "3.0.0-canonical.1",
   "converter": "academy.csv.v1",
+  "converter_version": "v1",
   "family": "ACADEMY",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "71345b3bfa09ce78fdfa0ef76934686f8c1a517d7046f99099fa379ca54961e1"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
   "package_version": "3.0.0-canonical.1",
   "profile_code": "ACADEMY",
   "short_id": "T3",
   "snapshot_version": "2026.07.19.1",
   "source_archive": "T03_THE_GHOST_INVOICE_case_datasets_v2(1).zip",
+  "source_dialect": "academy-flat-csv-v1",
   "title": "The Ghost Invoice",
   "validation_status": "PASS"
 }

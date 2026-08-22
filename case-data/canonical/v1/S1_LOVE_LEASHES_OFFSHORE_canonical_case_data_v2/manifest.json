@@ -4,6 +4,7 @@
   "case_id": "LOVE_LEASHES_OFFSHORE",
   "case_version": "1.0.0",
   "converter": "senior.csv.v1",
+  "converter_version": "v1",
   "family": "SENIOR",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "e1d22dfe25870a5500ae97f4cc27c8eb6c0d03b550a131c59d9f7a9361eb8045"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "SENIOR",
   "short_id": "S1",
   "snapshot_version": "2026.07.18.1",
   "source_archive": "S1_LOVE_LEASHES_OFFSHORE_SENIOR_case_datasets_v1(1).zip",
+  "source_dialect": "senior-flat-csv-v1",
   "title": "Love, Leashes & Offshore Transfers",
   "validation_status": "PASS"
 }

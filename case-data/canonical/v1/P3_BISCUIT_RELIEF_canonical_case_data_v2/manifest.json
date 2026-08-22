@@ -4,6 +4,7 @@
   "case_id": "BISCUIT_RELIEF",
   "case_version": "1.1.0",
   "converter": "puppy.csv.v1",
+  "converter_version": "v1",
   "family": "PUPPY",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "7800083985f0462020b0d9eaaf4a6122996c626c1de80a60112e51141da21b3a"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "PUPPY",
   "short_id": "P3",
   "snapshot_version": "2026.07.19.3",
   "source_archive": "P3_BISCUIT_RELIEF_PUPPY_case_datasets_v1(1).zip",
+  "source_dialect": "puppy-flat-csv-v1",
   "title": "The Great Biscuit Relief Fund",
   "validation_status": "PASS"
 }

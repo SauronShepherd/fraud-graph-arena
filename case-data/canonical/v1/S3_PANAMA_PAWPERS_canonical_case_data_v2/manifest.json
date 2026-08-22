@@ -4,6 +4,7 @@
   "case_id": "PANAMA_PAWPERS",
   "case_version": "1.0.0",
   "converter": "senior.csv.v1",
+  "converter_version": "v1",
   "family": "SENIOR",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "1d69f266c0574b4256a8b6bcc21b23541126ebc0606ad68b501c77b5ed2cda30"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "SENIOR",
   "short_id": "S3",
   "snapshot_version": "2026.07.19.2",
   "source_archive": "S3_PANAMA_PAWPERS_SENIOR_case_datasets_v1.zip",
+  "source_dialect": "senior-flat-csv-v1",
   "title": "The Panama Pawpers",
   "validation_status": "PASS"
 }

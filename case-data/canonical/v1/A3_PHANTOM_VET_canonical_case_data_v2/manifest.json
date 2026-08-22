@@ -4,6 +4,7 @@
   "case_id": "PHANTOM_VET",
   "case_version": "1.0.0",
   "converter": "adult.csv.v1",
+  "converter_version": "v1",
   "family": "ADULT",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "a0183865fca199ae92f8c9aa96dd9eb81c4b684474d3d1cb0103748a41724f8c"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "A3_PHANTOM_VET_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "ADULT",
   "short_id": "A3",
   "snapshot_version": "2026.07.18.1",
   "source_archive": "A3_PHANTOM_VET_ADULT_case_datasets_v1(1).zip",
+  "source_dialect": "adult-flat-csv-v1",
   "title": "The Phantom Veterinary Clinic",
   "validation_status": "PASS"
 }

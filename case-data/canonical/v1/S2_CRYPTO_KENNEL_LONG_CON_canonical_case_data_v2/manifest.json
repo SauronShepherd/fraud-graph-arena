@@ -4,6 +4,7 @@
   "case_id": "CRYPTO_KENNEL_LONG_CON",
   "case_version": "1.0.0",
   "converter": "senior.csv.v1",
+  "converter_version": "v1",
   "family": "SENIOR",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "095828ec048e349ea4236905a657a957ac9d51021dea73822c290ed722b53814"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "SENIOR",
   "short_id": "S2",
   "snapshot_version": "2026.07.18.1",
   "source_archive": "S2_CRYPTO_KENNEL_LONG_CON_SENIOR_case_datasets_v1(1).zip",
+  "source_dialect": "senior-flat-csv-v1",
   "title": "The Long Con at Crypto Kennel",
   "validation_status": "PASS"
 }

@@ -4,6 +4,7 @@
   "case_id": "MADDOG",
   "case_version": "1.1.0",
   "converter": "puppy.csv.v1",
+  "converter_version": "v1",
   "family": "PUPPY",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "d85f953e97f30ce12c71bf3ac64716196a4c9c0bad7dc339e5278ef33cc97852"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "P1_MADDOG_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "PUPPY",
   "short_id": "P1",
   "snapshot_version": "2026.07.19.1",
   "source_archive": "P1_MADDOG_PUPPY_case_datasets_v1(1).zip",
+  "source_dialect": "puppy-flat-csv-v1",
   "title": "The Maddog Investment Kennel",
   "validation_status": "PASS"
 }

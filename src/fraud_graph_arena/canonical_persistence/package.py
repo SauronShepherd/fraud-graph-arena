@@ -36,6 +36,9 @@ class CanonicalPackage:
                 raise ValueError(f"manifest digest mismatch: {rel}")
         if manifest.get("canonical_model_version") not in supported_model_versions():
             raise ValueError(f"unsupported canonical model version: {manifest.get('canonical_model_version')}")
+        converter = str(manifest.get("converter", ""))
+        if not converter or not manifest.get("converter_version") or not manifest.get("mapping_version"):
+            raise ValueError("manifest is missing converter provenance metadata")
         with (root / "config/cases.csv").open(newline="", encoding="utf-8") as handle:
             cases = list(csv.DictReader(handle))
         matching = [row for row in cases if row.get("case_id") == manifest.get("case_id")]

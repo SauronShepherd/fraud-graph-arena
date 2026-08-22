@@ -4,6 +4,7 @@
   "case_id": "CEO_BARKED_TWICE",
   "case_version": "1.1.0",
   "converter": "puppy.csv.v1",
+  "converter_version": "v1",
   "family": "PUPPY",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "f05edb55263e1bc74ea0f97cedec10b2a936d4dbcfba9b91d71b8804bbb6dc9f"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "PUPPY",
   "short_id": "P2",
   "snapshot_version": "2026.07.19.2",
   "source_archive": "P2_CEO_BARKED_TWICE_PUPPY_case_datasets_v1(1).zip",
+  "source_dialect": "puppy-flat-csv-v1",
   "title": "The CEO Who Barked Twice",
   "validation_status": "PASS"
 }

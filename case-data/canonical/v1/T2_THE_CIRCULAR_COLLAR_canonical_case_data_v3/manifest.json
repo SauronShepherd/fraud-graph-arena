@@ -4,6 +4,7 @@
   "case_id": "ACADEMY_T02",
   "case_version": "3.0.0-canonical.1",
   "converter": "academy.csv.v1",
+  "converter_version": "v1",
   "family": "ACADEMY",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "dd379f34e7d322341c4528773d47ab6a1055dbe1fdeba61e9412def1ee9aad3a"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
   "package_version": "3.0.0-canonical.1",
   "profile_code": "ACADEMY",
   "short_id": "T2",
   "snapshot_version": "2026.07.19.1",
   "source_archive": "T02_THE_CIRCULAR_COLLAR_case_datasets_v2(1).zip",
+  "source_dialect": "academy-flat-csv-v1",
   "title": "The Circular Collar",
   "validation_status": "PASS"
 }

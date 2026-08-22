@@ -4,6 +4,7 @@
   "case_id": "DOWNLINE",
   "case_version": "1.0.0",
   "converter": "adult.csv.v1",
+  "converter_version": "v1",
   "family": "ADULT",
   "files": [
     {
@@ -199,12 +200,14 @@
       "sha256": "2be4e98a410025ee941b42a3c599c15c69dcc5f041c41903087fc3f3b862b6fd"
     }
   ],
+  "mapping_version": "family-mappings.v1",
   "package_name": "A2_DOWNLINE_canonical_case_data_v2",
   "package_version": "2.0.0-canonical.1",
   "profile_code": "ADULT",
   "short_id": "A2",
   "snapshot_version": "2026.07.18.1",
   "source_archive": "A2_DOWNLINE_ADULT_case_datasets_v1(1).zip",
+  "source_dialect": "adult-flat-csv-v1",
   "title": "Every Dog Gets a Downline",
   "validation_status": "PASS"
 }
