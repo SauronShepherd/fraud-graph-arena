@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "checks": [
+    {"id":"FGA04-MANIFEST-001","severity":"ERROR","scope":"manifest","description":"Manifest identity, model version, and file receipts are valid."},
+    {"id":"FGA04-INVENTORY-001","severity":"ERROR","scope":"package","description":"Package contains exactly the 32 registered canonical CSV paths."},
+    {"id":"FGA04-HEADER-001","severity":"ERROR","scope":"table","description":"CSV headers exactly match the ordered typed registry."},
+    {"id":"FGA04-RECEIPT-001","severity":"ERROR","scope":"table","description":"Byte length, digest, and row count match manifest receipts."},
+    {"id":"FGA04-TYPE-001","severity":"ERROR","scope":"row","description":"Values satisfy registry SQL types and nullability."},
+    {"id":"FGA04-IDENTITY-001","severity":"ERROR","scope":"row","description":"Case and snapshot identity are consistent across rows."},
+    {"id":"FGA04-KEY-001","severity":"ERROR","scope":"table","description":"Primary keys are present and unique."},
+    {"id":"FGA04-REFERENCE-001","severity":"ERROR","scope":"package","description":"Reference endpoints resolve to canonical records."},
+    {"id":"FGA04-PROFILE-001","severity":"ERROR","scope":"package","description":"Exactly one approved package profile is present."},
+    {"id":"FGA04-FIREWALL-001","severity":"ERROR","scope":"safe-layer","description":"Published and Genie-safe layers contain no protected truth."},
+    {"id":"FGA04-PROVENANCE-001","severity":"ERROR","scope":"row","description":"Required source and derivation provenance is present and structurally valid."},
+    {"id":"FGA04-MODEL-001","severity":"ERROR","scope":"package","description":"Canonical model version is supported by the repository contract."}
+  ]
+}
