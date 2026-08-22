@@ -1,16 +1,12 @@
--- Apply only in the approved disposable development catalog/schema.
--- The concrete principal names are deployment inputs, never package inputs.
--- Normal web serving may read safe published/genie projections only.
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_entities_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_claims_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_evidence_requirements_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_evidence_routes_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_allowed_alternatives_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_forbidden_conclusions_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_scoring_rules_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_ending_rules_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_test_scenarios_csv FROM `fga_web`;
-REVOKE ALL PRIVILEGES ON TABLE fga_truth_assertions_csv FROM `fga_web`;
+-- Generated from the Canonical Model v1 physical registry. Do not hand-edit.
+-- Deployment must substitute the approved principal before execution.
+REVOKE ALL PRIVILEGES ON TABLE fga_config_cases_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_config_case_profiles_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_config_case_initial_items_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_config_ui_contracts_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_config_registries_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_config_reveal_steps_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_config_genie_benchmarks_csv FROM `fga_web`;
 REVOKE ALL PRIVILEGES ON TABLE fga_authoring_records_csv FROM `fga_web`;
 REVOKE ALL PRIVILEGES ON TABLE fga_authoring_record_attributes_csv FROM `fga_web`;
 REVOKE ALL PRIVILEGES ON TABLE fga_authoring_relationships_csv FROM `fga_web`;
@@ -24,3 +20,15 @@ GRANT SELECT ON TABLE fga_published_exact_matches_csv TO `fga_web`;
 GRANT SELECT ON TABLE fga_genie_records_csv TO `fga_web`;
 GRANT SELECT ON TABLE fga_genie_record_attributes_csv TO `fga_web`;
 GRANT SELECT ON TABLE fga_genie_relationships_csv TO `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_entities_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_claims_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_evidence_requirements_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_evidence_routes_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_allowed_alternatives_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_forbidden_conclusions_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_scoring_rules_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_ending_rules_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_test_scenarios_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_truth_assertions_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_validation_checks_csv FROM `fga_web`;
+REVOKE ALL PRIVILEGES ON TABLE fga_validation_metrics_csv FROM `fga_web`;
