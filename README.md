@@ -1,6 +1,6 @@
 # Fraud Graph Arena
 
-This repository contains the `I03 — Screen Me Up Before You Go-Go` candidate on top of the qualified Iteration 00 governance baseline. The Academy journey now uses a frontend-owned declarative screen system, while approved artwork and final release lineage remain external closure prerequisites.
+This repository contains the FGA 03–05 implementation candidate on top of the qualified Iteration 00 governance baseline. The Academy journey uses a frontend-owned declarative screen system; the canonical case-data and candidate-aware persistence subsystems are implemented behind explicit contract and security boundaries. Live Databricks qualification and final immutable release lineage remain external closure prerequisites until fresh evidence is available.
 
 ## Playable result
 
@@ -48,6 +48,9 @@ The only playable file is the spoiler-free `ACADEMY_001 — The Case of the Empt
 - Python, React component, screen-system and Playwright qualification tests;
 - versioned declarative screen definitions with schema and graph validation;
 - centralized navigation, cancellable screen data loading, semantic actions, lifecycle hooks and transition effects.
+- Canonical Model v1 packages, typed registry, registered converters and strict package validation;
+- candidate-aware case-version-scoped persistence, typed DDL, active-pointer publication and recovery primitives;
+- registry-generated physical targets and least-privilege layer grants for Databricks deployment.
 
 ## Install the Python application and tests
 
@@ -126,11 +129,11 @@ The generated contract is written to `contracts/openapi-v1.json`.
 
 ## Deliberate non-goals
 
-There is no real ranked case content, evidence, graph, entity resolution, retrieval provider, economy, scoring, submission or evaluator behaviour yet. The Academy closing sequence is registered but not player-reachable until verdict selection exists. This is intentional FGA 00–02 scope.
+There is no real ranked case content or player-facing evaluator behaviour. Live Databricks execution remains unqualified while the configured warehouse is unavailable; local/reference persistence qualification does not substitute for that live requirement.
 
 ## Release status
 
-The current branch is a candidate, not a 100% compliant immutable release. Run `python scripts/validate_board_manifest.py --require-approved-artwork` to see the artwork closure dependency. The I03 gate also requires a clean source checkout, two independent candidate runs, current frontend/browser evidence, and prior immutable release lineage.
+The current branch is an implementation candidate, not a 100% compliant immutable release. The I05 gate remains open until all closure-critical evidence is fresh, source-coherent and live Databricks qualification succeeds.
 
 Iteration 01 proves architectural continuity without spending any real-case spoilers.
 
