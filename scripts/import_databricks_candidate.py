@@ -5,15 +5,19 @@ the closed physical target with publication/run metadata in the same write.
 No untagged target rows are created and no post-load UPDATE is required.
 """
 from __future__ import annotations
-import argparse, hashlib, json
+import argparse, json
 from pathlib import Path
-from fraud_graph_arena.canonical_persistence.identity import content_digest
+from fraud_graph_arena.canonical_persistence.identity import publication_id
+from fraud_graph_arena.canonical_persistence.models import PackageIdentity
+from fraud_graph_arena.canonical_persistence.package import CanonicalPackage
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
 from fraud_graph_arena.case_data.registry import headers
 
 def quote(value: str) -> str: return "'" + value.replace("'", "''") + "'"
 def plan(package: Path, run_id: str, catalog: str, schema: str) -> list[str]:
-    digest = content_digest(package); publication = "pub_" + hashlib.sha256((package.name + digest).encode()).hexdigest()
+    preflight = CanonicalPackage.read(package)
+    identity = PackageIdentity(preflight.case_id, preflight.case_version, preflight.snapshot_version, preflight.canonical_model_version, preflight.content_digest)
+    publication = publication_id(identity)
     statements = []
     for relative, table in PHYSICAL_TARGETS.items():
         view = "fga_stage_" + hashlib.sha256((run_id + relative).encode()).hexdigest()[:16]
