@@ -3,8 +3,8 @@ import json
 from fraud_graph_arena.case_data.registry import TABLE_PATHS, headers
 
 _ROOT = __import__("pathlib").Path(__file__).resolve().parents[3]
-_PHYSICAL_REGISTRY = _ROOT / "contracts/canonical/v1/physical-registry.json"
-PHYSICAL_TARGETS = json.loads(_PHYSICAL_REGISTRY.read_text(encoding="utf-8"))["tables"]
+PHYSICAL_REGISTRY_PATH = _ROOT / "contracts/canonical/v1/physical-registry.json"
+PHYSICAL_TARGETS = json.loads(PHYSICAL_REGISTRY_PATH.read_text(encoding="utf-8"))["tables"]
 OPERATIONAL_TARGETS = ("fga_import_runs", "fga_import_run_files", "fga_import_run_datasets", "fga_import_publications", "fga_active_publications")
 
 def expected_topology() -> tuple[str, ...]: return tuple(PHYSICAL_TARGETS.values()) + OPERATIONAL_TARGETS

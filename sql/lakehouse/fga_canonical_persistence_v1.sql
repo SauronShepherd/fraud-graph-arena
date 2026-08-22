@@ -1,4 +1,5 @@
 -- Generated from Canonical Model v1 registry. Do not hand-edit.
+-- physical_registry_sha256: 7f6ccb4f84a3b54a339cf723a25f139c99613b56802d2fcbf9cc5fbf49c03540
 
 CREATE TABLE IF NOT EXISTS fga_config_cases_csv (case_id STRING, short_id STRING, title STRING, path_code STRING, case_order INT, case_version STRING, snapshot_version STRING, mechanism STRING, currency_code STRING, base_asset STRING, generation_seed BIGINT, generation_mode STRING, ranked BOOLEAN, career_unlock BOOLEAN, disclaimer STRING, canonical_model_version STRING, _publication_id STRING, _load_run_id STRING); -- config/cases.csv
 
