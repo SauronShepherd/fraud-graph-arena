@@ -25,8 +25,9 @@ class PointerPublisher:
         if publication is None or publication.identity.key != scope or publication.status in {PublicationStatus.CANDIDATE, PublicationStatus.REJECTED}:
             raise PublicationError("publication is not rollback-eligible")
         previous = self.warehouse.active.get(scope)
-        require_transition(publication.status, PublicationStatus.ACTIVE)
-        publication.status = PublicationStatus.ACTIVE; self.warehouse.active[scope] = publication_id
+        if publication.status != PublicationStatus.ACTIVE:
+            require_transition(publication.status, PublicationStatus.ACTIVE); publication.status = PublicationStatus.ACTIVE
+        self.warehouse.active[scope] = publication_id
         if previous and previous != publication_id:
             require_transition(self.warehouse.publications[previous].status, PublicationStatus.SUPERSEDED); self.warehouse.publications[previous].status = PublicationStatus.SUPERSEDED
 
