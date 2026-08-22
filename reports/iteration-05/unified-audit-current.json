@@ -2,7 +2,7 @@
   "closure_allowed": false,
   "generated_at_utc": "2026-08-21T21:09:50.775244+00:00",
   "live_databricks": {
-    "source_sha": "fe4bf7cec1cfa87a51c9f8e45f346176e8677f4f",
+    "source_sha": "e5b5442e57c5d9a66ed2470d4dcd94190c579583",
     "status": "unavailable"
   },
   "local_evidence": {
@@ -13,5 +13,5 @@
   },
   "manifest_version": "1.0",
   "scope": "FGA unified static implementation gap audit",
-  "source_sha": "fe4bf7cec1cfa87a51c9f8e45f346176e8677f4f"
+  "source_sha": "e5b5442e57c5d9a66ed2470d4dcd94190c579583"
 }
