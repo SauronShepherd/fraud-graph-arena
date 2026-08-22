@@ -32,7 +32,8 @@ class CanonicalPackage:
             if not path.is_file() or path.stat().st_size == 0:
                 raise ValueError(f"missing or zero-byte canonical file: {rel}")
             data = path.read_bytes(); entry = files[rel]
-            if entry.get("bytes") != len(data) or entry.get("sha256") != hashlib.sha256(data).hexdigest():
+            row_count = max(0, data.count(b"\n") - 1)
+            if entry.get("bytes") != len(data) or entry.get("sha256") != hashlib.sha256(data).hexdigest() or entry.get("rows") != row_count:
                 raise ValueError(f"manifest digest mismatch: {rel}")
         if manifest.get("canonical_model_version") not in supported_model_versions():
             raise ValueError(f"unsupported canonical model version: {manifest.get('canonical_model_version')}")
