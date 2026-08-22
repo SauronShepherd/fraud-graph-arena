@@ -96,5 +96,9 @@ class DatabricksWarehouse:
 
     def activate_publication(self, case_id: str, case_version: str, snapshot_version: str, model_version: str, publication_id: str, run_id: str) -> dict[str, Any]:
         table = self.qualify_table("fga_active_publications")
+        duplicate_check = self.execute(f"SELECT COUNT(*) AS pointer_count FROM {table} WHERE case_id={_literal(case_id)} AND case_version={_literal(case_version)}")
+        data = duplicate_check.get("result", {}).get("data_array", [])
+        if data and int(data[0][0]) > 1:
+            raise DatabricksWarehouseError("DUPLICATE_ACTIVE_POINTER")
         values = ", ".join((_literal(case_id), _literal(case_version), _literal(snapshot_version), _literal(model_version), _literal(publication_id), "current_timestamp()", _literal(run_id)))
         return self.execute(f"MERGE INTO {table} AS target USING (SELECT {values}) AS source ON target.case_id = source.case_id AND target.case_version = source.case_version WHEN MATCHED THEN UPDATE SET * WHEN NOT MATCHED THEN INSERT *")
