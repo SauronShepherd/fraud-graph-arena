@@ -5,6 +5,7 @@ import csv
 import json
 import subprocess
 from pathlib import Path
+from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
 
 
 def main() -> int:
@@ -22,7 +23,10 @@ def main() -> int:
         if not package.is_dir():
             continue
         for csv_path in sorted(package.rglob("*.csv")):
-            table = "fga_" + csv_path.relative_to(package).as_posix().replace("/", "_").replace(".", "_")
+            relative = csv_path.relative_to(package).as_posix()
+            table = PHYSICAL_TARGETS.get(relative)
+            if table is None:
+                raise SystemExit(f"unregistered canonical path: {relative}")
             with csv_path.open(newline="", encoding="utf-8") as fh:
                 counts[table] = counts.get(table, 0) + max(0, sum(1 for _ in fh) - 1)
 

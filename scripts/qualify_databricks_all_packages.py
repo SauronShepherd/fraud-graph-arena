@@ -23,7 +23,8 @@ def main() -> int:
         print(json.dumps({"package":package.name,"phase":"COPY_INTO"}), flush=True)
         files=sorted(package.rglob("*.csv")); copied=0
         for file in files:
-            rel=file.relative_to(package).as_posix(); table="fga_"+rel.replace("/","_").replace(".","_")
+            rel=file.relative_to(package).as_posix(); table=PHYSICAL_TARGETS.get(rel)
+            if table is None: raise SystemExit(f"unregistered canonical path: {rel}")
             run(["python","scripts/databricks_copy_into.py",table,f"{package.name}/{rel}","--profile",args.profile,"--catalog",args.catalog,"--schema",args.schema,"--warehouse",args.warehouse],root); copied+=1
         run_id="dbx_run_"+uuid.uuid4().hex
         tag=subprocess.run(["python","scripts/tag_databricks_publication.py",str(package),"--run-id",run_id,"--profile",args.profile,"--catalog",args.catalog,"--schema",args.schema,"--warehouse",args.warehouse],cwd=root,capture_output=True,text=True,check=True)
