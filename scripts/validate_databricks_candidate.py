@@ -1,18 +1,24 @@
 """Validate a write-time tagged candidate before publication activation."""
 from __future__ import annotations
-import argparse, json
+import argparse, json, re
 from pathlib import Path
 from fraud_graph_arena.canonical_persistence.databricks_warehouse import DatabricksWarehouse
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
 from fraud_graph_arena.case_data.registry import load_typed_registry
 
+def q(value: object) -> str:
+    if value is None: return "NULL"
+    return "'" + str(value).replace("'", "''") + "'"
+
 def validation_queries(publication_id: str, run_id: str, catalog: str, schema: str) -> list[str]:
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", catalog) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", schema):
+        raise ValueError("catalog and schema must be registered SQL identifiers")
     prefix = f"{catalog}.{schema}."
     queries = []
     for path, table in PHYSICAL_TARGETS.items():
         qualified = prefix + table
-        queries.append(f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = '{publication_id}') AS tagged, COUNT_IF(_load_run_id = '{run_id}') AS correlated FROM {qualified}")
-        queries.append(f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = '{publication_id}' AND snapshot_version IS NULL")
+        queries.append(f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {q(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {q(run_id)}) AS correlated FROM {qualified}")
+        queries.append(f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {q(publication_id)} AND snapshot_version IS NULL")
     return queries
 
 def _rows(response: dict) -> list[list[object]]:
