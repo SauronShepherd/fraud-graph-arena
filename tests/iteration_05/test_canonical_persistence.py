@@ -105,6 +105,14 @@ def test_archive_traversal_and_duplicate_paths_are_rejected(tmp_path):
     with ZipFile(duplicate, "w") as z: z.writestr("a.csv", "x"); z.writestr("./a.csv", "y")
     with pytest.raises(ArchiveSafetyError): safe_extract(duplicate, tmp_path / "out2")
 
+def test_archive_special_files_are_rejected(tmp_path):
+    archive = tmp_path / "symlink.zip"
+    from zipfile import ZipInfo
+    info = ZipInfo("link")
+    info.external_attr = (0o120777 << 16)
+    with ZipFile(archive, "w") as z: z.writestr(info, "target")
+    with pytest.raises(ArchiveSafetyError): safe_extract(archive, tmp_path / "out3")
+
 def test_canonical_type_rules_reject_malformed_values():
     with pytest.raises(ValueError): validate_row_types({"properties_json": "not-json"}, "config/registries.csv")
     with pytest.raises(ValueError): validate_row_types({"sequence": "nope"}, "config/reveal_steps.csv")

@@ -1,7 +1,7 @@
 from __future__ import annotations
 import csv, json, hashlib
 from pathlib import Path
-from .registry import TABLE_PATHS, headers, sql_types, load_typed_registry
+from .registry import TABLE_PATHS, headers, sql_types, load_typed_registry, supported_model_versions
 from .types import parse_json, parse_timestamp, validate_sql_value
 from .semantics import CONFIDENCE_BANDS, FAMILIES, GENERATION_MODES, RELATIONSHIP_FAMILIES, require_controlled
 FORBIDDEN=('canonical_entity','culpability','solve_gate','mastermind','guilty','scoring_rule','ending_rule')
@@ -11,7 +11,7 @@ def validate_package(root: Path) -> list[dict]:
     if not (root/'manifest.json').is_file(): err('PKG.MANIFEST','manifest.json','Manifest is required.'); return errors
     try: manifest=json.loads((root/'manifest.json').read_text(encoding='utf-8'))
     except Exception: err('PKG.MANIFEST.JSON','manifest.json','Manifest is not valid JSON.'); return errors
-    if manifest.get('canonical_model_version')!='1.0.0': err('PKG.MODEL.VERSION','manifest.json','Unsupported canonical model version.')
+    if manifest.get('canonical_model_version') not in supported_model_versions(): err('PKG.MODEL.VERSION','manifest.json','Unsupported canonical model version.')
     loaded={}
     for rel in TABLE_PATHS:
         p=root/rel

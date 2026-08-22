@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
 CONTRACT=ROOT/'contracts/canonical/v1/canonical-model.json'
 TABLE_PATHS=tuple(json.loads(CONTRACT.read_text(encoding='utf-8'))['tables'])
+MODEL_VERSION = json.loads(CONTRACT.read_text(encoding='utf-8')).get('version', '1.0.0')
 _HEADERS={
 'config/cases.csv':'case_id,short_id,title,path_code,case_order,case_version,snapshot_version,mechanism,currency_code,base_asset,generation_seed,generation_mode,ranked,career_unlock,disclaimer,canonical_model_version',
 'config/case_profiles.csv':'case_id,profile_code,profile_name,cumulative,starting_credits,manual_cost,zingg_cost,graphframes_cost,genie_cost,genie_row_limit,quote_required,no_result_charged,initial_item_count,description,snapshot_version',
@@ -42,6 +43,9 @@ def headers(path: str)->tuple[str,...]:
     """Return columns from the repository's authoritative typed registry."""
     return tuple(column["name"] for column in load_typed_registry()[path]["columns"])
 def load_registry()->dict[str,tuple[str,...]]: return {p:headers(p) for p in TABLE_PATHS}
+
+def supported_model_versions() -> frozenset[str]:
+    return frozenset({MODEL_VERSION})
 
 @lru_cache(maxsize=1)
 def load_typed_registry() -> dict[str, dict]:

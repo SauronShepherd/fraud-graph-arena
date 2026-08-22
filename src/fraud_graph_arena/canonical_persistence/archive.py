@@ -1,6 +1,7 @@
 from __future__ import annotations
 from pathlib import Path, PurePosixPath
 from zipfile import ZipFile, ZipInfo
+import stat
 
 class ArchiveSafetyError(ValueError): pass
 
@@ -20,6 +21,9 @@ def safe_extract(archive: Path, destination: Path, *, max_members: int = 128, ma
         names: set[str] = set(); total = 0; result = []
         for info in zipped.infolist():
             name = _safe_name(info)
+            mode = (info.external_attr >> 16) & 0xFFFF
+            if mode and (stat.S_ISLNK(mode) or stat.S_ISSOCK(mode) or stat.S_ISFIFO(mode)):
+                raise ArchiveSafetyError("archive contains unsupported special file")
             if name in names: raise ArchiveSafetyError("duplicate normalized archive path")
             names.add(name); total += info.file_size
             if total > max_bytes: raise ArchiveSafetyError("archive byte limit exceeded")
