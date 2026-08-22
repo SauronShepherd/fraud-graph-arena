@@ -5,7 +5,7 @@ from .models import ImportStatus, PublicationStatus
 
 RUN_TRANSITIONS: dict[ImportStatus, frozenset[ImportStatus]] = {
     ImportStatus.STARTED: frozenset({ImportStatus.PREFLIGHTED, ImportStatus.FAILED}),
-    ImportStatus.PREFLIGHTED: frozenset({ImportStatus.STAGING, ImportStatus.FAILED}),
+    ImportStatus.PREFLIGHTED: frozenset({ImportStatus.STAGING, ImportStatus.REUSED, ImportStatus.FAILED}),
     ImportStatus.STAGING: frozenset({ImportStatus.STAGED, ImportStatus.FAILED, ImportStatus.FAILED_CLEANUP}),
     ImportStatus.STAGED: frozenset({ImportStatus.VALIDATING, ImportStatus.FAILED}),
     ImportStatus.VALIDATING: frozenset({ImportStatus.VALIDATED, ImportStatus.FAILED, ImportStatus.FAILED_CLEANUP}),
@@ -29,4 +29,3 @@ def can_transition(current, target) -> bool:
 def require_transition(current, target) -> None:
     if not can_transition(current, target):
         raise ValueError(f"invalid lifecycle transition: {current} -> {target}")
-

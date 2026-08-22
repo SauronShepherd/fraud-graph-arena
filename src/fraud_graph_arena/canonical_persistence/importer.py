@@ -58,6 +58,7 @@ class CanonicalImporter:
                 return ImportResult(run_id, run.status, None, None)
         pub_id = publication_id(identity); active = self.warehouse.active.get(identity.key)
         if active == pub_id:
+            self._transition(run, ImportStatus.PREFLIGHTED)
             self._transition(run, ImportStatus.REUSED); run.finished_at_utc = datetime.now(timezone.utc).isoformat(); return ImportResult(run_id, run.status, pub_id, self.warehouse.publications[pub_id].semantic_hash)
         # Immutable identity excludes the content digest for conflict detection:
         # the same case/version/snapshot/model may never acquire different bytes.
