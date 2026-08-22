@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, json, subprocess, tempfile
+import argparse, hashlib, json, subprocess, tempfile
 from pathlib import Path
 
 def sql(profile, warehouse, catalog, schema, statement):
@@ -12,7 +12,8 @@ def main():
     p=argparse.ArgumentParser(); p.add_argument("--profile",required=True); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--output",type=Path,default=Path("reports/iteration-05/security/truth-access-negative.json")); args=p.parse_args()
     identity=json.loads(subprocess.check_output(["databricks","current-user","me","--profile",args.profile],text=True))
     groups={item.get("display") for item in identity.get("groups",[])}; user=identity.get("userName")
-    report={"profile":args.profile,"user":user,"is_admin":"admins" in groups,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run"}
+    principal_fingerprint = hashlib.sha256((user or "unknown").encode()).hexdigest()[:16]
+    report={"profile":args.profile,"principal_fingerprint":principal_fingerprint,"is_admin":"admins" in groups,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run"}
     if report["is_admin"]:
         report.update(status="not_qualified",reason="identity is a member of admins; admin sessions cannot prove denial")
     else:
