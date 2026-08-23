@@ -4,6 +4,7 @@ import json
 import subprocess
 import tempfile
 import re
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 from decimal import Decimal
 from dataclasses import dataclass
@@ -106,7 +107,12 @@ class DatabricksWarehouse:
                 if path == "authoring/relationships.csv" and rule["column"] == "target_record_id":
                     exception = " AND NOT (source.relationship_type = 'MENTIONS' AND source.target_record_id LIKE 'CE-%')"
                 queries.append(f"SELECT COUNT(*) AS dangling_reference FROM {qualified} AS source WHERE source._publication_id = {_literal(publication_id)} AND source.{rule['column']} IS NOT NULL{exception} AND NOT EXISTS (SELECT 1 FROM {target} AS target WHERE target._publication_id = {_literal(publication_id)} AND target.{rule['target_column']} = source.{rule['column']})")
-        return [self.execute(query) for query in queries]
+        # These checks are independent read-only statements. Preserve their
+        # deterministic order while allowing the SQL warehouse to process a
+        # bounded batch concurrently; serial validation made a 13-package
+        # qualification unnecessarily long without adding safety.
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            return list(executor.map(self.execute, queries))
 
     def cleanup_candidate(self, publication_id: str) -> list[dict[str, Any]]:
         return [self.execute(f"DELETE FROM {self.qualify_table(table)} WHERE _publication_id = {_literal(publication_id)}") for table in PHYSICAL_TARGETS.values()]
