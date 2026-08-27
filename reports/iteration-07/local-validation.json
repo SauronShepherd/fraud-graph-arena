@@ -1,7 +1,8 @@
 {
   "iteration": "FGA07",
   "classification": "LOCAL_IMPLEMENTATION_SLICE",
-  "python_iteration_06_tests": "PASS_11",
+  "python_iteration_06_and_openapi_tests": "PASS_13",
+  "frontend_tests": "PASS_34",
   "frontend_typecheck": "PASS",
   "frontend_build": "PASS",
   "graph_truth_firewall": "PASS_TARGETED",
