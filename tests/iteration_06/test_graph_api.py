@@ -20,3 +20,15 @@ def test_graph_api_rejects_expansion_of_hidden_node(client):
     visible = client.post(f"/api/v1/rounds/{round_id}/graph/initial", json={"seeds": ["T2-O-BAKERY"]}).json()
     response = client.post(f"/api/v1/rounds/{round_id}/graph/expand", json={"visible": visible, "node_id": "T2-O-ALPHA"})
     assert response.status_code == 403
+
+
+def test_graph_service_rejects_evaluator_fields_before_projection():
+    from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
+
+    service = GraphInvestigationService(lambda _: {"nodes": [], "edges": [], "mastermind": "DO_NOT_SHOW_HERCULE_THIS"})
+    try:
+        service.initial("round-1")
+    except PermissionError as error:
+        assert "protected" in str(error)
+    else:
+        raise AssertionError("evaluator field crossed graph boundary")
