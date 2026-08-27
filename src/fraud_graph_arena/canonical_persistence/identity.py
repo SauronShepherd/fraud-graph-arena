@@ -23,8 +23,13 @@ def semantic_hash(rows: dict[str, list[dict]]) -> str:
         if isinstance(value, (datetime, date)): return value.isoformat().replace("+00:00", "Z")
         if isinstance(value, Decimal): return format(value, "f")
         raise TypeError(f"unsupported semantic-hash value: {type(value).__name__}")
-    value = json.dumps(rows, sort_keys=True, separators=(",", ":"), ensure_ascii=False, default=encode)
-    return hashlib.sha256(value.encode()).hexdigest()
+    # Stream the exact same canonical JSON representation instead of creating
+    # one enormous intermediate string for large Senior-case packages.
+    digest = hashlib.sha256()
+    encoder = json.JSONEncoder(sort_keys=True, separators=(",", ":"), ensure_ascii=False, default=encode)
+    for chunk in encoder.iterencode(rows):
+        digest.update(chunk.encode("utf-8"))
+    return digest.hexdigest()
 
 def topology_hash(names: set[str] | tuple[str, ...]) -> str:
     return hashlib.sha256(json.dumps(sorted(names), separators=(",", ":")).encode()).hexdigest()

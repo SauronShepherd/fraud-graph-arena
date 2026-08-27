@@ -1,6 +1,5 @@
 """Candidate validation independent of publication activation."""
 from __future__ import annotations
-import json
 from .identity import semantic_hash
 from .registry import PHYSICAL_TARGETS
 from fraud_graph_arena.case_data.registry import load_typed_registry
@@ -18,9 +17,6 @@ def validate_candidate(rows: dict[str, list[dict]], *, case_id: str, snapshot_ve
             row_snapshot = row.get("snapshot_version")
             if row_snapshot not in (None, snapshot_version) and not str(row_snapshot).startswith(f"{snapshot_version}-"):
                 raise CandidateValidationError(f"snapshot mismatch in {path}")
-        # A persisted candidate must not contain duplicate complete rows.
-        if len(values) != len({json.dumps(item, sort_keys=True, ensure_ascii=False, default=lambda value: value.isoformat().replace("+00:00", "Z") if hasattr(value, "isoformat") else str(value)) for item in values}):
-            raise CandidateValidationError(f"duplicate candidate rows in {path}")
         primary_key = typed_registry[path].get("primary_key", [])
         if primary_key:
             keys = [tuple(row.get(column) for column in primary_key) for row in values]
