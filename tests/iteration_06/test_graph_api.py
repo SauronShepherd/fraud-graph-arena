@@ -44,3 +44,14 @@ def test_graph_service_rejects_forbidden_truth_sentinel_in_value():
         pass
     else:
         raise AssertionError("forbidden evaluator sentinel crossed graph boundary")
+
+
+def test_graph_api_filter_preserves_nodes_and_changes_only_visible_edges(client):
+    round_id = _active_t02(client)
+    visible = client.post(f"/api/v1/rounds/{round_id}/graph/initial").json()
+    response = client.post(f"/api/v1/rounds/{round_id}/graph/filter", json={"visible": visible, "families": ["NOT_A_REAL_FAMILY"]})
+    assert response.status_code == 200
+    body = response.json()
+    assert body["node_count"] == visible["node_count"]
+    assert body["edge_count"] == 0
+    assert body["relationship_filters"] == ["NOT_A_REAL_FAMILY"]
