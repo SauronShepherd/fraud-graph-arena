@@ -11,7 +11,7 @@ import { DebugOverlay } from "../board/DebugOverlay";
 import { useScreenData } from "../screen-system/useScreenData";
 import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
 import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
-import { expandGraph } from "../api/client";
+import { expandGraph } from "../api/graph";
 
 const BOARD_ARTWORK = "/assets/board/v1/fga-investigation-board-canonical-v1.png";
 

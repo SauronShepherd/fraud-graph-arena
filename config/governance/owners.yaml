@@ -30,6 +30,7 @@ assignments:
   - {path: docs/iteration-05/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/iteration-05-*.md, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/iteration-05-SECURITY.md, owner: security-assurance, reviewer: quality-engineering}
+  - {path: docs/iteration-06/**, owner: delivery-governance, reviewer: architecture-governance}
   - {path: docs/architecture/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: config/governance/**, owner: architecture-governance, reviewer: quality-engineering}
   - {path: config/lakehouse/**, owner: architecture-governance, reviewer: quality-engineering}

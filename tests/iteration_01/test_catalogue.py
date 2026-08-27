@@ -42,6 +42,14 @@ def test_academy_catalogue_contains_only_spoiler_free_training_case(client: Test
                 "can carry it safely from catalogue to board."
             ),
             "status": "OPEN",
+        },
+        {
+            "id": "ACADEMY_T02",
+            "version": "1.0.0-fga06",
+            "path_id": "DETECTIVE_ACADEMY",
+            "name": "The Circular Collar",
+            "description": "A spoiler-free graph lesson about records, organizations, and directed source relationships.",
+            "status": "OPEN",
         }
     ]
 
