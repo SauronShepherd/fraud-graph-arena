@@ -16,7 +16,7 @@ def main():
         args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
     try:
         identity=json.loads(subprocess.check_output([cli,"current-user","me","--profile",args.profile],text=True))
-    except OSError as exc:
+    except (OSError, subprocess.CalledProcessError) as exc:
         report={"profile":args.profile,"principal_fingerprint":None,"is_admin":None,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run","status":"not_qualified","reason":"databricks_cli_unlaunchable","error_type":type(exc).__name__}
         args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
     groups={item.get("display") for item in identity.get("groups",[])}; user=identity.get("userName")
