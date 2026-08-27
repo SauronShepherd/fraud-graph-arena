@@ -101,6 +101,7 @@ const workspace = {
   suspect_count: 0
   ,path_name: "Detective Academy",
   empty_state_code: "NO_EVIDENCE_REVEALED",
+  graph: { projection_version: "1", nodes: [], edges: [], node_count: 0, edge_count: 0 },
   actions: [
     { id: "COMPARE_IDENTITIES", state: "NOT_IMPLEMENTED", reason_code: "CAPABILITY_NOT_IMPLEMENTED", reason: "Identity comparison is not available in Academy yet." },
     { id: "FIND_SHARED_FIELDS", state: "NOT_IMPLEMENTED", reason_code: "CAPABILITY_NOT_IMPLEMENTED", reason: "Exact shared-field analysis is not available in Academy yet." },
