@@ -6,7 +6,8 @@ This report records the verified local implementation slice. It is not a closure
 
 - `python -m pytest tests/iteration_06 tests/iteration_01/test_openapi_contract.py -q` — 13 passed.
 - `npm test -- --run` from `apps/web` — 34 passed across 18 files.
-- `python -m pytest -q` — 148 passed in 4:08.
+- `python -m pytest -q` — 148 passed in 8:18 after corpus repair.
+- `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.
@@ -27,9 +28,9 @@ This report records the verified local implementation slice. It is not a closure
 
 ## Outstanding closure work
 
-- complete FGA-00 through FGA-06 predecessor closure;
+- live FGA-05 Databricks qualification and immutable cumulative release closure;
 - production renderer candidate qualification and real-browser performance evidence;
-- full corpus/live Databricks qualification;
+- live Databricks qualification (local strict corpus qualification is now complete);
 - progressive loading and performance envelope;
 - populated-graph performance envelope and full cumulative closure gate;
 - final cumulative closure gate.
