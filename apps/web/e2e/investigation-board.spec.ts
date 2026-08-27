@@ -45,4 +45,25 @@ test.describe("I02 investigation board", () => {
     await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
     await expect(page.locator("[data-action-id]")).toHaveCount(4);
   });
+
+  test("supports the populated graph investigation contract", async ({ page }) => {
+    await page.goto("/");
+    await page.getByRole("link", { name: /choose your trench coat/i }).click();
+    await page.getByRole("button", { name: /detective academy/i }).click();
+    await page.getByRole("article").filter({ hasText: "ACADEMY_T02" }).getByRole("button", { name: /open training case/i }).click();
+    await expect(page.getByRole("heading", { name: "The Circular Collar" })).toBeVisible();
+    await page.getByRole("button", { name: /enter the academy/i }).click();
+    await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: /Expand Blue Bowl Bakery/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: /Collapse Blue Bowl Bakery/i })).toBeVisible();
+    await page.getByRole("button", { name: /Collapse Blue Bowl Bakery/i }).click();
+    await expect(page.getByRole("button", { name: /Restore Blue Bowl Bakery/i })).toBeVisible();
+    await page.getByRole("button", { name: /Restore Blue Bowl Bakery/i }).click();
+    await page.getByRole("button", { name: /Blue Bowl Bakery, T2-O-BAKERY/ }).click();
+    await page.getByRole("button", { name: "Focus selection" }).click();
+    await expect(page.getByRole("button", { name: "Show all nodes" })).toBeVisible();
+    await expect(page.getByRole("img", { name: /nodes in current graph view/i })).toBeVisible();
+    await page.getByText("Semantic evidence list").click();
+    await expect(page.getByText(/Blue Bowl Bakery \(T2-O-BAKERY\)/)).toBeVisible();
+  });
 });

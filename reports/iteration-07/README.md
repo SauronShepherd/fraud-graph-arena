@@ -10,7 +10,7 @@ This report records the verified local implementation slice. It is not a closure
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.
-- `npm run test:e2e` from `apps/web` — 10 passed with one Playwright worker and the repository virtual environment.
+- `npm run test:e2e` from `apps/web` — 11 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
 - targeted graph viewport tests after focus/minimap controls — 3 passed.
 
 ## Implemented slice
@@ -31,5 +31,5 @@ This report records the verified local implementation slice. It is not a closure
 - renderer candidate qualification and benchmark evidence;
 - full corpus/live Databricks qualification;
 - progressive loading and performance envelope;
-- populated-graph accessibility and performance E2E evidence;
+- populated-graph performance envelope and full cumulative closure gate;
 - final cumulative closure gate.
