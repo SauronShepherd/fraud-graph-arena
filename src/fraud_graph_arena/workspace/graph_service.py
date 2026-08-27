@@ -8,7 +8,10 @@ from fraud_graph_arena.case_data.graph_investigation import expand, filter_relat
 _FORBIDDEN_PLAYER_KEYS = {"truth", "culpability", "protected_notes", "expected_classification", "scoring_rules", "ending_rules", "mastermind"}
 
 def _assert_safe(value: object) -> None:
-    if isinstance(value, dict):
+    if isinstance(value, str):
+        if "DO_NOT_SHOW_HERCULE_THIS" in value:
+            raise PermissionError("protected evaluator sentinel cannot enter the graph projection")
+    elif isinstance(value, dict):
         forbidden = _FORBIDDEN_PLAYER_KEYS.intersection(str(key).lower() for key in value)
         if forbidden:
             raise PermissionError("protected evaluator fields cannot enter the graph projection")

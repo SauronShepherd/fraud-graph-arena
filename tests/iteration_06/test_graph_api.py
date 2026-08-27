@@ -32,3 +32,15 @@ def test_graph_service_rejects_evaluator_fields_before_projection():
         assert "protected" in str(error)
     else:
         raise AssertionError("evaluator field crossed graph boundary")
+
+
+def test_graph_service_rejects_forbidden_truth_sentinel_in_value():
+    from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
+
+    service = GraphInvestigationService(lambda _: {"nodes": [{"record_id": "N1", "safe_summary": "DO_NOT_SHOW_HERCULE_THIS"}], "edges": []})
+    try:
+        service.initial("round-1")
+    except PermissionError:
+        pass
+    else:
+        raise AssertionError("forbidden evaluator sentinel crossed graph boundary")
