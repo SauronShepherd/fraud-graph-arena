@@ -10,6 +10,8 @@ This report records the verified local implementation slice. It is not a closure
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.
+- `npm run test:e2e` from `apps/web` — 10 passed with one Playwright worker and the repository virtual environment.
+- targeted graph viewport tests after focus/minimap controls — 3 passed.
 
 ## Implemented slice
 
@@ -19,6 +21,7 @@ This report records the verified local implementation slice. It is not a closure
 - relationship-family filtering;
 - graph API contracts and structured authorization errors;
 - frontend zoom, layout, filtering, semantic selection, expansion, and collapse controls;
+- presentation-only focus mode and an accessible minimap;
 - evaluator-field and forbidden-sentinel rejection before graph projection.
 - directed relationships rendered with explicit arrowheads.
 
@@ -28,5 +31,5 @@ This report records the verified local implementation slice. It is not a closure
 - renderer candidate qualification and benchmark evidence;
 - full corpus/live Databricks qualification;
 - progressive loading and performance envelope;
-- complete accessibility and security E2E evidence;
+- populated-graph accessibility and performance E2E evidence;
 - final cumulative closure gate.
