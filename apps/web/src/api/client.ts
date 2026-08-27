@@ -5,6 +5,7 @@ import type {
   ProblemDetails,
   RoundSummary,
   Workspace
+  ,Graph
 } from "./contracts";
 
 const API_BASE = (import.meta.env.VITE_FGA_API_BASE_URL as string | undefined) ?? "/api/v1";
@@ -96,4 +97,8 @@ export function completeOpening(roundId: string, completion: "FINISHED" | "SKIPP
 
 export function getWorkspace(roundId: string, signal?: AbortSignal): Promise<Workspace> {
   return request<Workspace>(`/rounds/${encodeURIComponent(roundId)}/workspace`, { signal });
+}
+
+export function expandGraph(roundId: string, visible: Graph, nodeId: string, signal?: AbortSignal): Promise<Graph> {
+  return request<Graph>(`/rounds/${encodeURIComponent(roundId)}/graph/expand`, { method: "POST", signal, body: JSON.stringify({ visible, node_id: nodeId, depth: 1, limit: 100 }) });
 }
