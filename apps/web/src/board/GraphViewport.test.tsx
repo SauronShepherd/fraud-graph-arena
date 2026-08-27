@@ -28,6 +28,9 @@ describe("GraphViewport", () => {
     fireEvent.click(screen.getByText("Semantic evidence list"));
     fireEvent.click(screen.getByRole("button", { name: /Puppy One \(P1\)/ }));
     expect(onNodeSelect).toHaveBeenCalledWith("P1");
+    fireEvent.click(screen.getByRole("button", { name: "Focus selection" }));
+    expect(screen.getByRole("button", { name: "Show all nodes" })).toBeVisible();
+    expect(screen.getByRole("img", { name: /nodes in current graph view/i })).toBeVisible();
   });
 
   it("collapses and restores a node without changing the source graph", () => {
