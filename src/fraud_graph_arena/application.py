@@ -20,6 +20,8 @@ from fraud_graph_arena.web.problem_handlers import register_problem_handlers
 from fraud_graph_arena.web.routes import catalogue, health, rounds
 from fraud_graph_arena.web.spa import SpaStaticFiles
 from fraud_graph_arena.workspace import WorkspaceService
+from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
+from fraud_graph_arena.case_data.academy_graph import t02_graph
 
 
 @dataclass(slots=True)
@@ -30,6 +32,7 @@ class Container:
     rounds: RoundService
     round_repository: RoundRepository
     workspace: WorkspaceService
+    graph: GraphInvestigationService
 
 
 def build_web_container(settings: Settings) -> Container:
@@ -50,6 +53,10 @@ def build_web_container(settings: Settings) -> Container:
         catalogue=catalogue,
         narrative=narrative,
     )
+    def graph_provider(round_id: str) -> dict:
+        round_ = round_service.require(round_id)
+        return t02_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": ()}
+
     return Container(
         settings=settings,
         catalogue=catalogue,
@@ -57,6 +64,7 @@ def build_web_container(settings: Settings) -> Container:
         rounds=round_service,
         round_repository=round_repository,
         workspace=WorkspaceService(round_service, catalogue),
+        graph=GraphInvestigationService(graph_provider),
     )
 
 

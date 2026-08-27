@@ -9,6 +9,7 @@ from fraud_graph_arena.web.api_models import (
     OpeningResponse,
     RoundResponse,
     WorkspaceResponse,
+    GraphViewRequest, GraphExpandRequest, GraphFilterRequest, GraphResponse,
 )
 from fraud_graph_arena.web.mappers import map_opening, map_round, map_workspace
 
@@ -44,3 +45,16 @@ def complete_opening(round_id: str, request: Request, payload: IntroCompletionRe
 @router.get("/{round_id}/workspace", response_model=WorkspaceResponse)
 def workspace(round_id: str, request: Request) -> WorkspaceResponse:
     return map_workspace(request.app.state.container.workspace.get(round_id))
+
+@router.post("/{round_id}/graph/initial", response_model=GraphResponse)
+def initial_graph(round_id: str, request: Request, payload: GraphViewRequest | None = None) -> GraphResponse:
+    body = payload or GraphViewRequest()
+    return GraphResponse.model_validate(request.app.state.container.graph.initial(round_id, body.seeds, body.limit))
+
+@router.post("/{round_id}/graph/expand", response_model=GraphResponse)
+def expand_graph(round_id: str, request: Request, payload: GraphExpandRequest) -> GraphResponse:
+    return GraphResponse.model_validate(request.app.state.container.graph.expand(round_id, payload.visible.model_dump(), payload.node_id, payload.depth, payload.limit))
+
+@router.post("/{round_id}/graph/filter", response_model=GraphResponse)
+def filter_graph(round_id: str, request: Request, payload: GraphFilterRequest) -> GraphResponse:
+    return GraphResponse.model_validate(request.app.state.container.graph.filter(round_id, payload.visible.model_dump(), payload.families))
