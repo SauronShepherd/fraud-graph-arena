@@ -29,4 +29,13 @@ describe("GraphViewport", () => {
     fireEvent.click(screen.getByRole("button", { name: /Puppy One \(P1\)/ }));
     expect(onNodeSelect).toHaveBeenCalledWith("P1");
   });
+
+  it("collapses and restores a node without changing the source graph", () => {
+    render(<GraphViewport graph={graph} />);
+    fireEvent.click(screen.getByRole("button", { name: "Collapse Puppy One" }));
+    expect(screen.queryByRole("button", { name: "Puppy One, P1" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Restore Puppy One" })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Restore Puppy One" }));
+    expect(screen.getByRole("button", { name: "Puppy One, P1" })).toBeVisible();
+  });
 });
