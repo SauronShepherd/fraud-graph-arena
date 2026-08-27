@@ -13,6 +13,8 @@
   "full_cumulative_closure": "PENDING",
   "renderer_qualification": "PENDING",
   "live_databricks_qualification": "PENDING",
+  "live_security_check": "NOT_QUALIFIED_PROFILE_MISSING",
+  "iteration_05_audit": "EXTERNAL_GAP_MIXED_REVISION_AND_LIVE_RECEIPTS",
   "accessibility_e2e": "PENDING",
   "performance_evidence": "PENDING"
 }

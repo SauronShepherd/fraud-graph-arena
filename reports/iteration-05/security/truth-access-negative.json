@@ -1,10 +1,11 @@
 {
-  "profile": "sda",
-  "principal_fingerprint": "8a650c3069d74e66",
-  "is_admin": true,
+  "profile": "fga-web",
+  "principal_fingerprint": null,
+  "is_admin": null,
   "active_view_select": "not_run",
   "raw_safe_select": "not_run",
   "truth_select": "not_run",
   "status": "not_qualified",
-  "reason": "identity is a member of admins; admin sessions cannot prove denial"
+  "reason": "databricks_cli_unlaunchable",
+  "error_type": "CalledProcessError"
 }

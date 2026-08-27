@@ -8,6 +8,8 @@ This report records the verified local implementation slice. It is not a closure
 - `npm test -- --run` from `apps/web` — 34 passed across 18 files.
 - `python -m pytest -q` — 148 passed in 8:18 after corpus repair.
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
+- `python scripts/qualify_databricks_security.py --profile fga-web` — fail-closed `not_qualified` because the profile is not configured.
+- `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — `external_gap`; live receipts, repeat qualification, non-admin denial, and revision consistency remain unproven.
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.
@@ -28,7 +30,7 @@ This report records the verified local implementation slice. It is not a closure
 
 ## Outstanding closure work
 
-- live FGA-05 Databricks qualification and immutable cumulative release closure;
+- live FGA-05 Databricks qualification, evidence revision reconciliation, and immutable cumulative release closure;
 - production renderer candidate qualification and real-browser performance evidence;
 - live Databricks qualification (local strict corpus qualification is now complete);
 - progressive loading and performance envelope;
