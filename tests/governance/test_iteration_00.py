@@ -179,7 +179,8 @@ def test_tag_creation_refuses_unqualified_iteration(tmp_path: Path) -> None:
 
 def copy_repository(destination: Path) -> None:
     ignored = shutil.ignore_patterns(
-        ".git", ".pytest_cache", "__pycache__", "*.pyc", "*.egg-info", ".venv"
+        ".git", ".pytest_cache", "__pycache__", "*.pyc", "*.egg-info", ".venv",
+        "node_modules", "case-data", ".fga", "apps/web/public/assets", "dist",
     )
     shutil.copytree(ROOT, destination, ignore=ignored)
 
