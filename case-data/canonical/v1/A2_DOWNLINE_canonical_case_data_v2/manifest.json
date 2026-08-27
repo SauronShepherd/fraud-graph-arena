@@ -86,28 +86,28 @@
       "sha256": "a89dd5ebc6a9fff783df57cafd72aff16d3e8b63cb8f3d6578a1c87cadd9067a"
     },
     {
-      "bytes": 1108953,
+      "bytes": 1099521,
       "path": "published/records.csv",
       "rows": 3144,
-      "sha256": "bb860dc3b64f2218b29a567edc9cfa9a5fe9023793bf2cf6b4e612bc3a51b9d9"
+      "sha256": "b38eb2d0803d9eddb9bd9e01e1a2b2975d049d6df366217fcf2bd3702b30e1cd"
     },
     {
-      "bytes": 1089980,
+      "bytes": 1073801,
       "path": "published/relationships.csv",
       "rows": 5393,
-      "sha256": "305ea12bb92d21a2318912da9023d05e31e94115f531230384b250938eb334e0"
+      "sha256": "b78f8bbbc2636ce30d15bbc7fc945a33c9e8f9a37c5a64101bacbea24d0f2357"
     },
     {
-      "bytes": 41147,
+      "bytes": 40673,
       "path": "published/entity_resolution_candidates.csv",
       "rows": 158,
-      "sha256": "0ec2426710e8450f3fd4d07f29fc99142b420d32d2d302518556b26b873e5509"
+      "sha256": "3e67e705da445e6ffc3a6d20f8514918d437592cffe0026596d8c00a84c97cb3"
     },
     {
-      "bytes": 57193,
+      "bytes": 56659,
       "path": "published/exact_matches.csv",
       "rows": 178,
-      "sha256": "62e42102ce08bfd017cc289f9de8a54324ceb0794e454daec23b7fbd8bfeda37"
+      "sha256": "9778d3fa5be390b23d55e0e2cd40aaad70ac84abcf840f856ed09d51346c25eb"
     },
     {
       "bytes": 1683161,
@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.18.1",
   "source_archive": "A2_DOWNLINE_ADULT_case_datasets_v1(1).zip",
   "source_dialect": "adult-flat-csv-v1",
+  "source_inputs": [],
   "title": "Every Dog Gets a Downline",
   "validation_status": "PASS"
 }

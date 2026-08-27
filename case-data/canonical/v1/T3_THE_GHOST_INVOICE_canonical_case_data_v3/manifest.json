@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.19.1",
   "source_archive": "T03_THE_GHOST_INVOICE_case_datasets_v2(1).zip",
   "source_dialect": "academy-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Ghost Invoice",
   "validation_status": "PASS"
 }

@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.19.3",
   "source_archive": "P3_BISCUIT_RELIEF_PUPPY_case_datasets_v1(1).zip",
   "source_dialect": "puppy-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Great Biscuit Relief Fund",
   "validation_status": "PASS"
 }

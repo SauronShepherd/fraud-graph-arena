@@ -86,28 +86,28 @@
       "sha256": "9f96442a564ce39bae333e52ebb7de0b29bddf8dc9edb73375685d7436c06496"
     },
     {
-      "bytes": 4215572,
+      "bytes": 4186961,
       "path": "published/records.csv",
       "rows": 9537,
-      "sha256": "fc8c7f6f26828246073dbdee4f6b6bba2b20b77fe7250795d77783980cbd89ae"
+      "sha256": "8f7e4f246f27a3aeafcd4a4f0cdf963effea9313bccebde1553ab5c6dfc1dc73"
     },
     {
-      "bytes": 5690413,
+      "bytes": 5615077,
       "path": "published/relationships.csv",
       "rows": 25112,
-      "sha256": "b62d11ec930fc6b15ef4ece639477eb6706880149d8ce1492444897a45c314eb"
+      "sha256": "5e3efb619f4fe109bb9827c4311bc05848c26f384837172568a39d2e4d0fc4fe"
     },
     {
-      "bytes": 94678,
+      "bytes": 93760,
       "path": "published/entity_resolution_candidates.csv",
       "rows": 306,
-      "sha256": "eb8f9494a305a77f002ada340130662164e87a084716d996c8207d4ee1ba8d96"
+      "sha256": "20ad969da1b33594102ffbe48bf53fbc13b06505948e30d69c3189734743d65c"
     },
     {
-      "bytes": 516715,
+      "bytes": 511690,
       "path": "published/exact_matches.csv",
       "rows": 1675,
-      "sha256": "852394cf9cf504f1feab5020001d3ad308d97b506a9817ba32a4d861defd0c54"
+      "sha256": "e2fe4c744002b9c7b884b97bbf3b464c6e06a79c33b912fae9d27057623e1f77"
     },
     {
       "bytes": 5965610,
@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.18.1",
   "source_archive": "S2_CRYPTO_KENNEL_LONG_CON_SENIOR_case_datasets_v1(1).zip",
   "source_dialect": "senior-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Long Con at Crypto Kennel",
   "validation_status": "PASS"
 }

@@ -62,10 +62,10 @@
       "sha256": "501f525b69108e32c1bf6941a61e39e97577ff6d96ebea347fd3bf4ed54caeb4"
     },
     {
-      "bytes": 7330817,
+      "bytes": 7327127,
       "path": "authoring/relationships.csv",
-      "rows": 26070,
-      "sha256": "2660dccb2e75ce64ba2c5c19dd5031cf91dc92c448fa6ffbe649cfb9e90a6c0e"
+      "rows": 26052,
+      "sha256": "9d7fad5382d0cac9b57ea9761ea974f50ce4d2441b3a1385fb2eb46892def7b9"
     },
     {
       "bytes": 154201,
@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.19.2",
   "source_archive": "S3_PANAMA_PAWPERS_SENIOR_case_datasets_v1.zip",
   "source_dialect": "senior-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Panama Pawpers",
   "validation_status": "PASS"
 }

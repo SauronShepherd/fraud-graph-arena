@@ -86,28 +86,28 @@
       "sha256": "4eaae59d85bfda8eb20e1d90626edb3707f3db853080d17483e09a416df11568"
     },
     {
-      "bytes": 1142099,
+      "bytes": 1133045,
       "path": "published/records.csv",
       "rows": 3018,
-      "sha256": "ad0fe764d6cf70ba37dc2f8da7af85071e1051d626cf88fdfb2c94c4f9493ee9"
+      "sha256": "5131535a2b07d82ad9e9e302ba204419646f352b3783b9330004d2804ca42ee9"
     },
     {
-      "bytes": 1555911,
+      "bytes": 1533579,
       "path": "published/relationships.csv",
       "rows": 7444,
-      "sha256": "3d2cde857cd2e48556747a54873344c7bb4cbaf933421de32e5ddbb57a46961b"
+      "sha256": "9a2f125c785b871cb8fe4c4a7305ec124d78b6d2151d4671782f86d8ae9f9553"
     },
     {
-      "bytes": 35549,
+      "bytes": 35177,
       "path": "published/entity_resolution_candidates.csv",
       "rows": 124,
-      "sha256": "210b3fa139d56f32cfd5a729ab57687842a247e01e07cff925b35de71ad35d67"
+      "sha256": "dfb8cf158c4c48af43f93157158f21ebca968facd8b1550b1b1a83c363ef25ad"
     },
     {
-      "bytes": 88398,
+      "bytes": 87546,
       "path": "published/exact_matches.csv",
       "rows": 284,
-      "sha256": "f5e1083036e422fcd6bd0134570435f5a29c94573e51fe4b34df2590319ea3b0"
+      "sha256": "ef6ab83bfbf685fd341b76e161058608df6924fc09bd1969c2d6cb760a628a04"
     },
     {
       "bytes": 1260955,
@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.18.1",
   "source_archive": "A4_GOLDEN_HYDRANT_ADULT_case_datasets_v1(1).zip",
   "source_dialect": "adult-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Golden Fire Hydrant Contract",
   "validation_status": "PASS"
 }

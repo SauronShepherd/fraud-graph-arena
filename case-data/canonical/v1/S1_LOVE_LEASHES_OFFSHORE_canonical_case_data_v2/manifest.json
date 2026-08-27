@@ -86,28 +86,28 @@
       "sha256": "9ea1a87b40a6710980035f491595cc95958de622c3b3177408d577f16a4d170f"
     },
     {
-      "bytes": 2687892,
+      "bytes": 2669589,
       "path": "published/records.csv",
       "rows": 6101,
-      "sha256": "52176ba0e64b4b410b9ea0fad2f500854a18167f8576d23df3406da1b8403e7d"
+      "sha256": "a38c77024c072cbef257f3c58fdf74960ed8c74a76b99ba3c052acc49a8702ed"
     },
     {
-      "bytes": 3597745,
+      "bytes": 3549025,
       "path": "published/relationships.csv",
       "rows": 16240,
-      "sha256": "4b02c5ed85228a38a5465cb0435fe619784d66d04d6d08127e4b39547349764f"
+      "sha256": "cc8fb49e5f365be39dd074c19b36e28c349654041e0d4a0d78bb8b0cea9d281c"
     },
     {
-      "bytes": 85015,
+      "bytes": 84199,
       "path": "published/entity_resolution_candidates.csv",
       "rows": 272,
-      "sha256": "c820cbb7db6c28ed4c335eed0a352a15f20026215a51f044922aae585cd1c3a3"
+      "sha256": "b6a2752f12567db74f68e0d1d1dd96c9d4c88dda99a54f211576f6da558215b2"
     },
     {
-      "bytes": 574272,
+      "bytes": 569004,
       "path": "published/exact_matches.csv",
       "rows": 1756,
-      "sha256": "ad872fbaaee222866e94535285af9eeb4943b02825d7e12a5d620c2b58d9c764"
+      "sha256": "6000e76acbd8ddde22987b0192b6d3f3d4d8bf0e8335fd8fd7682fd068eaa48d"
     },
     {
       "bytes": 3907941,
@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.18.1",
   "source_archive": "S1_LOVE_LEASHES_OFFSHORE_SENIOR_case_datasets_v1(1).zip",
   "source_dialect": "senior-flat-csv-v1",
+  "source_inputs": [],
   "title": "Love, Leashes & Offshore Transfers",
   "validation_status": "PASS"
 }

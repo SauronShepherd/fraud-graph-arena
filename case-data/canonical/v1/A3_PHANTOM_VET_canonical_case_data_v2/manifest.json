@@ -86,28 +86,28 @@
       "sha256": "5de2117e91cea6563a08d6cc959f68a6c6092e97b050aa18fc714f60bd82bba8"
     },
     {
-      "bytes": 1052709,
+      "bytes": 1042989,
       "path": "published/records.csv",
       "rows": 3240,
-      "sha256": "d14bfe8af46380f80e4f480067edde3d86ee04dd71aa2974c37e3b72a44ad421"
+      "sha256": "deb514348096cc23febeaa03798047dafe7f75d6cc87e5f252d3384466e2ab3b"
     },
     {
-      "bytes": 1573905,
+      "bytes": 1551606,
       "path": "published/relationships.csv",
       "rows": 7433,
-      "sha256": "036e0f0a21cbf301eff32946cdc26e1dc21f138802e65281e3dab7bf01d04faa"
+      "sha256": "e5ad1c5de03545aa8487c76306849fe15c0834bb5518268425fa8cd4877ba93c"
     },
     {
-      "bytes": 98788,
+      "bytes": 97672,
       "path": "published/entity_resolution_candidates.csv",
       "rows": 372,
-      "sha256": "19c431fad3a3b51012575976c2e87e85dabeab440a141f767c154d50710a4545"
+      "sha256": "2726d8c584e0e4ddcb5325fa62b1944546ca3537eeb60bff9e58116658210d04"
     },
     {
-      "bytes": 51704,
+      "bytes": 51194,
       "path": "published/exact_matches.csv",
       "rows": 170,
-      "sha256": "cb0f45e50196f147b4ffa77beb5dd5e187e0fe50a0a9aaf3b20dfb2ce55ba208"
+      "sha256": "293e7fe9a87d6dbf8d6628caf0d36d7ec9f9db6308806f0f28c84e75909c16d2"
     },
     {
       "bytes": 1627065,
@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.18.1",
   "source_archive": "A3_PHANTOM_VET_ADULT_case_datasets_v1(1).zip",
   "source_dialect": "adult-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Phantom Veterinary Clinic",
   "validation_status": "PASS"
 }

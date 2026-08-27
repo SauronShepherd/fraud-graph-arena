@@ -86,28 +86,28 @@
       "sha256": "bced6d496b3b095ab136fed4615b94b10cefb7b951d21a798dc4aaf8f1a173d6"
     },
     {
-      "bytes": 957507,
+      "bytes": 950034,
       "path": "published/records.csv",
       "rows": 2491,
-      "sha256": "eebda9de54909c2e59b91062c98b042a6ce6a07fa46540e99fba3f2a738213fa"
+      "sha256": "90ebcb439c74895480ee08144b5017ecf985b63ebf231438a08fbd6989be103c"
     },
     {
-      "bytes": 1096173,
+      "bytes": 1078665,
       "path": "published/relationships.csv",
       "rows": 5836,
-      "sha256": "8fc92a771b18bb5c827bf888659a14cecd3fb284173db803661f6d4dac5ff69c"
+      "sha256": "8be434514bd21e8feda730739c9156a1602c378d8c96e80fac5f07b6746ecc8c"
     },
     {
-      "bytes": 12492,
+      "bytes": 12345,
       "path": "published/entity_resolution_candidates.csv",
       "rows": 49,
-      "sha256": "a815d663f8e2cdb46681dd8962ffbda4379e5d39792b88cc2874619f7cb44129"
+      "sha256": "bc8f277fb5f3d51e5162c9486ab3febc668227fa639da7a2cc49e28a66bd815a"
     },
     {
-      "bytes": 43608,
+      "bytes": 43167,
       "path": "published/exact_matches.csv",
       "rows": 147,
-      "sha256": "dff7b4771f663e84432935417bd033e580f2305b691b1c863d7bc643aa126c91"
+      "sha256": "1d4f63ff7f5602bf058bd1a04e4c09642da4c19b970fcbee3c51598e6293a32a"
     },
     {
       "bytes": 1297807,
@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.18.1",
   "source_archive": "A1_BONE_LEDGER_ADULT_case_datasets_v1(1).zip",
   "source_dialect": "adult-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Bone Ledger",
   "validation_status": "PASS"
 }

@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.19.2",
   "source_archive": "P2_CEO_BARKED_TWICE_PUPPY_case_datasets_v1(1).zip",
   "source_dialect": "puppy-flat-csv-v1",
+  "source_inputs": [],
   "title": "The CEO Who Barked Twice",
   "validation_status": "PASS"
 }

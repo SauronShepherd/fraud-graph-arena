@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.19.1",
   "source_archive": "T02_THE_CIRCULAR_COLLAR_case_datasets_v2(1).zip",
   "source_dialect": "academy-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Circular Collar",
   "validation_status": "PASS"
 }

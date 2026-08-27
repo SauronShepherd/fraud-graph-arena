@@ -208,6 +208,7 @@
   "snapshot_version": "2026.07.19.3",
   "source_archive": "T01_THE_MISSING_120_case_datasets_v2(2).zip",
   "source_dialect": "academy-flat-csv-v1",
+  "source_inputs": [],
   "title": "The Missing 120",
   "validation_status": "PASS"
 }
