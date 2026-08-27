@@ -12,7 +12,7 @@ test("intro page is addressable and browser history returns to the prior screen"
   await page.goto("/");
   await page.getByRole("link", { name: /choose your trench coat/i }).click();
   await page.getByRole("button", { name: /detective academy/i }).click();
-  await page.getByRole("button", { name: /open training case/i }).click();
+  await page.getByRole("article").filter({ hasText: "ACADEMY_001" }).getByRole("button", { name: /open training case/i }).click();
   await expect(page).toHaveURL(/\/intro\?page=1$/);
   await page.getByRole("button", { name: /next page/i }).click();
   await expect(page).toHaveURL(/\/intro\?page=2$/);

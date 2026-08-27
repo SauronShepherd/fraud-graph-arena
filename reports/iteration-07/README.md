@@ -6,6 +6,7 @@ This report records the verified local implementation slice. It is not a closure
 
 - `python -m pytest tests/iteration_06 tests/iteration_01/test_openapi_contract.py -q` — 13 passed.
 - `npm test -- --run` from `apps/web` — 34 passed across 18 files.
+- `python -m pytest -q` — 148 passed in 4:08.
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.
