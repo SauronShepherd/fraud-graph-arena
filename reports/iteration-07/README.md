@@ -10,6 +10,9 @@ This report records the verified local implementation slice. It is not a closure
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
 - `python scripts/qualify_databricks_security.py --profile fga-web` — fail-closed `not_qualified` because the profile is not configured.
 - `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — `external_gap`; live receipts, repeat qualification, non-admin denial, and revision consistency remain unproven.
+- `databricks auth describe --profile fga` and `databricks warehouses get e444f39962128242 --profile fga` — profile valid and warehouse healthy/running.
+- `python scripts/qualify_databricks_all_packages.py --profile fga --catalog sda_dev --schema sandbox --warehouse e444f39962128242` — attempted but failed on the first package at SQL transport (`wsarecv` connection abort); a retry was stopped after hanging without a result.
+- `python scripts/qualify_databricks_security.py --profile fga` — `not_qualified` because the authenticated principal is an administrator.
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.

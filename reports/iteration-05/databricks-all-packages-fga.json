@@ -1,0 +1,11 @@
+{
+  "status": "fail",
+  "package_count": 1,
+  "results": [
+    {
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "status": "fail",
+      "error": "Error: Post \"https://dbc-66c0ff61-f366.cloud.databricks.com/api/2.0/sql/statements\": read tcp 192.168.1.38:64322->3.128.237.221:443: wsarecv: Se ha anulado una conexi\u00c3\u00b3n establecida por el software en su equipo host.."
+    }
+  ]
+}

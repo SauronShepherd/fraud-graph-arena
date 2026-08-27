@@ -14,6 +14,10 @@
   "renderer_qualification": "PENDING",
   "live_databricks_qualification": "PENDING",
   "live_security_check": "NOT_QUALIFIED_PROFILE_MISSING",
+  "fga_profile": "VALID",
+  "fga_warehouse": "HEALTHY_RUNNING",
+  "live_package_attempt": "FAILED_SQL_TRANSPORT_FIRST_PACKAGE",
+  "fga_security_check": "NOT_QUALIFIED_ADMIN_PRINCIPAL",
   "iteration_05_audit": "EXTERNAL_GAP_MIXED_REVISION_AND_LIVE_RECEIPTS",
   "accessibility_e2e": "PENDING",
   "performance_evidence": "PENDING"
