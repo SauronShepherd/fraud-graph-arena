@@ -38,4 +38,9 @@ describe("GraphViewport", () => {
     fireEvent.click(screen.getByRole("button", { name: "Restore Puppy One" }));
     expect(screen.getByRole("button", { name: "Puppy One, P1" })).toBeVisible();
   });
+
+  it("renders directed relationships with an arrow marker", () => {
+    const { container } = render(<GraphViewport graph={graph} />);
+    expect(container.querySelector('line[marker-end="url(#graph-arrow)"]')).toBeTruthy();
+  });
 });
