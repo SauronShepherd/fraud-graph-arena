@@ -15,6 +15,17 @@ const graph = {
 } satisfies Graph;
 
 describe("GraphViewport", () => {
+  it("qualifies the bounded renderer envelope at 100 nodes and 99 edges", () => {
+    const nodes = Array.from({ length: 100 }, (_, index) => ({ record_id: `N${index.toString().padStart(3, "0")}`, record_type: "PERSON_RECORD" as const, record_subtype: "", label: `Node ${index}`, source_system_id: "benchmark", provenance_ref: `r${index}`, safe_summary: "Published benchmark record." }));
+    const edges = nodes.slice(1).map((node, index) => ({ relationship_id: `E${index.toString().padStart(3, "0")}`, source_record_id: nodes[index].record_id, target_record_id: node.record_id, relationship_family: "DIRECT_SOURCE", relationship_type: "LINKED", directed: true, provenance: `e${index}`, event_time: "", player_safe_summary: "Published benchmark relationship." }));
+    const start = performance.now();
+    render(<GraphViewport graph={{ projection_version: "1", nodes, edges, node_count: nodes.length, edge_count: edges.length }} />);
+    const elapsed = performance.now() - start;
+    expect(screen.getByText("100 visible nodes · 99 visible relationships")).toBeVisible();
+    expect(screen.getByRole("img", { name: "100 nodes in current graph view" })).toBeVisible();
+    expect(elapsed).toBeLessThan(1000);
+  });
+
   it("supports zoom, layout, family filtering, and semantic selection", () => {
     const onNodeSelect = vi.fn();
     render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} />);

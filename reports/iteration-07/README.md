@@ -11,7 +11,7 @@ This report records the verified local implementation slice. It is not a closure
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.
 - `npm run test:e2e` from `apps/web` — 11 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
-- targeted graph viewport tests after focus/minimap controls — 3 passed.
+- targeted graph viewport tests after focus/minimap controls — 4 passed, including the 100-node/99-edge bounded renderer envelope (<1s in jsdom).
 
 ## Implemented slice
 
@@ -28,7 +28,7 @@ This report records the verified local implementation slice. It is not a closure
 ## Outstanding closure work
 
 - complete FGA-00 through FGA-06 predecessor closure;
-- renderer candidate qualification and benchmark evidence;
+- production renderer candidate qualification and real-browser performance evidence;
 - full corpus/live Databricks qualification;
 - progressive loading and performance envelope;
 - populated-graph performance envelope and full cumulative closure gate;

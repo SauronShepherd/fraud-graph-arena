@@ -7,7 +7,7 @@
   "frontend_typecheck": "PASS",
   "frontend_build": "PASS",
   "frontend_e2e": "PASS_11_POPULATED_GRAPH",
-  "graph_viewport_tests": "PASS_3",
+  "graph_viewport_tests": "PASS_4_BOUNDED_RENDERER",
   "graph_truth_firewall": "PASS_TARGETED",
   "full_cumulative_closure": "PENDING",
   "renderer_qualification": "PENDING",

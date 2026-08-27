@@ -47,6 +47,7 @@ test.describe("I02 investigation board", () => {
   });
 
   test("supports the populated graph investigation contract", async ({ page }) => {
+    const start = Date.now();
     await page.goto("/");
     await page.getByRole("link", { name: /choose your trench coat/i }).click();
     await page.getByRole("button", { name: /detective academy/i }).click();
@@ -54,6 +55,7 @@ test.describe("I02 investigation board", () => {
     await expect(page.getByRole("heading", { name: "The Circular Collar" })).toBeVisible();
     await page.getByRole("button", { name: /enter the academy/i }).click();
     await expect(page.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
+    expect(Date.now() - start).toBeLessThan(5000);
     await expect(page.getByRole("button", { name: /Expand Blue Bowl Bakery/i })).toBeVisible();
     await expect(page.getByRole("button", { name: /Collapse Blue Bowl Bakery/i })).toBeVisible();
     await page.getByRole("button", { name: /Collapse Blue Bowl Bakery/i }).click();
