@@ -8,4 +8,6 @@ The current exhibit is a dependency-free semantic baseline. Candidate adapters m
 
 `adapters/svg-baseline.ts` is the dependency-free reference adapter used to exercise that seam. It is a qualification fixture and fallback reference, not a production renderer decision and not a substitute for the named library comparison.
 
+`candidate-registry.ts` keeps that distinction machine-readable: named libraries remain `NOT_INSTALLED` until an exact-version adapter is registered, while the reference adapter is explicitly classified as a fallback.
+
 The commercial candidate is intentionally not fabricated: licensing and redistribution evidence must exist before a named product is evaluated.
