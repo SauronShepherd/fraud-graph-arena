@@ -10,11 +10,12 @@ This audit is deliberately conservative: absence of an obvious gap is not treate
 | Stable IDs and direction/type/family/provenance | graph DTOs and FGA-owned frontend callbacks | COMPLETE_LOCALLY |
 | Semantic non-canvas path | persistent HTML evidence list and inspector | COMPLETE_LOCALLY |
 | Board selection owns IDs, not actions | `BoardPage` selection state and no investigation endpoint | COMPLETE_LOCALLY |
-| Qualification fixture and frozen criteria | `qualification/fixture-v1.json`, requirements, envelope, schemas | SCAFFOLDED_NOT_MEASURED |
+| Qualification fixture and frozen criteria | `qualification/fixture-v1.json`, requirements, envelope, schema, shared lifecycle harness, report validator | IMPLEMENTED_NOT_MEASURED |
+| Candidate registry and decision gate | explicit registry, inventory audit, and normative Cytoscape decision evaluator | COMPLETE_LOCALLY |
 | Cytoscape/Sigma/D3/React Flow comparison | candidate inventory exists; no exact packages/runs recorded | NOT_COMPLETE |
 | Named commercial finalist/licence review | no finalist selected | NOT_COMPLETE |
 | Performance measurements | envelope exists; benchmark report has no runs | NOT_COMPLETE |
-| Production renderer decision | ADR is blocked pending qualification | NOT_COMPLETE_BY_DESIGN |
+| Production renderer decision | ADR and executable decision gate block silent substitution until Cytoscape evidence exists | BLOCKED_PENDING_QUALIFICATION |
 | FGA05 live predecessor closure | requires external Databricks qualification | BLOCKED_BY_USER_CONSTRAINT |
 | Formal two-commit/tag release qualification | requires release workflow/evidence and tests | NOT_COMPLETE |
 
