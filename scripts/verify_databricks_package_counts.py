@@ -11,7 +11,7 @@ from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--package-root", type=Path, default=Path("case-data/canonical/v1"))
-    parser.add_argument("--profile", default="sda")
+    parser.add_argument("--profile", default="fga")
     parser.add_argument("--catalog", default="sda_dev")
     parser.add_argument("--schema", default="sandbox")
     parser.add_argument("--warehouse", default="e444f39962128242")

@@ -11,7 +11,7 @@ def call(profile, warehouse, catalog, schema, statement):
     return json.loads(result.stdout)
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument("--profile",default="sda"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--output",type=Path,default=Path("reports/iteration-05/resource-inventory.json")); args=p.parse_args()
+    p=argparse.ArgumentParser(); p.add_argument("--profile",default="fga"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--output",type=Path,default=Path("reports/iteration-05/resource-inventory.json")); args=p.parse_args()
     tables=call(args.profile,args.warehouse,args.catalog,args.schema,f"SHOW TABLES IN `{args.catalog}`.`{args.schema}`")
     rows=tables.get("result",{}).get("data_array",[]); observed=sorted(row[1] for row in rows)
     active=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT COUNT(*) AS active_rows FROM `{args.catalog}`.`{args.schema}`.fga_active_publications")

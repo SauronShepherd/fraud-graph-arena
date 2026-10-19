@@ -7,7 +7,7 @@ def call(profile, warehouse, catalog, schema, statement):
     result=subprocess.run(["databricks","api","post","/api/2.0/sql/statements","--profile",profile,"--json","@"+path],capture_output=True,text=True,check=True)
     return json.loads(result.stdout)
 def main():
-    p=argparse.ArgumentParser(); p.add_argument("--profile",default="sda"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--report",default="reports/iteration-05/imports/failure-injection-summary.json"); p.add_argument("--execute",action="store_true"); args=p.parse_args()
+    p=argparse.ArgumentParser(); p.add_argument("--profile",default="fga"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--report",default="reports/iteration-05/imports/failure-injection-summary.json"); p.add_argument("--execute",action="store_true"); args=p.parse_args()
     if not args.execute:
         report={"status":"not_run","reason":"requires --execute and a provisioned live warehouse","qualified_source_sha":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),"catalog":args.catalog,"schema":args.schema,"warehouse":args.warehouse}
         from pathlib import Path

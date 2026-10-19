@@ -17,7 +17,7 @@ def validate_identifier(label: str, value: str) -> str:
     return value
 
 def main() -> int:
-    p = argparse.ArgumentParser(); p.add_argument("--profile", default="sda"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse-id", default="e444f39962128242"); p.add_argument("--create", action="store_true"); p.add_argument("--recreate", action="store_true"); p.add_argument("--apply", action="store_true"); p.add_argument("--confirm"); p.add_argument("--report", type=Path); args = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("--profile", default="fga"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse-id", default="e444f39962128242"); p.add_argument("--create", action="store_true"); p.add_argument("--recreate", action="store_true"); p.add_argument("--apply", action="store_true"); p.add_argument("--confirm"); p.add_argument("--report", type=Path); args = p.parse_args()
     validate_identifier("catalog", args.catalog); validate_identifier("schema", args.schema); validate_identifier("warehouse-id", args.warehouse_id)
     if args.recreate and (not args.apply or args.confirm != f"fga_dev:{args.catalog}:{args.schema}"):
         raise SystemExit(f"refusing destructive qualification; require --apply --confirm fga_dev:{args.catalog}:{args.schema}")

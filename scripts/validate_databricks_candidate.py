@@ -70,7 +70,7 @@ def validate_results(responses: list[dict], publication_id: str, run_id: str) ->
     return {"status": "pass", "checks": expected, "publication_id": publication_id, "run_id": run_id}
 
 def main() -> int:
-    parser = argparse.ArgumentParser(); parser.add_argument("--publication-id", required=True); parser.add_argument("--run-id", required=True); parser.add_argument("--execute", action="store_true"); parser.add_argument("--profile", default="sda"); parser.add_argument("--warehouse", default="e444f39962128242"); parser.add_argument("--catalog", default="sda_dev"); parser.add_argument("--schema", default="sandbox"); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument("--publication-id", required=True); parser.add_argument("--run-id", required=True); parser.add_argument("--execute", action="store_true"); parser.add_argument("--profile", default="fga"); parser.add_argument("--warehouse", default="e444f39962128242"); parser.add_argument("--catalog", default="sda_dev"); parser.add_argument("--schema", default="sandbox"); args = parser.parse_args()
     queries = validation_queries(args.publication_id, args.run_id, args.catalog, args.schema)
     if args.execute:
         warehouse = DatabricksWarehouse(args.profile, args.warehouse, args.catalog, args.schema)

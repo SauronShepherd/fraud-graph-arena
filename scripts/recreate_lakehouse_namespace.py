@@ -28,7 +28,7 @@ def execute(profile, warehouse, catalog, schema, statement):
 
 def main() -> int:
     p=argparse.ArgumentParser(description="Recreate only the explicitly approved disposable FGA namespace")
-    p.add_argument("--environment",required=True); p.add_argument("--profile",default="sda"); p.add_argument("--workspace-host",default=""); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--dry-run",action="store_true"); p.add_argument("--apply",action="store_true"); p.add_argument("--confirm",type=str); p.add_argument("--report",type=Path)
+    p.add_argument("--environment",required=True); p.add_argument("--profile",default="fga"); p.add_argument("--workspace-host",default=""); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--dry-run",action="store_true"); p.add_argument("--apply",action="store_true"); p.add_argument("--confirm",type=str); p.add_argument("--report",type=Path)
     args=p.parse_args()
     validate_identifier("catalog", args.catalog); validate_identifier("schema", args.schema); validate_identifier("warehouse", args.warehouse)
     policy = approved_tuple(args.environment, args.catalog, args.schema, args.workspace_host)
