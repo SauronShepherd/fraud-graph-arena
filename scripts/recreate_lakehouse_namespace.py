@@ -37,6 +37,7 @@ def main() -> int:
         raise SystemExit(f"refusing destructive execution: require --apply --confirm {confirmation}")
     expected=set(expected_topology()); report={"environment":args.environment,"catalog":args.catalog,"schema":args.schema,"destructive_unit":policy["destructive_unit"],"dry_run":args.dry_run,"expected_count":len(expected),"statements":[]}
     if not args.dry_run:
+        execute(args.profile,args.warehouse,args.catalog,args.schema,f"CREATE SCHEMA IF NOT EXISTS `{args.catalog}`.`{args.schema}`")
         inventory=execute(args.profile,args.warehouse,args.catalog,args.schema,f"SHOW TABLES IN `{args.catalog}`.`{args.schema}`")
         actual={row[1] for row in inventory.get("result",{}).get("data_array",[])}
         views=execute(args.profile,args.warehouse,args.catalog,args.schema,f"SHOW VIEWS IN `{args.catalog}`.`{args.schema}`")
@@ -48,10 +49,13 @@ def main() -> int:
             args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
         for name in sorted(actual_views): execute(args.profile,args.warehouse,args.catalog,args.schema,f"DROP VIEW IF EXISTS `{name}`"); report["statements"].append("DROP VIEW "+name)
         for name in sorted(actual-expected): execute(args.profile,args.warehouse,args.catalog,args.schema,f"DROP TABLE IF EXISTS `{name}`"); report["statements"].append("DROP "+name)
-        for name in sorted(actual&expected): execute(args.profile,args.warehouse,args.catalog,args.schema,f"TRUNCATE TABLE `{name}`"); report["statements"].append("TRUNCATE "+name)
+        for name in sorted((actual&expected) - actual_views): execute(args.profile,args.warehouse,args.catalog,args.schema,f"TRUNCATE TABLE `{name}`"); report["statements"].append("TRUNCATE "+name)
         root=Path(__file__).resolve().parents[1]
         ddl=(root/"sql/lakehouse/fga_canonical_persistence_v1.sql").read_text(encoding="utf-8")+"\n"+(root/"sql/lakehouse/fga_import_ledger_v1.sql").read_text(encoding="utf-8")+"\n"+(root/"sql/lakehouse/fga_active_views_v1.sql").read_text(encoding="utf-8")
-        for statement in (part.strip() for part in ddl.split(";") if part.strip()): execute(args.profile,args.warehouse,args.catalog,args.schema,statement); report["statements"].append("CREATE")
+        for part in ddl.split(";"):
+            statement = "\n".join(line for line in part.splitlines() if line.strip() and not line.lstrip().startswith("--")).strip()
+            if statement:
+                execute(args.profile,args.warehouse,args.catalog,args.schema,statement); report["statements"].append("CREATE")
         final=execute(args.profile,args.warehouse,args.catalog,args.schema,f"SHOW TABLES IN `{args.catalog}`.`{args.schema}`")
         report["actual"] = sorted(row[1] for row in final.get("result",{}).get("data_array",[])); report["status"] = "pass" if set(report["actual"]) == expected else "fail"
     else:

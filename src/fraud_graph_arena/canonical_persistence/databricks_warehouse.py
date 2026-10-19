@@ -93,7 +93,7 @@ class DatabricksWarehouse:
         for path, table in PHYSICAL_TARGETS.items():
             qualified = self.qualify_table(table)
             queries.extend([
-                f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)}) AS correlated FROM {qualified}",
+                f"SELECT COUNT_IF(_publication_id = {_literal(publication_id)}) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)} AND _publication_id = {_literal(publication_id)}) AS correlated FROM {qualified}",
                 f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND snapshot_version IS NULL",
             ])
             primary_key = typed_registry[path].get("primary_key", [])
@@ -128,5 +128,5 @@ class DatabricksWarehouse:
         data = duplicate_check.get("result", {}).get("data_array", [])
         if data and int(data[0][0]) > 1:
             raise DatabricksWarehouseError("DUPLICATE_ACTIVE_POINTER")
-        values = ", ".join((_literal(case_id), _literal(case_version), _literal(snapshot_version), _literal(model_version), _literal(publication_id), "current_timestamp()", _literal(run_id)))
+        values = ", ".join((f"{_literal(case_id)} AS case_id", f"{_literal(case_version)} AS case_version", f"{_literal(snapshot_version)} AS snapshot_version", f"{_literal(model_version)} AS canonical_model_version", f"{_literal(publication_id)} AS active_publication_id", "current_timestamp() AS activated_at_utc", f"{_literal(run_id)} AS activating_run_id"))
         return self.execute(f"MERGE INTO {table} AS target USING (SELECT {values}) AS source ON target.case_id = source.case_id AND target.case_version = source.case_version WHEN MATCHED THEN UPDATE SET * WHEN NOT MATCHED THEN INSERT *")
