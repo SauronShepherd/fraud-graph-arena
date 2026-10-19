@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("intro completion uses the centralized fade effect and still reaches the board", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: /choose your trench coat/i }).click();
+  await page.getByRole("button", { name: /choose your trench coat/i }).click();
   await page.getByRole("button", { name: /detective academy/i }).click();
   await page.getByRole("button", { name: /open training case/i }).click();
   await page.getByRole("button", { name: /next page/i }).click();

@@ -3,8 +3,8 @@ import { lifecycle } from "./lifecycle";
 describe("screen lifecycle registry", () => {
   it("executes registered focus, announcement and abort hooks", () => {
     const focus = vi.fn(); const announce = vi.fn(); const abort = vi.fn();
-    const services = { focusPrimaryHeading: focus, announce, abortReads: abort };
+    const services = { focusPrimaryHeading: focus, announce, announceScreenName: "Launch", abortReads: abort };
     lifecycle.FOCUS_PRIMARY_HEADING(services); lifecycle.ANNOUNCE_SCREEN(services); lifecycle.ABORT_OBSOLETE_READS(services);
-    expect(focus).toHaveBeenCalledOnce(); expect(announce).toHaveBeenCalledWith("Screen ready"); expect(abort).toHaveBeenCalledOnce();
+    expect(focus).toHaveBeenCalledOnce(); expect(announce).toHaveBeenCalledWith("Launch ready"); expect(abort).toHaveBeenCalledOnce();
   });
 });

@@ -6,7 +6,7 @@ export interface ActionResult { event: MachineEvent; context?: ScreenContext; }
 const pending = new Set<string>();
 export const actions: Record<ActionId, (input: ActionInput) => Promise<ActionResult>> = {
   BEGIN: async () => ({ event: { type: "PATHS_REQUESTED" } }),
-  RESUME_LAST_ROUND: async ({ context }) => ({ event: { type: "PATHS_REQUESTED" }, context }),
+  RESUME_LAST_ROUND: async ({ payload }) => ({ event: { type: "ROUND_RESUME_REQUESTED", context: { roundId: String(payload?.roundId ?? "") } } }),
   SELECT_PATH: async ({ payload }) => ({ event: { type: "PATH_SELECTED", context: { pathId: payload?.pathId as string } } }),
   BACK_TO_PATHS: async () => ({ event: { type: "RETURNED_TO_PATHS" } }),
   OPEN_CASE: async ({ context, payload }) => {
@@ -17,7 +17,7 @@ export const actions: Record<ActionId, (input: ActionInput) => Promise<ActionRes
     finally { pending.delete(key); }
   },
   CHANGE_INTRO_PAGE: async ({ payload }) => ({ event: { type: "INTRO_PAGE_CHANGED", context: { page: Number(payload?.page ?? 1) } } }),
-  COMPLETE_INTRO: async ({ context }) => { const round = await completeOpening(String(context.roundId)); return { event: { type: "INTRODUCTION_COMPLETED", context: { roundId: round.id } } }; },
-  SKIP_INTRO: async ({ context }) => { const round = await completeOpening(String(context.roundId), "SKIPPED"); return { event: { type: "INTRODUCTION_SKIPPED", context: { roundId: round.id } } }; },
-  RETURN_TO_CATALOGUE: async ({ context }) => ({ event: { type: "RETURNED_TO_CATALOGUE", context }, context })
+  COMPLETE_INTRO: async ({ context }) => { const round = await completeOpening(String(context.roundId)); return { event: { type: "INTRODUCTION_COMPLETED", context: { roundId: round.id, roundStatus: round.status } } }; },
+  SKIP_INTRO: async ({ context }) => { const round = await completeOpening(String(context.roundId), "SKIPPED"); return { event: { type: "INTRODUCTION_SKIPPED", context: { roundId: round.id, roundStatus: round.status } } }; },
+  RETURN_TO_CATALOGUE: async ({ payload }) => ({ event: { type: "RETURNED_TO_CATALOGUE", context: { pathId: String(payload?.pathId ?? "") } } })
 };

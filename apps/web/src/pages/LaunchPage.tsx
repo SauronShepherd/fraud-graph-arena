@@ -1,21 +1,22 @@
 import { recalledRound } from "../state/session";
-import { ScreenLink } from "../screen-system/ScreenLink";
+import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 
 export function LaunchPage() {
-  const lastRoundId = recalledRound();
+  const { model, dispatchAction, transitionLocked } = useScreenRuntime();
+  const lastRoundId = (model as { roundId?: string | null } | null)?.roundId ?? recalledRound();
   return (
     <main className="panel hero">
       <p className="eyebrow">Iteration 02 · Responsive investigation board</p>
-      <h1>Fraud Graph Arena</h1>
+      <h1 tabIndex={-1}>Fraud Graph Arena</h1>
       <p className="lede">
         The office is open. The board is empty. Please keep your accusations provisional.
       </p>
       <div className="actions">
-        <ScreenLink className="button" to="/paths">Choose your trench coat</ScreenLink>
+        <button className="button" type="button" disabled={transitionLocked} onClick={() => void dispatchAction("BEGIN")}>Choose your trench coat</button>
         {lastRoundId ? (
-          <ScreenLink className="button secondary" to={`/rounds/${lastRoundId}/board`}>
+          <button className="button secondary" type="button" disabled={transitionLocked} onClick={() => void dispatchAction("RESUME_LAST_ROUND", { roundId: lastRoundId })}>
             Return to the empty board
-          </ScreenLink>
+          </button>
         ) : null}
       </div>
     </main>
