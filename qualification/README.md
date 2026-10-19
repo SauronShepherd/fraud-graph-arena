@@ -12,4 +12,6 @@ The current exhibit is a dependency-free semantic baseline. Candidate adapters m
 
 Run `python qualification/audit_inventory.py` during evidence preparation to detect drift between the frozen candidate inventory and the required comparison set. A non-zero result is expected until every named candidate has measured evidence; it must never be bypassed by changing the production decision.
 
+`decision.py` enforces the normative rule: missing or incomplete Cytoscape.js evidence blocks production, and a hard failure requires a normative specification change rather than a silent renderer substitution.
+
 The commercial candidate is intentionally not fabricated: licensing and redistribution evidence must exist before a named product is evaluated.
