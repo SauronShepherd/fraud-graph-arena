@@ -1,7 +1,7 @@
 import type { QualificationCandidate } from "./candidate-contract";
 
 export type CandidateRole = "NORMATIVE_INCUMBENT" | "COMPARISON_CANDIDATE" | "REFERENCE_FALLBACK";
-export type CandidateStatus = "NOT_INSTALLED" | "AVAILABLE" | "MEASURED";
+export type CandidateStatus = "NOT_INSTALLED" | "INSTALLED_NOT_MEASURED" | "AVAILABLE" | "MEASURED";
 
 export type CandidateDescriptor = {
   name: string;
