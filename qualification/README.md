@@ -10,4 +10,6 @@ The current exhibit is a dependency-free semantic baseline. Candidate adapters m
 
 `candidate-registry.ts` keeps that distinction machine-readable: named libraries remain `NOT_INSTALLED` until an exact-version adapter is registered, while the reference adapter is explicitly classified as a fallback.
 
+Run `python qualification/audit_inventory.py` during evidence preparation to detect drift between the frozen candidate inventory and the required comparison set. A non-zero result is expected until every named candidate has measured evidence; it must never be bypassed by changing the production decision.
+
 The commercial candidate is intentionally not fabricated: licensing and redistribution evidence must exist before a named product is evaluated.
