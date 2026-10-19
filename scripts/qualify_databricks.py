@@ -17,7 +17,7 @@ def validate_identifier(label: str, value: str) -> str:
     return value
 
 def main() -> int:
-    p = argparse.ArgumentParser(); p.add_argument("--profile", default="fga"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse-id", default="e444f39962128242"); p.add_argument("--create", action="store_true"); p.add_argument("--recreate", action="store_true"); p.add_argument("--apply", action="store_true"); p.add_argument("--confirm"); p.add_argument("--report", type=Path); args = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("--profile", default="fga"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse-id", default="02addf2c2a0a755b"); p.add_argument("--create", action="store_true"); p.add_argument("--recreate", action="store_true"); p.add_argument("--apply", action="store_true"); p.add_argument("--confirm"); p.add_argument("--report", type=Path); args = p.parse_args()
     validate_identifier("catalog", args.catalog); validate_identifier("schema", args.schema); validate_identifier("warehouse-id", args.warehouse_id)
     if args.recreate and (not args.apply or args.confirm != f"fga_dev:{args.catalog}:{args.schema}"):
         raise SystemExit(f"refusing destructive qualification; require --apply --confirm fga_dev:{args.catalog}:{args.schema}")
@@ -33,6 +33,9 @@ def main() -> int:
         print(rendered, end=""); return 0
     if probe.get("status", {}).get("state") != "SUCCEEDED": raise SystemExit("Databricks capability probe failed")
     statements = []
+    if args.create or args.recreate:
+        schema_response = api(args.profile, {**base, "statement": f"CREATE SCHEMA IF NOT EXISTS `{args.catalog}`.`{args.schema}`"})
+        if schema_response.get("status", {}).get("state") != "SUCCEEDED": raise SystemExit(json.dumps(schema_response))
     pre_inventory = api(args.profile, {**base, "statement": "SHOW TABLES IN `" + args.catalog + "`.`" + args.schema + "`"})
     pre_names = [row[1] for row in pre_inventory.get("result", {}).get("data_array", [])]
     if args.recreate:
