@@ -8,8 +8,7 @@ import { GraphViewport } from "../board/GraphViewport";
 import { InvestigationActions } from "../board/InvestigationActions";
 import { calculateBoardGeometry, selectBoardMode, type BoardGeometry } from "../board/layout";
 import { DebugOverlay } from "../board/DebugOverlay";
-import { ScreenLink } from "../screen-system/ScreenLink";
-import { useScreenData } from "../screen-system/useScreenData";
+import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
 
 const BOARD_ARTWORK = "/assets/board/v1/fga-investigation-board-canonical-v1.png";
@@ -17,8 +16,8 @@ const BOARD_ARTWORK = "/assets/board/v1/fga-investigation-board-canonical-v1.png
 export function BoardPage() {
   const { context: routeContext } = useScreenLocation();
   const roundId = String(routeContext.roundId ?? "");
-  const [attempt, setAttempt] = useState(0);
-  const { model: workspace, problem: loadProblem, retry } = useScreenData<Workspace>("ROUND_WORKSPACE", { roundId }, `${roundId}:${attempt}`);
+  const { model, problem: loadProblem, canRetry, retry, dispatchAction, transitionLocked } = useScreenRuntime();
+  const workspace = model as Workspace | null;
   const [compact, setCompact] = useState(false);
   const [geometry, setGeometry] = useState<BoardGeometry | null>(null);
   const boardRef = useRef<HTMLElement>(null);
@@ -36,18 +35,18 @@ export function BoardPage() {
 
   useEffect(() => { if (workspace) rememberRound(workspace.round.id); else if (roundId) rememberRound(roundId); }, [workspace, roundId]);
 
-  if (loadProblem) return <ProblemPanel problem={loadProblem} onRetry={() => { setAttempt((n) => n + 1); retry(); }} />;
+  if (loadProblem) return <ProblemPanel problem={loadProblem} onRetry={canRetry ? retry : undefined} />;
   if (!workspace) return <Loading message="Recovering the training file from authoritative state…" />;
 
   return <main ref={boardRef} data-board-mode={compact ? "COMPACT" : "FULL"} className={`board-shell${compact ? " board-shell--compact" : ""}`} aria-labelledby="board-title">
     <div className="board-scene" aria-hidden="true"><img className="board-art" src={BOARD_ARTWORK} alt="" /><span className="lamp-glow" /><span className="desk-line" /></div>
     <section className="board-content">
-      <header className="board-header" data-region="BOARD_STATUS"><div><p className="eyebrow">Active investigation · {workspace.path_name}</p><h1 id="board-title">{workspace.case.name}</h1></div><div className="round-badge" aria-label={`Round status ${workspace.round.status}`}>{workspace.round.status}</div></header>
+      <header className="board-header" data-region="BOARD_STATUS"><div><p className="eyebrow">Active investigation · {workspace.path_name}</p><h1 id="board-title" tabIndex={-1}>{workspace.case.name}</h1></div><div className="round-badge" aria-label={`Round status ${workspace.round.status}`}>{workspace.round.status}</div></header>
       <div className="board-layout">
         <div data-region="CASE_PAPER" style={geometry ? { minHeight: geometry.regions.CASE_PAPER.height } : undefined}><CasePaper workspace={workspace} /></div><div data-region="GRAPH_VIEWPORT" style={geometry ? { minHeight: geometry.regions.GRAPH_VIEWPORT.height } : undefined}><GraphViewport /></div>
       </div>
       <div data-region="TYPEWRITER_CONTROLS"><InvestigationActions workspace={workspace} /></div>
-      <footer className="board-footer"><p><strong>Training round:</strong> {workspace.round.id} · Future capabilities explain themselves when unavailable.</p><ScreenLink className="button secondary" to={`/paths/${workspace.round.path_id}/cases`}>Back to Academy catalogue</ScreenLink></footer>
+      <footer className="board-footer"><p><strong>Training round:</strong> {workspace.round.id} · Future capabilities explain themselves when unavailable.</p><button className="button secondary" type="button" disabled={transitionLocked} onClick={() => void dispatchAction("RETURN_TO_CATALOGUE", { pathId: workspace.round.path_id })}>Back to Academy catalogue</button></footer>
     </section>
     <DebugOverlay mode={compact ? "COMPACT" : "FULL"} />
   </main>;

@@ -10,7 +10,7 @@ test("public screen URLs reconstruct semantic screens and malformed URLs recover
 
 test("intro page is addressable and browser history returns to the prior screen", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: /choose your trench coat/i }).click();
+  await page.getByRole("button", { name: /choose your trench coat/i }).click();
   await page.getByRole("button", { name: /detective academy/i }).click();
   await page.getByRole("button", { name: /open training case/i }).click();
   await expect(page).toHaveURL(/\/intro\?page=1$/);

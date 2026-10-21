@@ -5,12 +5,14 @@ import AxeBuilder from "@axe-core/playwright";
 async function openBoard(page: Page, failArt = false) {
   if (failArt) await page.route("**/assets/board/**", async (route) => route.fulfill({ status: 404, body: "missing" }));
   await page.goto("/");
-  await page.getByRole("link", { name: /choose your trench coat/i }).click();
+  await page.getByRole("button", { name: /choose your trench coat/i }).click();
   await page.getByRole("button", { name: /detective academy/i }).click();
   await page.getByRole("button", { name: /open training case/i }).click();
   await page.getByRole("button", { name: /next page/i }).click();
   await page.getByRole("button", { name: /enter the academy/i }).click();
-  await expect(page.getByRole("heading", { name: /empty evidence board/i })).toBeVisible();
+  const boardHeading = page.getByRole("heading", { name: /empty evidence board/i });
+  await expect(boardHeading).toBeVisible();
+  await expect(boardHeading).toBeFocused();
 }
 
 test.describe("I02 investigation board", () => {

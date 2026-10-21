@@ -1,8 +1,7 @@
 import type { LifecycleHookId } from "./contracts";
-export interface LifecycleServices { focusPrimaryHeading: () => void; announce: (message: string) => void; abortReads: () => void; }
-export const lifecycle: Record<LifecycleHookId, (services: LifecycleServices) => void> = {
-  LOAD_SCREEN_MODEL: () => undefined,
+export interface LifecycleServices { focusPrimaryHeading: () => void; announce: (message: string) => void; announceScreenName: string; abortReads: () => void; }
+export const lifecycle: Record<Exclude<LifecycleHookId, "LOAD_SCREEN_MODEL">, (services: LifecycleServices) => void> = {
   FOCUS_PRIMARY_HEADING: ({ focusPrimaryHeading }) => focusPrimaryHeading(),
-  ANNOUNCE_SCREEN: ({ announce }) => announce("Screen ready"),
+  ANNOUNCE_SCREEN: ({ announce, announceScreenName }) => announce(`${announceScreenName} ready`),
   ABORT_OBSOLETE_READS: ({ abortReads }) => abortReads()
 };
