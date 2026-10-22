@@ -16,11 +16,11 @@ export default defineConfig({
       command: "python -m uvicorn fraud_graph_arena.web.main:app --host 127.0.0.1 --port 8000",
       cwd: "../..",
       port: 8000,
-      reuseExistingServer: true,
+      reuseExistingServer: false,
       env: {
         FGA_ENVIRONMENT: "test",
         FGA_ROUND_REPOSITORY: "sqlite",
-        FGA_SQLITE_PATH: processEnvironment?.FGA_SQLITE_PATH ?? ".fga/e2e.sqlite3",
+        FGA_SQLITE_PATH: processEnvironment?.FGA_SQLITE_PATH ?? `${processEnvironment?.TEMP ?? processEnvironment?.TMP ?? processEnvironment?.TMPDIR ?? ".fga"}/fga-e2e-${globalThis.crypto.randomUUID()}.sqlite3`,
         FGA_FRONTEND_DIST: "apps/web/missing-dist"
       }
     },
@@ -28,7 +28,7 @@ export default defineConfig({
       command: "npm run dev",
       cwd: ".",
       port: 5173,
-      reuseExistingServer: true
+      reuseExistingServer: false
     }
   ]
 });

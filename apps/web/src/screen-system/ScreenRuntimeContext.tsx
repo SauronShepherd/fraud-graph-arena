@@ -24,6 +24,7 @@ export function ScreenRuntimeProvider({ definition, context, onAbortReady, child
   const [actionPending, setActionPending] = useState(false);
   const [retryKind, setRetryKind] = useState<"LOAD" | "ACTION" | null>(null);
   const actionPendingRef = useRef(false);
+  const instanceId = useRef(`${definition.id}:${Math.random().toString(36).slice(2)}`);
   const retryAction = useRef<{ action: ActionId; payload?: Record<string, string | number> } | null>(null);
   const dataContext = Object.fromEntries(Object.entries(context).filter(([key]) => key !== "page"));
   const contextKey = JSON.stringify(dataContext);
@@ -71,7 +72,7 @@ export function ScreenRuntimeProvider({ definition, context, onAbortReady, child
     setRetryKind(null);
     retryAction.current = null;
     try {
-      const result = await handler({ context, payload });
+      const result = await handler({ context, payload, instanceId: instanceId.current });
       const plan = resolveTransition(definition, context, result.event, screenDefinitions);
       if (!plan) { setProblem(runtimeProblem(new Error(`UNRESOLVED_TRANSITION:${result.event.type}`), definition.id)); setProblemKey(screenKey); return null; }
       if (!coordinator.request(plan, sourceToken)) return null;

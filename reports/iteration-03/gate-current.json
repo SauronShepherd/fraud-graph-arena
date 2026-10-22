@@ -1,0 +1,143 @@
+{
+  "iteration": "03",
+  "scope": "FGA03 declarative screen system",
+  "timestamp_utc": "2026-10-22T00:01:38.193176+00:00",
+  "commit": "db5eb3624dde7af1f2a9962e6f7fa1588ac6101c",
+  "clean_before_gate": false,
+  "status_before_gate": [
+    "M apps/web/package.json",
+    " M apps/web/playwright.config.ts",
+    " M apps/web/src/api/client.ts",
+    " M apps/web/src/screen-system/actions.ts",
+    " M contracts/openapi-v1.json",
+    " M src/fraud_graph_arena/case_data/csv_codec.py",
+    " M src/fraud_graph_arena/case_data/types.py",
+    " M src/fraud_graph_arena/case_data/validator.py",
+    " M src/fraud_graph_arena/rounds/adapters/memory.py",
+    " M src/fraud_graph_arena/rounds/adapters/sqlite.py",
+    " M src/fraud_graph_arena/rounds/domain.py",
+    " M src/fraud_graph_arena/rounds/ports.py",
+    " M src/fraud_graph_arena/rounds/service.py",
+    " M src/fraud_graph_arena/web/routes/rounds.py",
+    " M tests/iteration_01/test_round_journey.py",
+    "?? apps/web/scripts/",
+    "?? reports/iteration-04/gate-current.json",
+    "?? src/fraud_graph_arena/case_data/json_codec.py",
+    "?? tests/iteration_04/test_data_contract_rejections.py"
+  ],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "node_version": "v24.19.0",
+  "npm_version": "11.17.0",
+  "checks": [
+    {
+      "label": "python-tests",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 124,
+      "duration_seconds": 300.036,
+      "stdout": "",
+      "stderr": "timed out after 300 seconds"
+    },
+    {
+      "label": "screen-definition-validator",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "scripts/validate_screen_definitions.py"
+      ],
+      "returncode": 0,
+      "duration_seconds": 2.151,
+      "stdout": "validated 6 screen definitions\n",
+      "stderr": ""
+    },
+    {
+      "label": "i03-python-tests",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/iteration_03"
+      ],
+      "returncode": 0,
+      "duration_seconds": 15.742,
+      "stdout": "..............                                                           [100%]\n14 passed in 5.64s\n",
+      "stderr": ""
+    },
+    {
+      "label": "board-manifest",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "scripts/validate_board_manifest.py"
+      ],
+      "returncode": 0,
+      "duration_seconds": 0.519,
+      "stdout": "board manifest valid\n",
+      "stderr": ""
+    },
+    {
+      "label": "approved-artwork",
+      "command": [
+        "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "scripts/validate_board_manifest.py",
+        "--require-approved-artwork"
+      ],
+      "returncode": 0,
+      "duration_seconds": 0.336,
+      "stdout": "board manifest valid\n",
+      "stderr": ""
+    },
+    {
+      "label": "frontend-typecheck",
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "returncode": 0,
+      "duration_seconds": 20.61,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 typecheck\n> tsc -b --pretty false\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "frontend-build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "returncode": 0,
+      "duration_seconds": 11.98,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 build\n> npm run validate:screens && tsc -b && vite build\n\n\n> @fraud-graph-arena/web@0.1.0 validate:screens\n> node scripts/validate-screen-set.mjs\n\nValidated screen set: 6 screens\nvite v8.2.0 building client environment for production...\n\u001b[2K\ntransforming...\u2713 57 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.45 kB \u2502 gzip:  0.29 kB\ndist/assets/index-D2HKA_73.css    8.47 kB \u2502 gzip:  2.81 kB\ndist/assets/index-BTgVH6nJ.js   265.71 kB \u2502 gzip: 83.73 kB\n\n\u2713 built in 2.10s\n",
+      "stderr": ""
+    },
+    {
+      "label": "frontend-vitest",
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "returncode": 124,
+      "duration_seconds": 16370.913,
+      "stdout": "",
+      "stderr": "timed out after 600 seconds"
+    },
+    {
+      "label": "frontend-e2e",
+      "command": [
+        "npm.cmd",
+        "run",
+        "test:e2e"
+      ],
+      "returncode": 0,
+      "duration_seconds": 57.683,
+      "stdout": "\n> @fraud-graph-arena/web@0.1.0 test:e2e\n> playwright test\n\n\nRunning 10 tests using 1 worker\n\n  ok  1 e2e\\investigation-board.spec.ts:20:5 \u203a I02 investigation board \u203a wide preserves the empty investigation contract (7.3s)\n  ok  2 e2e\\investigation-board.spec.ts:20:5 \u203a I02 investigation board \u203a laptop preserves the empty investigation contract (5.3s)\n  ok  3 e2e\\investigation-board.spec.ts:20:5 \u203a I02 investigation board \u203a portrait preserves the empty investigation contract (5.3s)\n  ok  4 e2e\\investigation-board.spec.ts:35:3 \u203a I02 investigation board \u203a remains usable when decorative board art fails (3.2s)\n  ok  5 e2e\\investigation-board.spec.ts:41:3 \u203a I02 investigation board \u203a preserves state under reduced motion and effective high zoom (2.3s)\n  ok  6 e2e\\screen-accessibility.spec.ts:4:1 \u203a production entry and catalogue screens remain keyboard and axe accessible (7.8s)\n  ok  7 e2e\\screen-history.spec.ts:3:1 \u203a public screen URLs reconstruct semantic screens and malformed URLs recover safely (2.2s)\n  ok  8 e2e\\screen-history.spec.ts:11:1 \u203a intro page is addressable and browser history returns to the prior screen (2.2s)\n  ok  9 e2e\\screen-transitions.spec.ts:3:1 \u203a intro completion uses the centralized fade effect and still reaches the board (1.9s)\n  ok 10 e2e\\walking-skeleton.spec.ts:3:1 \u203a Academy walking skeleton preserves comic and board context across refresh (3.3s)\n\n  10 passed (49.9s)\n",
+      "stderr": "[WebServer] INFO:     Started server process [28536]\n[WebServer] INFO:     Waiting for application startup.\n[WebServer] INFO:     Application startup complete.\n[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)\n[WebServer] (node:21792) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:31108) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ],
+  "fully_qualified": false
+}

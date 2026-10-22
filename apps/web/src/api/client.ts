@@ -69,9 +69,10 @@ export function getSection(pathId: string, signal?: AbortSignal): Promise<Catalo
   return request<CatalogueSection>(`/catalogue/${encodeURIComponent(pathId)}`, { signal });
 }
 
-export async function createAndStartRound(pathId: string, caseId: string): Promise<RoundSummary> {
+export async function createAndStartRound(pathId: string, caseId: string, idempotencyKey: string = crypto.randomUUID()): Promise<RoundSummary> {
   const created = await request<RoundSummary>("/rounds", {
     method: "POST",
+    headers: { "Idempotency-Key": idempotencyKey },
     body: JSON.stringify({
       player_id: "demo-hercule",
       path_id: pathId,

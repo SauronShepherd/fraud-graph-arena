@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, Request, status
+from fastapi import APIRouter, Header, Request, status
 from fraud_graph_arena.rounds.domain import IntroCompletion
 
 from fraud_graph_arena.web.api_models import (
@@ -16,11 +16,12 @@ router = APIRouter(prefix="/rounds", tags=["rounds"])
 
 
 @router.post("", response_model=RoundResponse, status_code=status.HTTP_201_CREATED)
-def create_round(payload: CreateRoundRequest, request: Request) -> RoundResponse:
+def create_round(payload: CreateRoundRequest, request: Request, idempotency_key: str | None = Header(default=None, min_length=1, max_length=200, alias="Idempotency-Key")) -> RoundResponse:
     round_ = request.app.state.container.rounds.create(
         player_id=payload.player_id,
         path_id=payload.path_id,
         case_id=payload.case_id,
+        idempotency_key=idempotency_key,
     )
     return map_round(round_)
 

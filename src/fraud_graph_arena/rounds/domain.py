@@ -28,6 +28,8 @@ class Round:
     created_at: datetime
     started_at: datetime | None = None
     intro_completed_at: datetime | None = None
+    idempotency_key: str | None = None
+    request_fingerprint: str | None = None
 
     def start(self, now: datetime | None = None) -> "Round":
         if self.status != RoundStatus.CREATED:

@@ -3,6 +3,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from uuid import uuid4
+import hashlib
+import json
+import sqlite3
 
 from fraud_graph_arena.catalogue import CaseStatus, CaseSummary, CatalogueService
 from fraud_graph_arena.narrative import ComicKind, ComicSequence, NarrativeService
@@ -30,7 +33,15 @@ class RoundService:
         self._catalogue = catalogue
         self._narrative = narrative
 
-    def create(self, *, player_id: str, path_id: str, case_id: str) -> Round:
+    def create(self, *, player_id: str, path_id: str, case_id: str, idempotency_key: str | None = None) -> Round:
+        player_id = player_id.strip() or "demo-hercule"
+        if idempotency_key:
+            existing = self._repository.find_by_idempotency(player_id, idempotency_key)
+            fingerprint = self._fingerprint(player_id, path_id, case_id)
+            if existing:
+                if existing.request_fingerprint != fingerprint:
+                    raise ConflictError(code="IDEMPOTENCY_KEY_REUSED", title="Command key was reused", detail="The same idempotency key was submitted with a different opening request.", recovery="Retry with the original request or create a new command key.")
+                return existing
         case = self._catalogue.require_case_for_path(raw_path_id=path_id, case_id=case_id)
         if case.status != CaseStatus.OPEN:
             raise ConflictError(
@@ -42,15 +53,30 @@ class RoundService:
         self._narrative.validate_case(case)
         round_ = Round(
             id=str(uuid4()),
-            player_id=player_id.strip() or "demo-hercule",
+            player_id=player_id,
             path_id=case.path_id,
             case_id=case.id,
             case_version=case.version,
             status=RoundStatus.CREATED,
             created_at=datetime.now(UTC),
+            idempotency_key=idempotency_key,
+            request_fingerprint=self._fingerprint(player_id, path_id, case_id) if idempotency_key else None,
         )
-        self._repository.add(round_)
+        try:
+            self._repository.add(round_)
+        except (ValueError, sqlite3.IntegrityError):
+            replay = self._repository.find_by_idempotency(player_id, idempotency_key or "") if idempotency_key else None
+            if replay is None:
+                raise
+            if replay.request_fingerprint != round_.request_fingerprint:
+                raise ConflictError(code="IDEMPOTENCY_KEY_REUSED", title="Command key was reused", detail="The same idempotency key was submitted with a different opening request.", recovery="Retry with the original request or create a new command key.")
+            return replay
         return round_
+
+    @staticmethod
+    def _fingerprint(player_id: str, path_id: str, case_id: str) -> str:
+        payload = json.dumps({"player_id": player_id, "path_id": path_id, "case_id": case_id}, sort_keys=True, separators=(",", ":"))
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
     def start(self, round_id: str) -> Round:
         round_ = self.require(round_id)

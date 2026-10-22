@@ -1,7 +1,11 @@
 from __future__ import annotations
 SAFE_LAYERS={'published','genie'}
 TRUTH_LAYERS={'truth'}
-def safe_row(row: dict, *, layer: str) -> dict:
+from .registry import headers
+
+def safe_row(row: dict, *, layer: str, table: str) -> dict:
     if layer not in SAFE_LAYERS: raise ValueError('projection layer must be published or genie')
-    forbidden={'entity_id','culpability','solve_gate','mastermind','guilty','scoring_rule','ending_rule'}
-    return {k:v for k,v in row.items() if k.lower() not in forbidden and not k.lower().endswith('_truth')}
+    if not table.startswith(f'{layer}/'):
+        raise ValueError('projection table must belong to the selected safe layer')
+    allowed=headers(table)
+    return {key:row[key] for key in allowed if key in row}

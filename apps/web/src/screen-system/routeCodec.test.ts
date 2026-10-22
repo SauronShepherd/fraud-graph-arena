@@ -19,4 +19,10 @@ describe("screen route codec", () => {
     expect(parseLocation("/rounds/r1/intro", "?page=1.0", screenDefinitions)).toMatchObject({ screen: "CASE_INTRODUCTION", context: { roundId: "r1", page: 1 }, replace: true });
     expect(parseLocation("/rounds/r1/intro", "?page=02", screenDefinitions)).toMatchObject({ screen: "CASE_INTRODUCTION", context: { roundId: "r1", page: 2 }, replace: true });
   });
+  it("treats route literals as literals instead of regular expression syntax", () => {
+    const definition = screenDefinitions.get("PATH_SELECTION")!;
+    const literal = { ...definition, route: { mode: "PUBLIC" as const, pattern: "/paths.v1" } };
+    expect(parseLocation("/paths.v1", "", new Map([["PATH_SELECTION", literal]]))).toMatchObject({ screen: "PATH_SELECTION" });
+    expect(parseLocation("/pathsXv1", "", new Map([["PATH_SELECTION", literal]]))).toMatchObject({ screen: "LAUNCH", replace: true });
+  });
 });

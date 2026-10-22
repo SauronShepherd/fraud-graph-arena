@@ -140,8 +140,10 @@ describe("walking skeleton navigation", () => {
     expect(await screen.findByRole("heading", { name: "The Academy Door" })).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: /next page/i }));
     expect(await screen.findByRole("heading", { name: "A Board with Nothing to Hide" })).toBeVisible();
-    fireEvent.click(screen.getByRole("button", { name: /enter the academy/i }));
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(7));
+    const enterAcademy = screen.getByRole("button", { name: /enter the academy/i });
+    await waitFor(() => expect(enterAcademy).toBeEnabled(), { timeout: 5000 });
+    fireEvent.click(enterAcademy);
+    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(7), { timeout: 5000 });
     expect(await screen.findByRole("heading", { name: "The Case of the Empty Evidence Board" })).toBeVisible();
     expect(screen.getByText("ACADEMY_001")).toBeVisible();
     expect(screen.getAllByText(/no evidence has been revealed/i)).toHaveLength(2);
@@ -225,8 +227,10 @@ describe("walking skeleton navigation", () => {
     render(<MemoryRouter initialEntries={["/rounds/round-1/intro?page=2"]}><App /></MemoryRouter>);
     fireEvent.click(await screen.findByRole("button", { name: /enter the academy/i }));
     expect(await screen.findByRole("heading", { name: "Case interrupted" })).toBeVisible();
-    fireEvent.click(screen.getByRole("button", { name: /try the door again/i }));
-    expect(await screen.findByText("ACADEMY_001")).toBeVisible();
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(4));
+    const retryCompletion = screen.getByRole("button", { name: /try the door again/i });
+    await waitFor(() => expect(retryCompletion).toBeEnabled(), { timeout: 5000 });
+    fireEvent.click(retryCompletion);
+    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(4), { timeout: 5000 });
+    expect(await screen.findByText("ACADEMY_001", {}, { timeout: 5000 })).toBeVisible();
   });
 });

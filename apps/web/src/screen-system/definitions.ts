@@ -11,6 +11,15 @@ const guardIds: GuardId[] = ["REQUIRED_CONTEXT", "ACTION_NOT_PENDING", "ROUND_AC
 const loadHooks: LifecycleHookId[] = ["LOAD_SCREEN_MODEL"];
 const enterHooks: LifecycleHookId[] = ["FOCUS_PRIMARY_HEADING", "ANNOUNCE_SCREEN"];
 const exitHooks: LifecycleHookId[] = ["ABORT_OBSOLETE_READS"];
+const actionOutcomes: Record<ActionId, EventId[]> = {
+  BEGIN: ["PATHS_REQUESTED"], RESUME_LAST_ROUND: ["ROUND_RESUME_REQUESTED"], SELECT_PATH: ["PATH_SELECTED"],
+  BACK_TO_PATHS: ["RETURNED_TO_PATHS"], OPEN_CASE: ["CASE_OPENED"], CHANGE_INTRO_PAGE: ["INTRO_PAGE_CHANGED"],
+  COMPLETE_INTRO: ["INTRODUCTION_COMPLETED"], SKIP_INTRO: ["INTRODUCTION_SKIPPED"], RETURN_TO_CATALOGUE: ["RETURNED_TO_CATALOGUE"]
+};
+const runtimeEvents: Partial<Record<ScreenId, EventId[]>> = {
+  CASE_INTRODUCTION: ["INTRODUCTION_ALREADY_COMPLETED"],
+  INVESTIGATION_BOARD: ["INTRODUCTION_REQUIRED"]
+};
 export const SCREEN_RUNTIME_VERSION = "1.0.0";
 
 type JsonRecord = Record<string, unknown>;
@@ -48,6 +57,7 @@ export function validateScreenSet(input: unknown): ReadonlyMap<ScreenId, ScreenD
   if (!Array.isArray(input.screens) || input.screens.length === 0) errors.push("SCREENS_NOT_ARRAY_OR_EMPTY");
 
   const rawScreens = Array.isArray(input.screens) ? input.screens : [];
+  const publicRouteShapes = new Map<string, string>();
   rawScreens.forEach((rawScreen, index) => {
     const path = `screens[${index}]`;
     if (!isRecord(rawScreen)) { errors.push(`SCREEN_NOT_OBJECT:${index}`); return; }
@@ -66,9 +76,18 @@ export function validateScreenSet(input: unknown): ReadonlyMap<ScreenId, ScreenD
     if (!isRecord(screen.route)) errors.push(`ROUTE_NOT_OBJECT:${String(screen.id)}`);
     else {
       exactKeys(screen.route, ["mode", "pattern"], [], `${path}.route`, errors);
-      const publicRoute = screen.route.mode === "PUBLIC" && typeof screen.route.pattern === "string" && screen.route.pattern.length > 0;
+      const publicRoute = screen.route.mode === "PUBLIC" && typeof screen.route.pattern === "string" && screen.route.pattern.startsWith("/");
       const internalRoute = screen.route.mode === "INTERNAL" && screen.route.pattern === null;
       if (!publicRoute && !internalRoute) errors.push(`INVALID_ROUTE:${String(screen.id)}`);
+      if (screen.route.mode === "PUBLIC" && typeof screen.route.pattern === "string") {
+        const shape = screen.route.pattern.replace(/:[A-Za-z0-9_]+/g, ":PARAM");
+        const previous = publicRouteShapes.get(shape);
+        if (previous) errors.push(`AMBIGUOUS_PUBLIC_ROUTE:${previous}:${String(screen.id)}`);
+        else publicRouteShapes.set(shape, String(screen.id));
+        const params = [...screen.route.pattern.matchAll(/:([A-Za-z0-9_]+)/g)].map((match) => match[1]);
+        const required = isRecord(screen.validation) && Array.isArray(screen.validation.required_context) ? screen.validation.required_context : [];
+        for (const param of params) if (!required.includes(param)) errors.push(`ROUTE_CONTEXT_MISSING:${String(screen.id)}:${param}`);
+      }
     }
 
     for (const [name, allowed] of [["onLoad", loadHooks], ["onEnter", enterHooks], ["onExit", exitHooks]] as const) {
@@ -86,6 +105,10 @@ export function validateScreenSet(input: unknown): ReadonlyMap<ScreenId, ScreenD
         if (!enumValue(rawAction.id, actionIds) || !enumValue(rawAction.handler, actionIds)) errors.push(`UNKNOWN_ACTION:${String(screen.id)}:${String(rawAction.id)}`);
         if (typeof rawAction.id === "string" && seen.has(rawAction.id)) errors.push(`DUPLICATE_ACTION:${String(screen.id)}:${rawAction.id}`);
         if (typeof rawAction.id === "string") seen.add(rawAction.id);
+        if (enumValue(rawAction.handler, actionIds) && Array.isArray(screen.transitions)) {
+          const expectedEvents = actionOutcomes[rawAction.handler];
+          if (!screen.transitions.some((transition) => isRecord(transition) && expectedEvents.includes(transition.event as EventId))) errors.push(`ACTION_WITHOUT_TRANSITION:${String(screen.id)}:${String(rawAction.id)}`);
+        }
       });
     }
 
@@ -100,6 +123,10 @@ export function validateScreenSet(input: unknown): ReadonlyMap<ScreenId, ScreenD
         if (rawTransition.guard !== undefined && !enumValue(rawTransition.guard, guardIds)) errors.push(`UNKNOWN_GUARD:${String(screen.id)}:${String(rawTransition.guard)}`);
         if (typeof rawTransition.event === "string" && seen.has(rawTransition.event)) errors.push(`DUPLICATE_TRANSITION_EVENT:${String(screen.id)}:${rawTransition.event}`);
         if (typeof rawTransition.event === "string") seen.add(rawTransition.event);
+        const event = rawTransition.event as EventId;
+        const actionEmitsEvent = Array.isArray(screen.actions) && screen.actions.some((action) => isRecord(action) && enumValue(action.handler, actionIds) && actionOutcomes[action.handler].includes(event));
+        const runtimeEmitsEvent = (runtimeEvents[screen.id as ScreenId] ?? []).includes(event);
+        if (typeof rawTransition.event === "string" && !runtimeEmitsEvent && !actionEmitsEvent) errors.push(`UNEMITTED_TRANSITION_EVENT:${String(screen.id)}:${rawTransition.event}`);
       });
     }
 
@@ -116,6 +143,23 @@ export function validateScreenSet(input: unknown): ReadonlyMap<ScreenId, ScreenD
   if (enumValue(input.initial_screen, screenIds) && !map.has(input.initial_screen)) errors.push("INITIAL_SCREEN_NOT_DEFINED");
   for (const screen of map.values()) if (Array.isArray(screen.transitions)) for (const transition of screen.transitions as unknown[]) {
     if (isRecord(transition) && typeof transition.target === "string" && !map.has(transition.target as ScreenId)) errors.push(`UNKNOWN_TARGET:${screen.id}:${transition.target}`);
+  }
+  if (enumValue(input.initial_screen, screenIds)) {
+    const initial = map.get(input.initial_screen);
+    if (initial?.route?.mode !== "PUBLIC") errors.push("INITIAL_SCREEN_NOT_PUBLIC");
+    const reachable = new Set<ScreenId>([input.initial_screen]);
+    const queue: ScreenId[] = [input.initial_screen];
+    while (queue.length) {
+      const screen = map.get(queue.shift()!);
+      for (const transition of screen?.transitions ?? []) if (isRecord(transition) && typeof transition.target === "string" && map.has(transition.target as ScreenId) && !reachable.has(transition.target as ScreenId)) {
+        reachable.add(transition.target as ScreenId);
+        queue.push(transition.target as ScreenId);
+      }
+    }
+    for (const id of ["LAUNCH", "PATH_SELECTION", "CASE_SELECTION", "CASE_INTRODUCTION", "INVESTIGATION_BOARD"] as const) if (!reachable.has(id)) errors.push(`UNREACHABLE_PUBLIC_SCREEN:${id}`);
+    const resolution = map.get("CASE_RESOLUTION");
+    if (reachable.has("CASE_RESOLUTION")) errors.push("INTERNAL_SCREEN_REACHABLE:CASE_RESOLUTION");
+    if (resolution && (resolution.route?.mode !== "INTERNAL" || resolution.actions?.length !== 0 || resolution.transitions?.length !== 0)) errors.push("INVALID_INTERNAL_TERMINAL:CASE_RESOLUTION");
   }
   if (errors.length) throw new ScreenConfigurationError("INVALID_SCREEN_SET", errors);
   return map;

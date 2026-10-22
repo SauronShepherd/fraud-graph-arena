@@ -41,5 +41,5 @@ export function ScreenHost({ definition, screen, context, children }: PropsWithC
     definition.onLoad.filter(isRuntimeLifecycleHook).forEach((hook) => lifecycle[hook](services));
     return () => definition.onExit.filter(isRuntimeLifecycleHook).forEach((hook) => lifecycle[hook](services));
   }, [definition, instanceKey, screen]);
-  return <ScreenRuntimeProvider definition={definition} context={context} onAbortReady={registerAbortReads}><ScreenEntryLifecycle definition={definition} screen={screen} context={context} onAnnounce={setAnnouncement} /><ScreenAnnouncer message={announcement} /><section data-screen-id={screen}>{children}</section></ScreenRuntimeProvider>;
+  return <ScreenRuntimeProvider key={instanceKey} definition={definition} context={context} onAbortReady={registerAbortReads}><ScreenEntryLifecycle definition={definition} screen={screen} context={context} onAnnounce={setAnnouncement} /><ScreenAnnouncer message={announcement} /><section data-screen-id={screen}>{children}</section></ScreenRuntimeProvider>;
 }

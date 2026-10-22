@@ -12,6 +12,14 @@ def write_table(path: Path, table: str, rows: list[dict]) -> None:
             w.writerow({c: row.get(c, "") for c in cols})
 def read_table(path: Path, table: str) -> list[dict[str,str]]:
     with path.open(newline="", encoding="utf-8") as f:
-        r = csv.DictReader(f)
-        if r.fieldnames != list(headers(table)): raise ValueError(f"{table}: ordered header mismatch")
-        return list(r)
+        r = csv.reader(f)
+        try: raw_header = next(r)
+        except StopIteration: raise ValueError(f"{table}: missing header")
+        if any(not column or column != column.strip() for column in raw_header): raise ValueError(f"{table}: blank or padded header")
+        if len(set(raw_header)) != len(raw_header): raise ValueError(f"{table}: duplicate header")
+        if raw_header != list(headers(table)): raise ValueError(f"{table}: ordered header mismatch")
+        rows = []
+        for row in r:
+            if len(row) != len(raw_header): raise ValueError(f"{table}: row width mismatch")
+            rows.append(dict(zip(raw_header, row, strict=True)))
+        return rows

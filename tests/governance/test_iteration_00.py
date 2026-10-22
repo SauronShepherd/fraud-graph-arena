@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -18,8 +19,18 @@ TAGGER = ROOT / "scripts" / "create_iteration_00_tag.py"
 
 
 def run(*arguments: str, cwd: Path = ROOT) -> subprocess.CompletedProcess[str]:
+    environment = None
+    if cwd != ROOT:
+        environment = os.environ.copy()
+        environment.update(
+            {
+                "GIT_CONFIG_COUNT": "1",
+                "GIT_CONFIG_KEY_0": "maintenance.auto",
+                "GIT_CONFIG_VALUE_0": "false",
+            }
+        )
     return subprocess.run(
-        list(arguments), cwd=cwd, text=True, capture_output=True, check=False
+        list(arguments), cwd=cwd, env=environment, text=True, capture_output=True, check=False
     )
 
 
@@ -179,7 +190,7 @@ def test_tag_creation_refuses_unqualified_iteration(tmp_path: Path) -> None:
 
 def copy_repository(destination: Path) -> None:
     ignored = shutil.ignore_patterns(
-        ".git", ".pytest_cache", "__pycache__", "*.pyc", "*.egg-info", ".venv"
+        ".git", ".pytest_cache", "__pycache__", "*.pyc", "*.egg-info", ".venv", "node_modules"
     )
     shutil.copytree(ROOT, destination, ignore=ignored)
 
