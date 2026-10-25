@@ -4,8 +4,9 @@ import type {
   Opening,
   ProblemDetails,
   RoundSummary,
-  Workspace
-  ,Graph
+  Workspace,
+  Graph,
+  InvestigationCommand,
 } from "./contracts";
 
 const API_BASE = (import.meta.env.VITE_FGA_API_BASE_URL as string | undefined) ?? "/api/v1";
@@ -97,6 +98,14 @@ export function completeOpening(roundId: string, completion: "FINISHED" | "SKIPP
 
 export function getWorkspace(roundId: string, signal?: AbortSignal): Promise<Workspace> {
   return request<Workspace>(`/rounds/${encodeURIComponent(roundId)}/workspace`, { signal });
+}
+
+export function submitManualHypothesis(roundId: string, input: { idempotency_key: string; source_record_id: string; target_record_id: string; relationship_type: string }): Promise<InvestigationCommand> {
+  return request<InvestigationCommand>(`/rounds/${encodeURIComponent(roundId)}/investigations/hypotheses`, { method: "POST", body: JSON.stringify(input) });
+}
+
+export function getInvestigationHistory(roundId: string, signal?: AbortSignal): Promise<{ commands: InvestigationCommand[] }> {
+  return request<{ commands: InvestigationCommand[] }>(`/rounds/${encodeURIComponent(roundId)}/investigations/history`, { signal });
 }
 
 export function expandGraph(roundId: string, visible: Graph, nodeId: string, signal?: AbortSignal): Promise<Graph> {

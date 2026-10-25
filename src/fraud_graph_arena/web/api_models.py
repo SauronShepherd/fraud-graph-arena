@@ -138,6 +138,29 @@ class GraphFilterRequest(ApiModel):
     visible: GraphResponse
     families: list[str] = Field(default_factory=list, max_length=32)
 
+class HypothesisRequest(ApiModel):
+    idempotency_key: str = Field(min_length=1, max_length=128, pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
+    source_record_id: str = Field(min_length=1, max_length=128)
+    target_record_id: str = Field(min_length=1, max_length=128)
+    relationship_type: str = Field(min_length=1, max_length=32)
+
+class InvestigationCommandResponse(ApiModel):
+    command_id: str
+    round_id: str
+    idempotency_key: str
+    action: str
+    source_record_id: str
+    target_record_id: str
+    relationship_type: str
+    status: str
+    charged_credits: int
+    revealed_record_ids: list[str]
+    created_at: str
+    replayed: bool = False
+
+class InvestigationCommandListResponse(ApiModel):
+    commands: list[InvestigationCommandResponse]
+
 
 class WorkspaceResponse(ApiModel):
     round: RoundResponse

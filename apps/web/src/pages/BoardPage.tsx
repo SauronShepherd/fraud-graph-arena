@@ -67,7 +67,7 @@ export function BoardPage() {
           {graph && <div>{graphError && <p role="alert">{graphError}</p>}<GraphViewport graph={graph} selectedNodeId={selectedNodeId} selectedEdgeId={selectedEdgeId} onNodeSelect={setSelectedNodeId} onEdgeSelect={setSelectedEdgeId} expandingNodeId={expandingNodeId} onExpand={handleExpand} /></div>}
         </div>
       </div>
-      <div data-region="TYPEWRITER_CONTROLS"><InvestigationActions workspace={workspace} /></div>
+      <div data-region="TYPEWRITER_CONTROLS"><InvestigationActions workspace={workspace} graph={graph ?? workspace.graph} /></div>
       <footer className="board-footer"><p><strong>Training round:</strong> {workspace.round.id} · Future capabilities explain themselves when unavailable.</p><button className="button secondary" type="button" disabled={transitionLocked} onClick={() => void dispatchAction("RETURN_TO_CATALOGUE")}>Back to Academy catalogue</button></footer>
     </section>
     <DebugOverlay mode={compact ? "COMPACT" : "FULL"} />

@@ -10,10 +10,38 @@ from fraud_graph_arena.web.api_models import (
     RoundResponse,
     WorkspaceResponse,
     GraphViewRequest, GraphExpandRequest, GraphFilterRequest, GraphResponse,
+    HypothesisRequest, InvestigationCommandResponse, InvestigationCommandListResponse,
 )
 from fraud_graph_arena.web.mappers import map_opening, map_round, map_workspace
 
 router = APIRouter(prefix="/rounds", tags=["rounds"])
+
+
+@router.post("/{round_id}/investigations/hypotheses", response_model=InvestigationCommandResponse)
+def submit_hypothesis(round_id: str, payload: HypothesisRequest, request: Request) -> InvestigationCommandResponse:
+    command, created = request.app.state.container.investigation_commands.submit_hypothesis(
+        round_id, payload.idempotency_key, payload.source_record_id, payload.target_record_id,
+        payload.relationship_type,
+    )
+    return InvestigationCommandResponse(
+        command_id=command.command_id, round_id=command.round_id, idempotency_key=command.idempotency_key,
+        action=command.action, source_record_id=command.source_record_id, target_record_id=command.target_record_id,
+        relationship_type=command.relationship_type, status=command.status, charged_credits=command.charged_credits,
+        revealed_record_ids=list(command.revealed_record_ids), created_at=command.created_at, replayed=not created,
+    )
+
+
+@router.get("/{round_id}/investigations/history", response_model=InvestigationCommandListResponse)
+def investigation_history(round_id: str, request: Request) -> InvestigationCommandListResponse:
+    commands = request.app.state.container.investigation_commands.list_for_round(round_id)
+    return InvestigationCommandListResponse(commands=[
+        InvestigationCommandResponse(
+            command_id=item.command_id, round_id=item.round_id, idempotency_key=item.idempotency_key,
+            action=item.action, source_record_id=item.source_record_id, target_record_id=item.target_record_id,
+            relationship_type=item.relationship_type, status=item.status, charged_credits=item.charged_credits,
+            revealed_record_ids=list(item.revealed_record_ids), created_at=item.created_at,
+        ) for item in commands
+    ])
 
 
 @router.post("", response_model=RoundResponse, status_code=status.HTTP_201_CREATED)

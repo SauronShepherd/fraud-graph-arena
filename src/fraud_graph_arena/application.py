@@ -22,6 +22,9 @@ from fraud_graph_arena.web.spa import SpaStaticFiles
 from fraud_graph_arena.workspace import WorkspaceService
 from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
 from fraud_graph_arena.case_data.academy_graph import t02_expandable_graph
+from fraud_graph_arena.investigation_commands import InvestigationCommandService
+from fraud_graph_arena.investigation_commands.adapters.memory import InMemoryInvestigationCommandRepository
+from fraud_graph_arena.investigation_commands.adapters.sqlite import SqliteInvestigationCommandRepository
 
 
 @dataclass(slots=True)
@@ -33,6 +36,7 @@ class Container:
     round_repository: RoundRepository
     workspace: WorkspaceService
     graph: GraphInvestigationService
+    investigation_commands: InvestigationCommandService
 
 
 def build_web_container(settings: Settings) -> Container:
@@ -53,6 +57,11 @@ def build_web_container(settings: Settings) -> Container:
         catalogue=catalogue,
         narrative=narrative,
     )
+    command_repository = (
+        InMemoryInvestigationCommandRepository()
+        if settings.round_repository == "memory"
+        else SqliteInvestigationCommandRepository(settings.sqlite_path)
+    )
     def graph_provider(round_id: str) -> dict:
         round_ = round_service.require(round_id)
         return t02_expandable_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": ()}
@@ -65,6 +74,7 @@ def build_web_container(settings: Settings) -> Container:
         round_repository=round_repository,
         workspace=WorkspaceService(round_service, catalogue),
         graph=GraphInvestigationService(graph_provider),
+        investigation_commands=InvestigationCommandService(round_service, command_repository),
     )
 
 
