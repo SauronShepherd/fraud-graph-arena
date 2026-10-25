@@ -12,18 +12,23 @@ from fraud_graph_arena.canonical_persistence.archive import ArchiveSafetyError, 
 from zipfile import ZipFile
 from concurrent.futures import ThreadPoolExecutor
 from fraud_graph_arena.canonical_persistence.types import validate_row_types
+from fraud_graph_arena.canonical_persistence.identity import semantic_hash
+from datetime import date, datetime, timedelta, timezone
+from decimal import Decimal
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGES = sorted((ROOT / "case-data/canonical/v1").iterdir())
+VALID_PACKAGE = ROOT / "case-data/canonical/v1/T1_THE_MISSING_120_canonical_case_data_v3"
+SECOND_VALID_PACKAGE = ROOT / "case-data/canonical/v1/T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3"
 
 def test_registry_is_bounded_and_case_independent():
     assert len(PHYSICAL_TARGETS) == 32
-    assert len(expected_topology()) == 37
+    assert len(expected_topology()) == 44
     assert not any(name.startswith("fga_case_") for name in PHYSICAL_TARGETS.values())
 
 def test_exact_retry_reuses_publication():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
-    first = importer.import_package(PACKAGES[0]); second = importer.import_package(PACKAGES[0])
+    first = importer.import_package(VALID_PACKAGE); second = importer.import_package(VALID_PACKAGE)
     assert first.status == ImportStatus.PUBLISHED
     assert second.status == ImportStatus.REUSED
     assert first.publication_id == second.publication_id
@@ -32,38 +37,41 @@ def test_exact_retry_reuses_publication():
 def test_concurrent_same_scope_imports_serialize_to_one_publication():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
     with ThreadPoolExecutor(max_workers=4) as pool:
-        results = list(pool.map(lambda _: importer.import_package(PACKAGES[0]), range(4)))
+        results = list(pool.map(lambda _: importer.import_package(VALID_PACKAGE), range(4)))
     assert {result.publication_id for result in results}.__len__() == 1
     assert {result.status for result in results} == {ImportStatus.PUBLISHED, ImportStatus.REUSED}
     assert len(warehouse.publications) == 1
 
 def test_failed_candidate_does_not_replace_active():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
-    first = importer.import_package(PACKAGES[0]); failed = importer.import_package(PACKAGES[1], fail_after=17, retry_of=first.run_id)
+    first = importer.import_package(VALID_PACKAGE); failed = importer.import_package(SECOND_VALID_PACKAGE, fail_after=17, retry_of=first.run_id)
     assert failed.status == ImportStatus.FAILED
     assert warehouse.active[(first.publication_id and warehouse.publications[first.publication_id].identity.key)] == first.publication_id
 
 def test_candidate_validation_is_mandatory_before_activation(monkeypatch):
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
     monkeypatch.setattr("fraud_graph_arena.canonical_persistence.importer.validate_candidate", lambda *args, **kwargs: (_ for _ in ()).throw(ValueError("candidate rejected")))
-    result = importer.import_package(PACKAGES[0])
+    result = importer.import_package(VALID_PACKAGE)
     assert result.status == ImportStatus.FAILED
     assert not warehouse.active and not warehouse.publications
 
-def test_all_packages_share_topology():
+def test_topology_remains_registry_fixed_for_every_case_attempt():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
-    for package in PACKAGES: importer.import_package(package)
-    assert warehouse.topology == set(expected_topology()[:32])
+    expected = set(expected_topology())
+    for package in PACKAGES:
+        before = set(warehouse.topology)
+        importer.import_package(package)
+        assert warehouse.topology == before == expected
 
 def test_manifest_tampering_fails_before_run_staging(tmp_path):
-    package = tmp_path / PACKAGES[0].name; import shutil; shutil.copytree(PACKAGES[0], package)
+    package = tmp_path / VALID_PACKAGE.name; import shutil; shutil.copytree(VALID_PACKAGE, package)
     manifest = json.loads((package / "manifest.json").read_text()); next(item for item in manifest["files"] if item["path"] == "config/cases.csv")["sha256"] = "0" * 64; (package / "manifest.json").write_text(json.dumps(manifest))
     warehouse = MemoryWarehouse()
     with pytest.raises(ValueError): CanonicalImporter(warehouse).import_package(package)
     assert not warehouse.runs
 
 def test_manifest_case_version_disagreement_fails_before_staging(tmp_path):
-    package = tmp_path / PACKAGES[0].name; import shutil; shutil.copytree(PACKAGES[0], package)
+    package = tmp_path / VALID_PACKAGE.name; import shutil; shutil.copytree(VALID_PACKAGE, package)
     manifest = json.loads((package / "manifest.json").read_text()); manifest["case_version"] = "wrong"; (package / "manifest.json").write_text(json.dumps(manifest))
     with pytest.raises(ValueError, match="case_version disagrees"):
         CanonicalImporter(MemoryWarehouse()).import_package(package)
@@ -71,22 +79,34 @@ def test_manifest_case_version_disagreement_fails_before_staging(tmp_path):
 def test_topology_hash_is_order_independent():
     assert topology_hash({"b", "a"}) == topology_hash({"a", "b"})
 
+def test_semantic_hash_is_deterministic_for_typed_values_and_timezone_offsets():
+    original = {"table": [{"amount": Decimal("1234567890123456789012345678.5000"), "day": date(2026, 10, 25), "at": datetime(2026, 10, 25, 14, 0, tzinfo=timezone(timedelta(hours=2)))}]}
+    equivalent = {"table": [{"at": datetime(2026, 10, 25, 12, 0, tzinfo=timezone.utc), "day": date(2026, 10, 25), "amount": Decimal("1234567890123456789012345678.5")}]}
+    assert semantic_hash(original) == semantic_hash(equivalent)
+    assert semantic_hash(original) != semantic_hash({"table": [{"amount": "1234567890123456789012345678.5", "day": date(2026, 10, 25), "at": datetime(2026, 10, 25, 14, 0, tzinfo=timezone(timedelta(hours=2)))}]})
+
+def test_semantic_hash_rejects_non_finite_and_naive_values():
+    with pytest.raises(ValueError, match="non-finite Decimal"):
+        semantic_hash({"table": [{"value": Decimal("NaN")}]})
+    with pytest.raises(ValueError, match="naive datetime"):
+        semantic_hash({"table": [{"at": datetime(2026, 10, 25, 12, 0)}]})
+
 def test_reconcile_interrupted_run_preserves_active_publication():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
-    first = importer.import_package(PACKAGES[0]); run = next(iter(warehouse.runs.values())); run.status = "STAGING"
+    first = importer.import_package(VALID_PACKAGE); run = next(iter(warehouse.runs.values())); run.status = "STAGING"
     assert reconcile_import_runs(warehouse) == []
     assert run.status == ImportStatus.PUBLISHED
     assert warehouse.active[warehouse.publications[first.publication_id].identity.key] == first.publication_id
 
 def test_reconcile_stale_run_with_active_publication_is_published():
-    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(PACKAGES[0])
+    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(VALID_PACKAGE)
     warehouse.runs[result.run_id].status = "PUBLISHING"
     assert reconcile_import_runs(warehouse) == []
     assert warehouse.runs[result.run_id].status == ImportStatus.PUBLISHED
 
 def test_rollback_restores_validated_publication_without_rewriting_rows():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
-    first = importer.import_package(PACKAGES[0]); second = importer.import_package(PACKAGES[1])
+    first = importer.import_package(VALID_PACKAGE); second = importer.import_package(SECOND_VALID_PACKAGE)
     scope = warehouse.publications[second.publication_id].identity.key
     warehouse.rollback(scope, second.publication_id)
     assert warehouse.active[scope] == second.publication_id
@@ -120,7 +140,7 @@ def test_canonical_type_rules_reject_malformed_values():
 
 def test_candidate_cleanup_is_scoped_and_cleanup_failure_is_explicit():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
-    result = importer.import_package(PACKAGES[0]); publication = warehouse.publications[result.publication_id]
+    result = importer.import_package(VALID_PACKAGE); publication = warehouse.publications[result.publication_id]
     warehouse.candidates[publication.publication_id] = publication
     warehouse.cleanup_candidate(publication.publication_id)
     assert publication.publication_id not in warehouse.candidates
@@ -129,7 +149,7 @@ def test_candidate_cleanup_is_scoped_and_cleanup_failure_is_explicit():
     assert publication.publication_id in warehouse.candidates
 
 def test_cleanup_failure_marks_run_failed_cleanup():
-    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(PACKAGES[0])
+    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(VALID_PACKAGE)
     warehouse.candidates[result.publication_id] = warehouse.publications[result.publication_id]
     with pytest.raises(RuntimeError): cleanup_rejected_candidate(warehouse, result.run_id, result.publication_id, fail=True)
     assert warehouse.runs[result.run_id].status == ImportStatus.FAILED_CLEANUP
@@ -137,14 +157,14 @@ def test_cleanup_failure_marks_run_failed_cleanup():
 def test_response_loss_after_activation_reconciles_as_published():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
     with pytest.raises(ResponseLostAfterActivation):
-        importer.import_package(PACKAGES[0], lose_response_after_activation=True)
+        importer.import_package(VALID_PACKAGE, lose_response_after_activation=True)
     run = next(iter(warehouse.runs.values()))
     assert run.status == ImportStatus.PUBLISHED
     assert warehouse.active[run.identity.key] == next(iter(warehouse.publications))
     assert reconcile_import_runs(warehouse) == []
 
 def test_persisted_rows_have_correlation_metadata_but_fingerprint_is_semantic():
-    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(PACKAGES[0])
+    warehouse = MemoryWarehouse(); result = CanonicalImporter(warehouse).import_package(VALID_PACKAGE)
     rows = next(iter(warehouse.publications[result.publication_id].rows.values()))
     if rows:
         assert rows[0]["_publication_id"] == result.publication_id
