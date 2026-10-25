@@ -4,8 +4,10 @@ from pathlib import Path
 
 def sql(profile, warehouse, catalog, schema, statement):
     payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
-    with tempfile.NamedTemporaryFile("w",suffix=".json",delete=False,encoding="utf-8") as fh: json.dump(payload,fh); path=fh.name
-    result=subprocess.run(["databricks","api","post","/api/2.0/sql/statements","--profile",profile,"--json","@"+path],capture_output=True,text=True,check=True)
+    with tempfile.TemporaryDirectory(prefix="fga-security-query-") as directory:
+        path=Path(directory)/"request.json"
+        path.write_text(json.dumps(payload),encoding="utf-8")
+        result=subprocess.run(["databricks","api","post","/api/2.0/sql/statements","--profile",profile,"--json","@"+str(path)],capture_output=True,text=True,check=True)
     return json.loads(result.stdout)
 
 def main():
