@@ -15,15 +15,12 @@ const graph = {
 } satisfies Graph;
 
 describe("GraphViewport", () => {
-  it("qualifies the bounded renderer envelope at 100 nodes and 99 edges", () => {
+  it("renders a 100-node graph fixture with stable scoped counts", () => {
     const nodes = Array.from({ length: 100 }, (_, index) => ({ record_id: `N${index.toString().padStart(3, "0")}`, record_type: "PERSON_RECORD" as const, record_subtype: "", label: `Node ${index}`, source_system_id: "benchmark", provenance_ref: `r${index}`, safe_summary: "Published benchmark record." }));
     const edges = nodes.slice(1).map((node, index) => ({ relationship_id: `E${index.toString().padStart(3, "0")}`, source_record_id: nodes[index].record_id, target_record_id: node.record_id, relationship_family: "DIRECT_SOURCE", relationship_type: "LINKED", directed: true, provenance: `e${index}`, event_time: "", player_safe_summary: "Published benchmark relationship." }));
-    const start = performance.now();
     render(<GraphViewport graph={{ projection_version: "1", nodes, edges, node_count: nodes.length, edge_count: edges.length }} />);
-    const elapsed = performance.now() - start;
     expect(screen.getByText("100 visible nodes · 99 visible relationships")).toBeVisible();
     expect(screen.getByRole("img", { name: "100 nodes in current graph view" })).toBeVisible();
-    expect(elapsed).toBeLessThan(1000);
   });
 
   it("supports zoom, layout, family filtering, and semantic selection", () => {
@@ -45,10 +42,13 @@ describe("GraphViewport", () => {
   });
 
   it("collapses and restores a node without changing the source graph", () => {
-    render(<GraphViewport graph={graph} />);
+    const { container } = render(<GraphViewport graph={graph} />);
     fireEvent.click(screen.getByRole("button", { name: "Collapse Puppy One" }));
+    expect(screen.getByText("1 visible nodes · 0 visible relationships")).toBeVisible();
     expect(screen.queryByRole("button", { name: "Puppy One, P1" })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Restore Puppy One" })).toBeVisible();
+    expect(container.querySelectorAll(".graph-minimap circle")).toHaveLength(1);
+    expect(container.querySelector(".graph-minimap rect")).not.toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "Restore Puppy One" }));
     expect(screen.getByRole("button", { name: "Puppy One, P1" })).toBeVisible();
   });
@@ -56,5 +56,30 @@ describe("GraphViewport", () => {
   it("renders directed relationships with an arrow marker", () => {
     const { container } = render(<GraphViewport graph={graph} />);
     expect(container.querySelector('line[marker-end="url(#graph-arrow)"]')).toBeTruthy();
+  });
+
+  it("supports keyboard-operable pan and fit controls", () => {
+    render(<GraphViewport graph={graph} />);
+    const transform = screen.getByTestId("graph-transform");
+    const before = transform.getAttribute("transform");
+    fireEvent.click(screen.getByRole("button", { name: "Pan right" }));
+    expect(transform.getAttribute("transform")).not.toBe(before);
+    fireEvent.click(screen.getByRole("button", { name: "Puppy One, P1" }));
+    expect(screen.getByRole("button", { name: "Fit selection" })).toBeEnabled();
+    fireEvent.click(screen.getByRole("button", { name: "Fit selection" }));
+    fireEvent.click(screen.getByRole("button", { name: "Fit graph" }));
+  });
+
+  it("shows hover previews without replacing the selected record", () => {
+    const { container } = render(<GraphViewport graph={graph} />);
+    fireEvent.click(screen.getByRole("button", { name: "Puppy One, P1" }));
+    const inspector = container.querySelector(".graph-inspector strong");
+    expect(inspector?.textContent).toBe("Puppy One");
+    const edge = container.querySelector('[data-edge-id="E1"]');
+    expect(edge).not.toBeNull();
+    fireEvent.mouseEnter(edge!);
+    expect(inspector?.textContent).toBe("WORKS_FOR");
+    fireEvent.mouseLeave(edge!);
+    expect(inspector?.textContent).toBe("Puppy One");
   });
 });

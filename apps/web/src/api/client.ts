@@ -100,5 +100,5 @@ export function getWorkspace(roundId: string, signal?: AbortSignal): Promise<Wor
 }
 
 export function expandGraph(roundId: string, visible: Graph, nodeId: string, signal?: AbortSignal): Promise<Graph> {
-  return request<Graph>(`/rounds/${encodeURIComponent(roundId)}/graph/expand`, { method: "POST", signal, body: JSON.stringify({ visible, node_id: nodeId, depth: 1, limit: 100 }) });
+  return request<Graph>(`/rounds/${encodeURIComponent(roundId)}/graph/expand`, { method: "POST", signal, body: JSON.stringify({ visible, node_id: nodeId, depth: 1, limit: 300, edge_limit: 700 }) });
 }
