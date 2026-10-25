@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, HTTPException, Request, status
+from fastapi import APIRouter, Request, status
 from fraud_graph_arena.rounds.domain import IntroCompletion
 
 from fraud_graph_arena.web.api_models import (
@@ -9,7 +9,7 @@ from fraud_graph_arena.web.api_models import (
     OpeningResponse,
     RoundResponse,
     WorkspaceResponse,
-    GraphViewRequest, GraphExpandRequest, GraphFilterRequest, GraphResponse,
+    GraphViewRequest, GraphResponse,
 )
 from fraud_graph_arena.web.mappers import map_opening, map_round, map_workspace
 
@@ -50,19 +50,3 @@ def workspace(round_id: str, request: Request) -> WorkspaceResponse:
 def initial_graph(round_id: str, request: Request, payload: GraphViewRequest | None = None) -> GraphResponse:
     body = payload or GraphViewRequest()
     return GraphResponse.model_validate(request.app.state.container.graph.initial(round_id, body.seeds, body.limit))
-
-@router.post("/{round_id}/graph/expand", response_model=GraphResponse)
-def expand_graph(round_id: str, request: Request, payload: GraphExpandRequest) -> GraphResponse:
-    try:
-        result = request.app.state.container.graph.expand(round_id, payload.visible.model_dump(), payload.node_id, payload.depth, payload.limit)
-    except PermissionError as error:
-        raise HTTPException(status_code=403, detail="graph expansion is limited to visible nodes") from error
-    except KeyError as error:
-        raise HTTPException(status_code=404, detail="graph node was not found") from error
-    except ValueError as error:
-        raise HTTPException(status_code=422, detail=str(error)) from error
-    return GraphResponse.model_validate(result)
-
-@router.post("/{round_id}/graph/filter", response_model=GraphResponse)
-def filter_graph(round_id: str, request: Request, payload: GraphFilterRequest) -> GraphResponse:
-    return GraphResponse.model_validate(request.app.state.container.graph.filter(round_id, payload.visible.model_dump(), payload.families))

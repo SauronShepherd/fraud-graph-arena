@@ -126,17 +126,6 @@ class GraphViewRequest(ApiModel):
     seeds: list[str] = Field(default_factory=list, max_length=100)
     limit: int = Field(default=100, ge=1, le=1000)
 
-class GraphExpandRequest(ApiModel):
-    visible: GraphResponse
-    node_id: str = Field(min_length=1, max_length=128)
-    depth: int = Field(default=1, ge=1, le=1)
-    limit: int = Field(default=100, ge=1, le=1000)
-
-class GraphFilterRequest(ApiModel):
-    visible: GraphResponse
-    families: list[str] = Field(default_factory=list, max_length=32)
-
-
 class WorkspaceResponse(ApiModel):
     round: RoundResponse
     case: CaseResponse

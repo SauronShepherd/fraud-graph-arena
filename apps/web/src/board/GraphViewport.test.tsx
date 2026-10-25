@@ -15,27 +15,27 @@ const graph = {
 } satisfies Graph;
 
 describe("GraphViewport", () => {
-  it("supports zoom, layout, family filtering, and semantic selection", () => {
+  it("supports zoom, layout, and stable-ID semantic node and edge selection", () => {
     const onNodeSelect = vi.fn();
-    render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} />);
-    expect(screen.getByText("2 visible nodes · 1 visible relationships")).toBeVisible();
+    const onEdgeSelect = vi.fn();
+    render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} onEdgeSelect={onEdgeSelect} />);
+    expect(screen.getByText("2 nodes · 1 relationships")).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: "Zoom in" }));
     fireEvent.click(screen.getByRole("button", { name: "Circle layout" }));
-    fireEvent.click(screen.getByRole("checkbox", { name: "DIRECT_SOURCE" }));
-    expect(screen.getByText("2 visible nodes · 1 visible relationships")).toBeVisible();
-    fireEvent.click(screen.getByRole("checkbox", { name: "DIRECT_SOURCE" }));
-    expect(screen.getByText("2 visible nodes · 0 visible relationships")).toBeVisible();
     fireEvent.click(screen.getByText("Semantic evidence list"));
     fireEvent.click(screen.getByRole("button", { name: /Puppy One \(P1\)/ }));
     expect(onNodeSelect).toHaveBeenCalledWith("P1");
+    fireEvent.click(screen.getByRole("button", { name: /WORKS_FOR: P1 → O1/ }));
+    expect(onEdgeSelect).toHaveBeenCalledWith("E1");
   });
 
-  it("collapses and restores a node without changing the source graph", () => {
-    render(<GraphViewport graph={graph} />);
-    fireEvent.click(screen.getByRole("button", { name: "Collapse Puppy One" }));
-    expect(screen.queryByRole("button", { name: "Puppy One, P1" })).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Restore Puppy One" })).toBeVisible();
-    fireEvent.click(screen.getByRole("button", { name: "Restore Puppy One" }));
-    expect(screen.getByRole("button", { name: "Puppy One, P1" })).toBeVisible();
+  it("reset restores the initial presentation and clears selection", () => {
+    const onNodeSelect = vi.fn();
+    render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} />);
+    fireEvent.click(screen.getByRole("button", { name: /Puppy One, P1/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Zoom in" }));
+    fireEvent.click(screen.getByRole("button", { name: "Reset view" }));
+    expect(onNodeSelect).toHaveBeenLastCalledWith(null);
+    expect(screen.getByText("Select a node or relationship to inspect its safe published meaning.")).toBeVisible();
   });
 });
