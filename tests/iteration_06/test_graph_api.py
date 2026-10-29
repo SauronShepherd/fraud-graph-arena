@@ -15,8 +15,10 @@ def test_graph_api_returns_bounded_initial_projection(client):
     assert body["omitted_node_count"] == 5
 
 
-def test_graph_api_rejects_expansion_of_hidden_node(client):
+def test_graph_api_does_not_expose_future_investigation_operations(client):
     round_id = _active_t02(client)
-    visible = client.post(f"/api/v1/rounds/{round_id}/graph/initial", json={"seeds": ["T2-O-BAKERY"]}).json()
-    response = client.post(f"/api/v1/rounds/{round_id}/graph/expand", json={"visible": visible, "node_id": "T2-O-ALPHA"})
-    assert response.status_code == 403
+    initial = client.post(f"/api/v1/rounds/{round_id}/graph/initial", json={"seeds": ["T2-O-BAKERY"]})
+    assert initial.status_code == 200
+    for operation in ("expand", "filter"):
+        response = client.post(f"/api/v1/rounds/{round_id}/graph/{operation}", json={})
+        assert response.status_code == 404

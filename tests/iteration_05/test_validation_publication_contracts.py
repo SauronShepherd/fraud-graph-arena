@@ -5,7 +5,7 @@ from fraud_graph_arena.canonical_persistence.models import PublicationStatus
 from fraud_graph_arena.canonical_persistence.reports import digest_report, safe_report
 
 ROOT=Path(__file__).resolve().parents[2]
-PACKAGE=next((ROOT/"case-data/canonical/v1").iterdir())
+PACKAGE=ROOT/"case-data/canonical/v1/T1_THE_MISSING_120_canonical_case_data_v3"
 
 def test_candidate_validation_rejects_wrong_snapshot():
     with pytest.raises(ValueError): validate_candidate({"bad": []}, case_id="x", snapshot_version="y")

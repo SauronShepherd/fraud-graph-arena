@@ -1,7 +1,5 @@
-import pytest
-
 from fraud_graph_arena.case_data.academy_graph import t02_graph
-from fraud_graph_arena.case_data.graph_investigation import expand, filter_relationships, initial_subset
+from fraud_graph_arena.case_data.graph_investigation import initial_subset
 
 
 def test_initial_subset_is_deterministic_and_bounded() -> None:
@@ -17,25 +15,9 @@ def test_seeded_subset_does_not_use_degree_as_guilt() -> None:
     assert result["edge_count"] == 0
 
 
-def test_expansion_is_one_hop_and_authorized_only() -> None:
+def test_initial_projection_keeps_only_relationships_with_visible_endpoints() -> None:
     graph = t02_graph()
-    visible = initial_subset(graph, seeds=["T2-O-BAKERY"])
-    expanded = expand(graph, visible, "T2-O-BAKERY")
-    assert "T2-P-CYPHER" in {node["record_id"] for node in expanded["nodes"]}
-    with pytest.raises(ValueError):
-        expand(graph, visible, "T2-O-BAKERY", depth=2)
-
-
-def test_expansion_cannot_start_from_hidden_node() -> None:
-    graph = t02_graph()
-    visible = initial_subset(graph, seeds=["T2-O-BAKERY"])
-    with pytest.raises(PermissionError):
-        expand(graph, visible, "T2-O-ALPHA")
-
-
-def test_filter_changes_view_not_nodes_or_truth() -> None:
-    graph = t02_graph()
-    filtered = filter_relationships(graph, ["DIRECT_SOURCE"])
-    assert filtered["node_count"] == graph["node_count"]
-    assert all(edge["relationship_family"] == "DIRECT_SOURCE" for edge in filtered["edges"])
-    assert filtered["relationship_filters"] == ["DIRECT_SOURCE"]
+    result = initial_subset(graph, seeds=["T2-O-BAKERY"])
+    assert result["node_count"] == 1
+    assert result["edge_count"] == 0
+    assert result["relationship_filters"] == []
