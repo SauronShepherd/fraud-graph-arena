@@ -6,6 +6,8 @@
     "lib": ["ES2022", "DOM"],
     "strict": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "typeRoots": ["../apps/web/node_modules/@types"],
     "baseUrl": ".",
     "paths": {
@@ -16,5 +18,5 @@
       "@xyflow/react": ["../apps/web/node_modules/@xyflow/react"]
     }
   },
-  "include": ["candidate-contract.ts", "harness.ts", "adapters/**/*.ts"]
+  "include": ["candidate-contract.ts", "harness.ts", "adapters/**/*.ts", "benchmark-runner.ts"]
 }
