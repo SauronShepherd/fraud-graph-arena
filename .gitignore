@@ -18,3 +18,4 @@ apps/web/test-results/
 apps/web/playwright-report/
 apps/web/*.tsbuildinfo
 coverage/
+qualification/.vite/
