@@ -10,7 +10,9 @@
     "baseUrl": ".",
     "paths": {
       "cytoscape": ["../apps/web/node_modules/cytoscape"],
-      "d3": ["../apps/web/node_modules/@types/d3/index.d.ts"]
+      "d3": ["../apps/web/node_modules/@types/d3/index.d.ts"],
+      "graphology": ["../apps/web/node_modules/graphology"],
+      "sigma": ["../apps/web/node_modules/sigma"]
     }
   },
   "include": ["candidate-contract.ts", "harness.ts", "adapters/**/*.ts"]
