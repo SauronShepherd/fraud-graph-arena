@@ -6,5 +6,7 @@
   "normative_incumbent": "Cytoscape.js",
   "commercial_finalist": null,
   "benchmark_executed": true,
-  "tests_executed": false
+  "tests_executed": true,
+  "databricks_qualification": "PASS_13_PACKAGES",
+  "databricks_security": "NOT_QUALIFIED_ADMIN_PROFILE"
 }

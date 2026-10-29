@@ -7,8 +7,10 @@
   "openapi_contract_export": "PASS",
   "local_workspace_smoke": "PASS",
   "academy_001_regression_smoke": "PASS",
-  "tests": "NOT_RUN_IN_THIS_GATE",
-  "databricks": "PROFILE_AUTHENTICATED_WAREHOUSE_BLOCKED_BY_CREDITS",
+  "tests": "PASS_PYTEST_145",
+  "frontend_tests": "PASS_VITEST_33",
+  "databricks": "PASS_FGA_LIVE_13_PACKAGES_COUNTS_TOPOLOGY_FAILURE_IDEMPOTENCY",
+  "databricks_security": "NOT_QUALIFIED_ADMIN_PROFILE",
   "fixture_sha256": "5f1e2fb89982926af4df8b6b0a512eb2bc516f6c4afa536bfadb358822e70a3b",
   "t02_topology": {"nodes": 7, "edges": 7}
 }

@@ -9,7 +9,7 @@ This ledger records the predecessor status visible in the current checkout. It d
 | FGA02 | IMPLEMENTED_EVIDENCE_STALE + PARTIAL_RUNTIME | board evidence and runtime geometry claims require current reconciliation | Reconcile before formal closure |
 | FGA03 | VERIFY_IN_REAL_GIT | source and gate artifacts exist; ZIP-style evidence cannot prove tag lineage | Verify lineage; do not reopen scope casually |
 | FGA04 | COMPLETE_SCOPED | canonical contract and truth-firewall source/tests are present | Preserve as renderer input boundary |
-| FGA05 | CLOSURE_BLOCKER | current reports and live checks still require formal predecessor closure | `fga` authentication is valid; warehouse execution is blocked by exhausted workspace credits, so formal closure remains blocked |
+| FGA05 | CLOSURE_BLOCKER | current reports still require formal predecessor release closure | FGA06 now has live `fga` sandbox evidence; this does not rewrite the predecessor's historical formal closure requirement |
 
 Deferred by design (not FGA06 defects): analytics execution, identity-candidate reveal, exact-match reveal, credits, accusation, bounded expansion, filtering, focus mode, and advanced graph accessibility.
 

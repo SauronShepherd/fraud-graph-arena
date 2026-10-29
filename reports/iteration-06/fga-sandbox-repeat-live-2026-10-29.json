@@ -1,0 +1,424 @@
+{
+  "status": "pass",
+  "attempts": 1,
+  "package_count": 13,
+  "results": [
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_cd26bd0043fe45d8908392a22cfe4e7a",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_cd26bd0043fe45d8908392a22cfe4e7a",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_b633c33760213d3738a1e0eb3d91daf5034e3ddfe4ee30a12040699c963bd673",
+        "identity": {
+          "case_id": "BONE_LEDGER",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "fba9508d11465168b57b30a13d88e4bdb9c7e16553326eac81d44f911c2de5fd"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_d1e08bc850264979a7fb120cb629cd0f",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_d1e08bc850264979a7fb120cb629cd0f",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_cc322dac0f34df86cc9a9a9aa311cb7dc088d57096fd2bd9895ab0d59c4f4670",
+        "identity": {
+          "case_id": "DOWNLINE",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "a837ada385d85f2945da1f753215cfec4588af08ee47bfec465ba097309a64c5"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_473ee3c023b743649c91f0a88a14d881",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_473ee3c023b743649c91f0a88a14d881",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_d749e98e08d4f577c510d73600d93b138430318a74f30cfa983e732e247af6c7",
+        "identity": {
+          "case_id": "PHANTOM_VET",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "79a9fd5add7508c84b1557898c8ac2211c3cfb68d10624e911ef0889ee7c9928"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_2735860286e943b59b551d7883a15eb2",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_2735860286e943b59b551d7883a15eb2",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_2059ea94f02b0de8286db7f45ec544e0156b7cc776b97b364837a47ab38d1315",
+        "identity": {
+          "case_id": "GOLDEN_HYDRANT",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "cc496b8310704ec9f4c12a9668503c149e770e9fd7f4424168f2bc400c91ae43"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_85a38bc7cd8d42479139293d1774d699",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_85a38bc7cd8d42479139293d1774d699",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "identity": {
+          "case_id": "MADDOG",
+          "case_version": "1.1.0",
+          "snapshot_version": "2026.07.19.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "d4ecacae21a2c7f967b4dbb7f059f426fa26bdc6fb3490bb24c900b93cb8db20"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_31f2c32f158c4a78af67b57b9df1662d",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_31f2c32f158c4a78af67b57b9df1662d",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "identity": {
+          "case_id": "CEO_BARKED_TWICE",
+          "case_version": "1.1.0",
+          "snapshot_version": "2026.07.19.2",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "7552f2e262f182f23586f8646c44ef09bebc8264b4361c2ee7b9bfd2fd459837"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_06d7af530de14e858601f8c0712013dd",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_06d7af530de14e858601f8c0712013dd",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "identity": {
+          "case_id": "BISCUIT_RELIEF",
+          "case_version": "1.1.0",
+          "snapshot_version": "2026.07.19.3",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "a725bda078ffef077adc0329f3c8eda2eb6f1342268a7016b8102c6e0d4836b2"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_82db26877a85434980467fa9a75b3962",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_82db26877a85434980467fa9a75b3962",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_01a3bcb02348d0c6c546cd6139eb896a44d547fbdb7a1e26ff88a47545005ee3",
+        "identity": {
+          "case_id": "LOVE_LEASHES_OFFSHORE",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "df3d19a7f9a94a86ecb767c04b5df2154ca5b3ee339c4f78bf93b9d26ef18755"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_b0854194585c49c0b597c170564ad694",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_b0854194585c49c0b597c170564ad694",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_2ca14afbba9aec557d277c2fa5e0d012d6ae7f4130717c444ac9127ae006c1cd",
+        "identity": {
+          "case_id": "CRYPTO_KENNEL_LONG_CON",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "48e8a868af22bb61dc24b802bcbc4bebcb66157c06878bd859b2993687c73f4e"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_226d6b80d4bf45d9bb37078718896b2a",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_226d6b80d4bf45d9bb37078718896b2a",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_c4c44105f4d9c8cd3dc02f4e5ee064d4fe5dea3c4a65293170bb3f08cb95a97f",
+        "identity": {
+          "case_id": "PANAMA_PAWPERS",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.19.2",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "df4dcf0f92193089a0694e7edaf106145363fd21a40d8b871c3b555846b78cce"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_b5534b75bd0747a5bad9a0234600ced0",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_b5534b75bd0747a5bad9a0234600ced0",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "identity": {
+          "case_id": "ACADEMY_T01",
+          "case_version": "3.0.0-canonical.1",
+          "snapshot_version": "2026.07.19.3",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "173ac4abbe149c928d18b1ef89a5c992adb15e5efc80c6c3b1af1a6fbd5a097c"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_d54bba24855c4e6491f15ba76ac54e07",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_d54bba24855c4e6491f15ba76ac54e07",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "identity": {
+          "case_id": "ACADEMY_T02",
+          "case_version": "3.0.0-canonical.1",
+          "snapshot_version": "2026.07.19.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "bf39a5b725d60879723447c33b18fa268401a41df8974517c34d6ace2c28a24a"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_7e83447663594b6ea936a45e3766c2bb",
+      "statements": 32,
+      "lifecycle": {
+        "status": "REUSED",
+        "run_id": "dbx_run_7e83447663594b6ea936a45e3766c2bb",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "identity": {
+          "case_id": "ACADEMY_T03",
+          "case_version": "3.0.0-canonical.1",
+          "snapshot_version": "2026.07.19.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "a3ee09ea98237f7a8f8684dce7a058f9c65b406220bfb8e8548666c19f4c0aea"
+        },
+        "statements": 2,
+        "retry": "REUSED",
+        "existing_status": "ACTIVE"
+      }
+    }
+  ],
+  "failures": []
+}

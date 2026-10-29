@@ -16,7 +16,7 @@ This audit is deliberately conservative: absence of an obvious gap is not treate
 | Commercial renderer | explicitly excluded from this OSS/non-commercial project scope | OUT_OF_SCOPE |
 | Performance measurements | raw lifecycle timings recorded; selection and hard-requirement review remain pending | RAW_EVIDENCE_ONLY |
 | Production renderer decision | ADR and executable decision gate block silent substitution until Cytoscape evidence exists | BLOCKED_PENDING_QUALIFICATION |
-| FGA05 live predecessor closure | requires live Databricks qualification; current `fga` workspace has no usable warehouse credits | BLOCKED_BY_EXTERNAL_WORKSPACE |
+| FGA05 live predecessor closure | FGA06 live sandbox qualification now passes with profile `fga`; historical formal predecessor closure still requires its own release evidence | LIVE_SANDBOX_PASS_HISTORICAL_CLOSURE_PENDING |
 | Formal two-commit/tag release qualification | requires release workflow/evidence and tests | NOT_COMPLETE |
 
 ## Scope deliberately not implemented
@@ -25,4 +25,4 @@ Bounded expansion, relationship filtering, focus mode, hairball prevention, grap
 
 ## Verification performed
 
-Python compilation, local gate, OpenAPI export, frontend typecheck/build, in-memory T02/ACADEMY_001 workspace smoke checks, JSON parsing, fixture hashing, and diff hygiene were performed. Test runners were not executed and Databricks was not accessed.
+Python compilation, local gate, OpenAPI export, frontend typecheck/build, in-memory T02/ACADEMY_001 workspace smoke checks, JSON parsing, fixture hashing, `pytest` (145 passed), Vitest (33 passed), and live Databricks qualification were performed. The `fga` admin identity cannot qualify the non-admin denial test.

@@ -1,8 +1,8 @@
 {
   "iteration": "FGA06",
-  "classification": "LOCAL_IMPLEMENTATION_ONLY",
+  "classification": "LIVE_SANDBOX_QUALIFIED_HISTORICAL_CLOSURE_PENDING",
   "git_metadata_available": true,
-  "databricks_qualification": "FGA_PROFILE_AUTHENTICATED_WAREHOUSE_BLOCKED_BY_CREDITS",
+  "databricks_qualification": "FGA_PROFILE_LIVE_SANDBOX_PASS_13_PACKAGES",
   "formal_closure": "BLOCKED_PENDING_PREDECESSOR_AND_QUALIFICATION_EVIDENCE",
   "evidence_files": [
     "docs/iteration-06/PRIOR_ITERATION_GAPS.md",
