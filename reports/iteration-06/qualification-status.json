@@ -1,10 +1,10 @@
 {
   "fixture": "qualification/fixture-v1.json",
   "fixture_scope": {"nodes": 4, "edges": 3},
-  "candidate_runs": [],
+  "candidate_runs": ["reports/iteration-06/renderer-raw-measurements-2026-10-29.json"],
   "decision": "BLOCKED_PENDING_QUALIFICATION",
   "normative_incumbent": "Cytoscape.js",
   "commercial_finalist": null,
-  "benchmark_executed": false,
+  "benchmark_executed": true,
   "tests_executed": false
 }

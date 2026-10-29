@@ -7,4 +7,5 @@
 | Keep graph replaceable | Build plan §7.3 and §19 | TypeScript graph contract contains only FGA IDs/data |
 | Preserve semantic path | Build plan §7.5, §19.6 | Graph viewport enumerates nodes/edges as HTML |
 | Do not expose truth/analytics | Build plan §7.2 and §24 | Source audit excludes `truth`, candidates, and exact matches |
-| Do not close predecessor live gate | Build plan §4A.8 | Explicitly recorded as a blocker; no external command run |
+| Preserve predecessor lineage | Build plan §4A and FGA00-05 branch history | `FGA-05` is an ancestor of `FGA-06`; FGA01-04 foundations are present through the shared history |
+| Do not close predecessor live gate without evidence | Build plan §4A.8 | `fga` authentication was verified; current workspace warehouse start is blocked by exhausted credits |

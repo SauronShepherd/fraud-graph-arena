@@ -2,7 +2,7 @@
   "iteration": "FGA06",
   "classification": "LOCAL_IMPLEMENTATION_ONLY",
   "git_metadata_available": true,
-  "databricks_qualification": "NOT_RUN_BY_USER_INSTRUCTION",
+  "databricks_qualification": "FGA_PROFILE_AUTHENTICATED_WAREHOUSE_BLOCKED_BY_CREDITS",
   "formal_closure": "BLOCKED_PENDING_PREDECESSOR_AND_QUALIFICATION_EVIDENCE",
   "evidence_files": [
     "docs/iteration-06/PRIOR_ITERATION_GAPS.md",
