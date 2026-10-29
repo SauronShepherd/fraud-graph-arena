@@ -1,4 +1,5 @@
 import fixture from "./fixture-v1.json";
+import fixtureRaw from "./fixture-v1.json?raw";
 import { cytoscapeCandidate } from "./adapters/cytoscape";
 import { d3Candidate } from "./adapters/d3";
 import { reactFlowCandidate } from "./adapters/react-flow";
@@ -26,9 +27,14 @@ function runCandidate(candidate: QualificationCandidate): ReturnType<typeof buil
   return buildHarnessResult(candidate, nodes, edges, runs);
 }
 
-function runAll(): void {
+async function sha256(value: string): Promise<string> {
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+async function runAll(): Promise<void> {
   const results = candidates.map(runCandidate);
-  const report = { fixture_sha256: "REPLACE_WITH_SHA256_OF_QUALIFICATION_FIXTURE", environment: { browser: navigator.userAgent, os: "RECORD_HOST_OS", viewport: `${innerWidth}x${innerHeight}`, node_version: "RECORD_NODE_VERSION" }, candidates: results, status: "RAW_MEASUREMENTS_NOT_QUALIFIED" };
+  const report = { fixture_sha256: await sha256(fixtureRaw), environment: { browser: navigator.userAgent, os: "browser-host-not-exposed", viewport: `${innerWidth}x${innerHeight}`, node_version: "browser-runner-not-applicable" }, candidates: results, status: "RAW_MEASUREMENTS_NOT_QUALIFIED", interaction_status: "MANUAL_SELECTION_REVIEW_REQUIRED" };
   if (output) output.textContent = JSON.stringify(report, null, 2);
 }
 

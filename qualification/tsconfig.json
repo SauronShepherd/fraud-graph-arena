@@ -18,5 +18,5 @@
       "@xyflow/react": ["../apps/web/node_modules/@xyflow/react"]
     }
   },
-  "include": ["candidate-contract.ts", "harness.ts", "adapters/**/*.ts", "benchmark-runner.ts"]
+  "include": ["candidate-contract.ts", "harness.ts", "adapters/**/*.ts", "benchmark-runner.ts", "vite-env.d.ts"]
 }

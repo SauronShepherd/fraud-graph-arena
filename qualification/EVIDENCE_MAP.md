@@ -14,7 +14,7 @@ This map is intentionally conservative. A local implementation artifact is not t
 | Normative renderer decision rule | `decision.py`, ADR-0001 | Implemented, evidence pending |
 | Cytoscape.js qualification | Exact package, lifecycle run, benchmark, license report | Outstanding |
 | Sigma.js/D3/React Flow comparison | Exact adapters, lifecycle runs, benchmark reports | Outstanding |
-| Commercial finalist review | Named product and redistribution evidence | Outstanding |
+| Commercial renderer review | Deliberately excluded from this OSS/non-commercial project scope | Out of scope |
 | Formal FGA06 release gate | Clean-candidate qualification, closure evidence, immutable tag | Outstanding |
 
 The outstanding rows require execution and/or external evidence. They must not be represented as complete by changing status files alone.

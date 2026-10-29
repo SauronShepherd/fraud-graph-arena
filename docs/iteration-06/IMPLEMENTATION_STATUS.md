@@ -12,11 +12,11 @@ This audit is deliberately conservative: absence of an obvious gap is not treate
 | Board selection owns IDs, not actions | `BoardPage` selection state and no investigation endpoint | COMPLETE_LOCALLY |
 | Qualification fixture and frozen criteria | `qualification/fixture-v1.json`, requirements, envelope, schema, shared lifecycle harness, report validator | IMPLEMENTED_NOT_MEASURED |
 | Candidate registry and decision gate | explicit registry, inventory audit, and normative Cytoscape decision evaluator | COMPLETE_LOCALLY |
-| Cytoscape/Sigma/D3/React Flow comparison | candidate inventory exists; no exact packages/runs recorded | NOT_COMPLETE |
-| Named commercial finalist/licence review | no finalist selected | NOT_COMPLETE |
-| Performance measurements | envelope exists; benchmark report has no runs | NOT_COMPLETE |
+| Cytoscape/Sigma/D3/React Flow comparison | exact versions, four adapters, shared A/B runner and raw report are present | RAW_EVIDENCE_ONLY |
+| Commercial renderer | explicitly excluded from this OSS/non-commercial project scope | OUT_OF_SCOPE |
+| Performance measurements | raw lifecycle timings recorded; selection and hard-requirement review remain pending | RAW_EVIDENCE_ONLY |
 | Production renderer decision | ADR and executable decision gate block silent substitution until Cytoscape evidence exists | BLOCKED_PENDING_QUALIFICATION |
-| FGA05 live predecessor closure | requires external Databricks qualification | BLOCKED_BY_USER_CONSTRAINT |
+| FGA05 live predecessor closure | requires live Databricks qualification; current `fga` workspace has no usable warehouse credits | BLOCKED_BY_EXTERNAL_WORKSPACE |
 | Formal two-commit/tag release qualification | requires release workflow/evidence and tests | NOT_COMPLETE |
 
 ## Scope deliberately not implemented
