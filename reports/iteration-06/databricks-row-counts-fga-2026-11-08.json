@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "table_count": 32,
+  "mismatch_count": 0,
+  "comparison": "active_publication_rows_against_local_corpus; historical_rows_reported_separately",
+  "mismatches": []
+}

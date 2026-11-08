@@ -1,12 +1,34 @@
 {
   "fixture": "qualification/fixture-v1.json",
-  "fixture_scope": {"nodes": 4, "edges": 3},
-  "candidate_runs": ["reports/iteration-06/renderer-raw-measurements-2026-10-29.json"],
-  "decision": "BLOCKED_PENDING_QUALIFICATION",
+  "fixture_scope": {"nodes": 18, "edges": 26},
+  "candidate_runs": [
+    "reports/iteration-06/renderer-comparison-fga-2026-11-03.json"
+  ],
+  "historical_candidate_runs": [
+    "reports/iteration-06/renderer-raw-measurements-2026-10-29.json"
+  ],
+  "decision": "QUALIFIED_CYTOSCAPE_INCUMBENT",
   "normative_incumbent": "Cytoscape.js",
   "commercial_finalist": null,
   "benchmark_executed": true,
   "tests_executed": true,
   "databricks_qualification": "PASS_13_PACKAGES",
-  "databricks_security": "NOT_QUALIFIED_ADMIN_PROFILE"
+  "databricks_security": "NOT_QUALIFIED_ADMIN_PROFILE",
+  "databricks_profile": "fga",
+  "databricks_catalog": "workspace",
+  "databricks_schema": "fga_sandbox",
+  "databricks_warehouse": "7c640666d4d3eb61",
+  "databricks_security_report": "reports/iteration-06/databricks-security-fga-2026-11-08.json",
+  "databricks_structure_report": "reports/iteration-06/databricks-structure-fga-2026-11-08.json",
+  "databricks_row_count_report": "reports/iteration-06/databricks-row-counts-fga-2026-11-08.json",
+  "databricks_idempotency_report": "reports/iteration-06/databricks-all-packages-fga-2026-11-08.json",
+  "renderer_comparison_report": "reports/iteration-06/renderer-comparison-fga-2026-11-03.json",
+  "renderer_performance_report": "reports/iteration-06/renderer-performance-fga-2026-11-08.json",
+  "renderer_qualification_report": "reports/iteration-06/renderer-cytoscape-qualification-fga-2026-11-08.json",
+  "renderer_visual_observation": "docs/iteration-06/interaction-notes.md",
+  "renderer_manual_review": "reports/iteration-06/renderer-manual-review-fga-2026-11-08.json",
+  "renderer_screenshot": "reports/iteration-06/renderer-exhibit-manual-2026-11-03.png",
+  "renderer_fixture_sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef",
+  "renderer_automatic_status": "PASS_ALL_4_CANDIDATES",
+  "renderer_manual_review_status": "PASS_ANALYST_REVIEW"
 }

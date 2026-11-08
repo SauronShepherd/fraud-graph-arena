@@ -1,0 +1,241 @@
+{
+  "schema": "fga06-renderer-comparison-v3",
+  "generated_at": "2026-11-08T03:37:12.527Z",
+  "fixture_sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef",
+  "fixture": {
+    "version": "1",
+    "nodes": 18,
+    "edges": 26
+  },
+  "candidates": [
+    {
+      "candidate": "Cytoscape.js",
+      "version": "3.34.4",
+      "automatic_status": "PASS",
+      "result": {
+        "candidate": "Cytoscape.js",
+        "candidateVersion": "3.34.4",
+        "fixtureNodeCount": 18,
+        "fixtureEdgeCount": 26,
+        "runs": [
+          {
+            "runNumber": 1,
+            "mode": "A_RENDERER",
+            "measurements": {
+              "mountMs": 24.200000017881393,
+              "fitMs": 4.4000000059604645,
+              "viewportMs": 0.3999999761581421,
+              "resizeMs": 0.20000001788139343,
+              "probeNodeMs": 0.19999998807907104,
+              "probeEdgeMs": 0.09999999403953552,
+              "destroyMs": 1.100000023841858,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          },
+          {
+            "runNumber": 2,
+            "mode": "B_SOLUTION",
+            "measurements": {
+              "mountMs": 20.099999994039536,
+              "fitMs": 2.199999988079071,
+              "viewportMs": 0.10000002384185791,
+              "resizeMs": 0.09999999403953552,
+              "probeNodeMs": 0,
+              "probeEdgeMs": 0,
+              "destroyMs": 0.19999998807907104,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          }
+        ]
+      },
+      "manual_review": {
+        "selection": false,
+        "viewport": false,
+        "semantic": false,
+        "resize": false,
+        "cleanup": false
+      },
+      "manual_checks": 0
+    },
+    {
+      "candidate": "Sigma.js",
+      "version": "4.0.3",
+      "automatic_status": "PASS",
+      "result": {
+        "candidate": "Sigma.js",
+        "candidateVersion": "4.0.3",
+        "fixtureNodeCount": 18,
+        "fixtureEdgeCount": 26,
+        "runs": [
+          {
+            "runNumber": 1,
+            "mode": "A_RENDERER",
+            "measurements": {
+              "mountMs": 238.30000001192093,
+              "fitMs": 0,
+              "viewportMs": 0.09999999403953552,
+              "resizeMs": 4.4000000059604645,
+              "probeNodeMs": 0.09999999403953552,
+              "probeEdgeMs": 0.09999999403953552,
+              "destroyMs": 924,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          },
+          {
+            "runNumber": 2,
+            "mode": "B_SOLUTION",
+            "measurements": {
+              "mountMs": 112.09999999403954,
+              "fitMs": 0,
+              "viewportMs": 0,
+              "resizeMs": 2.0999999940395355,
+              "probeNodeMs": 0,
+              "probeEdgeMs": 0,
+              "destroyMs": 1105.7000000178814,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          }
+        ]
+      },
+      "manual_review": {
+        "selection": false,
+        "viewport": false,
+        "semantic": false,
+        "resize": false,
+        "cleanup": false
+      },
+      "manual_checks": 0
+    },
+    {
+      "candidate": "D3",
+      "version": "7.9.0",
+      "automatic_status": "PASS",
+      "result": {
+        "candidate": "D3",
+        "candidateVersion": "7.9.0",
+        "fixtureNodeCount": 18,
+        "fixtureEdgeCount": 26,
+        "runs": [
+          {
+            "runNumber": 1,
+            "mode": "A_RENDERER",
+            "measurements": {
+              "mountMs": 6.399999976158142,
+              "fitMs": 2,
+              "viewportMs": 1.600000023841858,
+              "resizeMs": 1.399999976158142,
+              "probeNodeMs": 0.20000001788139343,
+              "probeEdgeMs": 0.09999999403953552,
+              "destroyMs": 0,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          },
+          {
+            "runNumber": 2,
+            "mode": "B_SOLUTION",
+            "measurements": {
+              "mountMs": 1.7000000178813934,
+              "fitMs": 1.699999988079071,
+              "viewportMs": 1.7000000178813934,
+              "resizeMs": 2.899999976158142,
+              "probeNodeMs": 0.10000002384185791,
+              "probeEdgeMs": 0.09999999403953552,
+              "destroyMs": 0,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          }
+        ]
+      },
+      "manual_review": {
+        "selection": false,
+        "viewport": false,
+        "semantic": false,
+        "resize": false,
+        "cleanup": false
+      },
+      "manual_checks": 0
+    },
+    {
+      "candidate": "React Flow",
+      "version": "12.12.0",
+      "automatic_status": "PASS",
+      "result": {
+        "candidate": "React Flow",
+        "candidateVersion": "12.12.0",
+        "fixtureNodeCount": 18,
+        "fixtureEdgeCount": 26,
+        "runs": [
+          {
+            "runNumber": 1,
+            "mode": "A_RENDERER",
+            "measurements": {
+              "mountMs": 2.9000000059604645,
+              "fitMs": 0,
+              "viewportMs": 0,
+              "resizeMs": 0,
+              "probeNodeMs": 0,
+              "probeEdgeMs": 0,
+              "destroyMs": 7,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          },
+          {
+            "runNumber": 2,
+            "mode": "B_SOLUTION",
+            "measurements": {
+              "mountMs": 0.20000001788139343,
+              "fitMs": 0,
+              "viewportMs": 0,
+              "resizeMs": 0,
+              "probeNodeMs": 0,
+              "probeEdgeMs": 0,
+              "destroyMs": 0.19999998807907104,
+              "selectedNodeId": null,
+              "selectedEdgeId": "FIX-E-0000",
+              "probedNodeId": "FIX-N-0000",
+              "probedEdgeId": "FIX-E-0000",
+              "callbackEvents": 2
+            }
+          }
+        ]
+      },
+      "manual_review": {
+        "selection": false,
+        "viewport": false,
+        "semantic": false,
+        "resize": false,
+        "cleanup": false
+      },
+      "manual_checks": 0
+    }
+  ],
+  "decision": "PENDING_MANUAL_AND_HARD_REQUIREMENT_REVIEW"
+}

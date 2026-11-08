@@ -68,6 +68,8 @@ export const svgBaselineCandidate: QualificationCandidate = {
       fit: () => { state.viewport = { zoom: 1, panX: 0, panY: 0 }; render(state); },
       setViewport: (viewport: FgaViewport) => { state.viewport = viewport; render(state); },
       resize: () => { render(state); },
+      probeNode: (id: string) => { root.querySelector<SVGGElement>(`g[data-node-id="${id}"]`)?.dispatchEvent(new MouseEvent("click", { bubbles: true })); },
+      probeEdge: (id: string) => { root.querySelector<SVGLineElement>(`line[data-edge-id="${id}"]`)?.dispatchEvent(new MouseEvent("click", { bubbles: true })); },
       destroy: () => { root.replaceChildren(); root.remove(); },
     };
   },

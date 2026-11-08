@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { GraphViewport } from "./GraphViewport";
 import type { Graph } from "../api/contracts";
@@ -19,14 +19,17 @@ describe("GraphViewport", () => {
     const onNodeSelect = vi.fn();
     const onEdgeSelect = vi.fn();
     render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} onEdgeSelect={onEdgeSelect} />);
-    expect(screen.getByText("2 nodes · 1 relationships")).toBeVisible();
+    expect(screen.getByText("2 entities · 1 relationships")).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: "Zoom in" }));
     fireEvent.click(screen.getByRole("button", { name: "Circle layout" }));
     fireEvent.click(screen.getByText("Semantic evidence list"));
     fireEvent.click(screen.getByRole("button", { name: /Puppy One \(P1\)/ }));
     expect(onNodeSelect).toHaveBeenCalledWith("P1");
+    expect(screen.getByText("Connected relationships")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: /WORKS_FOR.*Office One/ }));
     fireEvent.click(screen.getByRole("button", { name: /WORKS_FOR: P1 → O1/ }));
     expect(onEdgeSelect).toHaveBeenCalledWith("E1");
+    expect(screen.getByText("Safe relationship meaning")).toBeVisible();
   });
 
   it("reset restores the initial presentation and clears selection", () => {
@@ -36,6 +39,40 @@ describe("GraphViewport", () => {
     fireEvent.click(screen.getByRole("button", { name: "Zoom in" }));
     fireEvent.click(screen.getByRole("button", { name: "Reset view" }));
     expect(onNodeSelect).toHaveBeenLastCalledWith(null);
-    expect(screen.getByText("Select a node or relationship to inspect its safe published meaning.")).toBeVisible();
+    expect(screen.getByText("Select a node or relationship to inspect its player-safe identity, connections and provenance.")).toBeVisible();
+  });
+
+  it("navigates from an edge dossier to its source and target", () => {
+    const onNodeSelect = vi.fn();
+    const onEdgeSelect = vi.fn();
+    render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} onEdgeSelect={onEdgeSelect} />);
+    fireEvent.click(screen.getByRole("button", { name: /WORKS_FOR: P1 → O1/ }));
+    expect(screen.getByText("Safe relationship meaning")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: /Office One target/ }));
+    expect(onNodeSelect).toHaveBeenLastCalledWith("O1");
+    expect(screen.getByText("Connected relationships")).toBeVisible();
+  });
+
+  it("previews, marks and centers targets, and manages removable working relationships", () => {
+    render(<GraphViewport graph={graph} />);
+    const puppy = screen.getByRole("button", { name: "Puppy One, P1" });
+    fireEvent.mouseEnter(puppy);
+    expect(screen.getByText("Hover preview · node")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Add to highlights" }));
+    expect(screen.getByRole("button", { name: "Remove from highlights" })).toBeVisible();
+    expect(screen.getByRole("button", { name: /Puppy One, P1, marked/ })).toHaveClass("graph-node--favorite");
+    fireEvent.click(puppy);
+    expect(screen.getByRole("button", { name: "Remove from highlights" })).toBeVisible();
+    expect(screen.getByRole("button", { name: /Puppy One, P1, marked/ }).querySelector(".graph-node-favorite-ring")).not.toBeNull();
+    expect(screen.getByRole("button", { name: "Remove from highlights" })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Center on graph" }));
+    expect(screen.getByRole("region", { name: "Marked graph targets" })).toBeVisible();
+    fireEvent.click(within(screen.getByRole("region", { name: "Marked graph targets" })).getByRole("button", { name: /^◉ Puppy One$/ }));
+
+    fireEvent.click(screen.getByRole("button", { name: "Add relationship" }));
+    fireEvent.click(screen.getByRole("button", { name: "Add dashed relationship" }));
+    expect(screen.getByText("Dashed working relationship · removable local investigation state")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Delete working relationship" }));
+    expect(screen.queryByText("Dashed working relationship · removable local investigation state")).not.toBeInTheDocument();
   });
 });

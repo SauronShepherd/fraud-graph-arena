@@ -1,5 +1,7 @@
-export type FgaNode = { id: string; recordType: string; label: string; x: number; y: number };
-export type FgaEdge = { id: string; sourceId: string; targetId: string; relationshipFamily: string; relationshipType: string; directed: boolean };
+import type { InvestigationStatus } from "./visual-semantics";
+
+export type FgaNode = { id: string; recordType: string; label: string; x: number; y: number; investigationStatus?: InvestigationStatus; icon?: string; clusterId?: string };
+export type FgaEdge = { id: string; sourceId: string; targetId: string; relationshipFamily: string; relationshipType: string; directed: boolean; confidence?: string };
 export type FgaViewport = { zoom: number; panX: number; panY: number };
 
 /** Candidate adapters may wrap a library, but native library objects stop here. */
@@ -9,6 +11,8 @@ export interface QualificationCandidate {
   mount(container: HTMLElement, nodes: readonly FgaNode[], edges: readonly FgaEdge[], callbacks: {
     onNodeSelect(id: string | null): void;
     onEdgeSelect(id: string | null): void;
+    onNodeHover?(id: string | null): void;
+    onEdgeHover?(id: string | null): void;
   }): CandidateInstance;
 }
 
@@ -16,6 +20,9 @@ export interface CandidateInstance {
   fit(): void;
   setViewport(viewport: FgaViewport): void;
   resize(): void;
+  /** Drive the same selection callback path used by the adapter's UI events. */
+  probeNode(id: string): void;
+  probeEdge(id: string): void;
   destroy(): void;
 }
 

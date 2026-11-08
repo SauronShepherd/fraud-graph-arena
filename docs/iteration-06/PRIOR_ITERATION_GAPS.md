@@ -1,6 +1,6 @@
 # FGA06 prior-iteration gap ledger
 
-This ledger records the predecessor status visible in the current checkout. It does not rewrite historical reports and does not claim Databricks qualification.
+This ledger records the predecessor status visible in the current checkout. It does not rewrite historical reports. Current `FGA-06` evidence is kept separate from the historical predecessor closure records.
 
 | Iteration | Classification | Evidence observed | FGA06 disposition |
 |---|---|---|---|
@@ -9,10 +9,10 @@ This ledger records the predecessor status visible in the current checkout. It d
 | FGA02 | IMPLEMENTED_EVIDENCE_STALE + PARTIAL_RUNTIME | board evidence and runtime geometry claims require current reconciliation | Reconcile before formal closure |
 | FGA03 | VERIFY_IN_REAL_GIT | source and gate artifacts exist; ZIP-style evidence cannot prove tag lineage | Verify lineage; do not reopen scope casually |
 | FGA04 | COMPLETE_SCOPED | canonical contract and truth-firewall source/tests are present | Preserve as renderer input boundary |
-| FGA05 | CLOSURE_BLOCKER | current reports still require formal predecessor release closure | FGA06 now has live `fga` sandbox evidence; this does not rewrite the predecessor's historical formal closure requirement |
+| FGA05 | CLOSURE_BLOCKER | historical formal predecessor release closure is still not reconstructed from one frozen release candidate | FGA06 now has current live `fga` sandbox evidence: 13 packages, 44 objects, 32 active tables and an idempotent rerun; this does not rewrite the predecessor's historical formal closure requirement |
 
 Deferred by design (not FGA06 defects): analytics execution, identity-candidate reveal, exact-match reveal, credits, accusation, bounded expansion, filtering, focus mode, and advanced graph accessibility.
 
 ## Current evidence policy
 
-Local compilation, schema/JSON parsing, benchmark runs and live Databricks evidence are kept separate. A raw renderer timing report is not a qualification decision, and a live sandbox pass does not rewrite a predecessor's immutable closure record.
+Local compilation, schema/JSON parsing, browser comparison and live Databricks evidence are kept separate. `reports/iteration-06/databricks-qualification-current.json` is historical/stale evidence for the old `sda_dev` workspace; the current `fga` evidence is named explicitly in `reports/iteration-06/qualification-status.json`. A raw renderer timing report is not a qualification decision, and a live sandbox pass does not rewrite a predecessor's immutable closure record.

@@ -1,0 +1,264 @@
+{
+  "schema": "fga06-renderer-qualification-v1",
+  "generated_at": "2026-11-08T03:23:50.884299+00:00",
+  "candidate": "Cytoscape.js",
+  "candidate_version": "3.34.4",
+  "fixture_sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef",
+  "source_commit": "1bd52f9b664db74f2e7ef6b015d77d35dbee2506",
+  "environment": {
+    "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+    "viewport": "1280x720",
+    "devicePixelRatio": 1,
+    "longtask_observer_supported": true,
+    "os": "Windows host (Chromium UA)",
+    "node_version": "v26.13.0"
+  },
+  "runs": [
+    {
+      "runNumber": 1,
+      "mode": "A_RENDERER",
+      "measurements": {
+        "mountMs": 18.200000002980232,
+        "fitMs": 2.3999999910593033,
+        "viewportMs": 0.30000001192092896,
+        "resizeMs": 0.09999999403953552,
+        "probeNodeMs": 0.20000000298023224,
+        "probeEdgeMs": 0,
+        "destroyMs": 0.5999999940395355,
+        "selectedNodeId": null,
+        "selectedEdgeId": "FIX-E-0000",
+        "probedNodeId": "FIX-N-0000",
+        "probedEdgeId": "FIX-E-0000",
+        "callbackEvents": 2
+      },
+      "run_number": 1
+    },
+    {
+      "runNumber": 2,
+      "mode": "B_SOLUTION",
+      "measurements": {
+        "mountMs": 12.399999991059303,
+        "fitMs": 1.1000000089406967,
+        "viewportMs": 0.09999999403953552,
+        "resizeMs": 0,
+        "probeNodeMs": 0,
+        "probeEdgeMs": 0,
+        "destroyMs": 0.20000000298023224,
+        "selectedNodeId": null,
+        "selectedEdgeId": "FIX-E-0000",
+        "probedNodeId": "FIX-N-0000",
+        "probedEdgeId": "FIX-E-0000",
+        "callbackEvents": 2
+      },
+      "run_number": 2
+    }
+  ],
+  "hard_requirements": {
+    "H01 semantic node styling": "PASS",
+    "H02 semantic relationship styling": "PASS",
+    "H03 stable FGA node IDs": "PASS",
+    "H04 stable FGA edge IDs": "PASS",
+    "H05 zoom and pan": "PASS",
+    "H06 programmatic fit/reset": "PASS",
+    "H07 preset positions": "PASS",
+    "H08 predictable resize": "PASS",
+    "H09 lifecycle cleanup": "PASS",
+    "H10 persistent details": "PASS",
+    "H11 project-owned semantic fallback": "PASS",
+    "H12 measured performance": "PASS",
+    "H13 production maturity": "PASS",
+    "H14 compatible license": "PASS",
+    "H15 no native objects in app contracts": "PASS"
+  },
+  "license": {
+    "package": "cytoscape",
+    "version": "3.34.4",
+    "spdx": "MIT",
+    "redistribution_status": "ALLOWED",
+    "supply_chain": "direct dependency has no installed transitive dependencies"
+  },
+  "automatic_evidence": {
+    "comparison": "fga06-renderer-comparison-v3",
+    "status": "PASS",
+    "selection_probes": [
+      {
+        "runNumber": 1,
+        "mode": "A_RENDERER",
+        "measurements": {
+          "mountMs": 18.200000002980232,
+          "fitMs": 2.3999999910593033,
+          "viewportMs": 0.30000001192092896,
+          "resizeMs": 0.09999999403953552,
+          "probeNodeMs": 0.20000000298023224,
+          "probeEdgeMs": 0,
+          "destroyMs": 0.5999999940395355,
+          "selectedNodeId": null,
+          "selectedEdgeId": "FIX-E-0000",
+          "probedNodeId": "FIX-N-0000",
+          "probedEdgeId": "FIX-E-0000",
+          "callbackEvents": 2
+        }
+      },
+      {
+        "runNumber": 2,
+        "mode": "B_SOLUTION",
+        "measurements": {
+          "mountMs": 12.399999991059303,
+          "fitMs": 1.1000000089406967,
+          "viewportMs": 0.09999999403953552,
+          "resizeMs": 0,
+          "probeNodeMs": 0,
+          "probeEdgeMs": 0,
+          "destroyMs": 0.20000000298023224,
+          "selectedNodeId": null,
+          "selectedEdgeId": "FIX-E-0000",
+          "probedNodeId": "FIX-N-0000",
+          "probedEdgeId": "FIX-E-0000",
+          "callbackEvents": 2
+        }
+      }
+    ]
+  },
+  "manual_review": {
+    "candidate": "Cytoscape.js",
+    "version": "3.34.4",
+    "status": "PASS",
+    "checks": {
+      "selection": true,
+      "viewport": true,
+      "semantic": true,
+      "resize": true,
+      "cleanup": true
+    },
+    "screenshot": "reports/iteration-06/renderer-1-manual-2026-11-08.png",
+    "notes": "Complete directed topology, readable labels, semantic glyph/shape/status treatment and persistent node dossier."
+  },
+  "performance": {
+    "candidate": "Cytoscape.js",
+    "version": "3.34.4",
+    "repetitions": 12,
+    "samples": [
+      {
+        "firstUsefulRenderMs": 118.9,
+        "selectionVisibleMs": 0.2,
+        "fitMs": 11.6,
+        "resizeMs": 11.2,
+        "cleanupMs": 9.5
+      },
+      {
+        "firstUsefulRenderMs": 64,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 13.3,
+        "resizeMs": 11.1,
+        "cleanupMs": 7.4
+      },
+      {
+        "firstUsefulRenderMs": 52.4,
+        "selectionVisibleMs": 0,
+        "fitMs": 8.2,
+        "resizeMs": 23.3,
+        "cleanupMs": 8.3
+      },
+      {
+        "firstUsefulRenderMs": 53.1,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 8,
+        "resizeMs": 11.1,
+        "cleanupMs": 7.9
+      },
+      {
+        "firstUsefulRenderMs": 88.9,
+        "selectionVisibleMs": 0,
+        "fitMs": 6.4,
+        "resizeMs": 14,
+        "cleanupMs": 6.8
+      },
+      {
+        "firstUsefulRenderMs": 70.8,
+        "selectionVisibleMs": 0.2,
+        "fitMs": 12.3,
+        "resizeMs": 7.4,
+        "cleanupMs": 8.1
+      },
+      {
+        "firstUsefulRenderMs": 105.3,
+        "selectionVisibleMs": 0.3,
+        "fitMs": 10.8,
+        "resizeMs": 10,
+        "cleanupMs": 8.3
+      },
+      {
+        "firstUsefulRenderMs": 64.2,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 10.3,
+        "resizeMs": 10.7,
+        "cleanupMs": 11.2
+      },
+      {
+        "firstUsefulRenderMs": 69.5,
+        "selectionVisibleMs": 0.2,
+        "fitMs": 11.1,
+        "resizeMs": 10.6,
+        "cleanupMs": 8.3
+      },
+      {
+        "firstUsefulRenderMs": 79.9,
+        "selectionVisibleMs": 0,
+        "fitMs": 7.5,
+        "resizeMs": 5.6,
+        "cleanupMs": 16.8
+      },
+      {
+        "firstUsefulRenderMs": 42.4,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 10.6,
+        "resizeMs": 13,
+        "cleanupMs": 8.4
+      },
+      {
+        "firstUsefulRenderMs": 47.1,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 9.9,
+        "resizeMs": 8.7,
+        "cleanupMs": 15.3
+      }
+    ],
+    "summary": {
+      "firstUsefulRenderMs": {
+        "p50": 64.2,
+        "p95": 118.9,
+        "max": 118.9
+      },
+      "selectionVisibleMs": {
+        "p50": 0.1,
+        "p95": 0.3,
+        "max": 0.3
+      },
+      "fitMs": {
+        "p50": 10.3,
+        "p95": 13.3,
+        "max": 13.3
+      },
+      "resizeMs": {
+        "p50": 10.7,
+        "p95": 23.3,
+        "max": 23.3
+      },
+      "cleanupMs": {
+        "p50": 8.3,
+        "p95": 16.8,
+        "max": 16.8
+      }
+    },
+    "longTaskCount": 4,
+    "longTaskTotalMs": 254,
+    "envelope": {
+      "firstUsefulRender": true,
+      "selectionVisible": true,
+      "fit": true,
+      "resize": true,
+      "pass": true
+    }
+  },
+  "decision": "QUALIFIED"
+}

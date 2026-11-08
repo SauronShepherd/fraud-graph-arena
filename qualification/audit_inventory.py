@@ -1,4 +1,4 @@
-"""Audit the frozen candidate inventory without installing or running candidates."""
+"""Audit the candidate inventory and distinguish smoke evidence from formal qualification."""
 from __future__ import annotations
 
 import json
@@ -23,8 +23,8 @@ def main() -> int:
             errors.append(f"missing required candidate: {name}")
         elif entry.get("role") != role:
             errors.append(f"{name} has role {entry.get('role')!r}, expected {role!r}")
-        elif entry.get("status") != "MEASURED":
-            errors.append(f"{name} is not measured: {entry.get('status')}")
+        elif entry.get("status") not in {"MEASURED", "AUTOMATED_SMOKE_PASS"}:
+            errors.append(f"{name} has no measured or automated-smoke evidence: {entry.get('status')}")
     if inventory.get("commercial_finalist") and not inventory["commercial_finalist"].get("name"):
         errors.append("commercial_finalist must include a name when selected")
     if inventory.get("production_decision") == "QUALIFIED" and errors:

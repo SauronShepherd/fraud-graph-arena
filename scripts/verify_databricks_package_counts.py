@@ -30,19 +30,19 @@ def main() -> int:
             with csv_path.open(newline="", encoding="utf-8") as fh:
                 counts[table] = counts.get(table, 0) + max(0, sum(1 for _ in fh) - 1)
 
-    selects = [f"SELECT '{table}' AS table_name, COUNT(*) AS row_count, COUNT(_publication_id) AS publication_rows, COUNT(_load_run_id) AS run_rows FROM {table}" for table in sorted(counts)]
+    selects = [f"SELECT '{table}' AS table_name, COUNT(*) AS historical_rows, COUNT_IF(_publication_id IN (SELECT active_publication_id FROM fga_active_publications)) AS active_rows, COUNT(_publication_id) AS publication_rows, COUNT(_load_run_id) AS run_rows FROM {table}" for table in sorted(counts)]
     payload = {"statement": " UNION ALL ".join(selects), "warehouse_id": args.warehouse, "wait_timeout": "50s", "catalog": args.catalog, "schema": args.schema}
     response = subprocess.run(["databricks", "api", "post", "/api/2.0/sql/statements", "--profile", args.profile, "--json", json.dumps(payload)], cwd=root, capture_output=True, text=True, check=True)
     body = json.loads(response.stdout)
     if body.get("status", {}).get("state") != "SUCCEEDED":
         raise SystemExit(json.dumps(body))
-    observed = {row[0]: {"live_rows": int(row[1]), "publication_rows": int(row[2]), "run_rows": int(row[3])} for row in body.get("result", {}).get("data_array", [])}
+    observed = {row[0]: {"historical_rows": int(row[1]), "active_rows": int(row[2]), "publication_rows": int(row[3]), "run_rows": int(row[4])} for row in body.get("result", {}).get("data_array", [])}
     mismatches = []
     for table, expected in counts.items():
-        actual = observed.get(table, {"live_rows": -1, "publication_rows": -1, "run_rows": -1})
-        if actual["live_rows"] != expected or actual["publication_rows"] != expected or actual["run_rows"] != expected:
+        actual = observed.get(table, {"historical_rows": -1, "active_rows": -1, "publication_rows": -1, "run_rows": -1})
+        if actual["active_rows"] != expected or actual["publication_rows"] != actual["historical_rows"] or actual["run_rows"] != actual["historical_rows"]:
             mismatches.append({"table": table, "expected_rows": expected, **actual})
-    report = {"status": "pass" if not mismatches else "fail", "table_count": len(counts), "mismatch_count": len(mismatches), "mismatches": mismatches}
+    report = {"status": "pass" if not mismatches else "fail", "table_count": len(counts), "mismatch_count": len(mismatches), "comparison": "active_publication_rows_against_local_corpus; historical_rows_reported_separately", "mismatches": mismatches}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))

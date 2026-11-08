@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FGA06 performance qualification</title>
+    <style>
+      :root { color-scheme: dark; --bg:#100d0a; --panel:#241c14; --line:#705f4b; --ink:#f2e6c9; --muted:#bca889; --gold:#e1b45f; --green:#8fd39f; --danger:#ff9a72; }
+      * { box-sizing: border-box; }
+      body { margin:0; min-height:100vh; padding:2rem; color:var(--ink); background:radial-gradient(circle at top, #4a3020 0, var(--bg) 42rem); font:14px/1.5 system-ui,sans-serif; }
+      main { width:min(1100px,100%); margin:auto; padding:1.5rem; border:1px solid var(--line); background:rgba(36,28,20,.96); }
+      h1,h2 { font-family:Georgia,serif; } h1 { margin-top:0; }
+      button { padding:.6rem .85rem; color:var(--ink); background:#3d2f20; border:1px solid var(--gold); border-radius:4px; cursor:pointer; }
+      button:hover,button:focus-visible { background:#62472b; outline:2px solid var(--gold); outline-offset:2px; }
+      .note { color:var(--muted); max-width:75ch; }
+      .status { margin:1rem 0; color:var(--muted); }
+      .status.pass { color:var(--green); } .status.fail { color:var(--danger); }
+      table { width:100%; border-collapse:collapse; margin-top:1rem; font-size:.8rem; }
+      th,td { padding:.45rem .5rem; text-align:left; border-bottom:1px solid #403321; vertical-align:top; }
+      th { color:var(--gold); }
+      code,pre { font-family:ui-monospace,SFMono-Regular,Consolas,monospace; }
+      pre { max-height:330px; overflow:auto; padding:.8rem; color:#cdbb99; background:#0b0907; border:1px solid #403321; white-space:pre-wrap; }
+      #stage { position:fixed; left:-10000px; top:0; width:1000px; height:650px; overflow:hidden; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>FGA06 renderer performance qualification</h1>
+      <p class="note">Same 18-node / 26-relationship fixture, twelve repetitions per open-source candidate. This page records first useful render, selection-to-DOM, fit, resize, cleanup and long-task telemetry. Raw numbers are only accepted as evidence when the frozen FGA06 envelope is evaluated against them.</p>
+      <button id="run" type="button">Run 12 repetitions</button>
+      <button id="download" type="button">Download performance evidence</button>
+      <p id="status" class="status" aria-live="polite">Not run.</p>
+      <table aria-label="Performance summary"><thead><tr><th>Candidate</th><th>First useful render p95</th><th>Selection p95</th><th>Fit p95</th><th>Resize p95</th><th>Long tasks</th><th>Envelope</th></tr></thead><tbody id="summary"></tbody></table>
+      <pre id="output" aria-live="polite">No performance run yet.</pre>
+    </main>
+    <div id="stage" aria-hidden="true"></div>
+    <script type="module" src="./performance-runner.ts"></script>
+  </body>
+</html>

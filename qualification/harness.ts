@@ -7,9 +7,13 @@ export type HarnessMeasurement = {
   fitMs: number;
   viewportMs: number;
   resizeMs: number;
+  probeNodeMs: number;
+  probeEdgeMs: number;
   destroyMs: number;
   selectedNodeId: string | null;
   selectedEdgeId: string | null;
+  probedNodeId: string | null;
+  probedEdgeId: string | null;
   callbackEvents: number;
 };
 
@@ -49,19 +53,23 @@ export function runQualificationLifecycle(
 ): HarnessRun {
   let selectedNodeId: string | null = null;
   let selectedEdgeId: string | null = null;
+  let probedNodeId: string | null = null;
+  let probedEdgeId: string | null = null;
   let callbackEvents = 0;
   let instance: CandidateInstance | null = null;
   const callbacks = {
-    onNodeSelect: (id: string | null) => { selectedNodeId = id; selectedEdgeId = null; callbackEvents += 1; },
-    onEdgeSelect: (id: string | null) => { selectedEdgeId = id; selectedNodeId = null; callbackEvents += 1; },
+    onNodeSelect: (id: string | null) => { selectedNodeId = id; selectedEdgeId = null; probedNodeId = id; callbackEvents += 1; },
+    onEdgeSelect: (id: string | null) => { selectedEdgeId = id; selectedNodeId = null; probedEdgeId = id; callbackEvents += 1; },
   };
   const mountMs = elapsed(() => { instance = candidate.mount(container, nodes, edges, callbacks); });
   if (!instance) throw new Error(`${candidate.name} did not return a candidate instance`);
   const fitMs = elapsed(() => instance?.fit());
   const viewportMs = elapsed(() => instance?.setViewport({ zoom: 1.25, panX: 18, panY: -12 }));
   const resizeMs = elapsed(() => instance?.resize());
+  const probeNodeMs = elapsed(() => instance?.probeNode(nodes[0]?.id ?? ""));
+  const probeEdgeMs = elapsed(() => instance?.probeEdge(edges[0]?.id ?? ""));
   const destroyMs = elapsed(() => instance?.destroy());
-  return { runNumber, mode, measurements: { mountMs, fitMs, viewportMs, resizeMs, destroyMs, selectedNodeId, selectedEdgeId, callbackEvents } };
+  return { runNumber, mode, measurements: { mountMs, fitMs, viewportMs, resizeMs, probeNodeMs, probeEdgeMs, destroyMs, selectedNodeId, selectedEdgeId, probedNodeId, probedEdgeId, callbackEvents } };
 }
 
 export function buildHarnessResult(

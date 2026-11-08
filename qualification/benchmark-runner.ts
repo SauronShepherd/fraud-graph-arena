@@ -34,7 +34,8 @@ async function sha256(value: string): Promise<string> {
 
 async function runAll(): Promise<void> {
   const results = candidates.map(runCandidate);
-  const report = { fixture_sha256: await sha256(fixtureRaw), environment: { browser: navigator.userAgent, os: "browser-host-not-exposed", viewport: `${innerWidth}x${innerHeight}`, node_version: "browser-runner-not-applicable" }, candidates: results, status: "RAW_MEASUREMENTS_NOT_QUALIFIED", interaction_status: "MANUAL_SELECTION_REVIEW_REQUIRED" };
+  const selectionEvents = results.reduce((total, result) => total + result.runs.reduce((runsTotal, run) => runsTotal + run.measurements.callbackEvents, 0), 0);
+  const report = { fixture_sha256: await sha256(fixtureRaw), environment: { browser: navigator.userAgent, os: "browser-host-not-exposed", viewport: `${innerWidth}x${innerHeight}`, node_version: "browser-runner-not-applicable" }, candidates: results, selection_events: selectionEvents, status: "RAW_MEASUREMENTS_NOT_QUALIFIED", interaction_status: selectionEvents > 0 ? "AUTOMATED_SELECTION_PROBES_EXECUTED" : "SELECTION_PROBES_FAILED" };
   if (output) output.textContent = JSON.stringify(report, null, 2);
 }
 

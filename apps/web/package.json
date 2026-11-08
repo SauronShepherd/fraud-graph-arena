@@ -9,6 +9,10 @@
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run --pool=threads --no-file-parallelism --maxWorkers=1",
     "test:e2e": "playwright test",
+    "qualification:dev": "vite --config vite.qualification.config.ts --host 0.0.0.0",
+    "qualification:build": "vite build --config vite.qualification.config.ts",
+    "qualification:e2e": "playwright test --config=playwright.qualification.config.ts e2e/qualification-exhibit.spec.ts",
+    "qualification:performance": "playwright test --config=playwright.qualification.config.ts e2e/performance-qualification.spec.ts",
     "validate:screens": "node -e \"JSON.parse(require('fs').readFileSync('src/screen-system/definitions/fga-screen-set.v1.json','utf8')); console.log('screen definitions parse successfully')\"",
     "test:i03": "npm run typecheck && npm run validate:screens && npm test"
   },

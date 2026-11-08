@@ -19,3 +19,4 @@ apps/web/playwright-report/
 apps/web/*.tsbuildinfo
 coverage/
 qualification/.vite/
+qualification/.dist/
