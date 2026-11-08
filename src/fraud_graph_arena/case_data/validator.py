@@ -1,6 +1,7 @@
 from __future__ import annotations
 import csv, json, hashlib
 from pathlib import Path
+from fraud_graph_arena.paths import project_root
 from .registry import TABLE_PATHS, headers, sql_types, load_typed_registry, supported_model_versions
 from .types import parse_json, parse_timestamp, validate_sql_value
 from .semantics import CONFIDENCE_BANDS, FAMILIES, GENERATION_MODES, RELATIONSHIP_FAMILIES, require_controlled
@@ -29,7 +30,7 @@ def validate_package(root: Path) -> list[dict]:
                 source_paths.append(receipt['path'])
     for field in ('package_name','package_version','converter','converter_version','mapping_version','source_dialect'):
         if not manifest.get(field): err('PKG.MANIFEST.PROVENANCE','manifest.json',f'Manifest field {field} is required.')
-    mapping_file = Path(__file__).resolve().parents[3] / 'config/converters/family-mappings.v1.json'
+    mapping_file = project_root() / 'config/converters/family-mappings.v1.json'
     approved_mappings = json.loads(mapping_file.read_text(encoding='utf-8')).get('families', {})
     approved_mapping = approved_mappings.get(manifest.get('family'), {})
     for field in ('converter', 'source_dialect'):

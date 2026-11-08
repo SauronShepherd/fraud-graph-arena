@@ -1,9 +1,9 @@
 import json
-from pathlib import Path
+from fraud_graph_arena.paths import project_root
 from .base import Converter, ConverterRegistry
 registry = ConverterRegistry()
 from .families import AcademyConverter, AdultConverter, PuppyConverter, SeniorConverter
-_mapping_path = Path(__file__).resolve().parents[4] / "config/converters/family-mappings.v1.json"
+_mapping_path = project_root() / "config/converters/family-mappings.v1.json"
 _mappings = json.loads(_mapping_path.read_text(encoding="utf-8"))["families"]
 for _converter in (AcademyConverter, PuppyConverter, AdultConverter, SeniorConverter):
     mapping = _mappings.get(_converter.family)

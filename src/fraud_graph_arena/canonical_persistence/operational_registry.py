@@ -2,9 +2,9 @@
 from __future__ import annotations
 import json
 from functools import lru_cache
-from pathlib import Path
+from fraud_graph_arena.paths import project_root
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = project_root()
 
 @lru_cache(maxsize=1)
 def registry() -> dict[str, dict]:
