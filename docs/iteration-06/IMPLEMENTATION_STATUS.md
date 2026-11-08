@@ -28,7 +28,7 @@ This audit is deliberately conservative: absence of an obvious gap is not treate
 | Performance measurements | twelve repetitions per candidate record first-useful-render, selection, fit, resize, cleanup and long-task telemetry against the frozen envelope | QUALIFIED_FOR_FROZEN_ENVELOPE |
 | Production renderer decision | ADR and formal report qualify Cytoscape.js 3.34.4; semantic inspector/fallback remain project-owned | QUALIFIED_CYTOSCAPE_INCUMBENT |
 | FGA05 live predecessor closure | FGA06 live sandbox qualification now passes with profile `fga`; historical formal predecessor closure still requires its own release evidence | LIVE_SANDBOX_PASS_HISTORICAL_CLOSURE_PENDING |
-| Formal two-commit/tag release qualification | requires release workflow/evidence and tests | NOT_COMPLETE |
+| Formal two-commit/tag release qualification | source/evidence commits, closure validator, Docker smoke and immutable tags `fga-iteration-06-r1`/`r2` | COMPLETE_AND_TAGGED |
 
 ## Scope deliberately not implemented
 
@@ -36,7 +36,7 @@ Bounded expansion, relationship filtering, focus mode, hairball prevention, grap
 
 ## Verification performed
 
-Python compilation, local gate, OpenAPI export, frontend typecheck/build, in-memory T02/ACADEMY_001 workspace smoke checks, JSON parsing, fixture hashing, `pytest tests/iteration_05` (67 passed), Playwright renderer exhibit (5 passed), static gallery mini-game qualification (2 passed), and live Databricks qualification were performed. The latest local regression after the controller extraction also passed `npm run typecheck`, Vitest (22 files, 49 tests), `npm run build`, the three gallery Playwright tests, and Axe with zero violations. `git diff --check` reported only the pre-existing CRLF normalization warning for `contracts/openapi-v1.json`. The `fga` admin identity cannot qualify the non-admin denial test.
+Python compilation, local gate, OpenAPI export, frontend typecheck/build, in-memory T02/ACADEMY_001 workspace smoke checks, JSON parsing, fixture hashing, the full FGA04–FGA06 Python regression (93 passed), Playwright renderer exhibit (5 passed), static gallery mini-game qualification (3 passed), twelve-run renderer performance qualification, Docker root/health smoke, and live Databricks qualification were performed. The latest frontend regression passed Vitest (22 files, 49 tests), `npm run build`, the gallery Playwright tests, and Axe with zero violations. `git diff --check` retains only the pre-existing CRLF normalization warning for `contracts/openapi-v1.json`; the release commits themselves are clean. The `fga` admin identity cannot qualify the non-admin denial test.
 
 ## Progress calculation — 2026-11-07
 
@@ -44,8 +44,8 @@ The strict delivery percentage is calculated from this table, not from line coun
 
 - 25 tracked obligations total;
 - 1 is explicitly out of scope, leaving 24 in-scope obligations;
-- 22 are fully green (`COMPLETE_LOCALLY`, `IMPLEMENTED_AND_EXECUTED`, `IMPLEMENTED_AND_BROWSER_CHECKED`, `IMPLEMENTED_AND_TESTED`, `QUALIFIED_COMPARISON_EVIDENCE`, `QUALIFIED_FOR_FROZEN_ENVELOPE` or `QUALIFIED_CYTOSCAPE_INCUMBENT`);
-- strict completion: **22 / 24 = 92%**;
-- the remaining two are deliberately visible: historical predecessor closure and formal release qualification.
+- 23 are fully green (`COMPLETE_LOCALLY`, `IMPLEMENTED_AND_EXECUTED`, `IMPLEMENTED_AND_BROWSER_CHECKED`, `IMPLEMENTED_AND_TESTED`, `QUALIFIED_COMPARISON_EVIDENCE`, `QUALIFIED_FOR_FROZEN_ENVELOPE`, `QUALIFIED_CYTOSCAPE_INCUMBENT` or `COMPLETE_AND_TAGGED`);
+- strict completion: **23 / 24 = 96%**;
+- one deliberately visible predecessor gap remains: the historical FGA05 immutable closure record cannot be reconstructed or rewritten from the current administrator identity.
 
-The first investigation-workflow slice and renderer decision are complete and locally browser-checked. The 92% figure is for the FGA-06 delivery ledger; it must not be read as “the entire future graph-engine vision is finished”. The 30-feature catalogue still contains scheduled work such as lasso, multi-selection, full replay/undo, additional layouts, renderer-scale qualification and release hardening.
+The first investigation-workflow slice, renderer decision, Docker deployment and formal release are complete and locally browser-checked. The 96% figure is for the FGA-06 delivery ledger; it must not be read as “the entire future graph-engine vision is finished”. The 30-feature catalogue still contains scheduled work such as lasso, multi-selection, full replay/undo, additional layouts and renderer-scale qualification.
