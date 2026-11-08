@@ -210,6 +210,17 @@
     .node-label { fill: #e9d4a1; font-size: 12px; letter-spacing: .02em; stroke: #030605; stroke-width: 6px; }
     .edge { opacity: .72; stroke-linecap: round; }
     .edge:hover, .edge.selected { stroke: #f1bf51; filter: drop-shadow(0 0 7px rgba(218, 144, 31, .85)); }
+    .node.hovered .node-hit { stroke: #fff0b5; stroke-width: 5; filter: drop-shadow(0 0 13px rgba(244, 194, 79, .95)); }
+    .node.hovered .node-hub-ring { opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 8px rgba(244, 194, 79, .8)); }
+    .edge.hovered { opacity: 1; stroke: #f6cf74; stroke-width: 5; filter: drop-shadow(0 0 9px rgba(246, 207, 116, .9)); }
+    .topology-picker { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(119, 78, 26, .8); background: rgba(5, 8, 6, .86); padding: 4px 7px; color: #a99b78; font-size: .62rem; }
+    .topology-picker select { max-width: 140px; border: 0; color: #f0dca9; background: transparent; font: inherit; outline: none; }
+    .topology-picker select option { color: #e8d7ae; background: #11140f; }
+    .hover-preview-card { min-width: 230px; border-left-width: 4px; border-radius: 2px; box-shadow: inset 0 0 24px rgba(112,203,210,.05); }
+    .hover-preview-card .hover-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin: 6px 0 2px; }
+    .hover-preview-card .hover-stat { border: 1px solid rgba(119,78,26,.6); padding: 5px 4px; text-align: center; }
+    .hover-preview-card .hover-stat b { display: block; color: #f2d17b; font-size: .82rem; }
+    .hover-preview-card .hover-stat small { display: block; color: #91866d; font-size: .55rem; text-transform: uppercase; letter-spacing: .06em; }
     .edge-focus { stroke: rgba(226, 171, 55, .28); stroke-width: 14; }
     .mini-wrap { right: 20px; bottom: 17px; z-index: 7; width: 220px; border: 1px solid #9a641e; border-radius: 0; background: rgba(4, 7, 5, .93); padding: 10px; box-shadow: 0 10px 28px rgba(0, 0, 0, .5); }
     .legend { position: absolute; bottom: 18px; left: 20px; z-index: 7; display: grid; width: 230px; gap: 7px; border: 1px solid #9a641e; border-radius: 0; background: rgba(4, 7, 5, .94); padding: 11px 12px; color: #aa9d7a; font-size: .68rem; }
@@ -267,6 +278,7 @@
           <button type="button" data-command="reset">Reset</button>
           <button type="button" data-command="toggle-motion" aria-pressed="true" aria-label="Toggle soft graph motion">Motion</button>
           <button type="button" data-command="toggle-composer" aria-expanded="false">Add relation</button>
+          <label class="topology-picker" title="Change only the presentation layout"><span>Topology</span><select id="topology-select" aria-label="Choose graph topology"><option value="native">Native</option><option value="radial">Radial clusters</option><option value="ring">Ring</option><option value="chain">Timeline chain</option><option value="star">Starburst</option><option value="grid">Evidence grid</option></select></label>
           <button type="button" data-view="node-link" aria-pressed="true">Node-link</button>
           <button type="button" data-view="matrix" aria-pressed="false">Matrix</button>
           <button type="button" data-view="path" aria-pressed="false">Path</button>
@@ -294,7 +306,7 @@
       </section>
       <aside id="inspector" class="panel inspector" aria-live="polite"></aside>
     </section>
-    <p class="footer">Investigate the mini-case above: click or right-click a node or relationship, drag nodes to re-layout the evidence, and drag empty space to pan. Use Ctrl/Cmd + wheel to zoom, or use the toolbar. Escape cancels an in-progress movement.</p>
+    <p class="footer">Investigate the mini-case above: click or right-click a node or relationship, drag nodes to re-layout the evidence, and drag empty space to pan. Scroll to zoom, or use the toolbar. Escape cancels an in-progress movement.</p>
   </main>
   <script>
     (() => {
@@ -385,7 +397,7 @@
           { id: "selection", label: "Select an evidence node", hint: "Choose any visible node to open its dossier." },
           { id: "relationship", label: "Interrogate a relationship", hint: "Click a visible relationship or open one from the node dossier." },
           { id: "reposition", label: "Reposition the evidence", hint: "Drag a node to give the scene a new working layout." },
-          { id: "camera", label: "Explore the scene", hint: "Drag empty space to pan, or hold Ctrl/Cmd while scrolling to zoom." },
+          { id: "camera", label: "Explore the scene", hint: "Drag empty space to pan, or scroll to zoom." },
         ],
         success: "Scene reconstructed. The layout is yours; the evidence remains unchanged.",
       };
@@ -419,7 +431,8 @@
       const hoverPreview = document.querySelector("#hover-preview");
       const favoritesPanel = document.querySelector("#favorites-panel");
       const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
-      const state = { exampleIndex: 0, view: "node-link", zoom: 1, panX: 0, panY: 0, velocities: new Map(), anchors: new Map(), motionNodeIds: new Set(), physicsFrame: 0, physicsLast: 0, physicsQuietFrames: 0, physicsTick: 0, physicsActive: false, physicsEnabled: !reducedMotion, selected: null, menu: null, hover: null, hoverHideTimer: null, filters: new Set(statuses), positions: new Map(), statusOverrides: new Map(), clusterFilter: null, addedEdges: [], favorites: [], composerOpen: false, nextRelationNumber: 1, log: [], dragging: null, panning: null, ignoreNextCanvasClick: false, challenge: { completed: new Set(), hint: false } };
+      const topologySelect = document.querySelector("#topology-select");
+      const state = { exampleIndex: 0, topology: "native", view: "node-link", zoom: 1, panX: 0, panY: 0, velocities: new Map(), anchors: new Map(), motionNodeIds: new Set(), physicsFrame: 0, physicsLast: 0, physicsQuietFrames: 0, physicsTick: 0, physicsActive: false, physicsEnabled: !reducedMotion, selected: null, menu: null, hover: null, hoverHideTimer: null, filters: new Set(statuses), positions: new Map(), statusOverrides: new Map(), clusterFilter: null, addedEdges: [], favorites: [], composerOpen: false, nextRelationNumber: 1, log: [], dragging: null, panning: null, ignoreNextCanvasClick: false, challenge: { completed: new Set(), hint: false } };
       const current = () => examples[state.exampleIndex];
       const allEdges = () => [...current().edges, ...state.addedEdges];
       const edgeById = (id) => allEdges().find((item) => item.id === id);
@@ -518,6 +531,27 @@
       const selectedEdge = () => state.selected && state.selected.kind === "edge" ? edgeById(state.selected.id) : null;
       const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]);
       const clonePosition = (item) => ({ x: item.x, y: item.y });
+      function topologyPositions(example, topology) {
+        const nodes = example.nodes;
+        if (topology === "native" || nodes.length < 2) return new Map(nodes.map((item) => [item.id, clonePosition(item.position)]));
+        const result = new Map();
+        const center = { x: 560, y: 310 };
+        if (topology === "ring" || topology === "star") {
+          const hub = nodes.find((item) => ["ORG_RECORD", "CLAIM_CLUSTER", "BANK_RECORD"].includes(item.recordType)) || nodes[0];
+          result.set(hub.id, center);
+          const leaves = nodes.filter((item) => item.id !== hub.id);
+          leaves.forEach((item, index) => { const angle = (index / Math.max(1, leaves.length)) * Math.PI * 2 - Math.PI / 2; const radius = topology === "star" ? 225 : 235; result.set(item.id, { x: center.x + Math.cos(angle) * radius, y: center.y + Math.sin(angle) * radius }); });
+        } else if (topology === "chain") {
+          nodes.forEach((item, index) => { const row = Math.floor(index / 7); result.set(item.id, { x: 90 + (index % 7) * 155, y: 150 + row * 145 }); });
+        } else if (topology === "grid") {
+          nodes.forEach((item, index) => { const columns = Math.ceil(Math.sqrt(nodes.length)); result.set(item.id, { x: 110 + (index % columns) * (900 / Math.max(1, columns - 1)), y: 120 + Math.floor(index / columns) * 130 }); });
+        } else {
+          const groups = [...new Set(nodes.map((item) => item.clusterId))];
+          nodes.forEach((item, index) => { const groupIndex = Math.max(0, groups.indexOf(item.clusterId)); const angle = (groupIndex / Math.max(1, groups.length)) * Math.PI * 2 - Math.PI / 2; const local = nodes.filter((candidate) => candidate.clusterId === item.clusterId).indexOf(item); const count = nodes.filter((candidate) => candidate.clusterId === item.clusterId).length; const radius = 70 + (local % Math.max(1, count)) * 13; result.set(item.id, { x: center.x + Math.cos(angle) * 245 + Math.cos(local * 2.4) * radius, y: center.y + Math.sin(angle) * 180 + Math.sin(local * 2.4) * radius }); });
+        }
+        return result;
+      }
+      function applyTopology(topology, logChange = true) { state.topology = topology; state.positions = topologyPositions(current(), topology); state.anchors = new Map([...state.positions].map(([id, position]) => [id, clonePosition(position)])); state.velocities = new Map(current().nodes.map((item) => [item.id, { x: 0, y: 0 }])); if (logChange) setLog(`Presentation topology: ${topology}`); }
       const setLog = (message) => { state.log.unshift(`${new Date().toLocaleTimeString()}  ${message}`); state.log = state.log.slice(0, 8); };
       function updateGameHud() {
         const challenge = challengeFor();
@@ -609,7 +643,7 @@
       };
 
       function resetExample(index = state.exampleIndex) {
-        stopPhysics(); state.exampleIndex = index; state.view = current().recommendedViews[0] || "node-link"; state.zoom = 1; state.panX = 0; state.panY = 0; state.selected = null; state.menu = null; state.hover = null; state.filters = new Set(statuses); state.positions = new Map(current().nodes.map((item) => [item.id, clonePosition(item.position)])); state.statusOverrides = new Map(); state.clusterFilter = null; state.addedEdges = []; state.favorites = []; state.composerOpen = false; state.nextRelationNumber = 1; state.log = []; state.dragging = null; state.panning = null; state.challenge = { completed: new Set(), hint: false, message: "" }; seedPhysics(); setLog(`Loaded ${current().id}`); render();
+        stopPhysics(); state.exampleIndex = index; state.view = current().recommendedViews[0] || "node-link"; state.zoom = 1; state.panX = 0; state.panY = 0; state.selected = null; state.menu = null; state.hover = null; state.filters = new Set(statuses); state.statusOverrides = new Map(); state.clusterFilter = null; state.addedEdges = []; state.favorites = []; state.composerOpen = false; state.nextRelationNumber = 1; state.log = []; state.dragging = null; state.panning = null; state.challenge = { completed: new Set(), hint: false, message: "" }; applyTopology(state.topology, false); seedPhysics(); setLog(`Loaded ${current().id}`); render();
       }
 
       function renderTabs() {
@@ -661,14 +695,25 @@
         const screenX = rect.left + ((point.x * state.zoom + 560 - 560 * state.zoom + state.panX) / 1120) * rect.width; const screenY = rect.top + ((point.y * state.zoom + 310 - 310 * state.zoom + state.panY) / 620) * rect.height;
         hoverPreview.style.left = `${clamp(screenX - parent.left + 14, 12, Math.max(12, parent.width - 300))}px`; hoverPreview.style.top = `${clamp(screenY - parent.top - 18, 75, Math.max(75, parent.height - 170))}px`;
         const favorite = isFavorite(item); const favoriteLabel = favorite ? "Remove from highlights" : "Add to highlights"; const favoriteIcon = favorite ? "−" : "+";
-        const content = item.kind === "node" ? `<span class="context-kicker">Hover preview · node</span><strong>${escapeHtml(object.icon || "◉")} ${escapeHtml(object.label)}</strong><span>${escapeHtml(object.recordType)} · ${escapeHtml(object.id)}</span><small>${escapeHtml(object.status)}</small>` : `<span class="context-kicker">Hover preview · relationship</span><strong>${escapeHtml(object.relationshipType)}</strong><span>${escapeHtml(nodeById(object.sourceId)?.label || object.sourceId)} → ${escapeHtml(nodeById(object.targetId)?.label || object.targetId)}</span><small>${escapeHtml(object.relationshipFamily)} · ${escapeHtml(object.id)}</small>`;
+        const content = item.kind === "node" ? `<span class="context-kicker">Hover preview · node · ${escapeHtml(statusMeta[object.status].label)}</span><strong>${escapeHtml(object.icon || "◉")} ${escapeHtml(object.label)}</strong><span>${escapeHtml(object.recordType)} · ${escapeHtml(object.id)}</span><div class="hover-stats"><span class="hover-stat"><b>${connectedToNode(object.id).length}</b><small>links</small></span><span class="hover-stat"><b>${escapeHtml(object.clusterId)}</b><small>cluster</small></span><span class="hover-stat"><b>${escapeHtml(object.status === "FRAUD_CONFIRMED" ? "High" : object.status === "INVESTIGATED" ? "Med" : "Open")}</b><small>risk signal</small></span></div>` : `<span class="context-kicker">Hover preview · relationship</span><strong>${escapeHtml(object.relationshipType)}</strong><span>${escapeHtml(nodeById(object.sourceId)?.label || object.sourceId)} → ${escapeHtml(nodeById(object.targetId)?.label || object.targetId)}</span><div class="hover-stats"><span class="hover-stat"><b>${escapeHtml(object.confidence)}</b><small>confidence</small></span><span class="hover-stat"><b>${escapeHtml(object.relationshipFamily.replace("_", " "))}</b><small>family</small></span></div>`;
         hoverPreview.innerHTML = `<div class="hover-preview-card">${content}<div class="actions hover-context-actions"><button type="button" class="action icon-action" data-hover-action="favorite" aria-label="${favoriteLabel}" title="${favoriteLabel}" data-tooltip="${favoriteLabel}" aria-pressed="${favorite}"><span class="action-glyph" aria-hidden="true">${favoriteIcon}</span><span class="sr-only">${favoriteLabel}</span></button><button type="button" class="action icon-action" data-hover-action="center" aria-label="Center on graph" title="Center on graph" data-tooltip="Center on graph"><span class="action-glyph" aria-hidden="true">⌖</span><span class="sr-only">Center on graph</span></button></div><em>Click the card to open the full context panel</em></div>`;
         hoverPreview.querySelector("[data-hover-action='favorite']").addEventListener("click", (event) => { event.stopPropagation(); toggleFavorite(item); });
         hoverPreview.querySelector("[data-hover-action='center']").addEventListener("click", (event) => { event.stopPropagation(); centerOnTarget(item); });
         hoverPreview.classList.add("is-visible");
+        updateHoverVisuals();
       }
       function scheduleHideHover() { if (state.hoverHideTimer) clearTimeout(state.hoverHideTimer); state.hoverHideTimer = setTimeout(() => { state.hoverHideTimer = null; hideHover(); }, 220); }
-      function hideHover() { if (state.hoverHideTimer) { clearTimeout(state.hoverHideTimer); state.hoverHideTimer = null; } state.hover = null; hoverPreview.classList.remove("is-visible"); hoverPreview.replaceChildren(); }
+      function hideHover() { if (state.hoverHideTimer) { clearTimeout(state.hoverHideTimer); state.hoverHideTimer = null; } state.hover = null; hoverPreview.classList.remove("is-visible"); hoverPreview.replaceChildren(); updateHoverVisuals(); }
+      function updateHoverVisuals() {
+        const hoveredNodeId = state.hover?.kind === "node" ? state.hover.id : null;
+        const hoveredEdge = state.hover?.kind === "edge" ? edgeById(state.hover.id) : null;
+        const focusIds = new Set();
+        if (hoveredNodeId) { focusIds.add(hoveredNodeId); allEdges().filter((item) => item.sourceId === hoveredNodeId || item.targetId === hoveredNodeId).forEach((item) => { focusIds.add(item.sourceId); focusIds.add(item.targetId); }); }
+        if (hoveredEdge) { focusIds.add(hoveredEdge.sourceId); focusIds.add(hoveredEdge.targetId); }
+        const hasFocus = Boolean(state.hover);
+        surface.querySelectorAll("[data-node-id]").forEach((element) => { const id = element.dataset.nodeId; element.classList.toggle("hovered", id === hoveredNodeId); element.classList.toggle("dimmed", hasFocus && !focusIds.has(id)); });
+        surface.querySelectorAll("[data-edge-id]").forEach((element) => { const id = element.dataset.edgeId; const edge = edgeById(id); const connected = edge && focusIds.has(edge.sourceId) && focusIds.has(edge.targetId); element.classList.toggle("hovered", id === state.hover?.id); element.classList.toggle("dimmed", hasFocus && !connected); });
+      }
       hoverPreview.addEventListener("pointerenter", () => { if (state.hoverHideTimer) { clearTimeout(state.hoverHideTimer); state.hoverHideTimer = null; } });
       hoverPreview.addEventListener("pointerleave", scheduleHideHover);
       hoverPreview.addEventListener("click", (event) => { if (event.target.closest("button")) return; if (state.hover) selectTarget(state.hover); });
@@ -706,18 +751,27 @@
         edges.forEach((item) => {
           if (state.selected?.kind === "node" && (item.sourceId === state.selected.id || item.targetId === state.selected.id)) { focusIds.add(item.sourceId); focusIds.add(item.targetId); }
         });
+        if (state.hover?.kind === "node") {
+          focusIds.add(state.hover.id);
+          edges.filter((item) => item.sourceId === state.hover.id || item.targetId === state.hover.id).forEach((item) => { focusIds.add(item.sourceId); focusIds.add(item.targetId); });
+        }
+        if (state.hover?.kind === "edge") {
+          const hoveredEdge = edgeById(state.hover.id);
+          if (hoveredEdge) { focusIds.add(hoveredEdge.sourceId); focusIds.add(hoveredEdge.targetId); }
+        }
         const hasFocus = focusIds.size > 0;
         const world = svgEl("g", { "data-graph-world": "true", transform: `translate(${state.panX + 560 - 560 * state.zoom} ${state.panY + 310 - 310 * state.zoom}) scale(${state.zoom})` });
         edges.forEach((item) => {
           const a = nodeById(item.sourceId), b = nodeById(item.targetId);
           if (!a || !b) return;
           const selected = state.selected?.kind === "edge" && state.selected.id === item.id;
+          const hovered = state.hover?.kind === "edge" && state.hover.id === item.id;
           const favorite = isFavorite(target("edge", item.id));
           const connected = focusIds.has(item.sourceId) || focusIds.has(item.targetId);
           const dimmed = hasFocus && !connected && !selected;
           if (selected) world.append(svgEl("line", { x1: a.position.x, y1: a.position.y, x2: b.position.x, y2: b.position.y, class: "edge-focus" }));
           const working = item.origin === "investigator-added";
-          const line = svgEl("line", { x1: a.position.x, y1: a.position.y, x2: b.position.x, y2: b.position.y, stroke: familyColors[item.relationshipFamily] || "#938c79", "stroke-width": selected ? 5 : favorite ? 4 : 3, "stroke-dasharray": working ? "10 8" : undefined, "marker-end": "url(#arrow)", class: `edge${selected ? " selected" : ""}${favorite ? " favorite" : ""}${dimmed ? " dimmed" : ""}${working ? " working" : ""}`, "data-edge-id": item.id });
+          const line = svgEl("line", { x1: a.position.x, y1: a.position.y, x2: b.position.x, y2: b.position.y, stroke: familyColors[item.relationshipFamily] || "#938c79", "stroke-width": selected || hovered ? 5 : favorite ? 4 : 3, "stroke-dasharray": working ? "10 8" : undefined, "marker-end": "url(#arrow)", class: `edge${selected ? " selected" : ""}${hovered ? " hovered" : ""}${favorite ? " favorite" : ""}${dimmed ? " dimmed" : ""}${working ? " working" : ""}`, "data-edge-id": item.id });
           line.addEventListener("pointerdown", (event) => event.stopPropagation());
         line.addEventListener("pointerenter", () => showHover(target("edge", item.id)));
           line.addEventListener("pointerleave", scheduleHideHover);
@@ -738,12 +792,13 @@
           const meta = statusMeta[item.status];
           const hub = ["ORG_RECORD", "CLAIM_CLUSTER", "BANK_RECORD"].includes(item.recordType);
           const selected = state.selected?.kind === "node" && state.selected.id === item.id;
+          const hovered = state.hover?.kind === "node" && state.hover.id === item.id;
           const favorite = isFavorite(target("node", item.id));
           const dimmed = hasFocus && !focusIds.has(item.id);
           const moving = state.motionNodeIds.has(item.id);
           const showLabel = nodes.length <= 8 || focusIds.has(item.id) || selected || hub;
           const radius = hub ? 35 : selected ? 31 : 22;
-          const group = svgEl("g", { class: `node${hub ? " hub" : ""}${selected ? " selected" : ""}${favorite ? " favorite" : ""}${moving ? " moving" : ""}${dimmed ? " dimmed" : ""}`, tabindex: "0", role: "button", "aria-label": `${item.label}, ${meta.label}${favorite ? ", marked" : ""}`, "data-node-id": item.id, transform: `translate(${item.position.x} ${item.position.y})` });
+          const group = svgEl("g", { class: `node${hub ? " hub" : ""}${selected ? " selected" : ""}${hovered ? " hovered" : ""}${favorite ? " favorite" : ""}${moving ? " moving" : ""}${dimmed ? " dimmed" : ""}`, tabindex: "0", role: "button", "aria-label": `${item.label}, ${meta.label}${favorite ? ", marked" : ""}`, "data-node-id": item.id, transform: `translate(${item.position.x} ${item.position.y})` });
           if (hub) group.append(svgEl("circle", { class: "node-hub-ring", r: radius + 8, color: meta.stroke }));
           if (selected) group.append(svgEl("circle", { class: "node-halo", r: radius + 12 }));
           if (favorite) { group.append(svgEl("circle", { class: "node-favorite-ring", r: radius + 6 })); const mark = svgEl("text", { class: "node-favorite-mark", y: -(radius + 8), "text-anchor": "middle" }); mark.textContent = "★"; group.append(mark); }
@@ -794,7 +849,7 @@
         state.panX = viewX - (worldX * state.zoom + 560 - 560 * state.zoom);
         state.panY = viewY - (worldY * state.zoom + 310 - 310 * state.zoom);
       }
-      function zoomFromWheel(event) { if (!event.ctrlKey && !event.metaKey) return; event.preventDefault(); setZoom(state.zoom + (event.deltaY < 0 ? .12 : -.12), event); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); setLog(`Camera zoom: ${state.zoom.toFixed(2)}×`); renderGraphOnly(); updateMetrics(); updateGameHud(); }
+      function zoomFromWheel(event) { event.preventDefault(); setZoom(state.zoom + (event.deltaY < 0 ? .12 : -.12), event); surface.dataset.zoom = state.zoom.toFixed(2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); setLog(`Camera zoom: ${state.zoom.toFixed(2)}×`); renderGraphOnly(); updateMetrics(); updateGameHud(); }
       function beginPan(event) { const tagName = event.target?.tagName?.toLowerCase(); const isCanvasTarget = event.target === surface || tagName === "svg" || event.target.dataset?.canvasBackground === "true"; if (event.button !== 0 || !isCanvasTarget) return; state.panning = { startX: event.clientX, startY: event.clientY, originalX: state.panX, originalY: state.panY, moved: false }; surface.classList.add("is-panning"); window.addEventListener("pointermove", panMove); window.addEventListener("pointerup", endPan, { once: true }); }
       function panMove(event) { if (!state.panning) return; const distance = Math.hypot(event.clientX - state.panning.startX, event.clientY - state.panning.startY); if (!state.panning.moved && distance < 4) return; state.panning.moved = true; const rect = surface.getBoundingClientRect(); state.panX = state.panning.originalX + ((event.clientX - state.panning.startX) / rect.width) * 1120; state.panY = state.panning.originalY + ((event.clientY - state.panning.startY) / rect.height) * 620; renderGraphOnly(); }
       function endPan() { if (!state.panning) return; const moved = state.panning.moved; state.panning = null; surface.classList.remove("is-panning"); window.removeEventListener("pointermove", panMove); if (moved) { state.ignoreNextCanvasClick = true; setLog("Panned camera across the evidence board"); markChallenge("camera", "Camera moved. You can now compare the scene from another angle."); render(); } }
@@ -862,7 +917,7 @@
       }
 
       function render() {
-        const example = current(); title.textContent = example.title; renderTabs(); updateMetrics(); drawLegend(); drawMinimap();
+        const example = current(); title.textContent = example.title; topologySelect.value = state.topology; surface.dataset.topology = state.topology; surface.dataset.zoom = state.zoom.toFixed(2); renderTabs(); updateMetrics(); drawLegend(); drawMinimap();
         document.querySelectorAll("[data-view]").forEach((button) => { button.setAttribute("aria-pressed", String(button.dataset.view === state.view)); });
         if (state.view === "node-link") surface.replaceChildren(graphSvg()); else if (state.view === "semantic-list") surface.replaceChildren(drawSemanticList()); else if (state.view === "matrix") surface.replaceChildren(drawMatrix()); else surface.replaceChildren(drawPath());
         renderInspectorRich(); updateGameHud(); startPhysics();
@@ -870,6 +925,7 @@
 
       document.querySelectorAll("[data-command]").forEach((button) => button.addEventListener("click", () => { const command = button.dataset.command; if (command === "zoom-in") { setZoom(state.zoom + .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "zoom-out") { setZoom(state.zoom - .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "fit") { state.zoom = 1; state.panX = 0; state.panY = 0; markChallenge("camera", "Camera fitted. The full scene is back in view."); } if (command === "toggle-motion") { state.physicsEnabled = !state.physicsEnabled; if (state.physicsEnabled) wakePhysics(); else stopPhysics(); setLog(state.physicsEnabled ? "Soft graph motion enabled" : "Soft graph motion paused"); } if (command === "toggle-composer") { state.composerOpen = !state.composerOpen; } if (command === "reset") { stopPhysics(); state.zoom = 1; state.panX = 0; state.panY = 0; state.selected = null; state.menu = null; state.hover = null; state.filters = new Set(statuses); state.clusterFilter = null; state.positions = new Map(current().nodes.map((item) => [item.id, clonePosition(item.position)])); state.statusOverrides = new Map(); state.addedEdges = []; state.favorites = []; state.composerOpen = false; state.nextRelationNumber = 1; seedPhysics(); setLog("Reset presentation"); } render(); }));
       document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.view; if (state.view === "node-link") wakePhysics(); else stopPhysics(); render(); }));
+      topologySelect.addEventListener("change", () => { stopPhysics(); applyTopology(topologySelect.value); state.selected = null; state.menu = null; state.hover = null; render(); });
       document.querySelectorAll("[data-game]").forEach((button) => button.addEventListener("click", () => { const action = button.dataset.game; if (action === "hint") { const challenge = challengeFor(); if (challenge) { state.challenge.hint = !state.challenge.hint; state.challenge.message = ""; updateGameHud(); } } if (action === "restart") resetExample(state.exampleIndex); }));
       surface.addEventListener("pointerdown", beginPan);
       window.addEventListener("keydown", (event) => { if (event.key === "Escape") { if (state.dragging) cancelDrag(); else if (state.panning) cancelPan(); else if (state.menu) { state.menu = null; render(); } } });

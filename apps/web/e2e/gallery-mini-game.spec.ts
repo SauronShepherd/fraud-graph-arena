@@ -48,6 +48,14 @@ test.describe("static graph gallery mini-game", () => {
     await expect(page.locator("#game-hud")).toHaveClass(/complete/);
     await expect(page.locator("#inspector .log")).toContainText("Panned camera");
 
+    await page.locator("[data-command='reset']").click();
+    const zoomSurface = await page.locator("#surface svg").boundingBox();
+    if (!zoomSurface) throw new Error("The graph SVG has no layout box for wheel zoom.");
+    const zoomBefore = await page.locator("#surface").getAttribute("data-zoom");
+    await page.mouse.move(zoomSurface.x + zoomSurface.width / 2, zoomSurface.y + zoomSurface.height / 2);
+    await page.mouse.wheel(0, -120);
+    await expect(page.locator("#surface")).not.toHaveAttribute("data-zoom", zoomBefore || "1.00");
+
     await page.getByRole("button", { name: "Restart" }).click();
     await expect(page.locator("#game-progress-label")).toHaveText("0 / 4");
     const motionToggle = page.locator("[data-command='toggle-motion']");
@@ -64,6 +72,12 @@ test.describe("static graph gallery mini-game", () => {
   test("keeps all five scenarios and alternate views reachable", async ({ page }) => {
     await page.goto(pathToFileURL(galleryPath).href);
     await expect(page.locator("[role='tab']")).toHaveCount(5);
+
+    const topology = page.locator("#topology-select");
+    for (const value of ["radial", "ring", "chain", "star", "grid", "native"]) {
+      await topology.selectOption(value);
+      await expect(page.locator("#surface")).toHaveAttribute("data-topology", value);
+    }
 
     for (const tab of await page.locator("[role='tab']").all()) {
       await tab.click();
