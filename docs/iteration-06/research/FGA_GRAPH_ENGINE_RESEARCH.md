@@ -2467,7 +2467,7 @@ A graph UI becomes difficult to reason about when dragging a node, panning the v
 
 - node movement updates only the working position map;
 - background dragging updates only camera translation;
-- modifier-wheel zoom preserves the point under the pointer;
+- mouse-wheel zoom preserves the point under the pointer;
 - fit/reset restores camera state without rewriting the source snapshot;
 - Escape cancels either in-progress gesture.
 
@@ -2484,9 +2484,9 @@ The first accessibility audit of this pass found that the interaction log was sc
 The new browser qualification is `apps/web/e2e/gallery-mini-game.spec.ts`. It verifies:
 
 ```text
-mini-game objective loop, hint, relationship inspection, node drag and camera pan: PASS
 restart after completion: PASS
 five scenarios × four views reachable: PASS
+visible graph auto-test lab: PASS (six isolated checks, full and individual execution)
 initial-state Axe audit after the complete journey: PASS, 0 violations
 ```
 
@@ -2733,5 +2733,15 @@ The static gallery and React board now implement the same behaviour. This avoids
 | Pass | Perspective | Outcome | Clean? |
 |---:|---|---|---|
 | 61 | Interaction usability | Made hover previews interactive, delayed hide during node-to-card movement and preserved explicit escape/selection paths. | yes for current scope |
-| 62 | Regression/accessibility | Full Vitest (22 files, 49 tests), full gallery E2E (3 tests) and Axe all passed after the correction. | yes |
+| 62 | Regression/accessibility | Full Vitest (22 files, 49 tests), full gallery E2E (4 tests) and Axe all passed after the correction. | yes |
+
+## 136. Research pass 63 — make graph testing visible
+
+The gallery now treats autonomous testing as a first-class engine capability rather than an invisible Playwright detail. A compact bottom quality panel exposes six deterministic checks: graph contract integrity, node dossier opening, hover context, anchored camera zoom, topology switching and investigator-added relationship rendering. Each row shows the instruction, expected result, observed result, status and duration; the suite supports full or individual execution and restores a presentation snapshot after every check.
+
+This design addresses a product requirement specific to Hercule’s workflow: tests must be repeatable without reopening the case manually, but they must also be inspectable when a visual interaction fails. The panel is pointer-transparent outside its controls so it never hides the graph’s interaction surface, and the `window.fgaGraphAutoTest` seam exposes report data without leaking renderer-native objects. The browser suite now covers the panel, its state isolation, topology selector, wheel zoom and accessibility path.
+
+| Pass | Perspective | Outcome | Clean? |
+|---:|---|---|---|
+| 63 | Autonomous qualification UX | Added visible six-check graph suite, expected/observed result separation, isolated state restoration and individual-run API. | yes for current scope |
 

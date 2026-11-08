@@ -14,7 +14,7 @@ The same information architecture now exists in the real React board through `ap
 
 The gallery is also a small, embeddable investigation game. It opens the dense case with one objective already primed, then guides the investigator through selecting an entity, interrogating a relationship, repositioning evidence and exploring the camera. `Hint` and `Restart` are intentionally local UI controls; they do not change the snapshot or claim a conclusion. The empty board remains free exploration because there is no evidence to score.
 
-The interaction model separates camera state from graph layout state: dragging a node changes only its working position, while dragging the background pans the camera and Ctrl/Cmd + wheel zooms around the pointer. Escape cancels an in-progress node or camera gesture. This follows a familiar graph-exploration pattern documented in [Neo4j Browser result frames](https://neo4j.com/docs/browser/operations/result-frames/) while keeping the implementation independent and renderer-neutral.
+The interaction model separates camera state from graph layout state: dragging a node changes only its working position, while dragging the background pans the camera and the mouse wheel zooms around the pointer. Escape cancels an in-progress node or camera gesture. This follows a familiar graph-exploration pattern documented in [Neo4j Browser result frames](https://neo4j.com/docs/browser/operations/result-frames/) while keeping the implementation independent and renderer-neutral.
 
 The dense board now has type-aware SVG glyphs for people, devices, accounts, banks, organisations and claim clusters. A lightweight, bounded physics pass uses relationship springs, local repulsion, damping and release velocity; it is dormant in the initial state, wakes when the investigator moves the graph, and can be paused or resumed with the `Motion` control. This gives the graph a tactile billiard-table response without turning the evidence snapshot into an uncontrolled animation.
 
@@ -31,7 +31,9 @@ For an article or static page, publish the file as an asset and embed it without
 ></iframe>
 ```
 
-The browser qualification lives in `apps/web/e2e/gallery-mini-game.spec.ts`. It exercises the objective loop, node movement, camera pan, reset, all five scenarios, all four views and an Axe accessibility audit. The article itself is not modified by this implementation.
+The browser qualification lives in `apps/web/e2e/gallery-mini-game.spec.ts`. It exercises the objective loop, node movement, camera pan, wheel zoom, reset, all five scenarios, all four views, the visible six-check auto-test suite and an Axe accessibility audit. The article itself is not modified by this implementation.
+
+The graph is also self-testable from the same surface. `Run all` makes the engine show each instruction, expected result, observed result, status and duration; `Run` executes one check. Every check restores the working graph state afterwards, and the automation seam is available as `window.fgaGraphAutoTest.runAll()`, `runOne(id)` and `getReport()`.
 
 The library is a renderer-neutral contract catalogue. Each example contains:
 

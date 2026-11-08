@@ -1,6 +1,6 @@
 # Fraud Graph Arena
 
-This repository contains the FGA 03–05 implementation candidate on top of the qualified Iteration 00 governance baseline. The Academy journey uses a frontend-owned declarative screen system; the canonical case-data and candidate-aware persistence subsystems are implemented behind explicit contract and security boundaries. Live Databricks qualification and final immutable release lineage remain external closure prerequisites until fresh evidence is available.
+This repository contains the FGA 03–06 implementation on top of the qualified Iteration 00 governance baseline. The Academy journey uses a frontend-owned declarative screen system; the canonical case-data and candidate-aware persistence subsystems are implemented behind explicit contract and security boundaries. FGA-06 adds a renderer-neutral graph investigation lab, a visible graph auto-test suite and current live qualification evidence from the `fga` Databricks profile. The historical FGA05 immutable closure record and a local Astra publication target remain explicit limitations.
 
 ## Playable result
 
@@ -129,11 +129,11 @@ The generated contract is written to `contracts/openapi-v1.json`.
 
 ## Deliberate non-goals
 
-There is no real ranked case content or player-facing evaluator behaviour. Live Databricks execution remains unqualified while the configured warehouse is unavailable; local/reference persistence qualification does not substitute for that live requirement.
+There is no real ranked case content or player-facing evaluator behaviour. The graph gallery remains a safe presentation/interaction lab and does not authorize investigation or mutate canonical evidence. The `fga` Databricks evidence covers the current sandbox qualification, while the administrator identity cannot prove non-admin denial.
 
 ## Release status
 
-The current branch is an implementation candidate, not a 100% compliant immutable release. The I05 gate remains open until all closure-critical evidence is fresh, source-coherent and live Databricks qualification succeeds.
+The current FGA-06 release line is qualified locally and tagged through the release evidence workflow. Strict delivery status remains 24/25 in-scope obligations (96%) because the historical FGA05 immutable closure cannot be reconstructed from the current identity; Astra is not claimed because no local target or registered tooling exists.
 
 Iteration 01 proves architectural continuity without spending any real-case spoilers.
 

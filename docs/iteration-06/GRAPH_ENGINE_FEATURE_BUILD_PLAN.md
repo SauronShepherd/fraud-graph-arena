@@ -5,7 +5,7 @@
 **Scope:** FGA-06 graph engine, static gallery, React board integration, renderer-neutral interaction model and qualification tooling  
 **Audience:** Product owner, frontend engineers, data-contract owners, visual-design reviewers, accessibility reviewers and test engineers  
 **Language:** English, matching the technical documentation for FGA-06  
-**Last updated:** 2026-11-07  
+**Last updated:** 2026-11-08
 
 ---
 
@@ -32,6 +32,7 @@ The plan prioritises the features that create the largest improvement in investi
 - deterministic, controllable physics;
 - progressive disclosure for large graphs;
 - performance and accessibility qualification across renderer adapters.
+- a visible, deterministic graph auto-test lab that shows each instruction, expectation, observed result, status and duration without mutating the evidence snapshot.
 
 The plan is deliberately evidence-safe. It does not introduce a fraud verdict, guilt score, accusation command or hidden truth inside the visual engine.
 
@@ -51,6 +52,7 @@ The current FGA-06 implementation already provides a useful base:
 | React integration | `GraphViewport` and `GraphContextPanel` | Align production DOM semantics with gallery behavior |
 | Examples | Empty, compact, temporal, keyboard and dense deterministic examples | Add adversarial and scale fixtures to the qualification catalogue |
 | Qualification | Candidate registry, adapters, renderer exhibit and local browser coverage | Expand from lifecycle checks to interaction, accessibility and performance gates |
+| Visible auto-testing | The static gallery now exposes a six-check graph suite and a reusable `window.fgaGraphAutoTest` seam | Keep the suite isolated, observable and part of every gallery release check |
 | Performance | Frozen targets for first render, selection, fit/reset, resize and fallback | Measure defined user-visible events, not only mount time |
 
 Current implementation evidence is recorded in:
@@ -76,6 +78,7 @@ The first execution slice of this plan is now implemented locally:
 - renderer-neutral command/event controller with ordered, source-labelled events and deterministic replay;
 - static-gallery and React-board integration;
 - browser and Axe coverage for the complete workflow.
+- visible graph auto-testing for the graph contract, node dossier, hover context, camera zoom, topology switching and investigator-added relationships; each check runs against an isolated snapshot and reports expected/observed values and duration.
 
 This checkpoint does not mark the entire plan complete. Lasso, multi-selection, additional layout modes, replay bundle export, renderer-scale qualification and later release hardening remain scheduled phases. The controller currently covers the implemented command slice; it is not yet the complete future command catalogue.
 
@@ -100,6 +103,7 @@ The engine must:
 11. Make renderer substitution measurable and observable.
 12. Work with open-source-compatible dependencies and avoid commercial-runtime coupling.
 13. Give the article/gallery a compelling visual surface without copying proprietary code or assets.
+14. Make graph correctness inspectable while it runs: an investigator must be able to see what the engine is checking, what it expected, what it observed and how long it took.
 
 ### 3.2 Non-goals
 
@@ -938,6 +942,7 @@ The test system must prove both visual usefulness and engineering correctness.
 - Run the same command sequences through every candidate renderer.
 - Keep Databricks and network access out of local renderer tests.
 - Treat snapshots and expected command results as reviewable evidence.
+- Keep the visible auto-test suite deterministic, isolated from the investigator's working state and usable as both a manual demonstration and an automation seam.
 - Separate visual regression from semantic correctness.
 - Record environment, commit, browser, viewport, fixture hash and dependency versions.
 
@@ -958,6 +963,19 @@ The test system must prove both visual usefulness and engineering correctness.
 | T10 Resilience/security | Invalid data, renderer failure, redaction, dependency/license checks | Vitest/scripts | Release and contract changes |
 | T11 Manual exploratory | Usability, visual hierarchy, touch feel and assistive review | Human checklist | Release candidate |
 | T12 Environment qualification | Packaging/data integration in target workspace | Databricks/local gate | Deployment or schema changes |
+
+### 10.2.1 Visible graph auto-test contract
+
+The gallery quality gate is part of the engine experience, not a hidden developer-only console. It must:
+
+- expose a compact bottom panel that does not block graph pointer interaction;
+- show one row per check with the instruction, expected result, observed result, status and elapsed time;
+- support `Run all`, `Run` for one check, `Clear` and collapse/expand;
+- isolate every check with a presentation-state snapshot and restore it after execution;
+- distinguish `queued`, `running`, `passed`, `failed` and `not applicable`;
+- expose a stable automation seam (`window.fgaGraphAutoTest`) without leaking renderer-native objects;
+- keep the evidence snapshot and published relationships unchanged when testing working-layer behaviour;
+- include browser and accessibility coverage for the panel itself and its interaction with the graph.
 
 ### 10.3 Fixture catalogue
 

@@ -12,8 +12,9 @@ This audit is deliberately conservative: absence of an obvious gap is not treate
 | Board selection owns IDs, not actions | `BoardPage` selection state and no investigation endpoint | COMPLETE_LOCALLY |
 | Qualification fixture and frozen criteria | `qualification/fixture-v1.json`, requirements, envelope, schema, shared lifecycle harness, report validator | IMPLEMENTED_AND_EXECUTED |
 | Renderer-neutral graph example library | `apps/web/src/graph-engine/examples.ts`, five deterministic scenarios, explicit action sequences and validation tests | IMPLEMENTED_AND_EXECUTED |
-| Zero-install static example gallery | `docs/iteration-06/examples/gallery.html`, inline SVG/HTML/JS, five tabs, menus, filters, views and keyboard path | IMPLEMENTED_AND_BROWSER_CHECKED |
-| Embeddable investigation mini-game | Static gallery HUD, objective/progress loop, hints/restart, node drag, background pan, modifier-wheel zoom and camera/layout separation | IMPLEMENTED_AND_BROWSER_CHECKED |
+| Zero-install static example gallery | `docs/iteration-06/examples/gallery.html`, inline SVG/HTML/JS, five tabs, menus, filters, views, keyboard path and selectable presentation topologies | IMPLEMENTED_AND_BROWSER_CHECKED |
+| Embeddable investigation mini-game | Static gallery HUD, objective/progress loop, hints/restart, node drag, background pan, wheel zoom and camera/layout separation | IMPLEMENTED_AND_BROWSER_CHECKED |
+| Visible graph auto-testing | Floating six-check suite with instruction, expected/observed result, status, duration, isolated state restoration, individual runs and `window.fgaGraphAutoTest` | IMPLEMENTED_AND_BROWSER_CHECKED |
 | Tactile graph motion and glyphs | Type-aware SVG glyphs, bounded spring/repulsion physics, drag release velocity, damping, settling and accessible Motion toggle | IMPLEMENTED_AND_BROWSER_CHECKED |
 | Contextual hover panels | Interactive target-aware node/relationship preview on pointer hover and keyboard focus, delayed hide while entering the card, icon actions and persistent dossier on selection | IMPLEMENTED_AND_BROWSER_CHECKED |
 | Investigator working relationships | Local relationship composer, dashed rendering, stable local IDs and deletion limited to investigator-added edges | IMPLEMENTED_AND_BROWSER_CHECKED |
@@ -28,7 +29,7 @@ This audit is deliberately conservative: absence of an obvious gap is not treate
 | Performance measurements | twelve repetitions per candidate record first-useful-render, selection, fit, resize, cleanup and long-task telemetry against the frozen envelope | QUALIFIED_FOR_FROZEN_ENVELOPE |
 | Production renderer decision | ADR and formal report qualify Cytoscape.js 3.34.4; semantic inspector/fallback remain project-owned | QUALIFIED_CYTOSCAPE_INCUMBENT |
 | FGA05 live predecessor closure | FGA06 live sandbox qualification now passes with profile `fga`; historical formal predecessor closure still requires its own release evidence | LIVE_SANDBOX_PASS_HISTORICAL_CLOSURE_PENDING |
-| Formal two-commit/tag release qualification | source/evidence commits, closure validator, Docker smoke and immutable tag `fga-iteration-06-r3` | COMPLETE_AND_TAGGED |
+| Formal two-commit/tag release qualification | source/evidence commits, closure validator, Docker smoke and immutable tag `fga-iteration-06-r5` | COMPLETE_AND_TAGGED |
 
 ## Scope deliberately not implemented
 
@@ -36,16 +37,16 @@ Bounded expansion, relationship filtering, focus mode, hairball prevention, grap
 
 ## Verification performed
 
-Python compilation, local gate, OpenAPI export, frontend typecheck/build, in-memory T02/ACADEMY_001 workspace smoke checks, JSON parsing, fixture hashing, the full FGA04–FGA06 Python regression (93 passed), Playwright renderer exhibit (5 passed), static gallery mini-game qualification (3 passed), twelve-run renderer performance qualification, Docker root/health smoke, and live Databricks qualification were performed. The latest frontend regression passed Vitest (22 files, 49 tests), `npm run build`, the gallery Playwright tests, and Axe with zero violations. `git diff --check` retains only the pre-existing CRLF normalization warning for `contracts/openapi-v1.json`; the release commits themselves are clean. The `fga` admin identity cannot qualify the non-admin denial test.
+Python compilation, local gate, OpenAPI export, frontend typecheck/build, in-memory T02/ACADEMY_001 workspace smoke checks, JSON parsing, fixture hashing, the full FGA04–FGA06 Python regression (93 passed), Playwright renderer exhibit (5 passed), static gallery qualification (4 passed, including the six-check visible auto-test suite), twelve-run renderer performance qualification, Docker root/health smoke, and live Databricks qualification were performed. The latest frontend regression passed Vitest (22 files, 49 tests), `npm run build`, the gallery Playwright tests, and Axe with zero violations. `git diff --check` retains only the pre-existing CRLF normalization warning for `contracts/openapi-v1.json`; the release commits themselves are clean. The `fga` admin identity cannot qualify the non-admin denial test.
 
-## Progress calculation — 2026-11-07
+## Progress calculation — 2026-11-08
 
 The strict delivery percentage is calculated from this table, not from line count:
 
-- 25 tracked obligations total;
+- 26 tracked obligations total;
 - 1 is explicitly out of scope, leaving 24 in-scope obligations;
-- 23 are fully green (`COMPLETE_LOCALLY`, `IMPLEMENTED_AND_EXECUTED`, `IMPLEMENTED_AND_BROWSER_CHECKED`, `IMPLEMENTED_AND_TESTED`, `QUALIFIED_COMPARISON_EVIDENCE`, `QUALIFIED_FOR_FROZEN_ENVELOPE`, `QUALIFIED_CYTOSCAPE_INCUMBENT` or `COMPLETE_AND_TAGGED`);
-- strict completion: **23 / 24 = 96%**;
+- 24 are fully green (`COMPLETE_LOCALLY`, `IMPLEMENTED_AND_EXECUTED`, `IMPLEMENTED_AND_BROWSER_CHECKED`, `IMPLEMENTED_AND_TESTED`, `QUALIFIED_COMPARISON_EVIDENCE`, `QUALIFIED_FOR_FROZEN_ENVELOPE`, `QUALIFIED_CYTOSCAPE_INCUMBENT` or `COMPLETE_AND_TAGGED`);
+- strict completion: **24 / 25 = 96%**;
 - one deliberately visible predecessor gap remains: the historical FGA05 immutable closure record cannot be reconstructed or rewritten from the current administrator identity.
 
 The first investigation-workflow slice, renderer decision, Docker deployment and formal release are complete and locally browser-checked. The 96% figure is for the FGA-06 delivery ledger; it must not be read as “the entire future graph-engine vision is finished”. The 30-feature catalogue still contains scheduled work such as lasso, multi-selection, full replay/undo, additional layouts and renderer-scale qualification.

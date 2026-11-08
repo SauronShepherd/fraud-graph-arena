@@ -15,6 +15,6 @@ This map is intentionally conservative. A local implementation artifact is not t
 | Cytoscape.js qualification | `reports/iteration-06/renderer-cytoscape-qualification-fga-2026-11-08.json` | Qualified on all FGA06 hard requirements for the fixed envelope |
 | Sigma.js/D3/React Flow comparison | `reports/iteration-06/renderer-comparison-fga-2026-11-03.json`, `renderer-performance-fga-2026-11-08.json` | Automatic, repeated performance and analyst review evidence pass; documented trade-offs remain |
 | Commercial renderer review | Deliberately excluded from this OSS/non-commercial project scope | Out of scope |
-| Formal FGA06 release gate | `scripts/validate_iteration_06_closure.py`, `scripts/create_iteration_06_tag.py`, commits `719f2a8` → `1596ca1`, tag `fga-iteration-06-r3` | Complete locally; Docker smoke is green |
+| Formal FGA06 release gate | `scripts/validate_iteration_06_closure.py`, `scripts/create_iteration_06_tag.py`, the source/evidence commit pair for the current candidate, tag `fga-iteration-06-r5` | Complete locally after the evidence-only closure commit; Docker smoke is green |
 
 The outstanding rows require execution and/or external evidence. They must not be represented as complete by changing status files alone.
