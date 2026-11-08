@@ -30,5 +30,7 @@
   "renderer_screenshot": "reports/iteration-06/renderer-exhibit-manual-2026-11-03.png",
   "renderer_fixture_sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef",
   "renderer_automatic_status": "PASS_ALL_4_CANDIDATES",
-  "renderer_manual_review_status": "PASS_ANALYST_REVIEW"
+  "renderer_manual_review_status": "PASS_ANALYST_REVIEW",
+  "visible_graph_auto_test_suite": "PASS_6_CHECKS",
+  "gallery_e2e": 4
 }

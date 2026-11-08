@@ -1,16 +1,16 @@
 {
   "schema": "fga06-closure-v1",
-  "generated_at": "2026-11-08T05:05:00+00:00",
+  "generated_at": "2026-11-08T05:55:00+00:00",
   "status": "passing",
   "closure_eligible": true,
-  "source_commit": "816b8f0ceb46ee9fbba8fcc4e54ff036931d1012",
+  "source_commit": "2c0ef64614053080fcf0f8cc8e8557b174850dab",
   "evidence_scope": "FGA06 renderer qualification, graph investigation slice and fga Databricks sandbox evidence",
   "qualification": "reports/iteration-06/renderer-cytoscape-qualification-fga-2026-11-08.json",
   "performance": "reports/iteration-06/renderer-performance-fga-2026-11-08.json",
   "manual_review": "reports/iteration-06/renderer-manual-review-fga-2026-11-08.json",
   "databricks_profile": "fga",
   "databricks_scope": {"catalog": "workspace", "schema": "fga_sandbox", "warehouse": "7c640666d4d3eb61", "structure_objects": 44, "active_tables": 32, "idempotency_packages": 13},
-  "local_regression": {"python_tests": 93, "frontend_test_files": 22, "frontend_tests": 49, "qualification_e2e": 5, "gallery_e2e": 3, "performance_repetitions_per_candidate": 12, "docker_image_smoke": "PASS"},
+  "local_regression": {"python_tests": 93, "frontend_test_files": 22, "frontend_tests": 49, "qualification_e2e": 5, "gallery_e2e": 4, "visible_graph_auto_test_checks": 6, "performance_repetitions_per_candidate": 12, "docker_image_smoke": "PASS"},
   "docker_local": {"status": "PASS", "compose_service": "fraud-graph-arena-web-1", "image": "fraud-graph-arena-web:latest", "root_status": 200, "ready_status": 200, "ready_body": {"status": "ready", "checks": {"round_repository": "ready", "frontend_distribution": "ready"}}, "evidence": "reports/iteration-06/docker-local-smoke-2026-11-08.png"},
   "limitations": ["The fga identity is an administrator; non-admin truth-denial evidence remains not qualified.", "The historical FGA05 immutable closure record is preserved separately and is not rewritten by this FGA06 evidence bundle.", "A local Astra publication target is not present in this repository or registered local tooling; the repository app is published through its documented local HTTP/Docker targets."]
 }

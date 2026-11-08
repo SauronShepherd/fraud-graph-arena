@@ -1,10 +1,10 @@
 {
   "schema": "fga06-renderer-qualification-v1",
-  "generated_at": "2026-11-08T03:56:56.029364+00:00",
+  "generated_at": "2026-11-08T04:46:03.271895+00:00",
   "candidate": "Cytoscape.js",
   "candidate_version": "3.34.4",
   "fixture_sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef",
-  "source_commit": "816b8f0ceb46ee9fbba8fcc4e54ff036931d1012",
+  "source_commit": "2c0ef64614053080fcf0f8cc8e8557b174850dab",
   "environment": {
     "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
     "viewport": "1280x720",
@@ -18,13 +18,13 @@
       "runNumber": 1,
       "mode": "A_RENDERER",
       "measurements": {
-        "mountMs": 24.200000017881393,
-        "fitMs": 4.4000000059604645,
-        "viewportMs": 0.3999999761581421,
-        "resizeMs": 0.20000001788139343,
-        "probeNodeMs": 0.19999998807907104,
-        "probeEdgeMs": 0.09999999403953552,
-        "destroyMs": 1.100000023841858,
+        "mountMs": 12.700000017881393,
+        "fitMs": 1.5,
+        "viewportMs": 0.19999998807907104,
+        "resizeMs": 0.09999999403953552,
+        "probeNodeMs": 0,
+        "probeEdgeMs": 0,
+        "destroyMs": 0.4000000059604645,
         "selectedNodeId": null,
         "selectedEdgeId": "FIX-E-0000",
         "probedNodeId": "FIX-N-0000",
@@ -37,13 +37,13 @@
       "runNumber": 2,
       "mode": "B_SOLUTION",
       "measurements": {
-        "mountMs": 20.099999994039536,
-        "fitMs": 2.199999988079071,
-        "viewportMs": 0.10000002384185791,
+        "mountMs": 9.900000005960464,
+        "fitMs": 1.4000000059604645,
+        "viewportMs": 0,
         "resizeMs": 0.09999999403953552,
         "probeNodeMs": 0,
         "probeEdgeMs": 0,
-        "destroyMs": 0.19999998807907104,
+        "destroyMs": 0.09999999403953552,
         "selectedNodeId": null,
         "selectedEdgeId": "FIX-E-0000",
         "probedNodeId": "FIX-N-0000",
@@ -85,13 +85,13 @@
         "runNumber": 1,
         "mode": "A_RENDERER",
         "measurements": {
-          "mountMs": 24.200000017881393,
-          "fitMs": 4.4000000059604645,
-          "viewportMs": 0.3999999761581421,
-          "resizeMs": 0.20000001788139343,
-          "probeNodeMs": 0.19999998807907104,
-          "probeEdgeMs": 0.09999999403953552,
-          "destroyMs": 1.100000023841858,
+          "mountMs": 12.700000017881393,
+          "fitMs": 1.5,
+          "viewportMs": 0.19999998807907104,
+          "resizeMs": 0.09999999403953552,
+          "probeNodeMs": 0,
+          "probeEdgeMs": 0,
+          "destroyMs": 0.4000000059604645,
           "selectedNodeId": null,
           "selectedEdgeId": "FIX-E-0000",
           "probedNodeId": "FIX-N-0000",
@@ -103,13 +103,13 @@
         "runNumber": 2,
         "mode": "B_SOLUTION",
         "measurements": {
-          "mountMs": 20.099999994039536,
-          "fitMs": 2.199999988079071,
-          "viewportMs": 0.10000002384185791,
+          "mountMs": 9.900000005960464,
+          "fitMs": 1.4000000059604645,
+          "viewportMs": 0,
           "resizeMs": 0.09999999403953552,
           "probeNodeMs": 0,
           "probeEdgeMs": 0,
-          "destroyMs": 0.19999998807907104,
+          "destroyMs": 0.09999999403953552,
           "selectedNodeId": null,
           "selectedEdgeId": "FIX-E-0000",
           "probedNodeId": "FIX-N-0000",
@@ -139,95 +139,95 @@
     "repetitions": 12,
     "samples": [
       {
-        "firstUsefulRenderMs": 118.9,
-        "selectionVisibleMs": 0.2,
-        "fitMs": 11.6,
-        "resizeMs": 11.2,
-        "cleanupMs": 9.5
-      },
-      {
-        "firstUsefulRenderMs": 64,
-        "selectionVisibleMs": 0.1,
-        "fitMs": 13.3,
-        "resizeMs": 11.1,
-        "cleanupMs": 7.4
-      },
-      {
-        "firstUsefulRenderMs": 52.4,
-        "selectionVisibleMs": 0,
-        "fitMs": 8.2,
-        "resizeMs": 23.3,
-        "cleanupMs": 8.3
-      },
-      {
-        "firstUsefulRenderMs": 53.1,
-        "selectionVisibleMs": 0.1,
-        "fitMs": 8,
-        "resizeMs": 11.1,
-        "cleanupMs": 7.9
-      },
-      {
-        "firstUsefulRenderMs": 88.9,
-        "selectionVisibleMs": 0,
-        "fitMs": 6.4,
-        "resizeMs": 14,
-        "cleanupMs": 6.8
-      },
-      {
-        "firstUsefulRenderMs": 70.8,
-        "selectionVisibleMs": 0.2,
-        "fitMs": 12.3,
-        "resizeMs": 7.4,
-        "cleanupMs": 8.1
-      },
-      {
-        "firstUsefulRenderMs": 105.3,
+        "firstUsefulRenderMs": 161.7,
         "selectionVisibleMs": 0.3,
-        "fitMs": 10.8,
-        "resizeMs": 10,
-        "cleanupMs": 8.3
+        "fitMs": 13.8,
+        "resizeMs": 11.3,
+        "cleanupMs": 7.2
       },
       {
-        "firstUsefulRenderMs": 64.2,
+        "firstUsefulRenderMs": 74.5,
         "selectionVisibleMs": 0.1,
-        "fitMs": 10.3,
-        "resizeMs": 10.7,
-        "cleanupMs": 11.2
-      },
-      {
-        "firstUsefulRenderMs": 69.5,
-        "selectionVisibleMs": 0.2,
-        "fitMs": 11.1,
-        "resizeMs": 10.6,
-        "cleanupMs": 8.3
-      },
-      {
-        "firstUsefulRenderMs": 79.9,
-        "selectionVisibleMs": 0,
-        "fitMs": 7.5,
+        "fitMs": 17.4,
         "resizeMs": 5.6,
+        "cleanupMs": 8.6
+      },
+      {
+        "firstUsefulRenderMs": 44.8,
+        "selectionVisibleMs": 0.2,
+        "fitMs": 8.8,
+        "resizeMs": 9.5,
+        "cleanupMs": 13.6
+      },
+      {
+        "firstUsefulRenderMs": 36.9,
+        "selectionVisibleMs": 0.2,
+        "fitMs": 5.5,
+        "resizeMs": 10.7,
+        "cleanupMs": 13.6
+      },
+      {
+        "firstUsefulRenderMs": 42.3,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 4.6,
+        "resizeMs": 3.5,
+        "cleanupMs": 15.7
+      },
+      {
+        "firstUsefulRenderMs": 35.3,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 5.6,
+        "resizeMs": 11.1,
+        "cleanupMs": 14
+      },
+      {
+        "firstUsefulRenderMs": 44,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 30.2,
+        "resizeMs": 5,
+        "cleanupMs": 7.3
+      },
+      {
+        "firstUsefulRenderMs": 42.2,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 4.5,
+        "resizeMs": 3.6,
+        "cleanupMs": 12.9
+      },
+      {
+        "firstUsefulRenderMs": 32.2,
+        "selectionVisibleMs": 0.1,
+        "fitMs": 4.3,
+        "resizeMs": 14,
+        "cleanupMs": 15.8
+      },
+      {
+        "firstUsefulRenderMs": 33.1,
+        "selectionVisibleMs": 0.2,
+        "fitMs": 4.4,
+        "resizeMs": 13.8,
         "cleanupMs": 16.8
       },
       {
-        "firstUsefulRenderMs": 42.4,
-        "selectionVisibleMs": 0.1,
-        "fitMs": 10.6,
-        "resizeMs": 13,
-        "cleanupMs": 8.4
+        "firstUsefulRenderMs": 31.5,
+        "selectionVisibleMs": 0,
+        "fitMs": 4.2,
+        "resizeMs": 15.7,
+        "cleanupMs": 14.3
       },
       {
-        "firstUsefulRenderMs": 47.1,
+        "firstUsefulRenderMs": 30.6,
         "selectionVisibleMs": 0.1,
-        "fitMs": 9.9,
-        "resizeMs": 8.7,
-        "cleanupMs": 15.3
+        "fitMs": 3.9,
+        "resizeMs": 15.8,
+        "cleanupMs": 16.1
       }
     ],
     "summary": {
       "firstUsefulRenderMs": {
-        "p50": 64.2,
-        "p95": 118.9,
-        "max": 118.9
+        "p50": 36.9,
+        "p95": 161.7,
+        "max": 161.7
       },
       "selectionVisibleMs": {
         "p50": 0.1,
@@ -235,23 +235,23 @@
         "max": 0.3
       },
       "fitMs": {
-        "p50": 10.3,
-        "p95": 13.3,
-        "max": 13.3
+        "p50": 4.6,
+        "p95": 30.2,
+        "max": 30.2
       },
       "resizeMs": {
         "p50": 10.7,
-        "p95": 23.3,
-        "max": 23.3
+        "p95": 15.8,
+        "max": 15.8
       },
       "cleanupMs": {
-        "p50": 8.3,
+        "p50": 13.6,
         "p95": 16.8,
         "max": 16.8
       }
     },
-    "longTaskCount": 4,
-    "longTaskTotalMs": 254,
+    "longTaskCount": 2,
+    "longTaskTotalMs": 165,
     "envelope": {
       "firstUsefulRender": true,
       "selectionVisible": true,
