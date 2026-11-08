@@ -1,9 +1,9 @@
 {
   "schema": "fga06-closure-v1",
-  "generated_at": "2026-11-08T04:59:00+00:00",
+  "generated_at": "2026-11-08T05:05:00+00:00",
   "status": "passing",
   "closure_eligible": true,
-  "source_commit": "a5c0c9f89a59a51601f71a8b78a94d54775fa936",
+  "source_commit": "719f2a81f5a86d9506d0972af25fef2861185d38",
   "evidence_scope": "FGA06 renderer qualification, graph investigation slice and fga Databricks sandbox evidence",
   "qualification": "reports/iteration-06/renderer-cytoscape-qualification-fga-2026-11-08.json",
   "performance": "reports/iteration-06/renderer-performance-fga-2026-11-08.json",
