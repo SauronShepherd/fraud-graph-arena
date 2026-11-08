@@ -28,7 +28,7 @@ This audit is deliberately conservative: absence of an obvious gap is not treate
 | Performance measurements | twelve repetitions per candidate record first-useful-render, selection, fit, resize, cleanup and long-task telemetry against the frozen envelope | QUALIFIED_FOR_FROZEN_ENVELOPE |
 | Production renderer decision | ADR and formal report qualify Cytoscape.js 3.34.4; semantic inspector/fallback remain project-owned | QUALIFIED_CYTOSCAPE_INCUMBENT |
 | FGA05 live predecessor closure | FGA06 live sandbox qualification now passes with profile `fga`; historical formal predecessor closure still requires its own release evidence | LIVE_SANDBOX_PASS_HISTORICAL_CLOSURE_PENDING |
-| Formal two-commit/tag release qualification | source/evidence commits, closure validator, Docker smoke and immutable tags `fga-iteration-06-r1`/`r2` | COMPLETE_AND_TAGGED |
+| Formal two-commit/tag release qualification | source/evidence commits, closure validator, Docker smoke and immutable tag `fga-iteration-06-r3` | COMPLETE_AND_TAGGED |
 
 ## Scope deliberately not implemented
 
