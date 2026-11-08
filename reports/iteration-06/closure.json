@@ -3,7 +3,7 @@
   "generated_at": "2026-11-08T05:05:00+00:00",
   "status": "passing",
   "closure_eligible": true,
-  "source_commit": "719f2a81f5a86d9506d0972af25fef2861185d38",
+  "source_commit": "816b8f0ceb46ee9fbba8fcc4e54ff036931d1012",
   "evidence_scope": "FGA06 renderer qualification, graph investigation slice and fga Databricks sandbox evidence",
   "qualification": "reports/iteration-06/renderer-cytoscape-qualification-fga-2026-11-08.json",
   "performance": "reports/iteration-06/renderer-performance-fga-2026-11-08.json",
@@ -14,3 +14,4 @@
   "docker_local": {"status": "PASS", "compose_service": "fraud-graph-arena-web-1", "image": "fraud-graph-arena-web:latest", "root_status": 200, "ready_status": 200, "ready_body": {"status": "ready", "checks": {"round_repository": "ready", "frontend_distribution": "ready"}}, "evidence": "reports/iteration-06/docker-local-smoke-2026-11-08.png"},
   "limitations": ["The fga identity is an administrator; non-admin truth-denial evidence remains not qualified.", "The historical FGA05 immutable closure record is preserved separately and is not rewritten by this FGA06 evidence bundle.", "A local Astra publication target is not present in this repository or registered local tooling; the repository app is published through its documented local HTTP/Docker targets."]
 }
+

@@ -1,10 +1,10 @@
 {
   "schema": "fga06-renderer-qualification-v1",
-  "generated_at": "2026-11-08T03:56:07.237646+00:00",
+  "generated_at": "2026-11-08T03:56:56.029364+00:00",
   "candidate": "Cytoscape.js",
   "candidate_version": "3.34.4",
   "fixture_sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef",
-  "source_commit": "719f2a81f5a86d9506d0972af25fef2861185d38",
+  "source_commit": "816b8f0ceb46ee9fbba8fcc4e54ff036931d1012",
   "environment": {
     "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
     "viewport": "1280x720",
