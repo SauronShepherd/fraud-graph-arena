@@ -139,4 +139,30 @@ test.describe("static graph gallery mini-game", () => {
     const axe = await new AxeBuilder({ page }).analyze();
     expect(axe.violations).toEqual([]);
   });
+
+  test("runs the visible graph auto-test suite with evidence", async ({ page }) => {
+    await page.goto(pathToFileURL(galleryPath).href);
+
+    await expect(page.locator("#autotest-panel")).toBeVisible();
+    await expect(page.locator(".autotest-row")).toHaveCount(6);
+    await expect(page.locator("#autotest-summary")).toContainText("Ready");
+
+    await page.locator("[data-auto-command='run-all']").click();
+    await expect(page.locator("#autotest-count")).toHaveText("6 / 6", { timeout: 10000 });
+    await expect(page.locator("#autotest-summary")).toContainText("6 passed");
+    await expect(page.locator(".autotest-row[data-status='passed']")).toHaveCount(6);
+    await expect(page.locator(".autotest-row").first().locator(".autotest-time")).not.toHaveText("—");
+    await expect(page.locator("#selection-badge")).toHaveText("0 entities selected");
+
+    await page.locator("[data-auto-command='collapse']").click();
+    await expect(page.locator("#autotest-panel")).toHaveClass(/is-collapsed/);
+    await page.locator("[data-command='toggle-autotests']").click();
+    await expect(page.locator("#autotest-panel")).not.toHaveClass(/is-collapsed/);
+
+    await page.locator("[data-auto-command='clear']").click();
+    await expect(page.locator("#autotest-count")).toHaveText("0 / 6");
+    await page.locator("[data-auto-run='graph-contract']").click();
+    await expect(page.locator("#autotest-count")).toHaveText("1 / 1", { timeout: 10000 });
+    await expect(page.locator(".autotest-row[data-status='passed']")).toHaveCount(1);
+  });
 });

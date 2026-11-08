@@ -175,7 +175,7 @@
     .workspace { position: relative; display: block; width: 100%; height: calc(100vh - 68px); min-height: 0; }
     .graph-panel { position: relative; width: 100%; height: 100%; min-height: 0; border: 1px solid #6e4817; border-radius: 0; background: #030605; box-shadow: inset 0 0 0 8px rgba(15, 19, 13, .8), inset 0 0 50px rgba(0, 0, 0, .8); }
     .graph-panel::before { position: absolute; inset: 8px; z-index: 5; border: 1px solid rgba(133, 87, 25, .8); content: ""; pointer-events: none; }
-    .toolbar { position: absolute; top: 54px; right: 19px; z-index: 8; display: grid; grid-template-columns: repeat(6, auto); gap: 0; align-items: stretch; border: 1px solid #714716; background: rgba(5, 8, 6, .9); box-shadow: 0 8px 25px rgba(0, 0, 0, .35); padding: 0; }
+    .toolbar { position: absolute; top: 54px; right: 19px; z-index: 8; display: grid; grid-template-columns: repeat(7, auto); gap: 0; align-items: stretch; border: 1px solid #714716; background: rgba(5, 8, 6, .9); box-shadow: 0 8px 25px rgba(0, 0, 0, .35); padding: 0; }
     .toolbar h2 { display: none; }
     .toolbar button { min-width: 42px; height: 38px; border: 0; border-right: 1px solid rgba(113, 71, 22, .7); border-radius: 0; background: rgba(22, 24, 17, .88); color: #d99125; padding: 4px 8px; font-size: .7rem; }
     .toolbar button:last-child { border-right: 0; }
@@ -221,6 +221,37 @@
     .hover-preview-card .hover-stat { border: 1px solid rgba(119,78,26,.6); padding: 5px 4px; text-align: center; }
     .hover-preview-card .hover-stat b { display: block; color: #f2d17b; font-size: .82rem; }
     .hover-preview-card .hover-stat small { display: block; color: #91866d; font-size: .55rem; text-transform: uppercase; letter-spacing: .06em; }
+    .autotest-panel { position: absolute; left: 50%; bottom: 18px; z-index: 22; display: grid; width: min(820px, calc(100% - 450px)); max-height: min(34vh, 310px); transform: translateX(-50%); overflow: hidden; border: 1px solid #9a641e; background: rgba(4, 7, 5, .96); box-shadow: 0 16px 38px rgba(0, 0, 0, .62), inset 0 0 25px rgba(112, 203, 210, .04); pointer-events: none; }
+    .autotest-panel.is-collapsed { width: min(410px, calc(100% - 450px)); max-height: none; }
+    .autotest-panel.is-collapsed .autotest-progress, .autotest-panel.is-collapsed .autotest-list { display: none; }
+    .autotest-head { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #5d461f; padding: 9px 11px; }
+    .autotest-title { display: grid; min-width: 0; gap: 2px; }
+    .autotest-title strong { color: #e8d7ae; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+    .autotest-title span:last-child { overflow: hidden; color: #9f9477; font-size: .65rem; text-overflow: ellipsis; white-space: nowrap; }
+    .autotest-actions { display: flex; margin-left: auto; gap: 5px; }
+    .autotest-actions, .autotest-row button { pointer-events: auto; }
+    .autotest-actions button { border: 1px solid #76501b; border-radius: 2px; background: #12180f; color: #e8d7ae; padding: 5px 8px; font-size: .63rem; }
+    .autotest-actions button:hover, .autotest-actions button:focus-visible { border-color: #70cbd2; outline: 2px solid rgba(112,203,210,.2); }
+    .autotest-progress { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; padding: 7px 11px 5px; color: #9f9477; font-size: .62rem; }
+    .autotest-progress-track { height: 4px; overflow: hidden; background: rgba(151, 129, 82, .2); }
+    .autotest-progress-track span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #70cbd2, #d99125); transition: width .2s ease; }
+    .autotest-columns { display: grid; grid-template-columns: minmax(120px, 1.1fr) minmax(155px, 1.45fr) minmax(145px, 1.3fr) minmax(130px, 1.15fr) 58px 58px 34px; gap: 7px; padding: 1px 15px 3px; color: #91866d; font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; }
+    .autotest-list { display: grid; gap: 3px; overflow: auto; margin: 0; padding: 4px 8px 9px; list-style: none; }
+    .autotest-row { display: grid; grid-template-columns: minmax(120px, 1.1fr) minmax(155px, 1.45fr) minmax(145px, 1.3fr) minmax(130px, 1.15fr) 58px 58px 34px; align-items: center; gap: 7px; border-left: 2px solid rgba(151,129,82,.36); padding: 6px 7px; background: rgba(20, 22, 15, .66); color: #c8b98f; font-size: .62rem; }
+    .autotest-row[data-status="running"] { border-left-color: #70cbd2; background: rgba(30, 67, 70, .25); }
+    .autotest-row[data-status="passed"] { border-left-color: #c1e467; }
+    .autotest-row[data-status="failed"] { border-left-color: #ff7b42; background: rgba(104, 42, 27, .24); }
+    .autotest-row[data-status="skipped"] { border-left-color: #8d836c; opacity: .72; }
+    .autotest-cell { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .autotest-cell strong { color: #ead6a5; }
+    .autotest-cell small { color: #91866d; }
+    .autotest-status { font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .autotest-status[data-value="running"] { color: #70cbd2; }.autotest-status[data-value="passed"] { color: #c1e467; }.autotest-status[data-value="failed"] { color: #ff9a77; }.autotest-status[data-value="skipped"] { color: #b8ae95; }
+    .autotest-row button { border: 1px solid #76501b; border-radius: 2px; background: transparent; color: #d99125; padding: 3px 5px; font-size: .58rem; }
+    .autotest-row button:hover, .autotest-row button:focus-visible { border-color: #70cbd2; color: #f7e6b5; }
+    .autotest-row button:disabled, .autotest-actions button:disabled { cursor: wait; opacity: .45; }
+    @media (max-width: 1050px) { .autotest-panel { width: min(650px, calc(100% - 300px)); }.autotest-columns, .autotest-row { grid-template-columns: minmax(105px, 1fr) minmax(130px, 1.2fr) minmax(105px, 1fr) minmax(95px, 1fr) 52px 52px 31px; } }
+    @media (max-width: 720px) { .autotest-panel, .autotest-panel.is-collapsed { right: 12px; bottom: 12px; left: 12px; width: auto; transform: none; }.autotest-columns, .autotest-row { grid-template-columns: minmax(120px, 1fr) 60px 60px 32px; }.autotest-columns span:nth-child(2), .autotest-columns span:nth-child(3), .autotest-columns span:nth-child(4), .autotest-row .autotest-instruction, .autotest-row .autotest-expected, .autotest-row .autotest-result { display: none; }.autotest-head { align-items: flex-start; }.autotest-actions { flex-wrap: wrap; justify-content: flex-end; } }
     .edge-focus { stroke: rgba(226, 171, 55, .28); stroke-width: 14; }
     .mini-wrap { right: 20px; bottom: 17px; z-index: 7; width: 220px; border: 1px solid #9a641e; border-radius: 0; background: rgba(4, 7, 5, .93); padding: 10px; box-shadow: 0 10px 28px rgba(0, 0, 0, .5); }
     .legend { position: absolute; bottom: 18px; left: 20px; z-index: 7; display: grid; width: 230px; gap: 7px; border: 1px solid #9a641e; border-radius: 0; background: rgba(4, 7, 5, .94); padding: 11px 12px; color: #aa9d7a; font-size: .68rem; }
@@ -278,6 +309,7 @@
           <button type="button" data-command="reset">Reset</button>
           <button type="button" data-command="toggle-motion" aria-pressed="true" aria-label="Toggle soft graph motion">Motion</button>
           <button type="button" data-command="toggle-composer" aria-expanded="false">Add relation</button>
+          <button type="button" data-command="toggle-autotests" aria-expanded="true">Auto-test</button>
           <label class="topology-picker" title="Change only the presentation layout"><span>Topology</span><select id="topology-select" aria-label="Choose graph topology"><option value="native">Native</option><option value="radial">Radial clusters</option><option value="ring">Ring</option><option value="chain">Timeline chain</option><option value="star">Starburst</option><option value="grid">Evidence grid</option></select></label>
           <button type="button" data-view="node-link" aria-pressed="true">Node-link</button>
           <button type="button" data-view="matrix" aria-pressed="false">Matrix</button>
@@ -300,13 +332,22 @@
         </div>
         <div id="surface" tabindex="0" aria-label="Graph surface"></div>
         <div id="hover-preview" class="hover-preview" aria-live="polite"></div>
+        <section id="autotest-panel" class="autotest-panel" aria-labelledby="autotest-title">
+          <div class="autotest-head">
+            <div class="autotest-title"><span class="eyebrow">Engine quality gate</span><strong id="autotest-title">Graph auto-tests</strong><span id="autotest-summary" role="status" aria-live="polite">Ready · run the visible graph checks</span></div>
+            <div class="autotest-actions"><button type="button" data-auto-command="run-all">Run all</button><button type="button" data-auto-command="clear">Clear</button><button type="button" data-auto-command="collapse" aria-expanded="true">−</button></div>
+          </div>
+          <div class="autotest-progress"><span id="autotest-count">0 / 6</span><div class="autotest-progress-track" aria-hidden="true"><span id="autotest-progress-bar"></span></div><span id="autotest-elapsed">—</span></div>
+          <div class="autotest-columns" aria-hidden="true"><span>Test</span><span>Instruction</span><span>Expected</span><span>Observed</span><span>Status</span><span>Time</span><span></span></div>
+          <ol id="autotest-list" class="autotest-list" aria-label="Graph auto-test suite"></ol>
+        </section>
         <div id="favorites-panel" class="favorites-panel" aria-label="Marked graph targets"></div>
         <div id="minimap" class="mini-wrap" aria-label="Graph minimap"></div>
         <div id="legend" class="legend" aria-label="Graph legend"></div>
       </section>
       <aside id="inspector" class="panel inspector" aria-live="polite"></aside>
     </section>
-    <p class="footer">Investigate the mini-case above: click or right-click a node or relationship, drag nodes to re-layout the evidence, and drag empty space to pan. Scroll to zoom, or use the toolbar. Escape cancels an in-progress movement.</p>
+    <p class="footer">Investigate the mini-case above: click or right-click a node or relationship, drag nodes to re-layout the evidence, and drag empty space to pan. Scroll to zoom, or use the toolbar. The Auto-test panel runs visible graph checks without changing the evidence snapshot.</p>
   </main>
   <script>
     (() => {
@@ -428,11 +469,19 @@
       const gameProgressBar = document.querySelector("#game-progress-bar");
       const motionToggle = document.querySelector("[data-command='toggle-motion']");
       const composerToggle = document.querySelector("[data-command='toggle-composer']");
+      const autoTestToggle = document.querySelector("[data-command='toggle-autotests']");
       const hoverPreview = document.querySelector("#hover-preview");
       const favoritesPanel = document.querySelector("#favorites-panel");
+      const autoTestPanel = document.querySelector("#autotest-panel");
+      const autoTestList = document.querySelector("#autotest-list");
+      const autoTestSummary = document.querySelector("#autotest-summary");
+      const autoTestCount = document.querySelector("#autotest-count");
+      const autoTestProgressBar = document.querySelector("#autotest-progress-bar");
+      const autoTestElapsed = document.querySelector("#autotest-elapsed");
       const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
       const topologySelect = document.querySelector("#topology-select");
       const state = { exampleIndex: 0, topology: "native", view: "node-link", zoom: 1, panX: 0, panY: 0, velocities: new Map(), anchors: new Map(), motionNodeIds: new Set(), physicsFrame: 0, physicsLast: 0, physicsQuietFrames: 0, physicsTick: 0, physicsActive: false, physicsEnabled: !reducedMotion, selected: null, menu: null, hover: null, hoverHideTimer: null, filters: new Set(statuses), positions: new Map(), statusOverrides: new Map(), clusterFilter: null, addedEdges: [], favorites: [], composerOpen: false, nextRelationNumber: 1, log: [], dragging: null, panning: null, ignoreNextCanvasClick: false, challenge: { completed: new Set(), hint: false } };
+      const autoTestState = { running: false, collapsed: false, scopeIds: [], results: new Map(), startedAt: 0, elapsed: 0 };
       const current = () => examples[state.exampleIndex];
       const allEdges = () => [...current().edges, ...state.addedEdges];
       const edgeById = (id) => allEdges().find((item) => item.id === id);
@@ -552,6 +601,64 @@
         return result;
       }
       function applyTopology(topology, logChange = true) { state.topology = topology; state.positions = topologyPositions(current(), topology); state.anchors = new Map([...state.positions].map(([id, position]) => [id, clonePosition(position)])); state.velocities = new Map(current().nodes.map((item) => [item.id, { x: 0, y: 0 }])); if (logChange) setLog(`Presentation topology: ${topology}`); }
+      function autoTestSnapshot() {
+        return { topology: state.topology, view: state.view, zoom: state.zoom, panX: state.panX, panY: state.panY, positions: new Map([...state.positions].map(([id, position]) => [id, clonePosition(position)])), anchors: new Map([...state.anchors].map(([id, position]) => [id, clonePosition(position)])), velocities: new Map([...state.velocities].map(([id, velocity]) => [id, { ...velocity }])), selected: state.selected && { ...state.selected }, menu: state.menu && { ...state.menu }, filters: new Set(state.filters), statusOverrides: new Map(state.statusOverrides), clusterFilter: state.clusterFilter, addedEdges: state.addedEdges.map((item) => ({ ...item })), favorites: state.favorites.map((item) => ({ ...item })), composerOpen: state.composerOpen, nextRelationNumber: state.nextRelationNumber, log: [...state.log], challenge: { completed: new Set(state.challenge.completed), hint: state.challenge.hint, message: state.challenge.message || "" } };
+      }
+      function restoreAutoTestSnapshot(snapshot) {
+        stopPhysics();
+        if (state.hoverHideTimer) clearTimeout(state.hoverHideTimer);
+        Object.assign(state, { topology: snapshot.topology, view: snapshot.view, zoom: snapshot.zoom, panX: snapshot.panX, panY: snapshot.panY, positions: snapshot.positions, anchors: snapshot.anchors, velocities: snapshot.velocities, selected: snapshot.selected, menu: snapshot.menu, hover: null, hoverHideTimer: null, filters: snapshot.filters, statusOverrides: snapshot.statusOverrides, clusterFilter: snapshot.clusterFilter, addedEdges: snapshot.addedEdges, favorites: snapshot.favorites, composerOpen: snapshot.composerOpen, nextRelationNumber: snapshot.nextRelationNumber, log: snapshot.log, challenge: snapshot.challenge });
+        render();
+      }
+      const autoTestCases = [
+        { id: "graph-contract", title: "Graph contract", instruction: "Read stable node IDs and relationship endpoints", expected: "IDs are unique and every edge points to known nodes", run: () => { const nodes = current().nodes; const ids = new Set(nodes.map((item) => item.id)); const edges = allEdges(); if (ids.size !== nodes.length) throw new Error("duplicate node ID"); if (edges.some((item) => !ids.has(item.sourceId) || !ids.has(item.targetId))) throw new Error("edge endpoint missing"); return `${nodes.length} nodes · ${edges.length} relationships`; } },
+        { id: "node-context", title: "Node context", instruction: "Select the first visible entity and open its dossier", expected: "Selection, inspector and stable ID are available", run: () => { const item = visibleNodes()[0]; if (!item) return { skipped: true, actual: "No entity in the current scene" }; state.view = "node-link"; selectTarget(target("node", item.id)); if (!state.selected || !inspector.textContent.includes(item.id)) throw new Error("node dossier did not open"); return `${item.label} selected`; } },
+        { id: "hover-context", title: "Hover context", instruction: "Move attention to a node and expose its contextual preview", expected: "Preview shows status, metrics and actions", run: () => { const item = visibleNodes()[0]; if (!item) return { skipped: true, actual: "No entity in the current scene" }; state.view = "node-link"; render(); showHover(target("node", item.id)); if (!hoverPreview.classList.contains("is-visible") || !hoverPreview.querySelector(".hover-stats")) throw new Error("hover preview is incomplete"); return `${item.label} · ${connectedToNode(item.id).length} links`; } },
+        { id: "camera-wheel", title: "Camera wheel", instruction: "Apply one anchored zoom step around the graph surface", expected: "Camera changes without changing graph data", run: () => { const before = state.zoom; setZoom(before + .12); surface.dataset.zoom = state.zoom.toFixed(2); if (state.zoom <= before) throw new Error("zoom did not change"); return `${before.toFixed(2)}× → ${state.zoom.toFixed(2)}×`; } },
+        { id: "topology-switch", title: "Topology switch", instruction: "Re-layout the same evidence as radial clusters", expected: "All node IDs survive the presentation change", run: () => { const itemCount = visibleNodes().length; if (itemCount < 2) return { skipped: true, actual: "Fewer than two entities" }; applyTopology("radial", false); renderGraphOnly(); const positioned = visibleNodes().filter((item) => state.positions.has(item.id)).length; if (positioned !== itemCount) throw new Error("topology lost a node position"); return `${positioned} entities re-laid out`; } },
+        { id: "working-relation", title: "Working relation", instruction: "Create and render a removable investigator hypothesis", expected: "Dashed relationship appears without mutating published edges", run: () => { const nodes = visibleNodes(); if (nodes.length < 2) return { skipped: true, actual: "Fewer than two entities" }; const before = current().edges.length; state.addedEdges.push({ id: "AUTO-TEST-RELATION", sourceId: nodes[0].id, targetId: nodes[1].id, relationshipFamily: "INVESTIGATOR_ADDED", relationshipType: "AUTO_TEST_HYPOTHESIS", directed: true, confidence: "low", origin: "investigator-added" }); renderGraphOnly(); if (!surface.querySelector(".edge.working")) throw new Error("working relationship was not rendered"); if (current().edges.length !== before) throw new Error("published relationships changed"); return "Dashed local relation rendered"; } },
+      ];
+      const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+      const autoTestStatusLabel = (status) => ({ queued: "queued", running: "running", passed: "passed", failed: "failed", skipped: "n/a" }[status] || status);
+      function renderAutoTestPanel() {
+        const scope = autoTestState.scopeIds.length ? autoTestState.scopeIds : autoTestCases.map((item) => item.id);
+        const results = autoTestCases.map((item) => [item.id, autoTestState.results.get(item.id) || { status: "queued", actual: "Awaiting run", duration: null }]);
+        const scopedResults = results.filter(([id]) => scope.includes(id)).map(([, result]) => result);
+        const finished = scopedResults.filter((result) => ["passed", "failed", "skipped"].includes(result.status)).length;
+        const passed = scopedResults.filter((result) => result.status === "passed").length;
+        const failed = scopedResults.filter((result) => result.status === "failed").length;
+        const progress = scope.length ? Math.round((finished / scope.length) * 100) : 0;
+        autoTestCount.textContent = `${finished} / ${scope.length}`;
+        autoTestProgressBar.style.width = `${progress}%`;
+        autoTestElapsed.textContent = autoTestState.elapsed ? `${autoTestState.elapsed} ms` : "—";
+        if (autoTestState.running) autoTestSummary.textContent = `Running · ${finished}/${scope.length} complete`;
+        else if (finished) autoTestSummary.textContent = failed ? `${passed} passed · ${failed} failed` : `${passed} passed · ${scopedResults.filter((result) => result.status === "skipped").length} not applicable`;
+        else autoTestSummary.textContent = `Ready · ${autoTestCases.length} visible graph checks`;
+        autoTestList.innerHTML = autoTestCases.map((item) => { const result = autoTestState.results.get(item.id) || { status: "queued", actual: "Awaiting run", duration: null }; return `<li class="autotest-row" data-status="${result.status}"><span class="autotest-cell"><strong>${escapeHtml(item.title)}</strong><br><small>${escapeHtml(autoTestStatusLabel(result.status))}</small></span><span class="autotest-cell autotest-instruction">${escapeHtml(item.instruction)}</span><span class="autotest-cell autotest-expected">${escapeHtml(item.expected)}</span><span class="autotest-cell autotest-result">${escapeHtml(result.actual || "Awaiting run")}</span><span class="autotest-cell autotest-status" data-value="${result.status}">${escapeHtml(autoTestStatusLabel(result.status))}</span><span class="autotest-cell autotest-time">${result.duration == null ? "—" : `${result.duration} ms`}</span><button type="button" data-auto-run="${item.id}" aria-label="Run ${escapeHtml(item.title)}" ${autoTestState.running ? "disabled" : ""}>Run</button></li>`; }).join("");
+        autoTestPanel.classList.toggle("is-collapsed", autoTestState.collapsed);
+        autoTestToggle.setAttribute("aria-expanded", String(!autoTestState.collapsed));
+        autoTestPanel.querySelector("[data-auto-command='run-all']").disabled = autoTestState.running;
+        autoTestPanel.querySelector("[data-auto-command='clear']").disabled = autoTestState.running;
+        autoTestPanel.querySelector("[data-auto-command='collapse']").textContent = autoTestState.collapsed ? "+" : "−";
+        autoTestPanel.querySelector("[data-auto-command='collapse']").setAttribute("aria-expanded", String(!autoTestState.collapsed));
+        autoTestPanel.querySelectorAll("[data-auto-run]").forEach((button) => button.addEventListener("click", () => runAutoTests([button.dataset.autoRun])));
+      }
+      async function runAutoTests(ids = autoTestCases.map((item) => item.id)) {
+        if (autoTestState.running) return;
+        const selectedIds = autoTestCases.filter((item) => ids.includes(item.id)).map((item) => item.id);
+        if (!selectedIds.length) return;
+        autoTestState.running = true; autoTestState.scopeIds = selectedIds; autoTestState.results = new Map(autoTestCases.map((item) => [item.id, { status: "queued", actual: item.expected, duration: null }])); autoTestState.startedAt = performance.now(); autoTestState.elapsed = 0; renderAutoTestPanel();
+        for (const item of autoTestCases.filter((candidate) => selectedIds.includes(candidate.id))) {
+          const started = performance.now(); autoTestState.results.set(item.id, { status: "running", actual: item.instruction, duration: null }); renderAutoTestPanel(); await wait(220);
+          const snapshot = autoTestSnapshot();
+          try { const result = await item.run(); const skipped = result?.skipped; autoTestState.results.set(item.id, { status: skipped ? "skipped" : "passed", actual: result?.actual || (skipped ? "Not applicable" : result), duration: Math.round(performance.now() - started) }); }
+          catch (error) { autoTestState.results.set(item.id, { status: "failed", actual: error instanceof Error ? error.message : String(error), duration: Math.round(performance.now() - started) }); }
+          finally { restoreAutoTestSnapshot(snapshot); }
+          renderAutoTestPanel(); await wait(90);
+        }
+        autoTestState.elapsed = Math.round(performance.now() - autoTestState.startedAt); autoTestState.running = false; renderAutoTestPanel();
+      }
+      function clearAutoTests() { if (autoTestState.running) return; autoTestState.scopeIds = []; autoTestState.results = new Map(); autoTestState.elapsed = 0; renderAutoTestPanel(); }
       const setLog = (message) => { state.log.unshift(`${new Date().toLocaleTimeString()}  ${message}`); state.log = state.log.slice(0, 8); };
       function updateGameHud() {
         const challenge = challengeFor();
@@ -917,18 +1024,22 @@
       }
 
       function render() {
-        const example = current(); title.textContent = example.title; topologySelect.value = state.topology; surface.dataset.topology = state.topology; surface.dataset.zoom = state.zoom.toFixed(2); renderTabs(); updateMetrics(); drawLegend(); drawMinimap();
+        const example = current(); title.textContent = example.title; topologySelect.value = state.topology; surface.dataset.topology = state.topology; surface.dataset.zoom = state.zoom.toFixed(2); renderTabs(); updateMetrics(); drawLegend(); drawMinimap(); renderAutoTestPanel();
         document.querySelectorAll("[data-view]").forEach((button) => { button.setAttribute("aria-pressed", String(button.dataset.view === state.view)); });
         if (state.view === "node-link") surface.replaceChildren(graphSvg()); else if (state.view === "semantic-list") surface.replaceChildren(drawSemanticList()); else if (state.view === "matrix") surface.replaceChildren(drawMatrix()); else surface.replaceChildren(drawPath());
         renderInspectorRich(); updateGameHud(); startPhysics();
       }
 
-      document.querySelectorAll("[data-command]").forEach((button) => button.addEventListener("click", () => { const command = button.dataset.command; if (command === "zoom-in") { setZoom(state.zoom + .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "zoom-out") { setZoom(state.zoom - .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "fit") { state.zoom = 1; state.panX = 0; state.panY = 0; markChallenge("camera", "Camera fitted. The full scene is back in view."); } if (command === "toggle-motion") { state.physicsEnabled = !state.physicsEnabled; if (state.physicsEnabled) wakePhysics(); else stopPhysics(); setLog(state.physicsEnabled ? "Soft graph motion enabled" : "Soft graph motion paused"); } if (command === "toggle-composer") { state.composerOpen = !state.composerOpen; } if (command === "reset") { stopPhysics(); state.zoom = 1; state.panX = 0; state.panY = 0; state.selected = null; state.menu = null; state.hover = null; state.filters = new Set(statuses); state.clusterFilter = null; state.positions = new Map(current().nodes.map((item) => [item.id, clonePosition(item.position)])); state.statusOverrides = new Map(); state.addedEdges = []; state.favorites = []; state.composerOpen = false; state.nextRelationNumber = 1; seedPhysics(); setLog("Reset presentation"); } render(); }));
+      document.querySelectorAll("[data-command]").forEach((button) => button.addEventListener("click", () => { const command = button.dataset.command; if (command === "zoom-in") { setZoom(state.zoom + .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "zoom-out") { setZoom(state.zoom - .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "fit") { state.zoom = 1; state.panX = 0; state.panY = 0; markChallenge("camera", "Camera fitted. The full scene is back in view."); } if (command === "toggle-motion") { state.physicsEnabled = !state.physicsEnabled; if (state.physicsEnabled) wakePhysics(); else stopPhysics(); setLog(state.physicsEnabled ? "Soft graph motion enabled" : "Soft graph motion paused"); } if (command === "toggle-composer") { state.composerOpen = !state.composerOpen; } if (command === "toggle-autotests") { autoTestState.collapsed = !autoTestState.collapsed; } if (command === "reset") { stopPhysics(); state.zoom = 1; state.panX = 0; state.panY = 0; state.selected = null; state.menu = null; state.hover = null; state.filters = new Set(statuses); state.clusterFilter = null; state.positions = new Map(current().nodes.map((item) => [item.id, clonePosition(item.position)])); state.statusOverrides = new Map(); state.addedEdges = []; state.favorites = []; state.composerOpen = false; state.nextRelationNumber = 1; seedPhysics(); setLog("Reset presentation"); } render(); }));
+      autoTestPanel.querySelector("[data-auto-command='run-all']").addEventListener("click", () => runAutoTests());
+      autoTestPanel.querySelector("[data-auto-command='clear']").addEventListener("click", clearAutoTests);
+      autoTestPanel.querySelector("[data-auto-command='collapse']").addEventListener("click", () => { autoTestState.collapsed = !autoTestState.collapsed; renderAutoTestPanel(); });
       document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.view; if (state.view === "node-link") wakePhysics(); else stopPhysics(); render(); }));
       topologySelect.addEventListener("change", () => { stopPhysics(); applyTopology(topologySelect.value); state.selected = null; state.menu = null; state.hover = null; render(); });
       document.querySelectorAll("[data-game]").forEach((button) => button.addEventListener("click", () => { const action = button.dataset.game; if (action === "hint") { const challenge = challengeFor(); if (challenge) { state.challenge.hint = !state.challenge.hint; state.challenge.message = ""; updateGameHud(); } } if (action === "restart") resetExample(state.exampleIndex); }));
       surface.addEventListener("pointerdown", beginPan);
       window.addEventListener("keydown", (event) => { if (event.key === "Escape") { if (state.dragging) cancelDrag(); else if (state.panning) cancelPan(); else if (state.menu) { state.menu = null; render(); } } });
+      window.fgaGraphAutoTest = { runAll: () => runAutoTests(), runOne: (id) => runAutoTests([id]), getReport: () => ({ running: autoTestState.running, elapsed: autoTestState.elapsed, results: Object.fromEntries(autoTestState.results) }) };
       resetExample(4);
     })();
   </script>
