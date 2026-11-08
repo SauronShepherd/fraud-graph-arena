@@ -1,0 +1,12 @@
+{
+  "schema": "fga06-docker-local-smoke-v1",
+  "generated_at": "2026-11-08T04:58:00+00:00",
+  "status": "PASS",
+  "compose": "docker compose up --build -d",
+  "service": "fraud-graph-arena-web-1",
+  "image": "fraud-graph-arena-web:latest",
+  "root": {"url": "http://127.0.0.1:8000/", "status": 200, "content_type": "text/html; charset=utf-8", "browser_title": "Fraud Graph Arena", "h1": "Fraud Graph Arena"},
+  "health": {"url": "http://127.0.0.1:8000/api/v1/health/ready", "status": 200, "body": {"status": "ready", "checks": {"round_repository": "ready", "frontend_distribution": "ready"}}},
+  "asset_fix": "Production image copies contracts, config and case-data and resolves them through FGA_PROJECT_ROOT.",
+  "screenshot": "reports/iteration-06/docker-local-smoke-2026-11-08.png"
+}
