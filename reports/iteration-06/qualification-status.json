@@ -18,7 +18,7 @@
   "databricks_catalog": "workspace",
   "databricks_schema": "fga_sandbox",
   "databricks_warehouse": "7c640666d4d3eb61",
-  "databricks_security_report": "reports/iteration-06/databricks-security-fga-2026-11-08.json",
+  "databricks_security_report": "reports/iteration-06/databricks-security-fga-2026-11-09.json",
   "databricks_structure_report": "reports/iteration-06/databricks-structure-fga-2026-11-08.json",
   "databricks_row_count_report": "reports/iteration-06/databricks-row-counts-fga-2026-11-08.json",
   "databricks_idempotency_report": "reports/iteration-06/databricks-all-packages-fga-2026-11-08.json",
