@@ -77,7 +77,7 @@ def main() -> int:
         and repeat.get("status") == "pass"
         and repeat.get("attempts") == 10
         and repeat.get("package_count") == 13
-        and repeat.get("csv_attempt_count") == 416
+        and repeat.get("csv_attempt_count") == 4160
         and not repeat.get("failures")
         and all(item.get("source_sha") == revision for item in repeat.get("results", []))
     )
