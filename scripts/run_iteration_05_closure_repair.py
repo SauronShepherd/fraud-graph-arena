@@ -47,6 +47,8 @@ def main() -> int:
 
     revision = source_sha()
     dirty_paths = subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).splitlines()
+    generated_prefix = "?? reports/iteration-05/"
+    source_dirty_paths = [path for path in dirty_paths if not path.startswith(generated_prefix)]
     structure = read_json(args.structure)
     bulk = read_json(args.bulk)
     repeat = read_json(args.repeat)
@@ -91,7 +93,7 @@ def main() -> int:
     )
 
     requirements = {
-        "clean_source_revision": "pass" if not dirty_paths else "fail",
+        "clean_source_revision": "pass" if not source_dirty_paths else "fail",
         "local_regression": local_tests["status"],
         "databricks_structure": "pass" if structure_ok else "fail",
         "databricks_candidate_pipeline": "pass" if bulk_ok else "fail",
@@ -110,12 +112,13 @@ def main() -> int:
         "status": status,
         "source_sha": revision,
         "working_tree_before_artifact": {
-            "clean": not dirty_paths,
-            "changed_paths": dirty_paths,
+            "clean": not source_dirty_paths,
+            "changed_paths": source_dirty_paths,
+            "ignored_generated_evidence": [path for path in dirty_paths if path not in source_dirty_paths],
         },
         "requirements": requirements,
-        "closure_tag_allowed": status == "pass" and not dirty_paths,
-        "historical_gate_repaired": not dirty_paths,
+        "closure_tag_allowed": status == "pass" and not source_dirty_paths,
+        "historical_gate_repaired": not source_dirty_paths,
         "historical_gap": {
             "invalid_passing_commit": "5eebf83666c84e3e90722431688de8926a24476b",
             "reason": "the historical pass was recorded with working_tree=development_changes_present",
