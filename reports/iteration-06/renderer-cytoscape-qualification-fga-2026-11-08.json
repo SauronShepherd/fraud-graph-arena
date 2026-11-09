@@ -4,7 +4,7 @@
   "candidate": "Cytoscape.js",
   "candidate_version": "3.34.4",
   "fixture_sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef",
-  "source_commit": "2c0ef64614053080fcf0f8cc8e8557b174850dab",
+  "source_commit": "846860e317d26355215f85ab5bdeb976efcd8dda",
   "environment": {
     "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
     "viewport": "1280x720",
