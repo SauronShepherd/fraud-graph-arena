@@ -5,13 +5,13 @@ the closed physical target with publication/run metadata in the same write.
 No untagged target rows are created and no post-load UPDATE is required.
 """
 from __future__ import annotations
-import argparse, hashlib, json
+import argparse, json
 from pathlib import Path
 from fraud_graph_arena.canonical_persistence.identity import publication_id
 from fraud_graph_arena.canonical_persistence.models import PackageIdentity
 from fraud_graph_arena.canonical_persistence.package import CanonicalPackage
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS
-from fraud_graph_arena.case_data.registry import headers
+from fraud_graph_arena.case_data.registry import headers, sql_types
 
 def quote(value: str) -> str: return "'" + value.replace("'", "''") + "'"
 def plan(package: Path, run_id: str, catalog: str, schema: str) -> list[str]:
@@ -20,11 +20,11 @@ def plan(package: Path, run_id: str, catalog: str, schema: str) -> list[str]:
     publication = publication_id(identity)
     statements = []
     for relative, table in PHYSICAL_TARGETS.items():
-        view = "fga_stage_" + hashlib.sha256((run_id + relative).encode()).hexdigest()[:16]
         source = f"/Volumes/{catalog}/{schema}/fga05_stage/{package.name}/{relative}"
         columns = ", ".join(headers(relative))
-        statements.append(f"CREATE OR REPLACE TEMPORARY VIEW {view} AS SELECT * FROM read_files({quote(source)}, format => 'csv', header => true)")
-        statements.append(f"INSERT INTO {catalog}.{schema}.{table} ({columns}, _publication_id, _load_run_id) SELECT {columns}, {quote(publication)}, {quote(run_id)} FROM {view}")
+        file_schema = ", ".join(f"{column} STRING" for column in headers(relative))
+        typed_select = ", ".join(column if sql_type == "STRING" else f"TRY_CAST(NULLIF({column}, '') AS {sql_type}) AS {column}" for column, sql_type in zip(headers(relative), sql_types(relative), strict=True))
+        statements.append(f"INSERT INTO {catalog}.{schema}.{table} ({columns}, _publication_id, _load_run_id) SELECT {typed_select}, {quote(publication)}, {quote(run_id)} FROM read_files({quote(source)}, format => 'csv', header => true, escape => '\"', schema => {quote(file_schema)})")
     return statements
 
 def main() -> int:

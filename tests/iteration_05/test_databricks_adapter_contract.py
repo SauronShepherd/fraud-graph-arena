@@ -9,7 +9,14 @@ def test_adapter_rejects_unregistered_identifiers():
 def test_candidate_operations_are_registry_resolved(monkeypatch):
     warehouse = DatabricksWarehouse()
     statements = []
-    monkeypatch.setattr(DatabricksWarehouse, "execute", lambda self, statement: statements.append(statement) or {"status": {"state": "SUCCEEDED"}})
+    def fake_execute(self, statement):
+        statements.append(statement)
+        if "SELECT status,case_id,case_version,snapshot_version,canonical_model_version" in statement:
+            return {"result": {"data_array": [["VALIDATED", "case_1", "1.0.0", "snap_1", "1.0.0"]]}}
+        if "SELECT COUNT(*) AS pointer_count" in statement:
+            return {"result": {"data_array": [[0]]}}
+        return {"status": {"state": "SUCCEEDED"}}
+    monkeypatch.setattr(DatabricksWarehouse, "execute", fake_execute)
     warehouse.insert_candidate("config/cases.csv", [{"case_id": "case'1"}], "pub_1", "run_1")
     warehouse.cleanup_candidate("pub_1")
     warehouse.activate_publication("case_1", "1.0.0", "snap_1", "1.0.0", "pub_1", "run_1")

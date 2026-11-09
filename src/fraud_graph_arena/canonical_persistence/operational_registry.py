@@ -21,6 +21,9 @@ def columns(table: str) -> dict[str, str]:
     try: return dict(registry()[table]["columns"])
     except KeyError as exc: raise ValueError("unregistered operational table") from exc
 
+def sql_types(table: str) -> tuple[str, ...]:
+    return tuple(columns(table).values())
+
 def ddl(table: str) -> str:
     definition = registry()[table]
     cols = ",\n  ".join(f"{name} {sql_type}" for name, sql_type in definition["columns"].items())

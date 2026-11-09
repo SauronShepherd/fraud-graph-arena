@@ -77,7 +77,7 @@ class DatabricksWarehouse:
         if not rows: return {"status": "skipped", "row_count": 0}
         values = []
         for raw_row in rows:
-            row = coerce_row(dict(raw_row), path)
+            row = coerce_row(dict(raw_row), path, require_complete=False)
             values.append("(" + ", ".join([_literal(row.get(column)) for column in headers(path)] + [_literal(publication_id), _literal(run_id)]) + ")")
         return self.execute(f"INSERT INTO {self.qualify_table(table)} ({', '.join(columns)}) VALUES {', '.join(values)}")
 
@@ -86,7 +86,7 @@ class DatabricksWarehouse:
         for path, table in PHYSICAL_TARGETS.items():
             qualified = self.qualify_table(table)
             queries.extend([
-                f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)}) AS correlated FROM {qualified}",
+                f"SELECT COUNT_IF(_publication_id = {_literal(publication_id)}) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)} AND _publication_id = {_literal(publication_id)}) AS correlated FROM {qualified}",
                 f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND snapshot_version IS NULL",
             ])
             primary_key = load_typed_registry()[path].get("primary_key", [])
@@ -96,7 +96,7 @@ class DatabricksWarehouse:
             queries.append(f"SELECT COUNT(*) AS case_mismatches FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND case_id IS NOT NULL AND case_id <> (SELECT case_id FROM {self.qualify_table('fga_import_publications')} WHERE publication_id = {_literal(publication_id)})")
             if path == "authoring/relationships.csv":
                 records = self.qualify_table(PHYSICAL_TARGETS["authoring/records.csv"])
-                queries.append(f"SELECT COUNT(*) AS dangling_relationship_endpoints FROM {qualified} AS relationships WHERE relationships._publication_id = {_literal(publication_id)} AND ((relationships.source_record_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.source_record_id)) OR (relationships.target_record_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.target_record_id)))")
+                queries.append(f"SELECT COUNT(*) AS dangling_relationship_endpoints FROM {qualified} AS relationships WHERE relationships._publication_id = {_literal(publication_id)} AND ((relationships.source_record_id IS NOT NULL AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.source_record_id)) OR (relationships.target_record_id IS NOT NULL AND NOT (relationships.relationship_type = 'MENTIONS' AND relationships.target_record_id LIKE 'CE-%') AND NOT EXISTS (SELECT 1 FROM {records} AS records WHERE records._publication_id = {_literal(publication_id)} AND records.record_id = relationships.target_record_id)))")
         return [self.execute(query) for query in queries]
 
     def cleanup_candidate(self, publication_id: str) -> list[dict[str, Any]]:
@@ -108,5 +108,5 @@ class DatabricksWarehouse:
         data = duplicate_check.get("result", {}).get("data_array", [])
         if data and int(data[0][0]) > 1:
             raise DatabricksWarehouseError("DUPLICATE_ACTIVE_POINTER")
-        values = ", ".join((_literal(case_id), _literal(case_version), _literal(snapshot_version), _literal(model_version), _literal(publication_id), "current_timestamp()", _literal(run_id)))
+        values = ", ".join((f"{_literal(case_id)} AS case_id", f"{_literal(case_version)} AS case_version", f"{_literal(snapshot_version)} AS snapshot_version", f"{_literal(model_version)} AS canonical_model_version", f"{_literal(publication_id)} AS active_publication_id", "current_timestamp() AS activated_at_utc", f"{_literal(run_id)} AS activating_run_id"))
         return self.execute(f"MERGE INTO {table} AS target USING (SELECT {values}) AS source ON target.case_id = source.case_id AND target.case_version = source.case_version WHEN MATCHED THEN UPDATE SET * WHEN NOT MATCHED THEN INSERT *")
