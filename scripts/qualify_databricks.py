@@ -40,8 +40,6 @@ def main() -> int:
     pre_names = [row[1] for row in pre_inventory.get("result", {}).get("data_array", [])]
     if args.recreate:
         expected_names = set(expected_topology())
-        # The approved disposable namespace is converged by removing only
-        # objects discovered inside that namespace; no production fallback exists.
         active_views = set(ACTIVE_VIEW_TARGETS.values())
         for table in sorted(set(pre_names) & active_views):
             api(args.profile, {**base, "statement": f"DROP VIEW IF EXISTS `{table}`"})
@@ -54,7 +52,7 @@ def main() -> int:
         for table in expected_topology():
             if table in PHYSICAL_TARGETS.values():
                 path = next(path for path, target in PHYSICAL_TARGETS.items() if target == table)
-                columns = list(zip(headers(path), sql_types(path), strict=True)) + [("_publication_id", "STRING"), ("_load_run_id", "STRING")]
+                table_columns = list(zip(headers(path), sql_types(path), strict=True)) + [("_publication_id", "STRING"), ("_load_run_id", "STRING")]
             elif table in OPERATIONAL_TARGETS:
                 statements.append(ddl(table)); continue
             elif table in set(ACTIVE_VIEW_TARGETS.values()):
@@ -63,7 +61,7 @@ def main() -> int:
                 continue
             else:
                 continue
-            statements.append(f"CREATE TABLE IF NOT EXISTS {table} (\n  " + ",\n  ".join(f"{column} {sql_type}" for column, sql_type in columns) + "\n) USING DELTA")
+            statements.append(f"CREATE TABLE IF NOT EXISTS {table} (\n  " + ",\n  ".join(f"{column} {sql_type}" for column, sql_type in table_columns) + "\n) USING DELTA")
         statements.extend(view_statements)
         for statement in statements:
             response = api(args.profile, {**base, "statement": statement})
@@ -78,18 +76,16 @@ def main() -> int:
     expected_columns.update({ACTIVE_VIEW_TARGETS[path]: expected_columns[target] for path, target in PHYSICAL_TARGETS.items() if path in ACTIVE_VIEW_TARGETS})
     expected_columns.update({table: list(zip(names, operational_sql_types(table), strict=True)) for table, names in OPERATIONAL_COLUMNS.items()})
     def normalize(columns: list[tuple[str, str]] | None) -> list[tuple[str, str]] | None:
-        if columns is None:
-            return None
-        aliases = {"LONG": "BIGINT", "DECIMAL": "DECIMAL"}
-        normalized = []
+        if columns is None: return None
+        aliases = {"LONG": "BIGINT", "DECIMAL": "DECIMAL"}; normalized = []
         for name, data_type in columns:
             base = data_type.split(" ", 1)[0].upper()
-            if base.startswith("DECIMAL"):
-                base = "DECIMAL"
+            if base.startswith("DECIMAL"): base = "DECIMAL"
             normalized.append((name, aliases.get(base, base)))
         return normalized
     column_mismatches = sorted(table for table in expected if normalize(observed_columns.get(table)) != normalize(expected_columns.get(table)))
-    report = {"status": "pass" if expected == actual and not column_mismatches else "fail", "catalog": args.catalog, "schema": args.schema, "warehouse_id": args.warehouse_id, "capability_probe": "pass", "recreated": args.recreate, "pre_inventory": sorted(pre_names), "expected_count": len(expected), "actual_count": len(actual), "missing": sorted(expected - actual), "extra": sorted(actual - expected), "column_mismatches": column_mismatches}
+    source_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+    report = {"status": "pass" if expected == actual and not column_mismatches else "fail", "source_sha": source_sha, "profile": args.profile, "catalog": args.catalog, "schema": args.schema, "warehouse_id": args.warehouse_id, "capability_probe": "pass", "recreated": args.recreate, "pre_inventory": sorted(pre_names), "expected_count": len(expected), "actual_count": len(actual), "missing": sorted(expected - actual), "extra": sorted(actual - expected), "column_mismatches": column_mismatches}
     rendered = json.dumps(report, indent=2) + "\n"
     if args.report: args.report.parent.mkdir(parents=True, exist_ok=True); args.report.write_text(rendered, encoding="utf-8")
     print(rendered, end=""); return 0 if report["status"] == "pass" else 1

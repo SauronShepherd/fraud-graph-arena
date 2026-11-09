@@ -1,0 +1,70 @@
+{
+  "schema": "fga05-closure-repair-v1",
+  "status": "external_gap",
+  "source_sha": "5f07c9173768d756c5cbf019e2b9193fe681b066",
+  "working_tree_before_artifact": {
+    "clean": true,
+    "changed_paths": [],
+    "ignored_generated_evidence": [
+      "?? reports/iteration-05/databricks-all-packages-fga-2026-11-09.json",
+      "?? reports/iteration-05/databricks-all-packages-fga05-qualification-2026-11-09.json",
+      "?? reports/iteration-05/databricks-all-packages-fga05-repair-2026-11-09.json",
+      "?? reports/iteration-05/databricks-all-packages-fga05-repair-final-2026-11-09.json",
+      "?? reports/iteration-05/databricks-all-packages-fga05-repair-final2-2026-11-09.json",
+      "?? reports/iteration-05/databricks-repeat-fga05-qualification-2026-11-09.json",
+      "?? reports/iteration-05/databricks-repeat-fga05-repair-2026-11-09.json",
+      "?? reports/iteration-05/databricks-repeat-fga05-repair-final-2026-11-09.json",
+      "?? reports/iteration-05/databricks-repeat-fga05-repair-final2-2026-11-09.json",
+      "?? reports/iteration-05/databricks-structure-fga-2026-11-09.json",
+      "?? reports/iteration-05/databricks-structure-fga05-qualification-2026-11-09.json",
+      "?? reports/iteration-05/databricks-structure-fga05-repair-2026-11-09.json",
+      "?? reports/iteration-05/databricks-structure-fga05-repair-final-2026-11-09.json",
+      "?? reports/iteration-05/databricks-structure-fga05-repair-final2-2026-11-09.json",
+      "?? reports/iteration-05/gate-fga-2026-11-09.json",
+      "?? reports/iteration-05/gate-fga05-closure-fix-2026-11-09.json",
+      "?? reports/iteration-05/security-fga05-closure-fix-2026-11-09.json",
+      "?? reports/iteration-05/security-fga05-repair-2026-11-09.json",
+      "?? reports/iteration-05/security-fga05-repair-final-2026-11-09.json",
+      "?? reports/iteration-05/security-fga05-repair-final2-2026-11-09.json"
+    ]
+  },
+  "requirements": {
+    "clean_source_revision": "pass",
+    "local_regression": "pass",
+    "databricks_structure": "pass",
+    "databricks_candidate_pipeline": "pass",
+    "databricks_repeat_idempotence": "pass",
+    "non_admin_truth_denial": "external_gap"
+  },
+  "closure_tag_allowed": false,
+  "historical_gate_repaired": true,
+  "historical_gap": {
+    "invalid_passing_commit": "5eebf83666c84e3e90722431688de8926a24476b",
+    "reason": "the historical pass was recorded with working_tree=development_changes_present",
+    "final_line": "external_gap",
+    "repair_policy": "publish a clean repair checkpoint; do not relabel an admin-only run as non-admin-qualified"
+  },
+  "evidence": {
+    "structure": "reports\\iteration-05\\databricks-structure-fga05-repair-final2-2026-11-09.json",
+    "bulk": "reports\\iteration-05\\databricks-all-packages-fga05-repair-final2-2026-11-09.json",
+    "repeat": "reports\\iteration-05\\databricks-repeat-fga05-repair-final2-2026-11-09.json",
+    "security": "reports\\iteration-05\\security-fga05-repair-final2-2026-11-09.json",
+    "local_tests": {
+      "status": "pass",
+      "command": "C:\\Users\\angel.alvarez\\AppData\\Local\\Programs\\Python\\Python313\\python.exe -m pytest -q tests/iteration_05",
+      "exit_code": 0,
+      "output_tail": "...............................................................          [100%]\n63 passed in 277.52s (0:04:37)\n"
+    }
+  },
+  "databricks": {
+    "profile": "fga",
+    "catalog": "workspace",
+    "schema": "fga05_qualification_20261109",
+    "warehouse": "7c640666d4d3eb61"
+  },
+  "notes": [
+    "FGA-05 is cleanly reproducible at this source revision.",
+    "The fga principal is an administrator, so the non-admin denial requirement remains an external gap.",
+    "A clean repair tag is not a closure tag while closure_tag_allowed is false."
+  ]
+}

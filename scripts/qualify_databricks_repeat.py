@@ -1,13 +1,13 @@
 from __future__ import annotations
-import argparse, json
+import argparse, json, subprocess
 from pathlib import Path
 from databricks_bulk_lifecycle import run_package
 
 def main() -> int:
-    p=argparse.ArgumentParser(); p.add_argument("--package-root",type=Path,default=Path("case-data/canonical/v1")); p.add_argument("--profile",default="fga"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--warehouse",default="02addf2c2a0a755b"); p.add_argument("--repeats",type=int,default=10); p.add_argument("--report",type=Path,default=Path("reports/iteration-05/databricks-repeat.json")); a=p.parse_args(); root=Path(__file__).resolve().parents[1]; results=[]; failures=[]
+    p=argparse.ArgumentParser(); p.add_argument("--package-root",type=Path,default=Path("case-data/canonical/v1")); p.add_argument("--profile",default="fga"); p.add_argument("--catalog",default="workspace"); p.add_argument("--schema",default="fga05_sandbox"); p.add_argument("--warehouse",default="7c640666d4d3eb61"); p.add_argument("--repeats",type=int,default=10); p.add_argument("--report",type=Path,default=Path("reports/iteration-05/databricks-repeat.json")); a=p.parse_args(); root=Path(__file__).resolve().parents[1]; results=[]; failures=[]; source_sha=subprocess.check_output(["git","rev-parse","HEAD"],cwd=root,text=True).strip()
     for attempt in range(1,a.repeats+1):
         for package in sorted(x for x in a.package_root.iterdir() if x.is_dir()):
             try: results.append({"attempt":attempt,"status":"pass",**run_package(package,root=root,profile=a.profile,catalog=a.catalog,schema=a.schema,warehouse=a.warehouse)})
             except Exception as exc: failures.append({"attempt":attempt,"package":package.name,"error":str(exc)[-1000:]})
-    report={"status":"pass" if not failures else "fail","attempts":a.repeats,"package_count":len([x for x in a.package_root.iterdir() if x.is_dir()]),"results":results,"failures":failures}; a.report.parent.mkdir(parents=True,exist_ok=True); a.report.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0 if not failures else 1
+    report={"status":"pass" if not failures else "fail","source_sha":source_sha,"profile":a.profile,"catalog":a.catalog,"schema":a.schema,"warehouse":a.warehouse,"attempts":a.repeats,"package_count":len([x for x in a.package_root.iterdir() if x.is_dir()]),"csv_attempt_count":a.repeats*sum(len(list(x.rglob("*.csv"))) for x in a.package_root.iterdir() if x.is_dir()),"results":results,"failures":failures}; a.report.parent.mkdir(parents=True,exist_ok=True); a.report.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0 if not failures else 1
 if __name__=="__main__": raise SystemExit(main())
