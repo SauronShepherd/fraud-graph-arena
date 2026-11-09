@@ -91,6 +91,8 @@ test.describe("static graph gallery mini-game", () => {
 
   test("opens contextual hover panels, marks targets and manages working relationships", async ({ page }) => {
     await page.goto(pathToFileURL(galleryPath).href);
+    await page.locator("[data-auto-command='collapse']").click();
+    await expect(page.locator("#autotest-panel")).toHaveClass(/is-collapsed/);
 
     const node = page.locator("[data-node-id='EX-N-3003']");
     await node.hover();
@@ -146,6 +148,10 @@ test.describe("static graph gallery mini-game", () => {
     await expect(page.locator("#autotest-panel")).toBeVisible();
     await expect(page.locator(".autotest-row")).toHaveCount(6);
     await expect(page.locator("#autotest-summary")).toContainText("Ready");
+    await expect(page.locator("#hover-preview")).toBeHidden();
+    await expect(page.locator("[title], [data-tooltip], svg title")).toHaveCount(0);
+    await page.locator("[data-node-id]").first().hover();
+    await expect(page.locator("#hover-preview")).toBeHidden();
 
     await page.locator("[data-auto-command='run-all']").click();
     await expect(page.locator("#autotest-count")).toHaveText("6 / 6", { timeout: 10000 });
@@ -153,11 +159,16 @@ test.describe("static graph gallery mini-game", () => {
     await expect(page.locator(".autotest-row[data-status='passed']")).toHaveCount(6);
     await expect(page.locator(".autotest-row").first().locator(".autotest-time")).not.toHaveText("—");
     await expect(page.locator("#selection-badge")).toHaveText("0 entities selected");
+    await expect(page.locator("#hover-preview")).toBeHidden();
 
     await page.locator("[data-auto-command='collapse']").click();
     await expect(page.locator("#autotest-panel")).toHaveClass(/is-collapsed/);
+    await page.mouse.move(8, 8);
+    await page.locator("[data-node-id='EX-N-3003']").hover({ force: true });
+    await expect(page.locator("#hover-preview")).toBeVisible();
     await page.locator("[data-command='toggle-autotests']").click();
     await expect(page.locator("#autotest-panel")).not.toHaveClass(/is-collapsed/);
+    await expect(page.locator("#hover-preview")).toBeHidden();
 
     await page.locator("[data-auto-command='clear']").click();
     await expect(page.locator("#autotest-count")).toHaveText("0 / 6");
