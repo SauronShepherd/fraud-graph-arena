@@ -3,7 +3,7 @@
 This is the four-candidate OSS matrix after the automatic comparison, repeated performance run and analyst visual review recorded under `reports/iteration-06/`. Commercial graph components are deliberately excluded from this project scope: no commercial dependency, license obligation or vendor-specific production path is introduced.
 
 | Candidate | Exact version | Automated evidence | Qualitative fit | License | Current decision |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Cytoscape.js (normative incumbent) | 3.34.4 | A/B lifecycle + node/edge probes pass; 12-run p95 first useful render 123 ms; selection 0.2 ms; fit 6.1 ms; resize 26.4 ms | Graph-native semantics, styling and layouts; direct adapter boundary required for React | MIT | QUALIFIED incumbent for the frozen FGA06 envelope |
 | Sigma.js | 4.0.3 | A/B lifecycle + node/edge probes pass; 12-run p95 first useful render 308.9 ms; cleanup p95 1461.9 ms; long tasks observed | Strong WebGL/network-scale candidate; cleanup cost and long-task profile need review | MIT | Comparison candidate; not selected |
 | D3 | 7.9.0 | A/B lifecycle + node/edge probes pass; 12-run p95 first useful render 41.2 ms; selection 0.7 ms | Maximum bespoke control; FGA owns graph-product features and accessibility bridges | ISC | Comparison candidate; not selected |
