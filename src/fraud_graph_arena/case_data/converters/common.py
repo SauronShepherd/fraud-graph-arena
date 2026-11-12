@@ -4,7 +4,7 @@ import hashlib
 from pathlib import Path
 from ..identity import stable_id
 from ..package import PackageBuilder
-def convert_flat_csv(source: Path, output: Path, *, case_id: str, family: str, case_version='1.0.0', snapshot_version='1.0.0', converter='common.csv.v1', source_dialect=None):
+def convert_flat_csv(source: Path, output: Path, *, case_id: str, family: str, case_version='1.0.0', snapshot_version='1.0.0', converter='common.csv.v1', source_dialect='flat-csv-v1'):
     builder=PackageBuilder(output,case_id,family,snapshot_version=snapshot_version,case_version=case_version)
     builder.add('config/cases.csv', {'case_id': case_id, 'short_id': case_id, 'title': case_id, 'path_code': family, 'case_version': case_version, 'snapshot_version': snapshot_version, 'generation_seed': 0, 'generation_mode': 'DIRECT_SOURCE', 'ranked': 'false', 'career_unlock': 'false', 'canonical_model_version': '1.0.0'})
     builder.add('config/case_profiles.csv', {'case_id': case_id, 'profile_code': family, 'profile_name': family.title(), 'cumulative': 'false', 'starting_credits': 0, 'manual_cost': 0, 'zingg_cost': 0, 'graphframes_cost': 0, 'genie_cost': 0, 'genie_row_limit': 0, 'quote_required': 'false', 'no_result_charged': 'false', 'initial_item_count': 0, 'description': f'{family} source conversion profile', 'snapshot_version': snapshot_version})
@@ -16,7 +16,13 @@ def convert_flat_csv(source: Path, output: Path, *, case_id: str, family: str, c
         source_inputs.append({'path': file.name, 'bytes': file.stat().st_size, 'sha256': hashlib.sha256(file.read_bytes()).hexdigest()})
     for file in files:
         with file.open(newline='',encoding='utf-8') as f:
-            for index,row in enumerate(csv.DictReader(f),1):
+            reader = csv.reader(f)
+            try: source_headers = next(reader)
+            except StopIteration: raise ValueError(f'empty source CSV: {file.name}')
+            if len(set(source_headers)) != len(source_headers): raise ValueError(f'duplicate source header: {file.name}')
+            for index, values in enumerate(reader, 1):
+                if len(values) != len(source_headers): raise ValueError(f'{file.name}: expected {len(source_headers)} columns, got {len(values)}')
+                row = dict(zip(source_headers, values, strict=True))
                 source_key=row.get('id') or row.get('record_id') or str(index)
                 rid=stable_id('REC',case_id,file.stem,source_key)
                 display = row.get('name') or row.get('label') or source_key

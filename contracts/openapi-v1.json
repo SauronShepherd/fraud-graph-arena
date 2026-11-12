@@ -286,6 +286,68 @@
         "title": "GraphEdgeResponse",
         "type": "object"
       },
+      "GraphExpandRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "depth": {
+            "default": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "title": "Depth",
+            "type": "integer"
+          },
+          "edge_limit": {
+            "default": 700,
+            "maximum": 700.0,
+            "minimum": 1.0,
+            "title": "Edge Limit",
+            "type": "integer"
+          },
+          "limit": {
+            "default": 300,
+            "maximum": 300.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "node_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Node Id",
+            "type": "string"
+          },
+          "visible": {
+            "$ref": "#/components/schemas/GraphResponse"
+          }
+        },
+        "required": [
+          "visible",
+          "node_id"
+        ],
+        "title": "GraphExpandRequest",
+        "type": "object"
+      },
+      "GraphFilterRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "families": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 32,
+            "title": "Families",
+            "type": "array"
+          },
+          "visible": {
+            "$ref": "#/components/schemas/GraphResponse"
+          }
+        },
+        "required": [
+          "visible"
+        ],
+        "title": "GraphFilterRequest",
+        "type": "object"
+      },
       "GraphNodeResponse": {
         "additionalProperties": false,
         "properties": {
@@ -341,6 +403,7 @@
             "items": {
               "$ref": "#/components/schemas/GraphEdgeResponse"
             },
+            "maxItems": 700,
             "title": "Edges",
             "type": "array"
           },
@@ -352,6 +415,7 @@
             "items": {
               "$ref": "#/components/schemas/GraphNodeResponse"
             },
+            "maxItems": 300,
             "title": "Nodes",
             "type": "array"
           },
@@ -395,9 +459,16 @@
       "GraphViewRequest": {
         "additionalProperties": false,
         "properties": {
+          "edge_limit": {
+            "default": 300,
+            "maximum": 700.0,
+            "minimum": 1.0,
+            "title": "Edge Limit",
+            "type": "integer"
+          },
           "limit": {
-            "default": 100,
-            "maximum": 1000.0,
+            "default": 150,
+            "maximum": 300.0,
             "minimum": 1.0,
             "title": "Limit",
             "type": "integer"
@@ -895,26 +966,6 @@
     "/api/v1/rounds": {
       "post": {
         "operationId": "create_round_api_v1_rounds_post",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "Idempotency-Key",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "maxLength": 200,
-                  "minLength": 1,
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Idempotency-Key"
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -948,6 +999,110 @@
           }
         },
         "summary": "Create Round",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/graph/expand": {
+      "post": {
+        "operationId": "expand_graph_api_v1_rounds__round_id__graph_expand_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GraphExpandRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GraphResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Expand Graph",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/graph/filter": {
+      "post": {
+        "operationId": "filter_graph_api_v1_rounds__round_id__graph_filter_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GraphFilterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GraphResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Filter Graph",
         "tags": [
           "rounds"
         ]

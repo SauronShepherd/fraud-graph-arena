@@ -46,7 +46,7 @@ def coerce_sql_value(value: str, sql_type: str, field: str = "value"):
         if normalized == "DATE":
             if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value): raise ValueError
             return date.fromisoformat(value)
-        if normalized == "TIMESTAMP": return parse_timestamp(value, field)
+        if normalized == "TIMESTAMP": return parse_temporal_value(value, field)
         if normalized == "JSON": return parse_json(value, field)
     except (TypeError, ValueError, InvalidOperation) as exc:
         raise ValueError(f"{field}: invalid {sql_type}") from exc

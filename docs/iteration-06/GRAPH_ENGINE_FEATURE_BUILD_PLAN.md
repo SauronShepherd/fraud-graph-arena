@@ -1,10 +1,10 @@
 # FGA-06 Graph Engine
 ## Feature Build Plan and Exhaustive Verification Plan
 
-**Document status:** Proposed execution plan for the next engine iteration  
-**Scope:** FGA-06 graph engine, static gallery, React board integration, renderer-neutral interaction model and qualification tooling  
-**Audience:** Product owner, frontend engineers, data-contract owners, visual-design reviewers, accessibility reviewers and test engineers  
-**Language:** English, matching the technical documentation for FGA-06  
+**Document status:** Proposed execution plan for the next engine iteration
+**Scope:** FGA-06 graph engine, static gallery, React board integration, renderer-neutral interaction model and qualification tooling
+**Audience:** Product owner, frontend engineers, data-contract owners, visual-design reviewers, accessibility reviewers and test engineers
+**Language:** English, matching the technical documentation for FGA-06
 **Last updated:** 2026-11-08
 
 ---
