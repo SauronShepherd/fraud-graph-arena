@@ -15,3 +15,15 @@ def t02_graph() -> dict:
     with (_T02 / "relationships.csv").open(newline="", encoding="utf-8") as handle:
         relationships = [row for row in csv.DictReader(handle) if row["source_record_id"] in _INITIAL and row["target_record_id"] in _INITIAL]
     return project_graph(records, relationships)
+
+
+def t02_expandable_graph() -> dict:
+    """Return the complete player-safe published graph available for viewport expansion."""
+    with (_T02 / "records.csv").open(newline="", encoding="utf-8") as handle:
+        records = list(csv.DictReader(handle))
+    with (_T02 / "relationships.csv").open(newline="", encoding="utf-8") as handle:
+        relationships = list(csv.DictReader(handle))
+    snapshots = {row.get("snapshot_version") for row in records}
+    if len(snapshots) != 1 or None in snapshots or any(row.get("snapshot_version") not in snapshots for row in relationships):
+        raise ValueError("T02 published graph must use one complete snapshot")
+    return project_graph(records, relationships)

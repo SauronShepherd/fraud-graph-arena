@@ -35,7 +35,7 @@ def main() -> int:
     status = load_json("reports/iteration-06/qualification-status.json")
     assert status["decision"] == "BLOCKED_PENDING_QUALIFICATION"
     assert status["benchmark_executed"] is False and status["tests_executed"] is False
-    print(json.dumps({"status": "PASS", "fixture_sha256": fixture_sha, "t02_nodes": 7, "t02_edges": 7, "frontend_typecheck": "run separately", "tests": "NOT RUN", "databricks": "NOT ACCESSED"}, indent=2))
+    print(json.dumps({"status": "PASS", "fixture_sha256": fixture_sha, "t02_nodes": 7, "t02_edges": 7, "frontend_typecheck_invoked_by_gate": False, "test_runner_invoked_by_gate": False, "databricks_accessed_by_gate": False}, indent=2))
     return 0
 
 if __name__ == "__main__":

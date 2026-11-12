@@ -113,8 +113,8 @@ class GraphEdgeResponse(ApiModel):
 
 class GraphResponse(ApiModel):
     projection_version: str
-    nodes: list[GraphNodeResponse]
-    edges: list[GraphEdgeResponse]
+    nodes: list[GraphNodeResponse] = Field(max_length=300)
+    edges: list[GraphEdgeResponse] = Field(max_length=700)
     node_count: int
     edge_count: int
     partial: bool = False
@@ -124,13 +124,15 @@ class GraphResponse(ApiModel):
 
 class GraphViewRequest(ApiModel):
     seeds: list[str] = Field(default_factory=list, max_length=100)
-    limit: int = Field(default=100, ge=1, le=1000)
+    limit: int = Field(default=150, ge=1, le=300)
+    edge_limit: int = Field(default=300, ge=1, le=700)
 
 class GraphExpandRequest(ApiModel):
     visible: GraphResponse
     node_id: str = Field(min_length=1, max_length=128)
     depth: int = Field(default=1, ge=1, le=1)
-    limit: int = Field(default=100, ge=1, le=1000)
+    limit: int = Field(default=300, ge=1, le=300)
+    edge_limit: int = Field(default=700, ge=1, le=700)
 
 class GraphFilterRequest(ApiModel):
     visible: GraphResponse

@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Iterable
 
-from fraud_graph_arena.case_data.graph_investigation import expand, filter_relationships, initial_subset
+from fraud_graph_arena.case_data.graph_investigation import DEFAULT_INITIAL_EDGES, DEFAULT_INITIAL_NODES, MAX_GRAPH_EDGES, MAX_GRAPH_NODES, expand, filter_relationships, initial_subset
 
 _FORBIDDEN_PLAYER_KEYS = {"truth", "culpability", "protected_notes", "expected_classification", "scoring_rules", "ending_rules", "mastermind"}
 
@@ -35,12 +35,15 @@ class GraphInvestigationService:
         _assert_safe(graph)
         return graph
 
-    def initial(self, round_id: str, seeds: Iterable[str] = (), limit: int = 100) -> dict:
-        return initial_subset(self._graph(round_id), seeds=seeds, limit=limit)
+    def initial(self, round_id: str, seeds: Iterable[str] = (), limit: int = DEFAULT_INITIAL_NODES, edge_limit: int = DEFAULT_INITIAL_EDGES) -> dict:
+        return initial_subset(self._graph(round_id), seeds=seeds, limit=limit, edge_limit=edge_limit)
 
-    def expand(self, round_id: str, visible: dict, node_id: str, depth: int = 1, limit: int = 100) -> dict:
-        return expand(self._graph(round_id), visible, node_id, depth=depth, limit=limit)
+    def expand(self, round_id: str, visible: dict, node_id: str, depth: int = 1, limit: int = MAX_GRAPH_NODES, edge_limit: int = MAX_GRAPH_EDGES) -> dict:
+        _assert_safe(visible)
+        return expand(self._graph(round_id), visible, node_id, depth=depth, limit=limit, edge_limit=edge_limit)
 
     def filter(self, round_id: str, visible: dict, families: Iterable[str]) -> dict:
-        self._graph(round_id)
-        return filter_relationships(visible, families)
+        _assert_safe(visible)
+        graph = self._graph(round_id)
+        visible_ids = {node["record_id"] for node in visible.get("nodes", ())}
+        return filter_relationships(graph, families, node_ids=visible_ids)

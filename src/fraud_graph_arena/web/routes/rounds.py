@@ -49,12 +49,12 @@ def workspace(round_id: str, request: Request) -> WorkspaceResponse:
 @router.post("/{round_id}/graph/initial", response_model=GraphResponse)
 def initial_graph(round_id: str, request: Request, payload: GraphViewRequest | None = None) -> GraphResponse:
     body = payload or GraphViewRequest()
-    return GraphResponse.model_validate(request.app.state.container.graph.initial(round_id, body.seeds, body.limit))
+    return GraphResponse.model_validate(request.app.state.container.graph.initial(round_id, body.seeds, body.limit, body.edge_limit))
 
 @router.post("/{round_id}/graph/expand", response_model=GraphResponse)
 def expand_graph(round_id: str, request: Request, payload: GraphExpandRequest) -> GraphResponse:
     try:
-        result = request.app.state.container.graph.expand(round_id, payload.visible.model_dump(), payload.node_id, payload.depth, payload.limit)
+        result = request.app.state.container.graph.expand(round_id, payload.visible.model_dump(), payload.node_id, payload.depth, payload.limit, payload.edge_limit)
     except PermissionError as error:
         raise HTTPException(status_code=403, detail="graph expansion is limited to visible nodes") from error
     except KeyError as error:
@@ -65,4 +65,8 @@ def expand_graph(round_id: str, request: Request, payload: GraphExpandRequest) -
 
 @router.post("/{round_id}/graph/filter", response_model=GraphResponse)
 def filter_graph(round_id: str, request: Request, payload: GraphFilterRequest) -> GraphResponse:
-    return GraphResponse.model_validate(request.app.state.container.graph.filter(round_id, payload.visible.model_dump(), payload.families))
+    try:
+        result = request.app.state.container.graph.filter(round_id, payload.visible.model_dump(), payload.families)
+    except PermissionError as error:
+        raise HTTPException(status_code=403, detail="graph filters must reference authorized visible records") from error
+    return GraphResponse.model_validate(result)

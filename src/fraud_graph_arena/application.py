@@ -21,7 +21,7 @@ from fraud_graph_arena.web.routes import catalogue, health, rounds
 from fraud_graph_arena.web.spa import SpaStaticFiles
 from fraud_graph_arena.workspace import WorkspaceService
 from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
-from fraud_graph_arena.case_data.academy_graph import t02_graph
+from fraud_graph_arena.case_data.academy_graph import t02_expandable_graph
 
 
 @dataclass(slots=True)
@@ -55,7 +55,7 @@ def build_web_container(settings: Settings) -> Container:
     )
     def graph_provider(round_id: str) -> dict:
         round_ = round_service.require(round_id)
-        return t02_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": ()}
+        return t02_expandable_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": ()}
 
     return Container(
         settings=settings,

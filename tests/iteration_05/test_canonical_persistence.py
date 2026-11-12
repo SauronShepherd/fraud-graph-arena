@@ -12,6 +12,9 @@ from fraud_graph_arena.canonical_persistence.archive import ArchiveSafetyError, 
 from zipfile import ZipFile
 from concurrent.futures import ThreadPoolExecutor
 from fraud_graph_arena.canonical_persistence.types import validate_row_types
+from fraud_graph_arena.canonical_persistence.identity import semantic_hash
+from datetime import datetime, timezone, timedelta
+from decimal import Decimal
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGES = sorted((ROOT / "case-data/canonical/v1").iterdir())
@@ -70,6 +73,19 @@ def test_manifest_case_version_disagreement_fails_before_staging(tmp_path):
 
 def test_topology_hash_is_order_independent():
     assert topology_hash({"b", "a"}) == topology_hash({"a", "b"})
+
+def test_semantic_hash_preserves_types_and_normalizes_aware_datetimes():
+    assert semantic_hash({"t": [{"v": Decimal("1.00")}]}) != semantic_hash({"t": [{"v": "1.00"}]})
+    assert semantic_hash({"t": [{"v": True}]}) != semantic_hash({"t": [{"v": 1}]})
+    utc_value = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    offset_value = datetime(2026, 1, 1, 1, tzinfo=timezone(timedelta(hours=1)))
+    assert semantic_hash({"t": [{"v": utc_value}]}) == semantic_hash({"t": [{"v": offset_value}]})
+
+def test_semantic_hash_rejects_naive_and_nonfinite_values():
+    with pytest.raises(ValueError, match="naive datetime"):
+        semantic_hash({"t": [{"v": datetime(2026, 1, 1)}]})
+    with pytest.raises(ValueError, match="non-finite Decimal"):
+        semantic_hash({"t": [{"v": Decimal("NaN")}]})
 
 def test_reconcile_interrupted_run_preserves_active_publication():
     warehouse = MemoryWarehouse(); importer = CanonicalImporter(warehouse)
