@@ -5,6 +5,9 @@ from pathlib import Path
 from ..identity import stable_id
 from ..package import PackageBuilder
 def convert_flat_csv(source: Path, output: Path, *, case_id: str, family: str, case_version='1.0.0', snapshot_version='1.0.0', converter='common.csv.v1', source_dialect='flat-csv-v1'):
+    if converter == 'common.csv.v1':
+        converter = {'ACADEMY': 'academy.csv.v1', 'PUPPY': 'puppy.csv.v1', 'ADULT': 'adult.csv.v1', 'SENIOR': 'senior.csv.v1'}.get(family, converter)
+        source_dialect = {'ACADEMY': 'academy-flat-csv-v1', 'PUPPY': 'puppy-flat-csv-v1', 'ADULT': 'adult-flat-csv-v1', 'SENIOR': 'senior-flat-csv-v1'}.get(family, source_dialect)
     builder=PackageBuilder(output,case_id,family,snapshot_version=snapshot_version,case_version=case_version)
     builder.add('config/cases.csv', {'case_id': case_id, 'short_id': case_id, 'title': case_id, 'path_code': family, 'case_version': case_version, 'snapshot_version': snapshot_version, 'generation_seed': 0, 'generation_mode': 'DIRECT_SOURCE', 'ranked': 'false', 'career_unlock': 'false', 'canonical_model_version': '1.0.0'})
     builder.add('config/case_profiles.csv', {'case_id': case_id, 'profile_code': family, 'profile_name': family.title(), 'cumulative': 'false', 'starting_credits': 0, 'manual_cost': 0, 'zingg_cost': 0, 'graphframes_cost': 0, 'genie_cost': 0, 'genie_row_limit': 0, 'quote_required': 'false', 'no_result_charged': 'false', 'initial_item_count': 0, 'description': f'{family} source conversion profile', 'snapshot_version': snapshot_version})
