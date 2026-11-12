@@ -18,3 +18,7 @@ apps/web/test-results/
 apps/web/playwright-report/
 apps/web/*.tsbuildinfo
 coverage/
+
+qualification/.dist/
+qualification/.vite/
+qualification/__pycache__/
