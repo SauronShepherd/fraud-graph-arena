@@ -23,7 +23,8 @@ def main():
         args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
     groups={item.get("display") for item in identity.get("groups",[])}; user=identity.get("userName")
     principal_fingerprint = hashlib.sha256((user or "unknown").encode()).hexdigest()[:16]
-    report={"profile":args.profile,"principal_fingerprint":principal_fingerprint,"is_admin":"admins" in groups,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run"}
+    source_sha=subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()
+    report={"source_sha":source_sha,"profile":args.profile,"principal_fingerprint":principal_fingerprint,"is_admin":"admins" in groups,"active_view_select":"not_run","raw_safe_select":"not_run","truth_select":"not_run"}
     if report["is_admin"]:
         report.update(status="not_qualified",reason="identity is a member of admins; admin sessions cannot prove denial")
     else:

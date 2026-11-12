@@ -16,7 +16,7 @@ q = _literal
 
 def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("package", type=Path); parser.add_argument("--run-id", required=True)
-    parser.add_argument("--profile", default="sda"); parser.add_argument("--warehouse", default="e444f39962128242"); parser.add_argument("--catalog", default="sda_dev"); parser.add_argument("--schema", default="sandbox"); parser.add_argument("--execute", action="store_true"); parser.add_argument("--report", type=Path); args = parser.parse_args()
+    parser.add_argument("--profile", default="fga"); parser.add_argument("--warehouse", default="e444f39962128242"); parser.add_argument("--catalog", default="sda_dev"); parser.add_argument("--schema", default="sandbox"); parser.add_argument("--execute", action="store_true"); parser.add_argument("--report", type=Path); args = parser.parse_args()
     report = {"status": "planned", "run_id": args.run_id, "lifecycle": ["STARTED", "PREFLIGHTED", "STAGING", "STAGED", "VALIDATING", "VALIDATED", "PUBLISHING", "PUBLISHED"]}
     try:
         package = CanonicalPackage.read(args.package)
