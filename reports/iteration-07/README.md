@@ -10,14 +10,16 @@ This report records the verified local implementation slice. It is not a closure
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
 - `python scripts/qualify_databricks_security.py --profile fga-web` — fail-closed `not_qualified` because the profile is not configured.
 - `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — `external_gap`; live receipts, repeat qualification, non-admin denial, and revision consistency remain unproven.
-- `databricks auth describe --profile fga` and `databricks warehouses get e444f39962128242 --profile fga` — profile valid and warehouse healthy/running.
-- `python scripts/qualify_databricks_all_packages.py --profile fga --catalog sda_dev --schema sandbox --warehouse e444f39962128242` — attempted but failed on the first package at SQL transport (`wsarecv` connection abort); a retry was stopped after hanging without a result.
+- `databricks auth describe --profile fga` — profile reauthenticated successfully; a dedicated `FGA-07-qualification` warehouse was created as `eded42c9d0a69b84` and stopped after testing.
+- `python scripts/qualify_databricks.py --profile fga --catalog sda_dev --schema sandbox --warehouse-id eded42c9d0a69b84 --create` — PASS, 44/44 expected objects and zero column mismatches.
+- `python scripts/qualify_databricks_all_packages.py --profile fga --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84` — blocked during the first package transfer after creating the required staging volume; the retry produced no result and was stopped.
 - `python scripts/qualify_databricks_security.py --profile fga` — `not_qualified` because the authenticated principal is an administrator.
+- `python scripts/verify_databricks_package_counts.py --profile fga --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84` — FAIL, 32 active/publication count mismatches because package loading did not complete.
+- `python scripts/qualify_databricks_failure.py --profile fga --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84 --execute` — FAIL, script raised `KeyError: data_array` while handling the incomplete lifecycle state.
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - `npm run test:e2e` from `apps/web` — 15 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
 - targeted graph viewport tests after focus/minimap controls — 8 passed, including selected-node context fitting, controlled filters and the 100-node/99-edge bounded renderer envelope (<1s in jsdom).
-- `python -m pytest tests/iteration_06 tests/iteration_01/test_openapi_contract.py -q` — 27 passed.
 - `npx playwright test -c playwright.qualification.config.ts` — 11 passed with one worker, including renderer exhibit, manual capture and the 12-repetition-per-candidate performance qualification.
 - renderer comparison — four engines exercised with the common contract; Cytoscape recorded as the conditional incumbent in `docs/iteration-06/ADR-0001-renderer-qualification.md`.
 
