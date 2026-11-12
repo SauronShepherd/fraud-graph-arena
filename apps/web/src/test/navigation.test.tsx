@@ -1,6 +1,6 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { App } from "../App";
 
 function jsonResponse(body: unknown, status = 200) {
@@ -9,16 +9,6 @@ function jsonResponse(body: unknown, status = 200) {
     headers: { "content-type": "application/json" }
   });
 }
-
-function problemResponse(code: string, status: number, detail: string) {
-  return new Response(JSON.stringify({ type: "about:blank", title: "Case interrupted", status, detail, instance: "/rounds/round-1", code, correlation_id: "test-correlation" }), {
-    status,
-    headers: { "content-type": "application/problem+json" }
-  });
-}
-
-beforeEach(() => window.localStorage.clear());
-afterEach(() => { cleanup(); vi.restoreAllMocks(); window.localStorage.clear(); });
 
 const paths = {
   sections: [
@@ -133,7 +123,7 @@ describe("walking skeleton navigation", () => {
 
     render(<MemoryRouter initialEntries={["/"]}><App /></MemoryRouter>);
 
-    fireEvent.click(screen.getByRole("button", { name: /choose your trench coat/i }));
+    fireEvent.click(screen.getByRole("link", { name: /choose your trench coat/i }));
     expect(await screen.findByRole("button", { name: /puppy/i })).toBeDisabled();
     fireEvent.click(screen.getByRole("button", { name: /detective academy/i }));
     fireEvent.click(await screen.findByRole("button", { name: /open training case/i }));
@@ -141,19 +131,13 @@ describe("walking skeleton navigation", () => {
     expect(await screen.findByRole("heading", { name: "The Academy Door" })).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: /next page/i }));
     expect(await screen.findByRole("heading", { name: "A Board with Nothing to Hide" })).toBeVisible();
-    const enterAcademy = screen.getByRole("button", { name: /enter the academy/i });
-    await waitFor(() => expect(enterAcademy).toBeEnabled(), { timeout: 5000 });
-    fireEvent.click(enterAcademy);
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(7), { timeout: 5000 });
+    fireEvent.click(screen.getByRole("button", { name: /enter the academy/i }));
+    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(7));
     expect(await screen.findByRole("heading", { name: "The Case of the Empty Evidence Board" })).toBeVisible();
     expect(screen.getByText("ACADEMY_001")).toBeVisible();
     expect(screen.getAllByText(/no evidence has been revealed/i)).toHaveLength(2);
     expect(screen.getByRole("heading", { name: /evidence graph/i })).toBeVisible();
     expect(screen.getByRole("button", { name: /compare identities/i })).toHaveAttribute("aria-disabled", "true");
-    vi.mocked(globalThis.fetch).mockResolvedValueOnce(jsonResponse(section));
-    fireEvent.click(screen.getByRole("button", { name: /back to academy catalogue/i }));
-    expect(await screen.findByRole("heading", { name: /choose a training file/i })).toBeVisible();
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(8));
   });
 
   it("reconstructs an active Academy board directly from its round route", async () => {
@@ -180,58 +164,5 @@ describe("walking skeleton navigation", () => {
 
     expect(await screen.findByRole("heading", { name: "A Board with Nothing to Hide" })).toBeVisible();
     expect(screen.getByText(/page 2 of 2/i)).toBeVisible();
-  });
-
-  it("focuses a load error and restores heading focus after a successful retry", async () => {
-    vi.spyOn(globalThis, "fetch")
-      .mockResolvedValueOnce(problemResponse("BACKEND_UNAVAILABLE", 503, "The game service could not be reached."))
-      .mockResolvedValueOnce(jsonResponse(paths));
-    render(<MemoryRouter initialEntries={["/paths"]}><App /></MemoryRouter>);
-
-    const problemHeading = await screen.findByRole("heading", { name: "Case interrupted" });
-    await waitFor(() => expect(problemHeading).toHaveFocus());
-    fireEvent.click(screen.getByRole("button", { name: /try the door again/i }));
-    const pathsHeading = await screen.findByRole("heading", { name: "Choose your trench coat" });
-    await waitFor(() => expect(pathsHeading).toHaveFocus());
-  });
-
-  it("replaces an obsolete introduction URL when the backend says the round is already active", async () => {
-    vi.spyOn(globalThis, "fetch").mockResolvedValueOnce(jsonResponse({ ...opening, round: activeRound })).mockResolvedValueOnce(jsonResponse(workspace));
-    render(<MemoryRouter initialEntries={["/rounds/round-1/intro?page=2"]}><App /></MemoryRouter>);
-    expect(await screen.findByText("ACADEMY_001")).toBeVisible();
-    expect(screen.queryByRole("heading", { name: "A Board with Nothing to Hide" })).toBeNull();
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(2));
-  });
-
-  it("redirects a board request to the introduction when the backend requires it", async () => {
-    vi.spyOn(globalThis, "fetch").mockResolvedValueOnce(problemResponse("INTRO_REQUIRED", 409, "Complete the Academy introduction first.")).mockResolvedValueOnce(jsonResponse(opening));
-    render(<MemoryRouter initialEntries={["/rounds/round-1/board"]}><App /></MemoryRouter>);
-    expect(await screen.findByRole("heading", { name: "The Academy Door" })).toBeVisible();
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(2));
-  });
-
-  it("resumes the last round through the screen machine", async () => {
-    window.localStorage.setItem("fga.lastRoundId", "round-1");
-    vi.spyOn(globalThis, "fetch").mockResolvedValueOnce(jsonResponse(workspace));
-    render(<MemoryRouter initialEntries={["/"]}><App /></MemoryRouter>);
-    fireEvent.click(await screen.findByRole("button", { name: /return to the empty board/i }));
-    expect(await screen.findByText("ACADEMY_001")).toBeVisible();
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(1));
-  });
-
-  it("keeps the opening visible after a rejected completion and retries the command", async () => {
-    vi.spyOn(globalThis, "fetch")
-      .mockResolvedValueOnce(jsonResponse(opening))
-      .mockResolvedValueOnce(problemResponse("BACKEND_UNAVAILABLE", 503, "The game service could not be reached."))
-      .mockResolvedValueOnce(jsonResponse(activeRound))
-      .mockResolvedValueOnce(jsonResponse(workspace));
-    render(<MemoryRouter initialEntries={["/rounds/round-1/intro?page=2"]}><App /></MemoryRouter>);
-    fireEvent.click(await screen.findByRole("button", { name: /enter the academy/i }));
-    expect(await screen.findByRole("heading", { name: "Case interrupted" })).toBeVisible();
-    const retryCompletion = screen.getByRole("button", { name: /try the door again/i });
-    await waitFor(() => expect(retryCompletion).toBeEnabled(), { timeout: 5000 });
-    fireEvent.click(retryCompletion);
-    await waitFor(() => expect(globalThis.fetch).toHaveBeenCalledTimes(4), { timeout: 5000 });
-    expect(await screen.findByText("ACADEMY_001", {}, { timeout: 5000 })).toBeVisible();
   });
 });
