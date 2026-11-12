@@ -1,12 +1,12 @@
 # FGA-07 local implementation evidence
 
-This report records the verified local implementation slice. It is not a closure report: renderer qualification, full cumulative gates, live import qualification, and complete browser accessibility/performance evidence remain outstanding.
+This report records the verified local implementation slice. It is not a closure report: live import qualification, non-admin authorization evidence, complete cumulative release closure, and the remaining production-scale performance/accessibility envelope remain outstanding.
 
 ## Verified commands
 
 - `python -m pytest tests/iteration_06 tests/iteration_01/test_openapi_contract.py -q` — 13 passed.
-- `npm test -- --run` from `apps/web` — 34 passed across 18 files.
-- `python -m pytest -q` — 148 passed in 8:18 after corpus repair.
+- `npm test -- --run` from `apps/web` — 51 passed across 22 files.
+- `python -m pytest -q` — 173 passed in 25:31 after corpus repair and cumulative integration fixes.
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
 - `python scripts/qualify_databricks_security.py --profile fga-web` — fail-closed `not_qualified` because the profile is not configured.
 - `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — `external_gap`; live receipts, repeat qualification, non-admin denial, and revision consistency remain unproven.
@@ -17,7 +17,9 @@ This report records the verified local implementation slice. It is not a closure
 - `npm run build` from `apps/web` — passed.
 - targeted graph viewport tests — 2 passed.
 - `npm run test:e2e` from `apps/web` — 11 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
-- targeted graph viewport tests after focus/minimap controls — 4 passed, including the 100-node/99-edge bounded renderer envelope (<1s in jsdom).
+- targeted graph viewport tests after focus/minimap controls — 6 passed, including the 100-node/99-edge bounded renderer envelope (<1s in jsdom).
+- qualification Playwright — 11 passed, including renderer exhibit, manual capture and performance qualification.
+- renderer comparison — four engines exercised with the common contract; Cytoscape recorded as the conditional incumbent in `docs/iteration-06/ADR-0001-renderer-qualification.md`.
 
 ## Implemented slice
 
@@ -33,9 +35,7 @@ This report records the verified local implementation slice. It is not a closure
 
 ## Outstanding closure work
 
-- live FGA-05 Databricks qualification, evidence revision reconciliation, and immutable cumulative release closure;
-- production renderer candidate qualification and real-browser performance evidence;
-- live Databricks qualification (local strict corpus qualification is now complete);
-- progressive loading and performance envelope;
-- populated-graph performance envelope and full cumulative closure gate;
+- live FGA-05/Databricks qualification, evidence revision reconciliation, and non-admin authorization evidence;
+- progressive loading and request-level performance envelope;
+- full cumulative closure gate and immutable release evidence;
 - final cumulative closure gate.
