@@ -1,6 +1,53 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
-  "required":["schema_version","screen_set_id","screen_set_version","initial_screen","screens"],
-  "properties":{"schema_version":{"const":"1.0"},"screen_set_id":{"type":"string"},"screen_set_version":{"type":"string"},"initial_screen":{"enum":["LAUNCH","PATH_SELECTION","CASE_SELECTION","CASE_INTRODUCTION","INVESTIGATION_BOARD","CASE_RESOLUTION"]},"screens":{"type":"array","items":{"$ref":"#/$defs/screen"}}},
-  "$defs":{"screen":{"type":"object","additionalProperties":false,"required":["schema_version","id","component","route","data_source","onLoad","onEnter","onExit","actions","transitions","effects","validation"],"properties":{"schema_version":{"const":"1.0"},"id":{"enum":["LAUNCH","PATH_SELECTION","CASE_SELECTION","CASE_INTRODUCTION","INVESTIGATION_BOARD","CASE_RESOLUTION"]},"component":{"enum":["LAUNCH","PATH_SELECTION","CASE_SELECTION","CASE_INTRODUCTION","INVESTIGATION_BOARD","CASE_RESOLUTION"]},"route":{"type":["object"],"additionalProperties":false,"required":["mode","pattern"],"properties":{"mode":{"enum":["PUBLIC","INTERNAL"]},"pattern":{"type":["string","null"]}}},"data_source":{"enum":["LAST_ROUND_POINTER","CATALOGUE_SECTIONS","CATALOGUE_SECTION","ROUND_OPENING","ROUND_WORKSPACE","RESOLUTION_CONTEXT"]},"onLoad":{"type":"array","items":{"enum":["LOAD_SCREEN_MODEL","FOCUS_PRIMARY_HEADING","ANNOUNCE_SCREEN","ABORT_OBSOLETE_READS"]}},"onEnter":{"type":"array","items":{"enum":["LOAD_SCREEN_MODEL","FOCUS_PRIMARY_HEADING","ANNOUNCE_SCREEN","ABORT_OBSOLETE_READS"]}},"onExit":{"type":"array","items":{"enum":["LOAD_SCREEN_MODEL","FOCUS_PRIMARY_HEADING","ANNOUNCE_SCREEN","ABORT_OBSOLETE_READS"]}},"actions":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["id","handler"],"properties":{"id":{"type":"string"},"handler":{"type":"string"}}}},"transitions":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["event","target","effect","history"],"properties":{"event":{"type":"string"},"target":{"type":"string"},"effect":{"enum":["NONE","FADE_TO_BLACK"]},"history":{"enum":["PUSH","REPLACE"]},"guard":{"type":"string"}}}},"effects":{"type":"object","additionalProperties":false,"required":["default"],"properties":{"default":{"enum":["NONE","FADE_TO_BLACK"]}}},"validation":{"type":"object","additionalProperties":false,"required":["required_context"],"properties":{"required_context":{"type":"array","items":{"type":"string","pattern":"^[A-Za-z][A-Za-z0-9_]*$"}}}}}}}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "document_version", "minimum_runtime_version", "screen_set_id", "screen_set_version", "initial_screen", "screens"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "document_version": {"type": "string", "minLength": 1},
+    "minimum_runtime_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "screen_set_id": {"const": "FGA03"},
+    "screen_set_version": {"type": "string", "minLength": 1},
+    "initial_screen": {"$ref": "#/$defs/screenId"},
+    "screens": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/screen"}}
+  },
+  "$defs": {
+    "screenId": {"enum": ["LAUNCH", "PATH_SELECTION", "CASE_SELECTION", "CASE_INTRODUCTION", "INVESTIGATION_BOARD", "CASE_RESOLUTION"]},
+    "actionId": {"enum": ["BEGIN", "RESUME_LAST_ROUND", "SELECT_PATH", "BACK_TO_PATHS", "OPEN_CASE", "CHANGE_INTRO_PAGE", "COMPLETE_INTRO", "SKIP_INTRO", "RETURN_TO_CATALOGUE"]},
+    "eventId": {"enum": ["PATHS_REQUESTED", "ROUND_RESUME_REQUESTED", "PATH_SELECTED", "CASE_OPENED", "INTRO_PAGE_CHANGED", "INTRODUCTION_COMPLETED", "INTRODUCTION_SKIPPED", "INTRODUCTION_ALREADY_COMPLETED", "INTRODUCTION_REQUIRED", "RETURNED_TO_PATHS", "RETURNED_TO_CATALOGUE"]},
+    "screen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_version", "document_version", "minimum_runtime_version", "id", "component", "route", "data_source", "onLoad", "onEnter", "onExit", "actions", "transitions", "effects", "validation"],
+      "properties": {
+        "schema_version": {"const": "1.0"},
+        "document_version": {"type": "string", "minLength": 1},
+        "minimum_runtime_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "id": {"$ref": "#/$defs/screenId"},
+        "component": {"$ref": "#/$defs/screenId"},
+        "route": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "pattern"],
+          "properties": {"mode": {"enum": ["PUBLIC", "INTERNAL"]}, "pattern": {"type": ["string", "null"]}}
+        },
+        "data_source": {"enum": ["LAST_ROUND_POINTER", "CATALOGUE_SECTIONS", "CATALOGUE_SECTION", "ROUND_OPENING", "ROUND_WORKSPACE", "RESOLUTION_CONTEXT"]},
+        "onLoad": {"type": "array", "uniqueItems": true, "items": {"enum": ["LOAD_SCREEN_MODEL"]}},
+        "onEnter": {"type": "array", "uniqueItems": true, "items": {"enum": ["FOCUS_PRIMARY_HEADING", "ANNOUNCE_SCREEN"]}},
+        "onExit": {"type": "array", "uniqueItems": true, "items": {"enum": ["ABORT_OBSOLETE_READS"]}},
+        "actions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "object", "additionalProperties": false, "required": ["id", "handler"], "properties": {"id": {"$ref": "#/$defs/actionId"}, "handler": {"$ref": "#/$defs/actionId"}}}
+        },
+        "transitions": {
+          "type": "array",
+          "items": {"type": "object", "additionalProperties": false, "required": ["event", "target", "effect", "history"], "properties": {"event": {"$ref": "#/$defs/eventId"}, "target": {"$ref": "#/$defs/screenId"}, "effect": {"enum": ["NONE", "FADE_TO_BLACK"]}, "history": {"enum": ["PUSH", "REPLACE"]}, "guard": {"enum": ["REQUIRED_CONTEXT", "ACTION_NOT_PENDING", "ROUND_ACTIVE", "ROUND_INTRO_PENDING"]}}}
+        },
+        "effects": {"type": "object", "additionalProperties": false, "required": ["default"], "properties": {"default": {"enum": ["NONE", "FADE_TO_BLACK"]}}},
+        "validation": {"type": "object", "additionalProperties": false, "required": ["required_context"], "properties": {"required_context": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_]*$"}}}}
+      }
+    }
+  }
 }

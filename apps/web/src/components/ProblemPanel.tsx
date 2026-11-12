@@ -9,7 +9,7 @@ export function ProblemPanel({ problem, onRetry }: Props) {
   return (
     <section className="problem" role="alert" aria-live="assertive">
       <p className="eyebrow">Case interrupted</p>
-      <h2>{problem.title}</h2>
+      <h2 tabIndex={-1}>{problem.title}</h2>
       <p>{problem.detail}</p>
       {problem.recovery ? <p className="recovery">{problem.recovery}</p> : null}
       <small>Reference: {problem.correlation_id}</small>

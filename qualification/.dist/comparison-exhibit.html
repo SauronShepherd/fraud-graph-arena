@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FGA 06 Renderer Lab</title>
+    <style>
+      :root { color-scheme: dark; --bg: #17130f; --panel: #241d17; --panel-2: #30251c; --line: #705f4b; --ink: #f1e7d0; --muted: #b9a88d; --gold: #d9b46c; --green: #6fc69a; --amber: #edc46e; --red: #ed8a7c; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 1180px; background: radial-gradient(circle at top, #3b2a1f 0, var(--bg) 42rem); color: var(--ink); font: 14px/1.45 system-ui, sans-serif; }
+      main { max-width: 1800px; margin: 0 auto; padding: 2rem; }
+      h1, h2, h3 { font-family: Georgia, serif; letter-spacing: .02em; }
+      h1 { margin: 0 0 .25rem; font-size: clamp(2rem, 4vw, 3.5rem); }
+      h2 { margin: 0; font-size: 1.35rem; }
+      p { color: var(--muted); }
+      .masthead, .toolbar, .protocol, .summary { border: 1px solid var(--line); background: rgba(36, 29, 23, .94); box-shadow: 0 1rem 3rem rgba(0,0,0,.2); }
+      .masthead { padding: 1.5rem; border-top: 4px solid var(--gold); }
+      .masthead p { max-width: 86rem; margin-bottom: 0; }
+      .toolbar { display: flex; align-items: center; gap: .65rem; flex-wrap: wrap; padding: .85rem 1rem; margin: 1rem 0; position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px); }
+      button { border: 1px solid var(--gold); background: #3d2f20; color: var(--ink); padding: .48rem .7rem; border-radius: .3rem; cursor: pointer; font: inherit; }
+      button:hover, button:focus-visible { background: #5b4328; outline: 2px solid var(--gold); outline-offset: 2px; }
+      button.primary { background: var(--gold); color: #21180f; font-weight: 700; }
+      button.danger { border-color: var(--red); }
+      .toolbar .status { margin-left: auto; color: var(--muted); }
+      .matrix { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; align-items: start; }
+      .engine-card { min-width: 0; border: 1px solid var(--line); background: var(--panel); overflow: hidden; }
+      .engine-card[data-auto="PASS"] { border-color: var(--green); }
+      .engine-card[data-auto="BLOCKED"] { border-color: var(--red); }
+      .engine-card header { padding: 1rem; background: linear-gradient(135deg, #3c2c1e, #211912); border-bottom: 1px solid var(--line); }
+      .engine-card header h2 { margin: 0; }
+      .engine-card header p { margin: .25rem 0 0; font: .85rem ui-monospace, monospace; }
+      .badge { display: inline-block; margin-top: .65rem; padding: .18rem .45rem; border: 1px solid var(--line); border-radius: 999px; font-size: .75rem; color: var(--muted); }
+      .badge.pass { border-color: var(--green); color: var(--green); }
+      .badge.blocked { border-color: var(--red); color: var(--red); }
+      .engine-surface { height: 290px; background: #11100e; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+      .engine-surface > div, .engine-surface > svg, .engine-surface canvas { width: 100%; height: 100%; }
+      .card-body { padding: .85rem; }
+      .controls { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .75rem; }
+      .controls button { font-size: .8rem; padding: .35rem .45rem; }
+      .selection { min-height: 3.2rem; padding: .55rem; background: #17120e; border: 1px solid #4a3c2c; color: var(--muted); font: .78rem ui-monospace, monospace; }
+      .selection strong { color: var(--ink); }
+      .auto-result { margin: .7rem 0; padding: .55rem; border-left: 3px solid var(--line); background: #1b1510; color: var(--muted); font-size: .82rem; }
+      .auto-result.pass { border-color: var(--green); color: var(--green); }
+      .auto-result.blocked { border-color: var(--red); color: var(--red); }
+      .manual-review { border-top: 1px solid #4a3c2c; padding-top: .7rem; }
+      .manual-review h3 { font-size: 1rem; margin: 0 0 .35rem; }
+      .manual-review label { display: block; color: var(--muted); font-size: .82rem; margin: .25rem 0; }
+      .manual-review input { accent-color: var(--gold); margin-right: .45rem; }
+      .summary { margin-top: 1rem; padding: 1rem; overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; min-width: 900px; }
+      th, td { text-align: left; vertical-align: top; padding: .55rem; border-bottom: 1px solid #4a3c2c; }
+      th { color: var(--gold); font-weight: 600; }
+      td code { color: var(--gold); }
+      .protocol { margin-top: 1rem; padding: 1rem; }
+      .protocol summary { cursor: pointer; color: var(--gold); font-weight: 700; }
+      .protocol code, .protocol pre { color: #e7d4a4; }
+      .report { max-height: 22rem; overflow: auto; white-space: pre-wrap; background: #0e0c0a; border: 1px solid #4a3c2c; padding: .8rem; color: #cdbb99; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+      @media (max-width: 1400px) { body { min-width: 1024px; } main { padding: 1rem; } .matrix { gap: .6rem; } .engine-surface { height: 250px; } }
+    </style>
+    <script type="module" crossorigin src="/assets/comparison-q139VoO-.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/harness-DgGDAWZq.js">
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <h1>FGA 06 Renderer Lab</h1>
+        <p>Four open-source candidates, one renderer-neutral fixture, one shared lifecycle and one evidence board. Click each graph yourself, then run the same automated probes across every adapter. Raw timing is evidence input; it is not a decision by itself.</p>
+      </header>
+      <section class="toolbar" aria-label="Qualification actions">
+        <button class="primary" id="run-all" data-testid="run-all">Run automated qualification</button>
+        <button id="reset-all" data-testid="reset-all">Reset all views</button>
+        <button id="download-report" data-testid="download-report">Download evidence JSON</button>
+        <span class="status" id="overall-status" data-testid="overall-status">Manual review pending</span>
+      </section>
+      <section id="matrix" class="matrix" aria-label="Renderer comparison matrix"></section>
+      <section class="summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">Evidence summary</h2>
+        <p>Automatic status only covers the shared lifecycle and selection probes. Manual checkboxes are operator evidence and are stored locally in this browser.</p>
+        <table>
+          <thead><tr><th>Candidate</th><th>Version</th><th>Auto probes</th><th>Mount / destroy</th><th>Selection events</th><th>Manual review</th><th>Decision gate</th></tr></thead>
+          <tbody id="summary-body"></tbody>
+        </table>
+      </section>
+      <details class="protocol">
+        <summary>Qualification protocol and interpretation</summary>
+        <p>Each candidate receives the same fixture and the same sequence: mount, fit, set viewport, resize, probe a node, probe an edge and destroy. The candidate adapter is the only place allowed to hold native library objects. A production decision still requires hard-requirement, licence, accessibility and React-integration evidence.</p>
+        <p>Manual review: click a node and an edge in every card; use fit, zoom/pan and remount; inspect labels, direction and semantic affordances; then mark the five review items honestly for that candidate.</p>
+        <pre><code>requirements → same fixture → same probes → measurements → manual review → decision</code></pre>
+      </details>
+      <section class="summary" aria-labelledby="report-title">
+        <h2 id="report-title">Latest report</h2>
+        <pre class="report" id="report" data-testid="report" aria-live="polite">No automated run yet.</pre>
+      </section>
+    </main>
+  </body>
+</html>

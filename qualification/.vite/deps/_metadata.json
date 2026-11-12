@@ -1,0 +1,64 @@
+{
+  "hash": "17e089a5",
+  "configHash": "749a5606",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "9f553135",
+  "optimized": {
+    "@xyflow/react": {
+      "src": "../../../apps/web/node_modules/@xyflow/react/dist/esm/index.js",
+      "file": "@xyflow_react.js",
+      "fileHash": "6c69bf42",
+      "needsInterop": false
+    },
+    "cytoscape": {
+      "src": "../../../apps/web/node_modules/cytoscape/dist/cytoscape.esm.mjs",
+      "file": "cytoscape.js",
+      "fileHash": "aa486b68",
+      "needsInterop": false
+    },
+    "d3": {
+      "src": "../../../apps/web/node_modules/d3/src/index.js",
+      "file": "d3.js",
+      "fileHash": "eec2cff9",
+      "needsInterop": false
+    },
+    "graphology": {
+      "src": "../../../apps/web/node_modules/graphology/dist/graphology.umd.min.js",
+      "file": "graphology.js",
+      "fileHash": "faaa1431",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../../apps/web/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "1685c016",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../../apps/web/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "93a22688",
+      "needsInterop": true
+    },
+    "sigma": {
+      "src": "../../../apps/web/node_modules/sigma/dist/sigma.esm.js",
+      "file": "sigma.js",
+      "fileHash": "4560b67e",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "react-dom-CJJqqSJH": {
+      "file": "react-dom-CJJqqSJH.js",
+      "isDynamicEntry": false
+    },
+    "rolldown-runtime-BPOCksWG": {
+      "file": "rolldown-runtime-BPOCksWG.js",
+      "isDynamicEntry": false
+    },
+    "src-BDnJa-GH": {
+      "file": "src-BDnJa-GH.js",
+      "isDynamicEntry": false
+    }
+  }
+}

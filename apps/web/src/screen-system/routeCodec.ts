@@ -9,10 +9,18 @@ export function parseLocation(pathname: string, search: string, definitions: Rea
     const match = pathname.match(regex);
     if (!match) continue;
     const context: Record<string, string | number> = {};
-    names.forEach((name, index) => { context[name] = decodeURIComponent(match[index + 1]); });
+    try { names.forEach((name, index) => { context[name] = decodeURIComponent(match[index + 1]); }); }
+    catch { return { screen: "LAUNCH", context: {}, replace: true }; }
+    let replace = false;
     const page = new URLSearchParams(search).get("page");
-    if (definition.id === "CASE_INTRODUCTION" && page) context.page = Number(page) || 1;
-    return { screen: definition.id, context, replace: false };
+    if (definition.id === "CASE_INTRODUCTION" && page !== null) {
+      const pageNumber = Number(page);
+      if (Number.isSafeInteger(pageNumber) && pageNumber >= 1) {
+        context.page = pageNumber;
+        if (!/^[1-9]\d*$/.test(page)) replace = true;
+      } else { context.page = 1; replace = true; }
+    }
+    return { screen: definition.id, context, replace };
   }
   return { screen: "LAUNCH", context: {}, replace: pathname !== "/" };
 }

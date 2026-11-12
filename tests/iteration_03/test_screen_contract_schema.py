@@ -21,3 +21,20 @@ def test_invalid_screen_set_is_rejected(mutation):
     mutation(candidate)
     with pytest.raises(jsonschema.ValidationError):
         jsonschema.Draft202012Validator(SCHEMA).validate(candidate)
+
+def test_every_screen_declares_its_document_and_runtime_compatibility():
+    for screen in DEFINITIONS["screens"]:
+        assert screen["schema_version"] == DEFINITIONS["schema_version"]
+        assert screen["document_version"]
+        assert screen["minimum_runtime_version"]
+
+@pytest.mark.parametrize("mutation", [
+    lambda d: d["screens"][0].pop("document_version"),
+    lambda d: d["screens"][0].update({"minimum_runtime_version": "not-a-version"}),
+    lambda d: d["screens"][0].update({"actions": [{"id": "BEGIN", "handler": "BEGIN"}, {"id": "BEGIN", "handler": "BEGIN"}]}),
+])
+def test_invalid_screen_metadata_and_duplicate_actions_are_rejected(mutation):
+    candidate = copy.deepcopy(DEFINITIONS)
+    mutation(candidate)
+    with pytest.raises(jsonschema.ValidationError):
+        jsonschema.Draft202012Validator(SCHEMA).validate(candidate)

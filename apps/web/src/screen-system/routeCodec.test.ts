@@ -11,4 +11,12 @@ describe("screen route codec", () => {
   it("fails unknown routes closed to launch", () => {
     expect(parseLocation("/not-a-screen", "", screenDefinitions)).toMatchObject({ screen: "LAUNCH", replace: true });
   });
+  it("normalizes invalid intro pages and malformed percent escapes", () => {
+    expect(parseLocation("/rounds/r1/intro", "?page=-4", screenDefinitions)).toMatchObject({ screen: "CASE_INTRODUCTION", context: { roundId: "r1", page: 1 }, replace: true });
+    expect(parseLocation("/rounds/%E0%A4%A/intro", "", screenDefinitions)).toMatchObject({ screen: "LAUNCH", replace: true });
+  });
+  it("normalizes non-canonical numeric aliases for intro pages", () => {
+    expect(parseLocation("/rounds/r1/intro", "?page=1.0", screenDefinitions)).toMatchObject({ screen: "CASE_INTRODUCTION", context: { roundId: "r1", page: 1 }, replace: true });
+    expect(parseLocation("/rounds/r1/intro", "?page=02", screenDefinitions)).toMatchObject({ screen: "CASE_INTRODUCTION", context: { roundId: "r1", page: 2 }, replace: true });
+  });
 });
