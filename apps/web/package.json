@@ -9,7 +9,7 @@
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run --pool=threads --no-file-parallelism --maxWorkers=1",
     "test:e2e": "playwright test",
-    "validate:screens": "python ../../tools/validate_screen_set.py",
+    "validate:screens": "node --test scripts/json-duplicate-check.node-test.mjs && node scripts/validate-screen-set.mjs",
     "test:i03": "npm run typecheck && npm run validate:screens && npm test"
   },
   "dependencies": {

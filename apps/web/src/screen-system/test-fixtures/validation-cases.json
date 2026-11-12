@@ -1,0 +1,77 @@
+[
+  {
+    "name": "screens must be an array",
+    "path": ["screens"],
+    "value": {}
+  },
+  {
+    "name": "screen-set document version is blank",
+    "path": ["document_version"],
+    "value": " "
+  },
+  {
+    "name": "screen-set semantic version is blank",
+    "path": ["screen_set_version"],
+    "value": ""
+  },
+  {
+    "name": "screen document version is blank",
+    "path": ["screens", 0, "document_version"],
+    "value": ""
+  },
+  {
+    "name": "required context key has invalid syntax",
+    "path": ["screens", 2, "validation", "required_context"],
+    "value": ["path-id"]
+  },
+  {
+    "name": "ambiguous public route",
+    "path": ["screens", 1, "route", "pattern"],
+    "value": "/"
+  },
+  {
+    "name": "route parameter without required context",
+    "path": ["screens", 2, "validation", "required_context"],
+    "value": []
+  },
+  {
+    "name": "public route is not rooted",
+    "path": ["screens", 1, "route", "pattern"],
+    "value": "paths"
+  },
+  {
+    "name": "minimum runtime version is newer than runtime",
+    "path": ["screens", 0, "minimum_runtime_version"],
+    "value": "1.1.0"
+  },
+  {
+    "name": "transition points to an unknown screen",
+    "path": ["screens", 0, "transitions", 0, "target"],
+    "value": "MISSING_SCREEN"
+  },
+  {
+    "name": "declared action has no matching transition",
+    "path": ["screens", 0, "transitions"],
+    "value": []
+  },
+  {
+    "name": "transition event has no producer on this screen",
+    "path": ["screens", 0, "transitions", 0, "event"],
+    "value": "INTRODUCTION_COMPLETED"
+  },
+  {
+    "name": "internal terminal is made public",
+    "path": ["screens", 5, "route", "mode"],
+    "value": "PUBLIC"
+  },
+  {
+    "name": "internal terminal is reachable",
+    "path": ["screens", 4, "transitions", 0, "target"],
+    "value": "CASE_RESOLUTION"
+  },
+  {
+    "name": "initial screen is internal",
+    "path": ["initial_screen"],
+    "value": "CASE_RESOLUTION"
+  }
+]

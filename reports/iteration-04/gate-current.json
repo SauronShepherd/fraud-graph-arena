@@ -1,0 +1,71 @@
+{
+  "blockers": [],
+  "canonical_model_version": "1.0.0",
+  "contract_valid": true,
+  "corpus_complete": true,
+  "family_counts": {
+    "ACADEMY": 3,
+    "ADULT": 4,
+    "PUPPY": 3,
+    "SENIOR": 3
+  },
+  "fully_qualified": true,
+  "iteration": "FGA04",
+  "package_count": 13,
+  "packages_valid": true,
+  "table_count": 32,
+  "validation": [
+    {
+      "errors": [],
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "A2_DOWNLINE_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "P1_MADDOG_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2"
+    },
+    {
+      "errors": [],
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3"
+    },
+    {
+      "errors": [],
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3"
+    },
+    {
+      "errors": [],
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3"
+    }
+  ]
+}

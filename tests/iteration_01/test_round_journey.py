@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+from concurrent.futures import ThreadPoolExecutor
 from fraud_graph_arena.workspace.service import SEMANTIC_ACTIONS, NOT_IMPLEMENTED
 
 
@@ -62,6 +63,32 @@ def test_start_and_opening_completion_are_idempotent(client: TestClient) -> None
     first_complete = client.post(f"/api/v1/rounds/{created['id']}/opening/complete")
     second_complete = client.post(f"/api/v1/rounds/{created['id']}/opening/complete")
     assert first_complete.json() == second_complete.json()
+
+
+def test_create_round_is_idempotent_and_rejects_key_reuse_with_new_intent(client: TestClient) -> None:
+    payload = {"player_id": "hercule", "path_id": "DETECTIVE_ACADEMY", "case_id": "ACADEMY_001"}
+    first = client.post("/api/v1/rounds", json=payload, headers={"Idempotency-Key": "open-case-1"})
+    replay = client.post("/api/v1/rounds", json=payload, headers={"Idempotency-Key": "open-case-1"})
+    assert first.status_code == 201
+    assert replay.status_code == 201
+    assert replay.json() == first.json()
+
+    changed = client.post("/api/v1/rounds", json={**payload, "case_id": "ACADEMY_002"}, headers={"Idempotency-Key": "open-case-1"})
+    assert changed.status_code == 409
+    assert changed.json()["code"] == "IDEMPOTENCY_KEY_REUSED"
+
+
+def test_concurrent_same_key_creates_one_round(client: TestClient) -> None:
+    payload = {"player_id": "hercule", "path_id": "DETECTIVE_ACADEMY", "case_id": "ACADEMY_001"}
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        responses = list(pool.map(lambda _: client.post("/api/v1/rounds", json=payload, headers={"Idempotency-Key": "concurrent-open"}), range(2)))
+    assert [response.status_code for response in responses] == [201, 201]
+    assert responses[0].json() == responses[1].json()
+
+
+def test_blank_idempotency_key_is_not_accepted(client: TestClient) -> None:
+    response = client.post("/api/v1/rounds", json={"player_id": "hercule", "path_id": "DETECTIVE_ACADEMY", "case_id": "ACADEMY_001"}, headers={"Idempotency-Key": ""})
+    assert response.status_code == 422
 
 
 def test_academy_case_cannot_be_guessed_from_a_ranked_path(client: TestClient) -> None:

@@ -5,7 +5,8 @@ export function parseLocation(pathname: string, search: string, definitions: Rea
     const pattern = definition.route.pattern;
     if (!pattern) continue;
     const names = [...pattern.matchAll(/:([A-Za-z0-9_]+)/g)].map((match) => match[1]);
-    const regex = new RegExp(`^${pattern.replace(/:[A-Za-z0-9_]+/g, "([^/]+)")}$`);
+    const escapedPattern = pattern.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(`^${escapedPattern.replace(/:[A-Za-z0-9_]+/g, "([^/]+)")}$`);
     const match = pathname.match(regex);
     if (!match) continue;
     const context: Record<string, string | number> = {};
