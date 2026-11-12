@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "before": "pub_b633c33760213d3738a1e0eb3d91daf5034e3ddfe4ee30a12040699c963bd673",
+  "after": "pub_b633c33760213d3738a1e0eb3d91daf5034e3ddfe4ee30a12040699c963bd673",
+  "failed_run": "dbx_failed_run_17",
+  "candidate_active": false,
+  "qualified_source_sha": "efc99cb8cbdf204958855a93b3f70abbece73a40",
+  "catalog": "workspace",
+  "schema": "fga_sandbox",
+  "warehouse": "7c640666d4d3eb61"
+}

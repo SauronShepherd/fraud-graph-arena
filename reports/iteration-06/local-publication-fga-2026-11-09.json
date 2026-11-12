@@ -1,0 +1,50 @@
+{
+  "schema": "fga06-local-publication-v1",
+  "status": "PASS",
+  "runtime": "Astro preview",
+  "target_note": "No separately registered Astra runtime was found; the repository's documented local runtime is Astro.",
+  "site_repository": {
+    "branch": "codex/the-oomen-publication-20261030",
+    "commit": "9e935100d9b9593ceec4687387afc299980b9ed3",
+    "remote": "https://github.com/SauronShepherd/articles.git"
+  },
+  "asset_repository": {
+    "branch": "codex/the-oomen-publication-20261030",
+    "commit": "dc660219f2f9ede97613ad6561b99a822be19acd",
+    "remote": "https://github.com/SauronShepherd/angelic-assets.git"
+  },
+  "local_urls": {
+    "article": "http://127.0.0.1:4321/fga/06-who-let-the-graphs-out/",
+    "gallery": "http://127.0.0.1:4321/interactive/fga-06-graph-engine-gallery.html",
+    "series": "http://127.0.0.1:4321/fga/"
+  },
+  "http": {
+    "article": 200,
+    "gallery": 200,
+    "series": 200,
+    "cdn_cover": 200,
+    "cdn_infographic": 200
+  },
+  "build": {
+    "content_validation": "pass",
+    "static_pages": 185,
+    "pagefind_indexed_pages": 194,
+    "pagefind_indexed_languages": ["en", "es"],
+    "pagefind_indexed_words": 17301
+  },
+  "gallery": {
+    "auto_test_surface": "present",
+    "contextual_panels": "present",
+    "local_relationships": "present",
+    "topology_scenarios": "present"
+  },
+  "databricks": {
+    "profile": "fga",
+    "workspace": "https://dbc-916267ef-3b9b.cloud.databricks.com"
+  },
+  "fga05_lineage": {
+    "repair_tag": "fga-iteration-05-repair-r2",
+    "repair_commit": "7eb2218d3238fc39ea7b35363c70678587b293bd",
+    "closure_allowed": false
+  }
+}

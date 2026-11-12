@@ -19,7 +19,7 @@ def sql_api(profile, warehouse, catalog, schema, statement):
 quote = _literal
 
 def main():
-    p = argparse.ArgumentParser(); p.add_argument("package", type=Path); p.add_argument("--profile", default="sda"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse", default="e444f39962128242"); p.add_argument("--all-rows", action="store_true"); args = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("package", type=Path); p.add_argument("--profile", default="fga"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--warehouse", default="e444f39962128242"); p.add_argument("--all-rows", action="store_true"); args = p.parse_args()
     if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", args.catalog) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", args.schema):
         raise SystemExit("catalog and schema must be registered SQL identifiers")
     manifest = json.loads((args.package / "manifest.json").read_text(encoding="utf-8"))

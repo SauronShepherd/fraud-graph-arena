@@ -1,0 +1,46 @@
+{
+  "schema": "fga06-blocker-audit-v1",
+  "generated_at_utc": "2026-11-09T06:35:00+00:00",
+  "status": "EXTERNAL_BLOCKERS_CONFIRMED",
+  "astra_target": {
+    "requested_name": "Astra",
+    "command_discovery": "not_found",
+    "windows_application_inventory": "not_found",
+    "installed_application_registry": "not_found",
+    "winget_inventory": "not_found",
+    "docker_inventory": "not_found",
+    "searched_roots": [
+      "C:/Users/angel.alvarez",
+      "C:/ANGEL",
+      "C:/Users/angel.alvarez/PycharmProjects"
+    ],
+    "astro_equivalent": {
+      "runtime": "Astro preview",
+      "status": "running_and_verified",
+      "article_http_status": 200,
+      "gallery_http_status": 200
+    },
+    "resolution_required": "Provision or register an Astra target, or confirm that Astro is the intended runtime."
+  },
+  "fga05_historical_closure": {
+    "branch": "FGA-05",
+    "historical_gate_commit": "5eebf83666c84e3e90722431688de8926a24476b",
+    "historical_requirement_audit": "pass",
+    "historical_preflight_working_tree": "development_changes_present",
+    "current_final_line_status": "external_gap",
+    "immutable_tag": "fga-iteration-05-repair-r2",
+    "repair_commit": "7eb2218d3238fc39ea7b35363c70678587b293bd",
+    "repair_source_revision": "59f0fed7271730aebf6d729b9d3f36ff2ab8f812",
+    "repair_status": "external_gap",
+    "repair_evidence": "reports/iteration-05/closure-repair-fga05-final3-2026-11-09.json",
+    "closure_allowed": false,
+    "resolution_required": "The historical dirty pass is superseded by a clean repair checkpoint; FGA-05 still needs a non-admin Databricks identity before it can be called fully closed."
+  },
+  "databricks_security": {
+    "profile": "fga",
+    "workspace": "https://dbc-916267ef-3b9b.cloud.databricks.com",
+    "is_admin": true,
+    "status": "not_qualified",
+    "resolution_required": "A non-admin identity/profile is required to prove truth-table denial."
+  }
+}

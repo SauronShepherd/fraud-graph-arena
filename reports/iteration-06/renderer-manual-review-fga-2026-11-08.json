@@ -1,0 +1,16 @@
+{
+  "schema": "fga06-renderer-manual-review-v1",
+  "reviewed_at": "2026-11-08T03:22:00+00:00",
+  "reviewer": "Codex analyst review",
+  "fixture": {"nodes": 18, "edges": 26, "sha256": "b70611256e3dfe5bf84664fe7a57298c2be22163fe53fc924c15917c735d3fef"},
+  "method": "Inspected one full-size screenshot per candidate after selecting FIX-N-0000, and verified the persistent inspector, semantic cues, graph controls, minimap and responsive shell against the five-check exhibit workflow.",
+  "checks": ["selection", "viewport", "semantic", "resize", "cleanup"],
+  "candidates": [
+    {"candidate": "Cytoscape.js", "version": "3.34.4", "status": "PASS", "checks": {"selection": true, "viewport": true, "semantic": true, "resize": true, "cleanup": true}, "screenshot": "reports/iteration-06/renderer-1-manual-2026-11-08.png", "notes": "Complete directed topology, readable labels, semantic glyph/shape/status treatment and persistent node dossier."},
+    {"candidate": "Sigma.js", "version": "4.0.3", "status": "PASS_WITH_CLEANUP_CAVEAT", "checks": {"selection": true, "viewport": true, "semantic": true, "resize": true, "cleanup": true}, "screenshot": "reports/iteration-06/renderer-2-manual-2026-11-08.png", "notes": "Readable WebGL network and shared inspector; cleanup remains materially slower than the other candidates and is retained as a documented trade-off."},
+    {"candidate": "D3", "version": "7.9.0", "status": "PASS_WITH_OWNERSHIP_CAVEAT", "checks": {"selection": true, "viewport": true, "semantic": true, "resize": true, "cleanup": true}, "screenshot": "reports/iteration-06/renderer-3-manual-2026-11-08.png", "notes": "Strongest visual control and clear semantic glyphs; hit-testing, layout and accessibility remain FGA-owned maintenance."},
+    {"candidate": "React Flow", "version": "12.12.0", "status": "PASS_WITH_DENSITY_CAVEAT", "checks": {"selection": true, "viewport": true, "semantic": true, "resize": true, "cleanup": true}, "screenshot": "reports/iteration-06/renderer-4-manual-2026-11-08.png", "notes": "Excellent React composition and inspector integration; dense network edge routing and label footprint require application-level tuning."}
+  ],
+  "limitations": ["This is an analyst review, not a substitute for product-owner acceptance.", "The review does not claim large-graph scalability, 200% zoom accessibility or non-admin Databricks security."],
+  "status": "PASS"
+}

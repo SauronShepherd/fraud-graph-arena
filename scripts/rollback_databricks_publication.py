@@ -9,7 +9,7 @@ q = _literal
 
 def main() -> int:
     parser = argparse.ArgumentParser(); parser.add_argument("--case-id", required=True); parser.add_argument("--case-version", required=True); parser.add_argument("--publication-id", required=True); parser.add_argument("--run-id", required=True)
-    parser.add_argument("--profile", default="sda"); parser.add_argument("--warehouse", default="e444f39962128242"); parser.add_argument("--catalog", default="sda_dev"); parser.add_argument("--schema", default="sandbox"); parser.add_argument("--execute", action="store_true"); parser.add_argument("--confirm"); parser.add_argument("--report", type=Path); args = parser.parse_args()
+    parser.add_argument("--profile", default="fga"); parser.add_argument("--warehouse", default="e444f39962128242"); parser.add_argument("--catalog", default="sda_dev"); parser.add_argument("--schema", default="sandbox"); parser.add_argument("--execute", action="store_true"); parser.add_argument("--confirm"); parser.add_argument("--report", type=Path); args = parser.parse_args()
     warehouse = DatabricksWarehouse(args.profile, args.warehouse, args.catalog, args.schema)
     publications = warehouse.qualify_table("fga_import_publications"); pointer = warehouse.qualify_table("fga_active_publications")
     report = {"status": "planned", "scope": {"case_id": args.case_id, "case_version": args.case_version}, "publication_id": args.publication_id, "run_id": args.run_id, "supported_model_versions": sorted(supported_model_versions())}

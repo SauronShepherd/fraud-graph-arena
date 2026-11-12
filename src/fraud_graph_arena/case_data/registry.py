@@ -1,8 +1,8 @@
 from __future__ import annotations
 import json
 from functools import lru_cache
-from pathlib import Path
-ROOT=Path(__file__).resolve().parents[3]
+from fraud_graph_arena.paths import project_root
+ROOT=project_root()
 CONTRACT=ROOT/'contracts/canonical/v1/canonical-model.json'
 TABLE_PATHS=tuple(json.loads(CONTRACT.read_text(encoding='utf-8'))['tables'])
 MODEL_VERSION = json.loads(CONTRACT.read_text(encoding='utf-8')).get('version', '1.0.0')

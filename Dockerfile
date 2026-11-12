@@ -9,6 +9,7 @@ RUN npm run build
 FROM python:3.13-slim AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
+    FGA_PROJECT_ROOT=/app \
     FGA_ENVIRONMENT=production \
     FGA_RUNTIME_ROLE=WEB \
     FGA_ROUND_REPOSITORY=sqlite \
@@ -18,6 +19,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 COPY pyproject.toml README.md ./
 COPY src/ ./src/
+COPY contracts/ ./contracts/
+COPY config/ ./config/
+COPY case-data/ ./case-data/
 RUN python -m pip install --no-cache-dir .
 COPY --from=web-build /workspace/apps/web/dist ./apps/web/dist
 RUN mkdir -p /data

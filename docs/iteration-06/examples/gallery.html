@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Static FGA graph engine example gallery">
+  <title>FGA Graph Engine · Example Gallery</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f4ead1;
+      --muted: #b8ae95;
+      --panel: #15130f;
+      --panel-2: #201c15;
+      --line: #56492f;
+      --gold: #d9b46c;
+      --cyan: #70cbd2;
+      --red: #e07162;
+      --green: #a2c56b;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .4);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; background: radial-gradient(circle at 20% 0%, #302817 0, #0b0a08 52%, #050505 100%); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .shell { width: min(1760px, 100%); margin: 0 auto; padding: 18px; }
+    header { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding: 10px 4px 18px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 4px; font: 800 clamp(1.5rem, 3vw, 2.5rem)/1 Georgia, serif; letter-spacing: .02em; }
+    h2 { margin-bottom: 4px; font-size: 1.1rem; }
+    h3 { margin-bottom: 8px; font-size: .96rem; color: var(--gold); }
+    .eyebrow { color: var(--gold); font-size: .72rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    .lede { max-width: 760px; margin-bottom: 0; color: var(--muted); }
+    .badge { border: 1px solid #6b5732; border-radius: 999px; padding: 7px 11px; color: var(--gold); white-space: nowrap; font-size: .75rem; }
+    .tabs { display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 14px; scrollbar-color: var(--gold) var(--panel); }
+    .tab { min-width: 190px; border: 1px solid var(--line); border-radius: 10px 10px 0 0; background: #12100c; color: var(--muted); padding: 11px 13px; text-align: left; }
+    .tab:hover, .tab:focus-visible { border-color: var(--gold); color: var(--ink); outline: none; }
+    .tab[aria-selected="true"] { border-color: var(--gold); background: linear-gradient(#302715, #19150f); color: var(--ink); box-shadow: inset 0 -3px var(--gold); }
+    .tab small { display: block; margin-top: 4px; color: var(--muted); }
+    .workspace { display: grid; grid-template-columns: minmax(0, 2.15fr) minmax(360px, .95fr); gap: 14px; align-items: stretch; }
+    .panel { min-width: 0; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(38, 31, 20, .97), rgba(13, 12, 10, .98)); box-shadow: var(--shadow); }
+    .graph-panel { min-height: 740px; position: relative; overflow: hidden; border-radius: 12px; }
+    .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; border-bottom: 1px solid var(--line); padding: 12px 14px; background: linear-gradient(90deg, rgba(51, 37, 18, .72), rgba(0, 0, 0, .18)); }
+    .toolbar h2 { margin-right: auto; }
+    .toolbar button, .action, .filter-button { border: 1px solid #6b5732; border-radius: 6px; background: #241d12; color: var(--ink); padding: 6px 9px; }
+    .toolbar button:hover, .toolbar button:focus-visible, .action:hover, .action:focus-visible, .filter-button:hover, .filter-button:focus-visible { border-color: var(--cyan); outline: 2px solid rgba(112, 203, 210, .18); }
+    .toolbar button[aria-pressed="true"] { background: #31545a; border-color: var(--cyan); }
+    .graph-strip { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-bottom: 1px solid rgba(86, 73, 47, .7); padding: 8px 14px; background: rgba(9, 8, 6, .36); color: var(--muted); font-size: .75rem; }
+    .graph-strip .strip-title { margin-right: auto; color: var(--ink); font-weight: 700; letter-spacing: .03em; }
+    .metric { display: inline-flex; align-items: baseline; gap: 5px; border: 1px solid rgba(122, 100, 57, .62); border-radius: 999px; padding: 4px 8px; background: rgba(35, 26, 14, .8); }
+    .metric strong { color: var(--gold); font-size: .9rem; }
+    .game-hud { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(160px, .45fr) auto auto; gap: 10px; align-items: center; border-bottom: 1px solid rgba(86, 73, 47, .7); padding: 10px 14px; background: linear-gradient(90deg, rgba(27, 57, 58, .32), rgba(40, 28, 13, .25)); }
+    .game-mark { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid var(--gold); border-radius: 50%; background: rgba(217, 180, 108, .12); color: var(--gold); font-size: 1.1rem; }
+    .game-copy { min-width: 0; }
+    .game-copy strong { display: block; overflow: hidden; color: var(--ink); font-size: .88rem; text-overflow: ellipsis; white-space: nowrap; }
+    .game-feedback { display: block; overflow: hidden; color: var(--muted); font-size: .72rem; text-overflow: ellipsis; white-space: nowrap; }
+    .game-progress { min-width: 140px; }
+    .game-progress > span { display: block; margin-bottom: 4px; color: var(--gold); font-size: .7rem; font-weight: 800; text-align: right; }
+    .game-progress-track { height: 6px; overflow: hidden; border: 1px solid #6b5732; border-radius: 999px; background: #0d0c09; }
+    .game-progress-track span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--cyan)); transition: width .25s ease; }
+    .game-button { border: 1px solid #6b5732; border-radius: 6px; background: #241d12; color: var(--ink); padding: 6px 9px; }
+    .game-button:hover, .game-button:focus-visible { border-color: var(--cyan); outline: 2px solid rgba(112, 203, 210, .18); }
+    .game-hud.complete { border-color: rgba(162, 197, 107, .85); background: linear-gradient(90deg, rgba(69, 99, 43, .36), rgba(40, 28, 13, .25)); }
+    #surface.pan-ready { cursor: grab; }
+    #surface.is-panning { cursor: grabbing; }
+    #surface { min-height: 610px; position: relative; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 45%, rgba(105, 72, 29, .36), transparent 51%), radial-gradient(circle at 80% 20%, rgba(47, 89, 86, .14), transparent 33%), repeating-linear-gradient(0deg, rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 1px, transparent 1px, transparent 5px); }
+    #surface::before { position: absolute; inset: 16px; z-index: 0; border: 1px solid rgba(217, 180, 108, .34); box-shadow: inset 0 0 42px rgba(0,0,0,.42), 0 0 0 1px rgba(0,0,0,.45); content: ""; pointer-events: none; }
+    #surface::after { position: absolute; inset: 0; z-index: 0; opacity: .22; background: repeating-radial-gradient(circle at 48% 48%, transparent 0 56px, rgba(217,180,108,.16) 57px 58px, transparent 59px 118px); content: ""; pointer-events: none; }
+    #surface svg { position: relative; z-index: 1; width: 100%; height: 610px; display: block; touch-action: none; }
+    .empty { display: grid; place-items: center; min-height: 560px; padding: 40px; text-align: center; color: var(--muted); }
+    .empty strong { display: block; margin-bottom: 7px; color: var(--gold); font: 800 1.6rem Georgia, serif; }
+    .node { cursor: grab; outline: none; transition: opacity .2s ease; }
+    .node:active { cursor: grabbing; }
+    .node:focus-visible .node-hit { stroke: var(--cyan); stroke-width: 5; }
+    .node.dimmed, .edge.dimmed { opacity: .13; }
+    .node.selected .node-hit { filter: drop-shadow(0 0 8px rgba(255, 220, 140, .7)); }
+    .node-halo { fill: none; stroke: var(--gold); stroke-width: 2; opacity: .8; stroke-dasharray: 4 8; animation: orbit 10s linear infinite; transform-origin: center; }
+    .node-label { pointer-events: none; fill: var(--ink); font-size: 13px; font-weight: 700; paint-order: stroke; stroke: #090806; stroke-width: 5px; stroke-linejoin: round; }
+    .node-label.hidden-label { opacity: 0; }
+    .node-icon { pointer-events: none; fill: #fff0c9; font-size: 19px; font-weight: 900; text-anchor: middle; dominant-baseline: middle; paint-order: stroke; stroke: #120e09; stroke-width: 3px; }
+    .edge { cursor: pointer; opacity: .72; transition: opacity .2s ease, stroke-width .2s ease; }
+    .edge:hover, .edge.selected { opacity: 1; stroke: var(--cyan); stroke-width: 5; filter: drop-shadow(0 0 5px rgba(112, 203, 210, .7)); }
+    .edge-focus { fill: none; stroke: rgba(112, 203, 210, .2); stroke-width: 12; }
+    .edge-label { pointer-events: none; fill: var(--muted); font-size: 10px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 9px 15px; border-top: 1px solid var(--line); padding: 10px 13px; color: var(--muted); font-size: .78rem; }
+    .legend-item { display: inline-flex; align-items: center; gap: 5px; }
+    .legend-symbol { display: inline-grid; width: 18px; height: 18px; place-items: center; border: 2px solid; border-radius: 50%; color: #140f08; font-size: 11px; font-weight: 900; }
+    .mini-wrap { position: absolute; right: 14px; bottom: 54px; width: 166px; border: 1px solid #7a6439; border-radius: 8px; background: rgba(10, 9, 7, .9); padding: 6px; box-shadow: 0 8px 25px rgba(0,0,0,.35); }
+    .mini-wrap svg { display: block; width: 100%; height: auto; }
+    .inspector { padding: 17px; border-radius: 12px; overflow: auto; }
+    .inspector-header { display: flex; gap: 10px; align-items: start; border-bottom: 1px solid var(--line); padding-bottom: 13px; }
+    .inspector-header p { margin-bottom: 0; color: var(--muted); }
+    .context-menu { margin: 14px 0; border: 1px solid #a58343; border-left: 4px solid var(--cyan); border-radius: 9px; background: linear-gradient(160deg, rgba(51, 39, 19, .98), rgba(20, 16, 10, .98)); box-shadow: 0 12px 30px rgba(0,0,0,.35); padding: 14px; }
+    .context-kicker { color: var(--gold); font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .context-menu h3 { margin: 4px 0 3px; color: var(--ink); font: 800 1.35rem Georgia, serif; }
+    .context-subtitle { color: var(--muted); }
+    .entity-hero { display: flex; gap: 11px; align-items: center; margin: 8px 0 12px; }
+    .entity-symbol { display: grid; width: 50px; height: 50px; place-items: center; border: 2px solid var(--cyan); border-radius: 15px; background: #1b535b; color: #071012; font-size: 1.45rem; font-weight: 900; box-shadow: 0 0 24px rgba(112, 203, 210, .18); }
+    .entity-copy { min-width: 0; }
+    .entity-copy h3 { overflow: hidden; margin: 0; text-overflow: ellipsis; white-space: nowrap; }
+    .status-pill { display: inline-flex; align-items: center; gap: 5px; margin-top: 4px; border: 1px solid; border-radius: 999px; padding: 3px 7px; font-size: .7rem; font-weight: 800; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: 12px 0; }
+    .stat-card { border: 1px solid rgba(122, 100, 57, .7); border-radius: 7px; background: rgba(9, 8, 6, .42); padding: 8px; }
+    .stat-card span { display: block; color: var(--muted); font-size: .67rem; text-transform: uppercase; }
+    .stat-card strong { display: block; margin-top: 2px; color: var(--ink); font-size: 1rem; }
+    .relation-list { display: grid; gap: 6px; margin-top: 8px; }
+    .relation-item { display: flex; gap: 7px; align-items: center; border: 1px solid rgba(86, 73, 47, .8); border-radius: 6px; background: rgba(7, 7, 6, .32); padding: 7px; }
+    .relation-item button { flex: 1; overflow: hidden; border: 0; background: transparent; color: var(--ink); text-align: left; text-overflow: ellipsis; white-space: nowrap; }
+    .relation-family { color: var(--cyan); font-size: .68rem; font-weight: 800; }
+    .confidence-track { height: 5px; overflow: hidden; border-radius: 999px; background: #373126; }
+    .confidence-track span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--gold), var(--cyan)); }
+    .timeline { position: relative; display: grid; gap: 8px; margin-top: 9px; padding-left: 14px; }
+    .timeline::before { position: absolute; top: 3px; bottom: 3px; left: 3px; width: 1px; background: #786238; content: ""; }
+    .timeline-item { position: relative; color: var(--muted); font-size: .77rem; }
+    .timeline-item::before { position: absolute; top: 5px; left: -14px; width: 7px; height: 7px; border: 2px solid var(--gold); border-radius: 50%; background: var(--panel); content: ""; }
+    .timeline-item strong { display: block; color: var(--ink); }
+    .edge-route { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; margin: 12px 0; }
+    .route-node { min-width: 0; border: 1px solid rgba(122, 100, 57, .7); border-radius: 7px; background: rgba(9, 8, 6, .4); padding: 8px; }
+    .route-node strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .route-node small { color: var(--muted); }
+    .route-arrow { color: var(--cyan); font-size: 1.2rem; }
+    dl { display: grid; grid-template-columns: max-content 1fr; gap: 5px 12px; margin: 13px 0; }
+    dt { color: var(--muted); }
+    dd { margin: 0; overflow-wrap: anywhere; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .78rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 6px; }
+    .empty-inspector { border: 1px dashed #685735; margin: 14px 0; padding: 14px; color: var(--muted); }
+    .section { border-top: 1px solid var(--line); margin-top: 15px; padding-top: 14px; }
+    .filter-list { display: grid; gap: 8px; }
+    .filter-list label { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+    .filter-list input { accent-color: var(--gold); }
+    .status-dot { display: inline-block; width: 10px; height: 10px; border: 2px solid; border-radius: 50%; }
+    .outcomes { margin: 0; padding-left: 18px; color: var(--muted); }
+    .outcomes li + li { margin-top: 5px; }
+    .log { max-height: 110px; overflow: auto; margin: 0; padding: 9px; background: #0b0907; color: var(--muted); font: .72rem/1.5 ui-monospace, monospace; }
+    .semantic-list { max-height: 610px; overflow: auto; width: 100%; padding: 18px; }
+    .semantic-list button { width: 100%; border: 1px solid var(--line); background: #1b1710; color: var(--ink); padding: 10px; text-align: left; }
+    .semantic-list button + button { border-top: 0; }
+    .semantic-list button:hover, .semantic-list button:focus-visible { border-color: var(--cyan); outline: none; }
+    .matrix-wrap, .path-wrap { width: 100%; max-height: 610px; overflow: auto; padding: 16px; }
+    .matrix { border-collapse: collapse; min-width: 100%; font-size: .75rem; }
+    .matrix th, .matrix td { border: 1px solid var(--line); min-width: 42px; height: 38px; padding: 4px; text-align: center; }
+    .matrix th { position: sticky; top: 0; background: #251d11; color: var(--muted); }
+    .matrix th:first-child { left: 0; z-index: 2; text-align: left; }
+    .matrix td:first-child { position: sticky; left: 0; background: #17130e; color: var(--muted); text-align: left; white-space: nowrap; }
+    .matrix .hit { background: #79602e; color: var(--ink); font-weight: 800; }
+    .path-card { max-width: 800px; margin: 30px auto; }
+    .path-step { display: grid; grid-template-columns: 38px 1fr; gap: 10px; align-items: center; }
+    .path-step + .path-step { margin-top: 8px; }
+    .path-number { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); }
+    .path-node { border: 1px solid var(--line); background: #1d180f; padding: 9px 11px; }
+    .footer { padding: 15px 3px 0; color: var(--muted); font-size: .78rem; }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .node-halo { animation: none; } }
+    @media (max-width: 980px) { .workspace { grid-template-columns: 1fr; } .graph-panel { min-height: 610px; } .inspector { min-height: auto; } }
+    @media (max-width: 720px) { .game-hud { grid-template-columns: auto minmax(0, 1fr) auto auto; } .game-progress { grid-column: 2 / -1; } }
+    @media (max-width: 600px) { .shell { padding: 9px; } header { display: block; } .badge { display: inline-block; margin-top: 12px; } #surface, #surface svg { min-height: 470px; height: 470px; } .mini-wrap { width: 110px; bottom: 54px; } .game-hud { grid-template-columns: auto minmax(0, 1fr); } .game-progress { grid-column: 1 / -1; } .game-button { width: 100%; } }
+
+    /* Immersive investigation-board skin: the graph is the protagonist. */
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #030605; }
+    body { color: #e8d7ae; font-family: "Arial Narrow", "Segoe UI", sans-serif; letter-spacing: .01em; }
+    .shell { width: 100%; height: 100vh; max-width: none; margin: 0; padding: 0; overflow: hidden; background: radial-gradient(circle at 50% 48%, rgba(31, 50, 36, .18), transparent 45%), #030605; }
+    header { height: 68px; align-items: center; gap: 18px; padding: 0 24px; border-bottom: 1px solid #6e4817; background: linear-gradient(180deg, rgba(11, 14, 11, .98), rgba(4, 7, 5, .98)); }
+    header > div:first-child { display: flex; min-width: 0; align-items: center; gap: 15px; }
+    header > div:first-child::before { display: grid; width: 28px; height: 28px; flex: 0 0 28px; place-items: center; border: 1px solid #7d541d; border-radius: 50%; color: #d7962e; content: "✣"; font-size: 1rem; }
+    header .eyebrow { display: none; }
+    h1 { margin: 0; color: #d99125; font: 800 1.22rem/1 "Arial Narrow", "Segoe UI", sans-serif; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+    .lede { max-width: none; margin: 2px 0 0; color: #a99b78; font-size: .75rem; white-space: nowrap; }
+    .badge { margin-left: auto; border: 1px solid #724916; border-radius: 3px; padding: 8px 20px; background: rgba(14, 17, 12, .8); color: #d99125; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; }
+    .tabs { position: absolute; top: 68px; left: 17px; right: 17px; z-index: 9; gap: 4px; height: 42px; margin: 0; padding: 5px 5px 0; border: 1px solid rgba(111, 71, 21, .8); border-top: 0; background: rgba(4, 8, 6, .88); }
+    .tab { min-width: 0; flex: 1 1 0; overflow: hidden; border: 0; border-right: 1px solid rgba(104, 72, 28, .5); border-radius: 0; background: transparent; color: #82785d; padding: 6px 10px; font-size: .68rem; text-overflow: ellipsis; white-space: nowrap; }
+    .tab small { display: none; }
+    .tab:hover, .tab:focus-visible { border-color: transparent; background: rgba(160, 99, 24, .12); color: #f0dca9; outline: none; }
+    .tab[aria-selected="true"] { border-bottom: 2px solid #d99125; background: linear-gradient(180deg, rgba(162, 95, 18, .2), transparent); color: #f0dca9; box-shadow: none; }
+    .workspace { position: relative; display: block; width: 100%; height: calc(100vh - 68px); min-height: 0; }
+    .graph-panel { position: relative; width: 100%; height: 100%; min-height: 0; border: 1px solid #6e4817; border-radius: 0; background: #030605; box-shadow: inset 0 0 0 8px rgba(15, 19, 13, .8), inset 0 0 50px rgba(0, 0, 0, .8); }
+    .graph-panel::before { position: absolute; inset: 8px; z-index: 5; border: 1px solid rgba(133, 87, 25, .8); content: ""; pointer-events: none; }
+    .toolbar { position: absolute; top: 54px; right: 19px; z-index: 8; display: grid; grid-template-columns: repeat(7, auto); gap: 0; align-items: stretch; border: 1px solid #714716; background: rgba(5, 8, 6, .9); box-shadow: 0 8px 25px rgba(0, 0, 0, .35); padding: 0; }
+    .toolbar h2 { display: none; }
+    .toolbar button { min-width: 42px; height: 38px; border: 0; border-right: 1px solid rgba(113, 71, 22, .7); border-radius: 0; background: rgba(22, 24, 17, .88); color: #d99125; padding: 4px 8px; font-size: .7rem; }
+    .toolbar button:last-child { border-right: 0; }
+    .toolbar button:hover, .toolbar button:focus-visible { background: #2a2112; color: #f7e6b5; outline: 1px solid #d99125; outline-offset: -2px; }
+    .toolbar button[data-view] { grid-row: 2; color: #9e9477; font-size: .61rem; }
+    .toolbar button[data-view][aria-pressed="true"] { background: #1d382c; color: #d4edac; }
+    .graph-strip { position: absolute; top: 54px; left: 25px; right: 250px; z-index: 6; display: flex; gap: 5px; border: 0; padding: 0; background: transparent; font-size: .66rem; }
+    .graph-strip .strip-title { display: none; }
+    .metric { border: 1px solid rgba(119, 78, 26, .8); border-radius: 2px; background: rgba(5, 8, 6, .82); padding: 4px 8px; color: #9f9475; }
+    .metric strong { color: #d99125; font-size: .76rem; }
+    .game-hud { position: absolute; top: 104px; left: 25px; z-index: 6; grid-template-columns: auto minmax(0, 1fr) auto; width: min(440px, calc(100% - 50px)); border: 1px solid rgba(119, 78, 26, .8); background: rgba(5, 8, 6, .88); box-shadow: 0 10px 26px rgba(0, 0, 0, .38); padding: 8px 10px; }
+    .game-mark { width: 26px; height: 26px; border-color: #d99125; background: transparent; font-size: .8rem; }
+    .game-copy strong { color: #e8d7ae; font-size: .72rem; }
+    .game-feedback { color: #92886b; font-size: .64rem; }
+    .game-progress { grid-column: 2; min-width: 0; }
+    .game-progress > span { margin-bottom: 2px; color: #d99125; font-size: .61rem; }
+    .game-progress-track { height: 4px; border-color: #744817; }
+    .game-button { border-color: #744817; border-radius: 2px; background: #12180f; color: #d99125; padding: 5px 7px; font-size: .65rem; }
+    #surface { position: absolute; inset: 0; z-index: 1; display: block; min-height: 0; background: radial-gradient(circle at 50% 43%, rgba(64, 86, 56, .13), transparent 40%), repeating-radial-gradient(circle at 50% 43%, transparent 0 46px, rgba(101, 105, 73, .12) 47px 48px, transparent 49px 96px), #030605; }
+    #surface::before { inset: 9px; border: 1px solid rgba(133, 87, 25, .75); box-shadow: inset 0 0 80px rgba(0, 0, 0, .7), 0 0 0 1px rgba(0, 0, 0, .7); }
+    #surface::after { opacity: .14; background: repeating-linear-gradient(90deg, transparent 0, transparent 3px, rgba(174, 151, 87, .05) 4px), repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(174, 151, 87, .04) 4px); }
+    #surface svg { width: 100%; height: 100%; min-height: 0; }
+    .node { transition: opacity .25s ease, filter .25s ease; }
+    .node.moving .node-hit { filter: drop-shadow(0 0 9px rgba(242, 194, 92, .8)); }
+    .node.moving .node-glyph { filter: drop-shadow(0 0 4px rgba(255, 232, 169, .75)); }
+    .node.moving .node-hub-ring { animation: motion-pulse .75s ease-in-out infinite alternate; }
+    .node-halo { stroke: #f2d17b; stroke-width: 2; opacity: .9; stroke-dasharray: 3 7; }
+    .node-hub-ring { fill: none; stroke: currentColor; stroke-width: 2; opacity: .65; }
+    .node-glyph { pointer-events: none; fill: #f6e2b0; stroke: #172017; stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round; }
+    .node-glyph .outline { fill: none; }
+    .node-icon { fill: #f6e2b0; font-size: 17px; stroke: #172017; stroke-width: 2px; }
+    .node-label { fill: #e9d4a1; font-size: 12px; letter-spacing: .02em; stroke: #030605; stroke-width: 6px; }
+    .edge { opacity: .72; stroke-linecap: round; }
+    .edge:hover, .edge.selected { stroke: #f1bf51; filter: drop-shadow(0 0 7px rgba(218, 144, 31, .85)); }
+    .node.hovered .node-hit { stroke: #fff0b5; stroke-width: 5; filter: drop-shadow(0 0 13px rgba(244, 194, 79, .95)); }
+    .node.hovered .node-hub-ring { opacity: 1; stroke-width: 3; filter: drop-shadow(0 0 8px rgba(244, 194, 79, .8)); }
+    .edge.hovered { opacity: 1; stroke: #f6cf74; stroke-width: 5; filter: drop-shadow(0 0 9px rgba(246, 207, 116, .9)); }
+    .topology-picker { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(119, 78, 26, .8); background: rgba(5, 8, 6, .86); padding: 4px 7px; color: #a99b78; font-size: .62rem; }
+    .topology-picker select { max-width: 140px; border: 0; color: #f0dca9; background: transparent; font: inherit; outline: none; }
+    .topology-picker select option { color: #e8d7ae; background: #11140f; }
+    .hover-preview-card { min-width: 230px; border-left-width: 4px; border-radius: 2px; box-shadow: inset 0 0 24px rgba(112,203,210,.05); }
+    .hover-preview-card .hover-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin: 6px 0 2px; }
+    .hover-preview-card .hover-stat { border: 1px solid rgba(119,78,26,.6); padding: 5px 4px; text-align: center; }
+    .hover-preview-card .hover-stat b { display: block; color: #f2d17b; font-size: .82rem; }
+    .hover-preview-card .hover-stat small { display: block; color: #91866d; font-size: .55rem; text-transform: uppercase; letter-spacing: .06em; }
+    .autotest-panel { position: absolute; left: 50%; bottom: 18px; z-index: 40; display: grid; width: min(820px, calc(100% - 450px)); max-height: min(34vh, 310px); transform: translateX(-50%); overflow: hidden; border: 1px solid #9a641e; background: rgba(4, 7, 5, .96); box-shadow: 0 16px 38px rgba(0, 0, 0, .62), inset 0 0 25px rgba(112, 203, 210, .04); pointer-events: none; }
+    .autotest-panel.is-collapsed { width: min(410px, calc(100% - 450px)); max-height: none; }
+    .autotest-panel.is-collapsed .autotest-progress, .autotest-panel.is-collapsed .autotest-list { display: none; }
+    .autotest-head { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #5d461f; padding: 9px 11px; }
+    .autotest-title { display: grid; min-width: 0; gap: 2px; }
+    .autotest-title strong { color: #e8d7ae; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+    .autotest-title span:last-child { overflow: hidden; color: #9f9477; font-size: .65rem; text-overflow: ellipsis; white-space: nowrap; }
+    .autotest-actions { display: flex; margin-left: auto; gap: 5px; }
+    .autotest-actions, .autotest-row button { pointer-events: auto; }
+    .autotest-actions button { border: 1px solid #76501b; border-radius: 2px; background: #12180f; color: #e8d7ae; padding: 5px 8px; font-size: .63rem; }
+    .autotest-actions button:hover, .autotest-actions button:focus-visible { border-color: #70cbd2; outline: 2px solid rgba(112,203,210,.2); }
+    .autotest-progress { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; padding: 7px 11px 5px; color: #9f9477; font-size: .62rem; }
+    .autotest-progress-track { height: 4px; overflow: hidden; background: rgba(151, 129, 82, .2); }
+    .autotest-progress-track span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #70cbd2, #d99125); transition: width .2s ease; }
+    .autotest-columns { display: grid; grid-template-columns: minmax(120px, 1.1fr) minmax(155px, 1.45fr) minmax(145px, 1.3fr) minmax(130px, 1.15fr) 58px 58px 34px; gap: 7px; padding: 1px 15px 3px; color: #91866d; font-size: .55rem; letter-spacing: .08em; text-transform: uppercase; }
+    .autotest-list { display: grid; gap: 3px; overflow: auto; margin: 0; padding: 4px 8px 9px; list-style: none; }
+    .autotest-row { display: grid; grid-template-columns: minmax(120px, 1.1fr) minmax(155px, 1.45fr) minmax(145px, 1.3fr) minmax(130px, 1.15fr) 58px 58px 34px; align-items: center; gap: 7px; border-left: 2px solid rgba(151,129,82,.36); padding: 6px 7px; background: rgba(20, 22, 15, .66); color: #c8b98f; font-size: .62rem; }
+    .autotest-row[data-status="running"] { border-left-color: #70cbd2; background: rgba(30, 67, 70, .25); }
+    .autotest-row[data-status="passed"] { border-left-color: #c1e467; }
+    .autotest-row[data-status="failed"] { border-left-color: #ff7b42; background: rgba(104, 42, 27, .24); }
+    .autotest-row[data-status="skipped"] { border-left-color: #8d836c; opacity: .72; }
+    .autotest-cell { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .autotest-cell strong { color: #ead6a5; }
+    .autotest-cell small { color: #91866d; }
+    .autotest-status { font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .autotest-status[data-value="running"] { color: #70cbd2; }.autotest-status[data-value="passed"] { color: #c1e467; }.autotest-status[data-value="failed"] { color: #ff9a77; }.autotest-status[data-value="skipped"] { color: #b8ae95; }
+    .autotest-row button { border: 1px solid #76501b; border-radius: 2px; background: transparent; color: #d99125; padding: 3px 5px; font-size: .58rem; }
+    .autotest-row button:hover, .autotest-row button:focus-visible { border-color: #70cbd2; color: #f7e6b5; }
+    .autotest-row button:disabled, .autotest-actions button:disabled { cursor: wait; opacity: .45; }
+    @media (max-width: 1050px) { .autotest-panel { width: min(650px, calc(100% - 300px)); }.autotest-columns, .autotest-row { grid-template-columns: minmax(105px, 1fr) minmax(130px, 1.2fr) minmax(105px, 1fr) minmax(95px, 1fr) 52px 52px 31px; } }
+    @media (max-width: 720px) { .autotest-panel, .autotest-panel.is-collapsed { right: 12px; bottom: 12px; left: 12px; width: auto; transform: none; }.autotest-columns, .autotest-row { grid-template-columns: minmax(120px, 1fr) 60px 60px 32px; }.autotest-columns span:nth-child(2), .autotest-columns span:nth-child(3), .autotest-columns span:nth-child(4), .autotest-row .autotest-instruction, .autotest-row .autotest-expected, .autotest-row .autotest-result { display: none; }.autotest-head { align-items: flex-start; }.autotest-actions { flex-wrap: wrap; justify-content: flex-end; } }
+    .edge-focus { stroke: rgba(226, 171, 55, .28); stroke-width: 14; }
+    .mini-wrap { right: 20px; bottom: 17px; z-index: 7; width: 220px; border: 1px solid #9a641e; border-radius: 0; background: rgba(4, 7, 5, .93); padding: 10px; box-shadow: 0 10px 28px rgba(0, 0, 0, .5); }
+    .legend { position: absolute; bottom: 18px; left: 20px; z-index: 7; display: grid; width: 230px; gap: 7px; border: 1px solid #9a641e; border-radius: 0; background: rgba(4, 7, 5, .94); padding: 11px 12px; color: #aa9d7a; font-size: .68rem; }
+    .legend-item { gap: 7px; }
+    .legend-symbol { width: 16px; height: 16px; color: #081009; font-size: 10px; }
+    .inspector { position: absolute; top: 104px; right: 24px; z-index: 10; width: 350px; max-height: calc(100% - 130px); border: 1px solid #9a641e; border-left: 3px solid #62c3c7; border-radius: 0; background: rgba(8, 12, 9, .94); box-shadow: 0 16px 38px rgba(0, 0, 0, .55); }
+    .inspector.is-empty { display: none; }
+    .inspector-header { border-bottom-color: #5d461f; }
+    .inspector h2, .inspector h3 { color: #e8d7ae; }
+    .inspector h2 { font-size: 1.15rem; }
+    .inspector p, .context-subtitle, dt, .timeline-item, .filter-list label { color: #9f9477; }
+    .context-menu { border-color: #9a641e; border-left-color: #62c3c7; border-radius: 0; background: linear-gradient(145deg, rgba(30, 31, 19, .98), rgba(7, 11, 8, .98)); }
+    .context-menu h3 { font-family: Georgia, serif; }
+    .entity-symbol { width: 48px; height: 48px; border-color: #6bcbd1; border-radius: 50%; background: #1e5860; color: #071012; }
+    .stat-card, .relation-item, .route-node { border-color: #61491e; border-radius: 0; background: rgba(4, 7, 5, .6); }
+    .action, .filter-button { border-color: #76501b; border-radius: 2px; background: #12180f; color: #ead6a5; }
+    .section { border-top-color: #5d461f; }
+    .footer { display: none; }
+    @keyframes motion-pulse { from { opacity: .35; transform: scale(.96); transform-origin: center; } to { opacity: .9; transform: scale(1.04); transform-origin: center; } }
+    @media (prefers-reduced-motion: reduce) { .node.moving .node-hub-ring { animation: none; } }
+    @media (max-width: 980px) { .inspector { top: auto; right: 18px; bottom: 18px; left: 18px; width: auto; max-height: 42%; } }
+    @media (max-width: 600px) { header { height: 58px; padding: 0 12px; } header > div:first-child { gap: 8px; } header > div:first-child::before { display: none; } h1 { font-size: .9rem; } .lede { display: none; } .badge { padding: 6px 8px; font-size: .54rem; } .tabs { top: 58px; left: 6px; right: 6px; } .workspace { height: calc(100vh - 58px); } .graph-strip { top: 103px; left: 12px; right: 12px; overflow: hidden; } .metric { font-size: .55rem; } .game-hud { top: 145px; left: 12px; width: calc(100% - 24px); } .toolbar { top: 54px; right: 12px; } .toolbar button { min-width: 34px; height: 32px; font-size: .58rem; } .toolbar button[data-view] { display: none; } .legend { bottom: 12px; left: 12px; width: 184px; } .mini-wrap { right: 12px; bottom: 12px; width: 145px; } }
+    .hover-preview { display: none; position: absolute; z-index: 14; width: min(290px, 28vw); pointer-events: none; filter: drop-shadow(0 14px 22px rgba(0,0,0,.58)); }
+    .hover-preview.is-visible { display: block; }
+    .hover-preview-card { display: grid; gap: 4px; border: 1px solid #d99125; border-left: 3px solid #70cbd2; background: rgba(5,8,6,.97); padding: 11px 12px; color: var(--ink); }
+    .hover-preview-card strong { font-size: .9rem; }.hover-preview-card span:not(.context-kicker), .hover-preview-card small { color: var(--muted); }.hover-preview-card em { color: var(--cyan); font-size: .68rem; font-style: normal; }.hover-preview-card .context-kicker { color: var(--gold); font-size: .62rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .edge.working { stroke-dasharray: 10 8; }.graph-working-note { border: 1px dashed #d99125; padding: 7px; color: #f3c979; font-size: .75rem; }.danger-action { border-color: #c85a45 !important; color: #ff9a77 !important; }
+    .node-favorite-ring { fill: none; stroke: #f2c66d; stroke-width: 2px; stroke-dasharray: 2 4; opacity: .95; }.node-favorite-mark { fill: #f2c66d; stroke: #030605; stroke-width: 2px; paint-order: stroke; font-size: 14px; }.edge.favorite { filter: drop-shadow(0 0 6px rgba(242,198,109,.85)); }
+    .relationship-composer { display: grid; gap: 8px; border-color: #d99125; }.relationship-composer label { display: grid; gap: 3px; color: var(--muted); font-size: .72rem; }.relationship-composer select, .relationship-composer input { border: 1px solid #76501b; padding: 6px; color: var(--ink); background: #12180f; }.relationship-composer .actions { margin-top: 4px; }
+    .favorites-panel { display: none; position: absolute; left: 20px; bottom: 158px; z-index: 12; width: min(280px, calc(100% - 40px)); border: 1px solid #9a641e; background: rgba(4,7,5,.96); box-shadow: 0 12px 28px rgba(0,0,0,.5); }.favorites-panel.is-visible { display: block; }.favorites-header { display: flex; justify-content: space-between; border-bottom: 1px solid #5d461f; padding: 8px 10px; color: #d99125; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }.favorites-panel ul { display: grid; gap: 2px; max-height: 155px; overflow: auto; margin: 0; padding: 5px; list-style: none; }.favorites-panel li { display: flex; gap: 3px; }.favorites-panel li button:first-child { flex: 1; overflow: hidden; border: 0; padding: 6px; color: var(--ink); background: transparent; text-align: left; text-overflow: ellipsis; white-space: nowrap; }.favorites-panel li button:first-child:hover { background: rgba(112,203,210,.12); }.favorite-remove { width: 24px; border: 0; color: #ff9a77; background: transparent; }
+    .graph-legend .legend-line--working { width: 18px; height: 3px; border: 0; background: repeating-linear-gradient(90deg, #d9b46c 0 6px, transparent 6px 10px); }
+    .toolbar button[aria-pressed="true"] { color: #f7e6b5; }
+    .inspector { z-index: 20; pointer-events: auto; }.context-menu, .context-action-row { position: relative; z-index: 20; pointer-events: auto; }.context-action-row { align-items: center; }.hover-preview { z-index: 25; pointer-events: auto; }.hover-context-actions { margin: 7px 0 2px; }.icon-action { display: inline-grid; width: 38px; height: 38px; place-items: center; border-color: var(--gold) !important; border-radius: 8px; padding: 0 !important; color: #f3c979 !important; font-size: 1.35rem; font-weight: 800; line-height: 1; }.icon-action:hover, .icon-action:focus-visible, .icon-action[aria-pressed="true"] { border-color: var(--cyan) !important; color: var(--ink) !important; background: #31545a !important; outline: 2px solid rgba(112,203,210,.28); outline-offset: 2px; }.icon-action.danger-action, .icon-action.danger-action:hover, .icon-action.danger-action:focus-visible { border-color: #c85a45 !important; color: #ff9a77 !important; }.action-glyph { display: block; }.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    body.autotest-panel-open #hover-preview { display: none !important; }
+    @media (max-width: 700px) { .hover-preview { width: min(255px, 72vw); }.favorites-panel { bottom: 125px; left: 12px; }.relationship-composer { max-height: 42vh; overflow: auto; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <div class="eyebrow">Fraud Graph Arena · FGA-06</div>
+        <h1>Investigation Graph</h1>
+        <p class="lede">Hover or focus a node/relationship for context · Click to open the full dossier</p>
+      </div>
+      <div id="selection-badge" class="badge">0 entities selected</div>
+    </header>
+    <nav id="tabs" class="tabs" role="tablist" aria-label="Example scenarios"></nav>
+    <section class="workspace">
+      <section class="panel graph-panel" aria-labelledby="scenario-title">
+        <div class="toolbar">
+          <h2 id="scenario-title">Loading example…</h2>
+          <button type="button" data-command="zoom-out" aria-label="Zoom out">−</button>
+          <button type="button" data-command="zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" data-command="fit">Fit</button>
+          <button type="button" data-command="reset">Reset</button>
+          <button type="button" data-command="toggle-motion" aria-pressed="true" aria-label="Toggle soft graph motion">Motion</button>
+          <button type="button" data-command="toggle-composer" aria-expanded="false">Add relation</button>
+          <button type="button" data-command="toggle-autotests" aria-expanded="true">Auto-test</button>
+          <label class="topology-picker"><span>Topology</span><select id="topology-select" aria-label="Choose graph topology"><option value="native">Native</option><option value="radial">Radial clusters</option><option value="ring">Ring</option><option value="chain">Timeline chain</option><option value="star">Starburst</option><option value="grid">Evidence grid</option></select></label>
+          <button type="button" data-view="node-link" aria-pressed="true">Node-link</button>
+          <button type="button" data-view="matrix" aria-pressed="false">Matrix</button>
+          <button type="button" data-view="path" aria-pressed="false">Path</button>
+          <button type="button" data-view="semantic-list" aria-pressed="false">Semantic list</button>
+        </div>
+        <div class="graph-strip">
+          <span id="graph-strip-title" class="strip-title">Investigation surface</span>
+          <span class="metric"><strong id="metric-visible-nodes">0</strong> visible entities</span>
+          <span class="metric"><strong id="metric-visible-edges">0</strong> relationships</span>
+          <span class="metric"><strong id="metric-selected">0</strong> selected</span>
+          <span class="metric"><strong id="metric-version">v—</strong> snapshot</span>
+        </div>
+        <div id="game-hud" class="game-hud" aria-live="polite">
+          <div class="game-mark" aria-hidden="true">✦</div>
+          <div class="game-copy"><span id="game-kicker" class="eyebrow">Interactive case file</span><strong id="game-objective">Loading challenge…</strong><span id="game-feedback" class="game-feedback">Use the graph to investigate the scene.</span></div>
+          <div class="game-progress"><span id="game-progress-label">0 / 0</span><div class="game-progress-track"><span id="game-progress-bar"></span></div></div>
+          <button type="button" class="game-button" data-game="hint">Hint</button>
+          <button type="button" class="game-button" data-game="restart">Restart</button>
+        </div>
+        <div id="surface" tabindex="0" aria-label="Graph surface"></div>
+        <div id="hover-preview" class="hover-preview" aria-live="polite"></div>
+        <section id="autotest-panel" class="autotest-panel" aria-labelledby="autotest-title">
+          <div class="autotest-head">
+            <div class="autotest-title"><span class="eyebrow">Engine quality gate</span><strong id="autotest-title">Graph auto-tests</strong><span id="autotest-summary" role="status" aria-live="polite">Ready · run the visible graph checks</span></div>
+            <div class="autotest-actions"><button type="button" data-auto-command="run-all">Run all</button><button type="button" data-auto-command="clear">Clear</button><button type="button" data-auto-command="collapse" aria-expanded="true">−</button></div>
+          </div>
+          <div class="autotest-progress"><span id="autotest-count">0 / 6</span><div class="autotest-progress-track" aria-hidden="true"><span id="autotest-progress-bar"></span></div><span id="autotest-elapsed">—</span></div>
+          <div class="autotest-columns" aria-hidden="true"><span>Test</span><span>Instruction</span><span>Expected</span><span>Observed</span><span>Status</span><span>Time</span><span></span></div>
+          <ol id="autotest-list" class="autotest-list" aria-label="Graph auto-test suite"></ol>
+        </section>
+        <div id="favorites-panel" class="favorites-panel" aria-label="Marked graph targets"></div>
+        <div id="minimap" class="mini-wrap" aria-label="Graph minimap"></div>
+        <div id="legend" class="legend" aria-label="Graph legend"></div>
+      </section>
+      <aside id="inspector" class="panel inspector" aria-live="polite"></aside>
+    </section>
+    <p class="footer">Investigate the mini-case above: click or right-click a node or relationship, drag nodes to re-layout the evidence, and drag empty space to pan. Scroll to zoom, or use the toolbar. The Auto-test panel runs visible graph checks without changing the evidence snapshot.</p>
+  </main>
+  <script>
+    (() => {
+      "use strict";
+
+      const statuses = ["UNINVESTIGATED", "CANDIDATE", "INVESTIGATED", "FRAUD_CONFIRMED", "DISCARDED"];
+      const statusMeta = {
+        UNINVESTIGATED: { label: "Uninvestigated", color: "#255a82", stroke: "#72c5ff", glyph: "○", dash: "" },
+        CANDIDATE: { label: "Candidate", color: "#9b671f", stroke: "#f3c76e", glyph: "?", dash: "8 5" },
+        INVESTIGATED: { label: "Investigated", color: "#5d7f21", stroke: "#c1e467", glyph: "◉", dash: "" },
+        FRAUD_CONFIRMED: { label: "Fraud confirmed", color: "#a33a1d", stroke: "#ff7b42", glyph: "✦", dash: "" },
+        DISCARDED: { label: "Discarded", color: "#595449", stroke: "#c7b78e", glyph: "—", dash: "2 5" },
+      };
+      const familyColors = { TRANSACTIONAL: "#e58d55", DEVICE_OBSERVATION: "#79c6c0", SHARED_ATTRIBUTE: "#d3a85e", DIRECT_SOURCE: "#938c79" };
+      const node = (id, recordType, label, status, x, y, clusterId, icon) => ({ id, recordType, label, status, position: { x, y }, clusterId, icon });
+      const edge = (id, sourceId, targetId, relationshipFamily, relationshipType, confidence) => ({ id, sourceId, targetId, relationshipFamily, relationshipType, directed: true, confidence, origin: "detected" });
+      const target = (kind, id) => ({ kind, id });
+      const denseRingSpecs = [
+        { start: 3010, count: 10, centerX: 305, centerY: 355, radius: 155, status: "INVESTIGATED", clusterId: "green-cluster", icon: "●", hub: "EX-N-3000", label: "Kennel witness" },
+        { start: 3020, count: 10, centerX: 560, centerY: 145, radius: 145, status: "FRAUD_CONFIRMED", clusterId: "red-cluster", icon: "●", hub: "EX-N-3001", label: "Claim contact" },
+        { start: 3030, count: 10, centerX: 855, centerY: 345, radius: 155, status: "UNINVESTIGATED", clusterId: "blue-cluster", icon: "●", hub: "EX-N-3002", label: "Bank customer" },
+      ];
+      const denseRingNodes = (spec) => Array.from({ length: spec.count }, (_, index) => {
+        const angle = (-Math.PI / 2) + ((Math.PI * 2) / spec.count) * index;
+        return node(`EX-N-${String(spec.start + index).padStart(4, "0")}`, "PERSON_RECORD", `${spec.label} ${index + 1}`, spec.status, spec.centerX + Math.cos(angle) * spec.radius, spec.centerY + Math.sin(angle) * spec.radius, spec.clusterId, spec.icon);
+      });
+      const denseNodes = [
+        node("EX-N-3000", "ORG_RECORD", "ORG-221 · Golden Kennel Ltd", "INVESTIGATED", 305, 355, "green-cluster", "▣"),
+        node("EX-N-3001", "CLAIM_CLUSTER", "RING-07 · Claim cluster", "FRAUD_CONFIRMED", 560, 145, "red-cluster", "✦"),
+        node("EX-N-3002", "BANK_RECORD", "BANK-91 · Atlantic Mutual", "UNINVESTIGATED", 855, 345, "blue-cluster", "▥"),
+        node("EX-N-3003", "PERSON_RECORD", "R-1042 · J. GARCIA", "UNINVESTIGATED", 560, 355, "case-center", "●"),
+        ...denseRingSpecs.flatMap(denseRingNodes),
+      ];
+      const denseEdges = [
+        edge("EX-E-3000", "EX-N-3003", "EX-N-3001", "SHARED_ATTRIBUTE", "LINKED_TO", "high"),
+        edge("EX-E-3001", "EX-N-3003", "EX-N-3000", "DEVICE_OBSERVATION", "OBSERVED_ON", "medium"),
+        edge("EX-E-3002", "EX-N-3003", "EX-N-3002", "TRANSACTIONAL", "TRANSFERS_TO", "high"),
+        edge("EX-E-3003", "EX-N-3000", "EX-N-3003", "SHARED_ATTRIBUTE", "LINKED_TO", "high"),
+        edge("EX-E-3004", "EX-N-3001", "EX-N-3003", "TRANSACTIONAL", "TRANSFERS_TO", "medium"),
+        edge("EX-E-3005", "EX-N-3002", "EX-N-3003", "DIRECT_SOURCE", "REFERENCES", "documented"),
+        ...denseRingSpecs.flatMap((spec, clusterIndex) => Array.from({ length: spec.count }, (_, index) => {
+          const id = `EX-N-${String(spec.start + index).padStart(4, "0")}`;
+          const nextId = `EX-N-${String(spec.start + ((index + 1) % spec.count)).padStart(4, "0")}`;
+          const edgeId = `EX-E-${String(3010 + clusterIndex * 20 + index * 2).padStart(4, "0")}`;
+          return [
+            edge(edgeId, spec.hub, id, clusterIndex === 1 ? "TRANSACTIONAL" : "SHARED_ATTRIBUTE", clusterIndex === 1 ? "TRANSFERS_TO" : "LINKED_TO", index % 3 === 0 ? "high" : "medium"),
+            edge(`${edgeId}-R`, id, nextId, clusterIndex === 0 ? "DEVICE_OBSERVATION" : "SHARED_ATTRIBUTE", "RELATED_TO", "low"),
+          ];
+        }).flat()),
+      ];
+
+      const examples = [
+        {
+          id: "empty-academy-board", title: "The empty Academy board", purpose: "Valid zero-node / zero-edge state", description: "An honest empty projection that never invents evidence.", recommendedViews: ["node-link", "semantic-list"],
+          nodes: [], edges: [], outcomes: ["The empty state is announced.", "Fit and reset remain safe no-ops.", "No renderer receives fabricated graph objects."],
+        },
+        {
+          id: "shared-device-investigation", title: "Shared device cluster", purpose: "Node and edge context", description: "A compact cluster for menus, linked views, filtering and movement.", recommendedViews: ["node-link", "matrix", "semantic-list"],
+          nodes: [
+            node("EX-N-0001", "PERSON_RECORD", "Marta Silva", "INVESTIGATED", 180, 250, "harbor", "◉"), node("EX-N-0002", "PERSON_RECORD", "L. Costa", "UNINVESTIGATED", 180, 440, "harbor", "◉"), node("EX-N-0003", "DEVICE_RECORD", "Shared device 42", "CANDIDATE", 430, 330, "northstar", "⌁"), node("EX-N-0004", "ACCOUNT_RECORD", "Harbor account", "INVESTIGATED", 690, 230, "harbor", "◈"), node("EX-N-0005", "ORGANIZATION_RECORD", "Northstar Cashbox", "UNINVESTIGATED", 700, 450, "northstar", "▦"), node("EX-N-0006", "ADDRESS_RECORD", "Parcel locker 7", "DISCARDED", 940, 330, "northstar", "⌂"),
+          ], edges: [
+            edge("EX-E-0001", "EX-N-0001", "EX-N-0003", "DEVICE_OBSERVATION", "USES_DEVICE", "medium"), edge("EX-E-0002", "EX-N-0002", "EX-N-0003", "DEVICE_OBSERVATION", "USES_DEVICE", "low"), edge("EX-E-0003", "EX-N-0003", "EX-N-0004", "SHARED_ATTRIBUTE", "LINKED_TO", "high"), edge("EX-E-0004", "EX-N-0004", "EX-N-0005", "TRANSACTIONAL", "TRANSFERS_TO", "documented"), edge("EX-E-0005", "EX-N-0005", "EX-N-0006", "DIRECT_SOURCE", "USES_ADDRESS", "documented"),
+          ], outcomes: ["Node and edge menus retain stable IDs.", "Cluster focus changes visibility, not source data.", "Movement is previewed and committed explicitly.", "Matrix and node-link views share selection but keep independent cameras."],
+        },
+        {
+          id: "temporal-path-tracing", title: "Temporal path tracing", purpose: "Directional path context", description: "A directed chain for source/target inspection without claiming that a path proves culpability.", recommendedViews: ["node-link", "path", "matrix", "semantic-list"],
+          nodes: [node("EX-N-0101", "PERSON_RECORD", "A. Vega", "CANDIDATE", 120, 290, "orbit", "◉"), node("EX-N-0102", "ACCOUNT_RECORD", "Orbit account", "INVESTIGATED", 340, 290, "orbit", "◈"), node("EX-N-0103", "ORGANIZATION_RECORD", "Vega Payments", "UNINVESTIGATED", 560, 290, "orbit", "▦"), node("EX-N-0104", "ACCOUNT_RECORD", "Eastline settlement", "UNINVESTIGATED", 780, 290, "orbit", "◈"), node("EX-N-0105", "ADDRESS_RECORD", "Dock address", "DISCARDED", 1000, 290, "orbit", "⌂")],
+          edges: [edge("EX-E-0101", "EX-N-0101", "EX-N-0102", "DIRECT_SOURCE", "AUTHORISED_BY", "documented"), edge("EX-E-0102", "EX-N-0102", "EX-N-0103", "TRANSACTIONAL", "PAYS", "medium"), edge("EX-E-0103", "EX-N-0103", "EX-N-0104", "TRANSACTIONAL", "SETTLES_WITH", "high"), edge("EX-E-0104", "EX-N-0104", "EX-N-0105", "DIRECT_SOURCE", "USES_ADDRESS", "documented")],
+          outcomes: ["The edge remains the focus target after its menu closes.", "Path view explains sequence without changing graph truth.", "Filtering changes the projection while preserving stable IDs."],
+        },
+        {
+          id: "keyboard-and-semantic-journey", title: "Keyboard and semantic journey", purpose: "Non-pointer interaction", description: "A small graph driven through keyboard and semantic-list paths.", recommendedViews: ["node-link", "semantic-list"],
+          nodes: [node("EX-N-0201", "PERSON_RECORD", "R. Garcia", "UNINVESTIGATED", 200, 250, "harbor", "◉"), node("EX-N-0202", "DEVICE_RECORD", "Pine VPN", "CANDIDATE", 500, 250, "harbor", "⌁"), node("EX-N-0203", "ORGANIZATION_RECORD", "Eastline Bank", "INVESTIGATED", 800, 250, "harbor", "▦")],
+          edges: [edge("EX-E-0201", "EX-N-0201", "EX-N-0202", "DEVICE_OBSERVATION", "USES_DEVICE", "medium"), edge("EX-E-0202", "EX-N-0202", "EX-N-0203", "DIRECT_SOURCE", "OBSERVED_WITH", "documented")],
+          outcomes: ["Keyboard and semantic-list selection produce the same stable target.", "Shift+F10-style menu invocation uses the same command path as pointer invocation.", "Cancelled movement does not enter replay history."],
+        },
+        {
+          id: "dense-cluster-progressive-disclosure", title: "Dense cluster", purpose: "Bounded rendering and disclosure", description: "A deterministic cluster for minimap, filtering, matrix view and hairball prevention.", recommendedViews: ["node-link", "matrix", "semantic-list"],
+          nodes: denseNodes,
+          edges: denseEdges,
+          outcomes: ["The visible subset can be bounded without mutating the source snapshot.", "The minimap is an optional overview, not a second source of truth.", "The semantic list exposes every visible target even when the node-link view is dense."],
+        },
+      ];
+
+      const defaultChallenge = {
+        title: "Open the case file",
+        steps: [
+          { id: "selection", label: "Select an evidence node", hint: "Choose any visible node to open its dossier." },
+          { id: "relationship", label: "Interrogate a relationship", hint: "Click a visible relationship or open one from the node dossier." },
+          { id: "reposition", label: "Reposition the evidence", hint: "Drag a node to give the scene a new working layout." },
+          { id: "camera", label: "Explore the scene", hint: "Drag empty space to pan, or scroll to zoom." },
+        ],
+        success: "Scene reconstructed. The layout is yours; the evidence remains unchanged.",
+      };
+      const challenges = {
+        "dense-cluster-progressive-disclosure": { ...defaultChallenge, title: "The cluster moves" },
+        "shared-device-investigation": { ...defaultChallenge, title: "Follow the shared device" },
+        "temporal-path-tracing": { ...defaultChallenge, title: "Trace the direction" },
+        "keyboard-and-semantic-journey": { ...defaultChallenge, title: "Work the keyboard path" },
+      };
+
+      const tabs = document.querySelector("#tabs");
+      const surface = document.querySelector("#surface");
+      const inspector = document.querySelector("#inspector");
+      const title = document.querySelector("#scenario-title");
+      const stripTitle = document.querySelector("#graph-strip-title");
+      const metricVisibleNodes = document.querySelector("#metric-visible-nodes");
+      const metricVisibleEdges = document.querySelector("#metric-visible-edges");
+      const metricSelected = document.querySelector("#metric-selected");
+      const metricVersion = document.querySelector("#metric-version");
+      const selectionBadge = document.querySelector("#selection-badge");
+      const minimap = document.querySelector("#minimap");
+      const legend = document.querySelector("#legend");
+      const gameHud = document.querySelector("#game-hud");
+      const gameKicker = document.querySelector("#game-kicker");
+      const gameObjective = document.querySelector("#game-objective");
+      const gameFeedback = document.querySelector("#game-feedback");
+      const gameProgressLabel = document.querySelector("#game-progress-label");
+      const gameProgressBar = document.querySelector("#game-progress-bar");
+      const motionToggle = document.querySelector("[data-command='toggle-motion']");
+      const composerToggle = document.querySelector("[data-command='toggle-composer']");
+      const autoTestToggle = document.querySelector("[data-command='toggle-autotests']");
+      const hoverPreview = document.querySelector("#hover-preview");
+      const favoritesPanel = document.querySelector("#favorites-panel");
+      const autoTestPanel = document.querySelector("#autotest-panel");
+      const autoTestList = document.querySelector("#autotest-list");
+      const autoTestSummary = document.querySelector("#autotest-summary");
+      const autoTestCount = document.querySelector("#autotest-count");
+      const autoTestProgressBar = document.querySelector("#autotest-progress-bar");
+      const autoTestElapsed = document.querySelector("#autotest-elapsed");
+      const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+      const topologySelect = document.querySelector("#topology-select");
+      const state = { exampleIndex: 0, topology: "native", view: "node-link", zoom: 1, panX: 0, panY: 0, velocities: new Map(), anchors: new Map(), motionNodeIds: new Set(), physicsFrame: 0, physicsLast: 0, physicsQuietFrames: 0, physicsTick: 0, physicsActive: false, physicsEnabled: !reducedMotion, selected: null, menu: null, hover: null, hoverHideTimer: null, filters: new Set(statuses), positions: new Map(), statusOverrides: new Map(), clusterFilter: null, addedEdges: [], favorites: [], composerOpen: false, nextRelationNumber: 1, log: [], dragging: null, panning: null, ignoreNextCanvasClick: false, challenge: { completed: new Set(), hint: false } };
+      const autoTestState = { running: false, collapsed: false, scopeIds: [], results: new Map(), startedAt: 0, elapsed: 0 };
+      const current = () => examples[state.exampleIndex];
+      const allEdges = () => [...current().edges, ...state.addedEdges];
+      const edgeById = (id) => allEdges().find((item) => item.id === id);
+      const isFavorite = (item) => state.favorites.some((favorite) => favorite.kind === item.kind && favorite.id === item.id);
+      const challengeFor = () => challenges[current().id] || null;
+      const clamp = (value, low, high) => Math.max(low, Math.min(high, value));
+      function stopPhysics() { if (state.physicsFrame) cancelAnimationFrame(state.physicsFrame); state.physicsFrame = 0; state.physicsLast = 0; state.motionNodeIds = new Set(); }
+      function seedPhysics() {
+        stopPhysics();
+        state.anchors = new Map(current().nodes.map((item) => [item.id, clonePosition(item.position)]));
+        state.velocities = new Map(current().nodes.map((item) => [item.id, { x: 0, y: 0 }]));
+        state.physicsActive = false;
+        state.physicsQuietFrames = 0;
+      }
+      function startPhysics() {
+        if (!state.physicsEnabled || !state.physicsActive || state.view !== "node-link" || !visibleNodes().length || state.physicsFrame) return;
+        state.physicsLast = performance.now();
+        state.physicsFrame = requestAnimationFrame(stepPhysics);
+      }
+      function wakePhysics() {
+        state.physicsActive = true;
+        state.physicsQuietFrames = 0;
+        current().nodes.forEach((item, index) => {
+          const velocity = state.velocities.get(item.id) || { x: 0, y: 0 };
+          if (Math.hypot(velocity.x, velocity.y) < .5) state.velocities.set(item.id, { x: Math.cos(index * 1.77) * 12, y: Math.sin(index * 1.31) * 10 });
+        });
+        startPhysics();
+      }
+      function stepPhysics(now) {
+        state.physicsFrame = 0;
+        if (!state.physicsEnabled || state.view !== "node-link" || state.dragging || state.panning) return;
+        const dt = clamp((now - state.physicsLast) / 1000, .008, .032);
+        state.physicsLast = now;
+        const nodes = visibleNodes();
+        const forces = new Map(nodes.map((item) => [item.id, { x: 0, y: 0 }]));
+        let maxSpeed = 0;
+        let maxOffset = 0;
+        const addForce = (id, x, y) => { const force = forces.get(id); if (force) { force.x += x; force.y += y; } };
+        nodes.forEach((item) => {
+          const position = state.positions.get(item.id) || item.position;
+          const anchor = state.anchors.get(item.id) || item.position;
+          addForce(item.id, (anchor.x - position.x) * 1.35, (anchor.y - position.y) * 1.35);
+          maxOffset = Math.max(maxOffset, Math.hypot(anchor.x - position.x, anchor.y - position.y));
+        });
+        for (let left = 0; left < nodes.length; left += 1) {
+          const a = nodes[left];
+          const aPosition = state.positions.get(a.id) || a.position;
+          for (let right = left + 1; right < nodes.length; right += 1) {
+            const b = nodes[right];
+            const bPosition = state.positions.get(b.id) || b.position;
+            const dx = aPosition.x - bPosition.x;
+            const dy = aPosition.y - bPosition.y;
+            const distance = Math.max(1, Math.hypot(dx, dy));
+            if (distance < 128) {
+              const strength = (128 - distance) * .38 / distance;
+              addForce(a.id, dx * strength, dy * strength);
+              addForce(b.id, -dx * strength, -dy * strength);
+            }
+          }
+        }
+        visibleEdges().forEach((relationship) => {
+          const source = nodeById(relationship.sourceId);
+          const destination = nodeById(relationship.targetId);
+          if (!source || !destination) return;
+          const dx = destination.position.x - source.position.x;
+          const dy = destination.position.y - source.position.y;
+          const distance = Math.max(1, Math.hypot(dx, dy));
+          const desired = ["ORG_RECORD", "CLAIM_CLUSTER", "BANK_RECORD"].includes(source.recordType) || ["ORG_RECORD", "CLAIM_CLUSTER", "BANK_RECORD"].includes(destination.recordType) ? 132 : 86;
+          const strength = (distance - desired) * .42 / distance;
+          addForce(source.id, dx * strength, dy * strength);
+          addForce(destination.id, -dx * strength, -dy * strength);
+        });
+        const movingIds = new Set();
+        nodes.forEach((item) => {
+          const position = state.positions.get(item.id) || clonePosition(item.position);
+          const velocity = state.velocities.get(item.id) || { x: 0, y: 0 };
+          const force = forces.get(item.id) || { x: 0, y: 0 };
+          const damping = Math.pow(.78, dt * 60);
+          velocity.x = clamp((velocity.x + force.x * dt) * damping, -240, 240);
+          velocity.y = clamp((velocity.y + force.y * dt) * damping, -240, 240);
+          const next = { x: clamp(position.x + velocity.x * dt, 38, 1082), y: clamp(position.y + velocity.y * dt, 38, 582) };
+          state.positions.set(item.id, next);
+          state.velocities.set(item.id, velocity);
+          const speed = Math.hypot(velocity.x, velocity.y);
+          maxSpeed = Math.max(maxSpeed, speed);
+          if (speed > 2 || Math.hypot(next.x - position.x, next.y - position.y) > .05) movingIds.add(item.id);
+        });
+        state.motionNodeIds = movingIds;
+        state.physicsTick += 1;
+        updateGraphPhysicsOnly();
+        if (maxSpeed < .45 && maxOffset < .55) state.physicsQuietFrames += 1; else state.physicsQuietFrames = 0;
+        if (state.physicsQuietFrames > 18) { stopPhysics(); renderGraphOnly(); return; }
+        startPhysics();
+      }
+      const selectedNode = () => state.selected && state.selected.kind === "node" ? current().nodes.find((item) => item.id === state.selected.id) : null;
+      const selectedEdge = () => state.selected && state.selected.kind === "edge" ? edgeById(state.selected.id) : null;
+      const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]);
+      const clonePosition = (item) => ({ x: item.x, y: item.y });
+      function topologyPositions(example, topology) {
+        const nodes = example.nodes;
+        if (topology === "native" || nodes.length < 2) return new Map(nodes.map((item) => [item.id, clonePosition(item.position)]));
+        const result = new Map();
+        const center = { x: 560, y: 310 };
+        if (topology === "ring" || topology === "star") {
+          const hub = nodes.find((item) => ["ORG_RECORD", "CLAIM_CLUSTER", "BANK_RECORD"].includes(item.recordType)) || nodes[0];
+          result.set(hub.id, center);
+          const leaves = nodes.filter((item) => item.id !== hub.id);
+          leaves.forEach((item, index) => { const angle = (index / Math.max(1, leaves.length)) * Math.PI * 2 - Math.PI / 2; const radius = topology === "star" ? 225 : 235; result.set(item.id, { x: center.x + Math.cos(angle) * radius, y: center.y + Math.sin(angle) * radius }); });
+        } else if (topology === "chain") {
+          nodes.forEach((item, index) => { const row = Math.floor(index / 7); result.set(item.id, { x: 90 + (index % 7) * 155, y: 150 + row * 145 }); });
+        } else if (topology === "grid") {
+          nodes.forEach((item, index) => { const columns = Math.ceil(Math.sqrt(nodes.length)); result.set(item.id, { x: 110 + (index % columns) * (900 / Math.max(1, columns - 1)), y: 120 + Math.floor(index / columns) * 130 }); });
+        } else {
+          const groups = [...new Set(nodes.map((item) => item.clusterId))];
+          nodes.forEach((item, index) => { const groupIndex = Math.max(0, groups.indexOf(item.clusterId)); const angle = (groupIndex / Math.max(1, groups.length)) * Math.PI * 2 - Math.PI / 2; const local = nodes.filter((candidate) => candidate.clusterId === item.clusterId).indexOf(item); const count = nodes.filter((candidate) => candidate.clusterId === item.clusterId).length; const radius = 70 + (local % Math.max(1, count)) * 13; result.set(item.id, { x: center.x + Math.cos(angle) * 245 + Math.cos(local * 2.4) * radius, y: center.y + Math.sin(angle) * 180 + Math.sin(local * 2.4) * radius }); });
+        }
+        return result;
+      }
+      function applyTopology(topology, logChange = true) { state.topology = topology; state.positions = topologyPositions(current(), topology); state.anchors = new Map([...state.positions].map(([id, position]) => [id, clonePosition(position)])); state.velocities = new Map(current().nodes.map((item) => [item.id, { x: 0, y: 0 }])); if (logChange) setLog(`Presentation topology: ${topology}`); }
+      function autoTestSnapshot() {
+        return { topology: state.topology, view: state.view, zoom: state.zoom, panX: state.panX, panY: state.panY, positions: new Map([...state.positions].map(([id, position]) => [id, clonePosition(position)])), anchors: new Map([...state.anchors].map(([id, position]) => [id, clonePosition(position)])), velocities: new Map([...state.velocities].map(([id, velocity]) => [id, { ...velocity }])), selected: state.selected && { ...state.selected }, menu: state.menu && { ...state.menu }, filters: new Set(state.filters), statusOverrides: new Map(state.statusOverrides), clusterFilter: state.clusterFilter, addedEdges: state.addedEdges.map((item) => ({ ...item })), favorites: state.favorites.map((item) => ({ ...item })), composerOpen: state.composerOpen, nextRelationNumber: state.nextRelationNumber, log: [...state.log], challenge: { completed: new Set(state.challenge.completed), hint: state.challenge.hint, message: state.challenge.message || "" } };
+      }
+      function restoreAutoTestSnapshot(snapshot) {
+        stopPhysics();
+        if (state.hoverHideTimer) clearTimeout(state.hoverHideTimer);
+        Object.assign(state, { topology: snapshot.topology, view: snapshot.view, zoom: snapshot.zoom, panX: snapshot.panX, panY: snapshot.panY, positions: snapshot.positions, anchors: snapshot.anchors, velocities: snapshot.velocities, selected: snapshot.selected, menu: snapshot.menu, hover: null, hoverHideTimer: null, filters: snapshot.filters, statusOverrides: snapshot.statusOverrides, clusterFilter: snapshot.clusterFilter, addedEdges: snapshot.addedEdges, favorites: snapshot.favorites, composerOpen: snapshot.composerOpen, nextRelationNumber: snapshot.nextRelationNumber, log: snapshot.log, challenge: snapshot.challenge });
+        render();
+      }
+      const autoTestCases = [
+        { id: "graph-contract", title: "Graph contract", instruction: "Read stable node IDs and relationship endpoints", expected: "IDs are unique and every edge points to known nodes", run: () => { const nodes = current().nodes; const ids = new Set(nodes.map((item) => item.id)); const edges = allEdges(); if (ids.size !== nodes.length) throw new Error("duplicate node ID"); if (edges.some((item) => !ids.has(item.sourceId) || !ids.has(item.targetId))) throw new Error("edge endpoint missing"); return `${nodes.length} nodes · ${edges.length} relationships`; } },
+        { id: "node-context", title: "Node context", instruction: "Select the first visible entity and open its dossier", expected: "Selection, inspector and stable ID are available", run: () => { const item = visibleNodes()[0]; if (!item) return { skipped: true, actual: "No entity in the current scene" }; state.view = "node-link"; selectTarget(target("node", item.id)); if (!state.selected || !inspector.textContent.includes(item.id)) throw new Error("node dossier did not open"); return `${item.label} selected`; } },
+        { id: "hover-context", title: "Hover context", instruction: "Move attention to a node and expose its contextual preview", expected: "Preview shows status, metrics and actions", run: () => { const item = visibleNodes()[0]; if (!item) return { skipped: true, actual: "No entity in the current scene" }; state.view = "node-link"; render(); showHover(target("node", item.id)); if (!hoverPreview.classList.contains("is-visible") || !hoverPreview.querySelector(".hover-stats")) throw new Error("hover preview is incomplete"); return `${item.label} · ${connectedToNode(item.id).length} links`; } },
+        { id: "camera-wheel", title: "Camera wheel", instruction: "Apply one anchored zoom step around the graph surface", expected: "Camera changes without changing graph data", run: () => { const before = state.zoom; setZoom(before + .12); surface.dataset.zoom = state.zoom.toFixed(2); if (state.zoom <= before) throw new Error("zoom did not change"); return `${before.toFixed(2)}× → ${state.zoom.toFixed(2)}×`; } },
+        { id: "topology-switch", title: "Topology switch", instruction: "Re-layout the same evidence as radial clusters", expected: "All node IDs survive the presentation change", run: () => { const itemCount = visibleNodes().length; if (itemCount < 2) return { skipped: true, actual: "Fewer than two entities" }; applyTopology("radial", false); renderGraphOnly(); const positioned = visibleNodes().filter((item) => state.positions.has(item.id)).length; if (positioned !== itemCount) throw new Error("topology lost a node position"); return `${positioned} entities re-laid out`; } },
+        { id: "working-relation", title: "Working relation", instruction: "Create and render a removable investigator hypothesis", expected: "Dashed relationship appears without mutating published edges", run: () => { const nodes = visibleNodes(); if (nodes.length < 2) return { skipped: true, actual: "Fewer than two entities" }; const before = current().edges.length; state.addedEdges.push({ id: "AUTO-TEST-RELATION", sourceId: nodes[0].id, targetId: nodes[1].id, relationshipFamily: "INVESTIGATOR_ADDED", relationshipType: "AUTO_TEST_HYPOTHESIS", directed: true, confidence: "low", origin: "investigator-added" }); renderGraphOnly(); if (!surface.querySelector(".edge.working")) throw new Error("working relationship was not rendered"); if (current().edges.length !== before) throw new Error("published relationships changed"); return "Dashed local relation rendered"; } },
+      ];
+      const wait = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+      const autoTestStatusLabel = (status) => ({ queued: "queued", running: "running", passed: "passed", failed: "failed", skipped: "n/a" }[status] || status);
+      function renderAutoTestPanel() {
+        document.body.classList.toggle("autotest-panel-open", !autoTestState.collapsed);
+        if (!autoTestState.running && !autoTestState.collapsed && (state.hover || hoverPreview.classList.contains("is-visible"))) hideHover();
+        const scope = autoTestState.scopeIds.length ? autoTestState.scopeIds : autoTestCases.map((item) => item.id);
+        const results = autoTestCases.map((item) => [item.id, autoTestState.results.get(item.id) || { status: "queued", actual: "Awaiting run", duration: null }]);
+        const scopedResults = results.filter(([id]) => scope.includes(id)).map(([, result]) => result);
+        const finished = scopedResults.filter((result) => ["passed", "failed", "skipped"].includes(result.status)).length;
+        const passed = scopedResults.filter((result) => result.status === "passed").length;
+        const failed = scopedResults.filter((result) => result.status === "failed").length;
+        const progress = scope.length ? Math.round((finished / scope.length) * 100) : 0;
+        autoTestCount.textContent = `${finished} / ${scope.length}`;
+        autoTestProgressBar.style.width = `${progress}%`;
+        autoTestElapsed.textContent = autoTestState.elapsed ? `${autoTestState.elapsed} ms` : "—";
+        if (autoTestState.running) autoTestSummary.textContent = `Running · ${finished}/${scope.length} complete`;
+        else if (finished) autoTestSummary.textContent = failed ? `${passed} passed · ${failed} failed` : `${passed} passed · ${scopedResults.filter((result) => result.status === "skipped").length} not applicable`;
+        else autoTestSummary.textContent = `Ready · ${autoTestCases.length} visible graph checks`;
+        autoTestList.innerHTML = autoTestCases.map((item) => { const result = autoTestState.results.get(item.id) || { status: "queued", actual: "Awaiting run", duration: null }; return `<li class="autotest-row" data-status="${result.status}"><span class="autotest-cell"><strong>${escapeHtml(item.title)}</strong><br><small>${escapeHtml(autoTestStatusLabel(result.status))}</small></span><span class="autotest-cell autotest-instruction">${escapeHtml(item.instruction)}</span><span class="autotest-cell autotest-expected">${escapeHtml(item.expected)}</span><span class="autotest-cell autotest-result">${escapeHtml(result.actual || "Awaiting run")}</span><span class="autotest-cell autotest-status" data-value="${result.status}">${escapeHtml(autoTestStatusLabel(result.status))}</span><span class="autotest-cell autotest-time">${result.duration == null ? "—" : `${result.duration} ms`}</span><button type="button" data-auto-run="${item.id}" aria-label="Run ${escapeHtml(item.title)}" ${autoTestState.running ? "disabled" : ""}>Run</button></li>`; }).join("");
+        autoTestPanel.classList.toggle("is-collapsed", autoTestState.collapsed);
+        autoTestToggle.setAttribute("aria-expanded", String(!autoTestState.collapsed));
+        autoTestPanel.querySelector("[data-auto-command='run-all']").disabled = autoTestState.running;
+        autoTestPanel.querySelector("[data-auto-command='clear']").disabled = autoTestState.running;
+        autoTestPanel.querySelector("[data-auto-command='collapse']").textContent = autoTestState.collapsed ? "+" : "−";
+        autoTestPanel.querySelector("[data-auto-command='collapse']").setAttribute("aria-expanded", String(!autoTestState.collapsed));
+        autoTestPanel.querySelectorAll("[data-auto-run]").forEach((button) => button.addEventListener("click", () => runAutoTests([button.dataset.autoRun])));
+      }
+      async function runAutoTests(ids = autoTestCases.map((item) => item.id)) {
+        if (autoTestState.running) return;
+        const selectedIds = autoTestCases.filter((item) => ids.includes(item.id)).map((item) => item.id);
+        if (!selectedIds.length) return;
+        hideHover();
+        autoTestState.running = true; autoTestState.scopeIds = selectedIds; autoTestState.results = new Map(autoTestCases.map((item) => [item.id, { status: "queued", actual: item.expected, duration: null }])); autoTestState.startedAt = performance.now(); autoTestState.elapsed = 0; renderAutoTestPanel();
+        for (const item of autoTestCases.filter((candidate) => selectedIds.includes(candidate.id))) {
+          const started = performance.now(); autoTestState.results.set(item.id, { status: "running", actual: item.instruction, duration: null }); renderAutoTestPanel(); await wait(220);
+          const snapshot = autoTestSnapshot();
+          try { const result = await item.run(); const skipped = result?.skipped; autoTestState.results.set(item.id, { status: skipped ? "skipped" : "passed", actual: result?.actual || (skipped ? "Not applicable" : result), duration: Math.round(performance.now() - started) }); }
+          catch (error) { autoTestState.results.set(item.id, { status: "failed", actual: error instanceof Error ? error.message : String(error), duration: Math.round(performance.now() - started) }); }
+          finally { restoreAutoTestSnapshot(snapshot); }
+          renderAutoTestPanel(); await wait(90);
+        }
+        autoTestState.elapsed = Math.round(performance.now() - autoTestState.startedAt); autoTestState.running = false; renderAutoTestPanel();
+      }
+      function clearAutoTests() { if (autoTestState.running) return; autoTestState.scopeIds = []; autoTestState.results = new Map(); autoTestState.elapsed = 0; renderAutoTestPanel(); }
+      const setLog = (message) => { state.log.unshift(`${new Date().toLocaleTimeString()}  ${message}`); state.log = state.log.slice(0, 8); };
+      function updateGameHud() {
+        const challenge = challengeFor();
+        if (!challenge) {
+          gameHud.classList.remove("complete");
+          gameKicker.textContent = "Free exploration";
+          gameObjective.textContent = "No scored challenge in this empty scene";
+          gameFeedback.textContent = "The zero-node state is intentional. Explore the available views.";
+          gameProgressLabel.textContent = "—";
+          gameProgressBar.style.width = "0%";
+          return;
+        }
+        const completed = state.challenge.completed.size;
+        const total = challenge.steps.length;
+        const next = challenge.steps.find((step) => !state.challenge.completed.has(step.id));
+        const done = completed === total;
+        gameHud.classList.toggle("complete", done);
+        gameKicker.textContent = done ? "Case file complete" : `Mini-case · ${total} steps`;
+        gameObjective.textContent = done ? "Investigation complete" : `Step ${completed + 1} · ${next.label}`;
+        gameFeedback.textContent = done ? challenge.success : (state.challenge.message || (state.challenge.hint ? next.hint : "Use Hint if you want a nudge, then interact with the graph."));
+        gameProgressLabel.textContent = `${completed} / ${total}`;
+        gameProgressBar.style.width = `${Math.round((completed / total) * 100)}%`;
+      }
+      function markChallenge(stepId, message = "") {
+        const challenge = challengeFor();
+        if (!challenge || state.challenge.completed.has(stepId)) return;
+        state.challenge.completed.add(stepId);
+        state.challenge.hint = false;
+        state.challenge.message = message;
+        updateGameHud();
+      }
+      function markSelectionChallenge(item) {
+        if (item?.kind === "node") markChallenge("selection", "The entity dossier is open. Now inspect how it connects.");
+        if (item?.kind === "edge") markChallenge("relationship", "Relationship inspected. Re-layout the evidence when you are ready.");
+      }
+      function selectTarget(item, openMenu = true) {
+        state.selected = item;
+        state.menu = openMenu ? item : null;
+        state.hover = null;
+        markSelectionChallenge(item);
+        render();
+      }
+      const nodeState = (item) => ({ ...item, position: state.positions.get(item.id) || item.position, status: state.statusOverrides.get(item.id) || item.status });
+      const visibleNodes = () => current().nodes.map(nodeState).filter((item) => state.filters.has(item.status)).filter((item) => !state.clusterFilter || item.clusterId === state.clusterFilter);
+      const visibleEdges = () => { const ids = new Set(visibleNodes().map((item) => item.id)); return allEdges().filter((item) => ids.has(item.sourceId) && ids.has(item.targetId)); };
+      const nodeById = (id) => nodeState(current().nodes.find((item) => item.id === id));
+      const svgEl = (name, attrs = {}) => { const element = document.createElementNS("http://www.w3.org/2000/svg", name); Object.entries(attrs).forEach(([key, value]) => element.setAttribute(key, String(value))); return element; };
+      function appendNodeGlyph(group, item) {
+        const glyph = svgEl("g", { class: "node-glyph", "aria-hidden": "true" });
+        if (item.recordType === "PERSON_RECORD") {
+          glyph.append(svgEl("circle", { cx: 0, cy: -7, r: 5 }));
+          glyph.append(svgEl("path", { d: "M -10 10 C -10 1 -6 -2 0 -2 C 6 -2 10 1 10 10 Z" }));
+        } else if (item.recordType === "DEVICE_RECORD") {
+          glyph.append(svgEl("rect", { class: "outline", x: -8, y: -12, width: 16, height: 24, rx: 3 }));
+          glyph.append(svgEl("circle", { cx: 0, cy: 7, r: 1.5 }));
+          glyph.append(svgEl("path", { d: "M -4 -7 H 4" }));
+        } else if (item.recordType === "ACCOUNT_RECORD") {
+          glyph.append(svgEl("path", { d: "M -12 -5 H 7 C 10 -5 11 -3 11 0 V 8 H -12 Z" }));
+          glyph.append(svgEl("path", { d: "M -12 -5 V -8 H 7 V -5 M 3 2 H 10" }));
+        } else if (item.recordType === "BANK_RECORD") {
+          glyph.append(svgEl("path", { d: "M -12 -5 L 0 -12 L 12 -5 Z M -9 -3 V 8 M -3 -3 V 8 M 3 -3 V 8 M 9 -3 V 8 M -13 10 H 13" }));
+        } else if (item.recordType === "ORG_RECORD") {
+          glyph.append(svgEl("path", { d: "M -12 -6 H 12 V 10 H -12 Z M -5 -6 V -10 H 5 V -6 M -8 -1 H 8 M -8 4 H 8" }));
+        } else if (item.recordType === "CLAIM_CLUSTER") {
+          glyph.append(svgEl("path", { d: "M 0 -14 L 3 -4 L 14 -4 L 5 2 L 9 13 L 0 7 L -9 13 L -5 2 L -14 -4 L -3 -4 Z" }));
+        } else {
+          const icon = svgEl("text", { class: "node-icon", "font-size": 18 });
+          icon.textContent = item.icon || "◆";
+          glyph.append(icon);
+        }
+        group.append(glyph);
+      }
+      const confidenceWidth = (value) => ({ low: 30, medium: 62, high: 86, documented: 100 }[value] || 45);
+      const connectedToNode = (id) => allEdges().filter((item) => item.sourceId === id || item.targetId === id);
+      const relationOtherId = (relationship, id) => relationship.sourceId === id ? relationship.targetId : relationship.sourceId;
+      const relationOtherLabel = (relationship, id) => nodeById(relationOtherId(relationship, id))?.label || relationOtherId(relationship, id);
+      const updateMetrics = () => {
+        const nodes = visibleNodes();
+        const edges = visibleEdges();
+        stripTitle.textContent = `${current().title} · ${current().recommendedViews.join(" · ")}`;
+        metricVisibleNodes.textContent = nodes.length;
+        metricVisibleEdges.textContent = edges.length;
+        metricSelected.textContent = state.selected ? "1" : "0";
+        selectionBadge.textContent = `${state.selected ? 1 : 0} ${state.selected ? "entity" : "entities"} selected`;
+        metricVersion.textContent = "v1";
+        motionToggle.textContent = state.physicsEnabled ? "Motion" : "Still";
+        motionToggle.setAttribute("aria-pressed", String(state.physicsEnabled));
+        composerToggle.setAttribute("aria-expanded", String(state.composerOpen));
+      };
+
+      function resetExample(index = state.exampleIndex) {
+        stopPhysics(); state.exampleIndex = index; state.view = current().recommendedViews[0] || "node-link"; state.zoom = 1; state.panX = 0; state.panY = 0; state.selected = null; state.menu = null; state.hover = null; state.filters = new Set(statuses); state.statusOverrides = new Map(); state.clusterFilter = null; state.addedEdges = []; state.favorites = []; state.composerOpen = false; state.nextRelationNumber = 1; state.log = []; state.dragging = null; state.panning = null; state.challenge = { completed: new Set(), hint: false, message: "" }; applyTopology(state.topology, false); seedPhysics(); setLog(`Loaded ${current().id}`); render();
+      }
+
+      function renderTabs() {
+        tabs.replaceChildren();
+        examples.forEach((example, index) => { const button = document.createElement("button"); button.type = "button"; button.className = "tab"; button.role = "tab"; button.ariaSelected = String(index === state.exampleIndex); button.innerHTML = `<strong>${escapeHtml(example.title)}</strong><small>${escapeHtml(example.purpose)}</small>`; button.addEventListener("click", () => resetExample(index)); tabs.append(button); });
+      }
+
+      function drawLegend() {
+        legend.innerHTML = statuses.map((status) => `<span class="legend-item"><span class="legend-symbol" style="background:${statusMeta[status].color};border-color:${statusMeta[status].stroke}">${statusMeta[status].glyph}</span>${statusMeta[status].label} <strong>${visibleNodes().filter((item) => item.status === status).length}</strong></span>`).join("");
+      }
+
+      function drawMinimap() {
+        const svg = svgEl("svg", { viewBox: "0 0 1120 620", role: "img", "aria-label": "Graph minimap" });
+        visibleEdges().forEach((item) => { const a = nodeById(item.sourceId), b = nodeById(item.targetId); if (a && b) svg.append(svgEl("line", { x1: a.position.x, y1: a.position.y, x2: b.position.x, y2: b.position.y, stroke: familyColors[item.relationshipFamily] || "#938c79", "stroke-width": 5 })); });
+        visibleNodes().forEach((item) => svg.append(svgEl("circle", { cx: item.position.x, cy: item.position.y, r: state.selected?.id === item.id ? 12 : 7, fill: statusMeta[item.status].stroke }))); minimap.replaceChildren(svg);
+      }
+
+      function targetPosition(item) {
+        if (item.kind === "node") { const node = nodeById(item.id); return node ? clonePosition(node.position) : null; }
+        const relationship = edgeById(item.id); const source = relationship && nodeById(relationship.sourceId); const destination = relationship && nodeById(relationship.targetId);
+        return source && destination ? { x: (source.position.x + destination.position.x) / 2, y: (source.position.y + destination.position.y) / 2 } : null;
+      }
+      function targetLabel(item) {
+        if (item.kind === "node") return nodeById(item.id)?.label || item.id;
+        return edgeById(item.id)?.relationshipType || item.id;
+      }
+      function centerOnTarget(item) {
+        const point = targetPosition(item); if (!point) return;
+        state.zoom = Math.max(state.zoom, 1.15); state.panX = (560 - point.x) * state.zoom; state.panY = (310 - point.y) * state.zoom;
+        state.selected = item; state.menu = item; hideHover(); setLog(`Centered graph on ${item.kind}: ${item.id}`); render();
+      }
+      function toggleFavorite(item) {
+        const wasFavorite = isFavorite(item);
+        state.favorites = wasFavorite ? state.favorites.filter((favorite) => favorite.kind !== item.kind || favorite.id !== item.id) : [...state.favorites, item];
+        const hovered = state.hover && state.hover.kind === item.kind && state.hover.id === item.id ? state.hover : null;
+        setLog(`${wasFavorite ? "Removed" : "Marked"} ${item.kind}: ${item.id}`); render(); if (hovered) showHover(hovered);
+      }
+      function renderFavorites() {
+        if (!state.favorites.length) { favoritesPanel.classList.remove("is-visible"); favoritesPanel.replaceChildren(); return; }
+        favoritesPanel.classList.add("is-visible"); favoritesPanel.innerHTML = `<div class="favorites-header"><strong>Marked targets</strong><span>${state.favorites.length}</span></div><ul>${state.favorites.map((item) => `<li><button type="button" data-favorite-target="${escapeHtml(item.kind)}:${escapeHtml(item.id)}">${item.kind === "node" ? "◉" : "—"} ${escapeHtml(targetLabel(item))}</button><button type="button" class="favorite-remove" data-favorite-remove="${escapeHtml(item.kind)}:${escapeHtml(item.id)}" aria-label="Remove ${escapeHtml(targetLabel(item))} mark">×</button></li>`).join("")}</ul>`;
+        favoritesPanel.querySelectorAll("button[data-favorite-target]").forEach((button) => button.addEventListener("click", () => { const [kind, ...parts] = button.dataset.favoriteTarget.split(":"); const item = target(kind, parts.join(":")); selectTarget(item); centerOnTarget(item); }));
+        favoritesPanel.querySelectorAll("button[data-favorite-remove]").forEach((button) => button.addEventListener("click", () => { const [kind, ...parts] = button.dataset.favoriteRemove.split(":"); toggleFavorite(target(kind, parts.join(":"))); }));
+      }
+      function showHover(item) {
+        if (state.hoverHideTimer) { clearTimeout(state.hoverHideTimer); state.hoverHideTimer = null; }
+        if (!autoTestState.running && !autoTestState.collapsed) { hideHover(); return; }
+        state.hover = item; const point = targetPosition(item); if (!point) return;
+        const object = item.kind === "node" ? nodeById(item.id) : edgeById(item.id); if (!object) return;
+        const parent = hoverPreview.offsetParent?.getBoundingClientRect() || surface.getBoundingClientRect(); const rect = surface.getBoundingClientRect();
+        const screenX = rect.left + ((point.x * state.zoom + 560 - 560 * state.zoom + state.panX) / 1120) * rect.width; const screenY = rect.top + ((point.y * state.zoom + 310 - 310 * state.zoom + state.panY) / 620) * rect.height;
+        hoverPreview.style.left = `${clamp(screenX - parent.left + 14, 12, Math.max(12, parent.width - 300))}px`; hoverPreview.style.top = `${clamp(screenY - parent.top - 18, 75, Math.max(75, parent.height - 170))}px`;
+        const favorite = isFavorite(item); const favoriteLabel = favorite ? "Remove from highlights" : "Add to highlights"; const favoriteIcon = favorite ? "−" : "+";
+        const content = item.kind === "node" ? `<span class="context-kicker">Hover preview · node · ${escapeHtml(statusMeta[object.status].label)}</span><strong>${escapeHtml(object.icon || "◉")} ${escapeHtml(object.label)}</strong><span>${escapeHtml(object.recordType)} · ${escapeHtml(object.id)}</span><div class="hover-stats"><span class="hover-stat"><b>${connectedToNode(object.id).length}</b><small>links</small></span><span class="hover-stat"><b>${escapeHtml(object.clusterId)}</b><small>cluster</small></span><span class="hover-stat"><b>${escapeHtml(object.status === "FRAUD_CONFIRMED" ? "High" : object.status === "INVESTIGATED" ? "Med" : "Open")}</b><small>risk signal</small></span></div>` : `<span class="context-kicker">Hover preview · relationship</span><strong>${escapeHtml(object.relationshipType)}</strong><span>${escapeHtml(nodeById(object.sourceId)?.label || object.sourceId)} → ${escapeHtml(nodeById(object.targetId)?.label || object.targetId)}</span><div class="hover-stats"><span class="hover-stat"><b>${escapeHtml(object.confidence)}</b><small>confidence</small></span><span class="hover-stat"><b>${escapeHtml(object.relationshipFamily.replace("_", " "))}</b><small>family</small></span></div>`;
+        hoverPreview.innerHTML = `<div class="hover-preview-card">${content}<div class="actions hover-context-actions"><button type="button" class="action icon-action" data-hover-action="favorite" aria-label="${favoriteLabel}" aria-pressed="${favorite}"><span class="action-glyph" aria-hidden="true">${favoriteIcon}</span><span class="sr-only">${favoriteLabel}</span></button><button type="button" class="action icon-action" data-hover-action="center" aria-label="Center on graph"><span class="action-glyph" aria-hidden="true">⌖</span><span class="sr-only">Center on graph</span></button></div><em>Click the card to open the full context panel</em></div>`;
+        hoverPreview.querySelector("[data-hover-action='favorite']").addEventListener("click", (event) => { event.stopPropagation(); toggleFavorite(item); });
+        hoverPreview.querySelector("[data-hover-action='center']").addEventListener("click", (event) => { event.stopPropagation(); centerOnTarget(item); });
+        hoverPreview.classList.add("is-visible");
+        updateHoverVisuals();
+      }
+      function scheduleHideHover() { if (state.hoverHideTimer) clearTimeout(state.hoverHideTimer); state.hoverHideTimer = setTimeout(() => { state.hoverHideTimer = null; hideHover(); }, 220); }
+      function hideHover() { if (state.hoverHideTimer) { clearTimeout(state.hoverHideTimer); state.hoverHideTimer = null; } state.hover = null; hoverPreview.classList.remove("is-visible"); hoverPreview.replaceChildren(); updateHoverVisuals(); }
+      function updateHoverVisuals() {
+        const hoveredNodeId = state.hover?.kind === "node" ? state.hover.id : null;
+        const hoveredEdge = state.hover?.kind === "edge" ? edgeById(state.hover.id) : null;
+        const focusIds = new Set();
+        if (hoveredNodeId) { focusIds.add(hoveredNodeId); allEdges().filter((item) => item.sourceId === hoveredNodeId || item.targetId === hoveredNodeId).forEach((item) => { focusIds.add(item.sourceId); focusIds.add(item.targetId); }); }
+        if (hoveredEdge) { focusIds.add(hoveredEdge.sourceId); focusIds.add(hoveredEdge.targetId); }
+        const hasFocus = Boolean(state.hover);
+        surface.querySelectorAll("[data-node-id]").forEach((element) => { const id = element.dataset.nodeId; element.classList.toggle("hovered", id === hoveredNodeId); element.classList.toggle("dimmed", hasFocus && !focusIds.has(id)); });
+        surface.querySelectorAll("[data-edge-id]").forEach((element) => { const id = element.dataset.edgeId; const edge = edgeById(id); const connected = edge && focusIds.has(edge.sourceId) && focusIds.has(edge.targetId); element.classList.toggle("hovered", id === state.hover?.id); element.classList.toggle("dimmed", hasFocus && !connected); });
+      }
+      hoverPreview.addEventListener("pointerenter", () => { if (state.hoverHideTimer) { clearTimeout(state.hoverHideTimer); state.hoverHideTimer = null; } });
+      hoverPreview.addEventListener("pointerleave", scheduleHideHover);
+      hoverPreview.addEventListener("click", (event) => { if (event.target.closest("button")) return; if (state.hover) selectTarget(state.hover); });
+
+      function graphSvg() {
+        const svg = svgEl("svg", { viewBox: "0 0 1120 620", "aria-label": `${current().title} graph` });
+        const defs = svgEl("defs");
+        const marker = svgEl("marker", { id: "arrow", viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 6, markerHeight: 6, orient: "auto-start-reverse" });
+        marker.append(svgEl("path", { d: "M 0 0 L 10 5 L 0 10 z", fill: "#b8ae95" }));
+        defs.append(marker);
+        svg.append(defs);
+        const background = svgEl("rect", { x: 0, y: 0, width: 1120, height: 620, fill: "transparent", "pointer-events": "all", "data-canvas-background": "true" });
+        svg.append(background);
+        svg.addEventListener("wheel", zoomFromWheel, { passive: false });
+        svg.addEventListener("click", () => { if (state.ignoreNextCanvasClick) { state.ignoreNextCanvasClick = false; return; } state.selected = null; state.menu = null; render(); });
+        const nodes = visibleNodes();
+        const edges = visibleEdges();
+        if (!nodes.length) {
+          const group = svgEl("g", { transform: "translate(560 300)" });
+          const text = svgEl("text", { "text-anchor": "middle", fill: "#d9b46c", "font-size": 25, "font-family": "Georgia,serif", "font-weight": "800" });
+          text.textContent = "No visible evidence";
+          group.append(text);
+          const sub = svgEl("text", { y: 31, "text-anchor": "middle", fill: "#b8ae95", "font-size": 14 });
+          sub.textContent = "The empty state is a valid graph state.";
+          group.append(sub);
+          svg.append(group);
+          return svg;
+        }
+        const focusIds = new Set();
+        if (state.selected?.kind === "node") focusIds.add(state.selected.id);
+        if (state.selected?.kind === "edge") {
+          const focusedEdge = edgeById(state.selected.id);
+          if (focusedEdge) { focusIds.add(focusedEdge.sourceId); focusIds.add(focusedEdge.targetId); }
+        }
+        edges.forEach((item) => {
+          if (state.selected?.kind === "node" && (item.sourceId === state.selected.id || item.targetId === state.selected.id)) { focusIds.add(item.sourceId); focusIds.add(item.targetId); }
+        });
+        if (state.hover?.kind === "node") {
+          focusIds.add(state.hover.id);
+          edges.filter((item) => item.sourceId === state.hover.id || item.targetId === state.hover.id).forEach((item) => { focusIds.add(item.sourceId); focusIds.add(item.targetId); });
+        }
+        if (state.hover?.kind === "edge") {
+          const hoveredEdge = edgeById(state.hover.id);
+          if (hoveredEdge) { focusIds.add(hoveredEdge.sourceId); focusIds.add(hoveredEdge.targetId); }
+        }
+        const hasFocus = focusIds.size > 0;
+        const world = svgEl("g", { "data-graph-world": "true", transform: `translate(${state.panX + 560 - 560 * state.zoom} ${state.panY + 310 - 310 * state.zoom}) scale(${state.zoom})` });
+        edges.forEach((item) => {
+          const a = nodeById(item.sourceId), b = nodeById(item.targetId);
+          if (!a || !b) return;
+          const selected = state.selected?.kind === "edge" && state.selected.id === item.id;
+          const hovered = state.hover?.kind === "edge" && state.hover.id === item.id;
+          const favorite = isFavorite(target("edge", item.id));
+          const connected = focusIds.has(item.sourceId) || focusIds.has(item.targetId);
+          const dimmed = hasFocus && !connected && !selected;
+          if (selected) world.append(svgEl("line", { x1: a.position.x, y1: a.position.y, x2: b.position.x, y2: b.position.y, class: "edge-focus" }));
+          const working = item.origin === "investigator-added";
+          const line = svgEl("line", { x1: a.position.x, y1: a.position.y, x2: b.position.x, y2: b.position.y, stroke: familyColors[item.relationshipFamily] || "#938c79", "stroke-width": selected || hovered ? 5 : favorite ? 4 : 3, "stroke-dasharray": working ? "10 8" : undefined, "marker-end": "url(#arrow)", class: `edge${selected ? " selected" : ""}${hovered ? " hovered" : ""}${favorite ? " favorite" : ""}${dimmed ? " dimmed" : ""}${working ? " working" : ""}`, "data-edge-id": item.id });
+          line.addEventListener("pointerdown", (event) => event.stopPropagation());
+        line.addEventListener("pointerenter", () => showHover(target("edge", item.id)));
+          line.addEventListener("pointerleave", scheduleHideHover);
+          line.addEventListener("focus", () => showHover(target("edge", item.id)));
+          line.addEventListener("blur", scheduleHideHover);
+          line.addEventListener("click", (event) => { event.stopPropagation(); selectTarget(target("edge", item.id)); });
+          line.addEventListener("contextmenu", (event) => openContext(event, target("edge", item.id)));
+          world.append(line);
+          if (selected) {
+            const midpointX = (a.position.x + b.position.x) / 2;
+            const midpointY = (a.position.y + b.position.y) / 2;
+            const label = svgEl("text", { x: midpointX, y: midpointY - 10, class: "edge-label", "text-anchor": "middle" });
+            label.textContent = `${item.relationshipType} · ${item.confidence}`;
+            world.append(label);
+          }
+        });
+        nodes.forEach((item) => {
+          const meta = statusMeta[item.status];
+          const hub = ["ORG_RECORD", "CLAIM_CLUSTER", "BANK_RECORD"].includes(item.recordType);
+          const selected = state.selected?.kind === "node" && state.selected.id === item.id;
+          const hovered = state.hover?.kind === "node" && state.hover.id === item.id;
+          const favorite = isFavorite(target("node", item.id));
+          const dimmed = hasFocus && !focusIds.has(item.id);
+          const moving = state.motionNodeIds.has(item.id);
+          const showLabel = nodes.length <= 8 || focusIds.has(item.id) || selected || hub;
+          const radius = hub ? 35 : selected ? 31 : 22;
+          const group = svgEl("g", { class: `node${hub ? " hub" : ""}${selected ? " selected" : ""}${hovered ? " hovered" : ""}${favorite ? " favorite" : ""}${moving ? " moving" : ""}${dimmed ? " dimmed" : ""}`, tabindex: "0", role: "button", "aria-label": `${item.label}, ${meta.label}${favorite ? ", marked" : ""}`, "data-node-id": item.id, transform: `translate(${item.position.x} ${item.position.y})` });
+          if (hub) group.append(svgEl("circle", { class: "node-hub-ring", r: radius + 8, color: meta.stroke }));
+          if (selected) group.append(svgEl("circle", { class: "node-halo", r: radius + 12 }));
+          if (favorite) { group.append(svgEl("circle", { class: "node-favorite-ring", r: radius + 6 })); const mark = svgEl("text", { class: "node-favorite-mark", y: -(radius + 8), "text-anchor": "middle" }); mark.textContent = "★"; group.append(mark); }
+          const hit = svgEl("circle", { class: "node-hit", r: radius, fill: meta.color, stroke: selected ? "#fff1bd" : meta.stroke, "stroke-width": selected ? 5 : hub ? 4 : 3, "stroke-dasharray": meta.dash });
+          group.append(hit);
+          appendNodeGlyph(group, item);
+          const label = svgEl("text", { class: `node-label${showLabel ? "" : " hidden-label"}`, y: radius + 22, "text-anchor": "middle" });
+          label.textContent = item.label;
+          group.append(label);
+          group.addEventListener("pointerenter", () => showHover(target("node", item.id)));
+          group.addEventListener("pointerleave", scheduleHideHover);
+          group.addEventListener("focus", () => showHover(target("node", item.id)));
+          group.addEventListener("blur", scheduleHideHover);
+          group.addEventListener("click", (event) => { event.stopPropagation(); selectTarget(target("node", item.id)); });
+          group.addEventListener("contextmenu", (event) => openContext(event, target("node", item.id)));
+          group.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); selectTarget(target("node", item.id)); } if (event.key === "F10" && event.shiftKey) { event.preventDefault(); openContext(event, target("node", item.id)); } if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) { event.preventDefault(); moveByKeyboard(item.id, event.key); } });
+          group.addEventListener("pointerdown", (event) => beginDrag(event, item.id));
+          world.append(group);
+        });
+        svg.append(world);
+        return svg;
+      }
+
+      function drawSemanticList() { const wrapper = document.createElement("div"); wrapper.className = "semantic-list"; visibleNodes().forEach((item) => { const button = document.createElement("button"); button.type = "button"; button.innerHTML = `<strong>${escapeHtml(item.icon)} ${escapeHtml(item.label)}</strong><br><span class="mono">${escapeHtml(item.id)}</span> · ${escapeHtml(statusMeta[item.status].label)} · ${escapeHtml(item.recordType)}`; button.addEventListener("click", () => selectTarget(target("node", item.id))); button.addEventListener("contextmenu", (event) => openContext(event, target("node", item.id))); wrapper.append(button); }); return wrapper; }
+
+      function drawMatrix() { const wrapper = document.createElement("div"); wrapper.className = "matrix-wrap"; const nodes = visibleNodes(); const ids = new Set(visibleEdges().map((item) => `${item.sourceId}|${item.targetId}`)); const table = document.createElement("table"); table.className = "matrix"; const header = document.createElement("tr"); header.innerHTML = `<th>from \\ to</th>${nodes.map((item) => `<th aria-label="${escapeHtml(item.id)}">${escapeHtml(item.label.slice(0, 9))}</th>`).join("")}`; table.append(header); nodes.forEach((row) => { const tr = document.createElement("tr"); tr.innerHTML = `<td>${escapeHtml(row.label)}</td>${nodes.map((column) => { const hit = ids.has(`${row.id}|${column.id}`); return `<td class="${hit ? "hit" : ""}" aria-label="${hit ? "Relationship present" : "No relationship"}">${hit ? "•" : ""}</td>`; }).join("")}`; table.append(tr); }); wrapper.append(table); return wrapper; }
+
+      function drawPath() { const wrapper = document.createElement("div"); wrapper.className = "path-wrap"; const card = document.createElement("div"); card.className = "path-card"; const edgeSelection = selectedEdge(); const nodes = edgeSelection ? [nodeById(edgeSelection.sourceId), nodeById(edgeSelection.targetId)] : visibleNodes().slice().sort((a, b) => a.position.x - b.position.x); card.innerHTML = `<p class="eyebrow">${edgeSelection ? "Selected relationship" : "Visible sequence"}</p>`; nodes.filter(Boolean).forEach((item, index) => { const step = document.createElement("div"); step.className = "path-step"; step.innerHTML = `<span class="path-number">${index + 1}</span><div class="path-node"><strong>${escapeHtml(item.label)}</strong><br><span class="mono">${escapeHtml(item.id)}</span> · ${escapeHtml(statusMeta[item.status].label)}</div>`; card.append(step); }); if (edgeSelection) { const note = document.createElement("p"); note.className = "context-subtitle"; note.textContent = `${edgeSelection.relationshipType} · ${edgeSelection.confidence} confidence · direction preserved`; card.append(note); } wrapper.append(card); return wrapper; }
+
+      function openContext(event, item) { event.preventDefault(); event.stopPropagation(); state.selected = item; state.menu = item; markSelectionChallenge(item); setLog(`Opened ${item.kind} context: ${item.id}`); render(); }
+      function moveByKeyboard(id, key) { const position = state.positions.get(id) || clonePosition(nodeById(id).position); const delta = key === "ArrowUp" ? { x: 0, y: -10 } : key === "ArrowDown" ? { x: 0, y: 10 } : key === "ArrowLeft" ? { x: -10, y: 0 } : { x: 10, y: 0 }; const next = { x: position.x + delta.x, y: position.y + delta.y }; state.physicsActive = true; state.positions.set(id, next); state.anchors.set(id, clonePosition(next)); state.velocities.set(id, { x: 0, y: 0 }); state.selected = target("node", id); markChallenge("selection", "The entity dossier is open. Now inspect how it connects."); markChallenge("reposition", "Keyboard reposition committed. Try the pointer gesture too."); setLog(`Committed keyboard move: ${id}`); render(); }
+      function beginDrag(event, id) { if (event.button !== 0) return; event.stopPropagation(); stopPhysics(); const original = clonePosition(state.positions.get(id) || nodeById(id).position); state.dragging = { id, original, lastPosition: clonePosition(original), lastAt: performance.now(), startX: event.clientX, startY: event.clientY, moved: false }; state.selected = target("node", id); markChallenge("selection", "The entity dossier is open. Now inspect how it connects."); window.addEventListener("pointermove", dragMove); window.addEventListener("pointerup", endDrag, { once: true }); }
+      function dragMove(event) { if (!state.dragging) return; const distance = Math.hypot(event.clientX - state.dragging.startX, event.clientY - state.dragging.startY); if (!state.dragging.moved && distance < 5) return; state.dragging.moved = true; state.physicsActive = true; const rect = surface.getBoundingClientRect(); const x = ((event.clientX - rect.left) / rect.width) * 1120; const y = ((event.clientY - rect.top) / rect.height) * 620; const next = { x: clamp((x - state.panX - 560 + 560 * state.zoom) / state.zoom, 45, 1075), y: clamp((y - state.panY - 310 + 310 * state.zoom) / state.zoom, 45, 575) }; const elapsed = Math.max(.008, (performance.now() - state.dragging.lastAt) / 1000); state.positions.set(state.dragging.id, next); state.velocities.set(state.dragging.id, { x: (next.x - state.dragging.lastPosition.x) / elapsed, y: (next.y - state.dragging.lastPosition.y) / elapsed }); state.motionNodeIds = new Set([state.dragging.id]); state.dragging.lastPosition = clonePosition(next); state.dragging.lastAt = performance.now(); renderGraphOnly(); }
+      function endDrag() { if (!state.dragging) return; const moved = state.dragging.moved; const id = state.dragging.id; if (moved) { state.anchors.set(id, clonePosition(state.positions.get(id))); setLog(`Committed movement: ${id}`); markChallenge("reposition", "The evidence has a new working layout. Now explore the camera."); } state.dragging = null; window.removeEventListener("pointermove", dragMove); if (moved) render(); }
+      function cancelDrag() { if (!state.dragging) return; const id = state.dragging.id; stopPhysics(); state.positions.set(id, state.dragging.original); state.anchors.set(id, clonePosition(state.dragging.original)); state.velocities.set(id, { x: 0, y: 0 }); setLog(`Cancelled movement: ${id}`); state.dragging = null; window.removeEventListener("pointermove", dragMove); render(); }
+      function setZoom(next, event = null) {
+        const clamped = Math.max(.6, Math.min(2.5, next));
+        if (clamped === state.zoom) return;
+        const rect = surface.getBoundingClientRect();
+        const viewX = event ? ((event.clientX - rect.left) / rect.width) * 1120 : 560;
+        const viewY = event ? ((event.clientY - rect.top) / rect.height) * 620 : 310;
+        const worldX = (viewX - state.panX - 560 + 560 * state.zoom) / state.zoom;
+        const worldY = (viewY - state.panY - 310 + 310 * state.zoom) / state.zoom;
+        state.zoom = clamped;
+        state.panX = viewX - (worldX * state.zoom + 560 - 560 * state.zoom);
+        state.panY = viewY - (worldY * state.zoom + 310 - 310 * state.zoom);
+      }
+      function zoomFromWheel(event) { event.preventDefault(); setZoom(state.zoom + (event.deltaY < 0 ? .12 : -.12), event); surface.dataset.zoom = state.zoom.toFixed(2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); setLog(`Camera zoom: ${state.zoom.toFixed(2)}×`); renderGraphOnly(); updateMetrics(); updateGameHud(); }
+      function beginPan(event) { const tagName = event.target?.tagName?.toLowerCase(); const isCanvasTarget = event.target === surface || tagName === "svg" || event.target.dataset?.canvasBackground === "true"; if (event.button !== 0 || !isCanvasTarget) return; state.panning = { startX: event.clientX, startY: event.clientY, originalX: state.panX, originalY: state.panY, moved: false }; surface.classList.add("is-panning"); window.addEventListener("pointermove", panMove); window.addEventListener("pointerup", endPan, { once: true }); }
+      function panMove(event) { if (!state.panning) return; const distance = Math.hypot(event.clientX - state.panning.startX, event.clientY - state.panning.startY); if (!state.panning.moved && distance < 4) return; state.panning.moved = true; const rect = surface.getBoundingClientRect(); state.panX = state.panning.originalX + ((event.clientX - state.panning.startX) / rect.width) * 1120; state.panY = state.panning.originalY + ((event.clientY - state.panning.startY) / rect.height) * 620; renderGraphOnly(); }
+      function endPan() { if (!state.panning) return; const moved = state.panning.moved; state.panning = null; surface.classList.remove("is-panning"); window.removeEventListener("pointermove", panMove); if (moved) { state.ignoreNextCanvasClick = true; setLog("Panned camera across the evidence board"); markChallenge("camera", "Camera moved. You can now compare the scene from another angle."); render(); } }
+      function cancelPan() { if (!state.panning) return; state.panX = state.panning.originalX; state.panY = state.panning.originalY; state.panning = null; surface.classList.remove("is-panning"); window.removeEventListener("pointermove", panMove); setLog("Cancelled camera movement"); render(); }
+      function updateGraphPhysicsOnly() {
+        if (state.view !== "node-link") return;
+        const world = surface.querySelector("[data-graph-world='true']");
+        if (!world) return;
+        world.querySelectorAll("[data-node-id]").forEach((element) => { const position = state.positions.get(element.dataset.nodeId); if (position) { element.setAttribute("transform", `translate(${position.x} ${position.y})`); element.classList.toggle("moving", state.motionNodeIds.has(element.dataset.nodeId)); } });
+        world.querySelectorAll("line[data-edge-id]").forEach((element) => { const relationship = edgeById(element.dataset.edgeId); const source = relationship && nodeById(relationship.sourceId); const destination = relationship && nodeById(relationship.targetId); if (source && destination) { element.setAttribute("x1", source.position.x); element.setAttribute("y1", source.position.y); element.setAttribute("x2", destination.position.x); element.setAttribute("y2", destination.position.y); } });
+        if (state.physicsTick % 4 === 0) drawMinimap();
+      }
+      function renderGraphOnly() { if (state.view === "node-link") { surface.replaceChildren(graphSvg()); drawMinimap(); drawLegend(); } }
+
+      function renderInspector() {
+        const example = current(); const nodeSelection = selectedNode(); const edgeSelection = selectedEdge(); const menu = state.menu; const targetItem = menu?.kind === "node" ? nodeById(menu.id) : menu?.kind === "edge" ? edgeById(menu.id) : null;
+        const details = targetItem ? menu.kind === "node" ? `<div class="context-menu"><div class="context-kicker">Context menu · node</div><h3>${escapeHtml(targetItem.icon)} ${escapeHtml(targetItem.label)}</h3><div class="context-subtitle">${escapeHtml(statusMeta[targetItem.status].label)} · ${escapeHtml(targetItem.recordType)}</div><dl><dt>Stable ID</dt><dd class="mono">${escapeHtml(targetItem.id)}</dd><dt>Cluster</dt><dd>${escapeHtml(targetItem.clusterId)}</dd><dt>Position</dt><dd>${Math.round(targetItem.position.x)}, ${Math.round(targetItem.position.y)}</dd></dl><div class="actions"><button class="action" data-action="keep">Keep selection</button><button class="action" data-action="focus-cluster">Focus cluster</button><button class="action" data-action="close-menu">Close</button></div><div class="section"><h3>Presentation status</h3><div class="actions">${statuses.map((status) => `<button class="action" data-status="${status}">${statusMeta[status].glyph} ${statusMeta[status].label}</button>`).join("")}</div></div></div>` : `<div class="context-menu"><div class="context-kicker">Context menu · relationship</div><h3>${escapeHtml(targetItem.relationshipType)}</h3><div class="context-subtitle">${escapeHtml(targetItem.relationshipFamily)} · ${targetItem.directed ? "directed" : "undirected"}</div><dl><dt>Stable ID</dt><dd class="mono">${escapeHtml(targetItem.id)}</dd><dt>From</dt><dd>${escapeHtml(nodeById(targetItem.sourceId)?.label || targetItem.sourceId)}</dd><dt>To</dt><dd>${escapeHtml(nodeById(targetItem.targetId)?.label || targetItem.targetId)}</dd><dt>Confidence</dt><dd>${escapeHtml(targetItem.confidence)}</dd></dl><div class="actions"><button class="action" data-action="trace-source">Inspect source</button><button class="action" data-action="trace-target">Inspect target</button><button class="action" data-action="close-menu">Close</button></div></div>` : `<div class="empty-inspector">Select a node or relationship, or use right-click / Shift+F10 to open its contextual menu. The visual state is a lab fixture, not a guilt verdict.</div>`;
+        inspector.innerHTML = `<div class="eyebrow">Active example</div><h2>${escapeHtml(example.title)}</h2><p>${escapeHtml(example.description)}</p>${details}<section class="section"><h3>Filters</h3><div class="filter-list">${statuses.map((status) => `<label><input type="checkbox" data-filter="${status}" ${state.filters.has(status) ? "checked" : ""}> <span class="status-dot" style="background:${statusMeta[status].color};border-color:${statusMeta[status].stroke}"></span>${statusMeta[status].label} (${example.nodes.filter((item) => (state.statusOverrides.get(item.id) || item.status) === status).length})</label>`).join("")}</div>${state.clusterFilter ? `<p><button class="action" data-action="clear-cluster">Clear cluster focus</button></p>` : ""}</section><section class="section"><h3>Expected outcomes</h3><ul class="outcomes">${example.outcomes.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section><section class="section"><h3>Interaction log</h3><pre class="log" tabindex="0" aria-label="Interaction log">${escapeHtml(state.log.join("\n") || "No actions yet")}</pre></section>`;
+        inspector.querySelectorAll("input[data-filter]").forEach((input) => input.addEventListener("change", () => { const status = input.dataset.filter; if (input.checked) state.filters.add(status); else state.filters.delete(status); state.selected = null; state.menu = null; render(); }));
+        inspector.querySelectorAll("button[data-action]").forEach((button) => button.addEventListener("click", () => { const action = button.dataset.action; if (action === "keep") state.menu = null; if (action === "close-menu") state.menu = null; if (action === "focus-cluster" && nodeSelection) { state.clusterFilter = nodeSelection.clusterId; state.menu = null; setLog(`Focused cluster: ${nodeSelection.clusterId}`); } if (action === "clear-cluster") state.clusterFilter = null; if (action === "trace-source" && edgeSelection) { state.selected = target("node", edgeSelection.sourceId); state.menu = null; } if (action === "trace-target" && edgeSelection) { state.selected = target("node", edgeSelection.targetId); state.menu = null; } render(); }));
+        inspector.querySelectorAll("button[data-status]").forEach((button) => button.addEventListener("click", () => { if (nodeSelection) { state.statusOverrides.set(nodeSelection.id, button.dataset.status); state.menu = null; setLog(`Presentation status changed: ${nodeSelection.id}`); render(); } }));
+      }
+
+      function renderInspectorRich() {
+        const example = current();
+        const focus = state.menu || state.selected;
+        inspector.classList.toggle("is-empty", !focus && !state.composerOpen);
+        const focusedNode = focus?.kind === "node" ? nodeById(focus.id) : null;
+        const focusedEdge = focus?.kind === "edge" ? edgeById(focus.id) : null;
+        const connectionCount = focusedNode ? connectedToNode(focusedNode.id).length : 0;
+        const status = focusedNode ? statusMeta[focusedNode.status] : null;
+        const connectedMarkup = focusedNode ? connectedToNode(focusedNode.id).map((relationship) => `<div class="relation-item"><span class="relation-family">${escapeHtml(relationship.relationshipFamily.replace("_", " "))}</span><button type="button" data-target-edge="${escapeHtml(relationship.id)}"><strong>${escapeHtml(relationship.relationshipType)}</strong><br><span class="context-subtitle">${escapeHtml(relationOtherLabel(relationship, focusedNode.id))}</span></button><span class="mono">${escapeHtml(relationship.confidence)}</span></div>`).join("") : "";
+        const nodeDetails = focusedNode ? `<div class="context-menu"><div class="context-kicker">${state.menu ? "Context menu · selected node" : "Selected entity · node"}</div><div class="entity-hero"><div class="entity-symbol">${escapeHtml(focusedNode.icon)}</div><div class="entity-copy"><h3>${escapeHtml(focusedNode.label)}</h3><span class="status-pill" style="color:${status.stroke};border-color:${status.stroke};background:rgba(7,7,6,.72)">${escapeHtml(status.glyph)} ${escapeHtml(status.label)}</span></div></div><div class="context-subtitle">${escapeHtml(focusedNode.recordType)} · stable presentation object</div><div class="stat-grid"><div class="stat-card"><span>Connections</span><strong>${connectionCount}</strong></div><div class="stat-card"><span>Cluster</span><strong>${escapeHtml(focusedNode.clusterId)}</strong></div><div class="stat-card"><span>Position</span><strong>${Math.round(focusedNode.position.x)}, ${Math.round(focusedNode.position.y)}</strong></div></div><dl><dt>Stable ID</dt><dd class="mono">${escapeHtml(focusedNode.id)}</dd><dt>Snapshot</dt><dd class="mono">${escapeHtml(example.id)}</dd></dl><div class="actions"><button class="action" data-action="keep">Keep selection</button><button class="action" data-action="focus-cluster">Focus cluster</button><button class="action" data-action="close-menu">Close panel</button></div><section class="section"><h3>Connected relationships <span class="context-subtitle">(${connectionCount})</span></h3><div class="relation-list">${connectedMarkup || "<span class=\"context-subtitle\">No visible relationships under the current filters.</span>"}</div></section><section class="section"><h3>Presentation timeline</h3><div class="timeline"><div class="timeline-item"><strong>Snapshot loaded</strong>Safe presentation object available in the current example.</div><div class="timeline-item"><strong>Relationship map</strong>${connectionCount} connected relationship${connectionCount === 1 ? "" : "s"} available for inspection.</div><div class="timeline-item"><strong>Investigation state</strong>${escapeHtml(status.label)} is a visual state, not a verdict.</div></div></section><section class="section"><h3>Presentation status</h3><div class="actions">${statuses.map((item) => `<button class="action" data-status="${item}">${statusMeta[item].glyph} ${statusMeta[item].label}</button>`).join("")}</div></section></div>` : "";
+        const source = focusedEdge ? nodeById(focusedEdge.sourceId) : null;
+        const destination = focusedEdge ? nodeById(focusedEdge.targetId) : null;
+        const edgeDetails = focusedEdge ? `<div class="context-menu"><div class="context-kicker">${state.menu ? "Context menu" : "Selected relationship"} · edge</div><h3>${escapeHtml(focusedEdge.relationshipType)}</h3><div class="context-subtitle">${escapeHtml(focusedEdge.relationshipFamily.replace("_", " "))} · ${focusedEdge.directed ? "directed relationship" : "undirected relationship"}</div>${focusedEdge.origin === "investigator-added" ? "<p class=\"graph-working-note\">Dashed working relationship · removable local investigation state</p>" : ""}<div class="edge-route"><button class="route-node" data-target-node="${escapeHtml(focusedEdge.sourceId)}"><strong>${escapeHtml(source?.label || focusedEdge.sourceId)}</strong><small>source</small></button><span class="route-arrow">→</span><button class="route-node" data-target-node="${escapeHtml(focusedEdge.targetId)}"><strong>${escapeHtml(destination?.label || focusedEdge.targetId)}</strong><small>target</small></button></div><div class="stat-grid"><div class="stat-card"><span>Confidence</span><strong>${escapeHtml(focusedEdge.confidence)}</strong></div><div class="stat-card"><span>Family</span><strong>${escapeHtml(focusedEdge.relationshipFamily.replace("_", " "))}</strong></div><div class="stat-card"><span>Direction</span><strong>${focusedEdge.directed ? "A → B" : "A ↔ B"}</strong></div></div><div class="confidence-track" aria-label="Confidence signal"><span style="width:${confidenceWidth(focusedEdge.confidence)}%"></span></div><dl><dt>Stable ID</dt><dd class="mono">${escapeHtml(focusedEdge.id)}</dd><dt>Source</dt><dd class="mono">${escapeHtml(focusedEdge.sourceId)}</dd><dt>Target</dt><dd class="mono">${escapeHtml(focusedEdge.targetId)}</dd></dl><div class="actions"><button class="action" data-action="trace-source">Inspect source</button><button class="action" data-action="trace-target">Inspect target</button><button class="action" data-action="close-menu">Close panel</button></div><section class="section"><h3>Relationship profile</h3><div class="timeline"><div class="timeline-item"><strong>Direction preserved</strong>The renderer must not reverse or flatten this relationship.</div><div class="timeline-item"><strong>Confidence signal</strong>${escapeHtml(focusedEdge.confidence)} is presentation metadata, not a conclusion.</div><div class="timeline-item"><strong>Context available</strong>Source, target and family remain inspectable from the edge.</div></div></section></div>` : "";
+        const emptyDetails = !focusedNode && !focusedEdge ? `<div class="empty-inspector"><div class="eyebrow">Investigation surface</div><h2>Choose a target</h2><p>Click a node or relationship to open its dossier. Right-click or use Shift+F10 for the contextual menu.</p><div class="stat-grid"><div class="stat-card"><span>Entities</span><strong>${visibleNodes().length}</strong></div><div class="stat-card"><span>Links</span><strong>${visibleEdges().length}</strong></div><div class="stat-card"><span>Views</span><strong>${example.recommendedViews.length}</strong></div></div><p class="context-subtitle">The panel keeps graph identity, relationships, provenance-style signals and presentation actions together so Hercule does not have to reopen the same case manually to compare a new view.</p></div>` : "";
+        inspector.innerHTML = `<div class="inspector-header"><div><div class="eyebrow">Active example</div><h2>${escapeHtml(example.title)}</h2><p>${escapeHtml(example.description)}</p></div></div>${nodeDetails}${edgeDetails}${emptyDetails}<section class="section"><h3>Filters</h3><div class="filter-list">${statuses.map((item) => `<label><input type="checkbox" data-filter="${item}" ${state.filters.has(item) ? "checked" : ""}> <span class="status-dot" style="background:${statusMeta[item].color};border-color:${statusMeta[item].stroke}"></span>${statusMeta[item].label} (${example.nodes.filter((entry) => (state.statusOverrides.get(entry.id) || entry.status) === item).length})</label>`).join("")}</div>${state.clusterFilter ? `<p><button class="action" data-action="clear-cluster">Clear cluster focus</button></p>` : ""}</section><section class="section"><h3>Expected outcomes</h3><ul class="outcomes">${example.outcomes.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section><section class="section"><h3>Interaction log</h3><pre class="log" tabindex="0" aria-label="Interaction log">${escapeHtml(state.log.join("\n") || "No actions yet")}</pre></section>`;
+        inspector.querySelectorAll("input[data-filter]").forEach((input) => input.addEventListener("change", () => { const statusName = input.dataset.filter; if (input.checked) state.filters.add(statusName); else state.filters.delete(statusName); state.selected = null; state.menu = null; render(); }));
+        inspector.querySelectorAll("button[data-action]").forEach((button) => button.addEventListener("click", () => { const action = button.dataset.action; if (action === "keep") state.menu = null; if (action === "close-menu") state.menu = null; if (action === "focus-cluster" && focusedNode) { state.clusterFilter = focusedNode.clusterId; state.menu = null; setLog(`Focused cluster: ${focusedNode.clusterId}`); } if (action === "clear-cluster") state.clusterFilter = null; if (action === "trace-source" && focusedEdge) { state.selected = target("node", focusedEdge.sourceId); state.menu = target("node", focusedEdge.sourceId); markSelectionChallenge(state.selected); } if (action === "trace-target" && focusedEdge) { state.selected = target("node", focusedEdge.targetId); state.menu = target("node", focusedEdge.targetId); markSelectionChallenge(state.selected); } render(); }));
+        inspector.querySelectorAll("button[data-status]").forEach((button) => button.addEventListener("click", () => { if (focusedNode) { state.statusOverrides.set(focusedNode.id, button.dataset.status); state.menu = null; setLog(`Presentation status changed: ${focusedNode.id}`); render(); } }));
+        inspector.querySelectorAll("button[data-target-node]").forEach((button) => button.addEventListener("click", () => { state.selected = target("node", button.dataset.targetNode); state.menu = target("node", button.dataset.targetNode); markSelectionChallenge(state.selected); setLog(`Opened connected entity: ${button.dataset.targetNode}`); render(); }));
+        inspector.querySelectorAll("button[data-target-edge]").forEach((button) => button.addEventListener("click", () => { state.selected = target("edge", button.dataset.targetEdge); state.menu = target("edge", button.dataset.targetEdge); markSelectionChallenge(state.selected); setLog(`Opened connected relationship: ${button.dataset.targetEdge}`); render(); }));
+        const contextCard = inspector.querySelector(".context-menu");
+        if (contextCard && focus) {
+          const actions = document.createElement("div"); actions.className = "actions context-action-row";
+          const favoriteLabel = isFavorite(focus) ? "★ Remove mark" : "☆ Add mark";
+          const favoriteIcon = isFavorite(focus) ? "−" : "+";
+          const favoriteActionLabel = isFavorite(focus) ? "Remove from highlights" : "Add to highlights";
+          actions.innerHTML = `<button type="button" class="action icon-action" data-context-action="favorite" aria-label="${favoriteActionLabel}" aria-pressed="${isFavorite(focus)}"><span class="action-glyph" aria-hidden="true">${favoriteIcon}</span><span class="sr-only">${favoriteActionLabel}</span></button><button type="button" class="action icon-action" data-context-action="center" aria-label="Center on graph"><span class="action-glyph" aria-hidden="true">⌖</span><span class="sr-only">Center on graph</span></button>${focusedEdge?.origin === "investigator-added" ? "<button type=\"button\" class=\"action icon-action danger-action\" data-context-action=\"delete-relation\" aria-label=\"Delete working relationship\"><span class=\"action-glyph\" aria-hidden=\"true\">×</span><span class=\"sr-only\">Delete working relationship</span></button>" : ""}`;
+          contextCard.append(actions);
+          actions.querySelector("[data-context-action='favorite']").addEventListener("click", () => toggleFavorite(focus));
+          actions.querySelector("[data-context-action='center']").addEventListener("click", () => centerOnTarget(focus));
+          actions.querySelector("[data-context-action='delete-relation']")?.addEventListener("click", () => { state.addedEdges = state.addedEdges.filter((item) => item.id !== focus.id); state.selected = null; state.menu = null; setLog(`Deleted working relationship: ${focus.id}`); render(); });
+        }
+        if (state.composerOpen) {
+          const form = document.createElement("form"); form.className = "context-menu relationship-composer"; form.innerHTML = `<div class="context-kicker">Add working relationship</div><p class="context-subtitle">Dashed, local and removable. Published relationships remain unchanged.</p><label>From<select name="source" aria-label="Relationship source">${example.nodes.map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.label)} · ${escapeHtml(item.id)}</option>`).join("")}</select></label><label>To<select name="target" aria-label="Relationship target">${example.nodes.map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.label)} · ${escapeHtml(item.id)}</option>`).join("")}</select></label><label>Relationship label<input name="relationshipType" aria-label="Relationship label" value="WORKING_HYPOTHESIS"></label><label><input type="checkbox" name="directed" checked> Directed</label><div class="actions"><button type="submit" class="action">Add dashed relationship</button><button type="button" class="action" data-cancel-composer>Cancel</button></div>`;
+          const targetSelect = form.querySelector("select[name='target']");
+          if (targetSelect?.options.length > 1) targetSelect.selectedIndex = 1;
+          inspector.prepend(form);
+          form.addEventListener("submit", (event) => { event.preventDefault(); const data = new FormData(form); const id = `LOCAL-REL-${String(state.nextRelationNumber).padStart(4, "0")}`; state.nextRelationNumber += 1; const relationship = { id, sourceId: data.get("source"), targetId: data.get("target"), relationshipFamily: "INVESTIGATOR_ADDED", relationshipType: data.get("relationshipType") || "WORKING_HYPOTHESIS", directed: data.get("directed") === "on", confidence: "low", origin: "investigator-added" }; state.addedEdges.push(relationship); state.composerOpen = false; state.selected = target("edge", id); state.menu = state.selected; setLog(`Added working relationship: ${id}`); render(); });
+          form.querySelector("[data-cancel-composer]").addEventListener("click", () => { state.composerOpen = false; render(); });
+        }
+        renderFavorites();
+      }
+
+      function render() {
+        const example = current(); title.textContent = example.title; topologySelect.value = state.topology; surface.dataset.topology = state.topology; surface.dataset.zoom = state.zoom.toFixed(2); renderTabs(); updateMetrics(); drawLegend(); drawMinimap(); renderAutoTestPanel();
+        document.querySelectorAll("[data-view]").forEach((button) => { button.setAttribute("aria-pressed", String(button.dataset.view === state.view)); });
+        if (state.view === "node-link") surface.replaceChildren(graphSvg()); else if (state.view === "semantic-list") surface.replaceChildren(drawSemanticList()); else if (state.view === "matrix") surface.replaceChildren(drawMatrix()); else surface.replaceChildren(drawPath());
+        renderInspectorRich(); updateGameHud(); startPhysics();
+      }
+
+      document.querySelectorAll("[data-command]").forEach((button) => button.addEventListener("click", () => { const command = button.dataset.command; if (command === "zoom-in") { setZoom(state.zoom + .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "zoom-out") { setZoom(state.zoom - .2); markChallenge("camera", "Camera zoomed. The graph and its evidence stay separate."); } if (command === "fit") { state.zoom = 1; state.panX = 0; state.panY = 0; markChallenge("camera", "Camera fitted. The full scene is back in view."); } if (command === "toggle-motion") { state.physicsEnabled = !state.physicsEnabled; if (state.physicsEnabled) wakePhysics(); else stopPhysics(); setLog(state.physicsEnabled ? "Soft graph motion enabled" : "Soft graph motion paused"); } if (command === "toggle-composer") { state.composerOpen = !state.composerOpen; } if (command === "toggle-autotests") { autoTestState.collapsed = !autoTestState.collapsed; } if (command === "reset") { stopPhysics(); state.zoom = 1; state.panX = 0; state.panY = 0; state.selected = null; state.menu = null; state.hover = null; state.filters = new Set(statuses); state.clusterFilter = null; state.positions = new Map(current().nodes.map((item) => [item.id, clonePosition(item.position)])); state.statusOverrides = new Map(); state.addedEdges = []; state.favorites = []; state.composerOpen = false; state.nextRelationNumber = 1; seedPhysics(); setLog("Reset presentation"); } render(); }));
+      autoTestPanel.querySelector("[data-auto-command='run-all']").addEventListener("click", () => runAutoTests());
+      autoTestPanel.querySelector("[data-auto-command='clear']").addEventListener("click", clearAutoTests);
+      autoTestPanel.querySelector("[data-auto-command='collapse']").addEventListener("click", () => { autoTestState.collapsed = !autoTestState.collapsed; renderAutoTestPanel(); });
+      document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.view; if (state.view === "node-link") wakePhysics(); else stopPhysics(); render(); }));
+      topologySelect.addEventListener("change", () => { stopPhysics(); applyTopology(topologySelect.value); state.selected = null; state.menu = null; state.hover = null; render(); });
+      document.querySelectorAll("[data-game]").forEach((button) => button.addEventListener("click", () => { const action = button.dataset.game; if (action === "hint") { const challenge = challengeFor(); if (challenge) { state.challenge.hint = !state.challenge.hint; state.challenge.message = ""; updateGameHud(); } } if (action === "restart") resetExample(state.exampleIndex); }));
+      surface.addEventListener("pointerdown", beginPan);
+      window.addEventListener("keydown", (event) => { if (event.key === "Escape") { if (state.dragging) cancelDrag(); else if (state.panning) cancelPan(); else if (state.menu) { state.menu = null; render(); } } });
+      window.fgaGraphAutoTest = { runAll: () => runAutoTests(), runOne: (id) => runAutoTests([id]), getReport: () => ({ running: autoTestState.running, elapsed: autoTestState.elapsed, results: Object.fromEntries(autoTestState.results) }) };
+      resetExample(4);
+    })();
+  </script>
+</body>
+</html>

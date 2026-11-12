@@ -8,6 +8,14 @@
       "schema": "sandbox",
       "destructive_unit": "owned_objects",
       "confirmation": "fga_dev:sda_dev:sandbox"
+    },
+    {
+      "environment": "fga_dev",
+      "workspace_host": "https://dbc-916267ef-3b9b.cloud.databricks.com",
+      "catalog": "workspace",
+      "schema": "fga_sandbox",
+      "destructive_unit": "owned_objects",
+      "confirmation": "fga_dev:workspace:fga_sandbox"
     }
   ],
   "production_is_absent": true

@@ -15,7 +15,7 @@ This matrix maps the plan families to implementation owners and evidence. Paths 
 | S11 | topology/resource budget | `topology.py`, `audit_lakehouse_topology.py`, resource script | final topology/resource reports | PASS |
 | S12–S13 | loader/security/authority boundaries | `security.py`, permissions SQL, loader tests | security tests and SQL policy review | PASS locally |
 | S14 | qualification harness and cumulative gate | `qualify_databricks*.py`, `databricks_bulk_lifecycle.py`, `run_iteration_05_gate.py` | gate, package, repeat, row-count, failure reports | PASS locally; live warehouse unavailable |
-| S15 | operations, qualification, evidence, closure audit | `docs/iteration-05-*.md`, `scripts/collect_iteration_05_evidence.py`, requirement audit | `requirement-audit.json`, unified audit | OPEN until live qualification |
+| S15 | operations, qualification, evidence, closure audit | `docs/iteration-05/*.md`, `scripts/collect_iteration_05_evidence.py`, requirement audit | `requirement-audit.json`, unified audit | OPEN until live qualification |
 
 ## Explicit qualification gaps
 

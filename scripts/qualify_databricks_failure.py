@@ -1,20 +1,22 @@
 from __future__ import annotations
 import argparse, json, subprocess, tempfile
 from fraud_graph_arena.canonical_persistence.registry import OPERATIONAL_TARGETS
+
+ACTIVE_PUBLICATIONS_TABLE = "fga_active_publications"
 def call(profile, warehouse, catalog, schema, statement):
     payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
     with tempfile.NamedTemporaryFile("w",suffix=".json",delete=False,encoding="utf-8") as fh: json.dump(payload,fh); path=fh.name
     result=subprocess.run(["databricks","api","post","/api/2.0/sql/statements","--profile",profile,"--json","@"+path],capture_output=True,text=True,check=True)
     return json.loads(result.stdout)
 def main():
-    p=argparse.ArgumentParser(); p.add_argument("--profile",default="sda"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--report",default="reports/iteration-05/imports/failure-injection-summary.json"); p.add_argument("--execute",action="store_true"); args=p.parse_args()
+    p=argparse.ArgumentParser(); p.add_argument("--profile",default="fga"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--report",default="reports/iteration-05/imports/failure-injection-summary.json"); p.add_argument("--execute",action="store_true"); args=p.parse_args()
     if not args.execute:
         report={"status":"not_run","reason":"requires --execute and a provisioned live warehouse","qualified_source_sha":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip(),"catalog":args.catalog,"schema":args.schema,"warehouse":args.warehouse}
         from pathlib import Path
         report_path=Path(args.report); report_path.parent.mkdir(parents=True,exist_ok=True); report_path.write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8"); print(json.dumps(report,indent=2)); return 0
     qualified = f"{args.catalog}.{args.schema}."
     # Keep the durable run ledger and active pointer explicit in the failure proof.
-    runs = qualified + "fga_import_runs"; active = qualified + "fga_active_publications"
+    runs = qualified + OPERATIONAL_TARGETS[0]; active = qualified + ACTIVE_PUBLICATIONS_TABLE
     before=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
     call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO {runs} (import_run_id,case_id,case_version,snapshot_version,package_content_digest,status,retry_of,error_code,error_summary,started_at_utc,finished_at_utc,actor,load_policy) VALUES ('dbx_failed_run_17','BONE_LEDGER','1.0.0','2026.07.18.1','injected','FAILED',NULL,'INJECTED_FAILURE','controlled qualification failure',current_timestamp(),current_timestamp(),'qualification','FULL_INTERNAL')")
     after=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")

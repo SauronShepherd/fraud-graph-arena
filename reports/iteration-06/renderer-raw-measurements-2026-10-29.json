@@ -1,0 +1,23 @@
+{
+  "status": "RAW_MEASUREMENTS_NOT_QUALIFIED",
+  "fixture_sha256": "5f1e2fb89982926af4df8b6b0a512eb2bc516f6c4afa536bfadb358822e70a3b",
+  "environment": {
+    "browser": "HeadlessChrome/151.0.7922.34",
+    "os": "Windows",
+    "viewport": "1280x800",
+    "node_version": "v24.22.1"
+  },
+  "runs_per_candidate": 2,
+  "selection_events": 0,
+  "candidates": [
+    {"candidate": "Cytoscape.js", "version": "3.34.4", "A_RENDERER": {"mountMs": 15.5, "fitMs": 14.9, "viewportMs": 0.2, "resizeMs": 0.1, "destroyMs": 0.4}, "B_SOLUTION": {"mountMs": 3.4, "fitMs": 3.3, "viewportMs": 0, "resizeMs": 0.1, "destroyMs": 0.1}},
+    {"candidate": "Sigma.js", "version": "4.0.3", "A_RENDERER": {"mountMs": 198.9, "fitMs": 0.1, "viewportMs": 0.8, "resizeMs": 6.1, "destroyMs": 491.4}, "B_SOLUTION": {"mountMs": 34.2, "fitMs": 0, "viewportMs": 0.1, "resizeMs": 0.9, "destroyMs": 417.8}},
+    {"candidate": "D3", "version": "7.9.0", "A_RENDERER": {"mountMs": 2.3, "fitMs": 0.1, "viewportMs": 0.2, "resizeMs": 0.2, "destroyMs": 0}, "B_SOLUTION": {"mountMs": 0.2, "fitMs": 0.1, "viewportMs": 0, "resizeMs": 0.2, "destroyMs": 0}},
+    {"candidate": "React Flow", "version": "12.12.0", "A_RENDERER": {"mountMs": 1.7, "fitMs": 0, "viewportMs": 0, "resizeMs": 0, "destroyMs": 4.4}, "B_SOLUTION": {"mountMs": 0.1, "fitMs": 0, "viewportMs": 0, "resizeMs": 0, "destroyMs": 0.2}}
+  ],
+  "limitations": [
+    "Selection callbacks were not exercised by the automated runner.",
+    "License and React-integration review are not represented by timing data.",
+    "A raw timing comparison is not a renderer qualification or production decision."
+  ]
+}

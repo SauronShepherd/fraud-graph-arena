@@ -1,0 +1,9 @@
+{
+  "status": "not_qualified",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "e444f39962128242",
+  "capability_probe": "not_run",
+  "reason": "warehouse_unavailable",
+  "error": "Error: failed during request visitor: error getting token: token refresh: Post \"https://dbc-66c0ff61-f366.cloud.databricks.com/oidc/v1/token\": http 400: {\"error\":\"invalid_grant\",\"request_id\":\"277673fd-59da-4741-9272-1dfa646dab81\",\"error_description\":\"Refresh token is invalid\"}"
+}

@@ -14,7 +14,7 @@ def execute(profile, warehouse, catalog, schema, statement):
 
 def main():
     raise SystemExit("post-load tagging is retired; use scripts/import_databricks_candidate.py")
-    p = argparse.ArgumentParser(); p.add_argument("package", type=Path); p.add_argument("--run-id", required=True); p.add_argument("--profile", default="sda"); p.add_argument("--warehouse", default="e444f39962128242"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--workers", type=int, default=8); args = p.parse_args()
+    p = argparse.ArgumentParser(); p.add_argument("package", type=Path); p.add_argument("--run-id", required=True); p.add_argument("--profile", default="fga"); p.add_argument("--warehouse", default="e444f39962128242"); p.add_argument("--catalog", default="sda_dev"); p.add_argument("--schema", default="sandbox"); p.add_argument("--workers", type=int, default=8); args = p.parse_args()
     import hashlib
     publication = "pub_" + hashlib.sha256((args.package.name + content_digest(args.package)).encode()).hexdigest()
     def tag(table): execute(args.profile, args.warehouse, args.catalog, args.schema, f"UPDATE {table} SET _publication_id = '{publication}', _load_run_id = '{args.run_id}' WHERE _publication_id IS NULL")
