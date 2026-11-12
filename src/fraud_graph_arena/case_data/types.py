@@ -9,17 +9,20 @@ def parse_json(value: str, field: str = "json"):
     except (TypeError, json.JSONDecodeError) as exc: raise ValueError(f"{field}: invalid JSON") from exc
 
 def parse_timestamp(value: str, field: str = "timestamp") -> datetime:
-    # Canonical day-level source events are normalized to the start of that
-    # UTC day; all timestamp output remains timezone-aware and UTC.
-    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", value or ""):
-        try: return datetime.fromisoformat(value).replace(tzinfo=timezone.utc)
-        except ValueError as exc: raise ValueError(f"{field}: invalid timestamp") from exc
-    if not value: raise ValueError(f"{field}: timestamp is required")
-    try:
-        result = datetime.fromisoformat(value[:-1] + "+00:00" if value.endswith("Z") else value)
+    if not isinstance(value, str) or re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise ValueError(f"{field}: date-only values are not timestamps; provide an explicit instant")
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z", value):
+        raise ValueError(f"{field}: timestamp must be UTC RFC3339 with Z")
+    try: result = datetime.fromisoformat(value[:-1] + "+00:00")
     except ValueError as exc: raise ValueError(f"{field}: invalid timestamp") from exc
-    if result.tzinfo is None: raise ValueError(f"{field}: timestamp must include a timezone")
-    return result.astimezone(timezone.utc)
+    return result
+
+def parse_temporal_value(value: str, field: str = "temporal") -> datetime | str:
+    """Keep calendar dates as dates; never reinterpret them as instants."""
+    if isinstance(value, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        try: date.fromisoformat(value); return value
+        except ValueError as exc: raise ValueError(f"{field}: invalid date") from exc
+    return parse_timestamp(value, field)
 
 def coerce_sql_value(value: str, sql_type: str, field: str = "value"):
     """Convert a canonical lexical value using its registry SQL type."""

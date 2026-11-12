@@ -4,6 +4,7 @@ const sqlitePath = process.env.FGA_SQLITE_PATH ?? ".fga/e2e.sqlite3";
 
 export default defineConfig({
   testDir: "./e2e",
+  testIgnore: ["**/qualification-exhibit.spec.ts", "**/performance-qualification.spec.ts", "**/renderer-manual-capture.spec.ts"],
   fullyParallel: false,
   workers: 1,
   retries: 0,

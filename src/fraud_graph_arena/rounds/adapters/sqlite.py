@@ -48,11 +48,6 @@ class SqliteRoundRepository:
             }
             if "intro_completed_at" not in columns:
                 connection.execute("ALTER TABLE rounds ADD COLUMN intro_completed_at TEXT NULL")
-            if "idempotency_key" not in columns:
-                connection.execute("ALTER TABLE rounds ADD COLUMN idempotency_key TEXT NULL")
-            if "request_fingerprint" not in columns:
-                connection.execute("ALTER TABLE rounds ADD COLUMN request_fingerprint TEXT NULL")
-            connection.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_rounds_idempotency ON rounds(player_id, idempotency_key) WHERE idempotency_key IS NOT NULL")
 
     def add(self, round_: Round) -> None:
         with self._connect() as connection:
@@ -60,8 +55,8 @@ class SqliteRoundRepository:
                 """
                 INSERT INTO rounds (
                     id, player_id, path_id, case_id, case_version, status, created_at,
-                    started_at, intro_completed_at, idempotency_key, request_fingerprint
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    started_at, intro_completed_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 self._to_row(round_),
             )
@@ -74,18 +69,13 @@ class SqliteRoundRepository:
             ).fetchone()
         return None if row is None else self._from_row(row)
 
-    def find_by_idempotency(self, player_id: str, idempotency_key: str) -> Round | None:
-        with self._connect() as connection:
-            row = connection.execute("SELECT * FROM rounds WHERE player_id = ? AND idempotency_key = ?", (player_id, idempotency_key)).fetchone()
-        return None if row is None else self._from_row(row)
-
     def save(self, round_: Round) -> None:
         with self._connect() as connection:
             cursor = connection.execute(
                 """
                 UPDATE rounds
                    SET player_id = ?, path_id = ?, case_id = ?, case_version = ?, status = ?,
-                       created_at = ?, started_at = ?, intro_completed_at = ?, idempotency_key = ?, request_fingerprint = ?
+                       created_at = ?, started_at = ?, intro_completed_at = ?
                  WHERE id = ?
                 """,
                 (
@@ -101,8 +91,6 @@ class SqliteRoundRepository:
                         if round_.intro_completed_at is None
                         else round_.intro_completed_at.isoformat()
                     ),
-                    round_.idempotency_key,
-                    round_.request_fingerprint,
                     round_.id,
                 ),
             )
@@ -118,7 +106,7 @@ class SqliteRoundRepository:
             return False
 
     @staticmethod
-    def _to_row(round_: Round) -> tuple[str, str, str, str, str, str, str, str | None, str | None, str | None, str | None]:
+    def _to_row(round_: Round) -> tuple[str, str, str, str, str, str, str, str | None, str | None]:
         return (
             round_.id,
             round_.player_id,
@@ -133,8 +121,6 @@ class SqliteRoundRepository:
                 if round_.intro_completed_at is None
                 else round_.intro_completed_at.isoformat()
             ),
-            round_.idempotency_key,
-            round_.request_fingerprint,
         )
 
     @staticmethod
@@ -155,6 +141,4 @@ class SqliteRoundRepository:
                 if row["intro_completed_at"] is None
                 else datetime.fromisoformat(row["intro_completed_at"])
             ),
-            idempotency_key=row["idempotency_key"],
-            request_fingerprint=row["request_fingerprint"],
         )
