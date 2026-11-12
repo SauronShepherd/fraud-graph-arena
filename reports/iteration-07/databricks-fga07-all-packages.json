@@ -1,0 +1,11 @@
+{
+  "status": "blocked",
+  "package_count": 1,
+  "results": [
+    {
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "status": "blocked",
+      "error": "Initial attempt failed because the staging volume did not exist. After creating sda_dev.sandbox.fga05_stage, the retry remained in the first package transfer without producing a result and was stopped."
+    }
+  ]
+}

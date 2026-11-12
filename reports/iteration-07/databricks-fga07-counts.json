@@ -1,0 +1,264 @@
+{
+  "status": "fail",
+  "table_count": 32,
+  "mismatch_count": 32,
+  "comparison": "active_publication_rows_against_local_corpus; historical_rows_reported_separately",
+  "mismatches": [
+    {
+      "table": "fga_analytics_entity_resolution_candidates_csv",
+      "expected_rows": 1768,
+      "historical_rows": 158,
+      "active_rows": 0,
+      "publication_rows": 158,
+      "run_rows": 158
+    },
+    {
+      "table": "fga_analytics_exact_matches_csv",
+      "expected_rows": 5941,
+      "historical_rows": 178,
+      "active_rows": 0,
+      "publication_rows": 178,
+      "run_rows": 178
+    },
+    {
+      "table": "fga_analytics_tool_fixtures_csv",
+      "expected_rows": 54,
+      "historical_rows": 2,
+      "active_rows": 0,
+      "publication_rows": 2,
+      "run_rows": 2
+    },
+    {
+      "table": "fga_authoring_record_attributes_csv",
+      "expected_rows": 422336,
+      "historical_rows": 34563,
+      "active_rows": 0,
+      "publication_rows": 34563,
+      "run_rows": 34563
+    },
+    {
+      "table": "fga_authoring_records_csv",
+      "expected_rows": 36995,
+      "historical_rows": 3279,
+      "active_rows": 0,
+      "publication_rows": 3279,
+      "run_rows": 3279
+    },
+    {
+      "table": "fga_authoring_relationships_csv",
+      "expected_rows": 176677,
+      "historical_rows": 12834,
+      "active_rows": 0,
+      "publication_rows": 12834,
+      "run_rows": 12834
+    },
+    {
+      "table": "fga_config_case_initial_items_csv",
+      "expected_rows": 102,
+      "historical_rows": 8,
+      "active_rows": 0,
+      "publication_rows": 8,
+      "run_rows": 8
+    },
+    {
+      "table": "fga_config_case_profiles_csv",
+      "expected_rows": 13,
+      "historical_rows": 1,
+      "active_rows": 0,
+      "publication_rows": 1,
+      "run_rows": 1
+    },
+    {
+      "table": "fga_config_cases_csv",
+      "expected_rows": 13,
+      "historical_rows": 1,
+      "active_rows": 0,
+      "publication_rows": 1,
+      "run_rows": 1
+    },
+    {
+      "table": "fga_config_genie_benchmarks_csv",
+      "expected_rows": 143,
+      "historical_rows": 14,
+      "active_rows": 0,
+      "publication_rows": 14,
+      "run_rows": 14
+    },
+    {
+      "table": "fga_config_registries_csv",
+      "expected_rows": 1076,
+      "historical_rows": 80,
+      "active_rows": 0,
+      "publication_rows": 80,
+      "run_rows": 80
+    },
+    {
+      "table": "fga_config_reveal_steps_csv",
+      "expected_rows": 15,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_config_ui_contracts_csv",
+      "expected_rows": 44,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_genie_record_attributes_csv",
+      "expected_rows": 336849,
+      "historical_rows": 29937,
+      "active_rows": 0,
+      "publication_rows": 29937,
+      "run_rows": 29937
+    },
+    {
+      "table": "fga_genie_records_csv",
+      "expected_rows": 34508,
+      "historical_rows": 3107,
+      "active_rows": 0,
+      "publication_rows": 3107,
+      "run_rows": 3107
+    },
+    {
+      "table": "fga_genie_relationships_csv",
+      "expected_rows": 81008,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_published_entity_resolution_candidates_csv",
+      "expected_rows": 1768,
+      "historical_rows": 158,
+      "active_rows": 0,
+      "publication_rows": 158,
+      "run_rows": 158
+    },
+    {
+      "table": "fga_published_exact_matches_csv",
+      "expected_rows": 5941,
+      "historical_rows": 178,
+      "active_rows": 0,
+      "publication_rows": 178,
+      "run_rows": 178
+    },
+    {
+      "table": "fga_published_records_csv",
+      "expected_rows": 35874,
+      "historical_rows": 3144,
+      "active_rows": 0,
+      "publication_rows": 3144,
+      "run_rows": 3144
+    },
+    {
+      "table": "fga_published_relationships_csv",
+      "expected_rows": 80349,
+      "historical_rows": 5393,
+      "active_rows": 0,
+      "publication_rows": 5393,
+      "run_rows": 5393
+    },
+    {
+      "table": "fga_truth_allowed_alternatives_csv",
+      "expected_rows": 54,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_assertions_csv",
+      "expected_rows": 852,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_claims_csv",
+      "expected_rows": 101,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_ending_rules_csv",
+      "expected_rows": 72,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_entities_csv",
+      "expected_rows": 897,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_evidence_requirements_csv",
+      "expected_rows": 101,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_evidence_routes_csv",
+      "expected_rows": 100,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_forbidden_conclusions_csv",
+      "expected_rows": 69,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_scoring_rules_csv",
+      "expected_rows": 87,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_truth_test_scenarios_csv",
+      "expected_rows": 18,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_validation_checks_csv",
+      "expected_rows": 263,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    },
+    {
+      "table": "fga_validation_metrics_csv",
+      "expected_rows": 650,
+      "historical_rows": 0,
+      "active_rows": 0,
+      "publication_rows": 0,
+      "run_rows": 0
+    }
+  ]
+}

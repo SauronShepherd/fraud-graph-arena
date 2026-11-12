@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "capability_probe": "pass",
+  "recreated": false,
+  "pre_inventory": [],
+  "expected_count": 44,
+  "actual_count": 44,
+  "missing": [],
+  "extra": [],
+  "column_mismatches": []
+}
