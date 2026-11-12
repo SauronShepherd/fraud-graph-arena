@@ -41,6 +41,15 @@ describe("GraphViewport", () => {
     expect(screen.getByRole("img", { name: /nodes in current graph view/i })).toBeVisible();
   });
 
+  it("reports controlled relationship filters so the workspace can preserve them", () => {
+    const onRelationshipFamiliesChange = vi.fn();
+    render(<GraphViewport graph={graph} relationshipFamilies={null} onRelationshipFamiliesChange={onRelationshipFamiliesChange} />);
+    fireEvent.click(screen.getByRole("checkbox", { name: "DIRECT_SOURCE" }));
+    expect(onRelationshipFamiliesChange).toHaveBeenCalledWith(["DIRECT_SOURCE"]);
+    fireEvent.click(screen.getByRole("button", { name: "Reset view" }));
+    expect(onRelationshipFamiliesChange).toHaveBeenLastCalledWith(null);
+  });
+
   it("collapses and restores a node without changing the source graph", () => {
     const { container } = render(<GraphViewport graph={graph} />);
     fireEvent.click(screen.getByRole("button", { name: "Collapse Puppy One" }));
@@ -68,6 +77,27 @@ describe("GraphViewport", () => {
     expect(screen.getByRole("button", { name: "Fit selection" })).toBeEnabled();
     fireEvent.click(screen.getByRole("button", { name: "Fit selection" }));
     fireEvent.click(screen.getByRole("button", { name: "Fit graph" }));
+  });
+
+  it("fits the selected node with its visible one-hop context", () => {
+    const contextGraph = {
+      ...graph,
+      nodes: [
+        ...graph.nodes,
+        { record_id: "A1", record_type: "ACCOUNT_RECORD" as const, record_subtype: "", label: "Account One", source_system_id: "s3", provenance_ref: "r4", safe_summary: "An account." },
+      ],
+      edges: [
+        ...graph.edges,
+        { relationship_id: "E2", source_record_id: "P1", target_record_id: "A1", relationship_family: "DIRECT_SOURCE", relationship_type: "USES", directed: true, provenance: "r5", event_time: "", player_safe_summary: "A second published relationship." },
+      ],
+      node_count: 3,
+      edge_count: 2,
+    } satisfies Graph;
+    render(<GraphViewport graph={contextGraph} />);
+    fireEvent.click(screen.getByRole("button", { name: "Puppy One, P1" }));
+    const transform = screen.getByTestId("graph-transform");
+    fireEvent.click(screen.getByRole("button", { name: "Fit selection" }));
+    expect(transform.getAttribute("transform")).toContain("scale(1.46875)");
   });
 
   it("shows hover previews without replacing the selected record", () => {

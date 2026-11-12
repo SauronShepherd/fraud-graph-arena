@@ -28,6 +28,7 @@ export function BoardPage() {
   const [graph, setGraph] = useState<Graph | null>(null);
   const [expandingNodeId, setExpandingNodeId] = useState<string | null>(null);
   const [graphError, setGraphError] = useState("");
+  const [relationshipFamilies, setRelationshipFamilies] = useState<string[] | null>(null);
   const boardRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export function BoardPage() {
   }, []);
 
   useEffect(() => { if (workspace) rememberRound(workspace.round.id); else if (roundId) rememberRound(roundId); }, [workspace, roundId]);
-  useEffect(() => { setSelectedNodeId(null); setSelectedEdgeId(null); }, [workspace?.round.id]);
+  useEffect(() => { setSelectedNodeId(null); setSelectedEdgeId(null); setRelationshipFamilies(null); }, [workspace?.round.id]);
   useEffect(() => { setGraph(workspace?.graph ?? null); }, [workspace?.graph]);
 
   if (loadProblem) return <ProblemPanel problem={loadProblem} onRetry={() => { setAttempt((n) => n + 1); retry(); }} />;
@@ -64,7 +65,7 @@ export function BoardPage() {
       <div className="board-layout">
         <div data-region="CASE_PAPER" style={geometry ? { minHeight: geometry.regions.CASE_PAPER.height } : undefined}><CasePaper workspace={{ ...workspace, graph: graph ?? workspace.graph }} /></div>
         <div data-region="GRAPH_VIEWPORT" style={geometry ? { minHeight: geometry.regions.GRAPH_VIEWPORT.height } : undefined}>
-          {graph && <div>{graphError && <p role="alert">{graphError}</p>}<GraphViewport graph={graph} selectedNodeId={selectedNodeId} selectedEdgeId={selectedEdgeId} onNodeSelect={setSelectedNodeId} onEdgeSelect={setSelectedEdgeId} expandingNodeId={expandingNodeId} onExpand={handleExpand} /></div>}
+          {graph && <div>{graphError && <p role="alert">{graphError}</p>}<GraphViewport graph={graph} selectedNodeId={selectedNodeId} selectedEdgeId={selectedEdgeId} onNodeSelect={setSelectedNodeId} onEdgeSelect={setSelectedEdgeId} expandingNodeId={expandingNodeId} onExpand={handleExpand} relationshipFamilies={relationshipFamilies} onRelationshipFamiliesChange={setRelationshipFamilies} /></div>}
         </div>
       </div>
       <div data-region="TYPEWRITER_CONTROLS"><InvestigationActions workspace={workspace} /></div>

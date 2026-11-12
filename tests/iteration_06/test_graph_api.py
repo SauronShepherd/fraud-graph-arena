@@ -66,6 +66,17 @@ def test_graph_api_filter_preserves_nodes_and_changes_only_visible_edges(client)
     assert body["relationship_filters"] == ["NOT_A_REAL_FAMILY"]
 
 
+def test_graph_api_expansion_preserves_active_relationship_filter(client):
+    round_id = _active_t02(client)
+    visible = client.post(f"/api/v1/rounds/{round_id}/graph/initial", json={"seeds": ["T2-O-BAKERY"]}).json()
+    visible["relationship_filters"] = ["DIRECT_SOURCE"]
+    response = client.post(f"/api/v1/rounds/{round_id}/graph/expand", json={"visible": visible, "node_id": "T2-O-BAKERY"})
+    assert response.status_code == 200
+    body = response.json()
+    assert body["relationship_filters"] == ["DIRECT_SOURCE"]
+    assert all(edge["relationship_family"] == "DIRECT_SOURCE" for edge in body["edges"])
+
+
 def test_graph_api_enforces_hard_node_and_edge_ceilings(client):
     round_id = _active_t02(client)
     for payload in ({"limit": 301}, {"edge_limit": 701}):

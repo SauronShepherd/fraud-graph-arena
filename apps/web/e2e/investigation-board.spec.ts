@@ -58,6 +58,11 @@ test.describe("I02 investigation board", () => {
     expect(Date.now() - start).toBeLessThan(5000);
     await expect(page.getByRole("button", { name: /Expand Blue Bowl Bakery/i })).toBeVisible();
     await expect(page.getByRole("button", { name: /Collapse Blue Bowl Bakery/i })).toBeVisible();
+    const directSource = page.getByRole("checkbox", { name: "DIRECT_SOURCE" });
+    await directSource.check();
+    await expect(directSource).toBeChecked();
+    await page.getByRole("button", { name: /Expand Blue Bowl Bakery/i }).click();
+    await expect(directSource).toBeChecked();
     await page.getByRole("button", { name: /Collapse Blue Bowl Bakery/i }).click();
     await expect(page.getByRole("button", { name: /Restore Blue Bowl Bakery/i })).toBeVisible();
     await page.getByRole("button", { name: /Restore Blue Bowl Bakery/i }).click();

@@ -4,9 +4,9 @@ This report records the verified local implementation slice. It is not a closure
 
 ## Verified commands
 
-- `python -m pytest tests/iteration_06 tests/iteration_01/test_openapi_contract.py -q` — 13 passed.
-- `npm test -- --run` from `apps/web` — 51 passed across 22 files.
-- `python -m pytest -q` — 173 passed in 25:31 after corpus repair and cumulative integration fixes.
+- `python -m pytest tests/iteration_06 tests/iteration_01/test_openapi_contract.py -q` — 28 passed.
+- `npm test -- --run` from `apps/web` — 53 passed across 22 files (fork-pool execution).
+- `python -m pytest -q` — 173 passed in 12:07 after corpus repair and cumulative integration fixes.
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
 - `python scripts/qualify_databricks_security.py --profile fga-web` — fail-closed `not_qualified` because the profile is not configured.
 - `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — `external_gap`; live receipts, repeat qualification, non-admin denial, and revision consistency remain unproven.
@@ -15,10 +15,10 @@ This report records the verified local implementation slice. It is not a closure
 - `python scripts/qualify_databricks_security.py --profile fga` — `not_qualified` because the authenticated principal is an administrator.
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
-- targeted graph viewport tests — 2 passed.
-- `npm run test:e2e` from `apps/web` — 11 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
-- targeted graph viewport tests after focus/minimap controls — 6 passed, including the 100-node/99-edge bounded renderer envelope (<1s in jsdom).
-- qualification Playwright — 11 passed, including renderer exhibit, manual capture and performance qualification.
+- `npm run test:e2e` from `apps/web` — 15 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
+- targeted graph viewport tests after focus/minimap controls — 8 passed, including selected-node context fitting, controlled filters and the 100-node/99-edge bounded renderer envelope (<1s in jsdom).
+- `python -m pytest tests/iteration_06 tests/iteration_01/test_openapi_contract.py -q` — 27 passed.
+- `npx playwright test -c playwright.qualification.config.ts` — 11 passed with one worker, including renderer exhibit, manual capture and the 12-repetition-per-candidate performance qualification.
 - renderer comparison — four engines exercised with the common contract; Cytoscape recorded as the conditional incumbent in `docs/iteration-06/ADR-0001-renderer-qualification.md`.
 
 ## Implemented slice

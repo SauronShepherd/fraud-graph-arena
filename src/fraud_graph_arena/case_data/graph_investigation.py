@@ -68,7 +68,10 @@ def expand(graph: dict[str, Any], visible: dict[str, Any], node_id: str, *, dept
     if not 1 <= limit <= MAX_GRAPH_NODES:
         raise ValueError(f"node limit must be between 1 and {MAX_GRAPH_NODES}")
     all_nodes = {_plain(node)["record_id"]: _plain(node) for node in graph.get("nodes", ())}
+    requested_filters = tuple(sorted(set(visible.get("relationship_filters", ()))))
     all_edges = [_plain(edge) for edge in graph.get("edges", ())]
+    if requested_filters:
+        all_edges = [edge for edge in all_edges if edge.get("relationship_family") in requested_filters]
     if node_id not in all_nodes:
         raise KeyError(node_id)
     current = {_plain(node)["record_id"] for node in visible.get("nodes", ())}
@@ -79,7 +82,7 @@ def expand(graph: dict[str, Any], visible: dict[str, Any], node_id: str, *, dept
     neighbours = {edge["target_record_id"] if edge["source_record_id"] == node_id else edge["source_record_id"] for edge in all_edges if node_id in (edge["source_record_id"], edge["target_record_id"])}
     expanded_ids = current | neighbours
     selected = [all_nodes[item] for item in expanded_ids if item in all_nodes]
-    return _graph(selected, all_edges, node_limit=limit, edge_limit=edge_limit)
+    return _graph(selected, all_edges, node_limit=limit, edge_limit=edge_limit, filters=requested_filters)
 
 
 def filter_relationships(graph: dict[str, Any], families: Iterable[str], *, node_ids: Iterable[str] | None = None, edge_limit: int = MAX_GRAPH_EDGES) -> dict[str, Any]:
