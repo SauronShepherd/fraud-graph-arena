@@ -158,6 +158,8 @@ The validator now requires the source/evidence range to contain FGA06 evidence p
 
 After commit `d786d17`, the clean-tree FGA06 closure validator passed with no errors; the historical source commit remains an ancestor of the cumulative FGA07 branch.
 
+The complete Python regression suite was rerun after the validator repair and passed: `187 passed in 682.03s (0:11:22)`. This includes the three new cumulative-descendant scope tests.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
