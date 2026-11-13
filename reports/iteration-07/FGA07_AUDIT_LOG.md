@@ -180,6 +180,8 @@ The new principal was assigned `USER` workspace access, `CAN_USE` on warehouse `
 
 The real security probe using profile `fga-non-admin-test` passed: safe active view `pass`, raw published table `pass` for denial, truth table `pass` for denial, `is_admin: false`, overall `status: pass`. The administrator profile `fga` remains recorded as a negative control with `not_qualified`.
 
+The release manifest was regenerated with `live_databricks: qualified`, `security: qualified`, and `closure_allowed: true`. The final FGA06 closure validator passed, release-lineage verification passed, and the focused security/manifest regression suite passed `5` tests. Remaining FGA07 evidence limitations are explicitly non-code gates: human product-owner/accessibility acceptance and production-scale request-byte/wall-clock qualification.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
