@@ -170,6 +170,8 @@ The real Databricks security probe was rerun with profile `fga` against the curr
 
 The release-manifest generator was also corrected to index the complete FGA07 local qualification surface: full Python suite, frontend tests, typecheck, production build, standard E2E, and qualification E2E. Three manifest-generator tests passed before regeneration.
 
+The post-correction full Python suite passed `188` tests in `667.62s (0:11:07)`, including the new manifest-surface regression.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.

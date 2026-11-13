@@ -4,7 +4,7 @@ This report records the verified FGA-07 implementation and qualification evidenc
 
 ## Verified commands
 
-- `python -m pytest -q` — 187 passed in 11:22 after the cumulative FGA06 closure-validator repair and OpenAPI contract refresh.
+- `python -m pytest -q` — 188 passed in 11:07 after the cumulative FGA06 closure-validator repair, OpenAPI contract refresh, and complete-manifest indexing.
 - `npm test -- --run` from `apps/web` — 55 passed across 22 files.
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
 - `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — remaining gaps are external/non-admin qualification and human acceptance; the FGA-07 live receipts are recorded separately below.
