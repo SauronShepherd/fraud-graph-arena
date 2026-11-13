@@ -142,6 +142,8 @@ The first single-command Python regression run after the prior split validation 
 
 The repository's canonical exporter, `scripts/export_openapi.py`, regenerated `contracts/openapi-v1.json`. The focused contract regression then passed (`1 passed`). This is a contract-artifact correction, not a relaxation of the test. The full suite must be rerun after committing this generated artifact; the prior full run is therefore recorded as `183 passed, 1 failed`, not as a green release.
 
+The post-correction full Python suite was rerun against the committed artifact and passed: `184 passed in 986.70s (0:16:26)`.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
