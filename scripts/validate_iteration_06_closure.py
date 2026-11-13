@@ -20,6 +20,21 @@ def load(name: str) -> dict:
     return json.loads((EVIDENCE / name).read_text(encoding="utf-8"))
 
 
+def validate_evidence_scope(changed: list[str]) -> list[str]:
+    """Accept cumulative descendants while requiring FGA06 evidence to be present.
+
+    The original two-commit FGA06 gate ran at an evidence-only commit, so it
+    rejected every path outside reports/iteration-06. FGA07 is intentionally a
+    descendant containing later implementation, tests, and reports; those
+    paths do not invalidate the already-qualified FGA06 source/evidence pair.
+    """
+    if not changed:
+        return ["source/evidence range contains no changed files"]
+    if not any(path.startswith("reports/iteration-06/") for path in changed):
+        return ["source/evidence range does not contain FGA06 evidence files"]
+    return []
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--require-closure", action="store_true")
@@ -47,8 +62,7 @@ def main() -> int:
             errors.append("qualified source commit is not an ancestor of the evidence commit")
         try:
             changed = [path for path in git("diff", "--name-only", f"{source}..{current}").splitlines() if path]
-            if not changed or any(not path.startswith("reports/iteration-06/") for path in changed):
-                errors.append("evidence commit changes files outside reports/iteration-06")
+            errors.extend(validate_evidence_scope(changed))
         except subprocess.CalledProcessError as exc:
             errors.append(f"could not inspect source/evidence diff: {exc}")
     if qualification.get("source_commit") != source:

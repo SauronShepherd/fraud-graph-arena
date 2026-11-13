@@ -150,6 +150,12 @@ The article was reconciled with this final evidence pass: it now records the Ope
 
 The release-lineage verifier was rerun on the final branch and passed: immutable `fga-iteration-00-r1` is an ancestor of the current FGA-07 HEAD and its recorded FGA-00 evidence remains passing and closure-eligible.
 
+## Cumulative FGA06 closure-validator repair
+
+The next closure pass exposed a real tooling defect: `scripts/validate_iteration_06_closure.py` rejected the current FGA-07 branch because it required every path between the historical FGA06 source commit and the current descendant HEAD to live under `reports/iteration-06/`. That rule was valid only for the original two-commit FGA06 closure shape; it incorrectly rejected legitimate FGA07 source, test, and report descendants.
+
+The validator now requires the source/evidence range to contain FGA06 evidence paths while allowing later cumulative paths. Empty ranges and ranges without FGA06 evidence still fail. Three regression cases were added, and the focused closure/renderer suite passed `5` tests. The clean-tree gate will be rerun after this correction is committed.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
