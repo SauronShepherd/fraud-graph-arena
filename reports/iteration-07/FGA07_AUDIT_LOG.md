@@ -164,6 +164,8 @@ The frontend qualification was rerun on the current HEAD and passed: Vitest `55/
 
 The evidence index and article were reconciled from `184` to the authoritative current total of `187` Python tests after adding the three closure-validator regressions.
 
+Final handoff verification: local `HEAD` and `origin/FGA-07` both resolve to `8bbb24cc9a6e637ebce930b78a5ab0c901246550`; the worktree is clean. The previous conversational handoff mentioned intermediate SHAs; this line is authoritative for the current branch state.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
