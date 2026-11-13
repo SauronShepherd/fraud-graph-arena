@@ -145,6 +145,7 @@ Evidence files: `databricks-fga07-counts.json`, `databricks-fga07-repeat.json`, 
 - Ten repeat rounds × 13 packages passed with two workers; all repeats reused the expected active publications and recorded `0` failures.
 - Failure injection passed: the failed candidate remained inactive and the active publication pointer stayed identical before and after.
 - Security remained `not_qualified` by design: profile `fga` is an administrator principal, so it cannot prove the non-admin denial requirement.
+- The dedicated warehouse was stopped after the live qualification (`state: STOPPED`).
 
 ## Candidate facts for later article reconciliation
 
