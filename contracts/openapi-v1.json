@@ -240,34 +240,42 @@
             "type": "boolean"
           },
           "event_time": {
+            "maxLength": 64,
             "title": "Event Time",
             "type": "string"
           },
           "player_safe_summary": {
+            "maxLength": 2048,
             "title": "Player Safe Summary",
             "type": "string"
           },
           "provenance": {
+            "maxLength": 512,
             "title": "Provenance",
             "type": "string"
           },
           "relationship_family": {
+            "maxLength": 128,
             "title": "Relationship Family",
             "type": "string"
           },
           "relationship_id": {
+            "maxLength": 128,
             "title": "Relationship Id",
             "type": "string"
           },
           "relationship_type": {
+            "maxLength": 128,
             "title": "Relationship Type",
             "type": "string"
           },
           "source_record_id": {
+            "maxLength": 128,
             "title": "Source Record Id",
             "type": "string"
           },
           "target_record_id": {
+            "maxLength": 128,
             "title": "Target Record Id",
             "type": "string"
           }
@@ -352,30 +360,37 @@
         "additionalProperties": false,
         "properties": {
           "label": {
+            "maxLength": 256,
             "title": "Label",
             "type": "string"
           },
           "provenance_ref": {
+            "maxLength": 512,
             "title": "Provenance Ref",
             "type": "string"
           },
           "record_id": {
+            "maxLength": 128,
             "title": "Record Id",
             "type": "string"
           },
           "record_subtype": {
+            "maxLength": 128,
             "title": "Record Subtype",
             "type": "string"
           },
           "record_type": {
+            "maxLength": 64,
             "title": "Record Type",
             "type": "string"
           },
           "safe_summary": {
+            "maxLength": 2048,
             "title": "Safe Summary",
             "type": "string"
           },
           "source_system_id": {
+            "maxLength": 128,
             "title": "Source System Id",
             "type": "string"
           }
