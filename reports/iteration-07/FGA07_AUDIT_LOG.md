@@ -156,6 +156,8 @@ The next closure pass exposed a real tooling defect: `scripts/validate_iteration
 
 The validator now requires the source/evidence range to contain FGA06 evidence paths while allowing later cumulative paths. Empty ranges and ranges without FGA06 evidence still fail. Three regression cases were added, and the focused closure/renderer suite passed `5` tests. The clean-tree gate will be rerun after this correction is committed.
 
+After commit `d786d17`, the clean-tree FGA06 closure validator passed with no errors; the historical source commit remains an ancestor of the cumulative FGA07 branch.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
