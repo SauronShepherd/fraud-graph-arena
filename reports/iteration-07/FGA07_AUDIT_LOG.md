@@ -148,6 +148,8 @@ The evidence index was then reconciled so it no longer presents the earlier fail
 
 The article was reconciled with this final evidence pass: it now records the OpenAPI artifact correction and the green `184`-test Python regression, while preserving the non-admin authorization limitation. No claim of total release closure was added.
 
+The release-lineage verifier was rerun on the final branch and passed: immutable `fga-iteration-00-r1` is an ancestor of the current FGA-07 HEAD and its recorded FGA-00 evidence remains passing and closure-eligible.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
