@@ -4,7 +4,7 @@
   "after": "pub_bf440c469287cb6c896d5391e9526a5eb66dde8f6b490fbc87a3305648265ec8",
   "failed_run": "dbx_failed_run_17",
   "candidate_active": false,
-  "qualified_source_sha": "a2b35c51f30454aba5676f9e8df3aa01b225c408",
+  "qualified_source_sha": "48c08b84b81cadbf31b288bc70b5b0809d50f24a",
   "catalog": "sda_dev",
   "schema": "sandbox",
   "warehouse": "eded42c9d0a69b84"
