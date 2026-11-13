@@ -168,6 +168,8 @@ Final handoff verification at that point: local `HEAD` and `origin/FGA-07` both 
 
 The real Databricks security probe was rerun with profile `fga` against the current source. It returned the same fail-closed result, now recorded against source SHA `c07f8fc6f1835d16978cf83e48642c08cb1c0b74`: `is_admin: true`, `status: not_qualified`, and no protected-data queries attempted.
 
+The release-manifest generator was also corrected to index the complete FGA07 local qualification surface: full Python suite, frontend tests, typecheck, production build, standard E2E, and qualification E2E. Three manifest-generator tests passed before regeneration.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.

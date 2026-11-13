@@ -15,3 +15,14 @@ def test_release_manifest_requires_non_admin_security_for_closure():
     source = (ROOT / "scripts/create_release_evidence_manifest.py").read_text(encoding="utf-8")
     assert "--security-status" in source
     assert 'args.live_status == "qualified" and args.security_status == "qualified"' in source
+
+
+def test_release_manifest_indexes_the_full_fga07_local_qualification_surface():
+    source = (ROOT / "scripts/create_release_evidence_manifest.py").read_text(encoding="utf-8")
+    for command in (
+        '"python_tests": "python -m pytest -q"',
+        '"frontend_build": "npm run build"',
+        '"frontend_e2e": "npm run test:e2e -- --workers=1"',
+        '"qualification_e2e": "npx playwright test -c playwright.qualification.config.ts --workers=1"',
+    ):
+        assert command in source

@@ -24,9 +24,12 @@ def main() -> int:
         "working_tree": {"clean": not dirty_paths, "changed_paths": dirty_paths},
         "scope": "FGA unified static implementation gap audit",
         "local_evidence": {
-            "python_tests": "python -m pytest -q tests/iteration_04 tests/iteration_05",
+            "python_tests": "python -m pytest -q",
             "frontend_typecheck": "npm run typecheck",
-            "frontend_tests": "npx vitest run --pool=forks --no-file-parallelism --maxWorkers=1 --testTimeout=5000",
+            "frontend_build": "npm run build",
+            "frontend_tests": "npm test -- --run",
+            "frontend_e2e": "npm run test:e2e -- --workers=1",
+            "qualification_e2e": "npx playwright test -c playwright.qualification.config.ts --workers=1",
             "canonical_packages": "13"
         },
         "live_databricks": {"status": args.live_status, "source_sha": source_sha},
