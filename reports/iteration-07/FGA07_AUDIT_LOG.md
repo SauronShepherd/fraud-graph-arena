@@ -131,11 +131,20 @@ Evidence files: `databricks-fga07-counts.json`, `databricks-fga07-repeat.json`, 
 ## Still pending after this log entry
 
 - Non-admin security qualification. Current `fga` remains administrator-only evidence.
-- Re-run live Databricks package/count/repeat/failure evidence after the canonical timestamp repair and after committing the new source SHA.
 - Request-level performance and large-graph qualification.
 - Manual accessibility/product-owner acceptance.
 - Current-SHA cumulative closure manifest and release gate.
 - Final article reconciliation and rendered article review.
+
+## Final live rerun against commit `a2b35c5`
+
+- Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
+- Topology recreation passed `44/44` with no missing objects, extras, or column mismatches.
+- All 13 canonical packages completed the full lifecycle through `PUBLISHED`; the report is source-qualified against `a2b35c51f30454aba5676f9e8df3aa01b225c408`.
+- Active package reconciliation passed for all 32 physical tables with `0` mismatches.
+- Ten repeat rounds × 13 packages passed with two workers; all repeats reused the expected active publications and recorded `0` failures.
+- Failure injection passed: the failed candidate remained inactive and the active publication pointer stayed identical before and after.
+- Security remained `not_qualified` by design: profile `fga` is an administrator principal, so it cannot prove the non-admin denial requirement.
 
 ## Candidate facts for later article reconciliation
 

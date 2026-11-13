@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 def main() -> int:
-    parser = argparse.ArgumentParser(); parser.add_argument("--output", type=Path, required=True); parser.add_argument("--live-status", choices=["qualified", "unavailable", "not_run"], default="not_run"); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument("--output", type=Path, required=True); parser.add_argument("--live-status", choices=["qualified", "unavailable", "not_run"], default="not_run"); parser.add_argument("--security-status", choices=["qualified", "not_qualified", "not_run"], default="not_run"); args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     source_sha = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
     tracked = subprocess.check_output(["git", "ls-files", "-z"], cwd=root).split(b"\0")
@@ -29,7 +29,8 @@ def main() -> int:
             "canonical_packages": "13"
         },
         "live_databricks": {"status": args.live_status, "source_sha": source_sha},
-        "closure_allowed": args.live_status == "qualified"
+        "security": {"status": args.security_status, "source_sha": source_sha},
+        "closure_allowed": args.live_status == "qualified" and args.security_status == "qualified"
     }
     args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"); print(json.dumps(manifest, indent=2)); return 0
 if __name__ == "__main__": raise SystemExit(main())
