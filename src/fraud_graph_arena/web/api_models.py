@@ -92,24 +92,24 @@ class ActionAvailability(ApiModel):
     reason: str
 
 class GraphNodeResponse(ApiModel):
-    record_id: str
-    record_type: str
-    label: str
-    safe_summary: str
-    record_subtype: str
-    source_system_id: str
-    provenance_ref: str
+    record_id: str = Field(max_length=128)
+    record_type: str = Field(max_length=64)
+    label: str = Field(max_length=256)
+    safe_summary: str = Field(max_length=2048)
+    record_subtype: str = Field(max_length=128)
+    source_system_id: str = Field(max_length=128)
+    provenance_ref: str = Field(max_length=512)
 
 class GraphEdgeResponse(ApiModel):
-    relationship_id: str
-    source_record_id: str
-    target_record_id: str
-    relationship_family: str
-    relationship_type: str
+    relationship_id: str = Field(max_length=128)
+    source_record_id: str = Field(max_length=128)
+    target_record_id: str = Field(max_length=128)
+    relationship_family: str = Field(max_length=128)
+    relationship_type: str = Field(max_length=128)
     directed: bool
-    provenance: str
-    player_safe_summary: str
-    event_time: str
+    provenance: str = Field(max_length=512)
+    player_safe_summary: str = Field(max_length=2048)
+    event_time: str = Field(max_length=64)
 
 class GraphResponse(ApiModel):
     projection_version: str

@@ -118,6 +118,14 @@ def test_graph_filter_rejects_ids_outside_authoritative_projection(client):
     assert response.status_code == 403
 
 
+def test_graph_api_rejects_oversized_safe_text_fields(client):
+    round_id = _active_t02(client)
+    visible = client.post(f"/api/v1/rounds/{round_id}/graph/initial", json={"seeds": ["T2-O-BAKERY"]}).json()
+    visible["nodes"][0]["safe_summary"] = "x" * 2049
+    response = client.post(f"/api/v1/rounds/{round_id}/graph/filter", json={"visible": visible, "families": []})
+    assert response.status_code == 422
+
+
 def test_graph_api_enforces_hard_node_and_edge_limits(client):
     round_id = _active_t02(client)
     for payload in ({"limit": 301}, {"edge_limit": 701}):

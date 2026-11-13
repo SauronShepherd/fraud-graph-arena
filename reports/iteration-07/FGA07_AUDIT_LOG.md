@@ -163,6 +163,7 @@ These are notes, not yet final article prose:
 - The graph UI now exposes partial-projection omissions and clears selection when collapsing the selected evidence.
 - The live Databricks run has proved all 13 packages, zero-mismatch counts, repeatability, and failure isolation. Non-admin denial remains unproved until a distinct non-admin identity is supplied.
 - The first cumulative gate exposed and the repair closed a real timestamp-quality defect in the checked-in canonical corpus; this is now a regression-tested invariant.
+- Graph DTOs now bound safe text fields as well as node/edge cardinality; the API regression suite verifies that an oversized safe summary is rejected (`23` focused graph tests passed).
 
 ## Evidence files
 
