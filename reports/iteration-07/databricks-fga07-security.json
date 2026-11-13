@@ -1,11 +1,10 @@
 {
-  "source_sha": "c07f8fc6f1835d16978cf83e48642c08cb1c0b74",
-  "profile": "fga",
-  "principal_fingerprint": "12ee92b3556142eb",
-  "is_admin": true,
-  "active_view_select": "not_run",
-  "raw_safe_select": "not_run",
-  "truth_select": "not_run",
-  "status": "not_qualified",
-  "reason": "identity is a member of admins; admin sessions cannot prove denial"
+  "source_sha": "c34b625c616c133d1123af825f7ddce9345958e3",
+  "profile": "fga-non-admin-test",
+  "principal_fingerprint": "b8502e89125fa013",
+  "is_admin": false,
+  "active_view_select": "pass",
+  "raw_safe_select": "pass",
+  "truth_select": "pass",
+  "status": "pass"
 }

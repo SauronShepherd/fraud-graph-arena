@@ -172,6 +172,14 @@ The release-manifest generator was also corrected to index the complete FGA07 lo
 
 The post-correction full Python suite passed `188` tests in `667.62s (0:11:07)`, including the new manifest-surface regression.
 
+## Non-admin Databricks identity created and qualified
+
+At the user's explicit request, the account-admin profile created service principal `fga-non-admin-test` (application ID `a992efa8-1a46-42d8-b30e-7990ef8861a8`, workspace principal ID `70464718634458`). The accidental first-name attempt `fga-07-non-admin` was deleted immediately and was not used for qualification.
+
+The new principal was assigned `USER` workspace access, `CAN_USE` on warehouse `eded42c9d0a69b84`, `USE_CATALOG` on `sda_dev`, `USE_SCHEMA` on `sda_dev.sandbox`, and `SELECT` only on `sda_dev.sandbox.fga_active_published_records_csv`. Effective-grant checks returned no permissions for `fga_published_records_csv` or `fga_truth_entities_csv`.
+
+The real security probe using profile `fga-non-admin-test` passed: safe active view `pass`, raw published table `pass` for denial, truth table `pass` for denial, `is_admin: false`, overall `status: pass`. The administrator profile `fga` remains recorded as a negative control with `not_qualified`.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.

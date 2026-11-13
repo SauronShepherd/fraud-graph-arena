@@ -1,20 +1,21 @@
 # FGA-07 local implementation evidence
 
-This report records the verified FGA-07 implementation and qualification evidence. It is not a closure report: non-admin authorization evidence, human product-owner acceptance, and the remaining production-scale request performance envelope remain outstanding.
+This report records the verified FGA-07 implementation and qualification evidence. It is not a final product-acceptance report: human product-owner acceptance and the remaining production-scale request performance envelope remain outstanding.
 
 ## Verified commands
 
 - `python -m pytest -q` — 188 passed in 11:07 after the cumulative FGA06 closure-validator repair, OpenAPI contract refresh, and complete-manifest indexing.
 - `npm test -- --run` from `apps/web` — 55 passed across 22 files.
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
-- `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — remaining gaps are external/non-admin qualification and human acceptance; the FGA-07 live receipts are recorded separately below.
+- `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — historical audit gaps remain tracked separately; current FGA-07 live receipts are recorded below.
 - `databricks auth describe --profile fga` — profile reauthenticated successfully; a dedicated `FGA-07-qualification` warehouse was created as `eded42c9d0a69b84` and stopped after testing.
 - `python scripts/qualify_databricks.py --profile fga --catalog sda_dev --schema sandbox --warehouse-id eded42c9d0a69b84 --create` — PASS, 44/44 expected objects and zero column mismatches.
 - `python scripts/qualify_databricks_all_packages.py --profile fga --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84` — PASS, all 13 packages completed the lifecycle through `PUBLISHED`.
 - `python scripts/verify_databricks_package_counts.py --profile fga --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84` — PASS, 32 tables and zero count mismatches.
 - `python scripts/qualify_databricks_repeat.py --profile fga --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84 --repeats 10` — PASS, 10 × 13 package attempts, zero failures, idempotent reuse.
 - `python scripts/qualify_databricks_failure.py --profile fga --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84 --execute` — PASS, rejected candidate remained inactive and active pointer was unchanged.
-- `python scripts/qualify_databricks_security.py --profile fga` — `not_qualified` because the authenticated principal is an administrator.
+- `python scripts/qualify_databricks_security.py --profile fga` — correctly `not_qualified` for the administrator principal; this is retained as a negative control.
+- `python scripts/qualify_databricks_security.py --profile fga-non-admin-test --catalog sda_dev --schema sandbox --warehouse eded42c9d0a69b84` — PASS: safe active view readable, raw published table denied, truth table denied.
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - `npm run test:e2e` from `apps/web` — 15 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
@@ -36,6 +37,5 @@ This report records the verified FGA-07 implementation and qualification evidenc
 
 ## Outstanding closure work
 
-- non-admin authorization evidence with a distinct non-administrator Databricks identity;
 - production-scale request-byte/wall-clock performance qualification and a product-owner accessibility acceptance;
-- final cumulative closure gate; the release manifest is generated and clean but correctly keeps `closure_allowed: false` while security is `not_qualified`.
+- final human acceptance gate; the release manifest is generated and clean with live and security qualification allowed.
