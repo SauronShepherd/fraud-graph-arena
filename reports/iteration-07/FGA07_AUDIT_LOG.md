@@ -144,6 +144,8 @@ The repository's canonical exporter, `scripts/export_openapi.py`, regenerated `c
 
 The post-correction full Python suite was rerun against the committed artifact and passed: `184 passed in 986.70s (0:16:26)`.
 
+The evidence index was then reconciled so it no longer presents the earlier failed Databricks attempts or the pre-contract-test counts as current results. The current repository state is branch `FGA-07`, pushed HEAD `c007790972fb6108973021cc11ccb49150f3d0`, clean worktree, with the final live receipts and the explicit non-admin/manual-acceptance limitations above.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
