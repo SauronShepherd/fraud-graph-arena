@@ -133,7 +133,7 @@ Evidence files: `databricks-fga07-counts.json`, `databricks-fga07-repeat.json`, 
 - Non-admin security qualification. Current `fga` remains administrator-only evidence.
 - Request-level performance and large-graph qualification.
 - Manual accessibility/product-owner acceptance.
-- Current-SHA cumulative closure manifest and release gate.
+- Current-SHA cumulative release manifest is now generated and clean; formal closure remains false because security is `not_qualified`.
 - Final article reconciliation and rendered article review.
 
 ## Final live rerun against commit `a2b35c5`
