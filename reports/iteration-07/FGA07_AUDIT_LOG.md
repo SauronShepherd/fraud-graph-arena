@@ -144,7 +144,7 @@ The repository's canonical exporter, `scripts/export_openapi.py`, regenerated `c
 
 The post-correction full Python suite was rerun against the committed artifact and passed: `184 passed in 986.70s (0:16:26)`.
 
-The evidence index was then reconciled so it no longer presents the earlier failed Databricks attempts or the pre-contract-test counts as current results. The current repository state is branch `FGA-07`, pushed HEAD `c007790972fb6108973021cc11ccb49150f3d0`, clean worktree, with the final live receipts and the explicit non-admin/manual-acceptance limitations above.
+The evidence index was then reconciled so it no longer presents the earlier failed Databricks attempts or the pre-contract-test counts as current results. The repository remains on branch `FGA-07`, with the pushed HEAD recorded by the final handoff checks, clean worktree, final live receipts, and explicit non-admin/manual-acceptance limitations above. The release manifest records the source tree SHA from the commit immediately before its own generated-artifact commit, as intended by the exporter.
 
 The article was reconciled with this final evidence pass: it now records the OpenAPI artifact correction and the green `184`-test Python regression, while preserving the non-admin authorization limitation. No claim of total release closure was added.
 
