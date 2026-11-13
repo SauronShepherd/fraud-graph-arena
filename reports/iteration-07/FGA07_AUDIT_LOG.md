@@ -147,6 +147,12 @@ Evidence files: `databricks-fga07-counts.json`, `databricks-fga07-repeat.json`, 
 - Security remained `not_qualified` by design: profile `fga` is an administrator principal, so it cannot prove the non-admin denial requirement.
 - The dedicated warehouse was stopped after the live qualification (`state: STOPPED`).
 
+## Final repository and article handoff
+
+- Final branch: `FGA-07`.
+- Final pushed HEAD: `dbadea75bbeb9e1a6f53b7d8a01afbbdb75f40d0`; local HEAD and `origin/FGA-07` match; worktree clean.
+- The FGA-07 article was updated with the verified corpus and Databricks qualification facts, while retaining the explicit limitation that admin evidence cannot prove non-admin denial.
+
 ## Candidate facts for later article reconciliation
 
 These are notes, not yet final article prose:
