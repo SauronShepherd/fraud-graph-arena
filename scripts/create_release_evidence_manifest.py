@@ -14,7 +14,8 @@ def main() -> int:
         path = root / raw.decode()
         if path.is_file(): tree_parts.append({"path": raw.decode(), "sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "bytes": path.stat().st_size})
     tree_digest = hashlib.sha256(json.dumps(tree_parts, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
-    dirty_paths = subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).splitlines()
+    output_rel = args.output.resolve().relative_to(root).as_posix()
+    dirty_paths = [line for line in subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).splitlines() if not line.endswith(output_rel)]
     manifest = {
         "manifest_version": "1.0",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
