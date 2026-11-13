@@ -162,6 +162,8 @@ The complete Python regression suite was rerun after the validator repair and pa
 
 The frontend qualification was rerun on the current HEAD and passed: Vitest `55/55` across 22 files, typecheck, production build, standard Playwright `15/15`, and qualification Playwright `11/11`. The qualification refreshed the committed FGA06 renderer-performance/comparison JSON and manual-capture PNG evidence; all generated qualification reports remained `PASS`.
 
+The evidence index and article were reconciled from `184` to the authoritative current total of `187` Python tests after adding the three closure-validator regressions.
+
 ## Final live rerun against commit `a2b35c5`
 
 - Databricks profile `fga`, dedicated warehouse `eded42c9d0a69b84`, sandbox namespace `sda_dev.sandbox`.
