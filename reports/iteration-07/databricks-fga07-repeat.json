@@ -1,0 +1,1569 @@
+{
+  "status": "pass",
+  "attempts": 10,
+  "package_count": 13,
+  "package_workers": 2,
+  "results": [
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_c79ce18a36a547d4bc69af7d833ddc4e",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_017e1df43ccf42bebe2f4b7c0b26933c",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_3ef277eeceea4b06983a1437fcfe8ae5",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_4c10bd8f1d6f4e33bfafd24568c3fd99",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_8999e969b13a4174a0e0722a31af8794",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_2e66c65644ad457a809f8cecb3d03d9a",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_d5d102549aa4413b88a319e05e5acda0",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_1bee230eff494a64af5722517f0d026a",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_439e6f7db7e74829acdbecc896a2e81f",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_06d717ee92344dc19d5366239cc07c2d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_ff2f10cc077d4739b147f82f9609c892",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_103af59424254753ba866ae2d717269d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 1,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_ec31b55ba0654929bac29fbd491926d0",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_9278768d6424491bb3e6215518767cbc",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_84420e0f2b234d37bb0e159ca97d495e",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_15d45d5e28d84f0dbb601ecba52f0f64",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_56aea530ec1b4bea893e31e06bdce48a",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_ab9f07eb6eed4a2fb8eed69bd4dab8b2",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_a6f592dd2af34886980117c15b8bbfe7",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_d8b875a90ac54bf2b5f23d5b8247a3fc",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_c8d043f2ad19417db5ae4581d39eb109",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_3fbef60738144f849be01264c6056759",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_756b71f42cf140e9bfe4423cab914c0f",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_3ff377f2be98486eaa9ca04419c77401",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_1f9b92cc691e44a6ad678e25d2d06669",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 2,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_4be87199c96843bbad6de9de0d15af7d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_788002518f8d47709bbe1351f0147327",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_8d755ff6fc9048339c6a90ce26b815fe",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_52125bd79ace4bfb94cbdff49f8ec982",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_ca625f885a5f4eb3a1fc804098ce82e7",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_6651d3a7596e433f9de7dd4008d50542",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_b6deb09b05034f2da3a0633b5400fa81",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_afea1f06223943b68ada5091b9b15376",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_e0b3ab90e1e34884838aa44f83990b05",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_342f0360f9e44e748f8d002e537a60ff",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_3c1b74aae51f445bb067b405168ea3cb",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_596b4081e3e74294931b95de6a74df55",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_02caa24b94104a66b50ddb3643c38efa",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 3,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_195dbec1e28d4bc5acdbb143d3469a8b",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_b51c84f41fb040e093c92afac873949c",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_2cc79ac5caaa424a82567cddfc0a5c23",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_f02e8cd3b9714629944791feec8cff9d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_1c27d242bf3f49378050e5efab357e52",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_ef3b0543e8e3422c907f4276857dd56c",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_1cf1f68a49da409b87500ae2692629be",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_8e935ed9f8314ad3a805fa9a6aa88199",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_1caf2a62189446f79120d885f7d50e31",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_a0b804e1d724432587d163505a336243",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_f7793fb7a1b846358f49a46768e1af5c",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_ea06174e6c5b4376b893ba67df537f78",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_077b112935da4de79913e874af4f15ef",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 4,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_762b2dd788b447bdb61e18a72e2b82a3",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_f68065d16130466d9b05f0176fcec571",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_8e05c77664c047099646b6e4a890ead9",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_976fbcb7439b4d27948be9910a36c2dc",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_5910405ecdb7463d855aa4fb08e0d2dc",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_cae699401cfc4c329913613f1ad5ff75",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_53104e1831b046b88a1de8072ee362cf",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_d514e235e8af448291a81e6840cc787a",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_fe39d24b70c64349b3e3aedc0f204ace",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_62c31d0ea965476faae135e8408cfa34",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_7dea7acd5fe64750a71d13cf71d7487d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_a53e8bee98044af6aa6b0533540da667",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_0a4b3d0d89a844f3bdc90ff03c63a5fb",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 5,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_eea2acbbd91f4816a2394d3c9e9423ee",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_f52b26b57bc2488695c609afe5b54525",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_1acda3db0d4e4501bed75060daca7f02",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_22f0a4bb21e348e0965d5f4216549414",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_4bb8eee2a0a946cab000069d6616a7c3",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_016ceee36730474fb8d631dc1b3ec17d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_a2ef4bb3e1ea4a39b236035b7d3df706",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_947f48f9401149d39944c30c7229b624",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_19d03ab3c8414151bc5ff5692e807470",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_1466eaf5d7f74c8f941265b7d38150cf",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_bbbfb450cbb24314b84fe2df82dd535d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_82696bc57e8249f2afb005bcc3d7c842",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_79935c595a974c87bbb71e7015992621",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 6,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_6962feb20c274e79b10b360a367e9734",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_1181a0db0c0b48c993dd14b183fcdc5e",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_21c722d486634b7cbbdb2b00ec7ea933",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_1f1e1294faa84d9f8700846237251069",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_fabee058de3d4c09a2d2fec96c28cbc5",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_c837aeab1f75434885c49a72794c090a",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_f3af31a24bf44a72839cc24fbab6dd88",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_1bf830f454ea4d5e9149a9a98c5258af",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_7264bf09eb0944938ac9f705fa742243",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_fa9cb4d27c61410f9528ffeec264fe77",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_a114766dde27472aacd0118c48f1c2eb",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_8673881c302d49d7bc6c432748b56148",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_a4cf20fdd3c44d678367e59d6bb554f6",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 7,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_50bfebf9a68b48e5afcf367cfc551bae",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_e5b7279a16ae460d95de50e0673937dd",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_e1a793795ee4407a8a4d6acf37f02962",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_096562e59a694c689bbf325eda12c32d",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_14b2570d7cd648399961c4f13b8f1417",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_bd89fbbec4d5430599adfc60d296c555",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_d15adf2162d1431bb2c88e237ec70197",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_9c2d4c6a60c54895a7e84192507dabf6",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_401ffeab6cc04a74a951ed2fc90f2069",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_f180c02e2eb8441883a40e55da66e492",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_a8df2e5323034e37b96a3524988b589b",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_cf6bd02494694ad2925f51f19f9f7eba",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_f47879f6040c4e17a40cc3e1764a23b8",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 8,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_6cd92a3a4f294947a3555357562d12d5",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_4860b9e0b5a64a4eb005222383e8f7a1",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_4fc1350f118b4c5689a6bc7ab89ab52a",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_bc13665aca504ccc8c22e681807cce19",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_dc5ea83b45ea42e7bfc5d1d975d591f4",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_6ae95e1531ee4b3faac552657c39f4f2",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_a4b14ad56e3e457da3e3a84182f93f34",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_a3fa7223bbb84d1ebe8463b36f162343",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_a9742eb7ddbb42bba0856aa9aac452e2",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_87ff38d5f070410b854bb640263ee292",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_730b36ccb71a4f0991bcc5b78018f096",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_8486de00839c4052bb46b6e3233da080",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_084b5ca3b21b4436b1367ae87c849ad6",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 9,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_6736f7e880384561b25f001a06503dc2",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "A1_BONE_LEDGER_canonical_case_data_v2",
+      "run_id": "dbx_run_54e7a8ba1bbd425cbcab16e71099b9ad",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_881333696da14ddca30e21a8c88eb3ba",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_3f3d408c9b8d454db1557420806bcd2f",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_da7ffe6f1cdf4dacb77dca4bb2d601ce",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_09064686719343cc97237f72b138424f",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_5fac8402b5bf475d9eb632d498359585",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_a6181e5444bd42b297af3c11f487209e",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_f6f8df7e31344bcaa207830388944096",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_c38cf41ddbbb455284cb914776694150",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_813de94d7b9944adac9e653272a32722",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_377c5b7ae4424ec995289f981ce498fe",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_1e688032908f477a88f3cd0479723eb5",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "attempt": 10,
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_10c77aeff2514a83bb622d5c3cd00148",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "existing_status": "ACTIVE"
+      }
+    }
+  ],
+  "failures": []
+}

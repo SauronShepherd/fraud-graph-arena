@@ -20,7 +20,7 @@ ACADEMY_T03,T3-A-MOONLIT,currency,STRING,BSC,,,,,,,false,false,3,authoring/recor
 ACADEMY_T03,T3-DEV-VERA,assigned_to,STRING,DIR-404,,,,,,,false,false,1,authoring/records.csv,safe_attributes_json.assigned_to,2026.07.19.1
 ACADEMY_T03,T3-DEV-VERA,device_id,STRING,dev-moon-404,,,,,,,true,false,2,authoring/records.csv,safe_attributes_json.device_id,2026.07.19.1
 ACADEMY_T03,T3-INV-401,amount_bsc,INTEGER,,650,,,,,,false,false,1,authoring/records.csv,safe_attributes_json.amount_bsc,2026.07.19.1
-ACADEMY_T03,T3-INV-401,claimed_issue_time,TIMESTAMP,,,,,,2026-03-31T23:30:00-04:00,,false,false,2,authoring/records.csv,safe_attributes_json.claimed_issue_time,2026.07.19.1
+ACADEMY_T03,T3-INV-401,claimed_issue_time,TIMESTAMP,,,,,,2026-04-01T03:30:00Z,,false,false,2,authoring/records.csv,safe_attributes_json.claimed_issue_time,2026.07.19.1
 ACADEMY_T03,T3-INV-401,description,STRING,routine advisory retainer,,,,,,,true,false,3,authoring/records.csv,safe_attributes_json.description,2026.07.19.1
 ACADEMY_T03,T3-RECV-401,received_at_utc,TIMESTAMP,,,,,,2026-04-01T03:35:00Z,,false,false,1,authoring/records.csv,safe_attributes_json.received_at_utc,2026.07.19.1
 ACADEMY_T03,T3-TX-401,amount_bsc,INTEGER,,650,,,,,,false,false,1,authoring/records.csv,safe_attributes_json.amount_bsc,2026.07.19.1

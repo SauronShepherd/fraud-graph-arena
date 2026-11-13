@@ -1,11 +1,312 @@
 {
-  "status": "blocked",
-  "package_count": 1,
+  "status": "pass",
+  "package_count": 13,
+  "package_workers": 2,
   "results": [
     {
+      "status": "pass",
       "package": "A1_BONE_LEDGER_canonical_case_data_v2",
-      "status": "blocked",
-      "error": "Initial attempt failed because the staging volume did not exist. After creating sda_dev.sandbox.fga05_stage, the retry remained in the first package transfer without producing a result and was stopped."
+      "run_id": "dbx_run_c1c7cbcdcc544446bb6ee16e994e7c9f",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "status": "pass",
+      "package": "A2_DOWNLINE_canonical_case_data_v2",
+      "run_id": "dbx_run_568e376865f643db9c0c3d0e3e4d1533",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_1d63d3a9cd0fc11d57a3c48d09c5b5ef7e1d8209c51a6451c85ea48f620412a8",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "status": "pass",
+      "package": "A3_PHANTOM_VET_canonical_case_data_v2",
+      "run_id": "dbx_run_82cb56c475a84e3e95573cae8c507a13",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_797fae271e8e51c35c505370baee51f330fa1c0dfaaf09075a1c47df9a590963",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "status": "pass",
+      "package": "A4_GOLDEN_HYDRANT_canonical_case_data_v2",
+      "run_id": "dbx_run_b1423a04916b4956b16dccd13d638d3b",
+      "statements": 0,
+      "lifecycle": {
+        "status": "REUSED",
+        "publication_id": "pub_6d6b6d15dfe39b147260163b91e5967fcb59673870f615ec7b3d299d93f1573c",
+        "existing_status": "ACTIVE"
+      }
+    },
+    {
+      "status": "pass",
+      "package": "P1_MADDOG_canonical_case_data_v2",
+      "run_id": "dbx_run_f2c29f6d6b0046acbbe6fc61072cbe3d",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_f2c29f6d6b0046acbbe6fc61072cbe3d",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_9bf5e7d541fad8ef46dfba8fe42e21e720c107c51e29b277e8be5faa4d759128",
+        "identity": {
+          "case_id": "MADDOG",
+          "case_version": "1.1.0",
+          "snapshot_version": "2026.07.19.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "d4ecacae21a2c7f967b4dbb7f059f426fa26bdc6fb3490bb24c900b93cb8db20"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "P2_CEO_BARKED_TWICE_canonical_case_data_v2",
+      "run_id": "dbx_run_fc39906916d943c2bf263e741c42f515",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_fc39906916d943c2bf263e741c42f515",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_f37a9b2b1268bfe9c65f9162d5729f8a17538897329132d4404e38dfe83a64bd",
+        "identity": {
+          "case_id": "CEO_BARKED_TWICE",
+          "case_version": "1.1.0",
+          "snapshot_version": "2026.07.19.2",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "7552f2e262f182f23586f8646c44ef09bebc8264b4361c2ee7b9bfd2fd459837"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "P3_BISCUIT_RELIEF_canonical_case_data_v2",
+      "run_id": "dbx_run_f66f32741b954408a787a8fb40e725ac",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_f66f32741b954408a787a8fb40e725ac",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_cda7685536783944dace9c5ba11253c72687b5b0bcbf2a16499097aba8122f22",
+        "identity": {
+          "case_id": "BISCUIT_RELIEF",
+          "case_version": "1.1.0",
+          "snapshot_version": "2026.07.19.3",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "a725bda078ffef077adc0329f3c8eda2eb6f1342268a7016b8102c6e0d4836b2"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+      "run_id": "dbx_run_8d5e9ad95bd745388714e815e580bdf9",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_8d5e9ad95bd745388714e815e580bdf9",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_2dfa0f6bcaaa75a31388f979b8a62a3d58649ca545e0aad44fa8ef564ce7c304",
+        "identity": {
+          "case_id": "LOVE_LEASHES_OFFSHORE",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "2896871daeee3c21fb9805209009a7f88620ec29ef56f8454c96a0059e630a4c"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "S2_CRYPTO_KENNEL_LONG_CON_canonical_case_data_v2",
+      "run_id": "dbx_run_87369f7f830c410c832a8a14783901e4",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_87369f7f830c410c832a8a14783901e4",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_a62b9a8b764fc9913e13b1926cbfd15fa812fa2457329dea1525f7860c967253",
+        "identity": {
+          "case_id": "CRYPTO_KENNEL_LONG_CON",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.18.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "29346a785f7bdb6df0578a80b260f4b412653e2a0554539bb37fc22bc7b742da"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "S3_PANAMA_PAWPERS_canonical_case_data_v2",
+      "run_id": "dbx_run_00195cbe6dd64d1ea0767251201e72d5",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_00195cbe6dd64d1ea0767251201e72d5",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_80c15f3447ab8272215dcd8426e2628e973c6349633ac64401297d8ea199b6a5",
+        "identity": {
+          "case_id": "PANAMA_PAWPERS",
+          "case_version": "1.0.0",
+          "snapshot_version": "2026.07.19.2",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "f0e98143d8ea0f39b0eb7622abc4d99ccf92daf05a22f4255ce7a6df82f7c527"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "T1_THE_MISSING_120_canonical_case_data_v3",
+      "run_id": "dbx_run_cc37aff02a1f4fb1bdcefcdcd10466d8",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_cc37aff02a1f4fb1bdcefcdcd10466d8",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411",
+        "identity": {
+          "case_id": "ACADEMY_T01",
+          "case_version": "3.0.0-canonical.1",
+          "snapshot_version": "2026.07.19.3",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "173ac4abbe149c928d18b1ef89a5c992adb15e5efc80c6c3b1af1a6fbd5a097c"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+      "run_id": "dbx_run_269a76ac5b074d02bba2e3ced2eb5b97",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_269a76ac5b074d02bba2e3ced2eb5b97",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd",
+        "identity": {
+          "case_id": "ACADEMY_T02",
+          "case_version": "3.0.0-canonical.1",
+          "snapshot_version": "2026.07.19.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "bf39a5b725d60879723447c33b18fa268401a41df8974517c34d6ace2c28a24a"
+        },
+        "statements": 2
+      }
+    },
+    {
+      "status": "pass",
+      "package": "T3_THE_GHOST_INVOICE_canonical_case_data_v3",
+      "run_id": "dbx_run_aefe5f98799f435286dfc2883db025a2",
+      "statements": 32,
+      "lifecycle": {
+        "status": "pass",
+        "run_id": "dbx_run_aefe5f98799f435286dfc2883db025a2",
+        "lifecycle": [
+          "STARTED",
+          "PREFLIGHTED",
+          "STAGING",
+          "STAGED",
+          "VALIDATING",
+          "VALIDATED",
+          "PUBLISHING",
+          "PUBLISHED"
+        ],
+        "publication_id": "pub_9f4c863b0dc9557b887d300bccf9cfe88d72563441cdac8a2e5b3c46e0d2a0b5",
+        "identity": {
+          "case_id": "ACADEMY_T03",
+          "case_version": "3.0.0-canonical.1",
+          "snapshot_version": "2026.07.19.1",
+          "canonical_model_version": "1.0.0",
+          "content_digest": "a3ee09ea98237f7a8f8684dce7a058f9c65b406220bfb8e8548666c19f4c0aea"
+        },
+        "statements": 2
+      }
     }
   ]
 }

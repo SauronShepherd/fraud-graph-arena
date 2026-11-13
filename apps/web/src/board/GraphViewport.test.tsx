@@ -23,6 +23,11 @@ describe("GraphViewport", () => {
     expect(screen.getByRole("img", { name: "100 nodes in current graph view" })).toBeVisible();
   });
 
+  it("announces omitted graph content when the projection is partial", () => {
+    render(<GraphViewport graph={{ ...graph, partial: true, omitted_node_count: 4, omitted_edge_count: 7 }} />);
+    expect(screen.getByRole("status")).toHaveTextContent("Partial view · 4 nodes and 7 relationships omitted");
+  });
+
   it("supports zoom, layout, family filtering, and semantic selection", () => {
     const onNodeSelect = vi.fn();
     render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} />);
@@ -60,6 +65,16 @@ describe("GraphViewport", () => {
     expect(container.querySelector(".graph-minimap rect")).not.toBeNull();
     fireEvent.click(screen.getByRole("button", { name: "Restore Puppy One" }));
     expect(screen.getByRole("button", { name: "Puppy One, P1" })).toBeVisible();
+  });
+
+  it("clears selection when the selected node is collapsed", () => {
+    const onNodeSelect = vi.fn();
+    render(<GraphViewport graph={graph} onNodeSelect={onNodeSelect} />);
+    fireEvent.click(screen.getByRole("button", { name: "Puppy One, P1" }));
+    expect(screen.getByRole("button", { name: "Fit selection" })).toBeEnabled();
+    fireEvent.click(screen.getByRole("button", { name: "Collapse Puppy One" }));
+    expect(screen.getByRole("button", { name: "Fit selection" })).toBeDisabled();
+    expect(onNodeSelect).toHaveBeenLastCalledWith(null);
   });
 
   it("renders directed relationships with an arrow marker", () => {

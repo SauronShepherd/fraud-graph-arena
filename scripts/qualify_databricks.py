@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, json, re, subprocess
+import argparse, json, re, subprocess, time
 from pathlib import Path
 from fraud_graph_arena.canonical_persistence.registry import PHYSICAL_TARGETS, OPERATIONAL_TARGETS, ACTIVE_VIEW_TARGETS
 from fraud_graph_arena.canonical_persistence.operational_registry import columns, ddl, sql_types as operational_sql_types
@@ -7,9 +7,28 @@ from fraud_graph_arena.case_data.registry import headers, sql_types
 OPERATIONAL_COLUMNS = {table: list(columns(table)) for table in OPERATIONAL_TARGETS}
 from fraud_graph_arena.canonical_persistence.registry import expected_topology
 
+SQL_CLI_TIMEOUT_SECONDS = 75
+SQL_STATEMENT_TIMEOUT_SECONDS = 180
+
+
 def api(profile: str, payload: dict) -> dict:
-    result = subprocess.run(["databricks", "api", "post", "/api/2.0/sql/statements", "--profile", profile, "--json", json.dumps(payload)], capture_output=True, text=True, check=True)
-    return json.loads(result.stdout)
+    try:
+        result = subprocess.run(["databricks", "api", "post", "/api/2.0/sql/statements", "--profile", profile, "--json", json.dumps(payload)], capture_output=True, text=True, check=True, timeout=SQL_CLI_TIMEOUT_SECONDS)
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(f"Databricks SQL submission timed out after {SQL_CLI_TIMEOUT_SECONDS}s") from exc
+    response = json.loads(result.stdout)
+    state = response.get("status", {}).get("state")
+    statement_id = response.get("statement_id")
+    deadline = time.monotonic() + SQL_STATEMENT_TIMEOUT_SECONDS
+    while state in {"PENDING", "RUNNING"} and statement_id and time.monotonic() < deadline:
+        time.sleep(1)
+        try:
+            poll = subprocess.run(["databricks", "api", "get", f"/api/2.0/sql/statements/{statement_id}", "--profile", profile], capture_output=True, text=True, check=True, timeout=SQL_CLI_TIMEOUT_SECONDS)
+        except subprocess.TimeoutExpired as exc:
+            raise RuntimeError(f"Databricks SQL polling timed out after {SQL_CLI_TIMEOUT_SECONDS}s") from exc
+        response = json.loads(poll.stdout)
+        state = response.get("status", {}).get("state")
+    return response
 
 def validate_identifier(label: str, value: str) -> str:
     if not re.fullmatch(r"[A-Za-z0-9_][A-Za-z0-9_-]*", value):

@@ -181,6 +181,7 @@ def copy_repository(destination: Path) -> None:
     ignored = shutil.ignore_patterns(
         ".git", ".pytest_cache", "__pycache__", "*.pyc", "*.egg-info", ".venv",
         "node_modules", "case-data", ".fga", "apps/web/public/assets", "dist",
+        ".vite", "test-results", "playwright-report", "coverage",
     )
     shutil.copytree(ROOT, destination, ignore=ignored)
 

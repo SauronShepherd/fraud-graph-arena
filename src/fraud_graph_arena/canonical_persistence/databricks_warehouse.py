@@ -4,6 +4,7 @@ import json
 import subprocess
 import tempfile
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 from decimal import Decimal
@@ -15,6 +16,9 @@ from fraud_graph_arena.canonical_persistence.types import coerce_row
 from .operational_registry import columns as operational_columns
 
 class DatabricksWarehouseError(RuntimeError): pass
+
+SQL_STATEMENT_TIMEOUT_SECONDS = 180
+SQL_CLI_TIMEOUT_SECONDS = 75
 
 def _literal(value: object) -> str:
     if value is None or value == "": return "NULL"
@@ -47,15 +51,40 @@ class DatabricksWarehouse:
         payload = {"statement": statement, "warehouse_id": self.warehouse_id, "wait_timeout": self.wait_timeout, "catalog": self.catalog, "schema": self.schema}
         with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as handle:
             json.dump(payload, handle); request_path = handle.name
-        result = subprocess.run(["databricks", "api", "post", "/api/2.0/sql/statements", "--profile", self.profile, "--json", "@" + request_path], capture_output=True, text=True)
+        try:
+            result = subprocess.run(["databricks", "api", "post", "/api/2.0/sql/statements", "--profile", self.profile, "--json", "@" + request_path], capture_output=True, text=True, timeout=SQL_CLI_TIMEOUT_SECONDS)
+        except subprocess.TimeoutExpired as exc:
+            raise DatabricksWarehouseError(f"Databricks SQL submission timed out after {SQL_CLI_TIMEOUT_SECONDS}s") from exc
         if result.returncode:
             raise DatabricksWarehouseError(result.stderr.strip()[-512:])
         try:
             response = json.loads(result.stdout)
         except json.JSONDecodeError as exc:
             raise DatabricksWarehouseError("Databricks returned invalid JSON") from exc
-        if response.get("status", {}).get("state") == "FAILED":
-            raise DatabricksWarehouseError(str(response.get("status", {}).get("error", "statement failed"))[-512:])
+        state = response.get("status", {}).get("state")
+        statement_id = response.get("statement_id")
+        deadline = time.monotonic() + SQL_STATEMENT_TIMEOUT_SECONDS
+        while state in {"PENDING", "RUNNING"} and statement_id and time.monotonic() < deadline:
+            time.sleep(1)
+            try:
+                poll = subprocess.run(
+                    ["databricks", "api", "get", f"/api/2.0/sql/statements/{statement_id}", "--profile", self.profile],
+                    capture_output=True,
+                    text=True,
+                    timeout=SQL_CLI_TIMEOUT_SECONDS,
+                )
+            except subprocess.TimeoutExpired as exc:
+                raise DatabricksWarehouseError(f"Databricks SQL polling timed out after {SQL_CLI_TIMEOUT_SECONDS}s") from exc
+            if poll.returncode:
+                raise DatabricksWarehouseError((poll.stderr or poll.stdout or "Databricks statement polling failed").strip()[-512:])
+            try:
+                response = json.loads(poll.stdout)
+            except json.JSONDecodeError as exc:
+                raise DatabricksWarehouseError("Databricks returned invalid JSON while polling") from exc
+            state = response.get("status", {}).get("state")
+        if state != "SUCCEEDED":
+            detail = response.get("status", {}).get("error", response.get("status", {}))
+            raise DatabricksWarehouseError(f"Databricks statement did not succeed: {detail}"[-512:])
         return response
 
     def select(self, columns: Sequence[str], table: str, predicate: tuple[str, str, object] | None = None) -> dict[str, Any]:
@@ -93,7 +122,7 @@ class DatabricksWarehouse:
         for path, table in PHYSICAL_TARGETS.items():
             qualified = self.qualify_table(table)
             queries.extend([
-                f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)}) AS correlated FROM {qualified}",
+                f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {_literal(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {_literal(run_id)}) AS correlated FROM {qualified} WHERE _publication_id = {_literal(publication_id)}",
                 f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {_literal(publication_id)} AND snapshot_version IS NULL",
             ])
             primary_key = typed_registry[path].get("primary_key", [])
@@ -128,5 +157,22 @@ class DatabricksWarehouse:
         data = duplicate_check.get("result", {}).get("data_array", [])
         if data and int(data[0][0]) > 1:
             raise DatabricksWarehouseError("DUPLICATE_ACTIVE_POINTER")
-        values = ", ".join((_literal(case_id), _literal(case_version), _literal(snapshot_version), _literal(model_version), _literal(publication_id), "current_timestamp()", _literal(run_id)))
-        return self.execute(f"MERGE INTO {table} AS target USING (SELECT {values}) AS source ON target.case_id = source.case_id AND target.case_version = source.case_version WHEN MATCHED THEN UPDATE SET * WHEN NOT MATCHED THEN INSERT *")
+        source = (
+            f"SELECT {_literal(case_id)} AS case_id, {_literal(case_version)} AS case_version, "
+            f"{_literal(snapshot_version)} AS snapshot_version, {_literal(model_version)} AS canonical_model_version, "
+            f"{_literal(publication_id)} AS active_publication_id, current_timestamp() AS activated_at_utc, "
+            f"{_literal(run_id)} AS activating_run_id"
+        )
+        return self.execute(
+            f"MERGE INTO {table} AS target USING ({source}) AS source "
+            "ON target.case_id = source.case_id AND target.case_version = source.case_version "
+            "WHEN MATCHED THEN UPDATE SET "
+            "snapshot_version = source.snapshot_version, "
+            "canonical_model_version = source.canonical_model_version, "
+            "active_publication_id = source.active_publication_id, "
+            "activated_at_utc = source.activated_at_utc, "
+            "activating_run_id = source.activating_run_id "
+            "WHEN NOT MATCHED THEN INSERT "
+            "(case_id, case_version, snapshot_version, canonical_model_version, active_publication_id, activated_at_utc, activating_run_id) "
+            "VALUES (source.case_id, source.case_version, source.snapshot_version, source.canonical_model_version, source.active_publication_id, source.activated_at_utc, source.activating_run_id)"
+        )

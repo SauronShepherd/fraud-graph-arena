@@ -13,6 +13,15 @@ def test_graph_api_returns_bounded_initial_projection(client):
     assert body["node_count"] == 2
     assert body["partial"] is True
     assert body["omitted_node_count"] == 18
+    assert body["omitted_edge_count"] == 21
+    assert body["relationship_filters"] == []
+
+
+def test_graph_api_rejects_non_positive_limits(client):
+    round_id = _active_t02(client)
+    for payload in ({"limit": 0}, {"limit": -1}, {"edge_limit": 0}, {"edge_limit": -1}):
+        response = client.post(f"/api/v1/rounds/{round_id}/graph/initial", json=payload)
+        assert response.status_code == 422
 
 
 def test_graph_api_rejects_expansion_of_hidden_node(client):

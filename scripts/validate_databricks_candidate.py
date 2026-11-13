@@ -17,7 +17,7 @@ def validation_queries(publication_id: str, run_id: str, catalog: str, schema: s
     queries = []
     for path, table in PHYSICAL_TARGETS.items():
         qualified = prefix + table
-        queries.append(f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {q(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {q(run_id)}) AS correlated FROM {qualified}")
+        queries.append(f"SELECT COUNT(*) AS rows, COUNT_IF(_publication_id = {q(publication_id)}) AS tagged, COUNT_IF(_load_run_id = {q(run_id)}) AS correlated FROM {qualified} WHERE _publication_id = {q(publication_id)}")
         queries.append(f"SELECT COUNT(*) AS missing_snapshot FROM {qualified} WHERE _publication_id = {q(publication_id)} AND snapshot_version IS NULL")
         primary_key = load_typed_registry()[path].get("primary_key", [])
         if primary_key:

@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, json, subprocess, tempfile
+import argparse, json, subprocess, tempfile, time
 from fraud_graph_arena.canonical_persistence.registry import OPERATIONAL_TARGETS
 
 ACTIVE_PUBLICATIONS_TABLE = "fga_active_publications"
@@ -7,7 +7,25 @@ def call(profile, warehouse, catalog, schema, statement):
     payload={"statement":statement,"warehouse_id":warehouse,"wait_timeout":"30s","catalog":catalog,"schema":schema}
     with tempfile.NamedTemporaryFile("w",suffix=".json",delete=False,encoding="utf-8") as fh: json.dump(payload,fh); path=fh.name
     result=subprocess.run(["databricks","api","post","/api/2.0/sql/statements","--profile",profile,"--json","@"+path],capture_output=True,text=True,check=True)
-    return json.loads(result.stdout)
+    response=json.loads(result.stdout)
+    state=response.get("status", {}).get("state")
+    statement_id=response.get("statement_id")
+    deadline=time.monotonic()+120
+    while state in {"PENDING", "RUNNING"} and statement_id and time.monotonic() < deadline:
+        time.sleep(1)
+        poll=subprocess.run(["databricks","api","get",f"/api/2.0/sql/statements/{statement_id}","--profile",profile],capture_output=True,text=True,check=True)
+        response=json.loads(poll.stdout)
+        state=response.get("status", {}).get("state")
+    if state != "SUCCEEDED":
+        error=response.get("status", {}).get("error", response.get("status", {}))
+        raise RuntimeError(json.dumps({"state": state, "statement_id": statement_id, "error": error}))
+    return response
+
+def scalar(response, label):
+    try:
+        return response["result"]["data_array"][0][0]
+    except (KeyError, IndexError, TypeError) as error:
+        raise RuntimeError(f"{label} did not return one scalar SQL value") from error
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--profile",default="fga"); p.add_argument("--warehouse",default="e444f39962128242"); p.add_argument("--catalog",default="sda_dev"); p.add_argument("--schema",default="sandbox"); p.add_argument("--report",default="reports/iteration-05/imports/failure-injection-summary.json"); p.add_argument("--execute",action="store_true"); args=p.parse_args()
     if not args.execute:
@@ -17,10 +35,15 @@ def main():
     qualified = f"{args.catalog}.{args.schema}."
     # Keep the durable run ledger and active pointer explicit in the failure proof.
     runs = qualified + OPERATIONAL_TARGETS[0]; active = qualified + ACTIVE_PUBLICATIONS_TABLE
-    before=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
-    call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO {runs} (import_run_id,case_id,case_version,snapshot_version,package_content_digest,status,retry_of,error_code,error_summary,started_at_utc,finished_at_utc,actor,load_policy) VALUES ('dbx_failed_run_17','BONE_LEDGER','1.0.0','2026.07.18.1','injected','FAILED',NULL,'INJECTED_FAILURE','controlled qualification failure',current_timestamp(),current_timestamp(),'qualification','FULL_INTERNAL')")
-    after=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
-    before_id=before["result"]["data_array"][0][0]; after_id=after["result"]["data_array"][0][0]
+    try:
+        before=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
+        call(args.profile,args.warehouse,args.catalog,args.schema,f"INSERT INTO {runs} (import_run_id,case_id,case_version,snapshot_version,package_content_digest,status,retry_of,error_code,error_summary,started_at_utc,finished_at_utc,actor,load_policy) VALUES ('dbx_failed_run_17','BONE_LEDGER','1.0.0','2026.07.18.1','injected','FAILED',NULL,'INJECTED_FAILURE','controlled qualification failure',current_timestamp(),current_timestamp(),'qualification','FULL_INTERNAL')")
+        after=call(args.profile,args.warehouse,args.catalog,args.schema,f"SELECT active_publication_id FROM {active} LIMIT 1")
+        before_id=scalar(before, "before active pointer"); after_id=scalar(after, "after active pointer")
+    except RuntimeError as error:
+        report={"status":"blocked","reason":"sql_statement_did_not_succeed","error":str(error),"qualified_source_sha":subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),"catalog":args.catalog,"schema":args.schema,"warehouse":args.warehouse}
+        report_path = __import__("pathlib").Path(args.report); report_path.parent.mkdir(parents=True, exist_ok=True); report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        print(json.dumps(report,indent=2)); return 1
     report={"status":"pass" if before_id==after_id else "fail","before":before_id,"after":after_id,"failed_run":"dbx_failed_run_17","candidate_active":False}
     report["qualified_source_sha"] = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
     report["catalog"] = args.catalog; report["schema"] = args.schema; report["warehouse"] = args.warehouse

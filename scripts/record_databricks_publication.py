@@ -71,6 +71,6 @@ def main() -> int:
             report.update({"status": "fail", "terminal_run_status": terminal, "error_code": "CANDIDATE_CLEANUP_FAILED" if not cleanup_ok else "LIVE_PUBLICATION_FAILED", "error_summary": error_summary})
     rendered = json.dumps(report, indent=2) + "\n"; print(rendered, end="")
     if args.report: args.report.parent.mkdir(parents=True, exist_ok=True); args.report.write_text(rendered, encoding="utf-8")
-    return 0
+    return 0 if report["status"] in {"planned", "pass", "REUSED"} else 1
 
 if __name__ == "__main__": raise SystemExit(main())

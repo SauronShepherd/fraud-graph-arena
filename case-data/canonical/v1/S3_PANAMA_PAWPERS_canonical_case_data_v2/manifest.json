@@ -62,10 +62,10 @@
       "sha256": "501f525b69108e32c1bf6941a61e39e97577ff6d96ebea347fd3bf4ed54caeb4"
     },
     {
-      "bytes": 7327127,
+      "bytes": 7365347,
       "path": "authoring/relationships.csv",
       "rows": 26052,
-      "sha256": "9d7fad5382d0cac9b57ea9761ea974f50ce4d2441b3a1385fb2eb46892def7b9"
+      "sha256": "33f9b525a53d72b05f66ce714b5f09ee3ba39f3eb0c6f1b856c9ad53e70f27e3"
     },
     {
       "bytes": 154201,
@@ -92,10 +92,10 @@
       "sha256": "4ce76a158859f3c2f7e73792a97a18a834a9f793cde3df87aef6d573f6a8e116"
     },
     {
-      "bytes": 2235237,
+      "bytes": 2273457,
       "path": "published/relationships.csv",
       "rows": 10675,
-      "sha256": "43efffd2d92fe35b463e007739f6baa880643adff9a270d9a02d1dae4b5b36ef"
+      "sha256": "5273395926084b3d379298294b0ad7c8280588f8e0ddd5201ce05a29920e9f0f"
     },
     {
       "bytes": 107424,

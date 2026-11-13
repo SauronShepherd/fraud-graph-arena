@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "before": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+  "after": "pub_ccd9d63c5e9bfe3a0b13dc93d51e687451b2224ab17036fb98f0509d273de891",
+  "failed_run": "dbx_failed_run_17",
+  "candidate_active": false,
+  "qualified_source_sha": "24e76a243d7c1570ce632e582f5345399579cc4c",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse": "eded42c9d0a69b84"
+}
