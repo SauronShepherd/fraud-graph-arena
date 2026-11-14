@@ -14,6 +14,7 @@ SEMANTIC_ACTIONS: tuple[tuple[str, str], ...] = (
     ("SEARCH_EVIDENCE", "Evidence search will unlock when the case publishes evidence."),
     ("OPEN_CASE_FILE", "Case-file construction is not available in the empty Academy round."),
 )
+MANUAL_HYPOTHESIS_ACTION = ("CREATE_HYPOTHESIS", "Record a typed player hypothesis without changing evidence visibility.")
 NOT_IMPLEMENTED = "NOT_IMPLEMENTED"
 
 @dataclass(frozen=True, slots=True)
@@ -39,7 +40,13 @@ class WorkspaceService:
         if round_.status == RoundStatus.INTRO_PENDING:
             raise ConflictError(code="INTRO_REQUIRED", title="Academy introduction required", detail="Complete or skip the registered opening comic before entering the board.", recovery=f"Open /rounds/{round_id}/intro and finish the Academy briefing.")
         case = self._catalogue.require_case_for_path(raw_path_id=round_.path_id.value, case_id=round_.case_id, case_version=round_.case_version)
-        actions = tuple({"id": action, "state": NOT_IMPLEMENTED, "reason_code": "CAPABILITY_NOT_IMPLEMENTED", "reason": reason} for action, reason in SEMANTIC_ACTIONS)
+        actions = [
+            {"id": action, "state": NOT_IMPLEMENTED, "reason_code": "CAPABILITY_NOT_IMPLEMENTED", "reason": reason}
+            for action, reason in SEMANTIC_ACTIONS
+        ]
+        if round_.case_id == "ACADEMY_T02":
+            action, reason = MANUAL_HYPOTHESIS_ACTION
+            actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
         path = next(path for path in self._catalogue.list_paths() if path.id == round_.path_id)
         graph = t02_graph() if round_.case_id == "ACADEMY_T02" else {"projection_version": "1", "nodes": (), "edges": (), "node_count": 0, "edge_count": 0}
-        return WorkspaceProjection(round_, case, path.name, "GRAPH_READY" if graph["nodes"] else "NO_EVIDENCE_REVEALED", len(graph["nodes"]), 0, actions, graph)
+        return WorkspaceProjection(round_, case, path.name, "GRAPH_READY" if graph["nodes"] else "NO_EVIDENCE_REVEALED", len(graph["nodes"]), 0, tuple(actions), graph)

@@ -10,6 +10,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fraud_graph_arena.catalogue.adapters.memory import InMemoryCatalogueRepository
 from fraud_graph_arena.catalogue.service import CatalogueService
 from fraud_graph_arena.config import RuntimeRole, Settings
+from fraud_graph_arena.investigation_commands.adapters.memory import InMemoryInvestigationCommandRepository
+from fraud_graph_arena.investigation_commands.adapters.sqlite import SqliteInvestigationCommandRepository
+from fraud_graph_arena.investigation_commands.ports import InvestigationCommandRepository
+from fraud_graph_arena.investigation_commands.service import InvestigationCommandService
 from fraud_graph_arena.narrative.adapters.memory import InMemoryNarrativeRepository
 from fraud_graph_arena.narrative.service import NarrativeService
 from fraud_graph_arena.rounds.adapters.memory import InMemoryRoundRepository
@@ -33,6 +37,7 @@ class Container:
     round_repository: RoundRepository
     workspace: WorkspaceService
     graph: GraphInvestigationService
+    investigation_commands: InvestigationCommandService
 
 
 def build_web_container(settings: Settings) -> Container:
@@ -57,6 +62,12 @@ def build_web_container(settings: Settings) -> Container:
         round_ = round_service.require(round_id)
         return t02_expandable_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": ()}
 
+    command_repository: InvestigationCommandRepository
+    if settings.round_repository == "memory":
+        command_repository = InMemoryInvestigationCommandRepository()
+    else:
+        command_repository = SqliteInvestigationCommandRepository(settings.sqlite_path)
+
     return Container(
         settings=settings,
         catalogue=catalogue,
@@ -65,6 +76,7 @@ def build_web_container(settings: Settings) -> Container:
         round_repository=round_repository,
         workspace=WorkspaceService(round_service, catalogue),
         graph=GraphInvestigationService(graph_provider),
+        investigation_commands=InvestigationCommandService(round_service, command_repository),
     )
 
 

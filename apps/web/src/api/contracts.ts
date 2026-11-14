@@ -87,6 +87,20 @@ export interface Graph {
   omitted_edge_count?: number;
   relationship_filters?: string[];
 }
+export interface InvestigationCommand {
+  command_id: string;
+  round_id: string;
+  idempotency_key: string;
+  action: string;
+  source_record_id: string;
+  target_record_id: string;
+  relationship_type: string;
+  status: string;
+  charged_credits: number;
+  revealed_record_ids: string[];
+  created_at: string;
+  replayed?: boolean;
+}
 
 export type ActionState = "AVAILABLE" | "NOT_IMPLEMENTED" | "LOCKED" | "PENDING" | "FAILED";
 export interface ActionAvailability { id: string; state: ActionState; reason_code: string; reason: string; }

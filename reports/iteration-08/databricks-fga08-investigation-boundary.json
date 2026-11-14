@@ -1,0 +1,72 @@
+{
+  "status": "pass",
+  "read_only": true,
+  "profile": "fga",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "case_id": "ACADEMY_T02",
+  "active_publication": [
+    "ACADEMY_T02",
+    "3.0.0-canonical.1",
+    "2026.07.19.1",
+    "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd"
+  ],
+  "record_summary": [
+    "20",
+    "20",
+    "1"
+  ],
+  "relationship_summary": [
+    "21",
+    "21",
+    "1"
+  ],
+  "dangling_endpoint_count": 0,
+  "observed_columns": [
+    "case_id",
+    "profile_code",
+    "record_id",
+    "record_type",
+    "record_subtype",
+    "display_label",
+    "source_system_id",
+    "occurred_at",
+    "status",
+    "safe_summary",
+    "safe_attributes_json",
+    "provenance_ref",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id",
+    "case_id",
+    "profile_code",
+    "relationship_id",
+    "relationship_family",
+    "relationship_type",
+    "source_record_id",
+    "target_record_id",
+    "directed",
+    "event_time",
+    "weight",
+    "supporting_record_ids_json",
+    "player_safe_summary",
+    "provenance",
+    "safe_attributes_json",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id"
+  ],
+  "forbidden_columns": [],
+  "checks": {
+    "one_active_publication": true,
+    "record_count": true,
+    "distinct_record_ids": true,
+    "record_snapshot_count": true,
+    "relationship_count": true,
+    "distinct_relationship_ids": true,
+    "relationship_snapshot_count": true,
+    "no_dangling_endpoints": true,
+    "no_forbidden_player_columns": true
+  }
+}

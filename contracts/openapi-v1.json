@@ -513,6 +513,42 @@
         "title": "HTTPValidationError",
         "type": "object"
       },
+      "HypothesisRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "idempotency_key": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "relationship_type": {
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Relationship Type",
+            "type": "string"
+          },
+          "source_record_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Source Record Id",
+            "type": "string"
+          },
+          "target_record_id": {
+            "maxLength": 128,
+            "minLength": 1,
+            "title": "Target Record Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "idempotency_key",
+          "source_record_id",
+          "target_record_id",
+          "relationship_type"
+        ],
+        "title": "HypothesisRequest",
+        "type": "object"
+      },
       "IntroCompletion": {
         "enum": [
           "FINISHED",
@@ -530,6 +566,97 @@
           }
         },
         "title": "IntroCompletionRequest",
+        "type": "object"
+      },
+      "InvestigationCommandListResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "commands": {
+            "items": {
+              "$ref": "#/components/schemas/InvestigationCommandResponse"
+            },
+            "title": "Commands",
+            "type": "array"
+          }
+        },
+        "required": [
+          "commands"
+        ],
+        "title": "InvestigationCommandListResponse",
+        "type": "object"
+      },
+      "InvestigationCommandResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "charged_credits": {
+            "minimum": 0.0,
+            "title": "Charged Credits",
+            "type": "integer"
+          },
+          "command_id": {
+            "title": "Command Id",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "relationship_type": {
+            "title": "Relationship Type",
+            "type": "string"
+          },
+          "replayed": {
+            "default": false,
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "revealed_record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Revealed Record Ids",
+            "type": "array"
+          },
+          "round_id": {
+            "title": "Round Id",
+            "type": "string"
+          },
+          "source_record_id": {
+            "title": "Source Record Id",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "target_record_id": {
+            "title": "Target Record Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command_id",
+          "round_id",
+          "idempotency_key",
+          "action",
+          "source_record_id",
+          "target_record_id",
+          "relationship_type",
+          "status",
+          "charged_credits",
+          "revealed_record_ids",
+          "created_at"
+        ],
+        "title": "InvestigationCommandResponse",
         "type": "object"
       },
       "LiveHealthResponse": {
@@ -1177,6 +1304,100 @@
           }
         },
         "summary": "Initial Graph",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/investigations/history": {
+      "get": {
+        "operationId": "investigation_history_api_v1_rounds__round_id__investigations_history_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvestigationCommandListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Investigation History",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/investigations/hypotheses": {
+      "post": {
+        "operationId": "submit_hypothesis_api_v1_rounds__round_id__investigations_hypotheses_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HypothesisRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvestigationCommandResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Submit Hypothesis",
         "tags": [
           "rounds"
         ]

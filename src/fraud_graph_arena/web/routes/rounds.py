@@ -10,10 +10,46 @@ from fraud_graph_arena.web.api_models import (
     RoundResponse,
     WorkspaceResponse,
     GraphViewRequest, GraphExpandRequest, GraphFilterRequest, GraphResponse,
+    HypothesisRequest, InvestigationCommandResponse, InvestigationCommandListResponse,
 )
 from fraud_graph_arena.web.mappers import map_opening, map_round, map_workspace
 
 router = APIRouter(prefix="/rounds", tags=["rounds"])
+
+
+def _command_response(command, *, replayed: bool = False) -> InvestigationCommandResponse:
+    return InvestigationCommandResponse(
+        command_id=command.command_id,
+        round_id=command.round_id,
+        idempotency_key=command.idempotency_key,
+        action=command.action,
+        source_record_id=command.source_record_id,
+        target_record_id=command.target_record_id,
+        relationship_type=command.relationship_type,
+        status=command.status,
+        charged_credits=command.charged_credits,
+        revealed_record_ids=list(command.revealed_record_ids),
+        created_at=command.created_at,
+        replayed=replayed,
+    )
+
+
+@router.post("/{round_id}/investigations/hypotheses", response_model=InvestigationCommandResponse)
+def submit_hypothesis(round_id: str, payload: HypothesisRequest, request: Request) -> InvestigationCommandResponse:
+    command, created = request.app.state.container.investigation_commands.submit_hypothesis(
+        round_id,
+        payload.idempotency_key,
+        payload.source_record_id,
+        payload.target_record_id,
+        payload.relationship_type,
+    )
+    return _command_response(command, replayed=not created)
+
+
+@router.get("/{round_id}/investigations/history", response_model=InvestigationCommandListResponse)
+def investigation_history(round_id: str, request: Request) -> InvestigationCommandListResponse:
+    commands = request.app.state.container.investigation_commands.list_for_round(round_id)
+    return InvestigationCommandListResponse(commands=[_command_response(item) for item in commands])
 
 
 @router.post("", response_model=RoundResponse, status_code=status.HTTP_201_CREATED)
