@@ -9,6 +9,7 @@ of the safe, active graph projection consumed by that command.
 from __future__ import annotations
 
 import argparse
+from datetime import UTC, datetime
 import json
 import re
 import subprocess
@@ -222,6 +223,21 @@ def qualify(
     }
 
 
+def source_commit() -> str | None:
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            capture_output=True,
+            text=True,
+            check=True,
+            timeout=10,
+        )
+    except (OSError, subprocess.CalledProcessError, subprocess.TimeoutExpired):
+        return None
+    value = result.stdout.strip()
+    return value or None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", default="fga")
@@ -259,6 +275,8 @@ def main() -> int:
             "case_id": args.case_id,
             "error": str(exc),
         }
+    report["run_at_utc"] = datetime.now(UTC).isoformat()
+    report["source_commit"] = source_commit()
     rendered = json.dumps(report, indent=2, default=str) + "\n"
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)

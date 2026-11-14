@@ -50,6 +50,16 @@ describe("InvestigationActions", () => {
     expect(screen.getByText(/P1 → O1/)).toBeVisible();
   });
 
+  it("offers the selected graph node as a subject shortcut", async () => {
+    const view = render(<InvestigationActions workspace={workspace} graph={graph} selectedNodeId="P1" />);
+    fireEvent.click(screen.getByRole("button", { name: "Use selected as From" }));
+    expect(screen.getByLabelText("From")).toHaveValue("P1");
+
+    view.rerender(<InvestigationActions workspace={workspace} graph={graph} selectedNodeId="O1" />);
+    fireEvent.click(screen.getByRole("button", { name: "Use selected as To" }));
+    expect(screen.getByLabelText("To")).toHaveValue("O1");
+  });
+
   it("reuses the same idempotency key after an ambiguous transport failure", async () => {
     api.submitManualHypothesis.mockRejectedValueOnce(new Error("connection lost"));
     api.submitManualHypothesis.mockResolvedValueOnce({

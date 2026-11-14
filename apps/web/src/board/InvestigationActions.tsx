@@ -13,7 +13,7 @@ function retryIdentity(): string {
   return globalThis.crypto?.randomUUID?.() ?? `hypothesis-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 }
 
-export function InvestigationActions({ workspace, graph }: { workspace: Workspace; graph: Graph }) {
+export function InvestigationActions({ workspace, graph, selectedNodeId = null }: { workspace: Workspace; graph: Graph; selectedNodeId?: string | null }) {
   const [feedback, setFeedback] = useState("");
   const [sourceId, setSourceId] = useState("");
   const [targetId, setTargetId] = useState("");
@@ -26,6 +26,7 @@ export function InvestigationActions({ workspace, graph }: { workspace: Workspac
   const hypothesisAvailable = workspace.actions.some(
     (action) => action.id === "CREATE_HYPOTHESIS" && action.state === "AVAILABLE",
   );
+  const selectedNode = selectedNodeId ? graph.nodes.find((node) => node.record_id === selectedNodeId) : undefined;
 
   useEffect(() => {
     const controller = new AbortController();
@@ -61,6 +62,18 @@ export function InvestigationActions({ workspace, graph }: { workspace: Workspac
   const updateRelationship = (value: string) => {
     setRelationshipType(value);
     retryKey.current = null;
+  };
+
+  const useSelectedAs = (field: "source" | "target") => {
+    if (!selectedNode) return;
+    retryKey.current = null;
+    if (field === "source") {
+      setSourceId(selectedNode.record_id);
+      if (targetId === selectedNode.record_id) setTargetId("");
+    } else {
+      setTargetId(selectedNode.record_id);
+      if (sourceId === selectedNode.record_id) setSourceId("");
+    }
   };
 
   const submit = async () => {
@@ -121,6 +134,13 @@ export function InvestigationActions({ workspace, graph }: { workspace: Workspac
       {hypothesisAvailable && (
         <fieldset className="hypothesis-form">
           <legend>Record a manual hypothesis</legend>
+          <p className="hypothesis-selection-context" role="status">
+            {selectedNode ? `Selected record: ${selectedNode.label} · ${selectedNode.record_id}` : "Select a graph node or choose records below."}
+          </p>
+          <div className="hypothesis-shortcuts" aria-label="Use graph selection">
+            <button type="button" disabled={!selectedNode || busy} onClick={() => useSelectedAs("source")}>Use selected as From</button>
+            <button type="button" disabled={!selectedNode || busy} onClick={() => useSelectedAs("target")}>Use selected as To</button>
+          </div>
           <label htmlFor="hypothesis-source">From</label>
           <select id="hypothesis-source" disabled={busy} value={sourceId} onChange={(event) => updateSource(event.target.value)}>
             <option value="">Choose an available record</option>
