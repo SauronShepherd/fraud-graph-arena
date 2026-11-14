@@ -271,3 +271,13 @@ later evidence-only commit as the commit that Databricks actually executed.
 The generated manifest therefore keeps `source_sha` for the manifest's
 versioned tree and records `f50b6f7` under both live/security qualification
 receipts.
+
+## Final regression-capture note
+
+After the manifest-generator change, a fresh `python -m pytest -q` process was
+started. It reached the slow cumulative-test section without a traceback and
+the underlying Python process eventually exited, but the tool session lost its
+exit code at process close. That run is intentionally **not** counted as new
+green evidence. The authoritative full-suite result remains the previously
+captured `188 passed`; the post-change release-manifest focused suite captured
+`3 passed`, and the frontend suite captured `56 passed` across `22` files.
