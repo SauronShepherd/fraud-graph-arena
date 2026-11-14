@@ -5,7 +5,7 @@ This report records the verified FGA-07 implementation and qualification evidenc
 ## Verified commands
 
 - `python -m pytest -q` — 188 passed in 11:07 after the cumulative FGA06 closure-validator repair, OpenAPI contract refresh, and complete-manifest indexing.
-- `npm test -- --run` from `apps/web` — 55 passed across 22 files.
+- `npm test -- --run` from `apps/web` — 56 passed across 22 files, including the unknown-token fallback regression.
 - `python scripts/run_iteration_04_gate.py --report reports/iteration-07/iteration-04-current.json` — 13/13 packages strict-valid, zero blockers.
 - `python scripts/audit_iteration_05_requirements.py --root reports/iteration-05 --output reports/iteration-07/iteration-05-current-audit.json` — historical audit gaps remain tracked separately; current FGA-07 live receipts are recorded below.
 - `databricks auth describe --profile fga` — profile reauthenticated successfully; a dedicated `FGA-07-qualification` warehouse was created as `eded42c9d0a69b84` and stopped after testing.
@@ -19,7 +19,7 @@ This report records the verified FGA-07 implementation and qualification evidenc
 - `npm run typecheck` from `apps/web` — passed.
 - `npm run build` from `apps/web` — passed.
 - `npm run test:e2e` from `apps/web` — 15 passed with one Playwright worker and the repository virtual environment, including the populated `ACADEMY_T02` graph flow.
-- targeted graph viewport tests after focus/minimap controls — 10 passed, including selected-node context fitting, controlled filters, collapse selection clearing and the bounded renderer envelope.
+- targeted graph viewport tests after focus/minimap controls — 11 passed, including selected-node context fitting, controlled filters, collapse selection clearing, unknown-token fallback and the bounded renderer envelope.
 - `npx playwright test -c playwright.qualification.config.ts` — 11 passed with one worker, including renderer exhibit, manual capture and the 12-repetition-per-candidate performance qualification.
 - renderer comparison — four engines exercised with the common contract; Cytoscape recorded as the conditional incumbent in `docs/iteration-06/ADR-0001-renderer-qualification.md`.
 

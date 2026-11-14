@@ -82,6 +82,21 @@ describe("GraphViewport", () => {
     expect(container.querySelector('line[marker-end="url(#graph-arrow)"]')).toBeTruthy();
   });
 
+  it("keeps unknown node and relationship types visible through default tokens", () => {
+    const unknownGraph = {
+      ...graph,
+      nodes: [
+        { ...graph.nodes[0], record_type: "NEW_RECORD_TYPE" },
+        graph.nodes[1],
+      ],
+      edges: [{ ...graph.edges[0], relationship_family: "NEW_FAMILY" }],
+    } satisfies Graph;
+    const { container } = render(<GraphViewport graph={unknownGraph} />);
+    expect(screen.getByRole("button", { name: "Puppy One, P1" })).toBeVisible();
+    expect(container.querySelector('[data-edge-id="E1"]')).toBeTruthy();
+    expect(container.querySelector('line[marker-end="url(#graph-arrow)"]')).toBeTruthy();
+  });
+
   it("supports keyboard-operable pan and fit controls", () => {
     render(<GraphViewport graph={graph} />);
     const transform = screen.getByTestId("graph-transform");

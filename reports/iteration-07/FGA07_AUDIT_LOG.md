@@ -219,3 +219,27 @@ These are notes, not yet final article prose:
 - [Databricks package evidence](./databricks-fga07-all-packages.json)
 - [Databricks count evidence](./databricks-fga07-counts.json)
 - [Databricks security evidence](./databricks-fga07-security.json)
+
+## Bidirectional article/implementation reconciliation
+
+The canonical FGA-07 article was reviewed against the current production
+board, graph service, renderer evidence, Databricks receipts and executable
+tests. The review found three wording risks and corrected them:
+
+1. “Relationship family or type” was narrowed to the implemented relationship-
+   family filter; relationship-type filtering is now explicitly future work.
+2. Manual relationships were scoped to the FGA-06 static gallery/graph-engine
+   example; the FGA-07 production board does not expose that action.
+3. The article no longer claims that a dedicated multi-role UI is qualified;
+   it now records that as an unimplemented boundary.
+
+The implementation review also found that default tokens existed for unknown
+node and relationship types but lacked an explicit regression. The test
+`apps/web/src/board/GraphViewport.test.tsx` now verifies that unknown types
+remain visible, retain directed arrow semantics and do not crash the renderer.
+The full frontend suite passed `56` tests across `22` files after this change.
+
+The complete claim ledger is maintained in
+`reports/iteration-07/article-implementation-matrix.md`. It covers FGA-00
+through FGA-07 and distinguishes implemented/tested behaviour from live
+qualification, explicit product limits, and external human acceptance.
