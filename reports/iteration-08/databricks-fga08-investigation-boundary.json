@@ -68,5 +68,7 @@
     "relationship_snapshot_count": true,
     "no_dangling_endpoints": true,
     "no_forbidden_player_columns": true
-  }
+  },
+  "run_at_utc": "2026-11-14T20:30:34.879205+00:00",
+  "source_commit": "ff7f260904e4134cf80ab6f795204a580d10f0ba"
 }
