@@ -14,6 +14,8 @@ def test_current_evidence_manifest_is_source_coherent():
 def test_release_manifest_requires_non_admin_security_for_closure():
     source = (ROOT / "scripts/create_release_evidence_manifest.py").read_text(encoding="utf-8")
     assert "--security-status" in source
+    assert "--live-source-sha" in source
+    assert "--security-source-sha" in source
     assert 'args.live_status == "qualified" and args.security_status == "qualified"' in source
 
 

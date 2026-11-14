@@ -264,3 +264,10 @@ OAuth-backed PAT was issued through the account-admin profile and configured
 without recording the secret. The first two security-script invocations also
 used the wrong option name (`--warehouse-id`); the script accepts
 `--warehouse`, and the corrected invocation passed.
+
+The release-manifest generator now records the manifest/evidence commit SHA
+separately from the live qualification SHA. This avoids falsely presenting a
+later evidence-only commit as the commit that Databricks actually executed.
+The generated manifest therefore keeps `source_sha` for the manifest's
+versioned tree and records `f50b6f7` under both live/security qualification
+receipts.
