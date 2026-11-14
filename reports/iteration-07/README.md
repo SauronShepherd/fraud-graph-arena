@@ -22,6 +22,8 @@ This report records the verified FGA-07 implementation and qualification evidenc
 - targeted graph viewport tests after focus/minimap controls — 11 passed, including selected-node context fitting, controlled filters, collapse selection clearing, unknown-token fallback and the bounded renderer envelope.
 - `npx playwright test -c playwright.qualification.config.ts` — 11 passed with one worker, including renderer exhibit, manual capture and the 12-repetition-per-candidate performance qualification.
 - renderer comparison — four engines exercised with the common contract; Cytoscape recorded as the conditional incumbent in `docs/iteration-06/ADR-0001-renderer-qualification.md`.
+- current-HEAD Databricks rerun at `f50b6f7` with profile `fga` — topology `44/44`, all `13/13` package lifecycles reused successfully, `32` physical tables with zero count mismatches, `10 × 13` repeat attempts with zero failures, and failure injection preserving the active publication pointer.
+- current-HEAD security rerun — profile `fga-non-admin-test` passed safe-view access and raw/truth denial with `is_admin: false`; profile `fga` remains a recorded administrator negative control.
 
 ## Implemented slice
 

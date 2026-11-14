@@ -4,7 +4,7 @@
   "schema": "sandbox",
   "warehouse_id": "eded42c9d0a69b84",
   "capability_probe": "pass",
-  "recreated": true,
+  "recreated": false,
   "pre_inventory": [
     "fga_active_genie_record_attributes_csv",
     "fga_active_genie_records_csv",

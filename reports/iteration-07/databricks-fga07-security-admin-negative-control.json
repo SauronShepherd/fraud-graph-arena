@@ -1,0 +1,11 @@
+{
+  "source_sha": "f50b6f7f2ef92c5de7aa39e24a6bdd5d2614e4e7",
+  "profile": "fga",
+  "principal_fingerprint": "12ee92b3556142eb",
+  "is_admin": true,
+  "active_view_select": "not_run",
+  "raw_safe_select": "not_run",
+  "truth_select": "not_run",
+  "status": "not_qualified",
+  "reason": "identity is a member of admins; admin sessions cannot prove denial"
+}

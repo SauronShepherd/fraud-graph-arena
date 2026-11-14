@@ -243,3 +243,24 @@ The complete claim ledger is maintained in
 `reports/iteration-07/article-implementation-matrix.md`. It covers FGA-00
 through FGA-07 and distinguishes implemented/tested behaviour from live
 qualification, explicit product limits, and external human acceptance.
+
+## Current-HEAD Databricks rerun
+
+The live qualification was repeated after the article/renderer reconciliation
+commit `f50b6f7f2ef92c5de7aa39e24a6bdd5d2614e4e7`, using the dedicated warehouse
+`eded42c9d0a69b84` and profile `fga` where the operation requires an admin.
+
+- Topology: `44/44` expected objects, zero missing/extra objects and zero column mismatches.
+- Lifecycle: `13/13` canonical packages passed; all active publications were safely reused.
+- Counts: `32` physical tables, zero mismatches.
+- Repeatability: `10` rounds × `13` packages with two workers, zero failures and idempotent reuse.
+- Failure isolation: the injected candidate was not active and the before/after active publication ID was identical.
+- Security: profile `fga-non-admin-test` passed safe active-view access and denied raw published/truth reads with `is_admin: false`.
+- Negative control: profile `fga` is an administrator and remains `not_qualified` by design; its receipt is stored separately so admin evidence cannot be mistaken for denial evidence.
+
+The non-admin profile's prior PAT had become invalid before this rerun. The
+existing service principal was not recreated: a replacement short-lived
+OAuth-backed PAT was issued through the account-admin profile and configured
+without recording the secret. The first two security-script invocations also
+used the wrong option name (`--warehouse-id`); the script accepts
+`--warehouse`, and the corrected invocation passed.
