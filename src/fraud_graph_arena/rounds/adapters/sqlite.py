@@ -38,7 +38,9 @@ class SqliteRoundRepository:
                     status TEXT NOT NULL,
                     created_at TEXT NOT NULL,
                     started_at TEXT NULL,
-                    intro_completed_at TEXT NULL
+                    intro_completed_at TEXT NULL,
+                    credits_remaining INTEGER NOT NULL DEFAULT 0,
+                    version INTEGER NOT NULL DEFAULT 1
                 )
                 """
             )
@@ -48,6 +50,10 @@ class SqliteRoundRepository:
             }
             if "intro_completed_at" not in columns:
                 connection.execute("ALTER TABLE rounds ADD COLUMN intro_completed_at TEXT NULL")
+            if "credits_remaining" not in columns:
+                connection.execute("ALTER TABLE rounds ADD COLUMN credits_remaining INTEGER NOT NULL DEFAULT 0")
+            if "version" not in columns:
+                connection.execute("ALTER TABLE rounds ADD COLUMN version INTEGER NOT NULL DEFAULT 1")
 
     def add(self, round_: Round) -> None:
         with self._connect() as connection:
@@ -55,8 +61,8 @@ class SqliteRoundRepository:
                 """
                 INSERT INTO rounds (
                     id, player_id, path_id, case_id, case_version, status, created_at,
-                    started_at, intro_completed_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    started_at, intro_completed_at, credits_remaining, version
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 self._to_row(round_),
             )
@@ -75,7 +81,8 @@ class SqliteRoundRepository:
                 """
                 UPDATE rounds
                    SET player_id = ?, path_id = ?, case_id = ?, case_version = ?, status = ?,
-                       created_at = ?, started_at = ?, intro_completed_at = ?
+                       created_at = ?, started_at = ?, intro_completed_at = ?,
+                       credits_remaining = ?, version = ?
                  WHERE id = ?
                 """,
                 (
@@ -91,6 +98,8 @@ class SqliteRoundRepository:
                         if round_.intro_completed_at is None
                         else round_.intro_completed_at.isoformat()
                     ),
+                    round_.credits_remaining,
+                    round_.version,
                     round_.id,
                 ),
             )
@@ -105,8 +114,45 @@ class SqliteRoundRepository:
         except sqlite3.Error:
             return False
 
+    def charge(self, round_id: str, amount: int) -> Round:
+        if amount <= 0:
+            raise ValueError("charge amount must be positive")
+        with self._connect() as connection:
+            cursor = connection.execute(
+                """
+                UPDATE rounds
+                   SET credits_remaining = credits_remaining - ?, version = version + 1
+                 WHERE id = ? AND credits_remaining >= ?
+                """,
+                (amount, round_id, amount),
+            )
+            if cursor.rowcount != 1:
+                row = connection.execute("SELECT id, credits_remaining FROM rounds WHERE id = ?", (round_id,)).fetchone()
+                if row is None:
+                    raise KeyError(round_id)
+                raise ValueError("INSUFFICIENT_CREDITS")
+            row = connection.execute("SELECT * FROM rounds WHERE id = ?", (round_id,)).fetchone()
+        return self._from_row(row)
+
+    def refund(self, round_id: str, amount: int) -> Round:
+        if amount <= 0:
+            raise ValueError("refund amount must be positive")
+        with self._connect() as connection:
+            cursor = connection.execute(
+                """
+                UPDATE rounds
+                   SET credits_remaining = credits_remaining + ?, version = version + 1
+                 WHERE id = ?
+                """,
+                (amount, round_id),
+            )
+            if cursor.rowcount != 1:
+                raise KeyError(round_id)
+            row = connection.execute("SELECT * FROM rounds WHERE id = ?", (round_id,)).fetchone()
+        return self._from_row(row)
+
     @staticmethod
-    def _to_row(round_: Round) -> tuple[str, str, str, str, str, str, str, str | None, str | None]:
+    def _to_row(round_: Round) -> tuple[str, str, str, str, str, str, str, str | None, str | None, int, int]:
         return (
             round_.id,
             round_.player_id,
@@ -121,6 +167,8 @@ class SqliteRoundRepository:
                 if round_.intro_completed_at is None
                 else round_.intro_completed_at.isoformat()
             ),
+            round_.credits_remaining,
+            round_.version,
         )
 
     @staticmethod
@@ -141,4 +189,6 @@ class SqliteRoundRepository:
                 if row["intro_completed_at"] is None
                 else datetime.fromisoformat(row["intro_completed_at"])
             ),
+            credits_remaining=int(row["credits_remaining"] or 0),
+            version=int(row["version"] or 1),
         )

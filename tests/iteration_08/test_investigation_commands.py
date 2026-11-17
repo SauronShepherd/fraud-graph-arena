@@ -141,10 +141,10 @@ def test_history_requires_a_real_round_and_command_requires_active_enabled_case(
     assert unavailable.json()["code"] == "ACTION_NOT_AVAILABLE"
 
 
-def test_workspace_exposes_only_the_t02_manual_hypothesis_action(client: TestClient) -> None:
+def test_workspace_exposes_t02_manual_hypothesis_and_identity_review_actions(client: TestClient) -> None:
     t02 = _active_round(client)
     t02_actions = client.get(f"/api/v1/rounds/{t02}/workspace").json()["actions"]
-    assert {action["id"] for action in t02_actions if action["state"] == "AVAILABLE"} == {"CREATE_HYPOTHESIS"}
+    assert {action["id"] for action in t02_actions if action["state"] == "AVAILABLE"} == {"CREATE_HYPOTHESIS", "COMPARE_IDENTITIES"}
 
     academy = _active_round(client, "ACADEMY_001")
     academy_actions = client.get(f"/api/v1/rounds/{academy}/workspace").json()["actions"]

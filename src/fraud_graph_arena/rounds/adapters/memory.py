@@ -28,3 +28,51 @@ class InMemoryRoundRepository:
 
     def is_ready(self) -> bool:
         return True
+
+    def charge(self, round_id: str, amount: int) -> Round:
+        if amount <= 0:
+            raise ValueError("charge amount must be positive")
+        with self._lock:
+            round_ = self._rounds.get(round_id)
+            if round_ is None:
+                raise KeyError(round_id)
+            if round_.credits_remaining < amount:
+                raise ValueError("INSUFFICIENT_CREDITS")
+            charged = Round(
+                id=round_.id,
+                player_id=round_.player_id,
+                path_id=round_.path_id,
+                case_id=round_.case_id,
+                case_version=round_.case_version,
+                status=round_.status,
+                created_at=round_.created_at,
+                started_at=round_.started_at,
+                intro_completed_at=round_.intro_completed_at,
+                credits_remaining=round_.credits_remaining - amount,
+                version=round_.version + 1,
+            )
+            self._rounds[round_id] = charged
+            return charged
+
+    def refund(self, round_id: str, amount: int) -> Round:
+        if amount <= 0:
+            raise ValueError("refund amount must be positive")
+        with self._lock:
+            round_ = self._rounds.get(round_id)
+            if round_ is None:
+                raise KeyError(round_id)
+            refunded = Round(
+                id=round_.id,
+                player_id=round_.player_id,
+                path_id=round_.path_id,
+                case_id=round_.case_id,
+                case_version=round_.case_version,
+                status=round_.status,
+                created_at=round_.created_at,
+                started_at=round_.started_at,
+                intro_completed_at=round_.intro_completed_at,
+                credits_remaining=round_.credits_remaining + amount,
+                version=round_.version + 1,
+            )
+            self._rounds[round_id] = refunded
+            return refunded

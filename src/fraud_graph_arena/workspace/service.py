@@ -9,12 +9,13 @@ from fraud_graph_arena.shared.errors import ConflictError
 from fraud_graph_arena.case_data.academy_graph import t02_graph
 
 SEMANTIC_ACTIONS: tuple[tuple[str, str], ...] = (
-    ("COMPARE_IDENTITIES", "Identity comparison is not available in Academy yet."),
+    ("COMPARE_IDENTITIES", "Identity comparison is not available for this case."),
     ("FIND_SHARED_FIELDS", "Exact shared-field analysis is not available in Academy yet."),
     ("SEARCH_EVIDENCE", "Evidence search will unlock when the case publishes evidence."),
     ("OPEN_CASE_FILE", "Case-file construction is not available in the empty Academy round."),
 )
 MANUAL_HYPOTHESIS_ACTION = ("CREATE_HYPOTHESIS", "Record a typed player hypothesis without changing evidence visibility.")
+ENTITY_RESOLUTION_ACTION = ("COMPARE_IDENTITIES", "Compare normalized identity fields and review candidates without exposing ground truth.")
 NOT_IMPLEMENTED = "NOT_IMPLEMENTED"
 
 @dataclass(frozen=True, slots=True)
@@ -29,9 +30,10 @@ class WorkspaceProjection:
     graph: dict
 
 class WorkspaceService:
-    def __init__(self, rounds: RoundService, catalogue: CatalogueService) -> None:
+    def __init__(self, rounds: RoundService, catalogue: CatalogueService, *, graph_provider: object | None = None) -> None:
         self._rounds = rounds
         self._catalogue = catalogue
+        self._graph_provider = graph_provider
 
     def get(self, round_id: str) -> WorkspaceProjection:
         round_ = self._rounds.require(round_id)
@@ -45,8 +47,11 @@ class WorkspaceService:
             for action, reason in SEMANTIC_ACTIONS
         ]
         if round_.case_id == "ACADEMY_T02":
+            actions = [item for item in actions if item["id"] != "COMPARE_IDENTITIES"]
+            action, reason = ENTITY_RESOLUTION_ACTION
+            actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
             action, reason = MANUAL_HYPOTHESIS_ACTION
             actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
         path = next(path for path in self._catalogue.list_paths() if path.id == round_.path_id)
-        graph = t02_graph() if round_.case_id == "ACADEMY_T02" else {"projection_version": "1", "nodes": (), "edges": (), "node_count": 0, "edge_count": 0}
+        graph = (self._graph_provider(round_id) if self._graph_provider is not None else t02_graph()) if round_.case_id == "ACADEMY_T02" else {"projection_version": "1", "nodes": (), "edges": (), "node_count": 0, "edge_count": 0}
         return WorkspaceProjection(round_, case, path.name, "GRAPH_READY" if graph["nodes"] else "NO_EVIDENCE_REVEALED", len(graph["nodes"]), 0, tuple(actions), graph)

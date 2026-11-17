@@ -1,0 +1,63 @@
+{
+  "dataset_version": "fga09-t02-matching-dataset-v1",
+  "label_set_version": "fga09-t02-labels-v1",
+  "feature_config_version": "fga09-identity-fields-v1",
+  "identifier_validation_version": "fga09-identifier-contract-v1",
+  "seed": 90209,
+  "normalization_version": "fga09-norm-v1",
+  "model_version": "fga09-deterministic-fallback-v1",
+  "threshold_version": "fga09-review-thresholds-v1",
+  "threshold_band": "HIGH",
+  "actual_engine_run": false,
+  "training_label_count": 2,
+  "training_positive_count": 1,
+  "training_negative_count": 1,
+  "balanced_training_labels": true,
+  "leakage_safe": true,
+  "true_positives": 1,
+  "true_negatives": 2,
+  "false_merges": 0,
+  "false_splits": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "per_case": {
+    "ACADEMY_T02": {
+      "total": 3,
+      "correct": 3,
+      "true_positives": 1,
+      "true_negatives": 2,
+      "false_merges": 0,
+      "false_splits": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "accuracy": 1.0
+    }
+  },
+  "per_difficulty": {
+    "GOLDEN_MATCH": {
+      "total": 1,
+      "correct": 1,
+      "true_positives": 1,
+      "true_negatives": 0,
+      "false_merges": 0,
+      "false_splits": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "accuracy": 1.0
+    },
+    "HARD_NEGATIVE": {
+      "total": 2,
+      "correct": 2,
+      "true_positives": 0,
+      "true_negatives": 2,
+      "false_merges": 0,
+      "false_splits": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "accuracy": 1.0
+    }
+  },
+  "regression_pass": true,
+  "run_at_utc": "2026-11-17T17:51:59.464761+00:00",
+  "player_safe": false
+}

@@ -33,6 +33,7 @@ include-package-data = false
 [tool.pytest.ini_options]
 minversion = "9.0"
 testpaths = ["tests"]
+pythonpath = [".", "src"]
 python_files = ["test_*.py"]
 addopts = [
   "--strict-config",

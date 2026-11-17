@@ -7,6 +7,8 @@ import type {
   Workspace,
   Graph,
   InvestigationCommand,
+  EntityResolutionAnalysis,
+  EntityResolutionReview,
 } from "./contracts";
 
 const API_BASE = (import.meta.env.VITE_FGA_API_BASE_URL as string | undefined) ?? "/api/v1";
@@ -121,6 +123,34 @@ export function getInvestigationHistory(
   signal?: AbortSignal,
 ): Promise<{ commands: InvestigationCommand[] }> {
   return request<{ commands: InvestigationCommand[] }>(`/rounds/${encodeURIComponent(roundId)}/investigations/history`, { signal });
+}
+
+export function runEntityResolution(
+  roundId: string,
+  input: { idempotency_key: string; focus_record_id?: string | null },
+): Promise<EntityResolutionAnalysis> {
+  return request<EntityResolutionAnalysis>(`/rounds/${encodeURIComponent(roundId)}/investigations/entity-resolution`, {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
+}
+
+export function reviewEntityResolutionCandidate(
+  roundId: string,
+  candidateId: string,
+  input: { idempotency_key: string; outcome: "ACCEPTED" | "REJECTED" | "UNRESOLVED" },
+): Promise<EntityResolutionReview> {
+  return request<EntityResolutionReview>(`/rounds/${encodeURIComponent(roundId)}/investigations/entity-resolution/${encodeURIComponent(candidateId)}/review`, {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
+}
+
+export function getEntityResolutionHistory(
+  roundId: string,
+  signal?: AbortSignal,
+): Promise<{ analyses: EntityResolutionAnalysis[]; reviews: EntityResolutionReview[] }> {
+  return request<{ analyses: EntityResolutionAnalysis[]; reviews: EntityResolutionReview[] }>(`/rounds/${encodeURIComponent(roundId)}/investigations/entity-resolution/history`, { signal });
 }
 
 export function expandGraph(roundId: string, visible: Graph, nodeId: string, signal?: AbortSignal): Promise<Graph> {

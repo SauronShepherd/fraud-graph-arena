@@ -28,6 +28,8 @@ class Round:
     created_at: datetime
     started_at: datetime | None = None
     intro_completed_at: datetime | None = None
+    credits_remaining: int = 0
+    version: int = 1
 
     def start(self, now: datetime | None = None) -> "Round":
         if self.status != RoundStatus.CREATED:

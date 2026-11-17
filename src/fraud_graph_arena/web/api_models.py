@@ -57,6 +57,8 @@ class RoundResponse(ApiModel):
     created_at: datetime
     started_at: datetime | None
     intro_completed_at: datetime | None
+    credits_remaining: int = Field(ge=0)
+    version: int = Field(ge=1)
 
 
 class ComicPageResponse(ApiModel):
@@ -163,6 +165,84 @@ class InvestigationCommandResponse(ApiModel):
 
 class InvestigationCommandListResponse(ApiModel):
     commands: list[InvestigationCommandResponse]
+
+
+class EntityResolutionRequest(ApiModel):
+    idempotency_key: str = Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
+    focus_record_id: str | None = Field(default=None, min_length=1, max_length=128)
+
+
+class IdentityCandidateResponse(ApiModel):
+    candidate_id: str
+    left_record_id: str
+    right_record_id: str
+    entity_type: str
+    confidence_band: str
+    estimated_score: float = Field(ge=0, le=1)
+    agreement_fields: list[str]
+    disagreement_fields: list[str]
+    missing_fields: list[str]
+    evidence_reasons: list[str]
+    model_version: str
+    threshold_version: str
+    normalization_version: str
+    framework_semantics: str
+    generation_mode: str
+    actual_engine_run: bool
+    review_required: bool
+    snapshot_version: str
+
+
+class ExactIdentityMatchResponse(ApiModel):
+    match_id: str
+    left_record_id: str
+    right_record_id: str
+    entity_type: str
+    rule_id: str
+    evidence_fields: list[str]
+    evidence_reasons: list[str]
+    normalization_version: str
+    snapshot_version: str
+    provenance_refs: list[str]
+
+
+class EntityResolutionResponse(ApiModel):
+    analysis_id: str
+    round_id: str
+    idempotency_key: str
+    focus_record_id: str | None
+    status: str
+    charged_credits: int = Field(ge=0)
+    normalization_version: str
+    model_version: str
+    threshold_version: str
+    snapshot_version: str
+    generation_mode: str
+    framework_semantics: str
+    actual_engine_run: bool
+    exact_matches: list[ExactIdentityMatchResponse]
+    candidates: list[IdentityCandidateResponse]
+    replayed: bool = False
+
+
+class EntityResolutionReviewRequest(ApiModel):
+    idempotency_key: str = Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
+    outcome: str = Field(pattern=r"^(ACCEPTED|REJECTED|UNRESOLVED)$")
+
+
+class EntityResolutionReviewResponse(ApiModel):
+    review_id: str
+    round_id: str
+    candidate_id: str
+    outcome: str
+    status: str
+    created_at: datetime
+    replayed: bool = False
+
+
+class EntityResolutionHistoryResponse(ApiModel):
+    analyses: list[EntityResolutionResponse]
+    reviews: list[EntityResolutionReviewResponse]
 
 
 class WorkspaceResponse(ApiModel):

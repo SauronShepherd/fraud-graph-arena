@@ -232,6 +232,296 @@
         "title": "CreateRoundRequest",
         "type": "object"
       },
+      "EntityResolutionHistoryResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "analyses": {
+            "items": {
+              "$ref": "#/components/schemas/EntityResolutionResponse"
+            },
+            "title": "Analyses",
+            "type": "array"
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/components/schemas/EntityResolutionReviewResponse"
+            },
+            "title": "Reviews",
+            "type": "array"
+          }
+        },
+        "required": [
+          "analyses",
+          "reviews"
+        ],
+        "title": "EntityResolutionHistoryResponse",
+        "type": "object"
+      },
+      "EntityResolutionRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "focus_record_id": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Focus Record Id"
+          },
+          "idempotency_key": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "idempotency_key"
+        ],
+        "title": "EntityResolutionRequest",
+        "type": "object"
+      },
+      "EntityResolutionResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "actual_engine_run": {
+            "title": "Actual Engine Run",
+            "type": "boolean"
+          },
+          "analysis_id": {
+            "title": "Analysis Id",
+            "type": "string"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/IdentityCandidateResponse"
+            },
+            "title": "Candidates",
+            "type": "array"
+          },
+          "charged_credits": {
+            "minimum": 0.0,
+            "title": "Charged Credits",
+            "type": "integer"
+          },
+          "exact_matches": {
+            "items": {
+              "$ref": "#/components/schemas/ExactIdentityMatchResponse"
+            },
+            "title": "Exact Matches",
+            "type": "array"
+          },
+          "focus_record_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Focus Record Id"
+          },
+          "framework_semantics": {
+            "title": "Framework Semantics",
+            "type": "string"
+          },
+          "generation_mode": {
+            "title": "Generation Mode",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "normalization_version": {
+            "title": "Normalization Version",
+            "type": "string"
+          },
+          "replayed": {
+            "default": false,
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "round_id": {
+            "title": "Round Id",
+            "type": "string"
+          },
+          "snapshot_version": {
+            "title": "Snapshot Version",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "threshold_version": {
+            "title": "Threshold Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "analysis_id",
+          "round_id",
+          "idempotency_key",
+          "focus_record_id",
+          "status",
+          "charged_credits",
+          "normalization_version",
+          "model_version",
+          "threshold_version",
+          "snapshot_version",
+          "generation_mode",
+          "framework_semantics",
+          "actual_engine_run",
+          "exact_matches",
+          "candidates"
+        ],
+        "title": "EntityResolutionResponse",
+        "type": "object"
+      },
+      "EntityResolutionReviewRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "idempotency_key": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "outcome": {
+            "pattern": "^(ACCEPTED|REJECTED|UNRESOLVED)$",
+            "title": "Outcome",
+            "type": "string"
+          }
+        },
+        "required": [
+          "idempotency_key",
+          "outcome"
+        ],
+        "title": "EntityResolutionReviewRequest",
+        "type": "object"
+      },
+      "EntityResolutionReviewResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "outcome": {
+            "title": "Outcome",
+            "type": "string"
+          },
+          "replayed": {
+            "default": false,
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "review_id": {
+            "title": "Review Id",
+            "type": "string"
+          },
+          "round_id": {
+            "title": "Round Id",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "review_id",
+          "round_id",
+          "candidate_id",
+          "outcome",
+          "status",
+          "created_at"
+        ],
+        "title": "EntityResolutionReviewResponse",
+        "type": "object"
+      },
+      "ExactIdentityMatchResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "entity_type": {
+            "title": "Entity Type",
+            "type": "string"
+          },
+          "evidence_fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Evidence Fields",
+            "type": "array"
+          },
+          "evidence_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Evidence Reasons",
+            "type": "array"
+          },
+          "left_record_id": {
+            "title": "Left Record Id",
+            "type": "string"
+          },
+          "match_id": {
+            "title": "Match Id",
+            "type": "string"
+          },
+          "normalization_version": {
+            "title": "Normalization Version",
+            "type": "string"
+          },
+          "provenance_refs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Provenance Refs",
+            "type": "array"
+          },
+          "right_record_id": {
+            "title": "Right Record Id",
+            "type": "string"
+          },
+          "rule_id": {
+            "title": "Rule Id",
+            "type": "string"
+          },
+          "snapshot_version": {
+            "title": "Snapshot Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "match_id",
+          "left_record_id",
+          "right_record_id",
+          "entity_type",
+          "rule_id",
+          "evidence_fields",
+          "evidence_reasons",
+          "normalization_version",
+          "snapshot_version",
+          "provenance_refs"
+        ],
+        "title": "ExactIdentityMatchResponse",
+        "type": "object"
+      },
       "GraphEdgeResponse": {
         "additionalProperties": false,
         "properties": {
@@ -549,6 +839,119 @@
         "title": "HypothesisRequest",
         "type": "object"
       },
+      "IdentityCandidateResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "actual_engine_run": {
+            "title": "Actual Engine Run",
+            "type": "boolean"
+          },
+          "agreement_fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Agreement Fields",
+            "type": "array"
+          },
+          "candidate_id": {
+            "title": "Candidate Id",
+            "type": "string"
+          },
+          "confidence_band": {
+            "title": "Confidence Band",
+            "type": "string"
+          },
+          "disagreement_fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Disagreement Fields",
+            "type": "array"
+          },
+          "entity_type": {
+            "title": "Entity Type",
+            "type": "string"
+          },
+          "estimated_score": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Estimated Score",
+            "type": "number"
+          },
+          "evidence_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Evidence Reasons",
+            "type": "array"
+          },
+          "framework_semantics": {
+            "title": "Framework Semantics",
+            "type": "string"
+          },
+          "generation_mode": {
+            "title": "Generation Mode",
+            "type": "string"
+          },
+          "left_record_id": {
+            "title": "Left Record Id",
+            "type": "string"
+          },
+          "missing_fields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Fields",
+            "type": "array"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "normalization_version": {
+            "title": "Normalization Version",
+            "type": "string"
+          },
+          "review_required": {
+            "title": "Review Required",
+            "type": "boolean"
+          },
+          "right_record_id": {
+            "title": "Right Record Id",
+            "type": "string"
+          },
+          "snapshot_version": {
+            "title": "Snapshot Version",
+            "type": "string"
+          },
+          "threshold_version": {
+            "title": "Threshold Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "candidate_id",
+          "left_record_id",
+          "right_record_id",
+          "entity_type",
+          "confidence_band",
+          "estimated_score",
+          "agreement_fields",
+          "disagreement_fields",
+          "missing_fields",
+          "evidence_reasons",
+          "model_version",
+          "threshold_version",
+          "normalization_version",
+          "framework_semantics",
+          "generation_mode",
+          "actual_engine_run",
+          "review_required",
+          "snapshot_version"
+        ],
+        "title": "IdentityCandidateResponse",
+        "type": "object"
+      },
       "IntroCompletion": {
         "enum": [
           "FINISHED",
@@ -786,6 +1189,11 @@
             "title": "Created At",
             "type": "string"
           },
+          "credits_remaining": {
+            "minimum": 0.0,
+            "title": "Credits Remaining",
+            "type": "integer"
+          },
           "id": {
             "title": "Id",
             "type": "string"
@@ -823,6 +1231,11 @@
           },
           "status": {
             "$ref": "#/components/schemas/RoundStatus"
+          },
+          "version": {
+            "minimum": 1.0,
+            "title": "Version",
+            "type": "integer"
           }
         },
         "required": [
@@ -834,7 +1247,9 @@
           "status",
           "created_at",
           "started_at",
-          "intro_completed_at"
+          "intro_completed_at",
+          "credits_remaining",
+          "version"
         ],
         "title": "RoundResponse",
         "type": "object"
@@ -1304,6 +1719,161 @@
           }
         },
         "summary": "Initial Graph",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/investigations/entity-resolution": {
+      "post": {
+        "operationId": "entity_resolution_api_v1_rounds__round_id__investigations_entity_resolution_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityResolutionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityResolutionResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Entity Resolution",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/investigations/entity-resolution/history": {
+      "get": {
+        "operationId": "entity_resolution_history_api_v1_rounds__round_id__investigations_entity_resolution_history_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityResolutionHistoryResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Entity Resolution History",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/investigations/entity-resolution/{candidate_id}/review": {
+      "post": {
+        "operationId": "entity_resolution_review_api_v1_rounds__round_id__investigations_entity_resolution__candidate_id__review_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "candidate_id",
+            "required": true,
+            "schema": {
+              "title": "Candidate Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityResolutionReviewRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityResolutionReviewResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Entity Resolution Review",
         "tags": [
           "rounds"
         ]

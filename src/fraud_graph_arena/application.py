@@ -26,6 +26,11 @@ from fraud_graph_arena.web.spa import SpaStaticFiles
 from fraud_graph_arena.workspace import WorkspaceService
 from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
 from fraud_graph_arena.case_data.academy_graph import t02_expandable_graph
+from fraud_graph_arena.entity_resolution import (
+    EntityResolutionService,
+    InMemoryEntityResolutionRepository,
+    SqliteEntityResolutionRepository,
+)
 
 
 @dataclass(slots=True)
@@ -38,6 +43,7 @@ class Container:
     workspace: WorkspaceService
     graph: GraphInvestigationService
     investigation_commands: InvestigationCommandService
+    entity_resolution: EntityResolutionService
 
 
 def build_web_container(settings: Settings) -> Container:
@@ -58,9 +64,17 @@ def build_web_container(settings: Settings) -> Container:
         catalogue=catalogue,
         narrative=narrative,
     )
+    entity_repository = (
+        InMemoryEntityResolutionRepository()
+        if settings.round_repository == "memory"
+        else SqliteEntityResolutionRepository(settings.sqlite_path)
+    )
+    entity_resolution = EntityResolutionService(round_service, entity_repository)
+
     def graph_provider(round_id: str) -> dict:
         round_ = round_service.require(round_id)
-        return t02_expandable_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": ()}
+        graph = t02_expandable_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": (), "node_count": 0, "edge_count": 0, "projection_version": "1"}
+        return entity_resolution.graph_with_reviews(round_id, graph) if round_.case_id == "ACADEMY_T02" else graph
 
     command_repository: InvestigationCommandRepository
     if settings.round_repository == "memory":
@@ -74,9 +88,10 @@ def build_web_container(settings: Settings) -> Container:
         narrative=narrative,
         rounds=round_service,
         round_repository=round_repository,
-        workspace=WorkspaceService(round_service, catalogue),
+        workspace=WorkspaceService(round_service, catalogue, graph_provider=graph_provider),
         graph=GraphInvestigationService(graph_provider),
         investigation_commands=InvestigationCommandService(round_service, command_repository),
+        entity_resolution=entity_resolution,
     )
 
 

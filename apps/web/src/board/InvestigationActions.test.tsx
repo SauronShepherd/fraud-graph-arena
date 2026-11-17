@@ -3,7 +3,13 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { InvestigationActions } from "./InvestigationActions";
 import type { Graph, Workspace } from "../api/contracts";
 
-const api = vi.hoisted(() => ({ getInvestigationHistory: vi.fn(), submitManualHypothesis: vi.fn() }));
+const api = vi.hoisted(() => ({
+  getInvestigationHistory: vi.fn(),
+  submitManualHypothesis: vi.fn(),
+  getEntityResolutionHistory: vi.fn(),
+  runEntityResolution: vi.fn(),
+  reviewEntityResolutionCandidate: vi.fn(),
+}));
 vi.mock("../api/client", () => api);
 
 const workspace = {
@@ -21,8 +27,13 @@ const graph = {
 
 describe("InvestigationActions", () => {
   beforeEach(() => {
+    Object.values(api).forEach((mock) => mock.mockReset());
     api.getInvestigationHistory.mockResolvedValue({ commands: [] });
-    api.submitManualHypothesis.mockReset();
+    try {
+      globalThis.sessionStorage?.clear();
+    } catch {
+      // The retry test still covers the in-memory path when storage is unavailable.
+    }
   });
 
   it("records a free hypothesis and says that it is not revealed evidence", async () => {
@@ -87,6 +98,206 @@ describe("InvestigationActions", () => {
     await waitFor(() => expect(api.submitManualHypothesis).toHaveBeenCalledTimes(2));
     expect(api.submitManualHypothesis.mock.calls[0][1].idempotency_key).toBe(
       api.submitManualHypothesis.mock.calls[1][1].idempotency_key,
+    );
+  });
+
+  it("runs a player-safe identity analysis and records a candidate review", async () => {
+    const identityWorkspace = {
+      ...workspace,
+      actions: [
+        { id: "COMPARE_IDENTITIES", state: "AVAILABLE", reason_code: "READY", reason: "Ready" },
+      ],
+    } as unknown as Workspace;
+    api.getEntityResolutionHistory.mockResolvedValue({ analyses: [], reviews: [] });
+    api.runEntityResolution.mockResolvedValue({
+      analysis_id: "analysis-1",
+      round_id: "round-1",
+      idempotency_key: "analysis-key",
+      focus_record_id: "P1",
+      status: "COMPLETED",
+      charged_credits: 3,
+      normalization_version: "fga09-norm-v1",
+      model_version: "fga09-deterministic-fallback-v1",
+      threshold_version: "fga09-review-thresholds-v1",
+      snapshot_version: "snap-1",
+      generation_mode: "RUNTIME_DETERMINISTIC_FALLBACK",
+      framework_semantics: "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+      actual_engine_run: false,
+      exact_matches: [],
+      candidates: [{
+        candidate_id: "candidate-1",
+        left_record_id: "P1",
+        right_record_id: "O1",
+        entity_type: "PERSON",
+        confidence_band: "MEDIUM",
+        estimated_score: 0.5,
+        agreement_fields: ["surname"],
+        disagreement_fields: ["email"],
+        missing_fields: [],
+        evidence_reasons: ["Contact fields disagree; review is required."],
+        model_version: "fga09-deterministic-fallback-v1",
+        threshold_version: "fga09-review-thresholds-v1",
+        normalization_version: "fga09-norm-v1",
+        framework_semantics: "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+        generation_mode: "RUNTIME_DETERMINISTIC_FALLBACK",
+        actual_engine_run: false,
+        review_required: true,
+        snapshot_version: "snap-1",
+      }],
+    });
+    api.reviewEntityResolutionCandidate.mockResolvedValue({
+      review_id: "review-1",
+      round_id: "round-1",
+      candidate_id: "candidate-1",
+      outcome: "REJECTED",
+      status: "RECORDED",
+      created_at: "2026-11-16T00:00:00Z",
+    });
+    render(<InvestigationActions workspace={identityWorkspace} graph={graph} selectedNodeId="P1" />);
+
+    fireEvent.click(await screen.findByRole("button", { name: "Run identity analysis" }));
+    await waitFor(() => expect(api.runEntityResolution).toHaveBeenCalledOnce());
+    expect(await screen.findByText(/deterministic fallback/i)).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "Reject candidate" }));
+
+    await waitFor(() => expect(api.reviewEntityResolutionCandidate).toHaveBeenCalledOnce());
+    expect(await screen.findByText(/review: rejected/i)).toBeVisible();
+    expect(screen.getByText(/not a canonical merge or fraud verdict/i)).toBeVisible();
+  });
+
+  it("keeps an identity retry key across a panel remount", async () => {
+    const identityWorkspace = {
+      ...workspace,
+      actions: [
+        { id: "COMPARE_IDENTITIES", state: "AVAILABLE", reason_code: "READY", reason: "Ready" },
+      ],
+    } as unknown as Workspace;
+    api.getEntityResolutionHistory.mockResolvedValue({ analyses: [], reviews: [] });
+    api.runEntityResolution
+      .mockRejectedValueOnce(new Error("connection lost"))
+      .mockResolvedValueOnce({
+        analysis_id: "analysis-remount",
+        round_id: "round-1",
+        idempotency_key: "replayed-analysis-key",
+        focus_record_id: "P1",
+        status: "COMPLETED",
+        charged_credits: 3,
+        normalization_version: "fga09-norm-v1",
+        model_version: "fga09-deterministic-fallback-v1",
+        threshold_version: "fga09-review-thresholds-v1",
+        snapshot_version: "snap-1",
+        generation_mode: "RUNTIME_DETERMINISTIC_FALLBACK",
+        framework_semantics: "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+        actual_engine_run: false,
+        exact_matches: [],
+        candidates: [],
+      });
+
+    const first = render(<InvestigationActions workspace={identityWorkspace} graph={graph} selectedNodeId="P1" />);
+    fireEvent.click(await screen.findByRole("button", { name: "Run identity analysis" }));
+    await screen.findByText(/could not be completed/i);
+    const firstKey = api.runEntityResolution.mock.calls[0][1].idempotency_key;
+
+    first.unmount();
+    render(<InvestigationActions workspace={identityWorkspace} graph={graph} selectedNodeId="P1" />);
+    fireEvent.click(await screen.findByRole("button", { name: "Run identity analysis" }));
+
+    await waitFor(() => expect(api.runEntityResolution).toHaveBeenCalledTimes(2));
+    expect(api.runEntityResolution.mock.calls[1][1].idempotency_key).toBe(firstKey);
+  });
+
+  it("shows the latest review outcome after a candidate is revised", async () => {
+    const identityWorkspace = {
+      ...workspace,
+      actions: [
+        { id: "COMPARE_IDENTITIES", state: "AVAILABLE", reason_code: "READY", reason: "Ready" },
+      ],
+    } as unknown as Workspace;
+    api.getEntityResolutionHistory.mockResolvedValue({
+      analyses: [{
+        analysis_id: "analysis-history",
+        round_id: "round-1",
+        idempotency_key: "analysis-history-key",
+        focus_record_id: null,
+        status: "COMPLETED",
+        charged_credits: 3,
+        normalization_version: "fga09-norm-v1",
+        model_version: "fga09-deterministic-fallback-v1",
+        threshold_version: "fga09-review-thresholds-v1",
+        snapshot_version: "snap-1",
+        generation_mode: "RUNTIME_DETERMINISTIC_FALLBACK",
+        framework_semantics: "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+        actual_engine_run: false,
+        exact_matches: [],
+        candidates: [{
+          candidate_id: "candidate-history",
+          left_record_id: "P1",
+          right_record_id: "O1",
+          entity_type: "PERSON",
+          confidence_band: "MEDIUM",
+          estimated_score: 0.5,
+          agreement_fields: ["surname"],
+          disagreement_fields: ["email"],
+          missing_fields: [],
+          evidence_reasons: ["Contact fields disagree; review is required."],
+          model_version: "fga09-deterministic-fallback-v1",
+          threshold_version: "fga09-review-thresholds-v1",
+          normalization_version: "fga09-norm-v1",
+          framework_semantics: "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+          generation_mode: "RUNTIME_DETERMINISTIC_FALLBACK",
+          actual_engine_run: false,
+          review_required: true,
+          snapshot_version: "snap-1",
+        }],
+      }],
+      reviews: [
+        { review_id: "review-old", round_id: "round-1", candidate_id: "candidate-history", outcome: "ACCEPTED", status: "RECORDED", created_at: "2026-11-16T00:00:00Z" },
+        { review_id: "review-new", round_id: "round-1", candidate_id: "candidate-history", outcome: "REJECTED", status: "RECORDED", created_at: "2026-11-17T00:00:00Z" },
+      ],
+    });
+    render(<InvestigationActions workspace={identityWorkspace} graph={graph} />);
+
+    expect(await screen.findByText(/review: rejected/i)).toBeVisible();
+    expect(screen.queryByText(/review: accepted/i)).not.toBeInTheDocument();
+  });
+
+  it("reuses an identity analysis key after an ambiguous transport failure", async () => {
+    const identityWorkspace = {
+      ...workspace,
+      actions: [
+        { id: "COMPARE_IDENTITIES", state: "AVAILABLE", reason_code: "READY", reason: "Ready" },
+      ],
+    } as unknown as Workspace;
+    api.getEntityResolutionHistory.mockResolvedValue({ analyses: [], reviews: [] });
+    api.runEntityResolution
+      .mockRejectedValueOnce(new Error("connection lost"))
+      .mockResolvedValueOnce({
+        analysis_id: "analysis-retry",
+        round_id: "round-1",
+        idempotency_key: "analysis-retry-key",
+        focus_record_id: null,
+        status: "COMPLETED",
+        charged_credits: 3,
+        normalization_version: "fga09-norm-v1",
+        model_version: "fga09-deterministic-fallback-v1",
+        threshold_version: "fga09-review-thresholds-v1",
+        snapshot_version: "snap-1",
+        generation_mode: "RUNTIME_DETERMINISTIC_FALLBACK",
+        framework_semantics: "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+        actual_engine_run: false,
+        exact_matches: [],
+        candidates: [],
+      });
+    render(<InvestigationActions workspace={identityWorkspace} graph={graph} />);
+
+    const button = await screen.findByRole("button", { name: "Run identity analysis" });
+    fireEvent.click(button);
+    await screen.findByText(/could not be completed/i);
+    fireEvent.click(button);
+
+    await waitFor(() => expect(api.runEntityResolution).toHaveBeenCalledTimes(2));
+    expect(api.runEntityResolution.mock.calls[0][1].idempotency_key).toBe(
+      api.runEntityResolution.mock.calls[1][1].idempotency_key,
     );
   });
 });

@@ -1,0 +1,22 @@
+{
+  "profile": "fga",
+  "host": "https://dbc-916267ef-3b9b.cloud.databricks.com",
+  "authenticated": true,
+  "read_only_commands": [
+    "databricks auth describe --profile fga",
+    "databricks clusters list --profile fga -o json",
+    "databricks warehouses list --profile fga -o json"
+  ],
+  "cluster_count": 0,
+  "warehouse_count": 6,
+  "qualification_warehouse": {
+    "id": "eded42c9d0a69b84",
+    "name": "FGA-07-qualification",
+    "state": "RUNNING",
+    "warehouse_type": "PRO"
+  },
+  "compatibility_boundary": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+  "actual_zingg_run": false,
+  "mutations_attempted": false,
+  "observed_at_utc": "2026-11-17T18:08:23Z"
+}

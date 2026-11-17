@@ -37,6 +37,8 @@ export interface RoundSummary {
   created_at: string;
   started_at: string | null;
   intro_completed_at: string | null;
+  credits_remaining: number;
+  version: number;
 }
 
 export interface ComicPage {
@@ -98,6 +100,69 @@ export interface InvestigationCommand {
   status: string;
   charged_credits: number;
   revealed_record_ids: string[];
+  created_at: string;
+  replayed?: boolean;
+}
+
+export interface IdentityCandidate {
+  candidate_id: string;
+  left_record_id: string;
+  right_record_id: string;
+  entity_type: string;
+  confidence_band: string;
+  estimated_score: number;
+  agreement_fields: string[];
+  disagreement_fields: string[];
+  missing_fields: string[];
+  evidence_reasons: string[];
+  model_version: string;
+  threshold_version: string;
+  normalization_version: string;
+  framework_semantics: string;
+  generation_mode: string;
+  actual_engine_run: boolean;
+  review_required: boolean;
+  snapshot_version: string;
+}
+
+export interface ExactIdentityMatch {
+  match_id: string;
+  left_record_id: string;
+  right_record_id: string;
+  entity_type: string;
+  rule_id: string;
+  evidence_fields: string[];
+  evidence_reasons: string[];
+  normalization_version: string;
+  snapshot_version: string;
+  provenance_refs: string[];
+}
+
+export interface EntityResolutionAnalysis {
+  analysis_id: string;
+  round_id: string;
+  idempotency_key: string;
+  focus_record_id: string | null;
+  status: string;
+  charged_credits: number;
+  normalization_version: string;
+  model_version: string;
+  threshold_version: string;
+  snapshot_version: string;
+  generation_mode: string;
+  framework_semantics: string;
+  actual_engine_run: boolean;
+  exact_matches: ExactIdentityMatch[];
+  candidates: IdentityCandidate[];
+  replayed?: boolean;
+}
+
+export interface EntityResolutionReview {
+  review_id: string;
+  round_id: string;
+  candidate_id: string;
+  outcome: "ACCEPTED" | "REJECTED" | "UNRESOLVED";
+  status: string;
   created_at: string;
   replayed?: boolean;
 }

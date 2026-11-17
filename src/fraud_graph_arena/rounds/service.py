@@ -48,9 +48,26 @@ class RoundService:
             case_version=case.version,
             status=RoundStatus.CREATED,
             created_at=datetime.now(UTC),
+            credits_remaining=9 if case.id == "ACADEMY_T02" else 0,
         )
         self._repository.add(round_)
         return round_
+
+    def charge(self, round_id: str, amount: int) -> Round:
+        try:
+            return self._repository.charge(round_id, amount)
+        except ValueError as error:
+            if str(error) == "INSUFFICIENT_CREDITS":
+                raise ConflictError(
+                    code="INSUFFICIENT_CREDITS",
+                    title="The evidence budget is empty",
+                    detail="This entity-resolution analysis needs more credits than the round has left.",
+                    recovery="Review the existing candidate results or start a fresh Academy round.",
+                ) from error
+            raise
+
+    def refund(self, round_id: str, amount: int) -> Round:
+        return self._repository.refund(round_id, amount)
 
     def start(self, round_id: str) -> Round:
         round_ = self.require(round_id)

@@ -1,0 +1,170 @@
+{
+  "status": "pass",
+  "read_only": true,
+  "profile": "fga",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "case_id": "ACADEMY_T02",
+  "active_publication": [
+    "ACADEMY_T02",
+    "3.0.0-canonical.1",
+    "2026.07.19.1",
+    "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd"
+  ],
+  "candidate_summary": [
+    "2",
+    "2",
+    "1"
+  ],
+  "candidate_pairs": [
+    [
+      "T2-Z-001",
+      "T2-P-CIPHER-A",
+      "T2-P-CIPHER-B",
+      "PERSON",
+      "HIGH",
+      "false",
+      "CURATED_APPROXIMATION",
+      "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+      "2026.07.19.1"
+    ],
+    [
+      "T2-Z-002",
+      "T2-P-CIPHER-A",
+      "T2-P-CYPHER",
+      "PERSON",
+      "MEDIUM",
+      "false",
+      "CURATED_APPROXIMATION",
+      "ZINGG_LIKE_ENTITY_RESOLUTION_CANDIDATE",
+      "2026.07.19.1"
+    ]
+  ],
+  "exact_summary": [
+    "5",
+    "5",
+    "1"
+  ],
+  "exact_rows": [
+    [
+      "T2-GF-001",
+      "SAME_DEVICE",
+      "T2-LOGIN-A",
+      "T2-LOGIN-B",
+      "device",
+      "false",
+      "2026.07.19.1"
+    ],
+    [
+      "T2-GF-002",
+      "SAME_DEVICE",
+      "T2-LOGIN-B",
+      "T2-LOGIN-C",
+      "device",
+      "false",
+      "2026.07.19.1"
+    ],
+    [
+      "T2-GF-003",
+      "SAME_LOGIN_IP",
+      "T2-LOGIN-A",
+      "T2-LOGIN-C",
+      "ip",
+      "false",
+      "2026.07.19.1"
+    ],
+    [
+      "T2-GF-004",
+      "SAME_REGISTERED_ADDRESS",
+      "T2-O-GAMMA",
+      "T2-O-BAKERY",
+      "registered_address",
+      "false",
+      "2026.07.19.1"
+    ],
+    [
+      "T2-GF-005",
+      "SAME_DEVICE",
+      "T2-FILE-GAMMA",
+      "T2-FILE-BAKERY",
+      "device",
+      "false",
+      "2026.07.19.1"
+    ]
+  ],
+  "observed_columns": [
+    "case_id",
+    "profile_code",
+    "candidate_id",
+    "left_record_id",
+    "right_record_id",
+    "entity_type",
+    "confidence_band",
+    "estimated_score",
+    "agreement_fields_json",
+    "disagreement_fields_json",
+    "missing_fields_json",
+    "generation_mode",
+    "framework_semantics",
+    "actual_engine_run",
+    "provenance_note",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id",
+    "case_id",
+    "profile_code",
+    "match_id",
+    "rule_id",
+    "relationship_type",
+    "left_record_id",
+    "right_record_id",
+    "exact_field",
+    "masked_exact_value",
+    "normalization_version",
+    "generation_mode",
+    "framework_semantics",
+    "actual_engine_run",
+    "ambiguity_warning",
+    "supporting_record_ids_json",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id"
+  ],
+  "forbidden_columns": [],
+  "runtime_probe": [
+    [
+      "{\"dbr_version\":null,\"dbsql_version\":\"2026.45\",\"u_build_hash\":\"f167d92d88d6a3f2bb987a3b2464091485dc0b64\",\"r_build_hash\":\"785e6b6c42f8f1fba23c6d66e3cb43a9a8e1bf23\"}"
+    ]
+  ],
+  "zingg_compatibility": {
+    "status": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+    "actual_zingg_run": false,
+    "reason": "The fga profile reaches a SQL Warehouse; no cluster library installation or Zingg job was requested or performed.",
+    "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+  },
+  "checks": {
+    "one_active_publication": true,
+    "candidate_rows": true,
+    "candidate_ids_unique": true,
+    "candidate_ids_nonempty": true,
+    "candidate_bands_supported": true,
+    "candidate_one_snapshot": true,
+    "candidate_snapshot_matches_publication": true,
+    "candidate_entities_are_person": true,
+    "candidate_generation_is_explicit": true,
+    "candidate_framework_is_explicit": true,
+    "golden_pair_present": true,
+    "hard_negative_present": true,
+    "exact_rows": true,
+    "exact_ids_unique": true,
+    "exact_one_snapshot": true,
+    "exact_snapshot_matches_publication": true,
+    "exact_relationships_are_associations": true,
+    "no_candidate_zingg_claim": true,
+    "no_exact_engine_claim": true,
+    "no_forbidden_player_columns": true
+  },
+  "run_at_utc": "2026-11-17T18:08:23.529222+00:00",
+  "source_commit": "d2865e2813cb9393d4888a6676ea4fe100458aa3"
+}

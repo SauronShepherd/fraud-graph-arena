@@ -57,6 +57,8 @@ def map_round(value: Round) -> RoundResponse:
         created_at=value.created_at,
         started_at=value.started_at,
         intro_completed_at=value.intro_completed_at,
+        credits_remaining=value.credits_remaining,
+        version=value.version,
     )
 
 
