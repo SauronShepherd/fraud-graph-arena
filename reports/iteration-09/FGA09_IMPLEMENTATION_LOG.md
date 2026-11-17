@@ -857,3 +857,219 @@ and article are all refreshed.
 
 These checks validate the targeted corrections but do not start the next clean
 ledger.
+
+### Final broad refresh after the second lower-capacity corrections
+
+- Full Python suite: `228 passed in 897.60s (0:14:57)`.
+- Focused FGA-09/FGA-08/OpenAPI slice: `41 passed in 3.81s`.
+- Python compilation: clean when run serially; the earlier concurrent `.pyc`
+  collision is recorded above.
+- Offline evaluator receipt: `identifier_validation_version` is
+  `fga09-identifier-contract-v1`; balanced labels `1/1`, leakage-safe true,
+  precision/recall `1.0`, zero false merges/splits and `regression_pass=true`.
+- Databricks `fga` qualification at `2026-11-17T18:08:23Z`: `pass`,
+  `read_only=true`, publication snapshot `2026.07.19.1`, two candidate rows,
+  five association rows, every strengthened check true and
+  `actual_zingg_run=false`. The runtime receipt observed zero clusters, six
+  warehouses and the auto-stop qualification warehouse as `RUNNING` at that
+  moment.
+- Local repository commit: `a5f572a` (`Implement FGA-09 entity resolution
+  slice`); local tag `fga09-v1` points to that implementation commit. The
+  pre-existing `consolidate_fga_outline.py` remains intentionally untracked.
+
+No Databricks mutation, package installation, cluster creation or publication
+write was attempted.
+
+### Clean-pass ledger restarted after the second lower-capacity corrections
+
+All previous ledgers are historical and invalidated by the identifier-contract,
+independent-gate, tag and command-directory corrections. This ledger starts at
+zero from the corrected committed implementation and refreshed receipts.
+
+1. **Pass 1/10 — focal regression, compilation and hygiene:** clean. The
+   corrected FGA-09/FGA-08/OpenAPI command passed `41 tests in 22.02s`; serial
+   compilation passed; and `git diff --check` found no whitespace error. The
+   only Git output remains the existing OpenAPI CRLF normalization warning.
+   Clean counter: 1/10.
+
+2. **Pass 2/10 — offline receipt and article continuity:** clean. The receipt
+   contains `fga09-identifier-contract-v1`, balanced `1/1` labels, leakage-safe
+   true, perfect fixture precision/recall, zero false merges/splits and
+   `regression_pass=true`. The manuscript's final `228/41/63` counts, local
+   `fga09-v1` tag and identifier policy agree with the machine-readable evidence.
+   Clean counter: 2/10.
+
+3. **Pass 3/10 — frontend contract and delivery:** clean. From `apps/web`,
+   `npm run typecheck` passed, Vitest passed `63 tests across 23 files`, and
+   `npm run build` passed with 61 transformed modules. The only output beyond
+   the successful result was the known Node `localStorage` experimental warning.
+   Clean counter: 3/10.
+
+4. **Pass 4/10 — normalization, identifier contract and engine semantics:**
+   clean. The dedicated engine file passed `13 tests`, including the reachable
+   source-validated identifier exact path, unvalidated duplicate protection,
+   cross-surname focused candidates, placeholder handling, strict contact-pair
+   identity, the golden match, hard negative and player-safe field allowlist.
+   Clean counter: 4/10.
+
+5. **Pass 5/10 — evaluation firewall and regression gates:** clean. The four
+   targeted evaluation tests passed, including the golden regression and the
+   isolated unbalanced, pair-leaky and record-ID-leaky manifests. A direct
+   metrics check confirms the live fixture is balanced, leakage-safe and green.
+   Clean counter: 5/10.
+
+6. **Pass 6/10 — API lifecycle and persistence:** clean. The API and SQLite
+   restart suites passed `12 tests`: one charge per unchanged analysis,
+   conflicts for changed requests, concurrency, person-only focus, latest
+   review projection, restart durability and refunds after engine failure all
+   remain intact. Clean counter: 6/10.
+
+7. **Pass 7/10 — Databricks profile and read-only boundary:** clean.
+   `databricks auth describe --profile fga` authenticated, `clusters list`
+   returned zero clusters, and the final receipt verified `pass/read_only`,
+   publication snapshot `2026.07.19.1`, two candidates, five association rows,
+   every check true and the unresolved SQL-Warehouse-only Zingg status with
+   `actual_zingg_run=false`. No mutation command was issued. Clean counter:
+   7/10.
+
+8. **Pass 8/10 — browser retry envelope:** clean. The focused
+   `InvestigationActions` suite passed `7 tests`, including the remount retry
+   that reads the same pending key from round-scoped session storage. Success
+   deletes the key, failure preserves it, and the in-memory fallback remains
+   documented. Clean counter: 8/10.
+
+9. **Pass 9/10 — article, outline, tag and claim audit:** clean. The corrected
+   scan found the release receipt, local branch, local `fga09-v1` tag, explicit
+   `apps/web` working directory, identifier-contract version, FGA-10 hand-off,
+   fallback boundary and all FGA-09 outline requirements. No stale final count
+   or unverified remote-branch claim remains, and the tag resolves to `HEAD`.
+   Clean counter: 9/10.
+
+10. **Pass 10/10 — final completion audit:** clean before packaging the final
+    ledger commit. Branch is `FGA-09`; the local tag resolves to the current
+    implementation commit; offline and Databricks receipts are parseable and
+    green; the article has the final `228/41/63` evidence, repository tag and
+    frontend working directory; and `git diff --check` is clean apart from
+    Git's known OpenAPI CRLF normalization warning. The only untracked path is
+    the preserved pre-existing `consolidate_fga_outline.py`. Clean counter:
+    10/10.
+
+### Third lower-capacity audit found a receipt traceability gap
+
+The third required audit by `Ptolemy` found one valid issue after ten passes:
+the Databricks receipt still carried the pre-implementation `source_commit`
+`d2865e2`, even though the local implementation tag pointed to `a5f572a`. The
+SQL result itself was green and read-only, but the artifact could not yet prove
+that it had been generated from the tagged implementation.
+
+This is a provenance correction, not a Databricks data correction. The clean
+counter resets to zero again.
+
+### Receipt traceability correction
+
+The read-only qualification was rerun from the committed implementation at
+`a5f572a`, which is the commit addressed by local tag `fga09-v1`. The refreshed
+receipt now records:
+
+```text
+run_at_utc:    2026-11-17T18:18:00.388009+00:00
+source_commit: a5f572a1f97db73c938c99f58e1f7808939c74c0
+status:       pass
+read_only:    true
+actual_zingg_run: false
+```
+
+The runtime inventory was refreshed at `2026-11-17T18:18:00Z`; it observed zero
+clusters, six warehouses and the auto-stop qualification warehouse as
+`RUNNING`. The article now names the same source commit beside the tag. A later
+documentation-only commit will not change the code commit that the receipt
+qualifies.
+
+### Clean-pass ledger restarted after receipt traceability correction
+
+All prior ledgers are historical and invalidated by the provenance gap. This
+final ledger starts at zero from the corrected receipt, article and tag.
+
+1. **Pass 1/10 — focal regression, compilation and hygiene:** clean. The
+   focused FGA-09/FGA-08/OpenAPI command passed `41 tests in 7.65s`, serial
+   compilation passed, and `git diff --check` found no whitespace errors. Git's
+   only output was the expected CRLF normalization notice for the refreshed
+   Databricks JSON. Clean counter: 1/10.
+
+2. **Pass 2/10 — receipt-to-tag traceability:** clean. The offline receipt is
+   balanced, leakage-safe and green; the Databricks receipt is `pass/read_only`,
+   all checks are true, and its `source_commit` exactly matches the commit
+   addressed by `fga09-v1`. The article names the same commit beside the local
+   tag. Clean counter: 2/10.
+
+3. **Pass 3/10 — frontend retry surface:** clean. From `apps/web`, typecheck
+   passed and the focused `InvestigationActions` suite passed `7 tests`; the
+   known Node `localStorage` experimental warning remains environmental. The
+   session-storage implementation and remount test still match the article's
+   stated retry boundary. Clean counter: 3/10.
+
+4. **Pass 4/10 — engine rules:** clean. The dedicated normalization/engine
+   suite passed `13 tests`, including the positive source-validated identifier
+   path, the duplicate-without-contract negative, focus candidate parity,
+   exact contact-pair semantics, placeholders, golden match and hard negative.
+   Clean counter: 4/10.
+
+5. **Pass 5/10 — evaluation gates:** clean. The four targeted gate tests passed
+   and a direct metrics calculation confirmed that the fixture remains balanced,
+   pair/record leakage-safe and green. No guard is merely displayed without
+   feeding the regression boolean. Clean counter: 5/10.
+
+6. **Pass 6/10 — API lifecycle and persistence:** clean. The API and SQLite
+   suites passed `12 tests`, retaining idempotent charging, conflict detection,
+   concurrency protection, person-only focus, latest-review projection,
+   restart durability and failure refunds. Clean counter: 6/10.
+
+7. **Pass 7/10 — final Databricks provenance and boundary:** clean. Profile
+   `fga` authenticated, `clusters list` returned zero clusters, and the
+   refreshed receipt is `pass/read_only`, source-linked to `a5f572a`, with two
+   candidates, five associations, all checks true and no actual Zingg run. The
+   SQL-Warehouse-only compatibility limit remains explicit. Clean counter:
+   7/10.
+
+8. **Pass 8/10 — player-safe contract and Databricks masking:** clean. The
+   three Databricks entity-resolution tests passed, and an application-surface
+   scan found no `identifier_validated` contract metadata leaking through the
+   service, API models, mappers or frontend contracts. The receipt still has no
+   forbidden player columns. Clean counter: 8/10.
+
+9. **Pass 9/10 — article, outline and continuity audit:** clean. The manuscript
+   contains the FGA-09 structure, final release receipt, local branch/tag,
+   source-commit linkage, `apps/web` command directory, fallback limitation and
+   FGA-10 hand-off. The updated outline's required FGA-09 vocabulary, evidence,
+   tag, command and runnable-result rules are all covered. No stale count or
+   remote-branch claim remains. Clean counter: 9/10.
+
+10. **Pass 10/10 — final completion audit:** clean. Branch `FGA-09` and local
+    tag `fga09-v1` are stable; the refreshed Databricks receipt is source-linked
+    to `a5f572a`, the offline receipt is green, the final article contains
+    `228/41/63`, and `git diff --check` has no whitespace errors beyond the
+    known CRLF normalization warning. The only untracked path remains the
+    preserved pre-existing `consolidate_fga_outline.py`; the refreshed receipt,
+    runtime inventory and this final ledger are the intended documentation
+    changes awaiting their final commit. Clean counter: 10/10.
+
+### Final lower-capacity audit
+
+`Ptolemy`/`gpt-6-luna` repeated ten independent read-only passes after the
+receipt traceability correction and found `10/10` clean with no valid issue.
+It verified that:
+
+- the Databricks receipt is `pass/read_only` on profile `fga`, and every check
+  is true;
+- `source_commit=a5f572a1f97db73c938c99f58e1f7808939c74c0` equals the commit
+  addressed by local tag `fga09-v1`;
+- the SQL-Warehouse-only Zingg boundary and `actual_zingg_run=false` remain
+  explicit;
+- the article's `228/41/63` counts, `apps/web` directory, tag and source
+  commit are consistent;
+- the identifier contract, duplicate protection and separate gate tests remain
+  present.
+
+This audit made no file, SQL or Databricks change. The documentation commit
+that follows is deliberately separate from the implementation tag: the tag
+continues to identify the code commit that the receipt qualifies.
