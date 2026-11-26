@@ -17,11 +17,14 @@ def test_sqlite_analysis_and_review_survive_application_restart(tmp_path: Path) 
         first.post(f"/api/v1/rounds/{round_id}/start")
         first.post(f"/api/v1/rounds/{round_id}/opening/complete")
         run = first.post(f"/api/v1/rounds/{round_id}/investigations/entity-resolution", json={"idempotency_key": "durable-analysis"}).json()
+        assert run["charged_credits"] == 3
+        assert first.get(f"/api/v1/rounds/{round_id}/workspace").json()["round"]["credits_remaining"] == 6
         candidate = next(item for item in run["candidates"] if item["right_record_id"] == "T2-P-CYPHER" and item["left_record_id"] == "T2-P-CIPHER-A")
         first.post(f"/api/v1/rounds/{round_id}/investigations/entity-resolution/{candidate['candidate_id']}/review", json={"idempotency_key": "durable-review", "outcome": "UNRESOLVED"})
     with TestClient(create_app(settings)) as restarted:
         replay = restarted.post(f"/api/v1/rounds/{round_id}/investigations/entity-resolution", json={"idempotency_key": "durable-analysis"}).json()
         history = restarted.get(f"/api/v1/rounds/{round_id}/investigations/entity-resolution/history").json()
+        assert restarted.get(f"/api/v1/rounds/{round_id}/workspace").json()["round"]["credits_remaining"] == 6
     assert replay["replayed"] is True
     assert len(history["analyses"]) == 1
     assert history["reviews"][0]["outcome"] == "UNRESOLVED"

@@ -133,7 +133,7 @@ describe("InvestigationActions", () => {
         estimated_score: 0.5,
         agreement_fields: ["surname"],
         disagreement_fields: ["email"],
-        missing_fields: [],
+        missing_fields: ["phone"],
         evidence_reasons: ["Contact fields disagree; review is required."],
         model_version: "fga09-deterministic-fallback-v1",
         threshold_version: "fga09-review-thresholds-v1",
@@ -158,6 +158,7 @@ describe("InvestigationActions", () => {
     fireEvent.click(await screen.findByRole("button", { name: "Run identity analysis" }));
     await waitFor(() => expect(api.runEntityResolution).toHaveBeenCalledOnce());
     expect(await screen.findByText(/deterministic fallback/i)).toBeVisible();
+    expect(await screen.findByText(/missing: phone/i)).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: "Reject candidate" }));
 
     await waitFor(() => expect(api.reviewEntityResolutionCandidate).toHaveBeenCalledOnce());

@@ -1073,3 +1073,118 @@ It verified that:
 This audit made no file, SQL or Databricks change. The documentation commit
 that follows is deliberately separate from the implementation tag: the tag
 continues to identify the code commit that the receipt qualifies.
+## 2026-11-26 — Bidirectional article/implementation consistency pass
+
+The article was audited against the checked-out `FGA-09` branch in both
+directions: every technical claim was traced to code and a test/receipt, and
+the implemented entity-resolution surface was checked for coverage in the
+article.
+
+### Findings and corrections
+
+- The article had incorrectly said that the example did not claim or test
+  Unicode NFKC. The branch does use `unicodedata.normalize("NFKC", ...)` in
+  `entity_resolution/normalization.py`; the normalization regression now
+  explicitly covers full-width characters and a ligature, in addition to
+  idempotency and original preservation. The article now explains that this is
+  FGA's fallback preprocessing, versioned as `fga09-norm-v1`, not a Zingg
+  default.
+- The feature description incorrectly implied that `identifier` was admitted
+  only after source validation. The implementation allows it as a candidate
+  signal, while `fga09-identifier-contract-v1` is required before a single
+  identifier can create an exact identity observation. The article now states
+  that distinction.
+- The article incorrectly said that the action appeared only with a selected
+  PERSON record. The API/UI makes it available for active T02, with an optional
+  PERSON focus; an un-focused bounded analysis is also implemented and tested.
+- The article claimed same-tab reload coverage although the regression directly
+  covers panel unmount/remount. The wording now matches the executed test.
+- The local fallback's `similar_given_name` label is now explicitly separated
+  from the live curated publication's `phonetic_given_name` label; the latter
+  is not presented as fallback or Zingg execution.
+- The Databricks compatibility wording now records only the inventory checks
+  actually executed. Spark/Scala/artifact/job compatibility remains unresolved
+  because profile `fga` exposes no qualified cluster.
+
+### Checks rerun after the corrections
+
+| Check | Result |
+|---|---|
+| Focused Python regression | `41 passed in 6.47s` (`iteration_09`, `iteration_08`, OpenAPI contract) |
+| Offline evaluator | `regression_pass=true`; balanced `1/1`, leakage-safe, precision/recall `1.0`, zero false merges/splits; receipt refreshed |
+| Unicode coverage | Full-width and ligature NFKC cases pass; the test count remains within the 41-test focused slice because assertions were added to the existing normalization test |
+| Frontend | `npm run typecheck` passed; `63 passed across 23 files` from `apps/web` |
+| Databricks recheck | Read-only qualification stopped before SQL with `invalid_grant` during token refresh; no mutation attempted |
+
+The current failed Databricks receipt is
+`reports/iteration-09/databricks-fga09-entity-resolution-current.json`.
+The historical 17 November receipt remains the only green live qualification
+and continues to carry `actual_engine_run=false`.
+
+### Additional UI consistency correction
+
+The article also described the player panel distinguishing missing fields from
+disagreements. The API and engine already carried both arrays, but the React
+panel did not render `missing_fields`. The panel now renders a player-safe
+`missing: ...` line, and the existing identity-panel test supplies a missing
+phone and asserts that it is visible.
+
+After this correction:
+
+- the focused Python slice remained `41 passed`;
+- the frontend typecheck passed;
+- the frontend suite passed `63 tests across 23 files`;
+- the production frontend build passed with 61 transformed modules.
+
+The bidirectional traceability receipt is
+`reports/iteration-09/FGA09_ARTICLE_IMPLEMENTATION_MATRIX.md`; the article's
+source list now points to it alongside the implementation log and qualification
+receipts.
+
+## Final ten-pass consistency closure
+
+After the UI and test corrections, ten complete review passes were performed
+from the same final state. The passes covered article/code anchors, focused
+Python tests and compilation, API/persistence, frontend, Databricks boundaries,
+fixture/evaluator semantics, player-safe output, editorial structure,
+receipt/tag traceability and final hygiene. Two audit false positives were
+corrected in the audit procedure itself: one searched for a matrix-only phrase,
+and one compared an annotated tag object instead of `fga09-v1^{commit}`;
+neither required an artifact change.
+
+The final broad run was:
+
+- full Python suite: `228 passed in 862.25s (0:14:22)`;
+- focused FGA-09/FGA-08/OpenAPI slice: `41 passed`;
+- frontend: typecheck passed, `63 passed across 23 files`, production
+  build passed;
+- article content validation: 108 canonical articles validated;
+- offline evaluator: `regression_pass=true`, precision/recall `1.0`,
+  zero false merges/splits;
+- Databricks recheck: `invalid_grant` before SQL, read-only, no mutation.
+
+The ten-pass sequence ended clean. The current working tree contains only the
+intended FGA-09 consistency changes plus pre-existing unrelated untracked
+review-render files; no unrelated file was altered.
+
+## 2026-11-26 — Editorial density pass
+
+The supplied local preview showed that `### The first suspect was punctuation` had
+too much explanatory weight in three long italic paragraphs. The content was
+correct, but the paragraph architecture made the reader process the case, the
+NFKC definition, the field rules and the idempotency proof in large blocks.
+
+The article was revised without changing the implementation claim or adding
+new behavior: the scenario is now one paragraph, the normalization pipeline
+and NFKC explanation each have their own paragraph, the four field rules are
+a short scan-friendly list, and the idempotency test lands in two shorter
+beats. The noir voice and the final joke were preserved.
+
+Checks after the edit:
+
+- `npm run content:validate` — 108 canonical articles validated.
+- Article slice inspection — all normalization anchors remain present:
+  `unicodedata.normalize("NFKC", ...)`, `fga09-norm-v1`, field-specific
+  rules, engine identity allowlist and the Zingg-default caveat.
+- Scope — no implementation, test, fixture or Databricks artifact changed in
+  this editorial pass.

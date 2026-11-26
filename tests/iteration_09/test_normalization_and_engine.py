@@ -27,7 +27,13 @@ def test_normalization_is_unicode_aware_idempotent_and_preserves_invalid_classif
     accented = normalize_value("given_name", " Élodie ")
     assert accented.normalized == "élodie"
     assert normalize_value("given_name", accented.normalized).normalized == accented.normalized
+    compatibility_variant = normalize_value("given_name", " Ｆｌｕｆｆｙ ")
+    assert compatibility_variant.normalized == "fluffy"
+    ligature = normalize_value("given_name", "Oﬃcer")
+    assert ligature.normalized == "officer"
     assert normalize_value("email", "not-an-email").classification == "INVALID"
+    assert normalize_value("phone", "123").classification == "INVALID"
+    assert normalize_value("phone", "+1 (555) 0204").normalized == "15550204"
     assert normalize_value("phone", "000000").classification == "PLACEHOLDER"
     assert NORMALIZATION_VERSION.startswith("fga09-")
     assert PLACEHOLDER_REGISTRY_VERSION.startswith("fga09-")
@@ -140,6 +146,35 @@ def test_single_shared_contact_field_is_a_review_candidate_not_an_exact_match() 
     assert candidate.review_required is True
     assert candidate.confidence_band == "LOW"
 
+    missing_phone_run = EntityResolutionEngine().analyze(
+        [
+            {
+                "record_id": "P-MISSING-PHONE-A",
+                "record_type": "PERSON_RECORD",
+                "display_label": "Ada Corgi",
+                "snapshot_version": "snap-1",
+                "safe_attributes_json": '{"given_name":"Ada","surname":"Corgi","email":"shared@example.test"}',
+            },
+            {
+                "record_id": "P-MISSING-PHONE-B",
+                "record_type": "PERSON_RECORD",
+                "display_label": "Ada Hound",
+                "snapshot_version": "snap-1",
+                "safe_attributes_json": '{"given_name":"Ada","surname":"Hound","email":"shared@example.test","phone":"+1-555-0002"}',
+            },
+        ],
+        analysis_id="missing-phone-analysis",
+        round_id="round-1",
+        idempotency_key="missing-phone-key",
+        request_hash="missing-phone-hash",
+        focus_record_id=None,
+        charged_credits=0,
+        created_at="2026-11-16T00:00:00+00:00",
+    )
+    missing_phone_candidate = next(item for item in missing_phone_run.candidates)
+    assert "phone" in missing_phone_candidate.missing_fields
+    assert "phone" not in missing_phone_candidate.disagreement_fields
+
 
 def test_focused_analysis_keeps_cross_surname_shared_contact_candidates() -> None:
     run = EntityResolutionEngine().analyze(
@@ -250,6 +285,8 @@ def test_shared_infrastructure_is_not_an_exact_identity_rule() -> None:
         created_at="2026-11-16T00:00:00+00:00",
     )
     assert all(match.left_record_id.startswith("T2-P-") and match.right_record_id.startswith("T2-P-") for match in run.exact_matches)
+    assert all(match.left_record_id < match.right_record_id for match in run.exact_matches)
+    assert len({match.match_id for match in run.exact_matches}) == len(run.exact_matches)
     assert not any("address" in field or "device" in field or "ip" in field for match in run.exact_matches for field in match.evidence_fields)
 
 

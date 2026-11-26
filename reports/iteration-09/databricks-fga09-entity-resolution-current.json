@@ -1,0 +1,12 @@
+{
+  "status": "fail",
+  "read_only": true,
+  "profile": "fga",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "case_id": "ACADEMY_T02",
+  "error": "Error: failed during request visitor: error getting token: token refresh: Post \"https://dbc-916267ef-3b9b.cloud.databricks.com/oidc/v1/token\": http 400: {\"error\":\"invalid_grant\",\"request_id\":\"a8ba3868-84f8-4f9b-8cca-e032d911324c\",\"error_description\":\"Refresh token is invalid\"}",
+  "run_at_utc": "2026-11-26T04:43:32.766572+00:00",
+  "source_commit": "54d6bed452fbdd3171097e8b788e665140fb62a4"
+}

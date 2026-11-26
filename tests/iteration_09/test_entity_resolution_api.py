@@ -114,6 +114,8 @@ def test_latest_review_outcome_controls_the_player_review_edge(client: TestClien
     assert client.post(review_path, json={"idempotency_key": "review-rejected-later", "outcome": "REJECTED"}).status_code == 200
     graph = client.get(f"/api/v1/rounds/{round_id}/workspace").json()["graph"]
     assert not any(item["relationship_type"] == "PLAYER_REVIEWED_IDENTITY" for item in graph["edges"])
+    history = client.get(f"/api/v1/rounds/{round_id}/investigations/entity-resolution/history").json()
+    assert [item["outcome"] for item in history["reviews"]] == ["ACCEPTED", "REJECTED"]
 
 
 def test_analysis_is_rejected_when_credits_are_exhausted(client: TestClient) -> None:
