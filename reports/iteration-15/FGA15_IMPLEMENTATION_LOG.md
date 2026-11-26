@@ -96,7 +96,7 @@ The remote run completed successfully on 2026-11-26 after the review-gap correct
 | Query boundary | SELECT-only active publication, snapshot, count, endpoint and safe-column checks |
 | Protected truth queried | No |
 | Actual engine run | No; SQL Warehouse-only boundary remains explicit |
-| Source commit | `d051bba2b525c4ffb38317ec9d5f5c9a9d4e0f10` |
+| Source commit | `ffd0d9490cd5e66b91c2f7e3f9a398a6a1b4d2f5` |
 
 The complete per-case receipt is `reports/iteration-15/databricks-fga15-narrative-current.json`.
 

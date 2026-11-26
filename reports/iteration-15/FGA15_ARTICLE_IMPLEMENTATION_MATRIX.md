@@ -16,4 +16,4 @@ This matrix is the editorial and technical coverage gate for `The World Around t
 | Existing case entry flow remains stable | generator preserves Academy's two original panels and one panel for other legacy cases | Playwright regression | Implemented |
 | Full future 130-panel visual programme | master outline backlog | no production asset claim | Deferred explicitly |
 | Production radio, music, effects and voice library | governance slots and fallbacks only | no enabled binary audio | Deferred explicitly |
-| Databricks qualification | `scripts/qualify_fga15_narrative.py` | profile `fga` remote receipt at `reports/iteration-15/databricks-fga15-narrative-current.json` | Verified PASS on source commit `d051bba`; receipt committed in `aec14ee` |
+| Databricks qualification | `scripts/qualify_fga15_narrative.py` | profile `fga` remote receipt at `reports/iteration-15/databricks-fga15-narrative-current.json` | Verified PASS on source commit `ffd0d94`; receipt committed in the following documentation commit |
