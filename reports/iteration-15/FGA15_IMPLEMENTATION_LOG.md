@@ -14,7 +14,7 @@ The work was made on branch `FGA-15`, based on the FGA-14 documentation commit `
 | The opening comic is skippable and inspectable | `OpeningComicPage`, panel navigation, skip, preload of the next panel, caption, transcript and image fallback | Full Playwright suite and frontend Vitest |
 | Closures vary by outcome | `EXCELLENT`, `PARTIAL` and `FAILED` variants mapped from the existing ending codes | Manifest review, API contract tests and browser coverage |
 | Audio is optional and independently controllable | `AudioManager` with master/music/voice/effects buses, persistence, mute and reduced-sensory suppression | `audio.test.ts`; no enabled binary audio is shipped |
-| Audio and visuals cannot become hidden evidence | disabled optional slots carry provenance, rights, approval and fallback metadata; the schema rejects an enabled asset without a file and license | adversarial fixtures and review script |
+| Audio and visuals cannot become hidden evidence | disabled optional slots carry provenance, rights, approval and fallback metadata; the schema and validator reject an enabled asset without a file, licence or explicit `APPROVED` status | adversarial fixtures and review script |
 | Failure is visible and recoverable | missing asset, autoplay blocked, concurrency and fallback events are observable; text and visual state remain usable | audio tests, Playwright suite and review script |
 | Accessibility is part of the case | captions, transcripts, alt text, reduced motion/sensory behaviour and no-autoplay default | manifest review, frontend tests and browser checks |
 
@@ -55,6 +55,12 @@ One manual browser pass started the backend in development mode. That made the P
 
 The final Playwright invocation emitted Node's environment warning that `NO_COLOR` is ignored while `FORCE_COLOR` is set. It did not affect execution or assertions. It is recorded rather than misreported as a warning-free process.
 
+#### The lower-capacity review found real gaps
+
+A separate lower-capacity review was run after the first ten editorial and technical passes. It found five actionable inconsistencies: enabled audio did not require explicit approval, the resolution page did not render closure media or preload the next page, suppressed audio was not observable and the fallback was not visible, reduced-sensory state was not reactive in the parent page, and the article implied a live route that had not been deployed. It also identified that the coverage matrix overstated browser coverage and that the receipt still described the earlier test counts.
+
+Those findings were treated as release blockers rather than stylistic suggestions. The schema, validator and adversarial fixture now require `approval_status: APPROVED`; `CaseResolutionPage` renders closure images, alt text, fallback, preload and transcript disclosure; `AudioManager` records `PLAYBACK_SUPPRESSED`; `AudioControls` exposes fallback/suppression status; opening and resolution pages subscribe to preference changes and apply the declared reduced-motion state; the article now describes the route as prepared in the branch rather than deployed; and the matrix names the exact API and browser evidence. A collection-only import error in the new Python tests was then corrected, and the complete focused regression returned green.
+
 ### 4. Local verification after correction
 
 The following results are from the FGA-15 worktree:
@@ -62,13 +68,13 @@ The following results are from the FGA-15 worktree:
 | Check | Result |
 | --- | --- |
 | `npm run typecheck` | PASS |
-| `npm test -- --run src/narrative/audio.test.ts` | 3 passed |
-| full frontend Vitest (`npm test`) | 25 files, 68 passed |
+| `npm test -- --run src/narrative/audio.test.ts` | 4 passed |
+| full frontend Vitest (`npm test`) | 25 files, 69 passed |
 | `npm run build` | PASS; Vite completed without build warnings |
-| backend focused suite (`tests/iteration_01`, `11`, `14`, `15`) | 56 passed |
-| `tests/iteration_15/test_narrative_experience.py` | 3 passed |
+| backend focused suite (`tests/iteration_01`, `11`, `14`, `15`) | 58 passed |
+| `tests/iteration_15/test_narrative_experience.py` | 5 passed |
 | `python scripts/review_fga15_narrative.py` | PASS; 14 packages, no fixture errors |
-| full Playwright suite (`npm run test:e2e`) | 15 passed |
+| full Playwright suite (`npm run test:e2e`) | 16 passed |
 
 The browser run used a test-only SQLite repository and a missing frontend distribution path. It did not write production data.
 

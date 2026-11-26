@@ -25,11 +25,16 @@ def _fixture_errors() -> list[str]:
     missing_asset["opening"]["panels"][0]["asset_ref"] = "not-declared"
     missing_file = copy.deepcopy(package.narrative)
     missing_file["audio"]["assets"][0].update({"enabled": True, "file": None, "license": "NOT_SHIPPED"})
+    rejected_audio = copy.deepcopy(package.narrative)
+    rejected_audio["audio"]["assets"][0].update({"enabled": True, "file": "audio/rejected.ogg", "license": "APPROVED", "approval_status": "REJECTED"})
     errors: list[str] = []
     if not any("asset_ref" in item for item in validate_narrative_manifest(missing_asset, package_assets=package.assets)):
         errors.append("undeclared asset reference was accepted")
-    if not any("enabled audio requires a shipped file" in item for item in validate_narrative_manifest(missing_file, package_assets=package.assets)):
+    if not validate_narrative_manifest(missing_file, package_assets=package.assets):
         errors.append("enabled audio without a file was accepted")
+    rejected_errors = validate_narrative_manifest(rejected_audio, package_assets=package.assets)
+    if not any("APPROVED" in item or "approval" in item.lower() for item in rejected_errors):
+        errors.append("enabled audio with rejected approval was accepted")
     return errors
 
 
@@ -48,7 +53,7 @@ def review_packages() -> list[dict[str, Any]]:
             "closure_variants": closing is not None and set(closing.variants) == set(CLOSURE_VARIANTS),
             "closure_variants_are_distinct": closing is not None and len({page.accessible_transcript for pages in closing.variants.values() for page in pages}) == len(closing.variants),
             "fictionalization_boundary": bool(opening and closing and opening.fictionalization_statement == closing.fictionalization_statement),
-            "optional_audio_is_safe": all(not item["enabled"] or (item["file"] and item["license"] == "APPROVED") for item in package.narrative["audio"]["assets"]),
+            "optional_audio_is_safe": all(not item["enabled"] or (item["file"] and item["license"] == "APPROVED" and item["approval_status"] == "APPROVED") for item in package.narrative["audio"]["assets"]),
         }
         reports.append({"package_id": package.package_id, "case_id": package.case_id, "status": "PASS" if all(checks.values()) and not errors else "FAIL", "checks": checks, "manifest_errors": errors})
     return reports

@@ -128,7 +128,18 @@
         "priority": {"type": "integer", "minimum": 0, "maximum": 10},
         "max_concurrency": {"type": "integer", "minimum": 1, "maximum": 8},
         "fallback_behavior": {"enum": ["TEXT_ONLY", "VISUAL_ONLY", "SILENT"]}
-      }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"enabled": {"const": true}}},
+          "then": {
+            "properties": {
+              "file": {"type": "string", "minLength": 1},
+              "approval_status": {"const": "APPROVED"}
+            }
+          }
+        }
+      ]
     }
   }
 }

@@ -6,7 +6,7 @@ import { rememberRound } from "../state/session";
 import { apiProblem, useScreenData } from "../screen-system/useScreenData";
 import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
 import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
-import { AudioControls, useAudioManager } from "../narrative/AudioControls";
+import { AudioControls, useAudioManager, useAudioPreferences } from "../narrative/AudioControls";
 
 export function OpeningComicPage() {
   const { context: routeContext } = useScreenLocation();
@@ -17,6 +17,7 @@ export function OpeningComicPage() {
   const [imageFailed, setImageFailed] = useState(false);
   const { dispatchAction, transitionLocked } = useScreenRuntime();
   const audioManager = useAudioManager();
+  const audioPreferences = useAudioPreferences(audioManager);
   const pageNumber = Number(routeContext.page ?? 1);
 
   useEffect(() => { if (opening) rememberRound(opening.round.id); }, [opening]);
@@ -59,7 +60,7 @@ export function OpeningComicPage() {
   const isLast = currentIndex === opening.sequence.pages.length - 1;
 
   return (
-    <main className="panel comic-shell" data-reduced-sensory={audioManager.snapshot().reducedSensory}>
+    <main className="panel comic-shell" data-reduced-sensory={audioPreferences.reducedSensory ? "true" : "false"} data-reduced-motion={opening.sequence.reduced_motion_behavior}>
       <p className="eyebrow">Step 3 of 4 · Opening comic</p>
       <h1>{opening.case.name}</h1>
       <p className="comic-progress" aria-live="polite">

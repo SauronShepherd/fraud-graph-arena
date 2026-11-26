@@ -90,6 +90,7 @@ h2 { margin-top: .2rem; }
 .audio-controls__heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 .audio-controls__heading h2 { margin: .2rem 0 0; font-size: 1.2rem; }
 .audio-controls__note { margin: .8rem 0; color: #c7b898; font-size: .9rem; line-height: 1.45; }
+.audio-controls__status { margin: .8rem 0; padding: .65rem .8rem; border-left: 3px solid #d9b46c; color: #f3c979; line-height: 1.45; }
 .audio-buses { display: grid; grid-template-columns: repeat(4, minmax(100px, 1fr)); gap: .75rem; }
 .audio-buses label { display: grid; gap: .35rem; color: #d9b46c; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; }
 .audio-buses input { width: 100%; accent-color: #d9b46c; }
@@ -112,6 +113,7 @@ h2 { margin-top: .2rem; }
 .screen-transition-overlay { position: fixed; inset: 0; z-index: 1000; background: #050505; pointer-events: none; animation: screen-fade-in 500ms ease-out; }
 @keyframes screen-fade-in { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .screen-transition-overlay { animation: none; } }
+[data-reduced-sensory="true"] *, [data-reduced-sensory="true"] *::before, [data-reduced-sensory="true"] *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 .graph-panel--ready { display: grid; grid-template-rows: auto auto 1fr auto; place-items: stretch; gap: .55rem; padding: .8rem; }
 .graph-toolbar { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem; position: relative; z-index: 1; color: #d9b46c; }.graph-toolbar h2 { margin: 0; }.graph-toolbar span { font-size: .8rem; }
 .graph-canvas { position: relative; z-index: 1; width: 100%; min-height: 230px; background: rgba(10,8,6,.45); touch-action: none; cursor: grab; }.graph-canvas:active { cursor: grabbing; }.graph-canvas g, .graph-canvas line { cursor: pointer; }.graph-inspector { position: relative; z-index: 1; padding: .65rem; border: 1px solid #77644b; background: rgba(25,20,15,.92); font-size: .85rem; }.graph-inspector span { display: block; color: #d9b46c; font: .72rem ui-monospace, monospace; }.graph-inspector p { margin: .2rem 0 0; }.graph-semantic { position: relative; z-index: 1; max-height: 110px; overflow: auto; margin: 0; padding-left: 1.2rem; font-size: .82rem; }.graph-semantic button { border: 0; color: #f1e7d0; background: none; cursor: pointer; text-align: left; }

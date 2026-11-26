@@ -3,6 +3,7 @@
   "cases": [
     {"id": "undeclared-asset", "rule": "asset_ref", "expected": "reject"},
     {"id": "enabled-audio-without-file", "rule": "audio.file", "expected": "reject"},
+    {"id": "enabled-audio-without-approval", "rule": "audio.approval_status", "expected": "reject"},
     {"id": "missing-transcript", "rule": "panel.transcript", "expected": "reject"},
     {"id": "missing-closure-variant", "rule": "closing.variants", "expected": "reject"}
   ]

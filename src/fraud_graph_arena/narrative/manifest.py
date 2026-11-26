@@ -46,8 +46,11 @@ def validate_narrative_manifest(
                 if reference not in allowed:
                     errors.append(f"asset_ref: {reference!r} is not declared by the case package")
         for asset in value["audio"]["assets"]:
-            if asset["enabled"] and not asset["file"]:
-                errors.append(f"audio.assets.{asset['id']}: enabled audio requires a shipped file")
-            if asset["enabled"] and asset["license"].upper() in {"NOT_SHIPPED", "UNKNOWN", "PENDING"}:
-                errors.append(f"audio.assets.{asset['id']}: enabled audio requires an approved license")
+            if asset["enabled"]:
+                if not asset["file"]:
+                    errors.append(f"audio.assets.{asset['id']}: enabled audio requires a shipped file")
+                if asset["license"].upper() in {"NOT_SHIPPED", "UNKNOWN", "PENDING"}:
+                    errors.append(f"audio.assets.{asset['id']}: enabled audio requires an approved license")
+                if asset["approval_status"] != "APPROVED":
+                    errors.append(f"audio.assets.{asset['id']}: enabled audio requires APPROVED asset status")
     return sorted(set(errors))

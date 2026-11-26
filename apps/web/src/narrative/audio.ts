@@ -19,6 +19,7 @@ export type NarrativeEventType =
   | "FALLBACK_ACTIVATED"
   | "AUTOPLAY_BLOCKED"
   | "STACK_SUPPRESSED"
+  | "PLAYBACK_SUPPRESSED"
   | "PREFERENCES_CHANGED";
 
 export interface NarrativeEvent {
@@ -127,7 +128,10 @@ export class AudioManager {
       this.record("FALLBACK_ACTIVATED", asset.id);
       return "FALLBACK";
     }
-    if (this.preferences.muted || this.preferences.reducedSensory) return "SUPPRESSED";
+    if (this.preferences.muted || this.preferences.reducedSensory) {
+      this.record("PLAYBACK_SUPPRESSED", asset.id);
+      return "SUPPRESSED";
+    }
     if (!this.preferences.autoplayAllowed) {
       this.record("AUTOPLAY_BLOCKED", asset.id);
       this.record("FALLBACK_ACTIVATED", asset.id);
