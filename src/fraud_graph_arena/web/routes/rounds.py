@@ -14,6 +14,8 @@ from fraud_graph_arena.web.api_models import (
     EntityResolutionRequest, EntityResolutionResponse, IdentityCandidateResponse,
     ExactIdentityMatchResponse, EntityResolutionReviewRequest, EntityResolutionReviewResponse,
     EntityResolutionHistoryResponse,
+    GraphAnalysisRequest, GraphAnalysisResponse, GraphAnalysisHistoryResponse,
+    GraphAnalysisPathResponse, GraphAnalysisComponentResponse, GraphAnalysisLeadResponse, GraphAnalysisMotifResponse,
 )
 from fraud_graph_arena.web.mappers import map_opening, map_round, map_workspace
 
@@ -150,6 +152,51 @@ def entity_resolution_history(round_id: str, request: Request) -> EntityResoluti
         analyses=[_analysis_response(run) for run in runs],
         reviews=[_review_response(review) for review in reviews],
     )
+
+
+def _graph_analysis_response(result) -> GraphAnalysisResponse:
+    return GraphAnalysisResponse(
+        analysis_id=result.analysis_id,
+        round_id=result.round_id,
+        algorithm=result.algorithm,
+        status=result.status,
+        result_type=result.result_type,
+        parameters=result.parameters,
+        snapshot_version=result.snapshot_version,
+        projection_version=result.projection_version,
+        graph_engine=result.graph_engine,
+        framework_semantics=result.framework_semantics,
+        generation_mode=result.generation_mode,
+        actual_engine_run=result.actual_engine_run,
+        input_node_count=result.input_node_count,
+        input_edge_count=result.input_edge_count,
+        nodes=result.nodes,
+        edges=result.edges,
+        paths=[GraphAnalysisPathResponse.model_validate(item) for item in result.paths],
+        components=[GraphAnalysisComponentResponse.model_validate(item) for item in result.components],
+        ranked_leads=[GraphAnalysisLeadResponse.model_validate(item) for item in result.ranked_leads],
+        motifs=[GraphAnalysisMotifResponse.model_validate(item) for item in result.motifs],
+        supporting_relationship_ids=list(result.supporting_relationship_ids),
+        partial=result.partial,
+        omitted_result_count=result.omitted_result_count,
+        interpretation=result.interpretation,
+        limitations=list(result.limitations),
+        cache_key=result.cache_key,
+        cached=result.cached,
+        execution_millis=result.execution_millis,
+    )
+
+
+@router.post("/{round_id}/investigations/graph-analytics", response_model=GraphAnalysisResponse)
+def graph_analytics(round_id: str, payload: GraphAnalysisRequest, request: Request) -> GraphAnalysisResponse:
+    result = request.app.state.container.graph_analytics.analyze(round_id, payload.model_dump(exclude_none=True))
+    return _graph_analysis_response(result)
+
+
+@router.get("/{round_id}/investigations/graph-analytics/history", response_model=GraphAnalysisHistoryResponse)
+def graph_analytics_history(round_id: str, request: Request) -> GraphAnalysisHistoryResponse:
+    results = request.app.state.container.graph_analytics.history(round_id)
+    return GraphAnalysisHistoryResponse(analyses=[_graph_analysis_response(result) for result in results])
 
 
 @router.post("", response_model=RoundResponse, status_code=status.HTTP_201_CREATED)

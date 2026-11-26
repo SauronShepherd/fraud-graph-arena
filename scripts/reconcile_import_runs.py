@@ -1,6 +1,8 @@
 from __future__ import annotations
 import argparse, json
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from fraud_graph_arena.canonical_persistence.models import ImportStatus
 
 TERMINAL={status.value for status in (ImportStatus.PUBLISHED,ImportStatus.REUSED,ImportStatus.FAILED,ImportStatus.FAILED_CLEANUP)}

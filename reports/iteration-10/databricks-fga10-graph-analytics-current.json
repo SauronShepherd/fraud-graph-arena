@@ -1,0 +1,113 @@
+{
+  "status": "pass",
+  "read_only": true,
+  "profile": "fga",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "case_id": "ACADEMY_T02",
+  "active_publication": [
+    "ACADEMY_T02",
+    "3.0.0-canonical.1",
+    "2026.07.19.1",
+    "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd"
+  ],
+  "record_summary": [
+    "20",
+    "20",
+    "1"
+  ],
+  "relationship_summary": [
+    "21",
+    "21",
+    "1"
+  ],
+  "dangling_endpoint_count": 0,
+  "known_cycle_rows": [
+    [
+      "T2-REL-016",
+      "PAYS",
+      "T2-O-ALPHA",
+      "T2-O-BETA",
+      "2026-03-01T09:00:00.000Z",
+      "2026.07.19.1"
+    ],
+    [
+      "T2-REL-017",
+      "PAYS",
+      "T2-O-BETA",
+      "T2-O-GAMMA",
+      "2026-03-01T10:00:00.000Z",
+      "2026.07.19.1"
+    ],
+    [
+      "T2-REL-018",
+      "PAYS",
+      "T2-O-GAMMA",
+      "T2-O-ALPHA",
+      "2026-03-01T11:00:00.000Z",
+      "2026.07.19.1"
+    ]
+  ],
+  "observed_columns": [
+    "case_id",
+    "profile_code",
+    "record_id",
+    "record_type",
+    "record_subtype",
+    "display_label",
+    "source_system_id",
+    "occurred_at",
+    "status",
+    "safe_summary",
+    "safe_attributes_json",
+    "provenance_ref",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id",
+    "case_id",
+    "profile_code",
+    "relationship_id",
+    "relationship_family",
+    "relationship_type",
+    "source_record_id",
+    "target_record_id",
+    "directed",
+    "event_time",
+    "weight",
+    "supporting_record_ids_json",
+    "player_safe_summary",
+    "provenance",
+    "safe_attributes_json",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id"
+  ],
+  "forbidden_columns": [],
+  "runtime_probe": [
+    [
+      "{\"dbr_version\":null,\"dbsql_version\":\"2026.46\",\"u_build_hash\":\"977caddbb1f5c46019706353401a32b8cbbd0466\",\"r_build_hash\":\"f4d566620bd900e1856140b34f3a97cd992e1aac\"}"
+    ]
+  ],
+  "graphframes_compatibility": {
+    "status": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+    "actual_engine_run": false,
+    "reason": "The fga profile reaches a SQL Warehouse; no cluster library installation or GraphFrames job was requested or performed.",
+    "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+  },
+  "checks": {
+    "one_active_publication": true,
+    "record_count": true,
+    "distinct_record_ids": true,
+    "record_one_snapshot": true,
+    "relationship_count": true,
+    "distinct_relationship_ids": true,
+    "relationship_one_snapshot": true,
+    "no_dangling_endpoints": true,
+    "known_payment_cycle_fixture": true,
+    "cycle_snapshot_matches_publication": true,
+    "no_forbidden_player_columns": true
+  },
+  "run_at_utc": "2026-11-26T09:56:08.572318+00:00",
+  "source_commit": "c9cc9046187c15b50cbc9d561ad4746d3903d48e"
+}

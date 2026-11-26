@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import type { EntityResolutionAnalysis, EntityResolutionReview, Graph, IdentityCandidate, InvestigationCommand, Workspace } from "../api/contracts";
-import { getEntityResolutionHistory, getInvestigationHistory, reviewEntityResolutionCandidate, runEntityResolution, submitManualHypothesis } from "../api/client";
+import type { EntityResolutionAnalysis, EntityResolutionReview, Graph, GraphAnalysis, IdentityCandidate, InvestigationCommand, Workspace } from "../api/contracts";
+import { getEntityResolutionHistory, getGraphAnalysisHistory, getInvestigationHistory, reviewEntityResolutionCandidate, runEntityResolution, runGraphAnalysis, submitManualHypothesis } from "../api/client";
 import { message } from "../messages";
 
 const relationshipTypes = [
@@ -61,6 +61,13 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
   const [resolutionBusy, setResolutionBusy] = useState(false);
   const [analyses, setAnalyses] = useState<EntityResolutionAnalysis[]>([]);
   const [resolutionReviews, setResolutionReviews] = useState<EntityResolutionReview[]>([]);
+  const [graphAnalyses, setGraphAnalyses] = useState<GraphAnalysis[]>([]);
+  const [graphAlgorithm, setGraphAlgorithm] = useState("NEIGHBOURHOOD");
+  const [graphMetric, setGraphMetric] = useState("degree");
+  const [graphSeed, setGraphSeed] = useState("");
+  const [graphSource, setGraphSource] = useState("");
+  const [graphTarget, setGraphTarget] = useState("");
+  const [graphBusy, setGraphBusy] = useState(false);
   const retryKey = useRef<string | null>(null);
   const resolutionRetryKeys = useRef<Map<string, string>>(new Map());
 
@@ -69,6 +76,9 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
   );
   const identityResolutionAvailable = workspace.actions.some(
     (action) => action.id === "COMPARE_IDENTITIES" && action.state === "AVAILABLE",
+  );
+  const graphAnalyticsAvailable = workspace.actions.some(
+    (action) => action.id === "RUN_GRAPH_ANALYSIS" && action.state === "AVAILABLE",
   );
   const selectedNode = selectedNodeId ? graph.nodes.find((node) => node.record_id === selectedNodeId) : undefined;
 
@@ -103,8 +113,17 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
       setAnalyses([]);
       setResolutionReviews([]);
     }
+    if (graphAnalyticsAvailable) {
+      void getGraphAnalysisHistory(workspace.round.id, controller.signal)
+        .then((result) => setGraphAnalyses(result.analyses))
+        .catch(() => {
+          if (!controller.signal.aborted) setFeedback("The graph desk is temporarily unavailable; the published graph itself has not changed.");
+        });
+    } else {
+      setGraphAnalyses([]);
+    }
     return () => controller.abort();
-  }, [workspace.round.id, identityResolutionAvailable]);
+  }, [workspace.round.id, identityResolutionAvailable, graphAnalyticsAvailable]);
 
   const updateSource = (value: string) => {
     setSourceId(value);
@@ -210,7 +229,40 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
     }
   };
 
+  const runGraph = async () => {
+    if (graphBusy || graph.nodes.length === 0) return;
+    const visibleRecordIds = graph.nodes.map((node) => node.record_id);
+    const fallbackSource = selectedNodeId ?? visibleRecordIds[0];
+    const fallbackTarget = visibleRecordIds.find((recordId) => recordId !== fallbackSource) ?? visibleRecordIds[0];
+    const input = {
+      algorithm: graphAlgorithm,
+      visible_record_ids: visibleRecordIds,
+      directed: true,
+      result_limit: 10,
+      centrality_metric: graphMetric,
+      ...(graphAlgorithm === "NEIGHBOURHOOD" ? { seed_record_id: graphSeed || selectedNodeId || visibleRecordIds[0] } : {}),
+      ...(graphAlgorithm === "SHORTEST_PATH" ? {
+        source_record_id: graphSource || fallbackSource,
+        target_record_id: graphTarget || fallbackTarget,
+      } : {}),
+    };
+    setGraphBusy(true);
+    setFeedback("");
+    try {
+      const result = await runGraphAnalysis(workspace.round.id, input);
+      setGraphAnalyses((current) => [...current.filter((item) => item.analysis_id !== result.analysis_id), result]);
+      setFeedback(result.cached
+        ? "The same bounded graph analysis was replayed from its complete visibility-aware cache key."
+        : "Graph analysis complete. The result is a structural lead with supporting relationships, not a verdict.");
+    } catch {
+      setFeedback("The graph analysis could not be completed. The published graph and the evidence boundary remain unchanged.");
+    } finally {
+      setGraphBusy(false);
+    }
+  };
+
   const latestAnalysis = analyses[analyses.length - 1];
+  const latestGraphAnalysis = graphAnalyses[graphAnalyses.length - 1];
   const recordLabel = (recordId: string) => graph.nodes.find((node) => node.record_id === recordId)?.label ?? recordId;
   const reviewFor = (candidateId: string) => {
     const matching = resolutionReviews.filter((review) => review.candidate_id === candidateId);
@@ -307,6 +359,63 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
               })}</ol> : <p>No identity candidates were produced for this focus.</p>}
             </div>
           )}
+        </fieldset>
+      )}
+
+      {graphAnalyticsAvailable && (
+        <fieldset className="graph-analytics-form">
+          <legend>Run bounded graph analysis</legend>
+          <p className="hypothesis-selection-context" role="status">
+            {selectedNode ? `Selected record: ${selectedNode.label} · ${selectedNode.record_id}` : "Choose a bounded question for the published graph."}
+          </p>
+          <label htmlFor="graph-analysis-algorithm">Question</label>
+          <select id="graph-analysis-algorithm" aria-label="Graph analysis algorithm" disabled={graphBusy} value={graphAlgorithm} onChange={(event) => setGraphAlgorithm(event.target.value)}>
+            <option value="NEIGHBOURHOOD">Bounded neighbourhood</option>
+            <option value="SHORTEST_PATH">Shortest path</option>
+            <option value="CONNECTED_COMPONENTS">Connected components</option>
+            <option value="CENTRALITY">Centrality ranking</option>
+            <option value="MOTIF">Motif candidates</option>
+            <option value="CIRCULAR_FLOW">Circular flows</option>
+          </select>
+          {graphAlgorithm === "NEIGHBOURHOOD" && <>
+            <label htmlFor="graph-analysis-seed">Seed record</label>
+            <select id="graph-analysis-seed" aria-label="Graph analysis seed" disabled={graphBusy} value={graphSeed || selectedNodeId || ""} onChange={(event) => setGraphSeed(event.target.value)}>
+              <option value="">Choose a visible record</option>
+              {graph.nodes.map((node) => <option key={node.record_id} value={node.record_id}>{node.label} · {node.record_id}</option>)}
+            </select>
+          </>}
+          {graphAlgorithm === "SHORTEST_PATH" && <>
+            <label htmlFor="graph-analysis-source">From</label>
+            <select id="graph-analysis-source" aria-label="Graph analysis source" disabled={graphBusy} value={graphSource || selectedNodeId || ""} onChange={(event) => setGraphSource(event.target.value)}>
+              <option value="">Choose a visible record</option>
+              {graph.nodes.map((node) => <option key={node.record_id} value={node.record_id}>{node.label} · {node.record_id}</option>)}
+            </select>
+            <label htmlFor="graph-analysis-target">To</label>
+            <select id="graph-analysis-target" aria-label="Graph analysis target" disabled={graphBusy} value={graphTarget} onChange={(event) => setGraphTarget(event.target.value)}>
+              <option value="">Choose a different visible record</option>
+              {graph.nodes.filter((node) => node.record_id !== (graphSource || selectedNodeId)).map((node) => <option key={node.record_id} value={node.record_id}>{node.label} · {node.record_id}</option>)}
+            </select>
+          </>}
+          {graphAlgorithm === "CENTRALITY" && <>
+            <label htmlFor="graph-analysis-metric">Metric</label>
+            <select id="graph-analysis-metric" aria-label="Centrality metric" disabled={graphBusy} value={graphMetric} onChange={(event) => setGraphMetric(event.target.value)}>
+              <option value="degree">Degree</option>
+              <option value="betweenness">Betweenness</option>
+              <option value="pagerank">PageRank</option>
+            </select>
+          </>}
+          <button type="button" disabled={graphBusy} onClick={() => void runGraph()}>
+            {graphBusy ? "Analysing…" : "Run graph analysis"}
+          </button>
+          <p>This is a bounded structural question. It does not establish identity, control, culpability or guilt.</p>
+          {latestGraphAnalysis && <div className="graph-analytics-results" aria-live="polite">
+            <p><strong>{latestGraphAnalysis.algorithm.replaceAll("_", " ")}</strong> · {latestGraphAnalysis.result_type} · {latestGraphAnalysis.actual_engine_run ? "GraphFrames runtime" : "deterministic fallback"} · snapshot {latestGraphAnalysis.snapshot_version}</p>
+            <p>{latestGraphAnalysis.interpretation}</p>
+            {latestGraphAnalysis.paths.map((path) => <p key={path.relationship_ids.join("|")}>Path: {path.record_ids.join(" → ")} · {path.length} hop(s)</p>)}
+            {latestGraphAnalysis.ranked_leads.length > 0 && <ol>{latestGraphAnalysis.ranked_leads.slice(0, 5).map((lead) => <li key={lead.record_id}>{recordLabel(lead.record_id)} · {lead.metric} {lead.score.toFixed(3)} · support {lead.supporting_relationship_ids.join(", ") || "none"}</li>)}</ol>}
+            {latestGraphAnalysis.motifs.map((motif) => <p key={motif.relationship_ids.join("|")}>Motif: {motif.record_ids.join(" → ")} · supporting relationships {motif.relationship_ids.join(", ")}</p>)}
+            {latestGraphAnalysis.components.slice(0, 5).map((component) => <p key={component.component_id}>Component {component.component_id}: {component.node_count} node(s), {component.edge_count} relationship(s).</p>)}
+          </div>}
         </fieldset>
       )}
 

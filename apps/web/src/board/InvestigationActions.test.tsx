@@ -9,6 +9,8 @@ const api = vi.hoisted(() => ({
   getEntityResolutionHistory: vi.fn(),
   runEntityResolution: vi.fn(),
   reviewEntityResolutionCandidate: vi.fn(),
+  getGraphAnalysisHistory: vi.fn(),
+  runGraphAnalysis: vi.fn(),
 }));
 vi.mock("../api/client", () => api);
 
@@ -260,6 +262,52 @@ describe("InvestigationActions", () => {
 
     expect(await screen.findByText(/review: rejected/i)).toBeVisible();
     expect(screen.queryByText(/review: accepted/i)).not.toBeInTheDocument();
+  });
+
+  it("runs a bounded graph question and explains that structure is not a verdict", async () => {
+    const graphWorkspace = {
+      ...workspace,
+      actions: [
+        { id: "RUN_GRAPH_ANALYSIS", state: "AVAILABLE", reason_code: "READY", reason: "Ready" },
+      ],
+    } as unknown as Workspace;
+    api.getGraphAnalysisHistory.mockResolvedValue({ analyses: [] });
+    api.runGraphAnalysis.mockResolvedValue({
+      analysis_id: "graph-analysis-1",
+      round_id: "round-1",
+      algorithm: "NEIGHBOURHOOD",
+      status: "COMPLETED",
+      result_type: "NEIGHBOURHOOD_FOUND",
+      parameters: { algorithm: "NEIGHBOURHOOD" },
+      snapshot_version: "snap-1",
+      projection_version: "1",
+      graph_engine: "FGA_GRAPH_ANALYTICS_ADAPTER",
+      framework_semantics: "GRAPHFRAMES_STYLE_ALGORITHM_CONTRACT",
+      generation_mode: "RUNTIME_DETERMINISTIC_FALLBACK",
+      actual_engine_run: false,
+      input_node_count: 2,
+      input_edge_count: 1,
+      nodes: [],
+      edges: [],
+      paths: [],
+      components: [],
+      ranked_leads: [],
+      motifs: [],
+      supporting_relationship_ids: ["E1"],
+      partial: false,
+      omitted_result_count: 0,
+      interpretation: "Structural importance is a lead, not a conviction.",
+      limitations: ["Not culpability."],
+      cache_key: "fga10:test",
+      cached: false,
+      execution_millis: 1,
+    });
+    render(<InvestigationActions workspace={graphWorkspace} graph={graph} selectedNodeId="P1" />);
+
+    fireEvent.click(await screen.findByRole("button", { name: "Run graph analysis" }));
+    await waitFor(() => expect(api.runGraphAnalysis).toHaveBeenCalledOnce());
+    expect(api.runGraphAnalysis.mock.calls[0][1].visible_record_ids).toEqual(["P1", "O1"]);
+    expect(await screen.findByText(/structural importance is a lead/i)).toBeVisible();
   });
 
   it("reuses an identity analysis key after an ambiguous transport failure", async () => {

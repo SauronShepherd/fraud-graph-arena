@@ -31,6 +31,7 @@ from fraud_graph_arena.entity_resolution import (
     InMemoryEntityResolutionRepository,
     SqliteEntityResolutionRepository,
 )
+from fraud_graph_arena.graph_analytics import GraphAnalyticsService
 
 
 @dataclass(slots=True)
@@ -44,6 +45,7 @@ class Container:
     graph: GraphInvestigationService
     investigation_commands: InvestigationCommandService
     entity_resolution: EntityResolutionService
+    graph_analytics: GraphAnalyticsService
 
 
 def build_web_container(settings: Settings) -> Container:
@@ -92,6 +94,7 @@ def build_web_container(settings: Settings) -> Container:
         graph=GraphInvestigationService(graph_provider),
         investigation_commands=InvestigationCommandService(round_service, command_repository),
         entity_resolution=entity_resolution,
+        graph_analytics=GraphAnalyticsService(round_service, graph_provider),
     )
 
 

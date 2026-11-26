@@ -167,6 +167,85 @@ export interface EntityResolutionReview {
   replayed?: boolean;
 }
 
+export interface GraphAnalysisPath {
+  record_ids: string[];
+  relationship_ids: string[];
+  length: number;
+}
+
+export interface GraphAnalysisComponent {
+  component_id: string;
+  record_ids: string[];
+  node_count: number;
+  edge_count: number;
+}
+
+export interface GraphAnalysisLead {
+  rank: number;
+  record_id: string;
+  metric: string;
+  score: number;
+  supporting_relationship_ids: string[];
+}
+
+export interface GraphAnalysisMotif {
+  motif_type: string;
+  record_ids: string[];
+  relationship_ids: string[];
+  length: number;
+  event_times: string[];
+  time_span: string | null;
+  chronology_observed: boolean;
+}
+
+export interface GraphAnalysis {
+  analysis_id: string;
+  round_id: string;
+  algorithm: string;
+  status: string;
+  result_type: string;
+  parameters: Record<string, unknown>;
+  snapshot_version: string;
+  projection_version: string;
+  graph_engine: string;
+  framework_semantics: string;
+  generation_mode: string;
+  actual_engine_run: boolean;
+  input_node_count: number;
+  input_edge_count: number;
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  paths: GraphAnalysisPath[];
+  components: GraphAnalysisComponent[];
+  ranked_leads: GraphAnalysisLead[];
+  motifs: GraphAnalysisMotif[];
+  supporting_relationship_ids: string[];
+  partial: boolean;
+  omitted_result_count: number;
+  interpretation: string;
+  limitations: string[];
+  cache_key: string;
+  cached: boolean;
+  execution_millis: number;
+}
+
+export interface GraphAnalysisRequest {
+  algorithm: string;
+  seed_record_id?: string | null;
+  source_record_id?: string | null;
+  target_record_id?: string | null;
+  max_hops?: number;
+  max_path_length?: number;
+  result_limit?: number;
+  directed?: boolean;
+  centrality_metric?: string;
+  relationship_families?: string[];
+  relationship_types?: string[];
+  time_from?: string | null;
+  time_to?: string | null;
+  visible_record_ids: string[];
+}
+
 export type ActionState = "AVAILABLE" | "NOT_IMPLEMENTED" | "LOCKED" | "PENDING" | "FAILED";
 export interface ActionAvailability { id: string; state: ActionState; reason_code: string; reason: string; }
 

@@ -1,6 +1,8 @@
 from __future__ import annotations
 import argparse, json, re, subprocess, tempfile
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from fraud_graph_arena.canonical_persistence.registry import expected_topology
 
 POLICY_PATH = Path(__file__).resolve().parents[1] / "config/lakehouse/destructive-environments.v1.json"

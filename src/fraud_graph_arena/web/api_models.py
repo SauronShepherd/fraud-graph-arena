@@ -141,6 +141,89 @@ class GraphFilterRequest(ApiModel):
     families: list[str] = Field(default_factory=list, max_length=32)
 
 
+class GraphAnalysisRequest(ApiModel):
+    algorithm: str = Field(pattern=r"^(NEIGHBOURHOOD|SHORTEST_PATH|CONNECTED_COMPONENTS|CENTRALITY|MOTIF|CIRCULAR_FLOW)$")
+    seed_record_id: str | None = Field(default=None, min_length=1, max_length=128)
+    source_record_id: str | None = Field(default=None, min_length=1, max_length=128)
+    target_record_id: str | None = Field(default=None, min_length=1, max_length=128)
+    max_hops: int = Field(default=1, ge=1, le=3)
+    max_path_length: int = Field(default=4, ge=1, le=6)
+    result_limit: int = Field(default=10, ge=1, le=20)
+    directed: bool = True
+    centrality_metric: str = Field(default="degree", pattern=r"^(degree|pagerank|betweenness)$")
+    relationship_families: list[str] = Field(default_factory=list, max_length=16)
+    relationship_types: list[str] = Field(default_factory=list, max_length=16)
+    time_from: str | None = Field(default=None, max_length=64)
+    time_to: str | None = Field(default=None, max_length=64)
+    visible_record_ids: list[str] = Field(default_factory=list, max_length=300)
+
+
+class GraphAnalysisPathResponse(ApiModel):
+    record_ids: list[str]
+    relationship_ids: list[str]
+    length: int = Field(ge=0)
+
+
+class GraphAnalysisComponentResponse(ApiModel):
+    component_id: str
+    record_ids: list[str]
+    node_count: int = Field(ge=0)
+    edge_count: int = Field(ge=0)
+
+
+class GraphAnalysisLeadResponse(ApiModel):
+    rank: int = Field(ge=1)
+    record_id: str
+    metric: str
+    score: float
+    supporting_relationship_ids: list[str]
+
+
+class GraphAnalysisMotifResponse(ApiModel):
+    motif_type: str
+    record_ids: list[str]
+    relationship_ids: list[str]
+    length: int = Field(ge=1)
+    event_times: list[str]
+    time_span: str | None = None
+    chronology_observed: bool
+
+
+class GraphAnalysisResponse(ApiModel):
+    analysis_id: str
+    round_id: str
+    algorithm: str
+    status: str
+    result_type: str
+    parameters: dict[str, Any]
+    snapshot_version: str
+    projection_version: str
+    graph_engine: str
+    framework_semantics: str
+    generation_mode: str
+    actual_engine_run: bool
+    input_node_count: int = Field(ge=0)
+    input_edge_count: int = Field(ge=0)
+    nodes: list[GraphNodeResponse] = Field(max_length=300)
+    edges: list[GraphEdgeResponse] = Field(max_length=700)
+    paths: list[GraphAnalysisPathResponse] = Field(max_length=20)
+    components: list[GraphAnalysisComponentResponse] = Field(max_length=20)
+    ranked_leads: list[GraphAnalysisLeadResponse] = Field(max_length=20)
+    motifs: list[GraphAnalysisMotifResponse] = Field(max_length=20)
+    supporting_relationship_ids: list[str] = Field(max_length=700)
+    partial: bool
+    omitted_result_count: int = Field(ge=0)
+    interpretation: str = Field(max_length=2048)
+    limitations: list[str] = Field(max_length=16)
+    cache_key: str
+    cached: bool = False
+    execution_millis: int = Field(ge=0)
+
+
+class GraphAnalysisHistoryResponse(ApiModel):
+    analyses: list[GraphAnalysisResponse]
+
+
 class HypothesisRequest(ApiModel):
     idempotency_key: str = Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
     source_record_id: str = Field(min_length=1, max_length=128)

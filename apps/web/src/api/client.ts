@@ -9,6 +9,8 @@ import type {
   InvestigationCommand,
   EntityResolutionAnalysis,
   EntityResolutionReview,
+  GraphAnalysis,
+  GraphAnalysisRequest,
 } from "./contracts";
 
 const API_BASE = (import.meta.env.VITE_FGA_API_BASE_URL as string | undefined) ?? "/api/v1";
@@ -151,6 +153,20 @@ export function getEntityResolutionHistory(
   signal?: AbortSignal,
 ): Promise<{ analyses: EntityResolutionAnalysis[]; reviews: EntityResolutionReview[] }> {
   return request<{ analyses: EntityResolutionAnalysis[]; reviews: EntityResolutionReview[] }>(`/rounds/${encodeURIComponent(roundId)}/investigations/entity-resolution/history`, { signal });
+}
+
+export function runGraphAnalysis(roundId: string, input: GraphAnalysisRequest): Promise<GraphAnalysis> {
+  return request<GraphAnalysis>(`/rounds/${encodeURIComponent(roundId)}/investigations/graph-analytics`, {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
+}
+
+export function getGraphAnalysisHistory(
+  roundId: string,
+  signal?: AbortSignal,
+): Promise<{ analyses: GraphAnalysis[] }> {
+  return request<{ analyses: GraphAnalysis[] }>(`/rounds/${encodeURIComponent(roundId)}/investigations/graph-analytics/history`, { signal });
 }
 
 export function expandGraph(roundId: string, visible: Graph, nodeId: string, signal?: AbortSignal): Promise<Graph> {

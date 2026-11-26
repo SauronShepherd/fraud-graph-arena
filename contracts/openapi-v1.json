@@ -522,6 +522,507 @@
         "title": "ExactIdentityMatchResponse",
         "type": "object"
       },
+      "GraphAnalysisComponentResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "component_id": {
+            "title": "Component Id",
+            "type": "string"
+          },
+          "edge_count": {
+            "minimum": 0.0,
+            "title": "Edge Count",
+            "type": "integer"
+          },
+          "node_count": {
+            "minimum": 0.0,
+            "title": "Node Count",
+            "type": "integer"
+          },
+          "record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Record Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "component_id",
+          "record_ids",
+          "node_count",
+          "edge_count"
+        ],
+        "title": "GraphAnalysisComponentResponse",
+        "type": "object"
+      },
+      "GraphAnalysisHistoryResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "analyses": {
+            "items": {
+              "$ref": "#/components/schemas/GraphAnalysisResponse"
+            },
+            "title": "Analyses",
+            "type": "array"
+          }
+        },
+        "required": [
+          "analyses"
+        ],
+        "title": "GraphAnalysisHistoryResponse",
+        "type": "object"
+      },
+      "GraphAnalysisLeadResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "metric": {
+            "title": "Metric",
+            "type": "string"
+          },
+          "rank": {
+            "minimum": 1.0,
+            "title": "Rank",
+            "type": "integer"
+          },
+          "record_id": {
+            "title": "Record Id",
+            "type": "string"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number"
+          },
+          "supporting_relationship_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Supporting Relationship Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "rank",
+          "record_id",
+          "metric",
+          "score",
+          "supporting_relationship_ids"
+        ],
+        "title": "GraphAnalysisLeadResponse",
+        "type": "object"
+      },
+      "GraphAnalysisMotifResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "chronology_observed": {
+            "title": "Chronology Observed",
+            "type": "boolean"
+          },
+          "event_times": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Event Times",
+            "type": "array"
+          },
+          "length": {
+            "minimum": 1.0,
+            "title": "Length",
+            "type": "integer"
+          },
+          "motif_type": {
+            "title": "Motif Type",
+            "type": "string"
+          },
+          "record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Record Ids",
+            "type": "array"
+          },
+          "relationship_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Relationship Ids",
+            "type": "array"
+          },
+          "time_span": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time Span"
+          }
+        },
+        "required": [
+          "motif_type",
+          "record_ids",
+          "relationship_ids",
+          "length",
+          "event_times",
+          "chronology_observed"
+        ],
+        "title": "GraphAnalysisMotifResponse",
+        "type": "object"
+      },
+      "GraphAnalysisPathResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "length": {
+            "minimum": 0.0,
+            "title": "Length",
+            "type": "integer"
+          },
+          "record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Record Ids",
+            "type": "array"
+          },
+          "relationship_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Relationship Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "record_ids",
+          "relationship_ids",
+          "length"
+        ],
+        "title": "GraphAnalysisPathResponse",
+        "type": "object"
+      },
+      "GraphAnalysisRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "algorithm": {
+            "pattern": "^(NEIGHBOURHOOD|SHORTEST_PATH|CONNECTED_COMPONENTS|CENTRALITY|MOTIF|CIRCULAR_FLOW)$",
+            "title": "Algorithm",
+            "type": "string"
+          },
+          "centrality_metric": {
+            "default": "degree",
+            "pattern": "^(degree|pagerank|betweenness)$",
+            "title": "Centrality Metric",
+            "type": "string"
+          },
+          "directed": {
+            "default": true,
+            "title": "Directed",
+            "type": "boolean"
+          },
+          "max_hops": {
+            "default": 1,
+            "maximum": 3.0,
+            "minimum": 1.0,
+            "title": "Max Hops",
+            "type": "integer"
+          },
+          "max_path_length": {
+            "default": 4,
+            "maximum": 6.0,
+            "minimum": 1.0,
+            "title": "Max Path Length",
+            "type": "integer"
+          },
+          "relationship_families": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 16,
+            "title": "Relationship Families",
+            "type": "array"
+          },
+          "relationship_types": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 16,
+            "title": "Relationship Types",
+            "type": "array"
+          },
+          "result_limit": {
+            "default": 10,
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "Result Limit",
+            "type": "integer"
+          },
+          "seed_record_id": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seed Record Id"
+          },
+          "source_record_id": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Record Id"
+          },
+          "target_record_id": {
+            "anyOf": [
+              {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Target Record Id"
+          },
+          "time_from": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time From"
+          },
+          "time_to": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Time To"
+          },
+          "visible_record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 300,
+            "title": "Visible Record Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "algorithm"
+        ],
+        "title": "GraphAnalysisRequest",
+        "type": "object"
+      },
+      "GraphAnalysisResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "actual_engine_run": {
+            "title": "Actual Engine Run",
+            "type": "boolean"
+          },
+          "algorithm": {
+            "title": "Algorithm",
+            "type": "string"
+          },
+          "analysis_id": {
+            "title": "Analysis Id",
+            "type": "string"
+          },
+          "cache_key": {
+            "title": "Cache Key",
+            "type": "string"
+          },
+          "cached": {
+            "default": false,
+            "title": "Cached",
+            "type": "boolean"
+          },
+          "components": {
+            "items": {
+              "$ref": "#/components/schemas/GraphAnalysisComponentResponse"
+            },
+            "maxItems": 20,
+            "title": "Components",
+            "type": "array"
+          },
+          "edges": {
+            "items": {
+              "$ref": "#/components/schemas/GraphEdgeResponse"
+            },
+            "maxItems": 700,
+            "title": "Edges",
+            "type": "array"
+          },
+          "execution_millis": {
+            "minimum": 0.0,
+            "title": "Execution Millis",
+            "type": "integer"
+          },
+          "framework_semantics": {
+            "title": "Framework Semantics",
+            "type": "string"
+          },
+          "generation_mode": {
+            "title": "Generation Mode",
+            "type": "string"
+          },
+          "graph_engine": {
+            "title": "Graph Engine",
+            "type": "string"
+          },
+          "input_edge_count": {
+            "minimum": 0.0,
+            "title": "Input Edge Count",
+            "type": "integer"
+          },
+          "input_node_count": {
+            "minimum": 0.0,
+            "title": "Input Node Count",
+            "type": "integer"
+          },
+          "interpretation": {
+            "maxLength": 2048,
+            "title": "Interpretation",
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 16,
+            "title": "Limitations",
+            "type": "array"
+          },
+          "motifs": {
+            "items": {
+              "$ref": "#/components/schemas/GraphAnalysisMotifResponse"
+            },
+            "maxItems": 20,
+            "title": "Motifs",
+            "type": "array"
+          },
+          "nodes": {
+            "items": {
+              "$ref": "#/components/schemas/GraphNodeResponse"
+            },
+            "maxItems": 300,
+            "title": "Nodes",
+            "type": "array"
+          },
+          "omitted_result_count": {
+            "minimum": 0.0,
+            "title": "Omitted Result Count",
+            "type": "integer"
+          },
+          "parameters": {
+            "additionalProperties": true,
+            "title": "Parameters",
+            "type": "object"
+          },
+          "partial": {
+            "title": "Partial",
+            "type": "boolean"
+          },
+          "paths": {
+            "items": {
+              "$ref": "#/components/schemas/GraphAnalysisPathResponse"
+            },
+            "maxItems": 20,
+            "title": "Paths",
+            "type": "array"
+          },
+          "projection_version": {
+            "title": "Projection Version",
+            "type": "string"
+          },
+          "ranked_leads": {
+            "items": {
+              "$ref": "#/components/schemas/GraphAnalysisLeadResponse"
+            },
+            "maxItems": 20,
+            "title": "Ranked Leads",
+            "type": "array"
+          },
+          "result_type": {
+            "title": "Result Type",
+            "type": "string"
+          },
+          "round_id": {
+            "title": "Round Id",
+            "type": "string"
+          },
+          "snapshot_version": {
+            "title": "Snapshot Version",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "supporting_relationship_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 700,
+            "title": "Supporting Relationship Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "analysis_id",
+          "round_id",
+          "algorithm",
+          "status",
+          "result_type",
+          "parameters",
+          "snapshot_version",
+          "projection_version",
+          "graph_engine",
+          "framework_semantics",
+          "generation_mode",
+          "actual_engine_run",
+          "input_node_count",
+          "input_edge_count",
+          "nodes",
+          "edges",
+          "paths",
+          "components",
+          "ranked_leads",
+          "motifs",
+          "supporting_relationship_ids",
+          "partial",
+          "omitted_result_count",
+          "interpretation",
+          "limitations",
+          "cache_key",
+          "execution_millis"
+        ],
+        "title": "GraphAnalysisResponse",
+        "type": "object"
+      },
       "GraphEdgeResponse": {
         "additionalProperties": false,
         "properties": {
@@ -1874,6 +2375,100 @@
           }
         },
         "summary": "Entity Resolution Review",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/investigations/graph-analytics": {
+      "post": {
+        "operationId": "graph_analytics_api_v1_rounds__round_id__investigations_graph_analytics_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GraphAnalysisRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GraphAnalysisResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Graph Analytics",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/investigations/graph-analytics/history": {
+      "get": {
+        "operationId": "graph_analytics_history_api_v1_rounds__round_id__investigations_graph_analytics_history_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GraphAnalysisHistoryResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Graph Analytics History",
         "tags": [
           "rounds"
         ]

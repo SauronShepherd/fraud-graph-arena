@@ -16,6 +16,7 @@ SEMANTIC_ACTIONS: tuple[tuple[str, str], ...] = (
 )
 MANUAL_HYPOTHESIS_ACTION = ("CREATE_HYPOTHESIS", "Record a typed player hypothesis without changing evidence visibility.")
 ENTITY_RESOLUTION_ACTION = ("COMPARE_IDENTITIES", "Compare normalized identity fields and review candidates without exposing ground truth.")
+GRAPH_ANALYTICS_ACTION = ("RUN_GRAPH_ANALYSIS", "Run a bounded graph action and inspect its supporting relationships without treating structure as guilt.")
 NOT_IMPLEMENTED = "NOT_IMPLEMENTED"
 
 @dataclass(frozen=True, slots=True)
@@ -51,6 +52,8 @@ class WorkspaceService:
             action, reason = ENTITY_RESOLUTION_ACTION
             actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
             action, reason = MANUAL_HYPOTHESIS_ACTION
+            actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
+            action, reason = GRAPH_ANALYTICS_ACTION
             actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
         path = next(path for path in self._catalogue.list_paths() if path.id == round_.path_id)
         graph = (self._graph_provider(round_id) if self._graph_provider is not None else t02_graph()) if round_.case_id == "ACADEMY_T02" else {"projection_version": "1", "nodes": (), "edges": (), "node_count": 0, "edge_count": 0}
