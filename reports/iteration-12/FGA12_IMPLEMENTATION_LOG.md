@@ -45,7 +45,7 @@ The acceptance target was a second canonical case that can be discovered, valida
 - `pytest -q tests/iteration_12`: passed.
 - `pytest -q tests/iteration_01 tests/iteration_09 tests/iteration_10 tests/iteration_11 tests/iteration_12`: 97 passed, no pytest warning summary.
 - Full repository run: `pytest -q --disable-warnings`: 263 passed in 28:35. The targeted no-suppression run above is the warning gate; the full run used suppression only to keep the long historical suite’s output bounded.
-- Final code SHA for the live receipt: `3d2585bf29bde731dd65c84e597718e8108c9d73`.
+- Final implementation SHA for the refreshed live receipt: `3c8c260f683965580da7e6bee0cc6ae5623f8d5c`.
 
 ### Web
 
@@ -80,7 +80,7 @@ The final live receipt, after pushing the code commit, passed for both cases. It
 - ACADEMY_T02: 20 public records, 21 public relationships, one active snapshot.
 - ACADEMY_T03: 23 public records, 27 public relationships, one active snapshot.
 - Both cases: no forbidden player columns, no truth source queried, all statements read-only.
-- Final source commit reported by the qualifier: `3d2585bf29bde731dd65c84e597718e8108c9d73`.
+- Final source commit reported by the refreshed qualifier: `3c8c260f683965580da7e6bee0cc6ae5623f8d5c`.
 - `actual_engine_run: false`: the `fga` profile reaches a SQL Warehouse, so this qualification proves the safe published boundary and does not pretend to have run GraphFrames.
 
 The report is intentionally read-only. All generated statements begin with `SELECT`, query only the active publication/public-record/public-relationship views and information schema, and never query protected `truth` files.
