@@ -76,6 +76,22 @@ The browser run used a test-only SQLite repository and a missing frontend distri
 
 The remote qualification is run separately with `databricks ... --profile fga` and the SQL Warehouse qualification path. The qualification is read-only: it validates the published case-package contracts and narrative metadata, not hidden fraud truth or an unshipped audio library. Its result and source commit are appended to this receipt after the remote run.
 
+The remote run completed successfully on 2026-11-26:
+
+| Remote check | Result |
+| --- | --- |
+| Authentication | `databricks current-user me --profile fga` — active |
+| Profile | `fga` |
+| Catalog / schema | `sda_dev.sandbox` |
+| Warehouse | `eded42c9d0a69b84` |
+| Qualification | PASS; 13 canonical packages |
+| Query boundary | SELECT-only active publication, snapshot, count, endpoint and safe-column checks |
+| Protected truth queried | No |
+| Actual engine run | No; SQL Warehouse-only boundary remains explicit |
+| Source commit | `296adff762aab3eabeffc4e64a17143d4271e64f` |
+
+The complete per-case receipt is `reports/iteration-15/databricks-fga15-narrative-current.json`.
+
 ### 6. Asset receipt
 
 The assets branch contains:
