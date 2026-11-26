@@ -69,7 +69,7 @@ The first content validation failed with `ERR_MODULE_NOT_FOUND` for `yaml`. `npm
 | Content validation | 109 canonical articles validated |
 | Internal link check | 116 same-origin URLs checked; no failures |
 | OpenAPI export | regenerated with submission, closing and ledger routes |
-| Databricks live qualification | `pass`; profile `fga`; read-only; 20 records, 21 relationships, one snapshot; all five checks true; source commit `8961a90010f63bcebfe7c4453ca2f71c9c93f1e5` |
+| Databricks live qualification | `pass`; profile `fga`; read-only; 20 records, 21 relationships, one snapshot; all five checks true; source commit `15e750f22cf4e1a459e63b8af8bd168c5d8e6f0d` |
 
 ## Editorial passes
 

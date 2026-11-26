@@ -90,6 +90,6 @@
     "no_forbidden_player_columns": true,
     "only_allowlisted_read_queries": true
   },
-  "run_at_utc": "2026-11-26T12:06:14.049076+00:00",
-  "source_commit": "8961a90010f63bcebfe7c4453ca2f71c9c93f1e5"
+  "run_at_utc": "2026-11-26T12:13:45.188046+00:00",
+  "source_commit": "15e750f22cf4e1a459e63b8af8bd168c5d8e6f0d"
 }
