@@ -107,6 +107,9 @@ def test_provider_failure_refunds_and_is_visible_in_the_ledger(client: TestClien
     service._engine = FailingEngine()
     response = paid_graph(client, round_id, "failed-graph")
     assert response.json()["status"] == "FAILED"
+    replay = paid_graph(client, round_id, "failed-graph")
+    assert replay.json()["analysis_id"] == response.json()["analysis_id"]
+    assert replay.json()["status"] == "FAILED"
     assert client.get(f"/api/v1/rounds/{round_id}/workspace").json()["round"]["credits_remaining"] == 9
     ledger = client.get(f"/api/v1/rounds/{round_id}/economy/ledger").json()["entries"]
     assert [item["entry_type"] for item in ledger] == ["CHARGE", "REFUND"]
