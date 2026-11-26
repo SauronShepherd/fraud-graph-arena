@@ -59,7 +59,7 @@ PYTHONPATH=src pytest -q tests/iteration_01/test_openapi_contract.py --tb=short
 PYTHONPATH=src pytest -q --tb=short
 ```
 
-The focused graph/package/cross-path gate passed 24 tests after the snapshot compatibility fix. The first full-suite run after that fix passed 270 tests and exposed one committed-OpenAPI mismatch; the OpenAPI export corrected it. The final post-correction run passed 271 tests in 9:15 with no pytest warning summary.
+The focused graph/package/cross-path gate passed 24 tests after the snapshot compatibility fix. The first full-suite run after that fix passed 270 tests and exposed one committed-OpenAPI mismatch; the OpenAPI export corrected it. After adding the privacy-safe playtest contract, the final post-correction run passed 273 tests in 19:11 with no pytest warning summary.
 
 The package validator discovered fourteen manifests and returned zero validation errors. The FGA-13 tests cover profile variance, required comparators, rejection of cumulative profiles, package schema validity and one shared playable round for each path. The historical graph tests cover seeds, expansion, filtering, hard ceilings and safe response fields.
 
@@ -72,7 +72,7 @@ The package validator discovered fourteen manifests and returned zero validation
 - `npm run check:links` passed with 116 same-origin URLs and no failing internal URL.
 - Wrangler local runtime `npx wrangler dev --local --ip 127.0.0.1 --port 4333 --persist-to .wrangler/fga13` returned HTTP 200 for the FGA-13 route. The rendered HTML contained the title, Part IX and both pinned image URLs; both CDN image HEAD requests returned HTTP 200.
 - `EVIDENCE_BASE_URL=http://127.0.0.1:4333 npm run test:editorial` passed 1/1. The first run exposed only a Node environment warning caused by `NO_COLOR` and `FORCE_COLOR`; the clean rerun with `FORCE_COLOR=0` and `NO_COLOR` removed passed 1/1 without that warning. Wrangler's scheduled-worker local-development warning is expected and unrelated to the article route.
-- Article commit: `a413e1b698d09ba6612a20c0b5f8b452068e5a52`. `git diff --check` was clean; the LF/CRLF normalization notice at commit time did not produce whitespace errors.
+- Article commit: `56dea06660d1520ed0b7331055b2832896640dd4`. `git diff --check` was clean; the LF/CRLF normalization notice at commit time did not produce whitespace errors.
 
 ### Databricks qualification
 
@@ -92,7 +92,7 @@ $env:PYTHONPATH='src'; python scripts/qualify_fga13_difficulty.py --profile fga 
 
 The live report passed for all thirteen canonical packages. It used catalog `sda_dev`, schema `sandbox` and warehouse `eded42c9d0a69b84`. The allowlisted statements were `SELECT` checks against the active publication and player-safe records/relationships. The run did not query protected truth, write a table or mutate a publication. `actual_engine_run` is false and `graphframes_compatibility` is `UNRESOLVED_SQL_WAREHOUSE_ONLY` because this profile reaches a SQL Warehouse rather than a Spark runtime.
 
-The first report was generated before the FGA-13 code commit and therefore carried the FGA-12 parent SHA. It was superseded by the final report after the implementation commit. The final report carries source commit `72eb204ef9f71a5dbc49a06d9400c5dd7feb3dec` and passed all thirteen canonical boundaries.
+The first report was generated before the FGA-13 code commit and therefore carried the FGA-12 parent SHA. It was superseded by the intermediate report after the first implementation commit and then by the final report after the playtest-contract commit. The final report carries source commit `d404bf490d95daa130a8606ef4fa98e75f522d45` and passed all thirteen canonical boundaries.
 
 ## Article ↔ implementation invariants
 
@@ -117,10 +117,10 @@ The first report was generated before the FGA-13 code commit and therefore carri
 
 | Surface | Final result |
 |---|---|
-| Code branch / commit | `FGA-13` / `72eb204ef9f71a5dbc49a06d9400c5dd7feb3dec` |
-| Article branch / commit | `FGA-13` / `a413e1b698d09ba6612a20c0b5f8b452068e5a52` |
+| Code branch / commit | `FGA-13` / `d404bf490d95daa130a8606ef4fa98e75f522d45` |
+| Article branch / commit | `FGA-13` / `56dea06660d1520ed0b7331055b2832896640dd4` |
 | Asset branch / commit | `FGA-13` / `31620dfdbc18f59a30390415bd4d3ff3bb899aeb` |
-| Python suite | `271 passed in 9:15`; no pytest warning summary |
+| Python suite | `273 passed in 19:11`; no pytest warning summary |
 | Package validation | 14 manifests; zero validation errors |
 | Databricks profile | `fga`; read-only; 13 canonical package boundaries passed; source commit matches code commit |
 | GraphFrames / Zingg | Not claimed; `actual_engine_run=false` |
