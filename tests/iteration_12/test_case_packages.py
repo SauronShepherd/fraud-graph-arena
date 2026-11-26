@@ -44,6 +44,17 @@ def test_schema_rejects_arbitrary_executable_configuration(tmp_path: Path) -> No
     assert any(error["check_id"] == "PACKAGE.SCHEMA" for error in errors)
 
 
+def test_validator_rejects_cost_for_undeclared_action(tmp_path: Path) -> None:
+    source = Path("case-packages/academy-t03")
+    target = tmp_path / "academy-t03"
+    target.mkdir()
+    manifest = json.loads((source / "manifest.json").read_text(encoding="utf-8"))
+    manifest["economy"]["costs"]["COMPARE_IDENTITIES"] = 3
+    (target / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+    errors = validate_case_package(target)
+    assert any(error["check_id"] == "PACKAGE.ECONOMY.UNSUPPORTED_ACTION" for error in errors)
+
+
 def test_new_case_uses_the_shared_workspace_without_case_specific_application_branch(client) -> None:
     round_id = active_t03(client)
     workspace = client.get(f"/api/v1/rounds/{round_id}/workspace")

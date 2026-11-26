@@ -18,7 +18,7 @@
   "economy": {
     "version": "fga11-economy-v1",
     "initial_credits": 0,
-    "costs": {"COMPARE_IDENTITIES": 0, "RUN_GRAPH_ANALYSIS": 0}
+    "costs": {}
   },
   "evidence_rules": {
     "public_projection": "published",

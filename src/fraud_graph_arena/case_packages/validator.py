@@ -62,6 +62,9 @@ def validate_case_package(package_dir: Path) -> list[dict[str, str]]:
     if manifest["publication"]["state"] == "PUBLISHED" and "SUBMIT" not in manifest["supported_actions"] and manifest["kind"] == "canonical":
         errors.append(_error("PACKAGE.PUBLISH.SUBMISSION", "manifest.json", "A published playable package must expose SUBMIT."))
     costs = manifest["economy"]["costs"]
+    for action in costs:
+        if action not in manifest["supported_actions"]:
+            errors.append(_error("PACKAGE.ECONOMY.UNSUPPORTED_ACTION", "economy.costs", f"Cost declared for unsupported action {action}."))
     for action in manifest["supported_actions"]:
         if action in costs and action != "SUBMIT" and costs[action] <= 0:
             errors.append(_error("PACKAGE.ECONOMY.COST", "manifest.json", f"Supported paid action {action} must cost more than zero."))

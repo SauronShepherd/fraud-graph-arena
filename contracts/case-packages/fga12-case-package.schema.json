@@ -71,7 +71,6 @@
         "costs": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["COMPARE_IDENTITIES", "RUN_GRAPH_ANALYSIS"],
           "properties": {
             "COMPARE_IDENTITIES": {"type": "integer", "minimum": 0},
             "RUN_GRAPH_ANALYSIS": {"type": "integer", "minimum": 0}
