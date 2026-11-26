@@ -80,6 +80,8 @@ The requested profile was checked before the run:
 databricks auth profiles
 ```
 
+The final identity check with `databricks current-user me --profile fga` resolved the active principal as `angel.alvarez.pascua@gmail.com`.
+
 The `fga` entry resolved to the configured Databricks workspace. The read-only qualification command was:
 
 ```text
