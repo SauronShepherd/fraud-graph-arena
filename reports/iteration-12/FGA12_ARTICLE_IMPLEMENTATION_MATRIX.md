@@ -12,5 +12,5 @@
 | Supported actions are package data. | `supported_actions` controls workspace availability and service authorization. | T03 identity action returns `ACTION_NOT_AVAILABLE`; graph action is available. |
 | Economy is package data. | `EconomyService.cost_provider` and round initialization read manifest economy. | T03 graph analysis debits 3 from 15; receipt reports `fga12-economy-v1`. |
 | Databricks boundary is qualified with profile `fga`. | `scripts/qualify_case_packages.py`; report in `databricks-fga12-packages-current.json`. | Live profile `fga`: T02 20/21 and T03 23/27, one snapshot each, no forbidden columns, read-only. |
-| Article assets follow the established FGA pair. | `angelic-assets` FGA-12 `images/articles/fga/12-case-me-if-you-can/1.png` and `2.png`. | Asset repository commit and CDN HEAD checks after push. |
+| Article assets follow the established FGA pair. | `angelic-assets` FGA-12 `images/articles/fga/12-case-me-if-you-can/1.png` and `2.png`. | Asset repository commit `103b4b6`; CDN HEAD checks after push. |
 

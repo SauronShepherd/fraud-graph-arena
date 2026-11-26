@@ -1,7 +1,7 @@
 {
   "status": "pass",
-  "run_at_utc": "2026-11-26T12:55:49.749350+00:00",
-  "source_commit": "6e3a94b7835af04be96cd0698865e09805e4e67c",
+  "run_at_utc": "2026-11-26T13:37:12.388172+00:00",
+  "source_commit": "3d2585bf29bde731dd65c84e597718e8108c9d73",
   "profile": "fga",
   "catalog": "sda_dev",
   "schema": "sandbox",

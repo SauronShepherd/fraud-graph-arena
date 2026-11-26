@@ -43,6 +43,7 @@ The acceptance target was a second canonical case that can be discovered, valida
 - `pytest -q tests/iteration_12`: passed.
 - `pytest -q tests/iteration_01 tests/iteration_09 tests/iteration_10 tests/iteration_11 tests/iteration_12`: 97 passed, no pytest warning summary.
 - Full repository run: `pytest -q --disable-warnings`: 263 passed in 28:35. The targeted no-suppression run above is the warning gate; the full run used suppression only to keep the long historical suite’s output bounded.
+- Final code SHA for the live receipt: `3d2585bf29bde731dd65c84e597718e8108c9d73`.
 
 ### Web
 
@@ -61,7 +62,13 @@ databricks current-user me --profile fga
 $env:PYTHONPATH='src'; python scripts/qualify_case_packages.py --profile fga --catalog sda_dev --schema sandbox --warehouse-id eded42c9d0a69b84 --report reports/iteration-12/databricks-fga12-packages-current.json
 ```
 
-The first live receipt passed for both cases. It verified one active publication, the expected public counts, one snapshot and no forbidden player columns. It also recorded `actual_engine_run: false`: the `fga` profile reaches a SQL Warehouse, so this qualification proves the safe published boundary and does not pretend to have run GraphFrames.
+The final live receipt, after pushing the code commit, passed for both cases. It was run as the authenticated Databricks user `angel.alvarez.pascua@gmail.com` with profile `fga`, catalog `sda_dev`, schema `sandbox` and warehouse `eded42c9d0a69b84`.
+
+- ACADEMY_T02: 20 public records, 21 public relationships, one active snapshot.
+- ACADEMY_T03: 23 public records, 27 public relationships, one active snapshot.
+- Both cases: no forbidden player columns, no truth source queried, all statements read-only.
+- Final source commit reported by the qualifier: `3d2585bf29bde731dd65c84e597718e8108c9d73`.
+- `actual_engine_run: false`: the `fga` profile reaches a SQL Warehouse, so this qualification proves the safe published boundary and does not pretend to have run GraphFrames.
 
 The report is intentionally read-only. All generated statements begin with `SELECT`, query only the active publication/public-record/public-relationship views and information schema, and never query protected `truth` files.
 
