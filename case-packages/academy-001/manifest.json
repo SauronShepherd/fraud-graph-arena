@@ -1,0 +1,44 @@
+{
+  "schema_version": "fga12-case-package-v1",
+  "package_id": "academy-001",
+  "package_version": "1.0.0",
+  "case_id": "ACADEMY_001",
+  "case_version": "1.0.0-i01",
+  "path_id": "DETECTIVE_ACADEMY",
+  "title": "The Case of the Empty Evidence Board",
+  "description": "A spoiler-free training file whose only mystery is whether the application can carry it safely from catalogue to board.",
+  "kind": "empty",
+  "briefing": {
+    "opening_sequence_id": "ACADEMY_001_OPENING",
+    "closing_sequence_id": "ACADEMY_001_CLOSING"
+  },
+  "canonical": null,
+  "objectives": ["Reach the empty board without exposing a real case."],
+  "supported_actions": [],
+  "economy": {
+    "version": "fga11-economy-v1",
+    "initial_credits": 0,
+    "costs": {"COMPARE_IDENTITIES": 0, "RUN_GRAPH_ANALYSIS": 0}
+  },
+  "evidence_rules": {
+    "public_projection": "published",
+    "protected_truth": "truth",
+    "required_claims_path": "truth/claims.csv"
+  },
+  "scoring": {
+    "version": "fga11-scoring-v1",
+    "rules_path": "truth/scoring_rules.csv",
+    "ending_rules_path": "truth/ending_rules.csv",
+    "max_score": 1000
+  },
+  "assets": {
+    "cover": "fga/12-case-me-if-you-can/1.png",
+    "infographic": "fga/12-case-me-if-you-can/2.png"
+  },
+  "compatibility": {
+    "engine_api": "fga11-engine-v1",
+    "canonical_model": "1.0.0",
+    "package_schema": "fga12-case-package-v1"
+  },
+  "publication": {"state": "PUBLISHED"}
+}

@@ -9,6 +9,10 @@ from fraud_graph_arena.catalogue.domain import (
 )
 from fraud_graph_arena.catalogue.ports import CatalogueRepository
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from fraud_graph_arena.case_packages import CasePackage
 
 
 class CatalogueService:
@@ -25,6 +29,10 @@ class CatalogueService:
             if section is not None:
                 cases.extend(section.cases)
         return tuple(cases)
+
+    def get_package(self, case_id: str, version: str | None = None) -> "CasePackage | None":
+        getter = getattr(self._repository, "get_package", None)
+        return None if getter is None else getter(case_id, version)
 
     def get_section(self, raw_path_id: str) -> CatalogueSection:
         try:

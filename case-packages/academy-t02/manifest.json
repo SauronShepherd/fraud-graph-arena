@@ -1,0 +1,54 @@
+{
+  "schema_version": "fga12-case-package-v1",
+  "package_id": "academy-t02",
+  "package_version": "1.0.0",
+  "case_id": "ACADEMY_T02",
+  "case_version": "1.0.0-fga06",
+  "path_id": "DETECTIVE_ACADEMY",
+  "title": "The Circular Collar",
+  "description": "A spoiler-free graph lesson about records, organizations, and directed source relationships.",
+  "kind": "canonical",
+  "briefing": {
+    "opening_sequence_id": "ACADEMY_T02_OPENING",
+    "closing_sequence_id": "ACADEMY_T02_CLOSING"
+  },
+  "canonical": {
+    "root": "case-data/canonical/v1/T2_THE_CIRCULAR_COLLAR_canonical_case_data_v3",
+    "case_id": "ACADEMY_T02",
+    "case_version": "3.0.0-canonical.1",
+    "snapshot_version": "2026.07.19.1",
+    "model_version": "1.0.0"
+  },
+  "objectives": [
+    "Compare the exact identity pair.",
+    "Interpret the directed payment cycle without accusing shared infrastructure.",
+    "Submit a reproducible evidence-backed conclusion."
+  ],
+  "supported_actions": ["COMPARE_IDENTITIES", "RUN_GRAPH_ANALYSIS", "SUBMIT"],
+  "economy": {
+    "version": "fga11-economy-v1",
+    "initial_credits": 9,
+    "costs": {"COMPARE_IDENTITIES": 3, "RUN_GRAPH_ANALYSIS": 3}
+  },
+  "evidence_rules": {
+    "public_projection": "published",
+    "protected_truth": "truth",
+    "required_claims_path": "truth/claims.csv"
+  },
+  "scoring": {
+    "version": "fga11-scoring-v1",
+    "rules_path": "truth/scoring_rules.csv",
+    "ending_rules_path": "truth/ending_rules.csv",
+    "max_score": 1000
+  },
+  "assets": {
+    "cover": "fga/12-case-me-if-you-can/1.png",
+    "infographic": "fga/12-case-me-if-you-can/2.png"
+  },
+  "compatibility": {
+    "engine_api": "fga11-engine-v1",
+    "canonical_model": "1.0.0",
+    "package_schema": "fga12-case-package-v1"
+  },
+  "publication": {"state": "PUBLISHED", "published_at": "2026-07-19"}
+}

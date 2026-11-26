@@ -6,7 +6,6 @@ from fraud_graph_arena.catalogue import CaseSummary, CatalogueService
 from fraud_graph_arena.rounds.domain import Round, RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError
-from fraud_graph_arena.case_data.academy_graph import t02_graph
 
 SEMANTIC_ACTIONS: tuple[tuple[str, str], ...] = (
     ("COMPARE_IDENTITIES", "Identity comparison is not available for this case."),
@@ -47,19 +46,22 @@ class WorkspaceService:
             {"id": action, "state": NOT_IMPLEMENTED, "reason_code": "CAPABILITY_NOT_IMPLEMENTED", "reason": reason}
             for action, reason in SEMANTIC_ACTIONS
         ]
-        if round_.case_id == "ACADEMY_T02":
-            actions = [item for item in actions if item["id"] != "COMPARE_IDENTITIES"]
-            action, reason = ENTITY_RESOLUTION_ACTION
-            actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
+        package = self._catalogue.get_package(round_.case_id, round_.case_version)
+        if package is not None and package.kind == "canonical":
+            actions = []
+            if package.supports("COMPARE_IDENTITIES"):
+                action, reason = ENTITY_RESOLUTION_ACTION
+                actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
             action, reason = MANUAL_HYPOTHESIS_ACTION
             actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
-            action, reason = GRAPH_ANALYTICS_ACTION
-            actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
+            if package.supports("RUN_GRAPH_ANALYSIS"):
+                action, reason = GRAPH_ANALYTICS_ACTION
+                actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
         if round_.status == RoundStatus.SUBMITTED:
             actions = [
                 {**item, "state": "LOCKED", "reason_code": "ROUND_SUBMITTED", "reason": "The case has been submitted; its receipt is immutable."}
                 for item in actions
             ]
         path = next(path for path in self._catalogue.list_paths() if path.id == round_.path_id)
-        graph = (self._graph_provider(round_id) if self._graph_provider is not None else t02_graph()) if round_.case_id == "ACADEMY_T02" else {"projection_version": "1", "nodes": (), "edges": (), "node_count": 0, "edge_count": 0}
+        graph = self._graph_provider(round_id) if self._graph_provider is not None else {"projection_version": "empty", "nodes": (), "edges": (), "node_count": 0, "edge_count": 0}
         return WorkspaceProjection(round_, case, path.name, "GRAPH_READY" if graph["nodes"] else "NO_EVIDENCE_REVEALED", len(graph["nodes"]), 0, tuple(actions), graph)

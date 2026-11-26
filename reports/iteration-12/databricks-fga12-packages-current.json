@@ -1,0 +1,184 @@
+{
+  "status": "pass",
+  "run_at_utc": "2026-11-26T12:55:49.749350+00:00",
+  "source_commit": "6e3a94b7835af04be96cd0698865e09805e4e67c",
+  "profile": "fga",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "read_only": true,
+  "cases": [
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "ACADEMY_T02",
+      "active_publication": [
+        "ACADEMY_T02",
+        "3.0.0-canonical.1",
+        "2026.07.19.1",
+        "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd"
+      ],
+      "record_summary": [
+        "20",
+        "20",
+        "1"
+      ],
+      "relationship_summary": [
+        "21",
+        "21",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 20,
+        "relationships": 21
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "ACADEMY_T03",
+      "active_publication": [
+        "ACADEMY_T03",
+        "3.0.0-canonical.1",
+        "2026.07.19.1",
+        "pub_af2999b83d277eeba170e2e57477e00eb7e3bc6749343a5b27e33dc62571f9b6"
+      ],
+      "record_summary": [
+        "23",
+        "23",
+        "1"
+      ],
+      "relationship_summary": [
+        "27",
+        "27",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 23,
+        "relationships": 27
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      }
+    }
+  ]
+}

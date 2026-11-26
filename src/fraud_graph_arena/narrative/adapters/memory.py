@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from fraud_graph_arena.case_packages import CasePackageRegistry
 from fraud_graph_arena.narrative.domain import ComicKind, ComicPage, ComicSequence
 
 
@@ -11,7 +12,7 @@ class InMemoryNarrativeRepository:
     is player-reachable in Iteration 01.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, package_registry: CasePackageRegistry | None = None) -> None:
         self._sequences = (
             ComicSequence(id="ACADEMY_T02_OPENING", case_id="ACADEMY_T02", case_version="1.0.0-fga06", kind=ComicKind.OPENING, skippable=True, pages=(ComicPage(id="ACADEMY_T02_OPENING_01", position=1, title="The Circular Collar", narration="The Academy opens a safe graph lesson: records are evidence, not verdicts.", image_url="/assets/academy-intro-01.svg", alt_text="A detective examining a board of connected records."),)),
             ComicSequence(id="ACADEMY_T02_CLOSING", case_id="ACADEMY_T02", case_version="1.0.0-fga06", kind=ComicKind.CLOSING, skippable=True, pages=(ComicPage(id="ACADEMY_T02_CLOSING_01", position=1, title="Lesson Complete", narration="The graph remains a projection of published evidence. Further investigation belongs to a later lesson.", image_url="/assets/academy-closing-01.svg", alt_text="A closed Academy graph lesson file."),)),
@@ -76,6 +77,52 @@ class InMemoryNarrativeRepository:
                 ),
             ),
         )
+        registry = package_registry or CasePackageRegistry()
+        known = {(item.case_id, item.case_version) for item in self._sequences}
+        generated: list[ComicSequence] = []
+        for package in registry.published():
+            key = (package.case_id, package.case_version)
+            if key in known:
+                continue
+            generated.extend(
+                (
+                    ComicSequence(
+                        id=package.briefing["opening_sequence_id"],
+                        case_id=package.case_id,
+                        case_version=package.case_version,
+                        kind=ComicKind.OPENING,
+                        skippable=True,
+                        pages=(
+                            ComicPage(
+                                id=f"{package.case_id}_OPENING_01",
+                                position=1,
+                                title=package.title,
+                                narration=package.description,
+                                image_url=f"/assets/{package.assets['cover']}",
+                                alt_text=f"Opening case-package illustration for {package.title}.",
+                            ),
+                        ),
+                    ),
+                    ComicSequence(
+                        id=package.briefing["closing_sequence_id"],
+                        case_id=package.case_id,
+                        case_version=package.case_version,
+                        kind=ComicKind.CLOSING,
+                        skippable=True,
+                        pages=(
+                            ComicPage(
+                                id=f"{package.case_id}_CLOSING_01",
+                                position=1,
+                                title="Case Receipt",
+                                narration="The package records the published evidence, the player decision and the versioned result. The case can be replayed without changing its source files.",
+                                image_url=f"/assets/{package.assets['infographic']}",
+                                alt_text=f"Closing case-package illustration for {package.title}.",
+                            ),
+                        ),
+                    ),
+                )
+            )
+        self._sequences += tuple(generated)
 
     def get_sequence(
         self,

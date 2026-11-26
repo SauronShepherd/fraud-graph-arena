@@ -42,19 +42,21 @@ class GraphAnalyticsService:
         engine: GraphAnalyticsEngine | None = None,
         new_id: Callable[[], str] = lambda: str(uuid4()),
         economy: EconomyService | None = None,
+        package_provider: Callable[[Any], Any] | None = None,
     ) -> None:
         self._rounds = rounds
         self._graph_provider = graph_provider
         self._engine = engine or GraphAnalyticsEngine()
         self._new_id = new_id
         self._economy = economy
+        self._package_provider = package_provider
         self._cache: dict[str, GraphAnalysisResult] = {}
         self._cache_order: list[str] = []
         self._history: dict[str, list[GraphAnalysisResult]] = {}
         self._lock = RLock()
 
     def analyze(self, round_id: str, request: dict[str, Any]) -> GraphAnalysisResult:
-        round_ = self._require_active_t02(round_id)
+        round_ = self._require_active_case(round_id)
         algorithm = str(request.get("algorithm", "")).upper()
         if algorithm not in GRAPH_ANALYTICS_ALGORITHMS:
             raise InvalidRequestError(
@@ -352,9 +354,8 @@ class GraphAnalyticsService:
         }
         return "fga10:" + hashlib.sha256(json.dumps(material, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
 
-    @staticmethod
-    def _require_active_round(rounds: RoundService, round_id: str) -> Any:
-        round_ = rounds.require(round_id)
+    def _require_active_round(self, round_id: str) -> Any:
+        round_ = self._rounds.require(round_id)
         if round_.status != RoundStatus.ACTIVE:
             raise ConflictError(
                 code="ROUND_NOT_ACTIVE",
@@ -362,14 +363,15 @@ class GraphAnalyticsService:
                 detail="Graph analytics can only run in an active round.",
                 recovery="Open the case board and retry the bounded analysis.",
             )
-        if round_.case_id != "ACADEMY_T02":
+        package = self._package_provider(round_) if self._package_provider is not None else None
+        if package is not None and not package.supports("RUN_GRAPH_ANALYSIS"):
             raise ConflictError(
                 code="ACTION_NOT_AVAILABLE",
                 title="Graph analysis is unavailable",
-                detail="The FGA-10 graph-analysis action is enabled only for the Academy Circular Collar lesson.",
-                recovery="Use the Academy Circular Collar lesson for this action.",
+                detail="This case package does not declare graph analysis.",
+                recovery="Choose one of the actions declared by the active case package.",
             )
         return round_
 
-    def _require_active_t02(self, round_id: str) -> Any:
-        return self._require_active_round(self._rounds, round_id)
+    def _require_active_case(self, round_id: str) -> Any:
+        return self._require_active_round(round_id)

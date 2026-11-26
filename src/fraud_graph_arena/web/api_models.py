@@ -334,7 +334,7 @@ class EntityResolutionHistoryResponse(ApiModel):
 class SubmissionRequest(ApiModel):
     idempotency_key: str = Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
     suspect_record_ids: list[str] = Field(default_factory=list, max_length=20)
-    evidence_claim_ids: list[str] = Field(default_factory=list, max_length=5)
+    evidence_claim_ids: list[str] = Field(default_factory=list, max_length=32)
     expected_round_version: int | None = Field(default=None, ge=0)
 
 

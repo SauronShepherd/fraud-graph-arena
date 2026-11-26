@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from fraud_graph_arena.catalogue.adapters.memory import InMemoryCatalogueRepository
 from fraud_graph_arena.catalogue.service import CatalogueService
+from fraud_graph_arena.case_packages import CasePackage
 from fraud_graph_arena.config import RuntimeRole, Settings
 from fraud_graph_arena.investigation_commands.adapters.memory import InMemoryInvestigationCommandRepository
 from fraud_graph_arena.investigation_commands.adapters.sqlite import SqliteInvestigationCommandRepository
@@ -18,6 +19,7 @@ from fraud_graph_arena.narrative.adapters.memory import InMemoryNarrativeReposit
 from fraud_graph_arena.narrative.service import NarrativeService
 from fraud_graph_arena.rounds.adapters.memory import InMemoryRoundRepository
 from fraud_graph_arena.rounds.adapters.sqlite import SqliteRoundRepository
+from fraud_graph_arena.rounds.domain import Round
 from fraud_graph_arena.rounds.ports import RoundRepository
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.web.problem_handlers import register_problem_handlers
@@ -25,7 +27,6 @@ from fraud_graph_arena.web.routes import catalogue, health, rounds
 from fraud_graph_arena.web.spa import SpaStaticFiles
 from fraud_graph_arena.workspace import WorkspaceService
 from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
-from fraud_graph_arena.case_data.academy_graph import t02_expandable_graph
 from fraud_graph_arena.entity_resolution import (
     EntityResolutionService,
     InMemoryEntityResolutionRepository,
@@ -55,8 +56,9 @@ class Container:
 def build_web_container(settings: Settings) -> Container:
     if settings.runtime_role != RuntimeRole.WEB:
         raise RuntimeError("the public container is only valid for WEB runtime role")
-    catalogue = CatalogueService(InMemoryCatalogueRepository())
-    narrative = NarrativeService(InMemoryNarrativeRepository())
+    catalogue_repository = InMemoryCatalogueRepository()
+    catalogue = CatalogueService(catalogue_repository)
+    narrative = NarrativeService(InMemoryNarrativeRepository(catalogue_repository.package_registry))
     for case in catalogue.list_cases():
         narrative.validate_case(case)
 
@@ -70,19 +72,31 @@ def build_web_container(settings: Settings) -> Container:
         catalogue=catalogue,
         narrative=narrative,
     )
+    def package_for_round(round_: Round) -> CasePackage | None:
+        return catalogue.get_package(round_.case_id, round_.case_version)
+
+    def package_cost(round_id: str, action: str) -> int | None:
+        package = package_for_round(round_service.require(round_id))
+        return None if package is None else package.economy.get("costs", {}).get(action)
+
     ledger_repository = InMemoryLedgerRepository() if settings.round_repository == "memory" else SqliteLedgerRepository(settings.sqlite_path)
-    economy = EconomyService(round_service, ledger_repository)
+    economy = EconomyService(
+        round_service,
+        ledger_repository,
+        cost_provider=package_cost,
+    )
     entity_repository = (
         InMemoryEntityResolutionRepository()
         if settings.round_repository == "memory"
         else SqliteEntityResolutionRepository(settings.sqlite_path)
     )
-    entity_resolution = EntityResolutionService(round_service, entity_repository, economy=economy)
+    entity_resolution = EntityResolutionService(round_service, entity_repository, economy=economy, package_provider=package_for_round)
 
     def graph_provider(round_id: str) -> dict:
         round_ = round_service.require(round_id)
-        graph = t02_expandable_graph() if round_.case_id == "ACADEMY_T02" else {"nodes": (), "edges": (), "node_count": 0, "edge_count": 0, "projection_version": "1"}
-        return entity_resolution.graph_with_reviews(round_id, graph) if round_.case_id == "ACADEMY_T02" else graph
+        package = package_for_round(round_)
+        graph = package.graph() if package is not None else {"nodes": (), "edges": (), "node_count": 0, "edge_count": 0, "projection_version": "empty"}
+        return entity_resolution.graph_with_reviews(round_id, graph) if package is not None and package.supports("COMPARE_IDENTITIES") else graph
 
     command_repository: InvestigationCommandRepository
     if settings.round_repository == "memory":
@@ -101,9 +115,9 @@ def build_web_container(settings: Settings) -> Container:
         graph=GraphInvestigationService(graph_provider),
         investigation_commands=InvestigationCommandService(round_service, command_repository),
         entity_resolution=entity_resolution,
-        graph_analytics=GraphAnalyticsService(round_service, graph_provider, economy=economy),
+        graph_analytics=GraphAnalyticsService(round_service, graph_provider, economy=economy, package_provider=package_for_round),
         economy=economy,
-        case_resolution=CaseResolutionService(round_service, economy, submission_repository),
+        case_resolution=CaseResolutionService(round_service, economy, submission_repository, package_provider=package_for_round),
     )
 
 

@@ -50,7 +50,15 @@ def test_academy_catalogue_contains_only_spoiler_free_training_case(client: Test
             "name": "The Circular Collar",
             "description": "A spoiler-free graph lesson about records, organizations, and directed source relationships.",
             "status": "OPEN",
-        }
+        },
+        {
+            "id": "ACADEMY_T03",
+            "version": "1.0.0-fga12",
+            "path_id": "DETECTIVE_ACADEMY",
+            "name": "The Ghost Invoice",
+            "description": "An advanced Academy file where chronology, unavailable evidence and uncertainty matter more than a loud accusation.",
+            "status": "OPEN",
+        },
     ]
 
 

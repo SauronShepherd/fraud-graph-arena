@@ -8,6 +8,7 @@ from fraud_graph_arena.catalogue.domain import (
     PathId,
     PathStatus,
 )
+from fraud_graph_arena.case_packages import CasePackage, CasePackageRegistry
 
 
 class InMemoryCatalogueRepository:
@@ -18,7 +19,8 @@ class InMemoryCatalogueRepository:
     published by the walking skeleton.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, package_registry: CasePackageRegistry | None = None) -> None:
+        self.package_registry = package_registry or CasePackageRegistry()
         self._paths = (
             PathDefinition(
                 id=PathId.DETECTIVE_ACADEMY,
@@ -53,20 +55,7 @@ class InMemoryCatalogueRepository:
                 access_message="Advanced entry remains locked until its release requirements exist.",
             ),
         )
-        self._cases = (
-            CaseSummary(
-                id="ACADEMY_001",
-                version="1.0.0-i01",
-                path_id=PathId.DETECTIVE_ACADEMY,
-                name="The Case of the Empty Evidence Board",
-                description=(
-                    "A spoiler-free training file whose only mystery is whether the application "
-                    "can carry it safely from catalogue to board."
-                ),
-                status=CaseStatus.OPEN,
-            ),
-            CaseSummary(id="ACADEMY_T02", version="1.0.0-fga06", path_id=PathId.DETECTIVE_ACADEMY, name="The Circular Collar", description="A spoiler-free graph lesson about records, organizations, and directed source relationships.", status=CaseStatus.OPEN),
-        )
+        self._cases = tuple(package.summary() for package in self.package_registry.published())
 
     def list_paths(self) -> tuple[PathDefinition, ...]:
         return self._paths
@@ -88,3 +77,6 @@ class InMemoryCatalogueRepository:
             ),
             None,
         )
+
+    def get_package(self, case_id: str, version: str | None = None) -> CasePackage | None:
+        return self.package_registry.get(case_id, version)

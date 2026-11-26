@@ -47,6 +47,7 @@ class RoundService:
                 recovery="Refresh the catalogue and choose an open case.",
             )
         self._narrative.validate_case(case)
+        package = self._catalogue.get_package(case.id, case.version)
         round_ = Round(
             id=str(uuid4()),
             player_id=player_id.strip() or "demo-hercule",
@@ -55,7 +56,7 @@ class RoundService:
             case_version=case.version,
             status=RoundStatus.CREATED,
             created_at=datetime.now(UTC),
-            credits_remaining=9 if case.id == "ACADEMY_T02" else 0,
+            credits_remaining=package.initial_credits if package is not None else 0,
         )
         self._repository.add(round_)
         return round_

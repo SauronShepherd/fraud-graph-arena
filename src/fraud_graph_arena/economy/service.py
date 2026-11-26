@@ -34,15 +34,17 @@ class EconomyService:
         *,
         now: Callable[[], datetime] = lambda: datetime.now(UTC),
         new_id: Callable[[], str] = lambda: str(uuid4()),
+        cost_provider: Callable[[str, str], int | None] | None = None,
     ) -> None:
         self._rounds = rounds
         self._repository = repository
         self._now = now
         self._new_id = new_id
+        self._cost_provider = cost_provider
         self._lock = RLock()
 
     def reserve(self, round_id: str, action: str, idempotency_key: str, request_hash: str, cost: int | None = None) -> EconomyReservation:
-        amount = ACTION_COSTS.get(action) if cost is None else cost
+        amount = (self._cost_provider(round_id, action) if self._cost_provider is not None else ACTION_COSTS.get(action)) if cost is None else cost
         if amount is None or amount <= 0:
             raise ValueError(f"unknown economy action: {action}")
         with self._lock:
