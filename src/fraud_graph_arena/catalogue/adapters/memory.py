@@ -12,11 +12,11 @@ from fraud_graph_arena.case_packages import CasePackage, CasePackageRegistry
 
 
 class InMemoryCatalogueRepository:
-    """Deterministic, spoiler-free Iteration-01 catalogue.
+    """Deterministic catalogue backed by the published FGA-13 packages.
 
-    Detective Academy is the only playable route. Ranked paths are visible through
-    server-owned catalogue state, but no real anthology case names or details are
-    published by the walking skeleton.
+    The same repository and round engine serve Academy, Puppy, Adult Dog and
+    Senior Dog.  Path access is catalogue state; case difficulty lives in each
+    package and is never inferred from the number of graph rows.
     """
 
     def __init__(self, package_registry: CasePackageRegistry | None = None) -> None:
@@ -33,26 +33,26 @@ class InMemoryCatalogueRepository:
             PathDefinition(
                 id=PathId.PUPPY,
                 name="Puppy",
-                description="The first ranked trail through the anthology.",
+                description="The first ranked trail: the full loop with room to learn.",
                 ranked=True,
-                status=PathStatus.COMING_SOON,
-                access_message="Ranked cases remain sealed while the Academy is being built.",
+                status=PathStatus.OPEN,
+                access_message="Puppy cases are open. Learn the loop, then question the shortcut.",
             ),
             PathDefinition(
                 id=PathId.ADULT_DOG,
                 name="Adult Dog",
-                description="A later ranked entry point for experienced investigators.",
+                description="Organisational complexity, incomplete evidence and resource trade-offs.",
                 ranked=True,
-                status=PathStatus.LOCKED,
-                access_message="Complete the required ranked progression when the anthology opens.",
+                status=PathStatus.OPEN,
+                access_message="Adult Dog cases are open. Mixed roles and polished paperwork await.",
             ),
             PathDefinition(
                 id=PathId.SENIOR_DOG,
                 name="Senior Dog",
-                description="The advanced ranked entry point. Trench coat not included.",
+                description="Temporal, identity and role ambiguity with legitimate alternatives.",
                 ranked=True,
-                status=PathStatus.LOCKED,
-                access_message="Advanced entry remains locked until its release requirements exist.",
+                status=PathStatus.OPEN,
+                access_message="Senior Dog cases are open. The obvious story is only a lead.",
             ),
         )
         self._cases = tuple(package.summary() for package in self.package_registry.published())

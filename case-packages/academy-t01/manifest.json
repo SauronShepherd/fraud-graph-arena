@@ -1,0 +1,79 @@
+{
+  "schema_version": "fga13-case-package-v1",
+  "package_id": "academy-t01",
+  "package_version": "1.0.0-fga13",
+  "case_id": "ACADEMY_T01",
+  "case_version": "3.0.0-canonical.1-fga13",
+  "path_id": "DETECTIVE_ACADEMY",
+  "title": "The Missing 120",
+  "description": "A guided Academy file for learning a bounded evidence trail without treating a first lead as a verdict.",
+  "kind": "canonical",
+  "briefing": {
+    "opening_sequence_id": "ACADEMY_T01_OPENING",
+    "closing_sequence_id": "ACADEMY_T01_CLOSING"
+  },
+  "canonical": {
+    "root": "case-data/canonical/v1/T1_THE_MISSING_120_canonical_case_data_v3",
+    "case_id": "ACADEMY_T01",
+    "case_version": "3.0.0-canonical.1",
+    "snapshot_version": "2026.07.19.3",
+    "model_version": "1.0.0"
+  },
+  "objectives": [
+    "Inspect the published evidence and its provenance.",
+    "Compare competing explanations without treating similarity as guilt.",
+    "Submit a reproducible conclusion that leaves legitimate comparators visible."
+  ],
+  "supported_actions": [
+    "RUN_GRAPH_ANALYSIS",
+    "SUBMIT"
+  ],
+  "economy": {
+    "version": "fga13-economy-v1",
+    "initial_credits": 6,
+    "costs": {
+      "RUN_GRAPH_ANALYSIS": 3
+    }
+  },
+  "evidence_rules": {
+    "public_projection": "published",
+    "protected_truth": "truth",
+    "required_claims_path": "truth/claims.csv"
+  },
+  "scoring": {
+    "version": "fga13-scoring-v1",
+    "rules_path": "truth/scoring_rules.csv",
+    "ending_rules_path": "truth/ending_rules.csv",
+    "max_score": 1000
+  },
+  "assets": {
+    "cover": "fga/13-puppy-love-adult-problems/1.png",
+    "infographic": "fga/13-puppy-love-adult-problems/2.png"
+  },
+  "difficulty_profile": {
+    "profile_version": "fga13-difficulty-profile-v1",
+    "path_id": "DETECTIVE_ACADEMY",
+    "ambiguity": 0,
+    "noise": 0,
+    "graph_depth": 1,
+    "evidence_quality": "GUIDED",
+    "resource_pressure": 0,
+    "mixed_roles": false,
+    "legitimate_comparators": 1,
+    "session_minutes": 10,
+    "action_budget": 5,
+    "graph_node_limit": 20,
+    "hypothesis_target": 0,
+    "evidence_threshold": 2,
+    "progression_mode": "PACKAGE_SINGLE_PROFILE"
+  },
+  "compatibility": {
+    "engine_api": "fga13-engine-v1",
+    "canonical_model": "1.0.0",
+    "package_schema": "fga13-case-package-v1"
+  },
+  "publication": {
+    "state": "PUBLISHED",
+    "published_at": "2026-11-26"
+  }
+}

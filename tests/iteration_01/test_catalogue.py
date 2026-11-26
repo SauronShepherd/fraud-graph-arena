@@ -18,13 +18,13 @@ def test_catalogue_exposes_canonical_path_identifiers_and_server_owned_access(cl
     statuses = {item["id"]: item["status"] for item in sections}
     assert statuses == {
         "DETECTIVE_ACADEMY": "OPEN",
-        "PUPPY": "COMING_SOON",
-        "ADULT_DOG": "LOCKED",
-        "SENIOR_DOG": "LOCKED",
+        "PUPPY": "OPEN",
+        "ADULT_DOG": "OPEN",
+        "SENIOR_DOG": "OPEN",
     }
 
 
-def test_academy_catalogue_contains_only_spoiler_free_training_case(client: TestClient) -> None:
+def test_academy_catalogue_contains_the_three_canonical_training_cases_and_empty_shell(client: TestClient) -> None:
     response = client.get("/api/v1/catalogue/DETECTIVE_ACADEMY")
 
     assert response.status_code == 200
@@ -41,6 +41,14 @@ def test_academy_catalogue_contains_only_spoiler_free_training_case(client: Test
                 "A spoiler-free training file whose only mystery is whether the application "
                 "can carry it safely from catalogue to board."
             ),
+            "status": "OPEN",
+        },
+        {
+            "id": "ACADEMY_T01",
+            "version": "3.0.0-canonical.1-fga13",
+            "path_id": "DETECTIVE_ACADEMY",
+            "name": "The Missing 120",
+            "description": "A guided Academy file for learning a bounded evidence trail without treating a first lead as a verdict.",
             "status": "OPEN",
         },
         {
@@ -62,13 +70,14 @@ def test_academy_catalogue_contains_only_spoiler_free_training_case(client: Test
     ]
 
 
-def test_ranked_catalogue_does_not_publish_real_case_details(client: TestClient) -> None:
+def test_ranked_catalogue_publishes_the_ten_case_catalogue(client: TestClient) -> None:
     response = client.get("/api/v1/catalogue/PUPPY")
 
     assert response.status_code == 200
     payload = response.json()
-    assert payload["path"]["status"] == "COMING_SOON"
-    assert payload["cases"] == []
+    assert payload["path"]["status"] == "OPEN"
+    assert [case["id"] for case in payload["cases"]] == ["BISCUIT_RELIEF", "CEO_BARKED_TWICE", "MADDOG"]
+    assert all(case["status"] == "OPEN" for case in payload["cases"])
 
 
 def test_invalid_path_is_a_deliberate_problem_contract(client: TestClient) -> None:

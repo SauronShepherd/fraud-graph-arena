@@ -1,0 +1,82 @@
+{
+  "schema_version": "fga13-case-package-v1",
+  "package_id": "adult-bone-ledger",
+  "package_version": "1.0.0-fga13",
+  "case_id": "BONE_LEDGER",
+  "case_version": "1.0.0-fga13",
+  "path_id": "ADULT_DOG",
+  "title": "The Bone Ledger",
+  "description": "A synthetic Adult case whose challenge is described by a tested difficulty profile, not by row count.",
+  "kind": "canonical",
+  "briefing": {
+    "opening_sequence_id": "BONE_LEDGER_OPENING",
+    "closing_sequence_id": "BONE_LEDGER_CLOSING"
+  },
+  "canonical": {
+    "root": "case-data/canonical/v1/A1_BONE_LEDGER_canonical_case_data_v2",
+    "case_id": "BONE_LEDGER",
+    "case_version": "1.0.0",
+    "snapshot_version": "2026.07.18.1",
+    "model_version": "1.0.0"
+  },
+  "objectives": [
+    "Inspect the published evidence and its provenance.",
+    "Compare competing explanations without treating similarity as guilt.",
+    "Submit a reproducible conclusion that leaves legitimate comparators visible."
+  ],
+  "supported_actions": [
+    "COMPARE_IDENTITIES",
+    "CREATE_HYPOTHESIS",
+    "RUN_GRAPH_ANALYSIS",
+    "SUBMIT"
+  ],
+  "economy": {
+    "version": "fga13-economy-v1",
+    "initial_credits": 80,
+    "costs": {
+      "COMPARE_IDENTITIES": 6,
+      "RUN_GRAPH_ANALYSIS": 5
+    }
+  },
+  "evidence_rules": {
+    "public_projection": "published",
+    "protected_truth": "truth",
+    "required_claims_path": "truth/claims.csv"
+  },
+  "scoring": {
+    "version": "fga13-scoring-v1",
+    "rules_path": "truth/scoring_rules.csv",
+    "ending_rules_path": "truth/ending_rules.csv",
+    "max_score": 1000
+  },
+  "assets": {
+    "cover": "fga/13-puppy-love-adult-problems/1.png",
+    "infographic": "fga/13-puppy-love-adult-problems/2.png"
+  },
+  "difficulty_profile": {
+    "profile_version": "fga13-difficulty-profile-v1",
+    "path_id": "ADULT_DOG",
+    "ambiguity": 3,
+    "noise": 3,
+    "graph_depth": 3,
+    "evidence_quality": "MIXED",
+    "resource_pressure": 3,
+    "mixed_roles": true,
+    "legitimate_comparators": 2,
+    "session_minutes": 30,
+    "action_budget": 16,
+    "graph_node_limit": 180,
+    "hypothesis_target": 2,
+    "evidence_threshold": 5,
+    "progression_mode": "PACKAGE_SINGLE_PROFILE"
+  },
+  "compatibility": {
+    "engine_api": "fga13-engine-v1",
+    "canonical_model": "1.0.0",
+    "package_schema": "fga13-case-package-v1"
+  },
+  "publication": {
+    "state": "PUBLISHED",
+    "published_at": "2026-11-26"
+  }
+}

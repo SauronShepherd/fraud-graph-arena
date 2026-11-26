@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://angelic-articles.com/fga/schemas/fga13-case-package.schema.json",
+  "title": "Fraud Graph Arena case package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package_id",
+    "package_version",
+    "case_id",
+    "case_version",
+    "path_id",
+    "title",
+    "description",
+    "kind",
+    "briefing",
+    "objectives",
+    "supported_actions",
+    "economy",
+    "evidence_rules",
+    "scoring",
+    "assets",
+    "difficulty_profile",
+    "compatibility",
+    "publication"
+  ],
+  "properties": {
+    "schema_version": {"const": "fga13-case-package-v1"},
+    "package_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "package_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"},
+    "case_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$"},
+    "case_version": {"type": "string", "minLength": 1, "maxLength": 64},
+    "path_id": {"enum": ["DETECTIVE_ACADEMY", "PUPPY", "ADULT_DOG", "SENIOR_DOG"]},
+    "title": {"type": "string", "minLength": 1, "maxLength": 160},
+    "description": {"type": "string", "minLength": 1, "maxLength": 1000},
+    "kind": {"enum": ["empty", "canonical"]},
+    "briefing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["opening_sequence_id", "closing_sequence_id"],
+      "properties": {
+        "opening_sequence_id": {"type": "string", "minLength": 1},
+        "closing_sequence_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "canonical": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["root", "case_id", "case_version", "snapshot_version", "model_version"],
+      "properties": {
+        "root": {"type": "string", "minLength": 1},
+        "case_id": {"type": "string", "minLength": 1},
+        "case_version": {"type": "string", "minLength": 1},
+        "snapshot_version": {"type": "string", "minLength": 1},
+        "model_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "objectives": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+    "supported_actions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["COMPARE_IDENTITIES", "CREATE_HYPOTHESIS", "RUN_GRAPH_ANALYSIS", "SUBMIT"]}
+    },
+    "economy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "initial_credits", "costs"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "initial_credits": {"type": "integer", "minimum": 0},
+        "costs": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "COMPARE_IDENTITIES": {"type": "integer", "minimum": 0},
+            "RUN_GRAPH_ANALYSIS": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "evidence_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_projection", "protected_truth", "required_claims_path"],
+      "properties": {
+        "public_projection": {"const": "published"},
+        "protected_truth": {"const": "truth"},
+        "required_claims_path": {"type": "string", "pattern": "^truth/[^/]+\\.csv$"}
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "rules_path", "ending_rules_path", "max_score"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "rules_path": {"type": "string", "pattern": "^truth/[^/]+\\.csv$"},
+        "ending_rules_path": {"type": "string", "pattern": "^truth/[^/]+\\.csv$"},
+        "max_score": {"type": "integer", "minimum": 1}
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cover", "infographic"],
+      "properties": {
+        "cover": {"type": "string", "minLength": 1},
+        "infographic": {"type": "string", "minLength": 1}
+      }
+    },
+    "difficulty_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_version", "path_id", "ambiguity", "noise", "graph_depth",
+        "evidence_quality", "resource_pressure", "mixed_roles",
+        "legitimate_comparators", "session_minutes", "action_budget",
+        "graph_node_limit", "hypothesis_target", "evidence_threshold",
+        "progression_mode"
+      ],
+      "properties": {
+        "profile_version": {"const": "fga13-difficulty-profile-v1"},
+        "path_id": {"enum": ["DETECTIVE_ACADEMY", "PUPPY", "ADULT_DOG", "SENIOR_DOG"]},
+        "ambiguity": {"type": "integer", "minimum": 0, "maximum": 5},
+        "noise": {"type": "integer", "minimum": 0, "maximum": 5},
+        "graph_depth": {"type": "integer", "minimum": 0, "maximum": 5},
+        "evidence_quality": {"enum": ["GUIDED", "CLEAR", "MIXED", "CONFLICTED", "FRAGMENTED"]},
+        "resource_pressure": {"type": "integer", "minimum": 0, "maximum": 5},
+        "mixed_roles": {"type": "boolean"},
+        "legitimate_comparators": {"type": "integer", "minimum": 1},
+        "session_minutes": {"type": "integer", "minimum": 5, "maximum": 60},
+        "action_budget": {"type": "integer", "minimum": 1},
+        "graph_node_limit": {"type": "integer", "minimum": 1},
+        "hypothesis_target": {"type": "integer", "minimum": 0, "maximum": 5},
+        "evidence_threshold": {"type": "integer", "minimum": 1, "maximum": 10},
+        "progression_mode": {"const": "PACKAGE_SINGLE_PROFILE"}
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["engine_api", "canonical_model", "package_schema"],
+      "properties": {
+        "engine_api": {"type": "string", "minLength": 1},
+        "canonical_model": {"type": "string", "minLength": 1},
+      "package_schema": {"const": "fga13-case-package-v1"}
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state"],
+      "properties": {
+        "state": {"enum": ["DRAFT", "VALIDATED", "STAGED", "PUBLISHED"]},
+        "published_at": {"type": "string"}
+      }
+    }
+  }
+}

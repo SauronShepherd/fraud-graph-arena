@@ -1262,6 +1262,11 @@
             },
             "title": "Relationship Filters",
             "type": "array"
+          },
+          "snapshot_version": {
+            "default": "",
+            "title": "Snapshot Version",
+            "type": "string"
           }
         },
         "required": [

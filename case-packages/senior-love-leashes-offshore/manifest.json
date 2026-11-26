@@ -1,0 +1,82 @@
+{
+  "schema_version": "fga13-case-package-v1",
+  "package_id": "senior-love-leashes-offshore",
+  "package_version": "1.0.0-fga13",
+  "case_id": "LOVE_LEASHES_OFFSHORE",
+  "case_version": "1.0.0-fga13",
+  "path_id": "SENIOR_DOG",
+  "title": "Love, Leashes & Offshore Transfers",
+  "description": "A synthetic Senior case whose challenge is described by a tested difficulty profile, not by row count.",
+  "kind": "canonical",
+  "briefing": {
+    "opening_sequence_id": "LOVE_LEASHES_OFFSHORE_OPENING",
+    "closing_sequence_id": "LOVE_LEASHES_OFFSHORE_CLOSING"
+  },
+  "canonical": {
+    "root": "case-data/canonical/v1/S1_LOVE_LEASHES_OFFSHORE_canonical_case_data_v2",
+    "case_id": "LOVE_LEASHES_OFFSHORE",
+    "case_version": "1.0.0",
+    "snapshot_version": "2026.07.18.1",
+    "model_version": "1.0.0"
+  },
+  "objectives": [
+    "Inspect the published evidence and its provenance.",
+    "Compare competing explanations without treating similarity as guilt.",
+    "Submit a reproducible conclusion that leaves legitimate comparators visible."
+  ],
+  "supported_actions": [
+    "COMPARE_IDENTITIES",
+    "CREATE_HYPOTHESIS",
+    "RUN_GRAPH_ANALYSIS",
+    "SUBMIT"
+  ],
+  "economy": {
+    "version": "fga13-economy-v1",
+    "initial_credits": 55,
+    "costs": {
+      "COMPARE_IDENTITIES": 8,
+      "RUN_GRAPH_ANALYSIS": 7
+    }
+  },
+  "evidence_rules": {
+    "public_projection": "published",
+    "protected_truth": "truth",
+    "required_claims_path": "truth/claims.csv"
+  },
+  "scoring": {
+    "version": "fga13-scoring-v1",
+    "rules_path": "truth/scoring_rules.csv",
+    "ending_rules_path": "truth/ending_rules.csv",
+    "max_score": 1000
+  },
+  "assets": {
+    "cover": "fga/13-puppy-love-adult-problems/1.png",
+    "infographic": "fga/13-puppy-love-adult-problems/2.png"
+  },
+  "difficulty_profile": {
+    "profile_version": "fga13-difficulty-profile-v1",
+    "path_id": "SENIOR_DOG",
+    "ambiguity": 5,
+    "noise": 4,
+    "graph_depth": 5,
+    "evidence_quality": "CONFLICTED",
+    "resource_pressure": 3,
+    "mixed_roles": true,
+    "legitimate_comparators": 3,
+    "session_minutes": 38,
+    "action_budget": 22,
+    "graph_node_limit": 260,
+    "hypothesis_target": 3,
+    "evidence_threshold": 7,
+    "progression_mode": "PACKAGE_SINGLE_PROFILE"
+  },
+  "compatibility": {
+    "engine_api": "fga13-engine-v1",
+    "canonical_model": "1.0.0",
+    "package_schema": "fga13-case-package-v1"
+  },
+  "publication": {
+    "state": "PUBLISHED",
+    "published_at": "2026-11-26"
+  }
+}

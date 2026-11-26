@@ -6,9 +6,10 @@ from typing import Any
 
 from fraud_graph_arena.catalogue.domain import CaseSummary, CaseStatus, PathId
 from fraud_graph_arena.case_data.graph_data import project_graph
+from fraud_graph_arena.difficulty import DifficultyProfile
 
 
-PACKAGE_SCHEMA_VERSION = "fga12-case-package-v1"
+PACKAGE_SCHEMA_VERSION = "fga13-case-package-v1"
 
 
 @dataclass(frozen=True, slots=True)
@@ -33,6 +34,7 @@ class CasePackage:
     evidence_rules: dict[str, str]
     scoring: dict[str, Any]
     assets: dict[str, str]
+    difficulty_profile: DifficultyProfile
     compatibility: dict[str, str]
     publication: dict[str, Any]
 

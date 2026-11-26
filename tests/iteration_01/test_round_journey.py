@@ -64,7 +64,7 @@ def test_start_and_opening_completion_are_idempotent(client: TestClient) -> None
     assert first_complete.json() == second_complete.json()
 
 
-def test_academy_case_cannot_be_guessed_from_a_ranked_path(client: TestClient) -> None:
+def test_academy_case_cannot_be_started_from_a_ranked_path(client: TestClient) -> None:
     response = client.post(
         "/api/v1/rounds",
         json={
@@ -74,11 +74,11 @@ def test_academy_case_cannot_be_guessed_from_a_ranked_path(client: TestClient) -
         },
     )
 
-    assert response.status_code == 409
-    assert response.json()["code"] == "PATH_NOT_OPEN"
+    assert response.status_code == 400
+    assert response.json()["code"] == "CASE_PATH_MISMATCH"
 
 
-def test_unpublished_ranked_case_identifiers_are_not_available_as_defaults(client: TestClient) -> None:
+def test_unknown_ranked_case_identifiers_are_not_available_as_defaults(client: TestClient) -> None:
     response = client.post(
         "/api/v1/rounds",
         json={
@@ -88,8 +88,8 @@ def test_unpublished_ranked_case_identifiers_are_not_available_as_defaults(clien
         },
     )
 
-    assert response.status_code == 409
-    assert response.json()["code"] == "PATH_NOT_OPEN"
+    assert response.status_code == 404
+    assert response.json()["code"] == "CASE_NOT_FOUND"
 
 
 def test_unknown_round_does_not_render_a_fixture_board(client: TestClient) -> None:

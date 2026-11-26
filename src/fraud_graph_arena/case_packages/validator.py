@@ -7,6 +7,7 @@ from typing import Any
 from jsonschema import Draft202012Validator
 
 from fraud_graph_arena.case_data.validator import validate_package as validate_canonical_package
+from fraud_graph_arena.difficulty import DifficultyProfile, validate_profile
 from fraud_graph_arena.paths import project_root
 
 from .models import PACKAGE_SCHEMA_VERSION
@@ -26,7 +27,7 @@ def validate_case_package(package_dir: Path) -> list[dict[str, str]]:
         manifest: dict[str, Any] = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         return [_error("PACKAGE.MANIFEST.JSON", "manifest.json", str(exc))]
-    schema_path = project_root() / "contracts/case-packages/fga12-case-package.schema.json"
+    schema_path = project_root() / "contracts/case-packages/fga13-case-package.schema.json"
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
     errors.extend(
         _error("PACKAGE.SCHEMA", "manifest.json", error.message)
@@ -34,6 +35,12 @@ def validate_case_package(package_dir: Path) -> list[dict[str, str]]:
     )
     if errors:
         return errors
+    try:
+        profile = DifficultyProfile.from_mapping(manifest["difficulty_profile"])
+    except (KeyError, TypeError, ValueError) as exc:
+        errors.append(_error("PACKAGE.DIFFICULTY.SHAPE", "difficulty_profile", str(exc)))
+        return errors
+    errors.extend(_error("PACKAGE.DIFFICULTY.PROFILE", "difficulty_profile", message) for message in validate_profile(profile, package_path_id=manifest["path_id"]))
     if manifest["package_id"] != package_dir.name:
         errors.append(_error("PACKAGE.ID.DIRECTORY", "manifest.json", "package_id must match its directory name."))
     if manifest["schema_version"] != PACKAGE_SCHEMA_VERSION:

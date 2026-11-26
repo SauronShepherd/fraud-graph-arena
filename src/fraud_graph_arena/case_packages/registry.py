@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from fraud_graph_arena.catalogue.domain import PathId
+from fraud_graph_arena.difficulty import DifficultyProfile
 from fraud_graph_arena.paths import project_root
 
 from .models import CasePackage
@@ -32,6 +33,7 @@ def _package_from_manifest(package_dir: Path) -> CasePackage:
         evidence_rules=dict(raw["evidence_rules"]),
         scoring=dict(raw["scoring"]),
         assets=dict(raw["assets"]),
+        difficulty_profile=DifficultyProfile.from_mapping(raw["difficulty_profile"]),
         compatibility=dict(raw["compatibility"]),
         publication=dict(raw["publication"]),
     )

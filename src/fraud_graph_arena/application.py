@@ -35,6 +35,7 @@ from fraud_graph_arena.entity_resolution import (
 from fraud_graph_arena.graph_analytics import GraphAnalyticsService
 from fraud_graph_arena.economy import EconomyService, InMemoryLedgerRepository, SqliteLedgerRepository
 from fraud_graph_arena.case_resolution import CaseResolutionService, InMemorySubmissionRepository, SqliteSubmissionRepository
+from fraud_graph_arena.case_data.graph_investigation import MAX_GRAPH_EDGES, MAX_GRAPH_NODES, initial_subset
 
 
 @dataclass(slots=True)
@@ -96,7 +97,13 @@ def build_web_container(settings: Settings) -> Container:
         round_ = round_service.require(round_id)
         package = package_for_round(round_)
         graph = package.graph() if package is not None else {"nodes": (), "edges": (), "node_count": 0, "edge_count": 0, "projection_version": "empty"}
-        return entity_resolution.graph_with_reviews(round_id, graph) if package is not None and package.supports("COMPARE_IDENTITIES") else graph
+        if package is None or package.kind != "canonical":
+            return graph
+        authorized = entity_resolution.graph_with_reviews(round_id, graph) if package.supports("COMPARE_IDENTITIES") else graph
+        # The package owns the learning-sized initial view; the API retains the
+        # renderer hard ceiling.  The omitted counts make truncation explicit.
+        limit = min(package.difficulty_profile.graph_node_limit, MAX_GRAPH_NODES)
+        return initial_subset(authorized, limit=limit, edge_limit=MAX_GRAPH_EDGES)
 
     command_repository: InvestigationCommandRepository
     if settings.round_repository == "memory":

@@ -1,7 +1,7 @@
 {
-  "schema_version": "fga12-case-package-v1",
+  "schema_version": "fga13-case-package-v1",
   "package_id": "academy-t03",
-  "package_version": "1.0.0",
+  "package_version": "1.0.0-fga13",
   "case_id": "ACADEMY_T03",
   "case_version": "1.0.0-fga12",
   "path_id": "DETECTIVE_ACADEMY",
@@ -20,15 +20,20 @@
     "model_version": "1.0.0"
   },
   "objectives": [
-    "Follow a precise graph question through the invoice chronology.",
-    "Record unavailable and conflicting evidence as uncertainty, not guilt.",
-    "Submit a versioned, evidence-backed attribution."
+    "Inspect the published evidence and its provenance.",
+    "Compare competing explanations without treating similarity as guilt.",
+    "Submit a reproducible conclusion that leaves legitimate comparators visible."
   ],
-  "supported_actions": ["RUN_GRAPH_ANALYSIS", "SUBMIT"],
+  "supported_actions": [
+    "RUN_GRAPH_ANALYSIS",
+    "SUBMIT"
+  ],
   "economy": {
     "version": "fga12-economy-v1",
     "initial_credits": 15,
-    "costs": {"RUN_GRAPH_ANALYSIS": 3}
+    "costs": {
+      "RUN_GRAPH_ANALYSIS": 3
+    }
   },
   "evidence_rules": {
     "public_projection": "published",
@@ -42,13 +47,33 @@
     "max_score": 1000
   },
   "assets": {
-    "cover": "fga/12-case-me-if-you-can/1.png",
-    "infographic": "fga/12-case-me-if-you-can/2.png"
+    "cover": "fga/13-puppy-love-adult-problems/1.png",
+    "infographic": "fga/13-puppy-love-adult-problems/2.png"
+  },
+  "difficulty_profile": {
+    "profile_version": "fga13-difficulty-profile-v1",
+    "path_id": "DETECTIVE_ACADEMY",
+    "ambiguity": 2,
+    "noise": 2,
+    "graph_depth": 3,
+    "evidence_quality": "MIXED",
+    "resource_pressure": 2,
+    "mixed_roles": false,
+    "legitimate_comparators": 2,
+    "session_minutes": 20,
+    "action_budget": 10,
+    "graph_node_limit": 40,
+    "hypothesis_target": 1,
+    "evidence_threshold": 4,
+    "progression_mode": "PACKAGE_SINGLE_PROFILE"
   },
   "compatibility": {
-    "engine_api": "fga11-engine-v1",
+    "engine_api": "fga13-engine-v1",
     "canonical_model": "1.0.0",
-    "package_schema": "fga12-case-package-v1"
+    "package_schema": "fga13-case-package-v1"
   },
-  "publication": {"state": "PUBLISHED", "published_at": "2026-11-26"}
+  "publication": {
+    "state": "PUBLISHED",
+    "published_at": "2026-11-26"
+  }
 }

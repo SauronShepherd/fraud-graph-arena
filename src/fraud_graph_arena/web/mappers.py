@@ -39,6 +39,10 @@ def map_case(value: CaseSummary) -> CaseResponse:
     )
 
 
+def _graph_field(value: object, field: str) -> object:
+    return value.get(field, "") if isinstance(value, dict) else getattr(value, field)
+
+
 def map_section(value: CatalogueSection) -> CatalogueSectionResponse:
     return CatalogueSectionResponse(
         path=map_path(value.path),
@@ -107,5 +111,5 @@ def map_workspace(value: WorkspaceProjection) -> WorkspaceResponse:
         round=map_round(value.round), case=map_case(value.case), board_message="Published Academy graph loaded." if value.graph["node_count"] else "No evidence has been revealed.",
         evidence_count=value.evidence_count, suspect_count=value.suspect_count, path_name=value.path_name,
         empty_state_code=value.empty_state_code, actions=value.actions,
-        graph={"projection_version": value.graph["projection_version"], "nodes": [{"record_id": node.record_id, "record_type": node.record_type, "label": node.label, "safe_summary": node.safe_summary, "record_subtype": node.record_subtype, "source_system_id": node.source_system_id, "provenance_ref": node.provenance_ref} for node in value.graph["nodes"]], "edges": [{"relationship_id": edge.relationship_id, "source_record_id": edge.source_record_id, "target_record_id": edge.target_record_id, "relationship_family": edge.relationship_family, "relationship_type": edge.relationship_type, "directed": edge.directed, "provenance": edge.provenance, "player_safe_summary": edge.player_safe_summary, "event_time": edge.event_time} for edge in value.graph["edges"]], "node_count": value.graph["node_count"], "edge_count": value.graph["edge_count"]},
+        graph={"projection_version": value.graph["projection_version"], "nodes": [{"record_id": _graph_field(node, "record_id"), "record_type": _graph_field(node, "record_type"), "label": _graph_field(node, "label"), "safe_summary": _graph_field(node, "safe_summary"), "record_subtype": _graph_field(node, "record_subtype"), "source_system_id": _graph_field(node, "source_system_id"), "provenance_ref": _graph_field(node, "provenance_ref")} for node in value.graph["nodes"]], "edges": [{"relationship_id": _graph_field(edge, "relationship_id"), "source_record_id": _graph_field(edge, "source_record_id"), "target_record_id": _graph_field(edge, "target_record_id"), "relationship_family": _graph_field(edge, "relationship_family"), "relationship_type": _graph_field(edge, "relationship_type"), "directed": _graph_field(edge, "directed"), "provenance": _graph_field(edge, "provenance"), "player_safe_summary": _graph_field(edge, "player_safe_summary"), "event_time": _graph_field(edge, "event_time")} for edge in value.graph["edges"]], "node_count": value.graph["node_count"], "edge_count": value.graph["edge_count"], "partial": value.graph.get("partial", False), "omitted_node_count": value.graph.get("omitted_node_count", 0), "omitted_edge_count": value.graph.get("omitted_edge_count", 0), "relationship_filters": value.graph.get("relationship_filters", [])},
     )

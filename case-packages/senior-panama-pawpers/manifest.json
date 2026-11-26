@@ -1,0 +1,82 @@
+{
+  "schema_version": "fga13-case-package-v1",
+  "package_id": "senior-panama-pawpers",
+  "package_version": "1.0.0-fga13",
+  "case_id": "PANAMA_PAWPERS",
+  "case_version": "1.0.0-fga13",
+  "path_id": "SENIOR_DOG",
+  "title": "The Panama Pawpers",
+  "description": "A synthetic Senior case whose challenge is described by a tested difficulty profile, not by row count.",
+  "kind": "canonical",
+  "briefing": {
+    "opening_sequence_id": "PANAMA_PAWPERS_OPENING",
+    "closing_sequence_id": "PANAMA_PAWPERS_CLOSING"
+  },
+  "canonical": {
+    "root": "case-data/canonical/v1/S3_PANAMA_PAWPERS_canonical_case_data_v2",
+    "case_id": "PANAMA_PAWPERS",
+    "case_version": "1.0.0",
+    "snapshot_version": "2026.07.19.2",
+    "model_version": "1.0.0"
+  },
+  "objectives": [
+    "Inspect the published evidence and its provenance.",
+    "Compare competing explanations without treating similarity as guilt.",
+    "Submit a reproducible conclusion that leaves legitimate comparators visible."
+  ],
+  "supported_actions": [
+    "COMPARE_IDENTITIES",
+    "CREATE_HYPOTHESIS",
+    "RUN_GRAPH_ANALYSIS",
+    "SUBMIT"
+  ],
+  "economy": {
+    "version": "fga13-economy-v1",
+    "initial_credits": 54,
+    "costs": {
+      "COMPARE_IDENTITIES": 8,
+      "RUN_GRAPH_ANALYSIS": 7
+    }
+  },
+  "evidence_rules": {
+    "public_projection": "published",
+    "protected_truth": "truth",
+    "required_claims_path": "truth/claims.csv"
+  },
+  "scoring": {
+    "version": "fga13-scoring-v1",
+    "rules_path": "truth/scoring_rules.csv",
+    "ending_rules_path": "truth/ending_rules.csv",
+    "max_score": 1000
+  },
+  "assets": {
+    "cover": "fga/13-puppy-love-adult-problems/1.png",
+    "infographic": "fga/13-puppy-love-adult-problems/2.png"
+  },
+  "difficulty_profile": {
+    "profile_version": "fga13-difficulty-profile-v1",
+    "path_id": "SENIOR_DOG",
+    "ambiguity": 5,
+    "noise": 5,
+    "graph_depth": 5,
+    "evidence_quality": "FRAGMENTED",
+    "resource_pressure": 5,
+    "mixed_roles": true,
+    "legitimate_comparators": 4,
+    "session_minutes": 42,
+    "action_budget": 26,
+    "graph_node_limit": 300,
+    "hypothesis_target": 4,
+    "evidence_threshold": 8,
+    "progression_mode": "PACKAGE_SINGLE_PROFILE"
+  },
+  "compatibility": {
+    "engine_api": "fga13-engine-v1",
+    "canonical_model": "1.0.0",
+    "package_schema": "fga13-case-package-v1"
+  },
+  "publication": {
+    "state": "PUBLISHED",
+    "published_at": "2026-11-26"
+  }
+}

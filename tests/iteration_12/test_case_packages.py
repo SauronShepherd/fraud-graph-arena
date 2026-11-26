@@ -20,7 +20,8 @@ CLAIMS_T03 = [
 
 def test_published_packages_are_discovered_and_validated() -> None:
     results = validate_all_case_packages()
-    assert results == {"academy-001": [], "academy-t02": [], "academy-t03": []}
+    assert len(results) == 14
+    assert all(not errors for errors in results.values())
     registry = CasePackageRegistry()
     t03 = registry.require("ACADEMY_T03", "1.0.0-fga12")
     assert t03.is_published is True

@@ -117,6 +117,7 @@ class GraphEdgeResponse(ApiModel):
 
 class GraphResponse(ApiModel):
     projection_version: str
+    snapshot_version: str = ""
     nodes: list[GraphNodeResponse] = Field(max_length=300)
     edges: list[GraphEdgeResponse] = Field(max_length=700)
     node_count: int

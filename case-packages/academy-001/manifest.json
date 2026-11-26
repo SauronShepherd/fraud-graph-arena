@@ -1,5 +1,5 @@
 {
-  "schema_version": "fga12-case-package-v1",
+  "schema_version": "fga13-case-package-v1",
   "package_id": "academy-001",
   "package_version": "1.0.0",
   "case_id": "ACADEMY_001",
@@ -13,7 +13,9 @@
     "closing_sequence_id": "ACADEMY_001_CLOSING"
   },
   "canonical": null,
-  "objectives": ["Reach the empty board without exposing a real case."],
+  "objectives": [
+    "Reach the empty board without exposing a real case."
+  ],
   "supported_actions": [],
   "economy": {
     "version": "fga11-economy-v1",
@@ -32,13 +34,32 @@
     "max_score": 1000
   },
   "assets": {
-    "cover": "fga/12-case-me-if-you-can/1.png",
-    "infographic": "fga/12-case-me-if-you-can/2.png"
+    "cover": "fga/13-puppy-love-adult-problems/1.png",
+    "infographic": "fga/13-puppy-love-adult-problems/2.png"
   },
   "compatibility": {
-    "engine_api": "fga11-engine-v1",
+    "engine_api": "fga13-engine-v1",
     "canonical_model": "1.0.0",
-    "package_schema": "fga12-case-package-v1"
+    "package_schema": "fga13-case-package-v1"
   },
-  "publication": {"state": "PUBLISHED"}
+  "publication": {
+    "state": "PUBLISHED"
+  },
+  "difficulty_profile": {
+    "profile_version": "fga13-difficulty-profile-v1",
+    "path_id": "DETECTIVE_ACADEMY",
+    "ambiguity": 0,
+    "noise": 0,
+    "graph_depth": 1,
+    "evidence_quality": "GUIDED",
+    "resource_pressure": 0,
+    "mixed_roles": false,
+    "legitimate_comparators": 1,
+    "session_minutes": 10,
+    "action_budget": 5,
+    "graph_node_limit": 20,
+    "hypothesis_target": 0,
+    "evidence_threshold": 2,
+    "progression_mode": "PACKAGE_SINGLE_PROFILE"
+  }
 }

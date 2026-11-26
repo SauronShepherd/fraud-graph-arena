@@ -1,0 +1,82 @@
+{
+  "schema_version": "fga13-case-package-v1",
+  "package_id": "puppy-biscuit-relief",
+  "package_version": "1.1.0-fga13",
+  "case_id": "BISCUIT_RELIEF",
+  "case_version": "1.1.0-fga13",
+  "path_id": "PUPPY",
+  "title": "The Great Biscuit Relief Fund",
+  "description": "A synthetic Puppy case whose challenge is described by a tested difficulty profile, not by row count.",
+  "kind": "canonical",
+  "briefing": {
+    "opening_sequence_id": "BISCUIT_RELIEF_OPENING",
+    "closing_sequence_id": "BISCUIT_RELIEF_CLOSING"
+  },
+  "canonical": {
+    "root": "case-data/canonical/v1/P3_BISCUIT_RELIEF_canonical_case_data_v2",
+    "case_id": "BISCUIT_RELIEF",
+    "case_version": "1.1.0",
+    "snapshot_version": "2026.07.19.3",
+    "model_version": "1.0.0"
+  },
+  "objectives": [
+    "Inspect the published evidence and its provenance.",
+    "Compare competing explanations without treating similarity as guilt.",
+    "Submit a reproducible conclusion that leaves legitimate comparators visible."
+  ],
+  "supported_actions": [
+    "COMPARE_IDENTITIES",
+    "CREATE_HYPOTHESIS",
+    "RUN_GRAPH_ANALYSIS",
+    "SUBMIT"
+  ],
+  "economy": {
+    "version": "fga13-economy-v1",
+    "initial_credits": 110,
+    "costs": {
+      "COMPARE_IDENTITIES": 4,
+      "RUN_GRAPH_ANALYSIS": 3
+    }
+  },
+  "evidence_rules": {
+    "public_projection": "published",
+    "protected_truth": "truth",
+    "required_claims_path": "truth/claims.csv"
+  },
+  "scoring": {
+    "version": "fga13-scoring-v1",
+    "rules_path": "truth/scoring_rules.csv",
+    "ending_rules_path": "truth/ending_rules.csv",
+    "max_score": 1000
+  },
+  "assets": {
+    "cover": "fga/13-puppy-love-adult-problems/1.png",
+    "infographic": "fga/13-puppy-love-adult-problems/2.png"
+  },
+  "difficulty_profile": {
+    "profile_version": "fga13-difficulty-profile-v1",
+    "path_id": "PUPPY",
+    "ambiguity": 3,
+    "noise": 2,
+    "graph_depth": 3,
+    "evidence_quality": "MIXED",
+    "resource_pressure": 2,
+    "mixed_roles": true,
+    "legitimate_comparators": 2,
+    "session_minutes": 24,
+    "action_budget": 13,
+    "graph_node_limit": 140,
+    "hypothesis_target": 2,
+    "evidence_threshold": 4,
+    "progression_mode": "PACKAGE_SINGLE_PROFILE"
+  },
+  "compatibility": {
+    "engine_api": "fga13-engine-v1",
+    "canonical_model": "1.0.0",
+    "package_schema": "fga13-case-package-v1"
+  },
+  "publication": {
+    "state": "PUBLISHED",
+    "published_at": "2026-11-26"
+  }
+}
