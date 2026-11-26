@@ -61,6 +61,8 @@ A separate lower-capacity review was run after the first ten editorial and techn
 
 Those findings were treated as release blockers rather than stylistic suggestions. The schema, validator and adversarial fixture now require `approval_status: APPROVED`; `CaseResolutionPage` renders closure images, alt text, fallback, preload and transcript disclosure; `AudioManager` records `PLAYBACK_SUPPRESSED`; `AudioControls` exposes fallback/suppression status; opening and resolution pages subscribe to preference changes and apply the declared reduced-motion state; the article now describes the route as prepared in the branch rather than deployed; and the matrix names the exact API and browser evidence. A collection-only import error in the new Python tests was then corrected, and the complete focused regression returned green.
 
+The final reduced-motion browser assertion initially compared the browser's serialized `1e-06s` value with the source CSS's `0.001s` spelling. The CSS was working; the assertion was too literal. It now compares the numeric duration, the isolated narrative scenario passes, and the full browser suite passes again with all sixteen tests.
+
 ### 4. Local verification after correction
 
 The following results are from the FGA-15 worktree:

@@ -112,7 +112,15 @@ h2 { margin-top: .2rem; }
 @media (forced-colors: active) { *, *::before, *::after { forced-color-adjust: auto; } .button, .choice-card, .case-card, .typewriter-key, .case-paper, .graph-panel { border: 2px solid CanvasText; } .board-art, .lamp-glow, .desk-line { display: none; } }
 .screen-transition-overlay { position: fixed; inset: 0; z-index: 1000; background: #050505; pointer-events: none; animation: screen-fade-in 500ms ease-out; }
 @keyframes screen-fade-in { from { opacity: 0; } to { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .screen-transition-overlay { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .screen-transition-overlay { animation: none; }
+  [data-reduced-motion] *, [data-reduced-motion] *::before, [data-reduced-motion] *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 [data-reduced-sensory="true"] *, [data-reduced-sensory="true"] *::before, [data-reduced-sensory="true"] *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 .graph-panel--ready { display: grid; grid-template-rows: auto auto 1fr auto; place-items: stretch; gap: .55rem; padding: .8rem; }
 .graph-toolbar { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem; position: relative; z-index: 1; color: #d9b46c; }.graph-toolbar h2 { margin: 0; }.graph-toolbar span { font-size: .8rem; }
