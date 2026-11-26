@@ -6,7 +6,7 @@
 - Editorial source: `FGA_Development_Series_Outline_07-19.md`, Iteration I12, and the corresponding FGA-12 entry in `Fraud Graph Arena — Master Series Outline Updated.md`.
 - Code branch: `FGA-12`.
 - Code worktree: `C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga12-20261126`.
-- Article branch: `FGA-12`, commit `1338363835260675dee9f715d436db1ab5cbe0f8`.
+- Article branch: `FGA-12`, commit `56d71dd14d12562dd1c2fbb60c0591eb4f19e6d6`.
 - Asset branch: `FGA-12`, commit `103b4b6f29fcdb82c9f1646239d23c31c09e201a`.
 - Suggested series tag: `fga-i12-case-packages`.
 
