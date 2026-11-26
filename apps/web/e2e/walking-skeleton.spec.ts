@@ -4,7 +4,7 @@ test("Academy walking skeleton preserves comic and board context across refresh"
   await page.goto("/");
   await page.getByRole("link", { name: /choose your trench coat/i }).click();
 
-  await expect(page.getByRole("button", { name: /puppy/i })).toBeDisabled();
+  await expect(page.getByRole("button", { name: /puppy/i })).toBeEnabled();
   await page.getByRole("button", { name: /detective academy/i }).click();
   await page.getByRole("article").filter({ hasText: "ACADEMY_001" }).getByRole("button", { name: /open training case/i }).click();
 

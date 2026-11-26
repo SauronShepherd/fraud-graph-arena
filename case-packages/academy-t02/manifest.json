@@ -78,5 +78,203 @@
   "publication": {
     "state": "PUBLISHED",
     "published_at": "2026-11-26"
+  },
+  "narrative": {
+    "schema_version": "fga15-narrative-v1",
+    "fictionalization_statement": "All people, organisations, accounts and events in this playable package are synthetic; real mechanisms are discussed separately from gameplay.",
+    "opening": {
+      "sequence_id": "ACADEMY_T02_OPENING",
+      "skippable": true,
+      "preload_next": true,
+      "reduced_motion_behavior": "Keep the current panel visible and remove transition motion.",
+      "panels": [
+        {
+          "id": "ACADEMY_T02_P01_ASSIGNMENT_ACCEPTED",
+          "position": 1,
+          "title": "Assignment accepted",
+          "caption": "The Circular Collar entered the office. Hercule could inspect the evidence, or merely admire the folder.",
+          "transcript": "The Circular Collar entered the office. Hercule could inspect the evidence, or merely admire the folder.",
+          "asset_ref": "cover",
+          "alt_text": "A synthetic noir case illustration for ACADEMY_T02: assignment accepted.",
+          "audio_asset_id": null
+        }
+      ]
+    },
+    "closing": {
+      "sequence_id": "ACADEMY_T02_CLOSING",
+      "skippable": true,
+      "preload_next": true,
+      "reduced_motion_behavior": "Keep the current receipt visible and remove transition motion.",
+      "panels": [
+        {
+          "id": "ACADEMY_T02_P01_EXCELLENT_RECEIPT",
+          "position": 1,
+          "title": "Excellent receipt",
+          "caption": "The evidence held together, the supported conclusion stayed bounded and the closing file could be stamped without inventing a culprit.",
+          "transcript": "The evidence held together, the supported conclusion stayed bounded and the closing file could be stamped without inventing a culprit.",
+          "asset_ref": "infographic",
+          "alt_text": "A synthetic noir case illustration for ACADEMY_T02: excellent receipt.",
+          "audio_asset_id": null
+        }
+      ],
+      "variants": {
+        "EXCELLENT": {
+          "panels": [
+            {
+              "id": "ACADEMY_T02_P01_EXCELLENT_RECEIPT",
+              "position": 1,
+              "title": "Excellent receipt",
+              "caption": "The evidence held together, the supported conclusion stayed bounded and the closing file could be stamped without inventing a culprit.",
+              "transcript": "The evidence held together, the supported conclusion stayed bounded and the closing file could be stamped without inventing a culprit.",
+              "asset_ref": "infographic",
+              "alt_text": "A synthetic noir case illustration for ACADEMY_T02: excellent receipt.",
+              "audio_asset_id": null
+            }
+          ]
+        },
+        "PARTIAL": {
+          "panels": [
+            {
+              "id": "ACADEMY_T02_P01_PARTIAL_RECEIPT",
+              "position": 1,
+              "title": "Partial receipt",
+              "caption": "The investigation found a useful direction, but the file still carries an unresolved edge. A lead is not a license to overstate it.",
+              "transcript": "The investigation found a useful direction, but the file still carries an unresolved edge. A lead is not a license to overstate it.",
+              "asset_ref": "infographic",
+              "alt_text": "A synthetic noir case illustration for ACADEMY_T02: partial receipt.",
+              "audio_asset_id": null
+            }
+          ]
+        },
+        "FAILED": {
+          "panels": [
+            {
+              "id": "ACADEMY_T02_P01_FAILED_RECEIPT",
+              "position": 1,
+              "title": "Failed receipt",
+              "caption": "The board recorded a failed conclusion. The transcript remains available, the evidence remains safe and the next attempt can begin without rewriting the case.",
+              "transcript": "The board recorded a failed conclusion. The transcript remains available, the evidence remains safe and the next attempt can begin without rewriting the case.",
+              "asset_ref": "infographic",
+              "alt_text": "A synthetic noir case illustration for ACADEMY_T02: failed receipt.",
+              "audio_asset_id": null
+            }
+          ]
+        }
+      }
+    },
+    "audio": {
+      "enabled": false,
+      "radio": {
+        "enabled": false,
+        "asset_id": null,
+        "replayable": true,
+        "required": false,
+        "transcript": ""
+      },
+      "buses": {
+        "master": 1.0,
+        "music": 0.7,
+        "voice": 1.0,
+        "effects": 0.8
+      },
+      "assets": [
+        {
+          "id": "academy_t02-menu-loop",
+          "type": "MUSIC",
+          "purpose": "Main menu loop",
+          "file": null,
+          "source": "Optional audio slot documented in FGA-15; no binary shipped in this release.",
+          "tool_or_performer": "None; intentionally disabled",
+          "prompt_or_script": "Reserved, non-authoritative main menu loop slot for ACADEMY_T02.",
+          "license": "NOT_SHIPPED",
+          "duration_ms": 0,
+          "loudness_target_lufs": -18,
+          "transcript": "",
+          "subtitle_file": null,
+          "loop_points": {
+            "start_ms": 0,
+            "end_ms": 0
+          },
+          "version": "fga15-audio-v1",
+          "approval_status": "DEFERRED_OPTIONAL",
+          "enabled": false,
+          "priority": 1,
+          "max_concurrency": 1,
+          "fallback_behavior": "VISUAL_ONLY"
+        },
+        {
+          "id": "academy_t02-case-voice",
+          "type": "VOICE",
+          "purpose": "Case acceptance voice",
+          "file": null,
+          "source": "Optional audio slot documented in FGA-15; no binary shipped in this release.",
+          "tool_or_performer": "None; intentionally disabled",
+          "prompt_or_script": "Reserved, non-authoritative case acceptance voice slot for ACADEMY_T02.",
+          "license": "NOT_SHIPPED",
+          "duration_ms": 0,
+          "loudness_target_lufs": -18,
+          "transcript": "",
+          "subtitle_file": null,
+          "loop_points": {
+            "start_ms": 0,
+            "end_ms": 0
+          },
+          "version": "fga15-audio-v1",
+          "approval_status": "DEFERRED_OPTIONAL",
+          "enabled": false,
+          "priority": 2,
+          "max_concurrency": 1,
+          "fallback_behavior": "TEXT_ONLY"
+        },
+        {
+          "id": "academy_t02-panel-transition",
+          "type": "EFFECT",
+          "purpose": "Panel transition",
+          "file": null,
+          "source": "Optional audio slot documented in FGA-15; no binary shipped in this release.",
+          "tool_or_performer": "None; intentionally disabled",
+          "prompt_or_script": "Reserved, non-authoritative panel transition slot for ACADEMY_T02.",
+          "license": "NOT_SHIPPED",
+          "duration_ms": 0,
+          "loudness_target_lufs": -18,
+          "transcript": "",
+          "subtitle_file": null,
+          "loop_points": {
+            "start_ms": 0,
+            "end_ms": 0
+          },
+          "version": "fga15-audio-v1",
+          "approval_status": "DEFERRED_OPTIONAL",
+          "enabled": false,
+          "priority": 3,
+          "max_concurrency": 2,
+          "fallback_behavior": "VISUAL_ONLY"
+        },
+        {
+          "id": "academy_t02-verdict-cue",
+          "type": "EFFECT",
+          "purpose": "Verdict cue",
+          "file": null,
+          "source": "Optional audio slot documented in FGA-15; no binary shipped in this release.",
+          "tool_or_performer": "None; intentionally disabled",
+          "prompt_or_script": "Reserved, non-authoritative verdict cue slot for ACADEMY_T02.",
+          "license": "NOT_SHIPPED",
+          "duration_ms": 0,
+          "loudness_target_lufs": -18,
+          "transcript": "",
+          "subtitle_file": null,
+          "loop_points": {
+            "start_ms": 0,
+            "end_ms": 0
+          },
+          "version": "fga15-audio-v1",
+          "approval_status": "DEFERRED_OPTIONAL",
+          "enabled": false,
+          "priority": 4,
+          "max_concurrency": 1,
+          "fallback_behavior": "VISUAL_ONLY"
+        }
+      ]
+    }
   }
 }

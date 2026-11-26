@@ -70,6 +70,9 @@ class ComicPageResponse(ApiModel):
     narration: str
     image_url: str
     alt_text: str
+    caption: str
+    transcript: str
+    audio_asset_id: str | None = None
 
 
 class ComicSequenceResponse(ApiModel):
@@ -79,6 +82,11 @@ class ComicSequenceResponse(ApiModel):
     kind: ComicKind
     skippable: bool
     pages: list[ComicPageResponse]
+    variants: dict[str, list[ComicPageResponse]] = Field(default_factory=dict)
+    fictionalization_statement: str = ""
+    reduced_motion_behavior: str = "Keep the current panel visible and remove transition motion."
+    preload_next: bool = True
+    audio_asset_ids: list[str] = Field(default_factory=list)
 
 
 class OpeningResponse(ApiModel):

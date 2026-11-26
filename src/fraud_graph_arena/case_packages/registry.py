@@ -36,6 +36,7 @@ def _package_from_manifest(package_dir: Path) -> CasePackage:
         difficulty_profile=DifficultyProfile.from_mapping(raw["difficulty_profile"]),
         compatibility=dict(raw["compatibility"]),
         publication=dict(raw["publication"]),
+        narrative=dict(raw.get("narrative", {})),
     )
 
 

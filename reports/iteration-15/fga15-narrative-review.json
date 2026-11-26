@@ -1,0 +1,220 @@
+{
+  "status": "pass",
+  "iteration": "FGA15",
+  "review_version": "fga15-narrative-review-v1",
+  "run_at_utc": "2026-11-26T18:58:29.529787+00:00",
+  "package_count": 14,
+  "fixture_errors": [],
+  "packages": [
+    {
+      "package_id": "academy-001",
+      "case_id": "ACADEMY_001",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "academy-t01",
+      "case_id": "ACADEMY_T01",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "academy-t02",
+      "case_id": "ACADEMY_T02",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "academy-t03",
+      "case_id": "ACADEMY_T03",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "adult-bone-ledger",
+      "case_id": "BONE_LEDGER",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "adult-downline",
+      "case_id": "DOWNLINE",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "adult-golden-hydrant",
+      "case_id": "GOLDEN_HYDRANT",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "adult-phantom-vet",
+      "case_id": "PHANTOM_VET",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "puppy-biscuit-relief",
+      "case_id": "BISCUIT_RELIEF",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "puppy-ceo-barked-twice",
+      "case_id": "CEO_BARKED_TWICE",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "puppy-maddog",
+      "case_id": "MADDOG",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "senior-crypto-kennel-long-con",
+      "case_id": "CRYPTO_KENNEL_LONG_CON",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "senior-love-leashes-offshore",
+      "case_id": "LOVE_LEASHES_OFFSHORE",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    },
+    {
+      "package_id": "senior-panama-pawpers",
+      "case_id": "PANAMA_PAWPERS",
+      "status": "PASS",
+      "checks": {
+        "manifest_valid": true,
+        "opening_transcripts": true,
+        "opening_alt_text": true,
+        "closure_variants": true,
+        "closure_variants_are_distinct": true,
+        "fictionalization_boundary": true,
+        "optional_audio_is_safe": true
+      },
+      "manifest_errors": []
+    }
+  ]
+}

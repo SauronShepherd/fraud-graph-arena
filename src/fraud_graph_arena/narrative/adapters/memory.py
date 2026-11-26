@@ -1,128 +1,116 @@
 from __future__ import annotations
 
-from fraud_graph_arena.case_packages import CasePackageRegistry
+from typing import Any
+
+from fraud_graph_arena.case_packages import CasePackage, CasePackageRegistry
 from fraud_graph_arena.narrative.domain import ComicKind, ComicPage, ComicSequence
 
 
-class InMemoryNarrativeRepository:
-    """Spoiler-free Academy narrative fixtures for the walking skeleton.
+def _page(package: CasePackage, raw: dict[str, Any]) -> ComicPage:
+    asset_ref = str(raw["asset_ref"])
+    asset_path = package.assets.get(asset_ref)
+    if not asset_path:
+        raise ValueError(f"{package.case_id} narrative asset reference is not declared: {asset_ref}")
+    caption = str(raw["caption"])
+    return ComicPage(
+        id=str(raw["id"]),
+        position=int(raw["position"]),
+        title=str(raw["title"]),
+        narration=caption,
+        image_url=f"/assets/{asset_path}",
+        alt_text=str(raw["alt_text"]),
+        caption=caption,
+        transcript=str(raw["transcript"]),
+        audio_asset_id=raw.get("audio_asset_id"),
+    )
 
-    Both opening and closing sequences are registered now so case-package completeness
-    is enforced before the evaluator and ending flow exist. Only the opening sequence
-    is player-reachable in Iteration 01.
-    """
+
+def _pages(package: CasePackage, scope: dict[str, Any]) -> tuple[ComicPage, ...]:
+    return tuple(_page(package, item) for item in scope["panels"])
+
+
+def _from_manifest(package: CasePackage) -> tuple[ComicSequence, ComicSequence]:
+    manifest = package.narrative
+    opening = manifest["opening"]
+    closing = manifest["closing"]
+    audio_ids = tuple(str(item["id"]) for item in manifest["audio"]["assets"] if item.get("enabled"))
+    opening_sequence = ComicSequence(
+        id=str(opening["sequence_id"]),
+        case_id=package.case_id,
+        case_version=package.case_version,
+        kind=ComicKind.OPENING,
+        skippable=bool(opening["skippable"]),
+        pages=_pages(package, opening),
+        fictionalization_statement=str(manifest["fictionalization_statement"]),
+        reduced_motion_behavior=str(opening["reduced_motion_behavior"]),
+        preload_next=bool(opening["preload_next"]),
+        audio_asset_ids=audio_ids,
+    )
+    variants = {str(name).upper(): _pages(package, scope) for name, scope in closing["variants"].items()}
+    closing_sequence = ComicSequence(
+        id=str(closing["sequence_id"]),
+        case_id=package.case_id,
+        case_version=package.case_version,
+        kind=ComicKind.CLOSING,
+        skippable=bool(closing["skippable"]),
+        pages=_pages(package, closing),
+        variants=variants,
+        fictionalization_statement=str(manifest["fictionalization_statement"]),
+        reduced_motion_behavior=str(closing["reduced_motion_behavior"]),
+        preload_next=bool(closing["preload_next"]),
+        audio_asset_ids=audio_ids,
+    )
+    return opening_sequence, closing_sequence
+
+
+def _fallback(package: CasePackage) -> tuple[ComicSequence, ComicSequence]:
+    """Keep older local packages playable while they migrate to FGA-15 metadata."""
+
+    opening = ComicSequence(
+        id=package.briefing["opening_sequence_id"],
+        case_id=package.case_id,
+        case_version=package.case_version,
+        kind=ComicKind.OPENING,
+        skippable=True,
+        pages=(ComicPage(
+            id=f"{package.case_id}_OPENING_01",
+            position=1,
+            title=package.title,
+            narration=package.description,
+            image_url=f"/assets/{package.assets['cover']}",
+            alt_text=f"Opening case-package illustration for {package.title}.",
+        ),),
+    )
+    closing = ComicSequence(
+        id=package.briefing["closing_sequence_id"],
+        case_id=package.case_id,
+        case_version=package.case_version,
+        kind=ComicKind.CLOSING,
+        skippable=True,
+        pages=(ComicPage(
+            id=f"{package.case_id}_CLOSING_01",
+            position=1,
+            title="Case Receipt",
+            narration="The package records the published evidence, the player decision and the versioned result.",
+            image_url=f"/assets/{package.assets['infographic']}",
+            alt_text=f"Closing case-package illustration for {package.title}.",
+        ),),
+    )
+    return opening, closing
+
+
+class InMemoryNarrativeRepository:
+    """Load spoiler-safe narrative sequences from declarative case packages."""
 
     def __init__(self, package_registry: CasePackageRegistry | None = None) -> None:
-        self._sequences = (
-            ComicSequence(id="ACADEMY_T02_OPENING", case_id="ACADEMY_T02", case_version="1.0.0-fga06", kind=ComicKind.OPENING, skippable=True, pages=(ComicPage(id="ACADEMY_T02_OPENING_01", position=1, title="The Circular Collar", narration="The Academy opens a safe graph lesson: records are evidence, not verdicts.", image_url="/assets/academy-intro-01.svg", alt_text="A detective examining a board of connected records."),)),
-            ComicSequence(id="ACADEMY_T02_CLOSING", case_id="ACADEMY_T02", case_version="1.0.0-fga06", kind=ComicKind.CLOSING, skippable=True, pages=(ComicPage(id="ACADEMY_T02_CLOSING_01", position=1, title="Lesson Complete", narration="The graph remains a projection of published evidence. Further investigation belongs to a later lesson.", image_url="/assets/academy-closing-01.svg", alt_text="A closed Academy graph lesson file."),)),
-            ComicSequence(
-                id="ACADEMY_001_OPENING",
-                case_id="ACADEMY_001",
-                case_version="1.0.0-i01",
-                kind=ComicKind.OPENING,
-                skippable=True,
-                pages=(
-                    ComicPage(
-                        id="ACADEMY_001_OPENING_01",
-                        position=1,
-                        title="The Academy Door",
-                        narration=(
-                            "Hercule Perrot reports for training. The ranked case files remain "
-                            "sealed upstairs, where spoilers cannot develop bad habits."
-                        ),
-                        image_url="/assets/academy-intro-01.svg",
-                        alt_text=(
-                            "Hercule Perrot, a curly Spanish Water Dog detective, standing outside "
-                            "the Detective Academy beneath a rain-darkened lamp."
-                        ),
-                    ),
-                    ComicPage(
-                        id="ACADEMY_001_OPENING_02",
-                        position=2,
-                        title="A Board with Nothing to Hide",
-                        narration=(
-                            "Inside waits an empty evidence board. The first lesson is not to solve "
-                            "a fraud, but to prove the whole journey reaches the correct room."
-                        ),
-                        image_url="/assets/academy-intro-02.svg",
-                        alt_text=(
-                            "Hercule facing an almost empty evidence board marked Academy 001, with "
-                            "one folder and no real-case clues."
-                        ),
-                    ),
-                ),
-            ),
-            ComicSequence(
-                id="ACADEMY_001_CLOSING",
-                case_id="ACADEMY_001",
-                case_version="1.0.0-i01",
-                kind=ComicKind.CLOSING,
-                skippable=True,
-                pages=(
-                    ComicPage(
-                        id="ACADEMY_001_CLOSING_01",
-                        position=1,
-                        title="Lesson Reserved",
-                        narration=(
-                            "The Academy conclusion is registered with the case package, but its "
-                            "runtime door remains closed until submission and evaluation exist."
-                        ),
-                        image_url="/assets/academy-closing-01.svg",
-                        alt_text=(
-                            "A closed Academy case file stamped Conclusion Reserved for a later "
-                            "iteration."
-                        ),
-                    ),
-                ),
-            ),
-        )
         registry = package_registry or CasePackageRegistry()
-        known = {(item.case_id, item.case_version) for item in self._sequences}
-        generated: list[ComicSequence] = []
-        for package in registry.published():
-            key = (package.case_id, package.case_version)
-            if key in known:
-                continue
-            generated.extend(
-                (
-                    ComicSequence(
-                        id=package.briefing["opening_sequence_id"],
-                        case_id=package.case_id,
-                        case_version=package.case_version,
-                        kind=ComicKind.OPENING,
-                        skippable=True,
-                        pages=(
-                            ComicPage(
-                                id=f"{package.case_id}_OPENING_01",
-                                position=1,
-                                title=package.title,
-                                narration=package.description,
-                                image_url=f"/assets/{package.assets['cover']}",
-                                alt_text=f"Opening case-package illustration for {package.title}.",
-                            ),
-                        ),
-                    ),
-                    ComicSequence(
-                        id=package.briefing["closing_sequence_id"],
-                        case_id=package.case_id,
-                        case_version=package.case_version,
-                        kind=ComicKind.CLOSING,
-                        skippable=True,
-                        pages=(
-                            ComicPage(
-                                id=f"{package.case_id}_CLOSING_01",
-                                position=1,
-                                title="Case Receipt",
-                                narration="The package records the published evidence, the player decision and the versioned result. The case can be replayed without changing its source files.",
-                                image_url=f"/assets/{package.assets['infographic']}",
-                                alt_text=f"Closing case-package illustration for {package.title}.",
-                            ),
-                        ),
-                    ),
-                )
-            )
-        self._sequences += tuple(generated)
+        sequences: list[ComicSequence] = []
+        for package in registry.all():
+            if package.narrative:
+                sequences.extend(_from_manifest(package))
+            else:
+                sequences.extend(_fallback(package))
+        self._sequences = tuple(sequences)
 
     def get_sequence(
         self,

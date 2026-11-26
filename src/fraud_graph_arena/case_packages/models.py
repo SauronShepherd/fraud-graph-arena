@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -37,6 +37,7 @@ class CasePackage:
     difficulty_profile: DifficultyProfile
     compatibility: dict[str, str]
     publication: dict[str, Any]
+    narrative: dict[str, Any] = field(default_factory=dict)
 
     @property
     def initial_credits(self) -> int:

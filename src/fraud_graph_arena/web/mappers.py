@@ -76,6 +76,9 @@ def map_comic_page(value: ComicPage) -> ComicPageResponse:
         narration=value.narration,
         image_url=value.image_url,
         alt_text=value.alt_text,
+        caption=value.accessible_caption,
+        transcript=value.accessible_transcript,
+        audio_asset_id=value.audio_asset_id,
     )
 
 
@@ -87,6 +90,11 @@ def map_comic_sequence(value: ComicSequence) -> ComicSequenceResponse:
         kind=value.kind,
         skippable=value.skippable,
         pages=[map_comic_page(item) for item in value.pages],
+        variants={name: [map_comic_page(item) for item in pages] for name, pages in value.variants.items()},
+        fictionalization_statement=value.fictionalization_statement,
+        reduced_motion_behavior=value.reduced_motion_behavior,
+        preload_next=value.preload_next,
+        audio_asset_ids=list(value.audio_asset_ids),
     )
 
 

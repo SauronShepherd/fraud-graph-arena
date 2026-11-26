@@ -6,6 +6,7 @@ import { rememberRound } from "../state/session";
 import { apiProblem, useScreenData } from "../screen-system/useScreenData";
 import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
 import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
+import { AudioControls, useAudioManager } from "../narrative/AudioControls";
 
 export function OpeningComicPage() {
   const { context: routeContext } = useScreenLocation();
@@ -15,6 +16,7 @@ export function OpeningComicPage() {
   const [finishing, setFinishing] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
   const { dispatchAction, transitionLocked } = useScreenRuntime();
+  const audioManager = useAudioManager();
   const pageNumber = Number(routeContext.page ?? 1);
 
   useEffect(() => { if (opening) rememberRound(opening.round.id); }, [opening]);
@@ -28,6 +30,14 @@ export function OpeningComicPage() {
   useEffect(() => {
     setImageFailed(false);
   }, [currentIndex]);
+
+  useEffect(() => {
+    if (!opening?.sequence.preload_next) return;
+    const next = opening.sequence.pages[currentIndex + 1];
+    if (!next) return;
+    const image = new Image();
+    image.src = next.image_url;
+  }, [currentIndex, opening]);
 
   async function finish(completion: "FINISHED" | "SKIPPED" = "FINISHED") {
     setFinishing(true);
@@ -49,7 +59,7 @@ export function OpeningComicPage() {
   const isLast = currentIndex === opening.sequence.pages.length - 1;
 
   return (
-    <main className="panel comic-shell">
+    <main className="panel comic-shell" data-reduced-sensory={audioManager.snapshot().reducedSensory}>
       <p className="eyebrow">Step 3 of 4 · Opening comic</p>
       <h1>{opening.case.name}</h1>
       <p className="comic-progress" aria-live="polite">
@@ -63,13 +73,17 @@ export function OpeningComicPage() {
               <p>Illustration unavailable. The transcript remains evidence.</p>
             </div>
           ) : (
-            <img src={page.image_url} alt={page.alt_text} onError={() => setImageFailed(true)} />
+            <img src={page.image_url} alt={page.alt_text} onError={() => { setImageFailed(true); audioManager.record("MISSING_ASSET", page.id); audioManager.record("FALLBACK_ACTIVATED", page.id); }} />
           )}
         </div>
         <div className="comic-caption">
           <p className="eyebrow">{page.id}</p>
           <h2 id="comic-page-title">{page.title}</h2>
-          <p>{page.narration}</p>
+          <p className="comic-caption-text">{page.caption || page.narration}</p>
+          <details onToggle={() => audioManager.record("TRANSCRIPT_OPEN")}>
+            <summary>Open transcript</summary>
+            <p className="comic-transcript">{page.transcript || page.narration}</p>
+          </details>
         </div>
       </article>
       <div className="actions comic-actions">
@@ -99,6 +113,8 @@ export function OpeningComicPage() {
           </button>
         ) : null}
       </div>
+      <p className="comic-fictionalization">{opening.sequence.fictionalization_statement}</p>
+      <AudioControls manager={audioManager} />
     </main>
   );
 }

@@ -12,6 +12,7 @@ import csv
 import json
 from pathlib import Path
 
+from generate_fga15_narrative_manifests import narrative as fga15_narrative
 
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL_ROOT = ROOT / "case-data/canonical/v1"
@@ -104,7 +105,7 @@ def _manifest(case_id: str, root: Path, case: dict[str, str], profile: dict[str,
         "ACADEMY_T03": "An advanced Academy file where chronology, unavailable evidence and uncertainty matter more than a loud accusation.",
     }
     description = descriptions.get(case_id, f"A synthetic {path_code.title()} case whose challenge is described by a tested difficulty profile, not by row count.")
-    return {
+    manifest = {
         "schema_version": "fga13-case-package-v1",
         "package_id": PACKAGE_IDS[case_id],
         "package_version": package_version,
@@ -130,6 +131,8 @@ def _manifest(case_id: str, root: Path, case: dict[str, str], profile: dict[str,
         "compatibility": {"engine_api": "fga13-engine-v1", "canonical_model": "1.0.0", "package_schema": "fga13-case-package-v1"},
         "publication": {"state": "PUBLISHED", "published_at": "2026-11-26"},
     }
+    manifest["narrative"] = fga15_narrative(manifest)
+    return manifest
 
 
 def build(*, write: bool) -> dict[str, object]:
@@ -142,6 +145,7 @@ def build(*, write: bool) -> dict[str, object]:
     empty_path = package_root / "academy-001" / "manifest.json"
     empty = json.loads(empty_path.read_text(encoding="utf-8"))
     empty.update({"schema_version": "fga13-case-package-v1", "assets": {"cover": f"{ASSET_PREFIX}/1.png", "infographic": f"{ASSET_PREFIX}/2.png"}, "difficulty_profile": _profile("ACADEMY_T01", "DETECTIVE_ACADEMY"), "compatibility": {"engine_api": "fga13-engine-v1", "canonical_model": "1.0.0", "package_schema": "fga13-case-package-v1"}})
+    empty["narrative"] = fga15_narrative(empty)
     manifests = {"academy-001": empty}
     for case_id, (root, case, profile, canonical) in cases.items():
         manifests[PACKAGE_IDS[case_id]] = _manifest(case_id, root, case, profile, canonical)

@@ -1,0 +1,9 @@
+{
+  "schema_version": "fga15-narrative-adversarial-v1",
+  "cases": [
+    {"id": "undeclared-asset", "rule": "asset_ref", "expected": "reject"},
+    {"id": "enabled-audio-without-file", "rule": "audio.file", "expected": "reject"},
+    {"id": "missing-transcript", "rule": "panel.transcript", "expected": "reject"},
+    {"id": "missing-closure-variant", "rule": "closing.variants", "expected": "reject"}
+  ]
+}

@@ -109,6 +109,7 @@
         "infographic": {"type": "string", "minLength": 1}
       }
     },
+    "narrative": {"type": "object"},
     "difficulty_profile": {
       "type": "object",
       "additionalProperties": false,

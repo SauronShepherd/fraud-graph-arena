@@ -129,6 +129,21 @@
             "title": "Alt Text",
             "type": "string"
           },
+          "audio_asset_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audio Asset Id"
+          },
+          "caption": {
+            "title": "Caption",
+            "type": "string"
+          },
           "id": {
             "title": "Id",
             "type": "string"
@@ -148,6 +163,10 @@
           "title": {
             "title": "Title",
             "type": "string"
+          },
+          "transcript": {
+            "title": "Transcript",
+            "type": "string"
           }
         },
         "required": [
@@ -156,7 +175,9 @@
           "title",
           "narration",
           "image_url",
-          "alt_text"
+          "alt_text",
+          "caption",
+          "transcript"
         ],
         "title": "ComicPageResponse",
         "type": "object"
@@ -164,12 +185,24 @@
       "ComicSequenceResponse": {
         "additionalProperties": false,
         "properties": {
+          "audio_asset_ids": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Audio Asset Ids",
+            "type": "array"
+          },
           "case_id": {
             "title": "Case Id",
             "type": "string"
           },
           "case_version": {
             "title": "Case Version",
+            "type": "string"
+          },
+          "fictionalization_statement": {
+            "default": "",
+            "title": "Fictionalization Statement",
             "type": "string"
           },
           "id": {
@@ -186,9 +219,29 @@
             "title": "Pages",
             "type": "array"
           },
+          "preload_next": {
+            "default": true,
+            "title": "Preload Next",
+            "type": "boolean"
+          },
+          "reduced_motion_behavior": {
+            "default": "Keep the current panel visible and remove transition motion.",
+            "title": "Reduced Motion Behavior",
+            "type": "string"
+          },
           "skippable": {
             "title": "Skippable",
             "type": "boolean"
+          },
+          "variants": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/ComicPageResponse"
+              },
+              "type": "array"
+            },
+            "title": "Variants",
+            "type": "object"
           }
         },
         "required": [

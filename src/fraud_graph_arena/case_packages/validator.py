@@ -9,6 +9,7 @@ from jsonschema import Draft202012Validator
 from fraud_graph_arena.case_data.validator import validate_package as validate_canonical_package
 from fraud_graph_arena.difficulty import DifficultyProfile, validate_profile
 from fraud_graph_arena.paths import project_root
+from fraud_graph_arena.narrative.manifest import validate_narrative_manifest
 
 from .models import PACKAGE_SCHEMA_VERSION
 
@@ -68,6 +69,14 @@ def validate_case_package(package_dir: Path) -> list[dict[str, str]]:
         errors.append(_error("PACKAGE.EMPTY.CANONICAL", "manifest.json", "An empty package must not reference canonical data."))
     if manifest["publication"]["state"] == "PUBLISHED" and "SUBMIT" not in manifest["supported_actions"] and manifest["kind"] == "canonical":
         errors.append(_error("PACKAGE.PUBLISH.SUBMISSION", "manifest.json", "A published playable package must expose SUBMIT."))
+    narrative = manifest.get("narrative")
+    if narrative is None and manifest["publication"]["state"] == "PUBLISHED":
+        errors.append(_error("PACKAGE.NARRATIVE.MISSING", "narrative", "Published packages require the FGA-15 narrative manifest."))
+    elif narrative is not None:
+        errors.extend(
+            _error("PACKAGE.NARRATIVE.CONTRACT", "narrative", message)
+            for message in validate_narrative_manifest(narrative, package_assets=manifest["assets"])
+        )
     costs = manifest["economy"]["costs"]
     for action in costs:
         if action not in manifest["supported_actions"]:

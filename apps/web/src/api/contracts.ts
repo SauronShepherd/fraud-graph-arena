@@ -50,6 +50,9 @@ export interface ComicPage {
   narration: string;
   image_url: string;
   alt_text: string;
+  caption: string;
+  transcript: string;
+  audio_asset_id: string | null;
 }
 
 export interface ComicSequence {
@@ -59,6 +62,11 @@ export interface ComicSequence {
   kind: "OPENING" | "CLOSING";
   skippable: boolean;
   pages: ComicPage[];
+  variants: Record<string, ComicPage[]>;
+  fictionalization_statement: string;
+  reduced_motion_behavior: string;
+  preload_next: boolean;
+  audio_asset_ids: string[];
 }
 
 export interface Opening {

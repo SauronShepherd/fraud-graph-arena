@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://angelic-articles.com/fga/schemas/fga15-narrative.schema.json",
+  "title": "Fraud Graph Arena narrative experience manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "fictionalization_statement", "opening", "closing", "audio"],
+  "properties": {
+    "schema_version": {"const": "fga15-narrative-v1"},
+    "fictionalization_statement": {"type": "string", "minLength": 20, "maxLength": 500},
+    "opening": {"$ref": "#/$defs/sequence"},
+    "closing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence_id", "skippable", "preload_next", "reduced_motion_behavior", "panels", "variants"],
+      "properties": {
+        "sequence_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "skippable": {"type": "boolean"},
+        "preload_next": {"type": "boolean"},
+        "reduced_motion_behavior": {"type": "string", "minLength": 1, "maxLength": 300},
+        "panels": {"type": "array", "items": {"$ref": "#/$defs/panel"}, "minItems": 1},
+        "variants": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["EXCELLENT", "PARTIAL", "FAILED"],
+          "properties": {
+            "EXCELLENT": {"$ref": "#/$defs/panel_set"},
+            "PARTIAL": {"$ref": "#/$defs/panel_set"},
+            "FAILED": {"$ref": "#/$defs/panel_set"}
+          }
+        }
+      }
+    },
+    "audio": {"$ref": "#/$defs/audio"}
+  },
+  "$defs": {
+    "panel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "position", "title", "caption", "transcript", "asset_ref", "alt_text"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z0-9][A-Z0-9_-]{2,127}$"},
+        "position": {"type": "integer", "minimum": 1},
+        "title": {"type": "string", "minLength": 1, "maxLength": 160},
+        "caption": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "transcript": {"type": "string", "minLength": 1, "maxLength": 3000},
+        "asset_ref": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{1,63}$"},
+        "alt_text": {"type": "string", "minLength": 10, "maxLength": 500},
+        "audio_asset_id": {"type": ["string", "null"], "maxLength": 128}
+      }
+    },
+    "panel_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["panels"],
+      "properties": {"panels": {"type": "array", "items": {"$ref": "#/$defs/panel"}, "minItems": 1}}
+    },
+    "sequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence_id", "skippable", "preload_next", "reduced_motion_behavior", "panels"],
+      "properties": {
+        "sequence_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "skippable": {"type": "boolean"},
+        "preload_next": {"type": "boolean"},
+        "reduced_motion_behavior": {"type": "string", "minLength": 1, "maxLength": 300},
+        "panels": {"type": "array", "items": {"$ref": "#/$defs/panel"}, "minItems": 1}
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "radio", "buses", "assets"],
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "radio": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["enabled", "asset_id", "replayable", "required", "transcript"],
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "asset_id": {"type": ["string", "null"]},
+            "replayable": {"type": "boolean"},
+            "required": {"const": false},
+            "transcript": {"type": "string", "maxLength": 3000}
+          }
+        },
+        "buses": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["master", "music", "voice", "effects"],
+          "properties": {
+            "master": {"type": "number", "minimum": 0, "maximum": 1},
+            "music": {"type": "number", "minimum": 0, "maximum": 1},
+            "voice": {"type": "number", "minimum": 0, "maximum": 1},
+            "effects": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "assets": {"type": "array", "items": {"$ref": "#/$defs/audio_asset"}}
+      }
+    },
+    "audio_asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "purpose", "file", "source", "tool_or_performer", "prompt_or_script", "license", "duration_ms", "loudness_target_lufs", "transcript", "subtitle_file", "loop_points", "version", "approval_status", "enabled", "priority", "max_concurrency", "fallback_behavior"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{2,127}$"},
+        "type": {"enum": ["RADIO", "MUSIC", "VOICE", "EFFECT"]},
+        "purpose": {"type": "string", "minLength": 1, "maxLength": 160},
+        "file": {"type": ["string", "null"]},
+        "source": {"type": "string", "minLength": 1, "maxLength": 300},
+        "tool_or_performer": {"type": "string", "minLength": 1, "maxLength": 300},
+        "prompt_or_script": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "license": {"type": "string", "minLength": 1, "maxLength": 160},
+        "duration_ms": {"type": "integer", "minimum": 0},
+        "loudness_target_lufs": {"type": "number", "minimum": -60, "maximum": 0},
+        "transcript": {"type": "string", "maxLength": 3000},
+        "subtitle_file": {"type": ["string", "null"]},
+        "loop_points": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start_ms", "end_ms"],
+          "properties": {"start_ms": {"type": "integer", "minimum": 0}, "end_ms": {"type": "integer", "minimum": 0}}
+        },
+        "version": {"type": "string", "minLength": 1, "maxLength": 64},
+        "approval_status": {"enum": ["APPROVED", "DEFERRED_OPTIONAL", "REJECTED"]},
+        "enabled": {"type": "boolean"},
+        "priority": {"type": "integer", "minimum": 0, "maximum": 10},
+        "max_concurrency": {"type": "integer", "minimum": 1, "maximum": 8},
+        "fallback_behavior": {"enum": ["TEXT_ONLY", "VISUAL_ONLY", "SILENT"]}
+      }
+    }
+  }
+}

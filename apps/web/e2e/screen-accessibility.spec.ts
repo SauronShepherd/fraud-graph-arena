@@ -9,5 +9,5 @@ test("production entry and catalogue screens remain keyboard and axe accessible"
   await page.keyboard.press("Enter");
   await expect(page.getByRole("heading", { name: /choose your trench coat/i })).toBeVisible();
   await expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
-  await expect(page.getByRole("button", { name: /puppy/i })).toBeDisabled();
+  await expect(page.getByRole("button", { name: /puppy/i })).toBeEnabled();
 });
