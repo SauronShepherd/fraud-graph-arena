@@ -55,6 +55,10 @@ The first happy-path tests did not exercise the final unaffordable action. A tes
 
 The first content validation failed with `ERR_MODULE_NOT_FOUND` for `yaml`. `npm ci --no-audit --no-fund` installed the lockfile. npm reported two install scripts not yet covered by its allowlist (`esbuild` and `workerd`); this is recorded as an environment/setup warning, not as an application-test warning. Content validation and link checks then passed.
 
+### The audit harness had two command typos
+
+Two ad-hoc PowerShell audit commands initially failed to parse while comparing section tails and release booleans. They were corrected with explicit line parsing and a small `HasText` helper. Neither command touched a repository file or changed a test result; the corrected checks passed.
+
 ## Test ledger
 
 | Check | Result |
@@ -74,6 +78,8 @@ The first content validation failed with `ERR_MODULE_NOT_FOUND` for `yaml`. `npm
 ## Editorial passes
 
 The final review is recorded as ten passes after the last article edit. Each pass re-checked the full article against the FGA-10 structure and the implementation matrix: (1) opening length and hook, (2) noir voice and contractions, (3) section/subsection notation, (4) separator placement, (5) economy claims against code, (6) scoring claims against evaluator/tests, (7) Databricks wording against the live report, (8) code snippets and backtick discipline, (9) previous-series references and reading-time budget, and (10) final publication receipt, image captions and route metadata. No pass introduced a new code or prose change after the receipt was assembled.
+
+The observed closure values were: 9 parts, 13 level-two sections, 89-word opening, 3,914-word body, 19-minute reading metadata, four separators, one final image, no artificial FGA-09 names, 66 Python regression tests, 65 frontend tests, a live Databricks `pass`, and HTTP 200 for both pinned images.
 
 ## Closing rule
 
