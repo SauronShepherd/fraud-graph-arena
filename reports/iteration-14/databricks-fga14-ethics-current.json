@@ -1,0 +1,1230 @@
+{
+  "status": "pass",
+  "iteration": "FGA14",
+  "run_at_utc": "2026-11-26T18:23:36.441348+00:00",
+  "source_commit": "202bd8cd49e13753b90f7ab4c3cdf9b900f1233b",
+  "profile": "fga",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "read_only": true,
+  "truth_source_queried": false,
+  "actual_engine_run": false,
+  "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+  "local_ethics_review": {
+    "status": "pass",
+    "package_count": 14,
+    "canonical_package_count": 13,
+    "noncanonical_published_packages": [
+      "academy-001"
+    ],
+    "adversarial_case_count": 6,
+    "fixture_errors": []
+  },
+  "databricks_public_boundary": {
+    "status": "pass",
+    "package_count": 13,
+    "excluded_noncanonical_published_packages": [
+      "academy-001"
+    ],
+    "checks": "SELECT-only active publication, snapshot, count, endpoint and safe-column checks"
+  },
+  "cases": [
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "ACADEMY_T01",
+      "active_publication": [
+        "ACADEMY_T01",
+        "3.0.0-canonical.1",
+        "2026.07.19.3",
+        "pub_3911e3340d32cfec0c30939698a4164f9d1aa60aec9dabdc8ce5da6ca27b1411"
+      ],
+      "record_summary": [
+        "10",
+        "10",
+        "1"
+      ],
+      "relationship_summary": [
+        "14",
+        "14",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 10,
+        "relationships": 14
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "academy-t01",
+      "path_id": "DETECTIVE_ACADEMY",
+      "expected_graph": {
+        "records": 10,
+        "relationships": 14
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "ACADEMY_T02",
+      "active_publication": [
+        "ACADEMY_T02",
+        "3.0.0-canonical.1",
+        "2026.07.19.1",
+        "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd"
+      ],
+      "record_summary": [
+        "20",
+        "20",
+        "1"
+      ],
+      "relationship_summary": [
+        "21",
+        "21",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 20,
+        "relationships": 21
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "academy-t02",
+      "path_id": "DETECTIVE_ACADEMY",
+      "expected_graph": {
+        "records": 20,
+        "relationships": 21
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "ACADEMY_T03",
+      "active_publication": [
+        "ACADEMY_T03",
+        "3.0.0-canonical.1",
+        "2026.07.19.1",
+        "pub_af2999b83d277eeba170e2e57477e00eb7e3bc6749343a5b27e33dc62571f9b6"
+      ],
+      "record_summary": [
+        "23",
+        "23",
+        "1"
+      ],
+      "relationship_summary": [
+        "27",
+        "27",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 23,
+        "relationships": 27
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "academy-t03",
+      "path_id": "DETECTIVE_ACADEMY",
+      "expected_graph": {
+        "records": 23,
+        "relationships": 27
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "BONE_LEDGER",
+      "active_publication": [
+        "BONE_LEDGER",
+        "1.0.0",
+        "2026.07.18.1",
+        "pub_bf440c469287cb6c896d5391e9526a5eb66dde8f6b490fbc87a3305648265ec8"
+      ],
+      "record_summary": [
+        "2491",
+        "2491",
+        "1"
+      ],
+      "relationship_summary": [
+        "5836",
+        "5836",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 2491,
+        "relationships": 5836
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "adult-bone-ledger",
+      "path_id": "ADULT_DOG",
+      "expected_graph": {
+        "records": 2491,
+        "relationships": 5836
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "DOWNLINE",
+      "active_publication": [
+        "DOWNLINE",
+        "1.0.0",
+        "2026.07.18.1",
+        "pub_4b30216ec15033cfa83d040f2f0a95bac672a2fdd771a8421b15f6a5cb9f16b7"
+      ],
+      "record_summary": [
+        "3144",
+        "3144",
+        "1"
+      ],
+      "relationship_summary": [
+        "5393",
+        "5393",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 3144,
+        "relationships": 5393
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "adult-downline",
+      "path_id": "ADULT_DOG",
+      "expected_graph": {
+        "records": 3144,
+        "relationships": 5393
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "GOLDEN_HYDRANT",
+      "active_publication": [
+        "GOLDEN_HYDRANT",
+        "1.0.0",
+        "2026.07.18.1",
+        "pub_bdf25af1d1349c1efaf33ac495c8a084f9777bca200e2b1a3663f37cc596b681"
+      ],
+      "record_summary": [
+        "3018",
+        "3018",
+        "1"
+      ],
+      "relationship_summary": [
+        "7444",
+        "7444",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 3018,
+        "relationships": 7444
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "adult-golden-hydrant",
+      "path_id": "ADULT_DOG",
+      "expected_graph": {
+        "records": 3018,
+        "relationships": 7444
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "PHANTOM_VET",
+      "active_publication": [
+        "PHANTOM_VET",
+        "1.0.0",
+        "2026.07.18.1",
+        "pub_cbaba135bf311b21ec78263902cad7e61886387732f35ba39be020297befbe7f"
+      ],
+      "record_summary": [
+        "3240",
+        "3240",
+        "1"
+      ],
+      "relationship_summary": [
+        "7433",
+        "7433",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 3240,
+        "relationships": 7433
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "adult-phantom-vet",
+      "path_id": "ADULT_DOG",
+      "expected_graph": {
+        "records": 3240,
+        "relationships": 7433
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "BISCUIT_RELIEF",
+      "active_publication": [
+        "BISCUIT_RELIEF",
+        "1.1.0",
+        "2026.07.19.3",
+        "pub_ca210bab827d8a88cc5eb7ec3bee4f76e915882ea7dc6e7806ed124128039b8c"
+      ],
+      "record_summary": [
+        "590",
+        "590",
+        "1"
+      ],
+      "relationship_summary": [
+        "1043",
+        "1043",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 590,
+        "relationships": 1043
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "puppy-biscuit-relief",
+      "path_id": "PUPPY",
+      "expected_graph": {
+        "records": 590,
+        "relationships": 1043
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "CEO_BARKED_TWICE",
+      "active_publication": [
+        "CEO_BARKED_TWICE",
+        "1.1.0",
+        "2026.07.19.2",
+        "pub_a602cf0488ac7d9a2e81b4cdc4c63fa29d5756719ce2868ea565b5e897a39175"
+      ],
+      "record_summary": [
+        "642",
+        "642",
+        "1"
+      ],
+      "relationship_summary": [
+        "721",
+        "721",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 642,
+        "relationships": 721
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "puppy-ceo-barked-twice",
+      "path_id": "PUPPY",
+      "expected_graph": {
+        "records": 642,
+        "relationships": 721
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "MADDOG",
+      "active_publication": [
+        "MADDOG",
+        "1.1.0",
+        "2026.07.19.1",
+        "pub_d914400f78e7e6da2b4fd0259fc65d5cef65cd6191040ce62312f2de9291384d"
+      ],
+      "record_summary": [
+        "313",
+        "313",
+        "1"
+      ],
+      "relationship_summary": [
+        "390",
+        "390",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 313,
+        "relationships": 390
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "puppy-maddog",
+      "path_id": "PUPPY",
+      "expected_graph": {
+        "records": 313,
+        "relationships": 390
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "CRYPTO_KENNEL_LONG_CON",
+      "active_publication": [
+        "CRYPTO_KENNEL_LONG_CON",
+        "1.0.0",
+        "2026.07.18.1",
+        "pub_6421540510fb69ded502b6dd938b0efdf973ce67eecff44a082d89c61dafe7d2"
+      ],
+      "record_summary": [
+        "9537",
+        "9537",
+        "1"
+      ],
+      "relationship_summary": [
+        "25112",
+        "25112",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 9537,
+        "relationships": 25112
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "senior-crypto-kennel-long-con",
+      "path_id": "SENIOR_DOG",
+      "expected_graph": {
+        "records": 9537,
+        "relationships": 25112
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "LOVE_LEASHES_OFFSHORE",
+      "active_publication": [
+        "LOVE_LEASHES_OFFSHORE",
+        "1.0.0",
+        "2026.07.18.1",
+        "pub_f0b2108cbd09717be29dbb7d094ff264f5120651023ae10f48fd4b0736db087b"
+      ],
+      "record_summary": [
+        "6101",
+        "6101",
+        "1"
+      ],
+      "relationship_summary": [
+        "16240",
+        "16240",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 6101,
+        "relationships": 16240
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "senior-love-leashes-offshore",
+      "path_id": "SENIOR_DOG",
+      "expected_graph": {
+        "records": 6101,
+        "relationships": 16240
+      }
+    },
+    {
+      "status": "pass",
+      "read_only": true,
+      "profile": "fga",
+      "catalog": "sda_dev",
+      "schema": "sandbox",
+      "warehouse_id": "eded42c9d0a69b84",
+      "case_id": "PANAMA_PAWPERS",
+      "active_publication": [
+        "PANAMA_PAWPERS",
+        "1.0.0",
+        "2026.07.19.2",
+        "pub_2261b43ecba61c2b0777aeb336399a39016fb51b4a30ebc2148d903a84dad996"
+      ],
+      "record_summary": [
+        "6745",
+        "6745",
+        "1"
+      ],
+      "relationship_summary": [
+        "10675",
+        "10675",
+        "1"
+      ],
+      "expected_counts": {
+        "records": 6745,
+        "relationships": 10675
+      },
+      "observed_columns": [
+        "case_id",
+        "case_version",
+        "snapshot_version",
+        "canonical_model_version",
+        "active_publication_id",
+        "activated_at_utc",
+        "activating_run_id",
+        "case_id",
+        "profile_code",
+        "record_id",
+        "record_type",
+        "record_subtype",
+        "display_label",
+        "source_system_id",
+        "occurred_at",
+        "status",
+        "safe_summary",
+        "safe_attributes_json",
+        "provenance_ref",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id",
+        "case_id",
+        "profile_code",
+        "relationship_id",
+        "relationship_family",
+        "relationship_type",
+        "source_record_id",
+        "target_record_id",
+        "directed",
+        "event_time",
+        "weight",
+        "supporting_record_ids_json",
+        "player_safe_summary",
+        "provenance",
+        "safe_attributes_json",
+        "snapshot_version",
+        "_publication_id",
+        "_load_run_id"
+      ],
+      "forbidden_columns": [],
+      "package_boundary": {
+        "manifest_is_application_owned": true,
+        "truth_source_queried": false,
+        "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+        "actual_engine_run": false,
+        "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+      },
+      "checks": {
+        "one_active_publication": true,
+        "records_match_package": true,
+        "relationships_match_package": true,
+        "one_snapshot_matches_publication": true,
+        "no_forbidden_player_columns": true,
+        "only_allowlisted_read_queries": true
+      },
+      "package_id": "senior-panama-pawpers",
+      "path_id": "SENIOR_DOG",
+      "expected_graph": {
+        "records": 6745,
+        "relationships": 10675
+      }
+    }
+  ]
+}

@@ -1,0 +1,624 @@
+{
+  "status": "pass",
+  "iteration": "FGA14",
+  "review_version": "fga14-publication-review-v1",
+  "run_at_utc": "2026-11-26T18:21:18.384529+00:00",
+  "package_count": 14,
+  "canonical_package_count": 13,
+  "noncanonical_published_packages": [
+    "academy-001"
+  ],
+  "adversarial_case_count": 6,
+  "fixture_errors": [],
+  "packages": [
+    {
+      "package_id": "academy-001",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.EMPTY_PACKAGE",
+          "status": "PASS",
+          "message": "Empty package has no player-facing conclusion to adjudicate."
+        }
+      ]
+    },
+    {
+      "package_id": "academy-t01",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "academy-t02",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "academy-t03",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "adult-bone-ledger",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "adult-downline",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "adult-golden-hydrant",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "adult-phantom-vet",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "puppy-biscuit-relief",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "puppy-ceo-barked-twice",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "puppy-maddog",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "senior-crypto-kennel-long-con",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "senior-love-leashes-offshore",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    },
+    {
+      "package_id": "senior-panama-pawpers",
+      "status": "PASS",
+      "checks": [
+        {
+          "check_id": "ETHICS.CONTRACT",
+          "status": "PASS",
+          "message": "Versioned role, impact, outcome and evidence dimensions are complete."
+        },
+        {
+          "check_id": "ETHICS.PUBLIC_PROJECTION",
+          "status": "PASS",
+          "message": "Published evidence is non-empty."
+        },
+        {
+          "check_id": "ETHICS.CLAIM_TYPES",
+          "status": "PASS",
+          "message": "Every claim uses a controlled ethical claim type."
+        },
+        {
+          "check_id": "ETHICS.REQUIRED_EVIDENCE",
+          "status": "PASS",
+          "message": "Every required claim has an evidence requirement."
+        },
+        {
+          "check_id": "ETHICS.EVIDENCE_REFERENCES",
+          "status": "PASS",
+          "message": "Evidence requirements point only to published records."
+        },
+        {
+          "check_id": "ETHICS.PROTECTED_ACTORS",
+          "status": "PASS",
+          "message": "The case contains at least one protected actor for benign adversarial review."
+        },
+        {
+          "check_id": "ETHICS.ROLE_SEMANTICS",
+          "status": "PASS",
+          "message": "Role semantics and the separate benefit/harm impact dimensions are declared by the FGA-14 contract."
+        },
+        {
+          "check_id": "ETHICS.TRUTH_BOUNDARY",
+          "status": "PASS",
+          "message": "Published records contain no evaluator truth fields."
+        }
+      ]
+    }
+  ]
+}
