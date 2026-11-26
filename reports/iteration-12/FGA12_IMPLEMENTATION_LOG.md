@@ -6,7 +6,7 @@
 - Editorial source: `FGA_Development_Series_Outline_07-19.md`, Iteration I12, and the corresponding FGA-12 entry in `Fraud Graph Arena — Master Series Outline Updated.md`.
 - Code branch: `FGA-12`.
 - Code worktree: `C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga12-20261126`.
-- Article branch: `FGA-12`, commit `7fe1e084f63e3abd1feebdb9241b25b7490683a1`.
+- Article branch: `FGA-12`, commit `4d134c8fab47353138e768e9b87101567b6b3299`.
 - Asset branch: `FGA-12`, commit `103b4b6f29fcdb82c9f1646239d23c31c09e201a`.
 - Suggested series tag: `fga-i12-case-packages`.
 
@@ -34,6 +34,7 @@ The acceptance target was a second canonical case that can be discovered, valida
 | Contract gate | The OpenAPI equality test failed after increasing evidence claims from five to thirty-two. | Regenerated `contracts/openapi-v1.json` with `scripts/export_openapi.py`. | The committed contract and application schema match. |
 | Adversarial package review | A shared investigation-command service still checked `ACADEMY_T02` directly and loaded the T02 graph. | Injected the active package provider, required the declared `CREATE_HYPOTHESIS` capability and loaded the package graph. | No T02 case branch remains in that service; T02 behavior is preserved by its manifest. |
 | Adversarial workspace review | The workspace exposed `CREATE_HYPOTHESIS` for every canonical package, although T03 did not declare it. | Added the action to the schema and T02 manifest, and gated the workspace action by `package.supports(...)`; updated the T03 contract test. | T03 exposes only its declared graph action; FGA-08/T02 keeps the manual-hypothesis action. |
+| Adversarial economy review | T03 carried a `COMPARE_IDENTITIES` cost without declaring that action, and the empty package carried zero costs for unavailable actions. | Made action costs optional, removed unsupported costs from manifests and made the validator reject any cost whose action is absent from `supported_actions`; added a contract test. | All three packages validate cleanly; configuration cannot advertise a cost for an unavailable capability. |
 | Web gate 1 | `tsc` was not found because the clean worktree had no `node_modules`. | Installed the locked dependencies with `npm ci`; no source or lockfile change was made. | Typecheck, screen validation, Vitest and build passed. |
 | Dependency installation | npm reported one deprecated transitive package and five audit findings (2 moderate, 3 high). | Did not run `npm audit fix --force`; that would change dependency scope outside I12 and could rewrite the lockfile. | Logged as an environment/dependency limitation, not as a product-test failure. |
 | Databricks | First live package qualification ran before the final code commit and therefore reported the parent SHA. | Re-run the same read-only qualification after the final code commit and keep that receipt as the authoritative one. | Both ACADEMY_T02 and ACADEMY_T03 must pass against profile `fga`. |
@@ -45,9 +46,9 @@ The acceptance target was a second canonical case that can be discovered, valida
 - `python -m compileall -q src scripts`: passed.
 - `python scripts/validate_case_packages.py`: passed; `academy-001`, `academy-t02` and `academy-t03` returned no errors.
 - `pytest -q tests/iteration_12`: passed.
-- `pytest -q tests/iteration_01 tests/iteration_09 tests/iteration_10 tests/iteration_11 tests/iteration_12`: 97 passed, no pytest warning summary.
-- Full repository run: `pytest -q`: 263 passed in 14:22 on the corrected implementation. No warning summary was emitted.
-- Final implementation SHA for the refreshed live receipt: `08d2a90af24bb25f9b1e4312adcc081df6a49f6a`.
+- `pytest -q tests/iteration_01 tests/iteration_09 tests/iteration_10 tests/iteration_11 tests/iteration_12`: 98 passed, no pytest warning summary.
+- Full repository run: `pytest -q`: 264 passed in 7:35 on the corrected implementation. No warning summary was emitted.
+- Final implementation SHA for the refreshed live receipt: `1f59a926f2ff090fd9853c0318127341b72645c6`.
 
 ### Web
 
@@ -85,7 +86,7 @@ The final live receipt, after pushing the code commit, passed for both cases. It
 - ACADEMY_T02: 20 public records, 21 public relationships, one active snapshot.
 - ACADEMY_T03: 23 public records, 27 public relationships, one active snapshot.
 - Both cases: no forbidden player columns, no truth source queried, all statements read-only.
-- Final source commit reported by the refreshed qualifier: `08d2a90af24bb25f9b1e4312adcc081df6a49f6a`.
+- Final source commit reported by the refreshed qualifier: `1f59a926f2ff090fd9853c0318127341b72645c6`.
 - `actual_engine_run: false`: the `fga` profile reaches a SQL Warehouse, so this qualification proves the safe published boundary and does not pretend to have run GraphFrames.
 
 The report is intentionally read-only. All generated statements begin with `SELECT`, query only the active publication/public-record/public-relationship views and information schema, and never query protected `truth` files.
