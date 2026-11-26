@@ -32,6 +32,8 @@ from fraud_graph_arena.entity_resolution import (
     SqliteEntityResolutionRepository,
 )
 from fraud_graph_arena.graph_analytics import GraphAnalyticsService
+from fraud_graph_arena.economy import EconomyService, InMemoryLedgerRepository, SqliteLedgerRepository
+from fraud_graph_arena.case_resolution import CaseResolutionService, InMemorySubmissionRepository, SqliteSubmissionRepository
 
 
 @dataclass(slots=True)
@@ -46,6 +48,8 @@ class Container:
     investigation_commands: InvestigationCommandService
     entity_resolution: EntityResolutionService
     graph_analytics: GraphAnalyticsService
+    economy: EconomyService
+    case_resolution: CaseResolutionService
 
 
 def build_web_container(settings: Settings) -> Container:
@@ -66,12 +70,14 @@ def build_web_container(settings: Settings) -> Container:
         catalogue=catalogue,
         narrative=narrative,
     )
+    ledger_repository = InMemoryLedgerRepository() if settings.round_repository == "memory" else SqliteLedgerRepository(settings.sqlite_path)
+    economy = EconomyService(round_service, ledger_repository)
     entity_repository = (
         InMemoryEntityResolutionRepository()
         if settings.round_repository == "memory"
         else SqliteEntityResolutionRepository(settings.sqlite_path)
     )
-    entity_resolution = EntityResolutionService(round_service, entity_repository)
+    entity_resolution = EntityResolutionService(round_service, entity_repository, economy=economy)
 
     def graph_provider(round_id: str) -> dict:
         round_ = round_service.require(round_id)
@@ -84,6 +90,7 @@ def build_web_container(settings: Settings) -> Container:
     else:
         command_repository = SqliteInvestigationCommandRepository(settings.sqlite_path)
 
+    submission_repository = InMemorySubmissionRepository() if settings.round_repository == "memory" else SqliteSubmissionRepository(settings.sqlite_path)
     return Container(
         settings=settings,
         catalogue=catalogue,
@@ -94,7 +101,9 @@ def build_web_container(settings: Settings) -> Container:
         graph=GraphInvestigationService(graph_provider),
         investigation_commands=InvestigationCommandService(round_service, command_repository),
         entity_resolution=entity_resolution,
-        graph_analytics=GraphAnalyticsService(round_service, graph_provider),
+        graph_analytics=GraphAnalyticsService(round_service, graph_provider, economy=economy),
+        economy=economy,
+        case_resolution=CaseResolutionService(round_service, economy, submission_repository),
     )
 
 

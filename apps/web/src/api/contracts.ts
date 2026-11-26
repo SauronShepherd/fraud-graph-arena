@@ -33,12 +33,14 @@ export interface RoundSummary {
   path_id: string;
   case_id: string;
   case_version: string;
-  status: "CREATED" | "INTRO_PENDING" | "ACTIVE";
+  status: "CREATED" | "INTRO_PENDING" | "ACTIVE" | "SUBMITTED";
   created_at: string;
   started_at: string | null;
   intro_completed_at: string | null;
   credits_remaining: number;
   version: number;
+  submitted_at: string | null;
+  submission_id: string | null;
 }
 
 export interface ComicPage {
@@ -230,6 +232,7 @@ export interface GraphAnalysis {
 }
 
 export interface GraphAnalysisRequest {
+  idempotency_key?: string;
   algorithm: string;
   seed_record_id?: string | null;
   source_record_id?: string | null;
@@ -244,6 +247,54 @@ export interface GraphAnalysisRequest {
   time_from?: string | null;
   time_to?: string | null;
   visible_record_ids: string[];
+}
+
+export interface ScoreDimensions {
+  conclusion_accuracy: number;
+  evidence_quality: number;
+  relationship_interpretation: number;
+  protected_actor_discipline: number;
+  efficiency: number;
+}
+
+export interface Submission {
+  submission_id: string;
+  round_id: string;
+  idempotency_key: string;
+  status: string;
+  score: number;
+  ending_code: string;
+  ending_title: string;
+  ending_narrative: string;
+  dimensions: ScoreDimensions;
+  false_accusations: number;
+  required_claims_complete: boolean;
+  submitted_suspect_count: number;
+  credits_remaining: number;
+  scoring_version: string;
+  economy_version: string;
+  created_at: string;
+  replayed?: boolean;
+}
+
+export interface LedgerEntry {
+  entry_id: string;
+  round_id: string;
+  idempotency_key: string;
+  action: string;
+  entry_type: string;
+  amount: number;
+  balance_after: number;
+  status: string;
+  rules_version: string;
+  created_at: string;
+}
+
+export interface ResolutionContext {
+  available: boolean;
+  submission: Submission;
+  ledger: { entries: LedgerEntry[] };
+  closing?: Opening;
 }
 
 export type ActionState = "AVAILABLE" | "NOT_IMPLEMENTED" | "LOCKED" | "PENDING" | "FAILED";

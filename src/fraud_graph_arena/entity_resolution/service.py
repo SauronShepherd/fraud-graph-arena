@@ -11,6 +11,7 @@ from uuid import uuid4
 from fraud_graph_arena.rounds.domain import RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
+from fraud_graph_arena.economy import EconomyReservation, EconomyService
 
 from .engine import EntityResolutionEngine, load_t02_identity_records
 from .models import IdentityReview, ResolutionRun
@@ -29,12 +30,14 @@ class EntityResolutionService:
         engine: EntityResolutionEngine | None = None,
         now: Callable[[], datetime] = lambda: datetime.now(UTC),
         new_id: Callable[[], str] = lambda: str(uuid4()),
+        economy: EconomyService | None = None,
     ) -> None:
         self._rounds = rounds
         self._repository = repository
         self._engine = engine or EntityResolutionEngine()
         self._now = now
         self._new_id = new_id
+        self._economy = economy
         self._lock = RLock()
 
     def analyze(self, round_id: str, idempotency_key: str, focus_record_id: str | None = None) -> tuple[ResolutionRun, bool]:
@@ -54,7 +57,11 @@ class EntityResolutionService:
                 if existing.request_hash != request_hash:
                     raise ConflictError(code="IDEMPOTENCY_KEY_REUSED", title="Analysis request identity was reused", detail="The idempotency key already belongs to a different entity-resolution request.", recovery="Use the original analysis request or choose a new idempotency key.")
                 return existing, False
-            self._rounds.charge(round_id, ANALYSIS_COST)
+            reservation: EconomyReservation | None = None
+            if self._economy is not None:
+                reservation = self._economy.reserve(round_id, "COMPARE_IDENTITIES", idempotency_key, request_hash, ANALYSIS_COST)
+            else:
+                self._rounds.charge(round_id, ANALYSIS_COST)
             try:
                 created_at = self._now().astimezone(UTC).isoformat()
                 run = self._engine.analyze(
@@ -69,10 +76,18 @@ class EntityResolutionService:
                 )
                 stored, created = self._repository.accept_run(run)
             except Exception:
-                self._rounds.refund(round_id, ANALYSIS_COST)
+                if reservation is not None:
+                    self._economy.settle(reservation, None, refund=True)
+                else:
+                    self._rounds.refund(round_id, ANALYSIS_COST)
                 raise
             if not created:
-                self._rounds.refund(round_id, ANALYSIS_COST)
+                if reservation is not None:
+                    self._economy.settle(reservation, stored, refund=True)
+                else:
+                    self._rounds.refund(round_id, ANALYSIS_COST)
+            elif reservation is not None:
+                self._economy.settle(reservation, stored)
             return stored, created
 
     def review(self, round_id: str, candidate_id: str, idempotency_key: str, outcome: str) -> tuple[IdentityReview, bool]:

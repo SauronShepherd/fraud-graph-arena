@@ -11,5 +11,5 @@ export const dataSources: Record<DataSourceId, DataSourceLoader> = {
   CATALOGUE_SECTION: async (context, signal) => api.getSection(required(context, "pathId"), signal),
   ROUND_OPENING: async (context, signal) => api.getOpening(required(context, "roundId"), signal),
   ROUND_WORKSPACE: async (context, signal) => api.getWorkspace(required(context, "roundId"), signal),
-  RESOLUTION_CONTEXT: async () => ({ available: false })
+  RESOLUTION_CONTEXT: async (context, signal) => api.getResolutionContext(required(context, "roundId"), signal)
 };

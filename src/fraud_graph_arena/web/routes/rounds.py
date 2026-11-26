@@ -16,8 +16,9 @@ from fraud_graph_arena.web.api_models import (
     EntityResolutionHistoryResponse,
     GraphAnalysisRequest, GraphAnalysisResponse, GraphAnalysisHistoryResponse,
     GraphAnalysisPathResponse, GraphAnalysisComponentResponse, GraphAnalysisLeadResponse, GraphAnalysisMotifResponse,
+    SubmissionRequest, SubmissionResponse, ScoreDimensionsResponse, LedgerEntryResponse, LedgerResponse,
 )
-from fraud_graph_arena.web.mappers import map_opening, map_round, map_workspace
+from fraud_graph_arena.web.mappers import map_closing, map_opening, map_round, map_workspace
 
 router = APIRouter(prefix="/rounds", tags=["rounds"])
 
@@ -197,6 +198,67 @@ def graph_analytics(round_id: str, payload: GraphAnalysisRequest, request: Reque
 def graph_analytics_history(round_id: str, request: Request) -> GraphAnalysisHistoryResponse:
     results = request.app.state.container.graph_analytics.history(round_id)
     return GraphAnalysisHistoryResponse(analyses=[_graph_analysis_response(result) for result in results])
+
+
+def _submission_response(result, *, replayed: bool = False) -> SubmissionResponse:
+    return SubmissionResponse(
+        submission_id=result.submission_id,
+        round_id=result.round_id,
+        idempotency_key=result.idempotency_key,
+        status=result.status,
+        score=result.score,
+        ending_code=result.ending_code,
+        ending_title=result.ending_title,
+        ending_narrative=result.ending_narrative,
+        dimensions=ScoreDimensionsResponse(**result.dimensions.as_dict()),
+        false_accusations=result.false_accusations,
+        required_claims_complete=result.required_claims_complete,
+        submitted_suspect_count=result.submitted_suspect_count,
+        credits_remaining=result.credits_remaining,
+        scoring_version=result.scoring_version,
+        economy_version=result.economy_version,
+        created_at=result.created_at,
+        replayed=replayed,
+    )
+
+
+def _ledger_response(entries) -> LedgerResponse:
+    return LedgerResponse(entries=[LedgerEntryResponse(
+        entry_id=item.entry_id,
+        round_id=item.round_id,
+        idempotency_key=item.idempotency_key,
+        action=item.action,
+        entry_type=item.entry_type.value,
+        amount=item.amount,
+        balance_after=item.balance_after,
+        status=item.status,
+        rules_version=item.rules_version,
+        created_at=item.created_at,
+    ) for item in entries])
+
+
+@router.post("/{round_id}/submission", response_model=SubmissionResponse)
+def submit_case(round_id: str, payload: SubmissionRequest, request: Request) -> SubmissionResponse:
+    result, created = request.app.state.container.case_resolution.submit(round_id, payload.idempotency_key, payload.suspect_record_ids, payload.evidence_claim_ids, payload.expected_round_version)
+    return _submission_response(result, replayed=not created)
+
+
+@router.get("/{round_id}/submission", response_model=SubmissionResponse)
+def case_submission(round_id: str, request: Request) -> SubmissionResponse:
+    result = request.app.state.container.case_resolution.get(round_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="case submission was not found")
+    return _submission_response(result)
+
+
+@router.get("/{round_id}/closing", response_model=OpeningResponse)
+def case_closing(round_id: str, request: Request) -> OpeningResponse:
+    return map_closing(request.app.state.container.case_resolution.closing(round_id))
+
+
+@router.get("/{round_id}/economy/ledger", response_model=LedgerResponse)
+def economy_ledger(round_id: str, request: Request) -> LedgerResponse:
+    return _ledger_response(request.app.state.container.economy.ledger(round_id))
 
 
 @router.post("", response_model=RoundResponse, status_code=status.HTTP_201_CREATED)

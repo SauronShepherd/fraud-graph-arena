@@ -11,6 +11,8 @@ import type {
   EntityResolutionReview,
   GraphAnalysis,
   GraphAnalysisRequest,
+  Submission,
+  ResolutionContext,
 } from "./contracts";
 
 const API_BASE = (import.meta.env.VITE_FGA_API_BASE_URL as string | undefined) ?? "/api/v1";
@@ -167,6 +169,27 @@ export function getGraphAnalysisHistory(
   signal?: AbortSignal,
 ): Promise<{ analyses: GraphAnalysis[] }> {
   return request<{ analyses: GraphAnalysis[] }>(`/rounds/${encodeURIComponent(roundId)}/investigations/graph-analytics/history`, { signal });
+}
+
+export function submitCase(roundId: string, input: { idempotency_key: string; suspect_record_ids: string[]; evidence_claim_ids: string[]; expected_round_version?: number }): Promise<Submission> {
+  return request<Submission>(`/rounds/${encodeURIComponent(roundId)}/submission`, { method: "POST", body: JSON.stringify(input) });
+}
+
+export function getCaseSubmission(roundId: string, signal?: AbortSignal): Promise<Submission> {
+  return request<Submission>(`/rounds/${encodeURIComponent(roundId)}/submission`, { signal });
+}
+
+export function getClosing(roundId: string, signal?: AbortSignal): Promise<Opening> {
+  return request<Opening>(`/rounds/${encodeURIComponent(roundId)}/closing`, { signal });
+}
+
+export function getEconomyLedger(roundId: string, signal?: AbortSignal): Promise<{ entries: import("./contracts").LedgerEntry[] }> {
+  return request<{ entries: import("./contracts").LedgerEntry[] }>(`/rounds/${encodeURIComponent(roundId)}/economy/ledger`, { signal });
+}
+
+export async function getResolutionContext(roundId: string, signal?: AbortSignal): Promise<ResolutionContext> {
+  const [submission, ledger, closing] = await Promise.all([getCaseSubmission(roundId, signal), getEconomyLedger(roundId, signal), getClosing(roundId, signal)]);
+  return { available: true, submission, ledger, closing };
 }
 
 export function expandGraph(roundId: string, visible: Graph, nodeId: string, signal?: AbortSignal): Promise<Graph> {

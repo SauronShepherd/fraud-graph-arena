@@ -3,7 +3,7 @@ from __future__ import annotations
 from fraud_graph_arena.catalogue.domain import CaseSummary, CatalogueSection, PathDefinition
 from fraud_graph_arena.narrative.domain import ComicPage, ComicSequence
 from fraud_graph_arena.rounds.domain import Round
-from fraud_graph_arena.rounds.service import Opening
+from fraud_graph_arena.rounds.service import Closing, Opening
 from fraud_graph_arena.workspace.service import WorkspaceProjection
 from fraud_graph_arena.web.api_models import (
     CaseResponse,
@@ -59,6 +59,8 @@ def map_round(value: Round) -> RoundResponse:
         intro_completed_at=value.intro_completed_at,
         credits_remaining=value.credits_remaining,
         version=value.version,
+        submitted_at=value.submitted_at,
+        submission_id=value.submission_id,
     )
 
 
@@ -85,6 +87,14 @@ def map_comic_sequence(value: ComicSequence) -> ComicSequenceResponse:
 
 
 def map_opening(value: Opening) -> OpeningResponse:
+    return OpeningResponse(
+        round=map_round(value.round),
+        case=map_case(value.case),
+        sequence=map_comic_sequence(value.sequence),
+    )
+
+
+def map_closing(value: Closing) -> OpeningResponse:
     return OpeningResponse(
         round=map_round(value.round),
         case=map_case(value.case),

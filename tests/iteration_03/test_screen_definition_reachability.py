@@ -3,7 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parents[2]
 
-def test_production_graph_reaches_playable_screens_but_not_resolution():
+def test_fga11_screen_graph_reaches_public_resolution():
     data = json.loads((ROOT / "apps/web/src/screen-system/definitions/fga-screen-set.v1.json").read_text())
     screens = {screen["id"]: screen for screen in data["screens"]}
     reachable = {data["initial_screen"]}
@@ -15,4 +15,4 @@ def test_production_graph_reaches_playable_screens_but_not_resolution():
                 reachable.add(transition["target"])
                 frontier.append(transition["target"])
     assert {"LAUNCH", "PATH_SELECTION", "CASE_SELECTION", "CASE_INTRODUCTION", "INVESTIGATION_BOARD"} <= reachable
-    assert "CASE_RESOLUTION" not in reachable
+    assert "CASE_RESOLUTION" in reachable

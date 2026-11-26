@@ -7,7 +7,7 @@ from fastapi.testclient import TestClient
 from .conftest import active_t02
 
 
-def test_graph_analysis_actions_are_available_without_changing_fga09_economy(client: TestClient) -> None:
+def test_graph_analysis_actions_are_available_and_observe_fga11_economy(client: TestClient) -> None:
     round_id = active_t02(client)
     workspace = client.get(f"/api/v1/rounds/{round_id}/workspace").json()
     available = {item["id"] for item in workspace["actions"] if item["state"] == "AVAILABLE"}
@@ -33,7 +33,7 @@ def test_centrality_response_is_bounded_player_safe_and_cacheable(client: TestCl
     assert len(body["ranked_leads"]) == 5
     assert "culpability" in body["limitations"][0].lower()
     assert "expected_truth" not in json.dumps(body).lower()
-    assert client.get(f"/api/v1/rounds/{round_id}/workspace").json()["round"]["credits_remaining"] == 9
+    assert client.get(f"/api/v1/rounds/{round_id}/workspace").json()["round"]["credits_remaining"] == 6
 
 
 def test_path_and_cycle_results_expose_supporting_relationships(client: TestClient) -> None:
@@ -118,5 +118,6 @@ def test_provider_failure_is_explicit_and_is_not_cached(client: TestClient) -> N
     assert first.json()["result_type"] == "EXECUTION_FAILURE"
     assert first.json()["actual_engine_run"] is False
     assert first.json()["nodes"] == []
-    assert second.json()["analysis_id"] != first.json()["analysis_id"]
+    assert second.json()["analysis_id"] == first.json()["analysis_id"]
+    assert client.get(f"/api/v1/rounds/{round_id}/workspace").json()["round"]["credits_remaining"] == 9
     assert second.json()["cached"] is False

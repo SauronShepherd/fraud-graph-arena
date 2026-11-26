@@ -40,7 +40,9 @@ class SqliteRoundRepository:
                     started_at TEXT NULL,
                     intro_completed_at TEXT NULL,
                     credits_remaining INTEGER NOT NULL DEFAULT 0,
-                    version INTEGER NOT NULL DEFAULT 1
+                    version INTEGER NOT NULL DEFAULT 1,
+                    submitted_at TEXT NULL,
+                    submission_id TEXT NULL
                 )
                 """
             )
@@ -54,6 +56,10 @@ class SqliteRoundRepository:
                 connection.execute("ALTER TABLE rounds ADD COLUMN credits_remaining INTEGER NOT NULL DEFAULT 0")
             if "version" not in columns:
                 connection.execute("ALTER TABLE rounds ADD COLUMN version INTEGER NOT NULL DEFAULT 1")
+            if "submitted_at" not in columns:
+                connection.execute("ALTER TABLE rounds ADD COLUMN submitted_at TEXT NULL")
+            if "submission_id" not in columns:
+                connection.execute("ALTER TABLE rounds ADD COLUMN submission_id TEXT NULL")
 
     def add(self, round_: Round) -> None:
         with self._connect() as connection:
@@ -61,8 +67,8 @@ class SqliteRoundRepository:
                 """
                 INSERT INTO rounds (
                     id, player_id, path_id, case_id, case_version, status, created_at,
-                    started_at, intro_completed_at, credits_remaining, version
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    started_at, intro_completed_at, credits_remaining, version, submitted_at, submission_id
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 self._to_row(round_),
             )
@@ -82,7 +88,7 @@ class SqliteRoundRepository:
                 UPDATE rounds
                    SET player_id = ?, path_id = ?, case_id = ?, case_version = ?, status = ?,
                        created_at = ?, started_at = ?, intro_completed_at = ?,
-                       credits_remaining = ?, version = ?
+                       credits_remaining = ?, version = ?, submitted_at = ?, submission_id = ?
                  WHERE id = ?
                 """,
                 (
@@ -100,6 +106,8 @@ class SqliteRoundRepository:
                     ),
                     round_.credits_remaining,
                     round_.version,
+                    None if round_.submitted_at is None else round_.submitted_at.isoformat(),
+                    round_.submission_id,
                     round_.id,
                 ),
             )
@@ -152,7 +160,7 @@ class SqliteRoundRepository:
         return self._from_row(row)
 
     @staticmethod
-    def _to_row(round_: Round) -> tuple[str, str, str, str, str, str, str, str | None, str | None, int, int]:
+    def _to_row(round_: Round) -> tuple[str, str, str, str, str, str, str, str | None, str | None, int, int, str | None, str | None]:
         return (
             round_.id,
             round_.player_id,
@@ -169,6 +177,8 @@ class SqliteRoundRepository:
             ),
             round_.credits_remaining,
             round_.version,
+            None if round_.submitted_at is None else round_.submitted_at.isoformat(),
+            round_.submission_id,
         )
 
     @staticmethod
@@ -191,4 +201,6 @@ class SqliteRoundRepository:
             ),
             credits_remaining=int(row["credits_remaining"] or 0),
             version=int(row["version"] or 1),
+            submitted_at=(None if row["submitted_at"] is None else datetime.fromisoformat(row["submitted_at"])),
+            submission_id=row["submission_id"],
         )

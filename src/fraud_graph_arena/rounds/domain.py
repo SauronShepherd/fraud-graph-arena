@@ -11,6 +11,7 @@ class RoundStatus(StrEnum):
     CREATED = "CREATED"
     INTRO_PENDING = "INTRO_PENDING"
     ACTIVE = "ACTIVE"
+    SUBMITTED = "SUBMITTED"
 
 class IntroCompletion(StrEnum):
     FINISHED = "FINISHED"
@@ -30,6 +31,8 @@ class Round:
     intro_completed_at: datetime | None = None
     credits_remaining: int = 0
     version: int = 1
+    submitted_at: datetime | None = None
+    submission_id: str | None = None
 
     def start(self, now: datetime | None = None) -> "Round":
         if self.status != RoundStatus.CREATED:
@@ -49,4 +52,15 @@ class Round:
             self,
             status=RoundStatus.ACTIVE,
             intro_completed_at=now or datetime.now(UTC),
+        )
+
+    def submit(self, submission_id: str, now: datetime | None = None) -> "Round":
+        if self.status != RoundStatus.ACTIVE:
+            return self
+        return replace(
+            self,
+            status=RoundStatus.SUBMITTED,
+            submitted_at=now or datetime.now(UTC),
+            submission_id=submission_id,
+            version=self.version + 1,
         )

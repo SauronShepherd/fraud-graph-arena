@@ -721,6 +721,18 @@
             "title": "Directed",
             "type": "boolean"
           },
+          "idempotency_key": {
+            "anyOf": [
+              {
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Idempotency Key"
+          },
           "max_hops": {
             "default": 1,
             "maximum": 3.0,
@@ -1563,6 +1575,85 @@
         "title": "InvestigationCommandResponse",
         "type": "object"
       },
+      "LedgerEntryResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "title": "Action",
+            "type": "string"
+          },
+          "amount": {
+            "minimum": 0.0,
+            "title": "Amount",
+            "type": "integer"
+          },
+          "balance_after": {
+            "minimum": 0.0,
+            "title": "Balance After",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "entry_id": {
+            "title": "Entry Id",
+            "type": "string"
+          },
+          "entry_type": {
+            "title": "Entry Type",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "round_id": {
+            "title": "Round Id",
+            "type": "string"
+          },
+          "rules_version": {
+            "title": "Rules Version",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entry_id",
+          "round_id",
+          "idempotency_key",
+          "action",
+          "entry_type",
+          "amount",
+          "balance_after",
+          "status",
+          "rules_version",
+          "created_at"
+        ],
+        "title": "LedgerEntryResponse",
+        "type": "object"
+      },
+      "LedgerResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "entries": {
+            "items": {
+              "$ref": "#/components/schemas/LedgerEntryResponse"
+            },
+            "title": "Entries",
+            "type": "array"
+          }
+        },
+        "required": [
+          "entries"
+        ],
+        "title": "LedgerResponse",
+        "type": "object"
+      },
       "LiveHealthResponse": {
         "additionalProperties": false,
         "properties": {
@@ -1733,6 +1824,29 @@
           "status": {
             "$ref": "#/components/schemas/RoundStatus"
           },
+          "submission_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Submission Id"
+          },
+          "submitted_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Submitted At"
+          },
           "version": {
             "minimum": 1.0,
             "title": "Version",
@@ -1759,10 +1873,192 @@
         "enum": [
           "CREATED",
           "INTRO_PENDING",
-          "ACTIVE"
+          "ACTIVE",
+          "SUBMITTED"
         ],
         "title": "RoundStatus",
         "type": "string"
+      },
+      "ScoreDimensionsResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "conclusion_accuracy": {
+            "minimum": 0.0,
+            "title": "Conclusion Accuracy",
+            "type": "integer"
+          },
+          "efficiency": {
+            "minimum": 0.0,
+            "title": "Efficiency",
+            "type": "integer"
+          },
+          "evidence_quality": {
+            "minimum": 0.0,
+            "title": "Evidence Quality",
+            "type": "integer"
+          },
+          "protected_actor_discipline": {
+            "minimum": 0.0,
+            "title": "Protected Actor Discipline",
+            "type": "integer"
+          },
+          "relationship_interpretation": {
+            "minimum": 0.0,
+            "title": "Relationship Interpretation",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "conclusion_accuracy",
+          "evidence_quality",
+          "relationship_interpretation",
+          "protected_actor_discipline",
+          "efficiency"
+        ],
+        "title": "ScoreDimensionsResponse",
+        "type": "object"
+      },
+      "SubmissionRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_claim_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 5,
+            "title": "Evidence Claim Ids",
+            "type": "array"
+          },
+          "expected_round_version": {
+            "anyOf": [
+              {
+                "minimum": 0.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expected Round Version"
+          },
+          "idempotency_key": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "suspect_record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20,
+            "title": "Suspect Record Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "idempotency_key"
+        ],
+        "title": "SubmissionRequest",
+        "type": "object"
+      },
+      "SubmissionResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "credits_remaining": {
+            "minimum": 0.0,
+            "title": "Credits Remaining",
+            "type": "integer"
+          },
+          "dimensions": {
+            "$ref": "#/components/schemas/ScoreDimensionsResponse"
+          },
+          "economy_version": {
+            "title": "Economy Version",
+            "type": "string"
+          },
+          "ending_code": {
+            "title": "Ending Code",
+            "type": "string"
+          },
+          "ending_narrative": {
+            "title": "Ending Narrative",
+            "type": "string"
+          },
+          "ending_title": {
+            "title": "Ending Title",
+            "type": "string"
+          },
+          "false_accusations": {
+            "minimum": 0.0,
+            "title": "False Accusations",
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "replayed": {
+            "default": false,
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "required_claims_complete": {
+            "title": "Required Claims Complete",
+            "type": "boolean"
+          },
+          "round_id": {
+            "title": "Round Id",
+            "type": "string"
+          },
+          "score": {
+            "maximum": 1000.0,
+            "minimum": 0.0,
+            "title": "Score",
+            "type": "integer"
+          },
+          "scoring_version": {
+            "title": "Scoring Version",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "submission_id": {
+            "title": "Submission Id",
+            "type": "string"
+          },
+          "submitted_suspect_count": {
+            "minimum": 0.0,
+            "title": "Submitted Suspect Count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "submission_id",
+          "round_id",
+          "idempotency_key",
+          "status",
+          "score",
+          "ending_code",
+          "ending_title",
+          "ending_narrative",
+          "dimensions",
+          "false_accusations",
+          "required_claims_complete",
+          "submitted_suspect_count",
+          "credits_remaining",
+          "scoring_version",
+          "economy_version",
+          "created_at"
+        ],
+        "title": "SubmissionResponse",
+        "type": "object"
       },
       "ValidationError": {
         "properties": {
@@ -2057,6 +2353,90 @@
           }
         },
         "summary": "Create Round",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/closing": {
+      "get": {
+        "operationId": "case_closing_api_v1_rounds__round_id__closing_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OpeningResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Case Closing",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/economy/ledger": {
+      "get": {
+        "operationId": "economy_ledger_api_v1_rounds__round_id__economy_ledger_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LedgerResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Economy Ledger",
         "tags": [
           "rounds"
         ]
@@ -2706,6 +3086,98 @@
           }
         },
         "summary": "Start Round",
+        "tags": [
+          "rounds"
+        ]
+      }
+    },
+    "/api/v1/rounds/{round_id}/submission": {
+      "get": {
+        "operationId": "case_submission_api_v1_rounds__round_id__submission_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmissionResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Case Submission",
+        "tags": [
+          "rounds"
+        ]
+      },
+      "post": {
+        "operationId": "submit_case_api_v1_rounds__round_id__submission_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "round_id",
+            "required": true,
+            "schema": {
+              "title": "Round Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubmissionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmissionResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Submit Case",
         "tags": [
           "rounds"
         ]

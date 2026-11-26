@@ -59,6 +59,8 @@ class RoundResponse(ApiModel):
     intro_completed_at: datetime | None
     credits_remaining: int = Field(ge=0)
     version: int = Field(ge=1)
+    submitted_at: datetime | None = None
+    submission_id: str | None = None
 
 
 class ComicPageResponse(ApiModel):
@@ -142,6 +144,7 @@ class GraphFilterRequest(ApiModel):
 
 
 class GraphAnalysisRequest(ApiModel):
+    idempotency_key: str | None = Field(default=None, pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
     algorithm: str = Field(pattern=r"^(NEIGHBOURHOOD|SHORTEST_PATH|CONNECTED_COMPONENTS|CENTRALITY|MOTIF|CIRCULAR_FLOW)$")
     seed_record_id: str | None = Field(default=None, min_length=1, max_length=128)
     source_record_id: str | None = Field(default=None, min_length=1, max_length=128)
@@ -326,6 +329,64 @@ class EntityResolutionReviewResponse(ApiModel):
 class EntityResolutionHistoryResponse(ApiModel):
     analyses: list[EntityResolutionResponse]
     reviews: list[EntityResolutionReviewResponse]
+
+
+class SubmissionRequest(ApiModel):
+    idempotency_key: str = Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
+    suspect_record_ids: list[str] = Field(default_factory=list, max_length=20)
+    evidence_claim_ids: list[str] = Field(default_factory=list, max_length=5)
+    expected_round_version: int | None = Field(default=None, ge=0)
+
+
+class ScoreDimensionsResponse(ApiModel):
+    conclusion_accuracy: int = Field(ge=0)
+    evidence_quality: int = Field(ge=0)
+    relationship_interpretation: int = Field(ge=0)
+    protected_actor_discipline: int = Field(ge=0)
+    efficiency: int = Field(ge=0)
+
+
+class SubmissionResponse(ApiModel):
+    submission_id: str
+    round_id: str
+    idempotency_key: str
+    status: str
+    score: int = Field(ge=0, le=1000)
+    ending_code: str
+    ending_title: str
+    ending_narrative: str
+    dimensions: ScoreDimensionsResponse
+    false_accusations: int = Field(ge=0)
+    required_claims_complete: bool
+    submitted_suspect_count: int = Field(ge=0)
+    credits_remaining: int = Field(ge=0)
+    scoring_version: str
+    economy_version: str
+    created_at: datetime
+    replayed: bool = False
+
+
+class LedgerEntryResponse(ApiModel):
+    entry_id: str
+    round_id: str
+    idempotency_key: str
+    action: str
+    entry_type: str
+    amount: int = Field(ge=0)
+    balance_after: int = Field(ge=0)
+    status: str
+    rules_version: str
+    created_at: datetime
+
+
+class LedgerResponse(ApiModel):
+    entries: list[LedgerEntryResponse]
+
+
+class ResolutionContextResponse(ApiModel):
+    available: bool
+    submission: SubmissionResponse
+    ledger: LedgerResponse
 
 
 class WorkspaceResponse(ApiModel):

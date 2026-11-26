@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from threading import RLock
 
 from fraud_graph_arena.rounds.domain import Round
@@ -38,19 +39,7 @@ class InMemoryRoundRepository:
                 raise KeyError(round_id)
             if round_.credits_remaining < amount:
                 raise ValueError("INSUFFICIENT_CREDITS")
-            charged = Round(
-                id=round_.id,
-                player_id=round_.player_id,
-                path_id=round_.path_id,
-                case_id=round_.case_id,
-                case_version=round_.case_version,
-                status=round_.status,
-                created_at=round_.created_at,
-                started_at=round_.started_at,
-                intro_completed_at=round_.intro_completed_at,
-                credits_remaining=round_.credits_remaining - amount,
-                version=round_.version + 1,
-            )
+            charged = replace(round_, credits_remaining=round_.credits_remaining - amount, version=round_.version + 1)
             self._rounds[round_id] = charged
             return charged
 
@@ -61,18 +50,6 @@ class InMemoryRoundRepository:
             round_ = self._rounds.get(round_id)
             if round_ is None:
                 raise KeyError(round_id)
-            refunded = Round(
-                id=round_.id,
-                player_id=round_.player_id,
-                path_id=round_.path_id,
-                case_id=round_.case_id,
-                case_version=round_.case_version,
-                status=round_.status,
-                created_at=round_.created_at,
-                started_at=round_.started_at,
-                intro_completed_at=round_.intro_completed_at,
-                credits_remaining=round_.credits_remaining + amount,
-                version=round_.version + 1,
-            )
+            refunded = replace(round_, credits_remaining=round_.credits_remaining + amount, version=round_.version + 1)
             self._rounds[round_id] = refunded
             return refunded

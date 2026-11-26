@@ -8,6 +8,7 @@ from time import perf_counter
 from uuid import uuid4
 from typing import Any, Callable
 
+from fraud_graph_arena.economy import EconomyService
 from fraud_graph_arena.rounds.domain import RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
@@ -40,11 +41,13 @@ class GraphAnalyticsService:
         *,
         engine: GraphAnalyticsEngine | None = None,
         new_id: Callable[[], str] = lambda: str(uuid4()),
+        economy: EconomyService | None = None,
     ) -> None:
         self._rounds = rounds
         self._graph_provider = graph_provider
         self._engine = engine or GraphAnalyticsEngine()
         self._new_id = new_id
+        self._economy = economy
         self._cache: dict[str, GraphAnalysisResult] = {}
         self._cache_order: list[str] = []
         self._history: dict[str, list[GraphAnalysisResult]] = {}
@@ -60,10 +63,29 @@ class GraphAnalyticsService:
                 detail=f"'{algorithm or 'empty'}' is not one of the bounded graph actions.",
                 recovery="Choose neighbourhood, path, component, centrality, motif or circular-flow analysis.",
             )
+        normalised_request = self._normalise_request(request)
+        scope_for_identity = sorted({str(value) for value in request.get("visible_record_ids", ())})
+        identity_material = {"parameters": normalised_request, "visible_record_ids": scope_for_identity}
+        idempotency_key = str(request.get("idempotency_key") or "legacy-" + hashlib.sha256(json.dumps(identity_material, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()[:40])
+        request_hash = EconomyService.request_hash({"action": "RUN_GRAPH_ANALYSIS", **identity_material})
+        if self._economy is not None:
+            result, _ = self._economy.execute(
+                round_id,
+                "RUN_GRAPH_ANALYSIS",
+                idempotency_key,
+                request_hash,
+                lambda: self._analyze_uncached(round_id, request, round_, algorithm, normalised_request),
+                serialize=self._serialize_result,
+                deserialize=self._deserialize_result,
+                refund_if=lambda value: value.status == "FAILED",
+            )
+            return replace(result, cached=not _ and result.status == "COMPLETED") if not _ else result
+        return self._analyze_uncached(round_id, request, round_, algorithm, normalised_request)
+
+    def _analyze_uncached(self, round_id: str, request: dict[str, Any], round_: Any, algorithm: str, normalised_request: dict[str, Any]) -> GraphAnalysisResult:
         graph = self._graph_provider(round_id)
         scoped_graph, visible_ids, visible_edge_ids = self._authorise_scope(graph, request.get("visible_record_ids", ()))
         self._validate_subjects(algorithm, request, visible_ids)
-        normalised_request = self._normalise_request(request)
         snapshot_version = str(graph.get("snapshot_version", f"case:{round_.case_version}"))
         projection_version = str(graph.get("projection_version", "unknown"))
         cache_key = self._cache_key(
@@ -165,6 +187,46 @@ class GraphAnalyticsService:
                 oldest = self._cache_order.pop(0)
                 self._cache.pop(oldest, None)
             return result
+
+    @staticmethod
+    def _serialize_result(result: GraphAnalysisResult) -> str:
+        return json.dumps({"analysis_id": result.analysis_id, **{key: value for key, value in result.__dict__.items()}} if hasattr(result, "__dict__") else {
+            "analysis_id": result.analysis_id,
+            "round_id": result.round_id,
+            "algorithm": result.algorithm,
+            "status": result.status,
+            "result_type": result.result_type,
+            "parameters": result.parameters,
+            "snapshot_version": result.snapshot_version,
+            "projection_version": result.projection_version,
+            "graph_engine": result.graph_engine,
+            "framework_semantics": result.framework_semantics,
+            "generation_mode": result.generation_mode,
+            "actual_engine_run": result.actual_engine_run,
+            "input_node_count": result.input_node_count,
+            "input_edge_count": result.input_edge_count,
+            "nodes": result.nodes,
+            "edges": result.edges,
+            "paths": result.paths,
+            "components": result.components,
+            "ranked_leads": result.ranked_leads,
+            "motifs": result.motifs,
+            "supporting_relationship_ids": result.supporting_relationship_ids,
+            "partial": result.partial,
+            "omitted_result_count": result.omitted_result_count,
+            "interpretation": result.interpretation,
+            "limitations": result.limitations,
+            "cache_key": result.cache_key,
+            "cached": False,
+            "execution_millis": result.execution_millis,
+        }, sort_keys=True, separators=(",", ":"))
+
+    @staticmethod
+    def _deserialize_result(payload: str) -> GraphAnalysisResult:
+        raw = json.loads(payload)
+        for key in ("nodes", "edges", "paths", "components", "ranked_leads", "motifs", "supporting_relationship_ids", "limitations"):
+            raw[key] = tuple(raw.get(key, ()))
+        return replace(GraphAnalysisResult(**raw), cached=True)
 
     def history(self, round_id: str) -> tuple[GraphAnalysisResult, ...]:
         self._rounds.require(round_id)

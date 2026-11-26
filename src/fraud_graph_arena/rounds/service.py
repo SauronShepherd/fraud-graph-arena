@@ -18,6 +18,13 @@ class Opening:
     sequence: ComicSequence
 
 
+@dataclass(frozen=True, slots=True)
+class Closing:
+    round: Round
+    case: CaseSummary
+    sequence: ComicSequence
+
+
 class RoundService:
     def __init__(
         self,
@@ -69,6 +76,18 @@ class RoundService:
     def refund(self, round_id: str, amount: int) -> Round:
         return self._repository.refund(round_id, amount)
 
+    def submit(self, round_id: str, submission_id: str) -> Round:
+        round_ = self.require(round_id)
+        if round_.status == RoundStatus.SUBMITTED:
+            if round_.submission_id == submission_id:
+                return round_
+            raise ConflictError(code="ROUND_ALREADY_SUBMITTED", title="Case is already closed", detail="A submitted case cannot be replaced by another submission.", recovery="Open the existing case receipt.")
+        if round_.status != RoundStatus.ACTIVE:
+            raise ConflictError(code="ROUND_NOT_ACTIVE", title="Investigation is not active", detail="A case can only be submitted from an active round.", recovery="Complete the opening and investigate before submitting.")
+        submitted = round_.submit(submission_id)
+        self._repository.save(submitted)
+        return submitted
+
     def start(self, round_id: str) -> Round:
         round_ = self.require(round_id)
         case = self._case_for(round_)
@@ -98,6 +117,14 @@ class RoundService:
             kind=ComicKind.OPENING,
         )
         return Opening(round=round_, case=case, sequence=sequence)
+
+    def closing(self, round_id: str) -> Closing:
+        round_ = self.require(round_id)
+        if round_.status != RoundStatus.SUBMITTED:
+            raise ConflictError(code="ROUND_NOT_SUBMITTED", title="The case is still open", detail="The closing receipt is available after a submission has been recorded.", recovery="Submit the investigation before opening its closing receipt.")
+        case = self._case_for(round_)
+        sequence = self._narrative.require_sequence(case_id=case.id, case_version=case.version, kind=ComicKind.CLOSING)
+        return Closing(round=round_, case=case, sequence=sequence)
 
     def complete_opening(self, round_id: str, *, completion: IntroCompletion = IntroCompletion.FINISHED) -> Round:
         round_ = self.require(round_id)

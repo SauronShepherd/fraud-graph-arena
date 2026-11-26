@@ -23,5 +23,6 @@ export const actions: Record<ActionId, (input: ActionInput) => Promise<ActionRes
   CHANGE_INTRO_PAGE: async ({ payload }) => ({ event: { type: "INTRO_PAGE_CHANGED", context: { page: Number(payload?.page ?? 1) } } }),
   COMPLETE_INTRO: async ({ context }) => { const round = await completeOpening(String(context.roundId)); return { event: { type: "INTRODUCTION_COMPLETED", context: { roundId: round.id } } }; },
   SKIP_INTRO: async ({ context }) => { const round = await completeOpening(String(context.roundId), "SKIPPED"); return { event: { type: "INTRODUCTION_SKIPPED", context: { roundId: round.id } } }; },
-  RETURN_TO_CATALOGUE: async ({ context }) => ({ event: { type: "RETURNED_TO_CATALOGUE", context }, context })
+  RETURN_TO_CATALOGUE: async ({ context }) => ({ event: { type: "RETURNED_TO_CATALOGUE", context }, context }),
+  OPEN_RESOLUTION: async ({ context }) => ({ event: { type: "CASE_SUBMITTED", context: { roundId: String(context.roundId) } }, context: { roundId: String(context.roundId) } }),
 };

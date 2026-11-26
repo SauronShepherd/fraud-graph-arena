@@ -55,6 +55,11 @@ class WorkspaceService:
             actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
             action, reason = GRAPH_ANALYTICS_ACTION
             actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
+        if round_.status == RoundStatus.SUBMITTED:
+            actions = [
+                {**item, "state": "LOCKED", "reason_code": "ROUND_SUBMITTED", "reason": "The case has been submitted; its receipt is immutable."}
+                for item in actions
+            ]
         path = next(path for path in self._catalogue.list_paths() if path.id == round_.path_id)
         graph = (self._graph_provider(round_id) if self._graph_provider is not None else t02_graph()) if round_.case_id == "ACADEMY_T02" else {"projection_version": "1", "nodes": (), "edges": (), "node_count": 0, "edge_count": 0}
         return WorkspaceProjection(round_, case, path.name, "GRAPH_READY" if graph["nodes"] else "NO_EVIDENCE_REVEALED", len(graph["nodes"]), 0, tuple(actions), graph)
