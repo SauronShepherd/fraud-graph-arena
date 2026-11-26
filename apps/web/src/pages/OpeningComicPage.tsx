@@ -7,6 +7,7 @@ import { apiProblem, useScreenData } from "../screen-system/useScreenData";
 import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
 import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 import { AudioControls, useAudioManager, useAudioPreferences } from "../narrative/AudioControls";
+import { recordTranscriptOpen } from "../narrative/transcript";
 
 export function OpeningComicPage() {
   const { context: routeContext } = useScreenLocation();
@@ -71,7 +72,7 @@ export function OpeningComicPage() {
           {imageFailed ? (
             <div className="comic-fallback" role="img" aria-label={page.alt_text}>
               <span aria-hidden="true">🐾</span>
-              <p>Illustration unavailable. The transcript remains evidence.</p>
+              <p>Illustration unavailable. The transcript remains available to read.</p>
             </div>
           ) : (
             <img src={page.image_url} alt={page.alt_text} onError={() => { setImageFailed(true); audioManager.record("MISSING_ASSET", page.id); audioManager.record("FALLBACK_ACTIVATED", page.id); }} />
@@ -81,7 +82,7 @@ export function OpeningComicPage() {
           <p className="eyebrow">{page.id}</p>
           <h2 id="comic-page-title">{page.title}</h2>
           <p className="comic-caption-text">{page.caption || page.narration}</p>
-          <details onToggle={() => audioManager.record("TRANSCRIPT_OPEN")}>
+          <details onToggle={(event) => recordTranscriptOpen(event.currentTarget, audioManager)}>
             <summary>Open transcript</summary>
             <p className="comic-transcript">{page.transcript || page.narration}</p>
           </details>

@@ -49,7 +49,7 @@ The first Playwright run failed four assertions. The generated narrative had rep
 
 #### The first browser process used the wrong environment
 
-One manual browser pass started the backend in development mode. That made the Puppy path appear disabled and exposed stale browser expectations. The backend was restarted in the intended test environment with the SQLite test repository. The current catalogue marks Puppy, Adult and Senior paths as open, so the two stale `toBeDisabled()` assertions were synchronised to the current product contract. The final run then passed all 15 browser tests.
+One manual browser pass started the backend in development mode. That made the Puppy path appear disabled and exposed stale browser expectations. The backend was restarted in the intended test environment with the SQLite test repository. The current catalogue marks Puppy, Adult and Senior paths as open, so the two stale `toBeDisabled()` assertions were synchronised to the current product contract. That intermediate run then passed 15 tests; the later final run, after the narrative scenario was added, passed all 16.
 
 #### A harmless Playwright runtime warning remained
 
@@ -63,6 +63,8 @@ Those findings were treated as release blockers rather than stylistic suggestion
 
 The final reduced-motion browser assertion initially compared the browser's serialized `1e-06s` value with the source CSS's `0.001s` spelling. The CSS was working; the assertion was too literal. It now compares the numeric duration, the isolated narrative scenario passes, and the full browser suite passes again with all sixteen tests.
 
+A final lower-capacity audit found three smaller inconsistencies: the release-receipt table still had the earlier `69 / 16 / 58` split, the image fallback called the readable transcript evidence, and transcript telemetry fired on both opening and closing the disclosure. The receipt now records `70 / 16 / 58`; fallback copy says the transcript remains available to read; and the shared disclosure helper records `TRANSCRIPT_OPEN` only when `details.open` is true, with a dedicated unit test.
+
 ### 4. Local verification after correction
 
 The following results are from the FGA-15 worktree:
@@ -71,7 +73,7 @@ The following results are from the FGA-15 worktree:
 | --- | --- |
 | `npm run typecheck` | PASS |
 | `npm test -- --run src/narrative/audio.test.ts` | 4 passed |
-| full frontend Vitest (`npm test`) | 25 files, 69 passed |
+| full frontend Vitest (`npm test`) | 26 files, 70 passed |
 | `npm run build` | PASS; Vite completed without build warnings |
 | backend focused suite (`tests/iteration_01`, `11`, `14`, `15`) | 58 passed |
 | `tests/iteration_15/test_narrative_experience.py` | 5 passed |

@@ -7,6 +7,7 @@ import { useScreenLocation } from "../screen-system/BrowserNavigationAdapter";
 import { useScreenRuntime } from "../screen-system/ScreenRuntimeContext";
 import { AudioControls, useAudioManager, useAudioPreferences } from "../narrative/AudioControls";
 import type { AudioManager } from "../narrative/audio";
+import { recordTranscriptOpen } from "../narrative/transcript";
 
 interface ClosingNarrativeProps {
   pages: ComicPage[];
@@ -37,13 +38,13 @@ function ClosingNarrative({ pages, sequence, variant, audioManager }: ClosingNar
     <h2 id="closing-title">The closing note · {variant.toLowerCase()}</h2>
     {pages.map((page) => <article key={page.id}>
       <div className="comic-frame">
-        {failedImages.has(page.id) ? <div className="comic-fallback" role="img" aria-label={page.alt_text}><span aria-hidden="true">🐾</span><p>Illustration unavailable. The transcript remains evidence.</p></div> : <img src={page.image_url} alt={page.alt_text} onError={() => markImageFailed(page)} />}
+        {failedImages.has(page.id) ? <div className="comic-fallback" role="img" aria-label={page.alt_text}><span aria-hidden="true">🐾</span><p>Illustration unavailable. The transcript remains available to read.</p></div> : <img src={page.image_url} alt={page.alt_text} onError={() => markImageFailed(page)} />}
       </div>
       <div className="comic-caption">
         <p className="eyebrow">{page.id}</p>
         <h3 id={`closing-page-title-${page.id}`}>{page.title}</h3>
         <p>{page.caption || page.narration}</p>
-        <details onToggle={() => audioManager.record("TRANSCRIPT_OPEN")}>
+        <details onToggle={(event) => recordTranscriptOpen(event.currentTarget, audioManager)}>
           <summary>Open transcript</summary>
           <p className="comic-transcript">{page.transcript || page.narration}</p>
         </details>
