@@ -65,6 +65,7 @@ The acceptance target was a second canonical case that can be discovered, valida
 - The final local runtime used `npx wrangler dev --local --ip 127.0.0.1 --port 4332 --persist-to .wrangler/fga12`. `npm run test:editorial` passed 1/1 against that Worker runtime. The FGA-12 route returned HTTP 200 and contained both image references; both pinned CDN image URLs returned HTTP 200.
 - Wrangler displayed its expected local-development warning that scheduled Workers are not triggered automatically. No cron path is part of this article gate.
 - Git reported the expected LF-to-CRLF normalization warning when committing the article Markdown file; `git diff --check` was clean and the pushed commit contains no whitespace error.
+- Git also reported the expected CRLF-to-LF normalization warning when refreshing the generated JSON receipt; `git diff --check` remained clean.
 
 ### Live Databricks qualification
 
