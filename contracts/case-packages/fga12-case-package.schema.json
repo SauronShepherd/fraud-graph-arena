@@ -59,7 +59,7 @@
     "supported_actions": {
       "type": "array",
       "uniqueItems": true,
-      "items": {"enum": ["COMPARE_IDENTITIES", "RUN_GRAPH_ANALYSIS", "SUBMIT"]}
+      "items": {"enum": ["COMPARE_IDENTITIES", "CREATE_HYPOTHESIS", "RUN_GRAPH_ANALYSIS", "SUBMIT"]}
     },
     "economy": {
       "type": "object",

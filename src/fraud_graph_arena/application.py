@@ -113,7 +113,11 @@ def build_web_container(settings: Settings) -> Container:
         round_repository=round_repository,
         workspace=WorkspaceService(round_service, catalogue, graph_provider=graph_provider),
         graph=GraphInvestigationService(graph_provider),
-        investigation_commands=InvestigationCommandService(round_service, command_repository),
+        investigation_commands=InvestigationCommandService(
+            round_service,
+            command_repository,
+            package_provider=package_for_round,
+        ),
         entity_resolution=entity_resolution,
         graph_analytics=GraphAnalyticsService(round_service, graph_provider, economy=economy, package_provider=package_for_round),
         economy=economy,

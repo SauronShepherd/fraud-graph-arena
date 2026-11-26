@@ -24,7 +24,7 @@
     "Interpret the directed payment cycle without accusing shared infrastructure.",
     "Submit a reproducible evidence-backed conclusion."
   ],
-  "supported_actions": ["COMPARE_IDENTITIES", "RUN_GRAPH_ANALYSIS", "SUBMIT"],
+  "supported_actions": ["COMPARE_IDENTITIES", "CREATE_HYPOTHESIS", "RUN_GRAPH_ANALYSIS", "SUBMIT"],
   "economy": {
     "version": "fga11-economy-v1",
     "initial_credits": 9,

@@ -5,10 +5,9 @@ from datetime import UTC, datetime
 from hashlib import sha256
 import json
 import re
-from typing import Callable
+from typing import Any, Callable
 from uuid import uuid4
 
-from fraud_graph_arena.case_data.academy_graph import t02_expandable_graph
 from fraud_graph_arena.rounds.domain import RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
@@ -43,11 +42,13 @@ class InvestigationCommandService:
         rounds: RoundService,
         repository: InvestigationCommandRepository,
         *,
+        package_provider: Callable[[Any], Any] | None = None,
         now: Callable[[], datetime] = lambda: datetime.now(UTC),
         new_id: Callable[[], str] = lambda: str(uuid4()),
     ) -> None:
         self._rounds = rounds
         self._repository = repository
+        self._package_provider = package_provider
         self._now = now
         self._new_id = new_id
 
@@ -89,7 +90,8 @@ class InvestigationCommandService:
                 detail="A hypothesis can only be recorded in an active round.",
                 recovery="Open an active round and retry.",
             )
-        if round_.case_id != "ACADEMY_T02":
+        package = self._package_provider(round_) if self._package_provider is not None else None
+        if package is None or not package.supports("CREATE_HYPOTHESIS"):
             raise ConflictError(
                 code="ACTION_NOT_AVAILABLE",
                 title="Action is unavailable",
@@ -97,7 +99,7 @@ class InvestigationCommandService:
                 recovery="Use the Academy Circular Collar lesson for this action.",
             )
 
-        allowed_ids = {node.record_id for node in t02_expandable_graph()["nodes"]}
+        allowed_ids = {node.record_id for node in package.graph()["nodes"]}
         if source_record_id not in allowed_ids or target_record_id not in allowed_ids:
             raise NotFoundError(
                 code="SUBJECT_NOT_AVAILABLE",

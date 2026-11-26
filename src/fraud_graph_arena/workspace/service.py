@@ -52,8 +52,9 @@ class WorkspaceService:
             if package.supports("COMPARE_IDENTITIES"):
                 action, reason = ENTITY_RESOLUTION_ACTION
                 actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
-            action, reason = MANUAL_HYPOTHESIS_ACTION
-            actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
+            if package.supports("CREATE_HYPOTHESIS"):
+                action, reason = MANUAL_HYPOTHESIS_ACTION
+                actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})
             if package.supports("RUN_GRAPH_ANALYSIS"):
                 action, reason = GRAPH_ANALYTICS_ACTION
                 actions.append({"id": action, "state": "AVAILABLE", "reason_code": "READY", "reason": reason})

@@ -28,6 +28,7 @@ def test_published_packages_are_discovered_and_validated() -> None:
     assert t03.supports("RUN_GRAPH_ANALYSIS") is True
     assert t03.supports("SUBMIT") is True
     assert t03.supports("COMPARE_IDENTITIES") is False
+    assert t03.supports("CREATE_HYPOTHESIS") is False
     assert len(t03.rows("published/records.csv")) == 23
     assert len(t03.rows("published/relationships.csv")) == 27
 
@@ -51,7 +52,7 @@ def test_new_case_uses_the_shared_workspace_without_case_specific_application_br
     assert payload["evidence_count"] == 23
     assert payload["graph"]["node_count"] == 23
     assert payload["graph"]["edge_count"] == 27
-    assert [item["id"] for item in payload["actions"]] == ["CREATE_HYPOTHESIS", "RUN_GRAPH_ANALYSIS"]
+    assert [item["id"] for item in payload["actions"]] == ["RUN_GRAPH_ANALYSIS"]
     assert payload["round"]["credits_remaining"] == 15
     public_text = json.dumps(payload).lower()
     assert "culpability" not in public_text
