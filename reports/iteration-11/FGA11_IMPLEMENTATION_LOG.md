@@ -59,7 +59,7 @@ The first content validation failed with `ERR_MODULE_NOT_FOUND` for `yaml`. `npm
 
 | Check | Result |
 | --- | --- |
-| FGA-11 Python slice after the stale-version fix | 9 passed |
+| FGA-11 Python slice after the stale-version fix and edge-case tests | 11 passed |
 | FGA-11 plus FGA 03 / 09 / 10 regression slice after edge-case tests | 66 passed |
 | Full Python suite | 256 passed in 1136.93s; no pytest warnings emitted |
 | Frontend typecheck | passed |
@@ -69,7 +69,7 @@ The first content validation failed with `ERR_MODULE_NOT_FOUND` for `yaml`. `npm
 | Content validation | 109 canonical articles validated |
 | Internal link check | 116 same-origin URLs checked; no failures |
 | OpenAPI export | regenerated with submission, closing and ledger routes |
-| Databricks live qualification | recorded in `databricks-fga11-economy-current.json` after the final code commit |
+| Databricks live qualification | `pass`; profile `fga`; read-only; 20 records, 21 relationships, one snapshot; all five checks true; source commit `8961a90010f63bcebfe7c4453ca2f71c9c93f1e5` |
 
 ## Editorial passes
 
@@ -77,4 +77,4 @@ The final review is recorded as ten passes after the last article edit. Each pas
 
 ## Closing rule
 
-FGA-11 is not considered complete until the live report has `status: pass`, `profile: fga`, `read_only: true`, all checks true, the article receipt matches the final test counts, and all three worktrees are clean on their pushed `FGA-11` branches.
+FGA-11's live qualification now has `status: pass`, `profile: fga`, `read_only: true`, all checks true, and the article receipt matches the final test counts. The remaining release step is to commit and push the updated article receipt and final report, then verify all three worktrees are clean on their pushed `FGA-11` branches.

@@ -1,0 +1,95 @@
+{
+  "status": "pass",
+  "read_only": true,
+  "profile": "fga",
+  "catalog": "sda_dev",
+  "schema": "sandbox",
+  "warehouse_id": "eded42c9d0a69b84",
+  "case_id": "ACADEMY_T02",
+  "active_publication": [
+    "ACADEMY_T02",
+    "3.0.0-canonical.1",
+    "2026.07.19.1",
+    "pub_9f6284edb76878d369d2f64dbb9ecc26f15781b99d70f83d00ae1280755b8cfd"
+  ],
+  "record_summary": [
+    "20",
+    "20",
+    "1"
+  ],
+  "relationship_summary": [
+    "21",
+    "21",
+    "1"
+  ],
+  "observed_columns": [
+    "case_id",
+    "case_version",
+    "snapshot_version",
+    "canonical_model_version",
+    "active_publication_id",
+    "activated_at_utc",
+    "activating_run_id",
+    "case_id",
+    "profile_code",
+    "record_id",
+    "record_type",
+    "record_subtype",
+    "display_label",
+    "source_system_id",
+    "occurred_at",
+    "status",
+    "safe_summary",
+    "safe_attributes_json",
+    "provenance_ref",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id",
+    "case_id",
+    "profile_code",
+    "relationship_id",
+    "relationship_family",
+    "relationship_type",
+    "source_record_id",
+    "target_record_id",
+    "directed",
+    "event_time",
+    "weight",
+    "supporting_record_ids_json",
+    "player_safe_summary",
+    "provenance",
+    "safe_attributes_json",
+    "snapshot_version",
+    "_publication_id",
+    "_load_run_id"
+  ],
+  "forbidden_columns": [],
+  "economy_contract": {
+    "rules_version": "fga11-economy-v1",
+    "initial_credits": 9,
+    "paid_actions": {
+      "COMPARE_IDENTITIES": 3,
+      "RUN_GRAPH_ANALYSIS": 3
+    },
+    "navigation_and_submission": 0
+  },
+  "scoring_contract": {
+    "version": "fga11-scoring-v1",
+    "max_score": 1000,
+    "truth_source_queried": false
+  },
+  "graphframes_compatibility": {
+    "status": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
+    "actual_engine_run": false,
+    "fallback": "RUNTIME_DETERMINISTIC_FALLBACK"
+  },
+  "checks": {
+    "one_active_publication": true,
+    "record_boundary": true,
+    "relationship_boundary": true,
+    "no_forbidden_player_columns": true,
+    "only_allowlisted_read_queries": true
+  },
+  "run_at_utc": "2026-11-26T12:06:14.049076+00:00",
+  "source_commit": "8961a90010f63bcebfe7c4453ca2f71c9c93f1e5"
+}
