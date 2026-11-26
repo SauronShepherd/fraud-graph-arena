@@ -26,6 +26,7 @@ The acceptance target was four meaningfully different difficulty paths on one re
 7. Added FGA-13 tests for profile/schema/catalogue rules and for one shared playable round in Academy, Puppy, Adult and Senior. Updated historical catalogue and package-count tests to describe the new published catalogue rather than the old Academy-only baseline.
 8. Added `scripts/qualify_fga13_difficulty.py`, a read-only Databricks qualifier for every canonical package. It records the requested profile, warehouse, active publication, exact public counts, forbidden-column scan, source commit and the fact that GraphFrames was not executed in a SQL-Warehouse-only run.
 9. Added the numbered newspaper and infographic assets under the FGA-13 asset branch and pinned their CDN commit in the article.
+10. Added `difficulty/playtest.py`, an allowlisted privacy-safe event contract and aggregate path-metric export. It deliberately does not claim human observations; it gives the later human playtest a safe collection boundary.
 
 ## Iteration history and failures
 
@@ -40,6 +41,7 @@ The acceptance target was four meaningfully different difficulty paths on one re
 | Python regression 1 | The full suite reached 270 passing tests and one OpenAPI-contract failure after the new graph field was added. | Regenerated `contracts/openapi-v1.json` with `scripts/export_openapi.py`. | The committed schema matches the application contract. A full rerun is required after this repair. |
 | Databricks invocation 1 | Running the new qualifier as a file could not import the sibling qualifier module with package-only imports. | Added a direct-file import fallback. | The exact command used for the external check runs without changing the repository import layout. |
 | Databricks qualification | Profile `fga` authenticated to the configured SQL Warehouse; all thirteen active public boundaries passed. | Kept the run read-only and recorded `truth_source_queried=false`, `actual_engine_run=false` and `UNRESOLVED_SQL_WAREHOUSE_ONLY`. | The report proves the published safe boundary, not an unperformed GraphFrames execution. |
+| Playtest preflight | The outline required time-to-lead, action use, unsupported accusations, outcomes and privacy-safe telemetry. | Added an allowlisted event model and aggregation test; rejected email, player IDs, raw notes and unknown fields. | Four deterministic fixture sessions aggregate by path without exporting the session token. This is not human playtest evidence. |
 | Visual pass 1 | The first generated artwork was brighter than the established FGA-11/FGA-12 desk images. | Regenerated both pieces with a darker sepia/umber treatment and restrained lamp glow. | The cover and infographic use the same low-key noir palette and Spanish Water Dog detective. |
 
 ## Tests and checks
@@ -100,6 +102,7 @@ The first report was generated before the FGA-13 code commit and therefore carri
 - The article's legitimate-comparator rule is validated as a positive manifest requirement and is also checked in the live public-boundary report without querying truth.
 - The article's bounded-view claim is implemented in `build_web_container()`, `initial_subset()` and `GraphResponse`; omitted counts and snapshot identity are tested.
 - The article's shared-engine claim is implemented by `test_one_shared_round_engine_serves_each_path`, which starts one round in each path through the same API flow.
+- The article's privacy-safe telemetry claim is implemented by `DifficultyPlaytestEvent` and `aggregate_playtest`; tests prove the allowlist and reject identity-sensitive fields. The fixtures are deterministic and are not presented as human observations.
 - The article says the cross-path test is executable playability evidence, not a human usability study. No human playtest or player telemetry is claimed in the article.
 - The article says GraphFrames/Zingg did not execute; the external report carries `actual_engine_run=false`.
 
