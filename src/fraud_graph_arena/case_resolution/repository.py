@@ -9,6 +9,8 @@ from typing import Protocol
 
 from fraud_graph_arena.shared.errors import ConflictError
 
+from fraud_graph_arena.ethics.models import EvidenceStatement, EthicalAssessment
+
 from .models import ScoreDimensions, SubmissionResult
 
 
@@ -27,6 +29,12 @@ def _payload(result: SubmissionResult) -> str:
 def _from_payload(value: str) -> SubmissionResult:
     raw = json.loads(value)
     raw["dimensions"] = ScoreDimensions(**raw["dimensions"])
+    if raw.get("ethics") is not None:
+        ethics = raw["ethics"]
+        ethics["statements"] = tuple(EvidenceStatement(**item) for item in ethics.get("statements", []))
+        ethics["role_dimensions"] = tuple(ethics.get("role_dimensions", ()))
+        ethics["impact_dimensions"] = tuple(ethics.get("impact_dimensions", ()))
+        raw["ethics"] = EthicalAssessment(**ethics)
     return SubmissionResult(**raw)
 
 

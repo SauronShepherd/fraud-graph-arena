@@ -336,6 +336,7 @@ class SubmissionRequest(ApiModel):
     idempotency_key: str = Field(pattern=r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
     suspect_record_ids: list[str] = Field(default_factory=list, max_length=20)
     evidence_claim_ids: list[str] = Field(default_factory=list, max_length=32)
+    evidence_record_ids: list[str] = Field(default_factory=list, max_length=64)
     expected_round_version: int | None = Field(default=None, ge=0)
 
 
@@ -345,6 +346,37 @@ class ScoreDimensionsResponse(ApiModel):
     relationship_interpretation: int = Field(ge=0)
     protected_actor_discipline: int = Field(ge=0)
     efficiency: int = Field(ge=0)
+
+
+class EvidenceStatementResponse(ApiModel):
+    claim_id: str
+    claim_type: str
+    evidence_family: str
+    support: str
+    matched_record_count: int = Field(ge=0)
+    required_record_count: int = Field(ge=0)
+    explanation: str
+
+
+class EthicalAssessmentResponse(ApiModel):
+    status: str
+    evidence_mode: str
+    evidence_threshold: int = Field(ge=1)
+    submitted_claim_count: int = Field(ge=0)
+    supported_claim_count: int = Field(ge=0)
+    missing_claim_count: int = Field(ge=0)
+    unsupported_claim_count: int = Field(ge=0)
+    submitted_record_count: int = Field(ge=0)
+    matched_record_count: int = Field(ge=0)
+    unsupported_accusation_count: int = Field(ge=0)
+    harm_penalty: int = Field(ge=0)
+    responsibility_rule: str
+    evidence_boundary: str
+    role_dimensions: list[str]
+    impact_dimensions: list[str]
+    explanation: str
+    statements: list[EvidenceStatementResponse]
+    version: str
 
 
 class SubmissionResponse(ApiModel):
@@ -365,6 +397,7 @@ class SubmissionResponse(ApiModel):
     economy_version: str
     created_at: datetime
     replayed: bool = False
+    ethics: EthicalAssessmentResponse | None = None
 
 
 class LedgerEntryResponse(ApiModel):

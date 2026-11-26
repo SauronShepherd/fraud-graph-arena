@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from fraud_graph_arena.ethics.models import EthicalAssessment
+
 
 SCORING_VERSION = "fga11-scoring-v1"
 
@@ -48,3 +50,4 @@ class SubmissionResult:
     created_at: str
     request_hash: str
     replayed: bool = False
+    ethics: EthicalAssessment | None = None

@@ -1,0 +1,24 @@
+{
+  "version": "fga14-ethics-v1",
+  "claim_types": [
+    "ACTOR",
+    "AFFECTED_PARTY",
+    "BEHAVIOUR",
+    "BENEFICIARY",
+    "EVIDENCE",
+    "MECHANISM",
+    "ROLE"
+  ],
+  "role_dimensions": [
+    "OWNERSHIP",
+    "CONTROL",
+    "AUTHORISATION",
+    "CUSTODY",
+    "PROFESSIONAL_RESPONSIBILITY"
+  ],
+  "impact_dimensions": ["BENEFIT", "HARM"],
+  "outcomes": ["SUPPORTED", "INCOMPLETE", "UNSUPPORTED"],
+  "evidence_modes": ["EXPLICIT_ANCHORS", "CLAIM_DECLARATIONS"],
+  "responsibility_rule": "CONTROL_AND_ROLE_REQUIRED",
+  "evidence_boundary": "PLAYER_VISIBLE_ONLY"
+}

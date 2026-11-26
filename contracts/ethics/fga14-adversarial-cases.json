@@ -1,0 +1,11 @@
+{
+  "version": "fga14-ethics-v1",
+  "cases": [
+    {"case_id": "INNOCENT_SUPERNODE", "trap": "centrality", "protected_reason": "shared_service", "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"},
+    {"case_id": "SHARED_ADDRESS_TRAP", "trap": "registered_address", "protected_reason": "legitimate_tenant", "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"},
+    {"case_id": "FALSE_IDENTITY_MATCH", "trap": "similar_name", "protected_reason": "distinct_identifier", "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"},
+    {"case_id": "VICTIM_RECRUITER", "trap": "mixed_role", "protected_reason": "benefit_and_harm_coexist", "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"},
+    {"case_id": "PROFESSIONAL_PROXIMITY", "trap": "auditor_or_lawyer", "protected_reason": "professional_role_is_not_control", "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"},
+    {"case_id": "MISLEADING_ALGORITHM_RESULT", "trap": "model_label", "protected_reason": "algorithm_is_a_lead", "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"}
+  ]
+}

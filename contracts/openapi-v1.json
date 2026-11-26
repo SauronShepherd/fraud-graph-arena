@@ -454,6 +454,169 @@
         "title": "EntityResolutionReviewResponse",
         "type": "object"
       },
+      "EthicalAssessmentResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_boundary": {
+            "title": "Evidence Boundary",
+            "type": "string"
+          },
+          "evidence_mode": {
+            "title": "Evidence Mode",
+            "type": "string"
+          },
+          "evidence_threshold": {
+            "minimum": 1.0,
+            "title": "Evidence Threshold",
+            "type": "integer"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "harm_penalty": {
+            "minimum": 0.0,
+            "title": "Harm Penalty",
+            "type": "integer"
+          },
+          "impact_dimensions": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Impact Dimensions",
+            "type": "array"
+          },
+          "matched_record_count": {
+            "minimum": 0.0,
+            "title": "Matched Record Count",
+            "type": "integer"
+          },
+          "missing_claim_count": {
+            "minimum": 0.0,
+            "title": "Missing Claim Count",
+            "type": "integer"
+          },
+          "responsibility_rule": {
+            "title": "Responsibility Rule",
+            "type": "string"
+          },
+          "role_dimensions": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Role Dimensions",
+            "type": "array"
+          },
+          "statements": {
+            "items": {
+              "$ref": "#/components/schemas/EvidenceStatementResponse"
+            },
+            "title": "Statements",
+            "type": "array"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "submitted_claim_count": {
+            "minimum": 0.0,
+            "title": "Submitted Claim Count",
+            "type": "integer"
+          },
+          "submitted_record_count": {
+            "minimum": 0.0,
+            "title": "Submitted Record Count",
+            "type": "integer"
+          },
+          "supported_claim_count": {
+            "minimum": 0.0,
+            "title": "Supported Claim Count",
+            "type": "integer"
+          },
+          "unsupported_accusation_count": {
+            "minimum": 0.0,
+            "title": "Unsupported Accusation Count",
+            "type": "integer"
+          },
+          "unsupported_claim_count": {
+            "minimum": 0.0,
+            "title": "Unsupported Claim Count",
+            "type": "integer"
+          },
+          "version": {
+            "title": "Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "evidence_mode",
+          "evidence_threshold",
+          "submitted_claim_count",
+          "supported_claim_count",
+          "missing_claim_count",
+          "unsupported_claim_count",
+          "submitted_record_count",
+          "matched_record_count",
+          "unsupported_accusation_count",
+          "harm_penalty",
+          "responsibility_rule",
+          "evidence_boundary",
+          "role_dimensions",
+          "impact_dimensions",
+          "explanation",
+          "statements",
+          "version"
+        ],
+        "title": "EthicalAssessmentResponse",
+        "type": "object"
+      },
+      "EvidenceStatementResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "title": "Claim Id",
+            "type": "string"
+          },
+          "claim_type": {
+            "title": "Claim Type",
+            "type": "string"
+          },
+          "evidence_family": {
+            "title": "Evidence Family",
+            "type": "string"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "matched_record_count": {
+            "minimum": 0.0,
+            "title": "Matched Record Count",
+            "type": "integer"
+          },
+          "required_record_count": {
+            "minimum": 0.0,
+            "title": "Required Record Count",
+            "type": "integer"
+          },
+          "support": {
+            "title": "Support",
+            "type": "string"
+          }
+        },
+        "required": [
+          "claim_id",
+          "claim_type",
+          "evidence_family",
+          "support",
+          "matched_record_count",
+          "required_record_count",
+          "explanation"
+        ],
+        "title": "EvidenceStatementResponse",
+        "type": "object"
+      },
       "ExactIdentityMatchResponse": {
         "additionalProperties": false,
         "properties": {
@@ -1934,6 +2097,14 @@
             "title": "Evidence Claim Ids",
             "type": "array"
           },
+          "evidence_record_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 64,
+            "title": "Evidence Record Ids",
+            "type": "array"
+          },
           "expected_round_version": {
             "anyOf": [
               {
@@ -1997,6 +2168,16 @@
           "ending_title": {
             "title": "Ending Title",
             "type": "string"
+          },
+          "ethics": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EthicalAssessmentResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "false_accusations": {
             "minimum": 0.0,

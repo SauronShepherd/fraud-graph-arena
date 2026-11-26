@@ -16,7 +16,7 @@ from fraud_graph_arena.web.api_models import (
     EntityResolutionHistoryResponse,
     GraphAnalysisRequest, GraphAnalysisResponse, GraphAnalysisHistoryResponse,
     GraphAnalysisPathResponse, GraphAnalysisComponentResponse, GraphAnalysisLeadResponse, GraphAnalysisMotifResponse,
-    SubmissionRequest, SubmissionResponse, ScoreDimensionsResponse, LedgerEntryResponse, LedgerResponse,
+    SubmissionRequest, SubmissionResponse, ScoreDimensionsResponse, EthicalAssessmentResponse, EvidenceStatementResponse, LedgerEntryResponse, LedgerResponse,
 )
 from fraud_graph_arena.web.mappers import map_closing, map_opening, map_round, map_workspace
 
@@ -201,6 +201,28 @@ def graph_analytics_history(round_id: str, request: Request) -> GraphAnalysisHis
 
 
 def _submission_response(result, *, replayed: bool = False) -> SubmissionResponse:
+    ethics = None
+    if result.ethics is not None:
+        ethics = EthicalAssessmentResponse(
+            status=result.ethics.status,
+            evidence_mode=result.ethics.evidence_mode,
+            evidence_threshold=result.ethics.evidence_threshold,
+            submitted_claim_count=result.ethics.submitted_claim_count,
+            supported_claim_count=result.ethics.supported_claim_count,
+            missing_claim_count=result.ethics.missing_claim_count,
+            unsupported_claim_count=result.ethics.unsupported_claim_count,
+            submitted_record_count=result.ethics.submitted_record_count,
+            matched_record_count=result.ethics.matched_record_count,
+            unsupported_accusation_count=result.ethics.unsupported_accusation_count,
+            harm_penalty=result.ethics.harm_penalty,
+            responsibility_rule=result.ethics.responsibility_rule,
+            evidence_boundary=result.ethics.evidence_boundary,
+            role_dimensions=list(result.ethics.role_dimensions),
+            impact_dimensions=list(result.ethics.impact_dimensions),
+            explanation=result.ethics.explanation,
+            statements=[EvidenceStatementResponse(claim_id=item.claim_id, claim_type=item.claim_type, evidence_family=item.evidence_family, support=item.support, matched_record_count=item.matched_record_count, required_record_count=item.required_record_count, explanation=item.explanation) for item in result.ethics.statements],
+            version=result.ethics.version,
+        )
     return SubmissionResponse(
         submission_id=result.submission_id,
         round_id=result.round_id,
@@ -219,6 +241,7 @@ def _submission_response(result, *, replayed: bool = False) -> SubmissionRespons
         economy_version=result.economy_version,
         created_at=result.created_at,
         replayed=replayed,
+        ethics=ethics,
     )
 
 
@@ -239,7 +262,7 @@ def _ledger_response(entries) -> LedgerResponse:
 
 @router.post("/{round_id}/submission", response_model=SubmissionResponse)
 def submit_case(round_id: str, payload: SubmissionRequest, request: Request) -> SubmissionResponse:
-    result, created = request.app.state.container.case_resolution.submit(round_id, payload.idempotency_key, payload.suspect_record_ids, payload.evidence_claim_ids, payload.expected_round_version)
+    result, created = request.app.state.container.case_resolution.submit(round_id, payload.idempotency_key, payload.suspect_record_ids, payload.evidence_claim_ids, payload.expected_round_version, payload.evidence_record_ids)
     return _submission_response(result, replayed=not created)
 
 
