@@ -6,6 +6,8 @@
 - Editorial source: `FGA_Development_Series_Outline_07-19.md`, Iteration I12, and the corresponding FGA-12 entry in `Fraud Graph Arena — Master Series Outline Updated.md`.
 - Code branch: `FGA-12`.
 - Code worktree: `C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga12-20261126`.
+- Article branch: `FGA-12`, commit `5ca84bddd0a84c401ddf4694608a5c5788cab437`.
+- Asset branch: `FGA-12`, commit `103b4b6f29fcdb82c9f1646239d23c31c09e201a`.
 - Suggested series tag: `fga-i12-case-packages`.
 
 The acceptance target was a second canonical case that can be discovered, validated, opened, investigated and resolved through shared services. A case-specific `if case_id == ...` branch in shared application screens or services was not accepted as the implementation.
@@ -52,6 +54,17 @@ The acceptance target was a second canonical case that can be discovered, valida
 - Typecheck passed.
 - Screen definitions parsed successfully.
 - Vite production build passed.
+
+### Article site
+
+- `npm ci` in the article worktree restored 355 packages. npm reported two install scripts requiring approval (`esbuild` and `workerd`) and five audit findings (4 moderate, 1 high); no dependency files were changed.
+- `npm run content:validate` passed with 110 canonical articles in the series-folder structure.
+- `npm run check:links` passed with 116 same-origin URLs checked and no failing internal URL.
+- `npm run build` passed: Astro generated 100 pages, including `/fga/12-case-me-if-you-can/`; Pagefind indexed 95 pages.
+- The first editorial run used the default remote site and failed on an unrelated deployed-catalogue expectation for `greased-reyden`. The first local run used port `4321`, which was already serving another worktree; it therefore failed against the wrong generated href. The FGA-12 Astro server auto-bound to `4323`, where the static server correctly exposed the article but not the Worker-only admin routes (404 instead of the expected 401).
+- The final local runtime used `npx wrangler dev --local --ip 127.0.0.1 --port 4332 --persist-to .wrangler/fga12`. `npm run test:editorial` passed 1/1 against that Worker runtime. The FGA-12 route returned HTTP 200 and contained both image references; both pinned CDN image URLs returned HTTP 200.
+- Wrangler displayed its expected local-development warning that scheduled Workers are not triggered automatically. No cron path is part of this article gate.
+- Git reported the expected LF-to-CRLF normalization warning when committing the article Markdown file; `git diff --check` was clean and the pushed commit contains no whitespace error.
 
 ### Live Databricks qualification
 
