@@ -108,6 +108,6 @@
     "cycle_snapshot_matches_publication": true,
     "no_forbidden_player_columns": true
   },
-  "run_at_utc": "2026-11-26T09:56:08.572318+00:00",
-  "source_commit": "c9cc9046187c15b50cbc9d561ad4746d3903d48e"
+  "run_at_utc": "2026-11-26T10:32:49.296657+00:00",
+  "source_commit": "28d065df26b4228e23fb8b5433c2e1a43ce0f348"
 }

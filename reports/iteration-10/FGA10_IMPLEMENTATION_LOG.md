@@ -173,6 +173,7 @@ and complete suites then ran without that warning.
 | 2026-11-26 | Internal links | `npm run check:links` | 116 same-origin URLs; no failures | The direct article links and existing site routes resolve without an internal-link failure. |
 | 2026-11-26 | Article production build | `npm run build` in the article worktree | 98 pages built; Pagefind indexed 93 pages | FGA-09 and FGA-10 routes are emitted, and Pagefind reports no missing-body warning. |
 | 2026-11-26 | Databricks live qualification | `qualify_graph_analytics.py --profile fga ...` | Passed: 11 checks, SELECT-only | Profile `fga` reauthenticated; publication, counts, endpoints, payment cycle, snapshot and column boundary all passed. GraphFrames remains explicitly unresolved on SQL Warehouse. |
+| 2026-11-26 | Final Databricks live qualification | Same command after commit `28d065d` | Passed: 11 checks, SELECT-only | Profile `fga` qualified the definitive FGA-10 commit; `source_commit=28d065df26b4228e23fb8b5433c2e1a43ce0f348`, no mutation, `actual_engine_run=false`. |
 
 ## Databricks boundary
 
@@ -189,6 +190,7 @@ The current receipt is:
 - live checks: 11
 - SQL statements: 7 SELECT-only statements
 - mutation attempted: none
+- definitive source commit: `28d065df26b4228e23fb8b5433c2e1a43ce0f348`
 
 The earlier `invalid_grant` receipt was a real failed attempt and remains part
 of the historical log. It is not the current qualification result. The current
@@ -299,6 +301,8 @@ analytics contract. No change was justified.
 - the newspaper cover and final infographic were generated, inspected and
   pushed as `1.png` and `2.png` in the FGA-10 asset branch.
 
-The remaining closure work is committing and pushing the implementation and
-article branches, then repeating the live `fga` qualification against the
-definitive implementation commit and recording that final hash in the receipt.
+The implementation branch is committed and pushed at `28d065d`, and the final
+live `fga` qualification passed against that exact source commit. The article
+branch still needs its publication commit and push; after that, the FGA-10
+implementation, article, tests, receipt and assets are closed as one traceable
+release.
