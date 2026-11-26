@@ -1,8 +1,8 @@
 {
   "status": "pass",
   "iteration": "FGA15",
-  "run_at_utc": "2026-11-26T19:25:44.861835+00:00",
-  "source_commit": "296adff762aab3eabeffc4e64a17143d4271e64f",
+  "run_at_utc": "2026-11-26T20:19:51.110561+00:00",
+  "source_commit": "d051bba2b525c4ffb38317ec9d5f5c9a9d4e0f10",
   "profile": "fga",
   "catalog": "sda_dev",
   "schema": "sandbox",
