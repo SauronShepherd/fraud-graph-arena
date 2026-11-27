@@ -30,11 +30,9 @@ def _profile_identity(profile: str) -> dict[str, Any]:
     )
     if completed.returncode != 0:
         return {"status": "fail", "profile": profile, "error": completed.stderr.strip() or completed.stdout.strip()}
-    try:
-        identity = json.loads(completed.stdout)
-    except json.JSONDecodeError:
-        identity = {"raw": completed.stdout.strip()}
-    return {"status": "pass", "profile": profile, "identity": identity}
+    # The command is an authentication check, not a reason to persist SCIM
+    # email addresses, group membership or other account metadata in a receipt.
+    return {"status": "pass", "profile": profile, "authenticated": True}
 
 
 def main() -> int:
