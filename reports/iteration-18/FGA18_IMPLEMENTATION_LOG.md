@@ -84,7 +84,13 @@ The report stores public projection counts, snapshots and allowlisted columns. I
 - The article follows the FGA-16/FGA-17 structure: three short italic opening paragraphs; Parts I–VIII; `The Arrest`; `Case Closed?`; `Next in the Series`; one separator; `Source Code`; `Release Receipt`; one separator; final infographic and caption.
 - The first draft was checked against both outlines. The article follows Master FGA-18 numbering and states the Development-outline numbering discrepancy in this log.
 - The article now describes the browser and API evidence as a deliberate pair rather than claiming that the Python smoke itself is a browser test.
-- The final article reading-time estimate is 16 minutes, below the 20-minute series target.
+- The final article reading-time estimate is 17 minutes, below the 20-minute series target.
+
+### Article runtime check
+
+- The article build generated 106 pages, including `/fga/18-log-me-tender/`; content validation covered 116 canonical articles and the internal-link checker found no failing same-origin URLs.
+- A direct local preview check returned `200` for `/fga/18-log-me-tender/` and `404` for the invalid legacy route `/articles/fga--log-me-tender/`.
+- The repository-wide `test:editorial` suite was also tried against the public base URL and failed because the public deployment did not yet contain the expected promoted link. Against the local static preview, the article route passed but the suite's unrelated admin API assertions received `404` instead of the worker-only `401`. This is recorded as an environment-scope limitation, not promoted as an article failure or a false pass.
 
 ## Limits kept visible
 
