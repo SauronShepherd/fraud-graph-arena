@@ -1,6 +1,6 @@
 {
   "schema_version": "fga16-academy-scenario-v1",
-  "curriculum_version": "1.0.0",
+  "curriculum_version": "1.1.0",
   "scenarios": [
     {
       "scenario_id": "academy-node-selection",
@@ -155,6 +155,57 @@
       "resource_profile": {"starting_credits": 9, "credits_spent": 0},
       "execution_mode": "API_CONTRACT",
       "protected_expected_outcome": {"final_state": "WRONG_TREE", "golden_result_id": "golden-academy-incorrect-accusation", "assertion_ids": ["FGA16-SUBMIT-UNSUPPORTED", "FGA16-SUBMIT-NO-TRUTH-LEAK"]}
+    },
+    {
+      "scenario_id": "academy-victim-recruiter",
+      "scenario_version": "1.0.0",
+      "title": "The victim with two hats",
+      "mechanic": "MIXED_ROLE_ETHICS",
+      "learning_objective": "Keep victim status and recruiting activity separate; role overlap is not proof of control.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "VICTIM_RECRUITER",
+      "seed": "fga16-victim-recruiter-001",
+      "visible_evidence": ["One protected person appears both harmed and involved in recruiting.", "The role ledger separates harm, benefit and operational control."],
+      "actions": [{"action_id": "REVIEW_ROLE_EVIDENCE", "label": "Keep the mixed role in review", "kind": "REVIEW_ROLE_EVIDENCE"}],
+      "expected_transitions": [{"from": "READY", "action_id": "REVIEW_ROLE_EVIDENCE", "to": "MIXED_ROLE_REVIEW"}],
+      "tutorial_guidance": ["A person can be harmed and still make choices under pressure.", "Do not convert role overlap into a control finding without role evidence."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "COMPONENT_MOCK",
+      "protected_expected_outcome": {"final_state": "MIXED_ROLE_REVIEW", "golden_result_id": "golden-academy-victim-recruiter", "assertion_ids": ["FGA16-MIXED-VICTIM-RECRUITER", "FGA16-MIXED-NO-ROLE-SHORTCUT"]}
+    },
+    {
+      "scenario_id": "academy-professional-proximity",
+      "scenario_version": "1.0.0",
+      "title": "The lawyer near the door",
+      "mechanic": "MIXED_ROLE_ETHICS",
+      "learning_objective": "Separate legitimate professional proximity from control, benefit or culpability.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "PROFESSIONAL_PROXIMITY",
+      "seed": "fga16-professional-proximity-001",
+      "visible_evidence": ["A professional actor appears in the same records as the investigation subject.", "Proximity is visible; control and benefit still need separate support."],
+      "actions": [{"action_id": "CHECK_PROFESSIONAL_ROLE", "label": "Check the professional role", "kind": "CHECK_PROFESSIONAL_ROLE"}],
+      "expected_transitions": [{"from": "READY", "action_id": "CHECK_PROFESSIONAL_ROLE", "to": "ROLE_PROXIMITY_REVIEW"}],
+      "tutorial_guidance": ["An auditor or lawyer can be close to a case without owning its conduct.", "Record the legitimate role before you read proximity as suspicion."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "COMPONENT_MOCK",
+      "protected_expected_outcome": {"final_state": "ROLE_PROXIMITY_REVIEW", "golden_result_id": "golden-academy-professional-proximity", "assertion_ids": ["FGA16-MIXED-PROFESSIONAL-ROLE", "FGA16-MIXED-NO-PROXIMITY-GUILT"]}
+    },
+    {
+      "scenario_id": "academy-beneficiary-operator-split",
+      "scenario_version": "1.0.0",
+      "title": "The hand and the pocket",
+      "mechanic": "MIXED_ROLE_ETHICS",
+      "learning_objective": "Distinguish the operational actor from a beneficiary instead of collapsing both roles into one accusation.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "BENEFICIARY_OPERATOR_SPLIT",
+      "seed": "fga16-beneficiary-operator-split-001",
+      "visible_evidence": ["The operational record and the beneficiary record are different actors.", "A directed flow can identify a beneficiary without proving who controlled the operation."],
+      "actions": [{"action_id": "SEPARATE_ROLE_CHAIN", "label": "Separate actor and beneficiary", "kind": "SEPARATE_ROLE_CHAIN"}],
+      "expected_transitions": [{"from": "READY", "action_id": "SEPARATE_ROLE_CHAIN", "to": "ROLE_CHAIN_REVIEW"}],
+      "tutorial_guidance": ["The hand that moves a record and the pocket that benefits from it are separate questions.", "Keep operational role, control and benefit in different columns."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "COMPONENT_MOCK",
+      "protected_expected_outcome": {"final_state": "ROLE_CHAIN_REVIEW", "golden_result_id": "golden-academy-beneficiary-operator-split", "assertion_ids": ["FGA16-MIXED-BENEFICIARY-SEPARATE", "FGA16-MIXED-NO-ROLE-COLLAPSE"]}
     },
     {
       "scenario_id": "academy-complete-game-loop",

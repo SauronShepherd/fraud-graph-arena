@@ -9,6 +9,9 @@
     {"golden_result_id": "golden-academy-contradictory-evidence", "scenario_id": "academy-contradictory-evidence", "expected_final_state": "REVIEW_REQUIRED", "expected_transition_count": 1},
     {"golden_result_id": "golden-academy-correct-accusation", "scenario_id": "academy-correct-accusation", "expected_final_state": "CLEAN_COLLAR", "expected_transition_count": 1},
     {"golden_result_id": "golden-academy-incorrect-accusation", "scenario_id": "academy-incorrect-accusation", "expected_final_state": "WRONG_TREE", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-victim-recruiter", "scenario_id": "academy-victim-recruiter", "expected_final_state": "MIXED_ROLE_REVIEW", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-professional-proximity", "scenario_id": "academy-professional-proximity", "expected_final_state": "ROLE_PROXIMITY_REVIEW", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-beneficiary-operator-split", "scenario_id": "academy-beneficiary-operator-split", "expected_final_state": "ROLE_CHAIN_REVIEW", "expected_transition_count": 1},
     {"golden_result_id": "golden-academy-complete-game-loop", "scenario_id": "academy-complete-game-loop", "expected_final_state": "ACADEMY_LOOP_COMPLETE", "expected_transition_count": 5}
   ]
 }

@@ -14,7 +14,7 @@ from fraud_graph_arena.paths import project_root
 
 SCENARIO_SCHEMA_VERSION = "fga16-academy-scenario-v1"
 GOLDEN_SCHEMA_VERSION = "fga16-academy-golden-v1"
-ACADEMY_CURRICULUM_VERSION = "1.0.0"
+ACADEMY_CURRICULUM_VERSION = "1.1.0"
 
 
 @dataclass(frozen=True, slots=True)

@@ -1,0 +1,23 @@
+{
+  "schema_version": "fga16-mixed-role-cases-v1",
+  "cases": [
+    {
+      "case_id": "VICTIM_RECRUITER",
+      "role_pattern": "victim_and_recruiter",
+      "protected_reason": "benefit_and_harm_can_coexist_without proving control",
+      "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"
+    },
+    {
+      "case_id": "PROFESSIONAL_PROXIMITY",
+      "role_pattern": "professional_with_legitimate_proximity",
+      "protected_reason": "professional proximity is not operational control",
+      "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"
+    },
+    {
+      "case_id": "BENEFICIARY_OPERATOR_SPLIT",
+      "role_pattern": "beneficiary_differs_from_operational_actor",
+      "protected_reason": "benefit, operation and control require separate evidence",
+      "expected_disposition": "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE"
+    }
+  ]
+}

@@ -50,7 +50,7 @@ function persistResolutionRetryKeys(roundId: string, keys: Map<string, string>):
   }
 }
 
-export function InvestigationActions({ workspace, graph, selectedNodeId = null }: { workspace: Workspace; graph: Graph; selectedNodeId?: string | null }) {
+export function InvestigationActions({ workspace, graph, selectedNodeId = null, onMutation }: { workspace: Workspace; graph: Graph; selectedNodeId?: string | null; onMutation?: () => void }) {
   const [feedback, setFeedback] = useState("");
   const [sourceId, setSourceId] = useState("");
   const [targetId, setTargetId] = useState("");
@@ -170,6 +170,7 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
         ? current
         : [...current, result]);
       retryKey.current = null;
+      onMutation?.();
       setFeedback(result.replayed
         ? "The same hypothesis was already recorded. No credits were charged and no evidence was revealed."
         : "Hypothesis recorded. No credits were charged and no evidence was revealed.");
@@ -196,6 +197,7 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
       setAnalyses((current) => [...current.filter((item) => item.analysis_id !== result.analysis_id), result]);
       resolutionRetryKeys.current.delete(operationKey);
       persistResolutionRetryKeys(workspace.round.id, resolutionRetryKeys.current);
+      onMutation?.();
       setFeedback(result.replayed
         ? "The same identity analysis was replayed. No second charge was made."
         : `Identity analysis complete. ${result.charged_credits} credits charged; no ground truth or fraud verdict was revealed.`);
@@ -221,6 +223,7 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
       setResolutionReviews((current) => [...current.filter((item) => item.candidate_id !== result.candidate_id), result]);
       resolutionRetryKeys.current.delete(operationKey);
       persistResolutionRetryKeys(workspace.round.id, resolutionRetryKeys.current);
+      onMutation?.();
       setFeedback(`${outcome.toLowerCase()} review recorded. It is a player note, not a canonical merge or fraud verdict.`);
     } catch {
       setFeedback("The candidate review could not be recorded. The published graph remains unchanged.");
@@ -251,6 +254,7 @@ export function InvestigationActions({ workspace, graph, selectedNodeId = null }
     try {
       const result = await runGraphAnalysis(workspace.round.id, input);
       setGraphAnalyses((current) => [...current.filter((item) => item.analysis_id !== result.analysis_id), result]);
+      onMutation?.();
       setFeedback(result.cached
         ? "The same bounded graph analysis was replayed from its complete visibility-aware cache key."
         : "Graph analysis complete. The result is a structural lead with supporting relationships, not a verdict.");

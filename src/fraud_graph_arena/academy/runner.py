@@ -7,7 +7,7 @@ inside this module and the qualification report.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime
 import gc
 import json
@@ -18,6 +18,7 @@ from typing import Any, Callable
 from fraud_graph_arena.academy.models import AcademyScenario, ScenarioRegistry
 from fraud_graph_arena.config import Settings
 from fraud_graph_arena.case_packages import CasePackageRegistry, validate_all_case_packages
+from fraud_graph_arena.paths import project_root
 
 
 @dataclass(frozen=True, slots=True)
@@ -96,11 +97,37 @@ class AcademyValidationRunner:
         )
 
     def _run_scenario(self, scenario: AcademyScenario) -> ScenarioRun:
+        if scenario.mechanic == "MIXED_ROLE_ETHICS":
+            return self._run_mixed_role(scenario)
         if scenario.execution_mode == "COMPONENT_MOCK":
             return self._simulate(scenario)
         if scenario.execution_mode == "COMPLETE_LOOP":
             return self._run_complete_loop(scenario)
         return self._run_api_contract(scenario)
+
+    def _run_mixed_role(self, scenario: AcademyScenario) -> ScenarioRun:
+        fixture_path = project_root() / "contracts/academy/fga16-mixed-role-cases.json"
+        fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+        case = next((item for item in fixture.get("cases", []) if item.get("case_id") == scenario.case_id), None)
+        result = self._simulate(scenario)
+        errors = list(result.evidence_diff)
+        if case is None:
+            errors.append(f"mixed-role fixture missing {scenario.case_id}")
+        elif case.get("expected_disposition") != "DO_NOT_ACCUSE_WITHOUT_ROLE_EVIDENCE":
+            errors.append(f"mixed-role fixture {scenario.case_id} has an unsafe disposition")
+        return replace(
+            result,
+            status="PASS" if not errors else "FAIL",
+            final_state=result.expected_state if not errors else None,
+            actual_state=result.expected_state if not errors else None,
+            evidence_diff=tuple(errors),
+            diagnostics={
+                **result.diagnostics,
+                "runner": "mixed-role-ethics-component-runner",
+                "role_pattern": case.get("role_pattern") if case else None,
+                "fixture": str(fixture_path.relative_to(project_root())),
+            },
+        )
 
     def _simulate(self, scenario: AcademyScenario) -> ScenarioRun:
         state = "READY"

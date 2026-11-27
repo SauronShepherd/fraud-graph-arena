@@ -14,7 +14,7 @@
     "curriculum_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
     "scenarios": {
       "type": "array",
-      "minItems": 9,
+      "minItems": 12,
       "uniqueItems": true,
       "items": {
         "type": "object",
@@ -40,7 +40,7 @@
           "scenario_id": {"type": "string", "pattern": "^academy-[a-z0-9-]+$"},
           "scenario_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
           "title": {"type": "string", "minLength": 1, "maxLength": 160},
-          "mechanic": {"enum": ["NODE_SELECTION", "EDGE_INSPECTION", "ENTITY_RESOLUTION", "GRAPH_TRAVERSAL", "RESOURCE_SPENDING", "CONTRADICTORY_EVIDENCE", "CORRECT_ACCUSATION", "INCORRECT_ACCUSATION", "COMPLETE_GAME_LOOP"]},
+          "mechanic": {"enum": ["NODE_SELECTION", "EDGE_INSPECTION", "ENTITY_RESOLUTION", "GRAPH_TRAVERSAL", "RESOURCE_SPENDING", "CONTRADICTORY_EVIDENCE", "CORRECT_ACCUSATION", "INCORRECT_ACCUSATION", "MIXED_ROLE_ETHICS", "COMPLETE_GAME_LOOP"]},
           "learning_objective": {"type": "string", "minLength": 1, "maxLength": 500},
           "path_id": {"const": "DETECTIVE_ACADEMY"},
           "case_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{2,63}$"},

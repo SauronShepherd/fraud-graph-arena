@@ -6,7 +6,7 @@ from fraud_graph_arena.academy import AcademyValidationRunner
 def test_shared_runner_qualifies_components_api_complete_loop_regression_and_restart() -> None:
     report = AcademyValidationRunner().run()
     assert report.status == "PASS", report.as_dict()
-    assert report.scenario_count == 9
+    assert report.scenario_count == 12
     assert all(run.status == "PASS" for run in report.runs)
     assert report.regression["status"] == "PASS"
     assert report.regression["package_count"] == 14
@@ -14,6 +14,9 @@ def test_shared_runner_qualifies_components_api_complete_loop_regression_and_res
     complete = next(run for run in report.runs if run.scenario_id == "academy-complete-game-loop")
     assert complete.action_history == ("SELECT_NODE", "RUN_ENTITY_RESOLUTION", "TRAVERSE_GRAPH", "SPEND_CREDIT", "SUBMIT_CORRECT")
     assert len(complete.correlation_ids) >= 6
+    mixed = [run for run in report.runs if run.execution_mode == "COMPONENT_MOCK" and "mixed-role" in run.diagnostics.get("runner", "")]
+    assert len(mixed) == 3
+    assert all(run.status == "PASS" for run in mixed)
 
 
 def test_failed_component_run_keeps_diagnostics_explicit(monkeypatch) -> None:
