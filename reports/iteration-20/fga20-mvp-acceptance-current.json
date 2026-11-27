@@ -1,0 +1,331 @@
+{
+  "schema_version": "fga20-mvp-acceptance-v1",
+  "status": "pass",
+  "source_revision": "8afe50ca12ec574b7a539370b0987610a7870402",
+  "release_id": "fga19-mvp.1",
+  "generated_at_utc": "2026-11-27T05:53:25.766309+00:00",
+  "plan_vs_reality": [
+    {
+      "id": "player-loop",
+      "planned_iteration": "FGA 00, FGA 08, FGA 16",
+      "delivered": "The qualified Academy path enters a case, investigates, spends a credit, submits and receives a deterministic public resolution.",
+      "evidence": [
+        "academy-complete-game-loop",
+        "18 browser E2E tests",
+        "313 backend tests"
+      ],
+      "status": "delivered"
+    },
+    {
+      "id": "canonical-cases",
+      "planned_iteration": "FGA 04–05, FGA 12–14",
+      "delivered": "One canonical package contract serves 13 published Databricks public boundaries; package validation remains separate from protected truth.",
+      "evidence": [
+        "FGA-20 Databricks receipt",
+        "Academy published-case regression"
+      ],
+      "status": "delivered"
+    },
+    {
+      "id": "graph-and-identity",
+      "planned_iteration": "FGA 06–10",
+      "delivered": "The player can inspect bounded graph evidence and request identity/analytics results through the authoritative API; the qualified fallback remains explicit.",
+      "evidence": [
+        "Academy complete loop",
+        "FGA-18/FGA-19 receipts",
+        "actual_engine_run=false boundary"
+      ],
+      "status": "limited"
+    },
+    {
+      "id": "release-discipline",
+      "planned_iteration": "FGA 17–19",
+      "delivered": "A versioned release manifest, bound round, migration, blocking gates, container smoke and application-only rollback are reproducible.",
+      "evidence": [
+        "fga19-release-manifest-current.json",
+        "fga19_release_smoke.py",
+        "container startup smoke"
+      ],
+      "status": "delivered"
+    },
+    {
+      "id": "production-scale",
+      "planned_iteration": "MVP boundary",
+      "delivered": "Production-scale concurrency, retention, multi-region recovery and user research were not inferred from local tests.",
+      "evidence": [
+        "FGA-20 not-measured list"
+      ],
+      "status": "deferred"
+    }
+  ],
+  "player_journey": {
+    "status": "PASS",
+    "complete_loop_scenario": "academy-complete-game-loop",
+    "steps": [
+      {
+        "id": "entry-and-curriculum",
+        "status": "PASS",
+        "evidence": "Academy public API contract and curriculum validation"
+      },
+      {
+        "id": "case-and-round",
+        "status": "PASS",
+        "evidence": "complete-game-loop runner creates, starts and opens a bound round"
+      },
+      {
+        "id": "workspace-and-evidence",
+        "status": "PASS",
+        "evidence": "complete-game-loop runner traverses graph and invokes identity analysis"
+      },
+      {
+        "id": "action-and-ledger",
+        "status": "PASS",
+        "evidence": "Academy receipt verifies a paid action, replay/idempotency and ledger state"
+      },
+      {
+        "id": "submission-and-resolution",
+        "status": "PASS",
+        "evidence": "public submission receipt reaches CLEAN_COLLAR without hidden truth"
+      },
+      {
+        "id": "save-recovery",
+        "status": "PASS",
+        "evidence": "Academy SQLite persistence probe restores credits and cached analysis"
+      },
+      {
+        "id": "production-scale-latency",
+        "status": "NOT_MEASURED",
+        "evidence": "No production-scale latency or concurrency claim is made"
+      }
+    ]
+  },
+  "outcomes": {
+    "qualified_case_packages": 13,
+    "case_shape": {
+      "case_ids": [
+        "ACADEMY_T01",
+        "ACADEMY_T02",
+        "ACADEMY_T03",
+        "BONE_LEDGER",
+        "DOWNLINE",
+        "GOLDEN_HYDRANT",
+        "PHANTOM_VET",
+        "BISCUIT_RELIEF",
+        "CEO_BARKED_TWICE",
+        "MADDOG",
+        "CRYPTO_KENNEL_LONG_CON",
+        "LOVE_LEASHES_OFFSHORE",
+        "PANAMA_PAWPERS"
+      ],
+      "package_count": 13,
+      "records_total": 35874,
+      "records_min": 10,
+      "records_max": 9537,
+      "relationships_total": 80349,
+      "relationships_min": 14,
+      "relationships_max": 25112,
+      "method": "Databricks SELECT-only public active-publication and snapshot summaries"
+    },
+    "local_academy": {
+      "status": "PASS",
+      "curriculum_version": "1.1.0",
+      "scenario_count": 12,
+      "complete_loop": {
+        "scenario_id": "academy-complete-game-loop",
+        "status": "PASS",
+        "execution_mode": "COMPLETE_LOOP",
+        "final_state": "ACADEMY_LOOP_COMPLETE",
+        "action_history": [
+          "SELECT_NODE",
+          "RUN_ENTITY_RESOLUTION",
+          "TRAVERSE_GRAPH",
+          "SPEND_CREDIT",
+          "SUBMIT_CORRECT"
+        ]
+      },
+      "regression": {
+        "status": "PASS",
+        "package_count": 14,
+        "manifest_count": 14,
+        "smoke": [
+          {
+            "case_id": "ACADEMY_001",
+            "package_id": "academy-001",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "ACADEMY_T01",
+            "package_id": "academy-t01",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "ACADEMY_T02",
+            "package_id": "academy-t02",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "ACADEMY_T03",
+            "package_id": "academy-t03",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "BONE_LEDGER",
+            "package_id": "adult-bone-ledger",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "DOWNLINE",
+            "package_id": "adult-downline",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "GOLDEN_HYDRANT",
+            "package_id": "adult-golden-hydrant",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "PHANTOM_VET",
+            "package_id": "adult-phantom-vet",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "BISCUIT_RELIEF",
+            "package_id": "puppy-biscuit-relief",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "CEO_BARKED_TWICE",
+            "package_id": "puppy-ceo-barked-twice",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "MADDOG",
+            "package_id": "puppy-maddog",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "CRYPTO_KENNEL_LONG_CON",
+            "package_id": "senior-crypto-kennel-long-con",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "LOVE_LEASHES_OFFSHORE",
+            "package_id": "senior-love-leashes-offshore",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          },
+          {
+            "case_id": "PANAMA_PAWPERS",
+            "package_id": "senior-panama-pawpers",
+            "status": "PASS",
+            "round_status": "ACTIVE"
+          }
+        ],
+        "errors": [],
+        "runner": "published-case-regression"
+      },
+      "persistence": {
+        "status": "PASS",
+        "round_recovered": true,
+        "idempotent_replay": true,
+        "errors": []
+      },
+      "qualification_duration_ms": 72309.04,
+      "method": "AcademyValidationRunner: component scenarios plus real public API contract, published-case regression and SQLite restart probe"
+    },
+    "previous_academy_receipt": {
+      "status": "pass",
+      "scenario_count": 12,
+      "source_commit": "8b1a6c2b9535c591ab11fb1c4d9f4de6c1fa5194"
+    },
+    "test_receipts": {
+      "backend_full": {
+        "count": 313,
+        "status": "pass",
+        "source": "reports/iteration-19/FGA19_IMPLEMENTATION_LOG.md"
+      },
+      "backend_focused": {
+        "count": 20,
+        "status": "pass",
+        "source": "reports/iteration-20/FGA20_IMPLEMENTATION_LOG.md"
+      },
+      "fga20_acceptance_delta": {
+        "count": 3,
+        "status": "pass",
+        "source": "tests/iteration_20/test_mvp_acceptance.py"
+      },
+      "frontend_unit": {
+        "count": 71,
+        "files": 27,
+        "status": "pass",
+        "source": "reports/iteration-19/FGA19_IMPLEMENTATION_LOG.md"
+      },
+      "browser_e2e": {
+        "count": 18,
+        "status": "pass",
+        "source": "reports/iteration-19/FGA19_IMPLEMENTATION_LOG.md"
+      }
+    },
+    "deployment_evidence": {
+      "manifest": "pass",
+      "container_build": "pass",
+      "container_startup_smoke": "pass",
+      "rollback_drill": "pass",
+      "databricks_profile": "fga",
+      "databricks_read_only": true
+    },
+    "not_measured": [
+      "production-scale concurrency and latency",
+      "multi-region failover and disaster recovery",
+      "reader usability and content breadth beyond the qualified case set",
+      "production retention, alerting and operational staffing cost"
+    ],
+    "academy_duration_ms": 72309.04,
+    "methods": {
+      "case_counts": "Databricks public active-publication and snapshot summaries",
+      "player_journey": "AcademyValidationRunner and its public API/SQLite probes",
+      "test_counts": "FGA-19 inherited regression receipts plus the FGA-20 focused acceptance receipt; not inferred from source-file counts"
+    }
+  },
+  "exclusions": [
+    "collaborative or multiplayer investigations",
+    "AI-generated hints that could leak truth or change ranked determinism",
+    "visual case-authoring UI and community case moderation",
+    "replay analytics beyond the current game history and observability receipts",
+    "additional graph engines without a measured limitation requiring one",
+    "production-scale administration and multi-region operations"
+  ],
+  "next_season": [
+    "Measure whether collaboration solves a player problem before adding permissions and concurrency.",
+    "Test bounded AI hints against protected-truth leakage and deterministic scoring.",
+    "Compare a validated authoring tool with the current manifest workflow on content error rate.",
+    "Use replay analysis to improve learning and diagnosis without turning history into an oracle.",
+    "Replace the graph boundary only when a measured workload demonstrates a real limitation.",
+    "Define provenance, moderation and security gates before accepting community-authored cases."
+  ],
+  "verdict": {
+    "game_loop": "GAME_FOR_QUALIFIED_CASE_SET",
+    "proven": [
+      "A player can enter, investigate, spend bounded resources, submit evidence and receive a deterministic public resolution for the qualified Academy path.",
+      "Published case packages, release binding, migrations, tests, container startup and read-only Databricks qualification have explicit evidence.",
+      "Protected truth remains outside the player-facing publication and acceptance receipts."
+    ],
+    "unproven": [
+      "Production-scale performance, reliability and operating cost.",
+      "Whether the current case breadth and interaction design satisfy real players.",
+      "Whether a new graph engine, collaboration or AI assistance would create enough value to justify its risk."
+    ]
+  }
+}

@@ -24,7 +24,7 @@ from fraud_graph_arena.release_engineering import load_release_manifest, validat
 
 
 DEFAULT_RELEASE_MANIFEST = Path("reports/iteration-19/fga19-release-manifest-current.json")
-DEFAULT_RELEASE_REPORT = Path("reports/iteration-19/databricks-fga19-release-current.json")
+DEFAULT_RELEASE_REPORT = Path("reports/iteration-20/databricks-fga20-public-boundary-current.json")
 DEFAULT_ACADEMY_REPORT = Path("reports/iteration-16/databricks-fga16-academy-current.json")
 DEFAULT_SCHEMA = Path("contracts/retrospective/fga20-mvp-acceptance.schema.json")
 
@@ -105,7 +105,7 @@ def _plan_vs_reality() -> list[dict[str, Any]]:
             "id": "canonical-cases",
             "planned_iteration": "FGA 04–05, FGA 12–14",
             "delivered": "One canonical package contract serves 13 published Databricks public boundaries; package validation remains separate from protected truth.",
-            "evidence": ["FGA-19 Databricks receipt", "Academy published-case regression"],
+            "evidence": ["FGA-20 Databricks receipt", "Academy published-case regression"],
             "status": "delivered",
         },
         {
@@ -201,7 +201,8 @@ def build_report(
             },
             "test_receipts": {
                 "backend_full": {"count": 313, "status": "pass", "source": "reports/iteration-19/FGA19_IMPLEMENTATION_LOG.md"},
-                "backend_focused": {"count": 17, "status": "pass", "source": "reports/iteration-19/FGA19_IMPLEMENTATION_LOG.md"},
+                "backend_focused": {"count": 20, "status": "pass", "source": "reports/iteration-20/FGA20_IMPLEMENTATION_LOG.md"},
+                "fga20_acceptance_delta": {"count": 3, "status": "pass", "source": "tests/iteration_20/test_mvp_acceptance.py"},
                 "frontend_unit": {"count": 71, "files": 27, "status": "pass", "source": "reports/iteration-19/FGA19_IMPLEMENTATION_LOG.md"},
                 "browser_e2e": {"count": 18, "status": "pass", "source": "reports/iteration-19/FGA19_IMPLEMENTATION_LOG.md"},
             },
@@ -223,7 +224,7 @@ def build_report(
             "methods": {
                 "case_counts": "Databricks public active-publication and snapshot summaries",
                 "player_journey": "AcademyValidationRunner and its public API/SQLite probes",
-                "test_counts": "stored FGA-19 receipts, not inferred from source-file counts",
+                "test_counts": "FGA-19 inherited regression receipts plus the FGA-20 focused acceptance receipt; not inferred from source-file counts",
             },
         },
         "exclusions": [

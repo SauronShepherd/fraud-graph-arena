@@ -1,0 +1,85 @@
+253583.553 process-start
+253583.651 begin academy-001
+253583.652 exception AttributeError: 'CasePackage' object has no attribute 'root'
+253606.957 process-start
+253606.969 begin academy-001
+253606.976 end academy-001 errors=0
+253606.976 begin academy-t01
+253607.037 end academy-t01 errors=0
+253607.037 begin academy-t02
+253607.091 end academy-t02 errors=0
+253607.092 begin academy-t03
+253607.155 end academy-t03 errors=0
+253607.155 begin adult-bone-ledger
+253610.983 end adult-bone-ledger errors=0
+253610.984 begin adult-downline
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 67 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\AppData\Local\Programs\Python\Python313\Lib\csv.py", line 178 in __next__
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 124 in <genexpr>
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 124 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+253618.110 end adult-downline errors=0
+253618.111 begin adult-golden-hydrant
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\AppData\Local\Programs\Python\Python313\Lib\csv.py", line 178 in __next__
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 51 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+253624.411 end adult-golden-hydrant errors=0
+253624.412 begin adult-phantom-vet
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\AppData\Local\Programs\Python\Python313\Lib\re\__init__.py", line ??? in fullmatch
+  <invalid frame>
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+253632.064 end adult-phantom-vet errors=0
+253632.065 begin puppy-biscuit-relief
+253633.347 end puppy-biscuit-relief errors=0
+253633.348 begin puppy-ceo-barked-twice
+253634.443 end puppy-ceo-barked-twice errors=0
+253634.443 begin puppy-maddog
+253635.224 end puppy-maddog errors=0
+253635.224 begin senior-crypto-kennel-long-con
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 67 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 70 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 67 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\AppData\Local\Programs\Python\Python313\Lib\csv.py", line 178 in __next__
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 124 in <genexpr>
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 124 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
+253655.248 end senior-crypto-kennel-long-con errors=0
+253655.249 begin senior-love-leashes-offshore
+Timeout (0:00:05)!
+Thread 0x00008b5c (most recent call first):
+  File "C:\Users\angel.alvarez\AppData\Local\Programs\Python\Python313\Lib\re\__init__.py", line 172 in fullmatch
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\types.py", line 32 in coerce_sql_value
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\types.py", line 56 in validate_sql_value
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_data\validator.py", line 67 in validate_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\src\fraud_graph_arena\case_packages\validator.py", line 60 in validate_case_package
+  File "C:\Users\angel.alvarez\PycharmProjects\_worktrees\fraud-graph-arena-fga20-20261127\_debug_fga20_validator.py", line 30 in <module>
