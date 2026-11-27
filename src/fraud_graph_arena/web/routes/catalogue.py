@@ -16,4 +16,6 @@ def list_sections(request: Request) -> CatalogueSectionsResponse:
 
 @router.get("/{section}", response_model=CatalogueSectionResponse)
 def get_section(section: str, request: Request) -> CatalogueSectionResponse:
-    return map_section(request.app.state.container.catalogue.get_section(section))
+    value = request.app.state.container.catalogue.get_section(section)
+    curriculum = request.app.state.container.academy.public_curriculum() if str(value.path.id) == "DETECTIVE_ACADEMY" else None
+    return map_section(value, academy_curriculum=curriculum)

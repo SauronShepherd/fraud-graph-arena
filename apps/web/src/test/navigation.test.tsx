@@ -42,7 +42,26 @@ const section = {
       description: "Spoiler-free training file.",
       status: "OPEN"
     }
-  ]
+  ],
+  academy_curriculum: {
+    curriculum_version: "1.0.0",
+    path_id: "DETECTIVE_ACADEMY",
+    scenario_count: 9,
+    scenarios: [{
+      scenario_id: "academy-node-selection",
+      scenario_version: "1.0.0",
+      title: "The node under the lamp",
+      mechanic: "NODE_SELECTION",
+      learning_objective: "Select a published node without mistaking a selection for a verdict.",
+      path_id: "DETECTIVE_ACADEMY",
+      case_id: "ACADEMY_T02",
+      seed: "fga16-node-selection-001",
+      visible_evidence: ["A bounded graph contains published records."],
+      actions: [{ action_id: "SELECT_NODE", label: "Select a visible node", kind: "SELECT_NODE" }],
+      tutorial_guidance: ["Selection changes what the inspector shows; it does not accuse anyone."],
+      resource_profile: { starting_credits: 9, credits_spent: 0 }
+    }]
+  }
 };
 
 const pendingRound = {
@@ -126,6 +145,7 @@ describe("walking skeleton navigation", () => {
     fireEvent.click(screen.getByRole("link", { name: /choose your trench coat/i }));
     expect(await screen.findByRole("button", { name: /puppy/i })).toBeDisabled();
     fireEvent.click(screen.getByRole("button", { name: /detective academy/i }));
+    expect(await screen.findByRole("heading", { name: /academy qualification track/i })).toBeVisible();
     fireEvent.click(await screen.findByRole("button", { name: /open training case/i }));
 
     expect(await screen.findByRole("heading", { name: "The Academy Door" })).toBeVisible();

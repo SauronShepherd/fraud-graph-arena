@@ -1,6 +1,7 @@
 import type {
   CatalogueSection,
   CatalogueSections,
+  AcademyCurriculum,
   Opening,
   ProblemDetails,
   RoundSummary,
@@ -75,6 +76,10 @@ export function listSections(signal?: AbortSignal): Promise<CatalogueSections> {
 
 export function getSection(pathId: string, signal?: AbortSignal): Promise<CatalogueSection> {
   return request<CatalogueSection>(`/catalogue/${encodeURIComponent(pathId)}`, { signal });
+}
+
+export function getAcademyCurriculum(signal?: AbortSignal): Promise<AcademyCurriculum> {
+  return request<AcademyCurriculum>("/academy/curriculum", { signal });
 }
 
 export async function createAndStartRound(pathId: string, caseId: string, idempotencyKey: string = crypto.randomUUID()): Promise<RoundSummary> {

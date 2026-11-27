@@ -71,6 +71,18 @@ h2 { margin-top: .2rem; }
 .choice-card:disabled { cursor: not-allowed; transform: none; }
 .choice-card[data-status="COMING_SOON"], .choice-card[data-status="LOCKED"] { opacity: .58; }
 .choice-card small + small { margin-top: .65rem; line-height: 1.35; color: #c9b996; }
+.academy-curriculum { margin: 2rem 0 1rem; padding: 1.25rem; border: 1px solid #a6824d; background: linear-gradient(145deg, rgba(73,52,32,.72), rgba(25,20,15,.92)); }
+.academy-curriculum__header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.academy-curriculum__header h2 { margin-bottom: .35rem; }
+.academy-curriculum__count { color: #f3c979; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
+.academy-curriculum__list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .75rem; margin: 1rem 0 0; padding: 0; list-style: none; counter-reset: academy-step; }
+.academy-curriculum__list li { counter-increment: academy-step; min-height: 150px; padding: .85rem; border: 1px solid #654a2e; background: rgba(18,13,9,.55); }
+.academy-curriculum__list li::before { content: counter(academy-step, decimal-leading-zero); display: block; color: #d9b46c; font: 700 .75rem ui-monospace, monospace; }
+.academy-curriculum__list strong { display: block; margin-top: .3rem; }
+.academy-curriculum__list small { display: block; margin-top: .2rem; color: #d9b46c; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+.academy-curriculum__list p { margin: .55rem 0; line-height: 1.4; }
+.academy-curriculum__list span { color: #c7b898; font-size: .86rem; line-height: 1.35; }
+@media (max-width: 620px) { .academy-curriculum__header { align-items: flex-start; flex-direction: column; } }
 
 .comic-shell h1 { font-size: clamp(2rem, 5vw, 4.25rem); }
 .comic-progress { color: #d9b46c; font-variant-numeric: tabular-nums; }

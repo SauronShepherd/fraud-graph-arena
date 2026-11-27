@@ -25,6 +25,35 @@ export interface CatalogueSections {
 export interface CatalogueSection {
   path: PathSummary;
   cases: CaseSummary[];
+  academy_curriculum?: AcademyCurriculum;
+}
+
+export interface AcademyAction {
+  action_id: string;
+  label: string;
+  kind: string;
+}
+
+export interface AcademyScenario {
+  scenario_id: string;
+  scenario_version: string;
+  title: string;
+  mechanic: string;
+  learning_objective: string;
+  path_id: string;
+  case_id: string;
+  seed: string;
+  visible_evidence: string[];
+  actions: AcademyAction[];
+  tutorial_guidance: string[];
+  resource_profile: Record<string, number>;
+}
+
+export interface AcademyCurriculum {
+  curriculum_version: string;
+  path_id: string;
+  scenario_count: number;
+  scenarios: AcademyScenario[];
 }
 
 export interface RoundSummary {

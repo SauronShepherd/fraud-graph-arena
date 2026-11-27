@@ -1,0 +1,14 @@
+{
+  "schema_version": "fga16-academy-golden-v1",
+  "results": [
+    {"golden_result_id": "golden-academy-node-selection", "scenario_id": "academy-node-selection", "expected_final_state": "NODE_SELECTED", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-edge-inspection", "scenario_id": "academy-edge-inspection", "expected_final_state": "EDGE_INSPECTED", "expected_transition_count": 2},
+    {"golden_result_id": "golden-academy-entity-resolution", "scenario_id": "academy-entity-resolution", "expected_final_state": "CANDIDATE_REVIEW_REQUIRED", "expected_transition_count": 2},
+    {"golden_result_id": "golden-academy-graph-traversal", "scenario_id": "academy-graph-traversal", "expected_final_state": "BOUNDED_NEIGHBORHOOD", "expected_transition_count": 2},
+    {"golden_result_id": "golden-academy-resource-spending", "scenario_id": "academy-resource-spending", "expected_final_state": "CREDIT_DEBIT_RECORDED", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-contradictory-evidence", "scenario_id": "academy-contradictory-evidence", "expected_final_state": "REVIEW_REQUIRED", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-correct-accusation", "scenario_id": "academy-correct-accusation", "expected_final_state": "CLEAN_COLLAR", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-incorrect-accusation", "scenario_id": "academy-incorrect-accusation", "expected_final_state": "WRONG_TREE", "expected_transition_count": 1},
+    {"golden_result_id": "golden-academy-complete-game-loop", "scenario_id": "academy-complete-game-loop", "expected_final_state": "ACADEMY_LOOP_COMPLETE", "expected_transition_count": 5}
+  ]
+}

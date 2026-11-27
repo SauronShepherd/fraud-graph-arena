@@ -1,6 +1,142 @@
 {
   "components": {
     "schemas": {
+      "AcademyActionResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "action_id": {
+            "title": "Action Id",
+            "type": "string"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "action_id",
+          "label",
+          "kind"
+        ],
+        "title": "AcademyActionResponse",
+        "type": "object"
+      },
+      "AcademyCurriculumResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "curriculum_version": {
+            "title": "Curriculum Version",
+            "type": "string"
+          },
+          "path_id": {
+            "$ref": "#/components/schemas/PathId"
+          },
+          "scenario_count": {
+            "minimum": 1.0,
+            "title": "Scenario Count",
+            "type": "integer"
+          },
+          "scenarios": {
+            "items": {
+              "$ref": "#/components/schemas/AcademyScenarioResponse"
+            },
+            "title": "Scenarios",
+            "type": "array"
+          }
+        },
+        "required": [
+          "curriculum_version",
+          "path_id",
+          "scenario_count",
+          "scenarios"
+        ],
+        "title": "AcademyCurriculumResponse",
+        "type": "object"
+      },
+      "AcademyScenarioResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "actions": {
+            "items": {
+              "$ref": "#/components/schemas/AcademyActionResponse"
+            },
+            "title": "Actions",
+            "type": "array"
+          },
+          "case_id": {
+            "title": "Case Id",
+            "type": "string"
+          },
+          "learning_objective": {
+            "title": "Learning Objective",
+            "type": "string"
+          },
+          "mechanic": {
+            "title": "Mechanic",
+            "type": "string"
+          },
+          "path_id": {
+            "$ref": "#/components/schemas/PathId"
+          },
+          "resource_profile": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Resource Profile",
+            "type": "object"
+          },
+          "scenario_id": {
+            "title": "Scenario Id",
+            "type": "string"
+          },
+          "scenario_version": {
+            "title": "Scenario Version",
+            "type": "string"
+          },
+          "seed": {
+            "title": "Seed",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "tutorial_guidance": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Tutorial Guidance",
+            "type": "array"
+          },
+          "visible_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Visible Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "scenario_id",
+          "scenario_version",
+          "title",
+          "mechanic",
+          "learning_objective",
+          "path_id",
+          "case_id",
+          "seed",
+          "visible_evidence",
+          "actions",
+          "tutorial_guidance",
+          "resource_profile"
+        ],
+        "title": "AcademyScenarioResponse",
+        "type": "object"
+      },
       "ActionAvailability": {
         "additionalProperties": false,
         "properties": {
@@ -79,6 +215,16 @@
       "CatalogueSectionResponse": {
         "additionalProperties": false,
         "properties": {
+          "academy_curriculum": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AcademyCurriculumResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "cases": {
             "items": {
               "$ref": "#/components/schemas/CaseResponse"
@@ -2430,6 +2576,27 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/api/v1/academy/curriculum": {
+      "get": {
+        "operationId": "curriculum_api_v1_academy_curriculum_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcademyCurriculumResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Curriculum",
+        "tags": [
+          "academy"
+        ]
+      }
+    },
     "/api/v1/catalogue/sections": {
       "get": {
         "operationId": "list_sections_api_v1_catalogue_sections_get",

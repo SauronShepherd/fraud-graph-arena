@@ -1,0 +1,189 @@
+{
+  "schema_version": "fga16-academy-scenario-v1",
+  "curriculum_version": "1.0.0",
+  "scenarios": [
+    {
+      "scenario_id": "academy-node-selection",
+      "scenario_version": "1.0.0",
+      "title": "The node under the lamp",
+      "mechanic": "NODE_SELECTION",
+      "learning_objective": "Select a published node without mistaking a selection for a verdict.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-node-selection-001",
+      "visible_evidence": ["A bounded graph contains published records.", "The selected record remains a reversible view state."],
+      "actions": [{"action_id": "SELECT_NODE", "label": "Select a visible node", "kind": "SELECT_NODE"}],
+      "expected_transitions": [{"from": "READY", "action_id": "SELECT_NODE", "to": "NODE_SELECTED"}],
+      "tutorial_guidance": ["Selection changes what the inspector shows; it does not accuse anyone.", "Keep the selection reversible while you gather context."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "COMPONENT_MOCK",
+      "protected_expected_outcome": {"final_state": "NODE_SELECTED", "golden_result_id": "golden-academy-node-selection", "assertion_ids": ["FGA16-NODE-SELECTION-STATE", "FGA16-NODE-SELECTION-REVERSIBLE"]}
+    },
+    {
+      "scenario_id": "academy-edge-inspection",
+      "scenario_version": "1.0.0",
+      "title": "The edge with two stories",
+      "mechanic": "EDGE_INSPECTION",
+      "learning_objective": "Inspect a relationship and read its direction and provenance before drawing a conclusion.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-edge-inspection-001",
+      "visible_evidence": ["A published relationship has source and target records.", "The edge carries a relationship family and provenance reference."],
+      "actions": [
+        {"action_id": "SELECT_NODE", "label": "Select the relationship endpoint", "kind": "SELECT_NODE"},
+        {"action_id": "INSPECT_EDGE", "label": "Inspect the relationship", "kind": "INSPECT_EDGE"}
+      ],
+      "expected_transitions": [
+        {"from": "READY", "action_id": "SELECT_NODE", "to": "NODE_SELECTED"},
+        {"from": "NODE_SELECTED", "action_id": "INSPECT_EDGE", "to": "EDGE_INSPECTED"}
+      ],
+      "tutorial_guidance": ["An edge is evidence of a relationship, not a confession.", "Read direction, time and provenance before you promote a lead."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "COMPONENT_MOCK",
+      "protected_expected_outcome": {"final_state": "EDGE_INSPECTED", "golden_result_id": "golden-academy-edge-inspection", "assertion_ids": ["FGA16-EDGE-DIRECTION", "FGA16-EDGE-PROVENANCE"]}
+    },
+    {
+      "scenario_id": "academy-entity-resolution",
+      "scenario_version": "1.0.0",
+      "title": "The two names in one hat",
+      "mechanic": "ENTITY_RESOLUTION",
+      "learning_objective": "Treat a similarity result as a candidate until the evidence and review justify more.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-entity-resolution-001",
+      "visible_evidence": ["The graph exposes published records only.", "A candidate may contain agreements, disagreements and missing fields."],
+      "actions": [
+        {"action_id": "SELECT_NODE", "label": "Select a person record", "kind": "SELECT_NODE"},
+        {"action_id": "RUN_ENTITY_RESOLUTION", "label": "Run identity comparison", "kind": "RUN_ENTITY_RESOLUTION"}
+      ],
+      "expected_transitions": [
+        {"from": "READY", "action_id": "SELECT_NODE", "to": "NODE_SELECTED"},
+        {"from": "NODE_SELECTED", "action_id": "RUN_ENTITY_RESOLUTION", "to": "CANDIDATE_REVIEW_REQUIRED"}
+      ],
+      "tutorial_guidance": ["Similarity is a lead. It is not an identity verdict.", "Keep exact matches, candidates and hard negatives in separate boxes."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 3},
+      "execution_mode": "API_CONTRACT",
+      "protected_expected_outcome": {"final_state": "CANDIDATE_REVIEW_REQUIRED", "golden_result_id": "golden-academy-entity-resolution", "assertion_ids": ["FGA16-ENTITY-CANDIDATE", "FGA16-ENTITY-NO-SILENT-MERGE"]}
+    },
+    {
+      "scenario_id": "academy-graph-traversal",
+      "scenario_version": "1.0.0",
+      "title": "One hop, no heroics",
+      "mechanic": "GRAPH_TRAVERSAL",
+      "learning_objective": "Expand only from visible evidence and keep the investigation bounded.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-graph-traversal-001",
+      "visible_evidence": ["The initial view is bounded by the case profile.", "Expansion accepts an already visible node as its warrant."],
+      "actions": [
+        {"action_id": "SELECT_NODE", "label": "Select a visible node", "kind": "SELECT_NODE"},
+        {"action_id": "TRAVERSE_GRAPH", "label": "Expand one visible hop", "kind": "TRAVERSE_GRAPH"}
+      ],
+      "expected_transitions": [
+        {"from": "READY", "action_id": "SELECT_NODE", "to": "NODE_SELECTED"},
+        {"from": "NODE_SELECTED", "action_id": "TRAVERSE_GRAPH", "to": "BOUNDED_NEIGHBORHOOD"}
+      ],
+      "tutorial_guidance": ["A bounded view is a safety rail, not a missing feature.", "The warrant is the visible node; hidden evidence stays hidden."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "COMPONENT_MOCK",
+      "protected_expected_outcome": {"final_state": "BOUNDED_NEIGHBORHOOD", "golden_result_id": "golden-academy-graph-traversal", "assertion_ids": ["FGA16-GRAPH-VISIBLE-WARRANT", "FGA16-GRAPH-BOUNDED"]}
+    },
+    {
+      "scenario_id": "academy-resource-spending",
+      "scenario_version": "1.0.0",
+      "title": "The biscuit ledger",
+      "mechanic": "RESOURCE_SPENDING",
+      "learning_objective": "Spend a credit through an idempotent command and keep the ledger replayable.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-resource-spending-001",
+      "visible_evidence": ["The round starts with a published credit budget.", "A repeated idempotency key must not debit twice."],
+      "actions": [{"action_id": "SPEND_CREDIT", "label": "Run one paid investigation", "kind": "SPEND_CREDIT"}],
+      "expected_transitions": [{"from": "READY", "action_id": "SPEND_CREDIT", "to": "CREDIT_DEBIT_RECORDED"}],
+      "tutorial_guidance": ["A cost belongs to the authoritative action, not to a button click.", "Replay the same request and the ledger should remain boring."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 3},
+      "execution_mode": "API_CONTRACT",
+      "protected_expected_outcome": {"final_state": "CREDIT_DEBIT_RECORDED", "golden_result_id": "golden-academy-resource-spending", "assertion_ids": ["FGA16-ECONOMY-CHARGE", "FGA16-ECONOMY-IDEMPOTENT"]}
+    },
+    {
+      "scenario_id": "academy-contradictory-evidence",
+      "scenario_version": "1.0.0",
+      "title": "The witness who changed its collar",
+      "mechanic": "CONTRADICTORY_EVIDENCE",
+      "learning_objective": "Keep mixed or incomplete evidence in review instead of forcing a clean verdict.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-contradictory-evidence-001",
+      "visible_evidence": ["A contact pair can agree on one field and disagree on another.", "A partial evidence set is not a license to invent the missing record."],
+      "actions": [{"action_id": "COMPARE_EVIDENCE", "label": "Compare the conflicting clues", "kind": "COMPARE_EVIDENCE"}],
+      "expected_transitions": [{"from": "READY", "action_id": "COMPARE_EVIDENCE", "to": "REVIEW_REQUIRED"}],
+      "tutorial_guidance": ["Contradiction is a state to record, not a nuisance to erase.", "Leave the case unresolved when the evidence cannot support a stronger claim."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "COMPONENT_MOCK",
+      "protected_expected_outcome": {"final_state": "REVIEW_REQUIRED", "golden_result_id": "golden-academy-contradictory-evidence", "assertion_ids": ["FGA16-EVIDENCE-CONFLICT", "FGA16-EVIDENCE-NO-FORCED-VERDICT"]}
+    },
+    {
+      "scenario_id": "academy-correct-accusation",
+      "scenario_version": "1.0.0",
+      "title": "The collar that fits",
+      "mechanic": "CORRECT_ACCUSATION",
+      "learning_objective": "Submit a conclusion only after selecting a supported subject and explicit evidence claims.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-correct-accusation-001",
+      "visible_evidence": ["The submission form accepts suspect records and evidence claims.", "The receipt reports support without exposing protected evaluation data."],
+      "actions": [{"action_id": "SUBMIT_CORRECT", "label": "Submit the supported conclusion", "kind": "SUBMIT_CORRECT"}],
+      "expected_transitions": [{"from": "READY", "action_id": "SUBMIT_CORRECT", "to": "CLEAN_COLLAR"}],
+      "tutorial_guidance": ["A conclusion needs both a subject and a reasoned evidence set.", "The receipt is the durable result; the browser is only the messenger."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "API_CONTRACT",
+      "protected_expected_outcome": {"final_state": "CLEAN_COLLAR", "golden_result_id": "golden-academy-correct-accusation", "assertion_ids": ["FGA16-SUBMIT-SUPPORTED", "FGA16-SUBMIT-IMMUTABLE"]}
+    },
+    {
+      "scenario_id": "academy-incorrect-accusation",
+      "scenario_version": "1.0.0",
+      "title": "The bark in the wrong alley",
+      "mechanic": "INCORRECT_ACCUSATION",
+      "learning_objective": "Make an unsupported accusation observable and reversible in the receipt without leaking the protected answer.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-incorrect-accusation-001",
+      "visible_evidence": ["A plausible-looking record can still be unsupported.", "The public result reports consequences, not the hidden answer."],
+      "actions": [{"action_id": "SUBMIT_INCORRECT", "label": "Submit the unsupported conclusion", "kind": "SUBMIT_INCORRECT"}],
+      "expected_transitions": [{"from": "READY", "action_id": "SUBMIT_INCORRECT", "to": "WRONG_TREE"}],
+      "tutorial_guidance": ["The system should make a bad conclusion legible, not silently rewrite it.", "A penalty is a game consequence; it is not evidence of culpability."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 0},
+      "execution_mode": "API_CONTRACT",
+      "protected_expected_outcome": {"final_state": "WRONG_TREE", "golden_result_id": "golden-academy-incorrect-accusation", "assertion_ids": ["FGA16-SUBMIT-UNSUPPORTED", "FGA16-SUBMIT-NO-TRUTH-LEAK"]}
+    },
+    {
+      "scenario_id": "academy-complete-game-loop",
+      "scenario_version": "1.0.0",
+      "title": "The Academy route, end to end",
+      "mechanic": "COMPLETE_GAME_LOOP",
+      "learning_objective": "Walk the complete tutorial route: observe, investigate, spend, submit and recover the receipt.",
+      "path_id": "DETECTIVE_ACADEMY",
+      "case_id": "ACADEMY_T02",
+      "seed": "fga16-complete-game-loop-001",
+      "visible_evidence": ["The catalogue owns the case door.", "The board owns published evidence and actions.", "The resolution owns the immutable receipt."],
+      "actions": [
+        {"action_id": "SELECT_NODE", "label": "Select a published node", "kind": "SELECT_NODE"},
+        {"action_id": "RUN_ENTITY_RESOLUTION", "label": "Compare identities", "kind": "RUN_ENTITY_RESOLUTION"},
+        {"action_id": "TRAVERSE_GRAPH", "label": "Inspect a bounded neighbourhood", "kind": "TRAVERSE_GRAPH"},
+        {"action_id": "SPEND_CREDIT", "label": "Record a paid investigation", "kind": "SPEND_CREDIT"},
+        {"action_id": "SUBMIT_CORRECT", "label": "File the supported conclusion", "kind": "SUBMIT_CORRECT"}
+      ],
+      "expected_transitions": [
+        {"from": "READY", "action_id": "SELECT_NODE", "to": "NODE_SELECTED"},
+        {"from": "NODE_SELECTED", "action_id": "RUN_ENTITY_RESOLUTION", "to": "CANDIDATE_REVIEW_REQUIRED"},
+        {"from": "CANDIDATE_REVIEW_REQUIRED", "action_id": "TRAVERSE_GRAPH", "to": "BOUNDED_NEIGHBORHOOD"},
+        {"from": "BOUNDED_NEIGHBORHOOD", "action_id": "SPEND_CREDIT", "to": "CREDIT_DEBIT_RECORDED"},
+        {"from": "CREDIT_DEBIT_RECORDED", "action_id": "SUBMIT_CORRECT", "to": "ACADEMY_LOOP_COMPLETE"}
+      ],
+      "tutorial_guidance": ["Every step leaves a typed boundary: screen, action, ledger, result or persistence.", "The final proof is a replayable receipt, not a screenshot of a green button."],
+      "resource_profile": {"starting_credits": 9, "credits_spent": 6},
+      "execution_mode": "COMPLETE_LOOP",
+      "protected_expected_outcome": {"final_state": "ACADEMY_LOOP_COMPLETE", "golden_result_id": "golden-academy-complete-game-loop", "assertion_ids": ["FGA16-LOOP-ROUND", "FGA16-LOOP-LEDGER", "FGA16-LOOP-RECEIPT", "FGA16-LOOP-RESTART"]}
+    }
+  ]
+}

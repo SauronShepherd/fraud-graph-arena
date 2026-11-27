@@ -1,6 +1,10 @@
 import { defineConfig } from "@playwright/test";
 
+// Keep the local test runner quiet when the host exports a forced colour flag.
+process.env.FORCE_COLOR = "0";
+
 const sqlitePath = process.env.FGA_SQLITE_PATH ?? ".fga/e2e.sqlite3";
+const pythonCommand = process.env.FGA_PYTHON ?? "python";
 
 export default defineConfig({
   testDir: "./e2e",
@@ -14,11 +18,12 @@ export default defineConfig({
   },
   webServer: [
     {
-      command: ".venv\\Scripts\\python.exe -m uvicorn fraud_graph_arena.web.main:app --host 127.0.0.1 --port 8000",
+      command: `${pythonCommand} -m uvicorn fraud_graph_arena.web.main:app --host 127.0.0.1 --port 8000`,
       cwd: "../..",
       port: 8000,
       reuseExistingServer: true,
       env: {
+        PYTHONPATH: "src",
         FGA_ENVIRONMENT: "test",
         FGA_ROUND_REPOSITORY: "sqlite",
         FGA_SQLITE_PATH: sqlitePath,

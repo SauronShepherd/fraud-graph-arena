@@ -43,10 +43,11 @@ def _graph_field(value: object, field: str) -> object:
     return value.get(field, "") if isinstance(value, dict) else getattr(value, field)
 
 
-def map_section(value: CatalogueSection) -> CatalogueSectionResponse:
+def map_section(value: CatalogueSection, *, academy_curriculum: dict | None = None) -> CatalogueSectionResponse:
     return CatalogueSectionResponse(
         path=map_path(value.path),
         cases=[map_case(item) for item in value.cases],
+        academy_curriculum=academy_curriculum,
     )
 
 

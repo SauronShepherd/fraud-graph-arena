@@ -36,9 +36,38 @@ class CatalogueSectionsResponse(ApiModel):
     sections: list[PathResponse]
 
 
+class AcademyActionResponse(ApiModel):
+    action_id: str
+    label: str
+    kind: str
+
+
+class AcademyScenarioResponse(ApiModel):
+    scenario_id: str
+    scenario_version: str
+    title: str
+    mechanic: str
+    learning_objective: str
+    path_id: PathId
+    case_id: str
+    seed: str
+    visible_evidence: list[str]
+    actions: list[AcademyActionResponse]
+    tutorial_guidance: list[str]
+    resource_profile: dict[str, int]
+
+
+class AcademyCurriculumResponse(ApiModel):
+    curriculum_version: str
+    path_id: PathId
+    scenario_count: int = Field(ge=1)
+    scenarios: list[AcademyScenarioResponse]
+
+
 class CatalogueSectionResponse(ApiModel):
     path: PathResponse
     cases: list[CaseResponse]
+    academy_curriculum: AcademyCurriculumResponse | None = None
 
 
 class CreateRoundRequest(ApiModel):

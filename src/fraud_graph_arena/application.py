@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from fraud_graph_arena.catalogue.adapters.memory import InMemoryCatalogueRepository
 from fraud_graph_arena.catalogue.service import CatalogueService
+from fraud_graph_arena.academy import ScenarioRegistry
 from fraud_graph_arena.case_packages import CasePackage
 from fraud_graph_arena.config import RuntimeRole, Settings
 from fraud_graph_arena.investigation_commands.adapters.memory import InMemoryInvestigationCommandRepository
@@ -23,7 +24,7 @@ from fraud_graph_arena.rounds.domain import Round
 from fraud_graph_arena.rounds.ports import RoundRepository
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.web.problem_handlers import register_problem_handlers
-from fraud_graph_arena.web.routes import catalogue, health, rounds
+from fraud_graph_arena.web.routes import academy, catalogue, health, rounds
 from fraud_graph_arena.web.spa import SpaStaticFiles
 from fraud_graph_arena.workspace import WorkspaceService
 from fraud_graph_arena.workspace.graph_service import GraphInvestigationService
@@ -41,6 +42,7 @@ from fraud_graph_arena.case_data.graph_investigation import MAX_GRAPH_EDGES, MAX
 @dataclass(slots=True)
 class Container:
     settings: Settings
+    academy: ScenarioRegistry
     catalogue: CatalogueService
     narrative: NarrativeService
     rounds: RoundService
@@ -58,6 +60,7 @@ def build_web_container(settings: Settings) -> Container:
     if settings.runtime_role != RuntimeRole.WEB:
         raise RuntimeError("the public container is only valid for WEB runtime role")
     catalogue_repository = InMemoryCatalogueRepository()
+    academy_registry = ScenarioRegistry()
     catalogue = CatalogueService(catalogue_repository)
     narrative = NarrativeService(InMemoryNarrativeRepository(catalogue_repository.package_registry))
     for case in catalogue.list_cases():
@@ -114,6 +117,7 @@ def build_web_container(settings: Settings) -> Container:
     submission_repository = InMemorySubmissionRepository() if settings.round_repository == "memory" else SqliteSubmissionRepository(settings.sqlite_path)
     return Container(
         settings=settings,
+        academy=academy_registry,
         catalogue=catalogue,
         narrative=narrative,
         rounds=round_service,
@@ -174,7 +178,7 @@ def create_app(
         return response
 
     register_problem_handlers(app)
-    for router in (health.router, catalogue.router, rounds.router):
+    for router in (health.router, academy.router, catalogue.router, rounds.router):
         app.include_router(router, prefix=resolved_settings.api_prefix)
 
     frontend_dist = Path(resolved_settings.frontend_dist)

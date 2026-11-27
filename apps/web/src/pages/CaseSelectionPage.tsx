@@ -35,6 +35,20 @@ export function CaseSelectionPage() {
       <p className="eyebrow">Step 2 of 4 · {section.path.name}</p>
       <h1>Choose a training file</h1>
       <p>Academy content teaches the real mechanics without exposing the real mysteries.</p>
+      {section.academy_curriculum && <section className="academy-curriculum" aria-labelledby="academy-curriculum-title">
+        <div className="academy-curriculum__header">
+          <div><p className="eyebrow">FGA-16 · machine-checked field manual</p><h2 id="academy-curriculum-title">Academy qualification track</h2></div>
+          <span className="academy-curriculum__count">{section.academy_curriculum.scenario_count} mechanics · one complete loop</span>
+        </div>
+        <p>Practice the same boundaries the automated suite checks: selection, evidence, resources, review and the final receipt.</p>
+        <ol className="academy-curriculum__list">
+          {section.academy_curriculum.scenarios.map((scenario) => <li key={scenario.scenario_id}>
+            <div><strong>{scenario.title}</strong><small>{scenario.mechanic.replaceAll("_", " ")}</small></div>
+            <p>{scenario.learning_objective}</p>
+            <span>{scenario.tutorial_guidance[0]}</span>
+          </li>)}
+        </ol>
+      </section>}
       {section.cases.length === 0 ? (
         <section className="empty-state">
           <h2>No published cases yet</h2>
