@@ -53,6 +53,7 @@ The only playable file is the spoiler-free `ACADEMY_001 — The Case of the Empt
 - FGA-19 release bindings for frontend, backend, migrations, case packages, graph assets and analytics jobs;
 - immutable round/package version binding with forward-only SQLite migration and bind-or-freeze compatibility;
 - machine-readable release manifests, explicit CI stages and a local promotion/rollback drill that keeps data rollback separate;
+- FGA-20 machine-readable MVP acceptance, plan-versus-reality evidence and explicit next-season exclusions;
 - Canonical Model v1 packages, typed registry, registered converters and strict package validation;
 - candidate-aware case-version-scoped persistence, typed DDL, active-pointer publication and recovery primitives;
 - registry-generated physical targets and least-privilege layer grants for Databricks deployment.
@@ -206,6 +207,20 @@ The Databricks command uses profile `fga` only for the read-only public case
 boundary in `sda_dev.sandbox`. It does not mutate a publication, run Docker in
 SQL Warehouse or query protected truth. The local release manifest, SQLite
 migration and rollback pointer remain local evidence.
+
+## Run the FGA-20 MVP acceptance
+
+The epilogue turns the preceding receipts into one evidence-backed MVP report:
+
+```text
+python scripts/qualify_fga20_mvp.py --output reports/iteration-20/fga20-mvp-acceptance-current.json
+python -m pytest -q tests/iteration_20
+```
+
+The report runs the Academy scenarios, published-case regression and SQLite
+restart probe, then cross-checks the FGA-19 release and Databricks receipts. It
+separates delivered behaviour from limited or deferred scope; it does not turn
+the local qualification duration into a production latency claim.
 
 ## Export the OpenAPI contract
 

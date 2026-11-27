@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fraud-graph-arena.local/contracts/retrospective/fga20-mvp-acceptance.schema.json",
+  "title": "FGA-20 MVP acceptance report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status",
+    "source_revision",
+    "release_id",
+    "generated_at_utc",
+    "plan_vs_reality",
+    "player_journey",
+    "outcomes",
+    "exclusions",
+    "next_season",
+    "verdict"
+  ],
+  "properties": {
+    "schema_version": { "const": "fga20-mvp-acceptance-v1" },
+    "status": { "enum": ["pass", "fail"] },
+    "source_revision": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "release_id": { "type": "string", "minLength": 1 },
+    "generated_at_utc": { "type": "string", "format": "date-time" },
+    "plan_vs_reality": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "planned_iteration", "delivered", "evidence", "status"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "planned_iteration": { "type": "string", "minLength": 1 },
+          "delivered": { "type": "string", "minLength": 1 },
+          "evidence": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "status": { "enum": ["delivered", "limited", "deferred", "removed"] }
+        }
+      }
+    },
+    "player_journey": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "steps", "complete_loop_scenario"],
+      "properties": {
+        "status": { "enum": ["PASS", "FAIL"] },
+        "complete_loop_scenario": { "type": "string", "minLength": 1 },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "status", "evidence"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "status": { "enum": ["PASS", "LIMITED", "NOT_MEASURED"] },
+              "evidence": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    },
+    "outcomes": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["qualified_case_packages", "case_shape", "local_academy", "test_receipts", "deployment_evidence", "not_measured"],
+      "properties": {
+        "qualified_case_packages": { "type": "integer", "minimum": 1 },
+        "case_shape": { "type": "object" },
+        "local_academy": { "type": "object" },
+        "test_receipts": { "type": "object" },
+        "deployment_evidence": { "type": "object" },
+        "not_measured": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "exclusions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "next_season": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["game_loop", "proven", "unproven"],
+      "properties": {
+        "game_loop": { "enum": ["GAME_FOR_QUALIFIED_CASE_SET", "TECHNICAL_DEMO_ONLY", "FAIL"] },
+        "proven": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "unproven": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+      }
+    }
+  }
+}
