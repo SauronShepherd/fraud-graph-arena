@@ -101,7 +101,7 @@ Both keep Hercule Perrot as a recognisable Spanish Water Dog rather than a wolf 
 
 | Check | Result |
 | --- | --- |
-| Backend full suite | `293 passed in 1445.83s` |
+| Backend full suite | `293 passed in 731.35s (0:12:11)`; no warnings/exceptions |
 | FGA-16 focused backend suite | `7 passed` |
 | Frontend typecheck | PASS |
 | Frontend Vitest | `26 files, 70 passed` |
