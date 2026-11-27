@@ -62,10 +62,10 @@
       "removal_condition": "Remove after the first stable promotion of the release line."
     }
   ],
-  "generated_at_utc": "2026-11-27T04:45:41.301126+00:00",
+  "generated_at_utc": "2026-11-27T04:58:29.810345+00:00",
   "release_id": "fga19-mvp.1",
   "schema_version": "fga19-release-v1",
-  "source_revision": "e7cdcdb1f02408993364bc24559735265fef9a6e",
+  "source_revision": "9d2469ad08f977a3be5bd699906b9b97a983c9fd",
   "units": [
     {
       "digest": "sha256:69f4538c60a8e59e3f9a1b459241a48e0c5e53fc1ab7c4684331193216755406",
