@@ -1,0 +1,125 @@
+{
+  "ci_stages": [
+    {
+      "blocks": "merge",
+      "command": "python -m compileall -q src scripts",
+      "id": "lint"
+    },
+    {
+      "blocks": "merge",
+      "command": "python -m pytest -q tests/iteration_19",
+      "id": "unit"
+    },
+    {
+      "blocks": "merge",
+      "command": "python scripts/validate_fga19_release.py",
+      "id": "contracts"
+    },
+    {
+      "blocks": "release",
+      "command": "python scripts/validate_case_packages.py",
+      "id": "case-validation"
+    },
+    {
+      "blocks": "release",
+      "command": "npm run test:e2e -- --workers=1",
+      "id": "end-to-end"
+    },
+    {
+      "blocks": "release",
+      "command": "docker compose --profile local-build build web",
+      "id": "container-build"
+    },
+    {
+      "blocks": "promotion",
+      "command": "python scripts/fga19_release_smoke.py",
+      "id": "deployment-smoke"
+    }
+  ],
+  "compatibility": {
+    "application_rollback": "separate-from-data-rollback",
+    "case_updates": "immutable-package-version",
+    "database_migrations": "forward-only-expand-then-contract",
+    "saved_rounds": "bind-or-freeze"
+  },
+  "contracts": {
+    "analytics": "fga10-analytics-v1",
+    "api": "v1",
+    "canonical_model": "1.0.0",
+    "case_package_schema": "fga13-case-package-v1",
+    "economy": "package-bound",
+    "rules": "fga13-engine-v1",
+    "scoring": "package-bound",
+    "screen_set": "1.0"
+  },
+  "feature_flags": [
+    {
+      "default": false,
+      "enabled": false,
+      "id": "fga19.release_candidate",
+      "owner": "release-engineering",
+      "purpose": "Gate a candidate deployment without changing case rules.",
+      "removal_condition": "Remove after the first stable promotion of the release line."
+    }
+  ],
+  "generated_at_utc": "2026-11-27T04:45:41.301126+00:00",
+  "release_id": "fga19-mvp.1",
+  "schema_version": "fga19-release-v1",
+  "source_revision": "e7cdcdb1f02408993364bc24559735265fef9a6e",
+  "units": [
+    {
+      "digest": "sha256:69f4538c60a8e59e3f9a1b459241a48e0c5e53fc1ab7c4684331193216755406",
+      "digest_algorithm": "sha256-tree-v1",
+      "id": "frontend",
+      "immutable": true,
+      "kind": "frontend",
+      "path": "apps/web/src",
+      "version": "fga19-web-v1"
+    },
+    {
+      "digest": "sha256:aa786da449390362fd8ee1da6ece43980462cc361f167489089469b5335df1e7",
+      "digest_algorithm": "sha256-tree-v1",
+      "id": "python_backend",
+      "immutable": true,
+      "kind": "backend",
+      "path": "src/fraud_graph_arena",
+      "version": "fga19-python-v1"
+    },
+    {
+      "digest": "sha256:8b4b2b8b41e6b4f17c4624bfbebba126a6ddc2f0e821ba41472e5b87b01fb368",
+      "digest_algorithm": "sha256-tree-v1",
+      "id": "database_migrations",
+      "immutable": true,
+      "kind": "migration",
+      "path": "src/fraud_graph_arena/release_engineering/migration.py",
+      "version": "fga19-rounds-migration-v2"
+    },
+    {
+      "digest": "sha256:869baf370f0aeecfc70f72ff0a8b9d453af37506f46cc3966e02aa1abcf1bd3c",
+      "digest_algorithm": "sha256-tree-v1",
+      "id": "case_packages",
+      "immutable": true,
+      "kind": "case-content",
+      "path": "case-packages",
+      "version": "fga13-package-v1"
+    },
+    {
+      "digest": "sha256:b9a1bf3a5ae304a58550a47c8934c9f991fd1910788a4762d110b7d757baec9e",
+      "digest_algorithm": "sha256-tree-v1",
+      "id": "graph_assets",
+      "immutable": true,
+      "kind": "assets",
+      "path": "apps/web/public/assets/board/v1/manifest.json",
+      "version": "fga02-board-assets-v1"
+    },
+    {
+      "digest": "sha256:8281eb08dfa5dbbb56c954de92bff16e308c984db0c184b5448726e26c501b59",
+      "digest_algorithm": "sha256-tree-v1",
+      "id": "analytics_jobs",
+      "immutable": true,
+      "kind": "analytics",
+      "path": "src/fraud_graph_arena/graph_analytics/service.py",
+      "version": "fga10-analytics-v1"
+    }
+  ]
+}

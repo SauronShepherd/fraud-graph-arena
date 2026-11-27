@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://angelic-articles.com/fga/contracts/fga19-release.schema.json",
+  "title": "FGA-19 immutable release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "release_id", "source_revision", "generated_at_utc", "units", "contracts", "compatibility", "feature_flags", "ci_stages"],
+  "properties": {
+    "schema_version": {"const": "fga19-release-v1"},
+    "release_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,63}$"},
+    "source_revision": {"type": "string", "pattern": "^(working-tree|[0-9a-f]{40})$"},
+    "generated_at_utc": {"type": "string", "minLength": 20},
+    "units": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "version", "path", "kind", "immutable", "digest_algorithm", "digest"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]+$"},
+          "version": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "kind": {"type": "string", "minLength": 1},
+          "immutable": {"const": true},
+          "digest_algorithm": {"const": "sha256-tree-v1"},
+          "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "contracts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["api", "screen_set", "case_package_schema", "canonical_model", "analytics", "rules", "scoring", "economy"],
+      "properties": {
+        "api": {"type": "string", "minLength": 1},
+        "screen_set": {"type": "string", "minLength": 1},
+        "case_package_schema": {"type": "string", "minLength": 1},
+        "canonical_model": {"type": "string", "minLength": 1},
+        "analytics": {"type": "string", "minLength": 1},
+        "rules": {"type": "string", "minLength": 1},
+        "scoring": {"type": "string", "minLength": 1},
+        "economy": {"type": "string", "minLength": 1}
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["saved_rounds", "case_updates", "database_migrations", "application_rollback"],
+      "properties": {
+        "saved_rounds": {"enum": ["bind-or-freeze", "bind-or-migrate"]},
+        "case_updates": {"const": "immutable-package-version"},
+        "database_migrations": {"const": "forward-only-expand-then-contract"},
+        "application_rollback": {"const": "separate-from-data-rollback"}
+      }
+    },
+    "feature_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "enabled", "default", "owner", "purpose", "removal_condition"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]+$"},
+          "enabled": {"type": "boolean"},
+          "default": {"type": "boolean"},
+          "owner": {"type": "string", "minLength": 1},
+          "purpose": {"type": "string", "minLength": 1},
+          "removal_condition": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "ci_stages": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "command", "blocks"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"},
+          "command": {"type": "string", "minLength": 1},
+          "blocks": {"enum": ["merge", "release", "promotion"]}
+        }
+      }
+    }
+  }
+}

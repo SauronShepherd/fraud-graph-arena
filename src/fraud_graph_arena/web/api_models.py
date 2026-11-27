@@ -90,6 +90,15 @@ class RoundResponse(ApiModel):
     version: int = Field(ge=1)
     submitted_at: datetime | None = None
     submission_id: str | None = None
+    release_id: str = "fga18-legacy"
+    package_version: str = "legacy-package"
+    rules_version: str = "legacy-rules"
+    economy_version: str = "legacy-economy"
+    scoring_version: str = "legacy-scoring"
+    screen_set_version: str = "legacy-screen-set"
+    api_contract_version: str = "v1"
+    analytics_version: str = "legacy-analytics"
+    package_digest: str = "legacy-package-digest"
 
 
 class ComicPageResponse(ApiModel):

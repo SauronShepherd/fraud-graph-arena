@@ -50,6 +50,9 @@ The only playable file is the spoiler-free `ACADEMY_001 — The Case of the Empt
 - centralized navigation, cancellable screen data loading, semantic actions, lifecycle hooks and transition effects.
 - FGA-18 structured observability with request correlation, safe traces, aggregate metrics, frontend error boundaries and declarative instrumentation selection;
 - separate observability events from player-visible investigation history, with redaction and sync/async behaviour-preservation tests;
+- FGA-19 release bindings for frontend, backend, migrations, case packages, graph assets and analytics jobs;
+- immutable round/package version binding with forward-only SQLite migration and bind-or-freeze compatibility;
+- machine-readable release manifests, explicit CI stages and a local promotion/rollback drill that keeps data rollback separate;
 - Canonical Model v1 packages, typed registry, registered converters and strict package validation;
 - candidate-aware case-version-scoped persistence, typed DDL, active-pointer publication and recovery primitives;
 - registry-generated physical targets and least-privilege layer grants for Databricks deployment.
@@ -175,6 +178,34 @@ not execute the local recorder, Docker or a hidden-truth query. The JSON
 instrumentation catalogue selects registered instrumentation IDs; it never
 contains Python code or executable expressions. Logs, metrics, traces and
 game-event history remain separate surfaces.
+
+## Run the FGA-19 release candidate checks
+
+FGA-19 treats a release as a compatible set of immutable units. The generated
+manifest hashes the frontend, Python backend, migration, case-package, graph
+asset and analytics boundaries. A round records the release, case package,
+rules, scoring, economy, screen and API versions that created it. The next
+release may improve the board; it does not silently rewrite that round.
+
+```text
+python scripts/generate_fga19_release_manifest.py --output reports/iteration-19/fga19-release-manifest-current.json
+python scripts/validate_fga19_release.py --manifest reports/iteration-19/fga19-release-manifest-current.json
+python scripts/fga19_release_smoke.py
+python -m pytest -q tests/iteration_19
+python scripts/qualify_fga19_release.py --profile fga --catalog sda_dev --schema sandbox --warehouse-id eded42c9d0a69b84 --manifest reports/iteration-19/fga19-release-manifest-current.json --report reports/iteration-19/databricks-fga19-release-current.json
+```
+
+The CI contract is in `contracts/release/fga19-ci-pipeline.json`. It names the
+blocking stages from lint and unit tests through case validation, end-to-end,
+container build and deployment smoke. The release smoke first migrates an old
+round database, then rejects a deliberately corrupted digest, promotes a valid
+candidate and moves the application pointer back. It does not pretend that an
+application pointer rollback restores database state.
+
+The Databricks command uses profile `fga` only for the read-only public case
+boundary in `sda_dev.sandbox`. It does not mutate a publication, run Docker in
+SQL Warehouse or query protected truth. The local release manifest, SQLite
+migration and rollback pointer remain local evidence.
 
 ## Export the OpenAPI contract
 

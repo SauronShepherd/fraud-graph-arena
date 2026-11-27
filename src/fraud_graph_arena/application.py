@@ -39,6 +39,7 @@ from fraud_graph_arena.economy import EconomyService, InMemoryLedgerRepository, 
 from fraud_graph_arena.case_resolution import CaseResolutionService, InMemorySubmissionRepository, SqliteSubmissionRepository
 from fraud_graph_arena.case_data.graph_investigation import MAX_GRAPH_EDGES, MAX_GRAPH_NODES, initial_subset
 from fraud_graph_arena.observability import ObservabilityRecorder
+from fraud_graph_arena.release_engineering.runtime import load_runtime_context
 
 
 _UUID_PATH_SEGMENT = re.compile(r"/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?=/|$)", re.IGNORECASE)
@@ -91,6 +92,7 @@ def build_web_container(settings: Settings) -> Container:
         repository=round_repository,
         catalogue=catalogue,
         narrative=narrative,
+        release_context=load_runtime_context(),
     )
     def package_for_round(round_: Round) -> CasePackage | None:
         return catalogue.get_package(round_.case_id, round_.case_version)

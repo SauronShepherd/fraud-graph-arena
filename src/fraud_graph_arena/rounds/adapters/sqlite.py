@@ -7,6 +7,7 @@ from pathlib import Path
 from fraud_graph_arena.catalogue.domain import PathId
 from fraud_graph_arena.rounds.domain import Round, RoundStatus
 from fraud_graph_arena.observability import instrumented
+from fraud_graph_arena.release_engineering.migration import apply_round_migrations
 
 
 class SqliteRoundRepository:
@@ -47,10 +48,7 @@ class SqliteRoundRepository:
                 )
                 """
             )
-            columns = {
-                row["name"]
-                for row in connection.execute("PRAGMA table_info(rounds)").fetchall()
-            }
+            columns = {row["name"] for row in connection.execute("PRAGMA table_info(rounds)").fetchall()}
             if "intro_completed_at" not in columns:
                 connection.execute("ALTER TABLE rounds ADD COLUMN intro_completed_at TEXT NULL")
             if "credits_remaining" not in columns:
@@ -61,6 +59,7 @@ class SqliteRoundRepository:
                 connection.execute("ALTER TABLE rounds ADD COLUMN submitted_at TEXT NULL")
             if "submission_id" not in columns:
                 connection.execute("ALTER TABLE rounds ADD COLUMN submission_id TEXT NULL")
+            apply_round_migrations(connection)
 
     def add(self, round_: Round) -> None:
         self._add(round_)
@@ -72,8 +71,10 @@ class SqliteRoundRepository:
                 """
                 INSERT INTO rounds (
                     id, player_id, path_id, case_id, case_version, status, created_at,
-                    started_at, intro_completed_at, credits_remaining, version, submitted_at, submission_id
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    started_at, intro_completed_at, credits_remaining, version, submitted_at, submission_id,
+                    release_id, package_version, rules_version, economy_version, scoring_version,
+                    screen_set_version, api_contract_version, analytics_version, package_digest
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 self._to_row(round_),
             )
@@ -101,7 +102,10 @@ class SqliteRoundRepository:
                 UPDATE rounds
                    SET player_id = ?, path_id = ?, case_id = ?, case_version = ?, status = ?,
                        created_at = ?, started_at = ?, intro_completed_at = ?,
-                       credits_remaining = ?, version = ?, submitted_at = ?, submission_id = ?
+                       credits_remaining = ?, version = ?, submitted_at = ?, submission_id = ?,
+                       release_id = ?, package_version = ?, rules_version = ?, economy_version = ?,
+                       scoring_version = ?, screen_set_version = ?, api_contract_version = ?,
+                       analytics_version = ?, package_digest = ?
                  WHERE id = ?
                 """,
                 (
@@ -121,6 +125,15 @@ class SqliteRoundRepository:
                     round_.version,
                     None if round_.submitted_at is None else round_.submitted_at.isoformat(),
                     round_.submission_id,
+                    round_.release_id,
+                    round_.package_version,
+                    round_.rules_version,
+                    round_.economy_version,
+                    round_.scoring_version,
+                    round_.screen_set_version,
+                    round_.api_contract_version,
+                    round_.analytics_version,
+                    round_.package_digest,
                     round_.id,
                 ),
             )
@@ -181,7 +194,7 @@ class SqliteRoundRepository:
         return self._from_row(row)
 
     @staticmethod
-    def _to_row(round_: Round) -> tuple[str, str, str, str, str, str, str, str | None, str | None, int, int, str | None, str | None]:
+    def _to_row(round_: Round) -> tuple[object, ...]:
         return (
             round_.id,
             round_.player_id,
@@ -200,6 +213,15 @@ class SqliteRoundRepository:
             round_.version,
             None if round_.submitted_at is None else round_.submitted_at.isoformat(),
             round_.submission_id,
+            round_.release_id,
+            round_.package_version,
+            round_.rules_version,
+            round_.economy_version,
+            round_.scoring_version,
+            round_.screen_set_version,
+            round_.api_contract_version,
+            round_.analytics_version,
+            round_.package_digest,
         )
 
     @staticmethod
@@ -224,4 +246,13 @@ class SqliteRoundRepository:
             version=int(row["version"] or 1),
             submitted_at=(None if row["submitted_at"] is None else datetime.fromisoformat(row["submitted_at"])),
             submission_id=row["submission_id"],
+            release_id=row["release_id"],
+            package_version=row["package_version"],
+            rules_version=row["rules_version"],
+            economy_version=row["economy_version"],
+            scoring_version=row["scoring_version"],
+            screen_set_version=row["screen_set_version"],
+            api_contract_version=row["api_contract_version"],
+            analytics_version=row["analytics_version"],
+            package_digest=row["package_digest"],
         )

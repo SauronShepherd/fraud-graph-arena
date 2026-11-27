@@ -1,0 +1,20 @@
+{
+  "schema_version": "fga19-runtime-v1",
+  "release_id": "fga19-runtime-v1",
+  "contracts": {
+    "api": "v1",
+    "screen_set": "1.0",
+    "case_package_schema": "fga13-case-package-v1",
+    "canonical_model": "1.0.0",
+    "analytics": "fga10-analytics-v1",
+    "rules": "fga13-engine-v1",
+    "scoring": "package-bound",
+    "economy": "package-bound"
+  },
+  "policy": {
+    "saved_rounds": "bind-or-freeze",
+    "case_updates": "immutable-package-version",
+    "database_migrations": "forward-only-expand-then-contract",
+    "application_rollback": "separate-from-data-rollback"
+  }
+}

@@ -10,6 +10,7 @@ from fraud_graph_arena.rounds.domain import IntroCompletion, Round, RoundStatus
 from fraud_graph_arena.rounds.ports import RoundRepository
 from fraud_graph_arena.shared.errors import ConflictError, NotFoundError
 from fraud_graph_arena.observability import instrumented
+from fraud_graph_arena.release_engineering.runtime import ReleaseContext, load_runtime_context
 
 
 @dataclass(frozen=True, slots=True)
@@ -33,10 +34,12 @@ class RoundService:
         repository: RoundRepository,
         catalogue: CatalogueService,
         narrative: NarrativeService,
+        release_context: ReleaseContext | None = None,
     ) -> None:
         self._repository = repository
         self._catalogue = catalogue
         self._narrative = narrative
+        self._release_context = release_context or load_runtime_context()
 
     @instrumented("domain.round.create")
     def create(self, *, player_id: str, path_id: str, case_id: str) -> Round:
@@ -50,6 +53,7 @@ class RoundService:
             )
         self._narrative.validate_case(case)
         package = self._catalogue.get_package(case.id, case.version)
+        binding = self._release_context.bind(package) if package is not None else None
         round_ = Round(
             id=str(uuid4()),
             player_id=player_id.strip() or "demo-hercule",
@@ -59,6 +63,15 @@ class RoundService:
             status=RoundStatus.CREATED,
             created_at=datetime.now(UTC),
             credits_remaining=package.initial_credits if package is not None else 0,
+            release_id=binding.release_id if binding else self._release_context.release_id,
+            package_version=binding.package_version if binding else "unpackaged",
+            rules_version=binding.engine_api_version if binding else self._release_context.rules_version,
+            economy_version=binding.economy_version if binding else "unpackaged",
+            scoring_version=binding.scoring_version if binding else "unpackaged",
+            screen_set_version=binding.screen_set_version if binding else self._release_context.screen_set_version,
+            api_contract_version=binding.api_contract_version if binding else self._release_context.api_contract_version,
+            analytics_version=binding.analytics_version if binding else self._release_context.analytics_version,
+            package_digest=binding.package_digest if binding else "unpackaged",
         )
         self._repository.add(round_)
         return round_

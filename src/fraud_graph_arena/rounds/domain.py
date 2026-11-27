@@ -5,6 +5,7 @@ from datetime import UTC, datetime
 from enum import StrEnum
 
 from fraud_graph_arena.catalogue.domain import PathId
+from fraud_graph_arena.release_engineering.migration import LEGACY_RELEASE_ID
 
 
 class RoundStatus(StrEnum):
@@ -33,6 +34,18 @@ class Round:
     version: int = 1
     submitted_at: datetime | None = None
     submission_id: str | None = None
+    # The authoritative investigation contract is bound when the round is
+    # created. A later release may improve the board, but it must not silently
+    # replace the rules that produced this round's evidence or score.
+    release_id: str = LEGACY_RELEASE_ID
+    package_version: str = "legacy-package"
+    rules_version: str = "legacy-rules"
+    economy_version: str = "legacy-economy"
+    scoring_version: str = "legacy-scoring"
+    screen_set_version: str = "legacy-screen-set"
+    api_contract_version: str = "v1"
+    analytics_version: str = "legacy-analytics"
+    package_digest: str = "legacy-package-digest"
 
     def start(self, now: datetime | None = None) -> "Round":
         if self.status != RoundStatus.CREATED:

@@ -66,6 +66,15 @@ def map_round(value: Round) -> RoundResponse:
         version=value.version,
         submitted_at=value.submitted_at,
         submission_id=value.submission_id,
+        release_id=value.release_id,
+        package_version=value.package_version,
+        rules_version=value.rules_version,
+        economy_version=value.economy_version,
+        scoring_version=value.scoring_version,
+        screen_set_version=value.screen_set_version,
+        api_contract_version=value.api_contract_version,
+        analytics_version=value.analytics_version,
+        package_digest=value.package_digest,
     )
 
 

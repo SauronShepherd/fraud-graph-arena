@@ -2143,6 +2143,16 @@
             "title": "Case Version",
             "type": "string"
           },
+          "analytics_version": {
+            "default": "legacy-analytics",
+            "title": "Analytics Version",
+            "type": "string"
+          },
+          "api_contract_version": {
+            "default": "v1",
+            "title": "Api Contract Version",
+            "type": "string"
+          },
           "created_at": {
             "format": "date-time",
             "title": "Created At",
@@ -2152,6 +2162,11 @@
             "minimum": 0.0,
             "title": "Credits Remaining",
             "type": "integer"
+          },
+          "economy_version": {
+            "default": "legacy-economy",
+            "title": "Economy Version",
+            "type": "string"
           },
           "id": {
             "title": "Id",
@@ -2169,11 +2184,41 @@
             ],
             "title": "Intro Completed At"
           },
+          "package_digest": {
+            "default": "legacy-package-digest",
+            "title": "Package Digest",
+            "type": "string"
+          },
+          "package_version": {
+            "default": "legacy-package",
+            "title": "Package Version",
+            "type": "string"
+          },
           "path_id": {
             "$ref": "#/components/schemas/PathId"
           },
           "player_id": {
             "title": "Player Id",
+            "type": "string"
+          },
+          "release_id": {
+            "default": "fga18-legacy",
+            "title": "Release Id",
+            "type": "string"
+          },
+          "rules_version": {
+            "default": "legacy-rules",
+            "title": "Rules Version",
+            "type": "string"
+          },
+          "scoring_version": {
+            "default": "legacy-scoring",
+            "title": "Scoring Version",
+            "type": "string"
+          },
+          "screen_set_version": {
+            "default": "legacy-screen-set",
+            "title": "Screen Set Version",
             "type": "string"
           },
           "started_at": {

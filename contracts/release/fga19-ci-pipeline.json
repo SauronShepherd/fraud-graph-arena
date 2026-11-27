@@ -1,0 +1,14 @@
+{
+  "schema_version": "fga19-ci-v1",
+  "purpose": "Make release gates visible and meaningful before a candidate moves.",
+  "stages": [
+    {"id": "lint", "blocks": "merge", "command": "python -m compileall -q src scripts"},
+    {"id": "unit", "blocks": "merge", "command": "python -m pytest -q tests/iteration_19"},
+    {"id": "contracts", "blocks": "merge", "command": "python scripts/validate_fga19_release.py"},
+    {"id": "case-validation", "blocks": "release", "command": "python scripts/validate_case_packages.py"},
+    {"id": "end-to-end", "blocks": "release", "command": "npm run test:e2e -- --workers=1"},
+    {"id": "container-build", "blocks": "release", "command": "docker compose --profile local-build build web"},
+    {"id": "deployment-smoke", "blocks": "promotion", "command": "python scripts/fga19_release_smoke.py"}
+  ],
+  "rule": "A flaky green button is not a release gate; a failed blocking stage prevents promotion."
+}
