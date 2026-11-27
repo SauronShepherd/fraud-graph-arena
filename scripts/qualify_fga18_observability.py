@@ -56,7 +56,7 @@ def _observability_contract() -> dict[str, Any]:
         "status": "pass" if required <= identifiers else "fail",
         "schema_version": config.schema_version,
         "entry_count": len(config.entries),
-        "required_entries_present": sorted(required <= identifiers and required or identifiers & required),
+        "required_entries_present": sorted(required & identifiers),
         "declarative_only": True,
         "redaction_policy": config.default_redaction_policy,
         "runtime_scope": "local in-process recorder; no observability rows written to the public case tables",
