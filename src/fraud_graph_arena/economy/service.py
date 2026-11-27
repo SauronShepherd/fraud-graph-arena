@@ -10,6 +10,7 @@ from uuid import uuid4
 
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError
+from fraud_graph_arena.observability import instrumented
 
 from .models import ACTION_COSTS, ECONOMY_VERSION, LedgerEntry, LedgerEntryType
 from .repository import LedgerRepository
@@ -43,6 +44,7 @@ class EconomyService:
         self._cost_provider = cost_provider
         self._lock = RLock()
 
+    @instrumented("repository.economy.reserve")
     def reserve(self, round_id: str, action: str, idempotency_key: str, request_hash: str, cost: int | None = None) -> EconomyReservation:
         amount = (self._cost_provider(round_id, action) if self._cost_provider is not None else ACTION_COSTS.get(action)) if cost is None else cost
         if amount is None or amount <= 0:

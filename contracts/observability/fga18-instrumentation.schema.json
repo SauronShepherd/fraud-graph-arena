@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "defaults", "instrumentation"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "redaction_policy"],
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "redaction_policy": {"const": "safe"}
+      }
+    },
+    "instrumentation": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "target", "kind", "enabled", "redaction_policy", "options"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]+$"},
+          "target": {"type": "string", "minLength": 1},
+          "kind": {"type": "string", "enum": ["middleware", "domain", "repository", "analytics", "test"]},
+          "enabled": {"type": "boolean"},
+          "redaction_policy": {"const": "safe"},
+          "options": {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "array"]}}
+        }
+      }
+    }
+  }
+}

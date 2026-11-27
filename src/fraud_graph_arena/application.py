@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+import re
 from uuid import uuid4
 
 from fastapi import FastAPI, Request
@@ -37,6 +38,21 @@ from fraud_graph_arena.graph_analytics import GraphAnalyticsService
 from fraud_graph_arena.economy import EconomyService, InMemoryLedgerRepository, SqliteLedgerRepository
 from fraud_graph_arena.case_resolution import CaseResolutionService, InMemorySubmissionRepository, SqliteSubmissionRepository
 from fraud_graph_arena.case_data.graph_investigation import MAX_GRAPH_EDGES, MAX_GRAPH_NODES, initial_subset
+from fraud_graph_arena.observability import ObservabilityRecorder
+
+
+_UUID_PATH_SEGMENT = re.compile(r"/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}(?=/|$)", re.IGNORECASE)
+_SAFE_HEADER_ID = re.compile(r"^[A-Za-z0-9._:-]{1,128}$")
+
+
+def _safe_route(path: str) -> str:
+    return _UUID_PATH_SEGMENT.sub("/:id", path)
+
+
+def _safe_header_id(value: str) -> str:
+    lowered = value.lower()
+    suspicious = ("token", "secret", "bearer", "password", "credential", "email")
+    return value if _SAFE_HEADER_ID.fullmatch(value) and not any(marker in lowered for marker in suspicious) else str(uuid4())
 
 
 @dataclass(slots=True)
@@ -159,22 +175,40 @@ def create_app(
         redoc_url=None,
     )
     app.state.container = resolved_container
+    app.state.observability = ObservabilityRecorder(
+        resolved_settings.instrumentation_config,
+        log_level=resolved_settings.log_level,
+        enabled=resolved_settings.observability_enabled,
+    )
 
     app.add_middleware(
         CORSMiddleware,
         allow_origins=resolved_settings.allowed_origins,
         allow_credentials=False,
         allow_methods=["GET", "POST", "OPTIONS"],
-        allow_headers=["Content-Type", "X-Correlation-ID"],
-        expose_headers=["X-Correlation-ID"],
+        allow_headers=["Content-Type", "X-Correlation-ID", "X-Trace-ID"],
+        expose_headers=["X-Correlation-ID", "X-Trace-ID"],
     )
 
     @app.middleware("http")
     async def attach_correlation_id(request: Request, call_next):  # type: ignore[no-untyped-def]
         supplied = request.headers.get("X-Correlation-ID", "").strip()
-        request.state.correlation_id = supplied[:128] if supplied else str(uuid4())
-        response = await call_next(request)
-        response.headers["X-Correlation-ID"] = request.state.correlation_id
+        request_id = _safe_header_id(supplied) if supplied else str(uuid4())
+        trace = request.headers.get("X-Trace-ID", "").strip()
+        trace_id = _safe_header_id(trace) if trace else str(uuid4())
+        request.state.correlation_id = request_id
+        request.state.trace_id = trace_id
+        observability = app.state.observability
+        with observability.request_context(request_id, trace_id):
+            with observability.span(
+                "http.request",
+                {"http_method": request.method, "route": _safe_route(request.url.path)},
+            ) as span:
+                response = await call_next(request)
+                span["status"] = "error" if response.status_code >= 400 else "ok"
+                span["result"] = {"http_status": response.status_code}
+        response.headers["X-Correlation-ID"] = request_id
+        response.headers["X-Trace-ID"] = trace_id
         return response
 
     register_problem_handlers(app)

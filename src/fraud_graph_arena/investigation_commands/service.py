@@ -11,6 +11,7 @@ from uuid import uuid4
 from fraud_graph_arena.rounds.domain import RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
+from fraud_graph_arena.observability import instrumented
 
 from .ports import InvestigationCommandRepository
 
@@ -52,6 +53,7 @@ class InvestigationCommandService:
         self._now = now
         self._new_id = new_id
 
+    @instrumented("domain.investigation.hypothesis")
     def submit_hypothesis(
         self,
         round_id: str,

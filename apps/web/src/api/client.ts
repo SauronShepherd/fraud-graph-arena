@@ -15,6 +15,7 @@ import type {
   Submission,
   ResolutionContext,
 } from "./contracts";
+import { browserTraceId, recordFrontendError } from "../observability";
 
 const API_BASE = (import.meta.env.VITE_FGA_API_BASE_URL as string | undefined) ?? "/api/v1";
 
@@ -32,6 +33,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let response: Response;
   const headers = new Headers(init?.headers);
   headers.set("Accept", "application/json, application/problem+json");
+  headers.set("X-Trace-ID", browserTraceId());
   if (init?.body !== undefined) headers.set("Content-Type", "application/json");
   try {
     response = await fetch(`${API_BASE}${path}`, {
@@ -39,6 +41,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
       headers
     });
   } catch (cause) {
+    recordFrontendError({ kind: "api", path, status: 503, code: "BACKEND_UNAVAILABLE", error_type: cause instanceof Error ? cause.name : "NetworkError" });
     throw new ApiProblem({
       type: "https://fraud-graph-arena.invalid/problems/backend-unavailable",
       title: "The office is not answering",
@@ -54,8 +57,11 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   if (!response.ok) {
     const contentType = response.headers.get("content-type") ?? "";
     if (contentType.includes("application/problem+json")) {
-      throw new ApiProblem((await response.json()) as ProblemDetails);
+      const problem = (await response.json()) as ProblemDetails;
+      recordFrontendError({ kind: "api", path, status: problem.status, code: problem.code, correlation_id: problem.correlation_id });
+      throw new ApiProblem(problem);
     }
+    recordFrontendError({ kind: "api", path, status: response.status, code: "UNEXPECTED_RESPONSE", correlation_id: response.headers.get("x-correlation-id") ?? "unknown" });
     throw new ApiProblem({
       type: "https://fraud-graph-arena.invalid/problems/unexpected-response",
       title: "Unexpected response",

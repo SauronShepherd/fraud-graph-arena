@@ -12,6 +12,7 @@ from fraud_graph_arena.ethics import assess_submission
 from fraud_graph_arena.rounds.domain import RoundStatus
 from fraud_graph_arena.rounds.service import Closing, RoundService
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
+from fraud_graph_arena.observability import instrumented
 
 from .evaluator import evaluate, published_record_ids
 from .models import SCORING_VERSION, SubmissionResult
@@ -30,6 +31,7 @@ class CaseResolutionService:
         self._now = now
         self._new_id = new_id
 
+    @instrumented("domain.case-resolution.submit")
     def submit(self, round_id: str, idempotency_key: str, suspect_record_ids: list[str], evidence_claim_ids: list[str], expected_round_version: int | None = None, evidence_record_ids: list[str] | None = None) -> tuple[SubmissionResult, bool]:
         if not KEY_PATTERN.fullmatch(idempotency_key):
             raise InvalidRequestError(code="INVALID_IDEMPOTENCY_KEY", title="Invalid submission identity", detail="Use 1 to 128 letters, digits, dots, underscores, colons or hyphens; the first character must be alphanumeric.")

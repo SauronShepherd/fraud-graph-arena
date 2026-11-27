@@ -41,6 +41,8 @@ class Settings(BaseSettings):
     round_repository: Literal["memory", "sqlite"] = "sqlite"
     sqlite_path: Path = Path(".fga/fga.sqlite3")
     frontend_dist: Path = Path("apps/web/dist")
+    observability_enabled: bool = True
+    instrumentation_config: Path = Path("contracts/observability/fga18-instrumentation.json")
 
     allowed_origins: list[str] = Field(default_factory=lambda: ["http://localhost:5173"])
 

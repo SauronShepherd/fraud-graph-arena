@@ -6,6 +6,7 @@ from pathlib import Path
 
 from fraud_graph_arena.catalogue.domain import PathId
 from fraud_graph_arena.rounds.domain import Round, RoundStatus
+from fraud_graph_arena.observability import instrumented
 
 
 class SqliteRoundRepository:
@@ -62,6 +63,10 @@ class SqliteRoundRepository:
                 connection.execute("ALTER TABLE rounds ADD COLUMN submission_id TEXT NULL")
 
     def add(self, round_: Round) -> None:
+        self._add(round_)
+
+    @instrumented("repository.sqlite.round.add")
+    def _add(self, round_: Round) -> None:
         with self._connect() as connection:
             connection.execute(
                 """
@@ -74,6 +79,10 @@ class SqliteRoundRepository:
             )
 
     def get(self, round_id: str) -> Round | None:
+        return self._get(round_id)
+
+    @instrumented("repository.sqlite.round.get")
+    def _get(self, round_id: str) -> Round | None:
         with self._connect() as connection:
             row = connection.execute(
                 "SELECT * FROM rounds WHERE id = ?",
@@ -82,6 +91,10 @@ class SqliteRoundRepository:
         return None if row is None else self._from_row(row)
 
     def save(self, round_: Round) -> None:
+        self._save(round_)
+
+    @instrumented("repository.sqlite.round.save")
+    def _save(self, round_: Round) -> None:
         with self._connect() as connection:
             cursor = connection.execute(
                 """
@@ -123,6 +136,10 @@ class SqliteRoundRepository:
             return False
 
     def charge(self, round_id: str, amount: int) -> Round:
+        return self._charge(round_id, amount)
+
+    @instrumented("repository.sqlite.round.charge")
+    def _charge(self, round_id: str, amount: int) -> Round:
         if amount <= 0:
             raise ValueError("charge amount must be positive")
         with self._connect() as connection:
@@ -143,6 +160,10 @@ class SqliteRoundRepository:
         return self._from_row(row)
 
     def refund(self, round_id: str, amount: int) -> Round:
+        return self._refund(round_id, amount)
+
+    @instrumented("repository.sqlite.round.refund")
+    def _refund(self, round_id: str, amount: int) -> Round:
         if amount <= 0:
             raise ValueError("refund amount must be positive")
         with self._connect() as connection:

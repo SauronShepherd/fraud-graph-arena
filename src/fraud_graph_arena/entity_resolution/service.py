@@ -12,6 +12,7 @@ from fraud_graph_arena.rounds.domain import RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
 from fraud_graph_arena.economy import EconomyReservation, EconomyService
+from fraud_graph_arena.observability import instrumented
 
 from .engine import EntityResolutionEngine, load_t02_identity_records
 from .models import IdentityReview, ResolutionRun
@@ -42,6 +43,7 @@ class EntityResolutionService:
         self._package_provider = package_provider
         self._lock = RLock()
 
+    @instrumented("domain.entity-resolution.analyze")
     def analyze(self, round_id: str, idempotency_key: str, focus_record_id: str | None = None) -> tuple[ResolutionRun, bool]:
         self._validate_key(idempotency_key)
         round_ = self._require_active_case(round_id)
@@ -95,6 +97,7 @@ class EntityResolutionService:
                 self._economy.settle(reservation, stored)
             return stored, created
 
+    @instrumented("domain.entity-resolution.review")
     def review(self, round_id: str, candidate_id: str, idempotency_key: str, outcome: str) -> tuple[IdentityReview, bool]:
         self._validate_key(idempotency_key)
         if outcome not in {"ACCEPTED", "REJECTED", "UNRESOLVED"}:

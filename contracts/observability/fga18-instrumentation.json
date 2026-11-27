@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "defaults": {
+    "enabled": true,
+    "redaction_policy": "safe"
+  },
+  "instrumentation": [
+    {"id": "http.request", "target": "fraud_graph_arena.application:create_app.middleware", "kind": "middleware", "enabled": true, "redaction_policy": "safe", "options": {"capture_query": false}},
+    {"id": "domain.round.create", "target": "fraud_graph_arena.rounds.service:RoundService.create", "kind": "domain", "enabled": true, "redaction_policy": "safe", "options": {"event": "round.created"}},
+    {"id": "domain.round.start", "target": "fraud_graph_arena.rounds.service:RoundService.start", "kind": "domain", "enabled": true, "redaction_policy": "safe", "options": {"event": "round.started"}},
+    {"id": "domain.round.complete-opening", "target": "fraud_graph_arena.rounds.service:RoundService.complete_opening", "kind": "domain", "enabled": true, "redaction_policy": "safe", "options": {"event": "opening.completed"}},
+    {"id": "domain.investigation.hypothesis", "target": "fraud_graph_arena.investigation_commands.service:InvestigationCommandService.submit_hypothesis", "kind": "domain", "enabled": true, "redaction_policy": "safe", "options": {"event": "investigation.hypothesis"}},
+    {"id": "domain.entity-resolution.analyze", "target": "fraud_graph_arena.entity_resolution.service:EntityResolutionService.analyze", "kind": "analytics", "enabled": true, "redaction_policy": "safe", "options": {"event": "analytics.entity-resolution"}},
+    {"id": "domain.entity-resolution.review", "target": "fraud_graph_arena.entity_resolution.service:EntityResolutionService.review", "kind": "domain", "enabled": true, "redaction_policy": "safe", "options": {"event": "investigation.identity-review"}},
+    {"id": "domain.graph-analytics.analyze", "target": "fraud_graph_arena.graph_analytics.service:GraphAnalyticsService.analyze", "kind": "analytics", "enabled": true, "redaction_policy": "safe", "options": {"event": "analytics.graph"}},
+    {"id": "domain.case-resolution.submit", "target": "fraud_graph_arena.case_resolution.service:CaseResolutionService.submit", "kind": "domain", "enabled": true, "redaction_policy": "safe", "options": {"event": "case.submitted"}},
+    {"id": "repository.economy.reserve", "target": "fraud_graph_arena.economy.service:EconomyService.reserve", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"event": "economy.reserved", "capture_cost": true}},
+    {"id": "repository.sqlite.round.add", "target": "fraud_graph_arena.rounds.adapters.sqlite:SqliteRoundRepository._add", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "insert", "resource": "rounds"}},
+    {"id": "repository.sqlite.round.get", "target": "fraud_graph_arena.rounds.adapters.sqlite:SqliteRoundRepository._get", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "select", "resource": "rounds"}},
+    {"id": "repository.sqlite.round.save", "target": "fraud_graph_arena.rounds.adapters.sqlite:SqliteRoundRepository._save", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "update", "resource": "rounds"}},
+    {"id": "repository.sqlite.round.charge", "target": "fraud_graph_arena.rounds.adapters.sqlite:SqliteRoundRepository._charge", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "update", "resource": "rounds"}},
+    {"id": "repository.sqlite.round.refund", "target": "fraud_graph_arena.rounds.adapters.sqlite:SqliteRoundRepository._refund", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "update", "resource": "rounds"}},
+    {"id": "repository.sqlite.ledger.get-charge", "target": "fraud_graph_arena.economy.repository:SqliteLedgerRepository.get_charge", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "select", "resource": "credit_ledger"}},
+    {"id": "repository.sqlite.ledger.add", "target": "fraud_graph_arena.economy.repository:SqliteLedgerRepository.add", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "insert", "resource": "credit_ledger"}},
+    {"id": "repository.sqlite.ledger.update", "target": "fraud_graph_arena.economy.repository:SqliteLedgerRepository.update", "kind": "repository", "enabled": true, "redaction_policy": "safe", "options": {"operation": "update", "resource": "credit_ledger"}},
+    {"id": "test.async-probe", "target": "tests.iteration_18:test_async_probe", "kind": "test", "enabled": true, "redaction_policy": "safe", "options": {"purpose": "semantic-preservation"}}
+  ]
+}

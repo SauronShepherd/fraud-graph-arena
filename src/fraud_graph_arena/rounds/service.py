@@ -9,6 +9,7 @@ from fraud_graph_arena.narrative import ComicKind, ComicSequence, NarrativeServi
 from fraud_graph_arena.rounds.domain import IntroCompletion, Round, RoundStatus
 from fraud_graph_arena.rounds.ports import RoundRepository
 from fraud_graph_arena.shared.errors import ConflictError, NotFoundError
+from fraud_graph_arena.observability import instrumented
 
 
 @dataclass(frozen=True, slots=True)
@@ -37,6 +38,7 @@ class RoundService:
         self._catalogue = catalogue
         self._narrative = narrative
 
+    @instrumented("domain.round.create")
     def create(self, *, player_id: str, path_id: str, case_id: str) -> Round:
         case = self._catalogue.require_case_for_path(raw_path_id=path_id, case_id=case_id)
         if case.status != CaseStatus.OPEN:
@@ -89,6 +91,7 @@ class RoundService:
         self._repository.save(submitted)
         return submitted
 
+    @instrumented("domain.round.start")
     def start(self, round_id: str) -> Round:
         round_ = self.require(round_id)
         case = self._case_for(round_)
@@ -127,6 +130,7 @@ class RoundService:
         sequence = self._narrative.require_sequence(case_id=case.id, case_version=case.version, kind=ComicKind.CLOSING)
         return Closing(round=round_, case=case, sequence=sequence)
 
+    @instrumented("domain.round.complete-opening")
     def complete_opening(self, round_id: str, *, completion: IntroCompletion = IntroCompletion.FINISHED) -> Round:
         round_ = self.require(round_id)
         if round_.status == RoundStatus.CREATED:

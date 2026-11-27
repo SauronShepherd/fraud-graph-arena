@@ -12,6 +12,7 @@ from fraud_graph_arena.economy import EconomyService
 from fraud_graph_arena.rounds.domain import RoundStatus
 from fraud_graph_arena.rounds.service import RoundService
 from fraud_graph_arena.shared.errors import ConflictError, InvalidRequestError, NotFoundError
+from fraud_graph_arena.observability import instrumented
 
 from .engine import (
     FRAMEWORK_SEMANTICS,
@@ -55,6 +56,7 @@ class GraphAnalyticsService:
         self._history: dict[str, list[GraphAnalysisResult]] = {}
         self._lock = RLock()
 
+    @instrumented("domain.graph-analytics.analyze")
     def analyze(self, round_id: str, request: dict[str, Any]) -> GraphAnalysisResult:
         round_ = self._require_active_case(round_id)
         algorithm = str(request.get("algorithm", "")).upper()

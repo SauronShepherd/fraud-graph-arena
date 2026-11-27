@@ -8,6 +8,7 @@ from threading import RLock
 from typing import Protocol
 
 from fraud_graph_arena.shared.errors import ConflictError
+from fraud_graph_arena.observability import instrumented
 
 from .models import ECONOMY_VERSION, LedgerEntry, LedgerEntryType
 
@@ -80,11 +81,13 @@ class SqliteLedgerRepository:
                 """
             )
 
+    @instrumented("repository.sqlite.ledger.get-charge")
     def get_charge(self, round_id: str, idempotency_key: str) -> LedgerEntry | None:
         with self._connect() as connection:
             row = connection.execute("SELECT * FROM credit_ledger WHERE round_id=? AND idempotency_key=? AND entry_type=?", (round_id, idempotency_key, LedgerEntryType.CHARGE.value)).fetchone()
         return None if row is None else self._from_row(row)
 
+    @instrumented("repository.sqlite.ledger.add")
     def add(self, entry: LedgerEntry) -> None:
         try:
             with self._connect() as connection:
@@ -95,6 +98,7 @@ class SqliteLedgerRepository:
         except sqlite3.IntegrityError as error:
             raise ConflictError(code="LEDGER_ENTRY_EXISTS", title="Ledger entry already exists", detail="The same economy event has already been recorded.") from error
 
+    @instrumented("repository.sqlite.ledger.update")
     def update(self, entry: LedgerEntry) -> None:
         with self._connect() as connection:
             cursor = connection.execute(

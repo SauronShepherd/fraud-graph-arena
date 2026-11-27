@@ -48,6 +48,8 @@ The only playable file is the spoiler-free `ACADEMY_001 — The Case of the Empt
 - Python, React component, screen-system and Playwright qualification tests;
 - versioned declarative screen definitions with schema and graph validation;
 - centralized navigation, cancellable screen data loading, semantic actions, lifecycle hooks and transition effects.
+- FGA-18 structured observability with request correlation, safe traces, aggregate metrics, frontend error boundaries and declarative instrumentation selection;
+- separate observability events from player-visible investigation history, with redaction and sync/async behaviour-preservation tests;
 - Canonical Model v1 packages, typed registry, registered converters and strict package validation;
 - candidate-aware case-version-scoped persistence, typed DDL, active-pointer publication and recovery primitives;
 - registry-generated physical targets and least-privilege layer grants for Databricks deployment.
@@ -153,6 +155,26 @@ static contract can be checked without Docker:
 ```text
 python scripts/fga17_compose_contract.py
 ```
+
+## Run the FGA-18 observability smoke
+
+The observability recorder is deliberately local and in-process. It follows one
+training action through the HTTP boundary, selected domain methods, SQLite
+round/ledger operations and the deterministic analytics result. The smoke also
+checks that raw round and player identifiers and protected truth do not appear
+in the trace:
+
+```text
+python scripts/fga18_observability_smoke.py
+python -m pytest -q tests/iteration_18
+python scripts/qualify_fga18_observability.py --profile fga --catalog sda_dev --schema sandbox --warehouse-id eded42c9d0a69b84 --report reports/iteration-18/databricks-fga18-observability-current.json
+```
+
+The Databricks command is a read-only public-boundary qualification. It does
+not execute the local recorder, Docker or a hidden-truth query. The JSON
+instrumentation catalogue selects registered instrumentation IDs; it never
+contains Python code or executable expressions. Logs, metrics, traces and
+game-event history remain separate surfaces.
 
 ## Export the OpenAPI contract
 
