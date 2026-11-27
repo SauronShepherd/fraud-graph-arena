@@ -22,7 +22,7 @@ All three branches were created from the preceding FGA-16 line. The implementati
 - The master outline is authoritative for the current numbering: FGA-16 is the Detective Academy article, FGA-17 is the Docker article and FGA-18 is the observability article. The older development outline still labels the Docker block as FGA-16 and the observability block as FGA-17; that numbering discrepancy is retained here as a planning note, not silently merged into the article.
 - Read the FGA-15 and FGA-16 articles and checked the recurring three-paragraph opening, `Part I`–`Part VIII` notation, short `###` subsections, noir narration, restrained dog humour, tables for contracts, the separator before `Source Code` and the separator before the final image.
 - Applied the editorial-review skill using the novela panel for promise, opening, voice, exposition, atmosphere, humour, genre, rhythm, line, grammar, punctuation, lexical precision and production; and the humanization panel for intention, audience, specificity, paragraph architecture, transitions, repetition, idiom, certainty, regression and format.
-- Kept the article in English, with the FGA series voice rather than a generic technical tutorial. It has no fenced code blocks, uses inline code only for exact identifiers and commands, and keeps `readingTime: 19`.
+- Kept the article in English, with the FGA series voice rather than a generic technical tutorial. It has no fenced code blocks, uses inline code only for exact identifiers and commands, and keeps `readingTime: 18`.
 
 ## Chronological record
 
@@ -96,6 +96,7 @@ The fresh frontend install still emitted the existing `whatwg-encoding@3.1.1` de
 - The two immutable GitHub Raw image URLs returned HTTP 200.
 - The article keeps the direct route unlisted, matching the preceding direct-route publication workflow.
 - The final text pass checked the intro length, heading notation, separator positions, inline-code convention, repeated `FGA-17` framing and the explicit “not claimed” boundaries. No fenced snippets were introduced.
+- The site estimator was rerun against the final markdown after the editorial trim: `3,515` words and `18` minutes at 200 words per minute. The first independent estimate was `4,085` words / `21` minutes; it triggered the reduction rather than being overridden by frontmatter.
 
 The generated `1.png` is the newspaper/preview image. The generated `2.png` is the darker top-down case-file infographic. Both use the established muted sepia/charcoal palette, old-paper print treatment, noir office and recognisable Spanish Water Dog detective; neither introduces a bright neon palette or a wolf-like character.
 
@@ -131,9 +132,9 @@ The integrated article was checked in four passes:
 1. **Structure and series voice:** compared the opening, `Part I`–`Part VIII`, subsection density, noir dog narration, technical-table use, arrest, case status, next-case handoff, source-code section, receipt and final separator against FGA-15/FGA-16.
 2. **Claim-to-branch consistency:** matched every implementation claim to code, focused tests, real Docker output, the optional PostgreSQL run or the Databricks receipt; downgraded the browser “login” incident to the explicit local player/session boundary.
 3. **Line and rhythm:** removed generic tutorial phrasing, kept paragraphs short, varied sentence length, retained the series’ dry canine humour and checked that inline identifiers remain readable without fenced snippets.
-4. **Production and accessibility:** checked the 19-minute budget, heading order, table headers, direct route, source links, raw image URLs, alt text, image captions and the exact separator locations.
+4. **Production and accessibility:** checked the final 18-minute budget, heading order, table headers, direct route, source links, raw image URLs, alt text, image captions and the exact separator locations.
 
-The independent lower-capacity editorial read is recorded in the final commit notes. It was a read-only contrast, not presented as a human reader or as a 100-reviewer panel. Human reception remains not evaluated; the evidence here is textual, technical and production-oriented.
+The independent lower-capacity editorial read found that the earlier draft was over the time budget, repeated the missing-package failure and used an intro sentence that implied incompatible states without naming their workflow boundary. The evidence-file concern was produced before the evidence commit was visible in that reviewer checkout; it was closed by the committed log, matrix and receipt. The final article changed the intro, kept the full failure only where it teaches the repair, reduced the later recaps and passed the estimator at 18 minutes. This was a read-only contrast, not a human-reader study or a 100-reviewer panel. Human reception remains not evaluated.
 
 ## Residual limits kept visible
 
@@ -143,8 +144,8 @@ FGA-17 does not prove that every registry, proxy, identity provider or productio
 
 FGA-17 is closed only after the article branch, implementation branch and assets branch have clean working trees, their remote heads are recorded below and the article/implementation matrix contains no unexplained claim.
 
-| Repository | Final branch head |
+| Repository | Final recorded commit |
 | --- | --- |
-| `fraud-graph-arena` | recorded after evidence commit |
-| `articles` | recorded after final article commit |
+| `fraud-graph-arena` | implementation/evidence commit `c075642` |
+| `articles` | `5c50511` |
 | `angelic-assets` | `507f68b04594a95772d0250e069518eab4ce29c8` |

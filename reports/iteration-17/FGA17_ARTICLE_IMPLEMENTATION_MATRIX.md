@@ -25,7 +25,7 @@ This matrix is the closure check for the bidirectional rule: every material arti
 | Databricks qualification is read-only | Qualification queries public projections only; no mutation path | Receipt `read_only=true`, `truth_source_queried=false`, `actual_engine_run=false` | PASS |
 | Databricks covers the active public boundary | Existing qualification plus FGA-17 wrapper | 13 canonical packages; counts/endpoints/safe columns PASS | PASS |
 | Docker did not run inside Databricks | Explicit boundary in qualification report | Receipt `docker_execution_on_databricks=false`; article states local Docker/remote qualification split | PASS / LIMITATION |
-| Article route and article structure match the series | Article markdown; `unlistedArticleSlugs` entry | 115 canonical validation; Astro route; 116 internal URLs; reading time 19 | PASS |
+| Article route and article structure match the series | Article markdown; `unlistedArticleSlugs` entry | 115 canonical validation; Astro route; 116 internal URLs; 3,515 words / 18-minute estimator | PASS |
 | Article images are the FGA newspaper and final infographic pair | Assets branch `FGA-17`: `1.png`, `2.png` | Immutable GitHub Raw URLs return 200; article frontmatter/final image use commit `507f68b...` | PASS |
 | Implementation failures and fixes are part of the lesson | `FGA17_IMPLEMENTATION_LOG.md` | First missing-directory boot failure, correction, rerun and notices recorded | PASS |
 
