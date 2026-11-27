@@ -7,6 +7,16 @@
 !apps/
 !apps/web/
 !apps/web/**
+!contracts/
+!contracts/**
+!config/
+!config/**
+!case-data/
+!case-data/**
+!case-packages/
+!case-packages/**
+!docker/
+!docker/**
 **/.git
 **/node_modules
 **/dist

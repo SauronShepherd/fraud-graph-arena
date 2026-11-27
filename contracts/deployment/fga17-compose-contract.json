@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contract_version": "fga17-compose-v1",
+  "purpose": "Make the local container workflow explicit and reproducible.",
+  "workflows": {
+    "local-build": {
+      "compose_files": ["compose.yaml"],
+      "profile": "local-build",
+      "service": "web",
+      "source_of_truth": "Dockerfile and the checked-out source revision",
+      "required_interpolation": [],
+      "runtime_env_file": "docker/runtime.env"
+    },
+    "published-image": {
+      "compose_files": ["compose.yaml", "compose.published.yaml"],
+      "profile": "published-image",
+      "service": "web-published",
+      "source_of_truth": "FGA_IMAGE tag or digest supplied before Compose resolution",
+      "required_interpolation": ["FGA_IMAGE"],
+      "runtime_env_file": "docker/runtime.env"
+    },
+    "host": {
+      "compose_files": [],
+      "profile": null,
+      "service": null,
+      "source_of_truth": "the checked-out Python and frontend dependencies",
+      "required_interpolation": [],
+      "runtime_env_file": ".env"
+    }
+  },
+  "health_contract": {
+    "liveness": "/api/v1/health/live",
+    "readiness": "/api/v1/health/ready",
+    "board_access": "/api/v1/catalogue/DETECTIVE_ACADEMY",
+    "database_witness": "postgres:16.4-alpine uses pg_isready; it is not silently declared as the SQLite application store"
+  },
+  "security_boundaries": [
+    "Compose interpolation is resolved by the invoking environment before a container exists.",
+    "env_file values are runtime injection and do not repair missing interpolation variables.",
+    "No secret is accepted as a Docker build argument or copied into an image layer.",
+    "The repository has a local player/session boundary, not an external identity provider. The smoke test must not call board access authentication.",
+    "The optional PostgreSQL profile is a dependency-health witness until a PostgreSQL application adapter is implemented."
+  ]
+}

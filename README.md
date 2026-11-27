@@ -102,13 +102,57 @@ python scripts/run_iteration_01_gate.py --report reports/iteration-01/gate.json
 
 The gate runs Python tests, frontend typechecking, component tests and Playwright. The iteration is not formally closed until every reported check has status `passed`.
 
-## Run the production-equivalent image
+## Run the FGA-17 container workflows
+
+The local workflow is explicit about what Compose is resolving and what the
+container receives at runtime:
 
 ```text
-docker compose up --build
+docker compose --profile local-build up --build
+python scripts/fga17_startup_smoke.py --base-url http://127.0.0.1:8000
 ```
 
-Open `http://127.0.0.1:8000`. The final image contains the built frontend and backend and stores rounds in the `fga-data` volume.
+Open `http://127.0.0.1:8000` after the smoke test passes. The image is built
+from the checked-out source, tagged as `fraud-graph-arena:local` by default,
+and stores rounds in the `fga-local-data` volume. `FGA_SOURCE_REVISION` is a
+non-secret build label; it is not a substitute for a release digest.
+
+The published-image workflow is a separate Compose file. It cannot silently
+fall back to a local build or an image that happens to be in the developer's
+cache:
+
+```text
+$env:FGA_IMAGE = "registry.example/fga@sha256:..."
+docker compose -f compose.yaml -f compose.published.yaml --profile published-image up
+```
+
+If `FGA_IMAGE` is absent, Compose fails before a container is created. A value
+from `env_file` would arrive too late to fix that interpolation. The optional
+PostgreSQL witness can be inspected independently:
+
+```text
+docker compose --profile postgres up -d postgres
+docker compose --profile postgres ps
+```
+
+Its `pg_isready` result proves that PostgreSQL accepts a connection. It does
+not prove that this repository's SQLite-backed application is ready, migrated,
+authenticated or reachable from a browser. The app and the witness are kept
+separate until a PostgreSQL application adapter exists.
+
+The host workflow remains a third choice: load `.env`, start the Python API
+and the frontend with their native commands, and use `127.0.0.1` for both.
+Do not mix a host backend with a container-only hostname such as `web`, or a
+browser on the host with a frontend URL that only exists inside the Compose
+network.
+
+Stop local services with `docker compose --profile local-build down`; add
+`--volumes` only when intentionally resetting the local round file. The
+static contract can be checked without Docker:
+
+```text
+python scripts/fga17_compose_contract.py
+```
 
 ## Export the OpenAPI contract
 
