@@ -39,6 +39,7 @@
 
 - The first report was generated against the FGA-20 functional revision and validated as `pass`.
 - The first report still pointed at the inherited FGA-19 Databricks receipt. The report builder was corrected to consume the FGA-20-named remote receipt, and the report was regenerated with source revision `8afe50ca12ec574b7a539370b0987610a7870402`.
+- The final checked-in script content is identical to the working tree that produced the passing report. After the script/report commit (`3a2baef`), the report's `source_revision` was aligned to that published branch HEAD and rechecked through the strict report schema and focused acceptance tests.
 - The report deliberately separates local player-journey evidence from the remote public data boundary. `actual_engine_run=false`, `truth_source_queried=false` and `databricks_read_only=true` remain explicit.
 - The latest local Academy qualification returned `PASS`, twelve scenarios, a passing complete game loop, fourteen local package smoke journeys, persistence recovery and idempotent replay. The current run took `72.31 seconds`; the article uses a deliberately rounded description rather than presenting that duration as an SLO.
 
@@ -55,7 +56,7 @@
 ### Test runner findings and repair
 
 - The new FGA-20 test file passed independently: `3 passed in 0.29s`.
-- The inherited FGA-19/FGA-18/OpenAPI focused set passed with the FGA-20 tests when the third-party `pytest-randomly` plugin was disabled: `20 passed in 4.43s`. The default randomized combined invocation exited without a failure summary after thirteen dots; the tests themselves passed independently and in the deterministic focused invocation. This is recorded as a runner/plugin interaction, not hidden as a product failure.
+- The inherited FGA-19/FGA-18/OpenAPI focused set passed with the FGA-20 tests when the third-party `pytest-randomly` plugin was disabled: `20 passed in 2.37s` on the final run. The default randomized combined invocation exited without a failure summary after thirteen dots; the tests themselves passed independently and in the deterministic focused invocation. This is recorded as a runner/plugin interaction, not hidden as a product failure.
 - A default full backend run collected `316` tests but terminated while the inherited narrative-package validator was validating the large case packages. The process ended with exit code `-1` and no assertion traceback. `faulthandler` snapshots showed the existing validator inside CSV receipt counting, SQL lexical validation and safe-projection scanning; no FGA-20 assertion failed.
 - A detached per-package diagnostic confirmed zero validation errors for every package reached, including `senior-crypto-kennel-long-con` and `senior-love-leashes-offshore`. The FGA-20 acceptance runner subsequently completed the complete fourteen-package local regression with `status=PASS`, `errors=[]` and a passing persistence probe.
 - The inherited full regression receipt remains valid because FGA-20 does not modify the application, case-data validator, frontend or release runtime. The new branch delta is independently covered by the deterministic `20 passed` focused receipt and the acceptance runner.

@@ -1,7 +1,7 @@
 {
   "schema_version": "fga20-mvp-acceptance-v1",
   "status": "pass",
-  "source_revision": "8afe50ca12ec574b7a539370b0987610a7870402",
+  "source_revision": "3a2baefb3af795d0e12bbba4c4925c245a4a0920",
   "release_id": "fga19-mvp.1",
   "generated_at_utc": "2026-11-27T05:53:25.766309+00:00",
   "plan_vs_reality": [
