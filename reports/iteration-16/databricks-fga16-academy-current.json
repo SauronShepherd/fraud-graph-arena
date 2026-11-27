@@ -1,8 +1,8 @@
 {
   "status": "pass",
   "iteration": "FGA16",
-  "run_at_utc": "2026-11-27T00:03:53.364165+00:00",
-  "source_commit": "bb605a327baf859246c8fc1f7f7c0d6606d8c131",
+  "run_at_utc": "2026-11-27T00:40:05.917324+00:00",
+  "source_commit": "8b1a6c2b9535c591ab11fb1c4d9f4de6c1fa5194",
   "profile": "fga",
   "catalog": "sda_dev",
   "schema": "sandbox",
@@ -13,8 +13,8 @@
   "graphframes_compatibility": "UNRESOLVED_SQL_WAREHOUSE_ONLY",
   "local_academy_validation": {
     "status": "PASS",
-    "curriculum_version": "1.0.0",
-    "scenario_count": 9,
+    "curriculum_version": "1.1.0",
+    "scenario_count": 12,
     "runs": [
       {
         "scenario_id": "academy-node-selection",
@@ -79,7 +79,7 @@
         ],
         "evidence_diff": [],
         "diagnostics": {
-          "round_id_observed": "dfb964d8-e350-4b2e-b620-d185c86bc721",
+          "round_id_observed": "ff6f9e88-3701-402c-b2c0-ea3bf68438f0",
           "runner": "public-api-contract-runner",
           "golden_result_id": "golden-academy-entity-resolution"
         }
@@ -127,7 +127,7 @@
         ],
         "evidence_diff": [],
         "diagnostics": {
-          "round_id_observed": "5a81e43b-4b6d-4fba-aefa-1ef83d5c74e2",
+          "round_id_observed": "ce71eebb-b372-4030-977e-c15ac98990fe",
           "runner": "public-api-contract-runner",
           "golden_result_id": "golden-academy-resource-spending"
         }
@@ -173,7 +173,7 @@
         ],
         "evidence_diff": [],
         "diagnostics": {
-          "round_id_observed": "cfa57246-9d24-4ba9-a673-e60d4960bd47",
+          "round_id_observed": "1341feb2-834a-473d-9f3c-0c72afc1644c",
           "runner": "public-api-contract-runner",
           "golden_result_id": "golden-academy-correct-accusation"
         }
@@ -198,9 +198,78 @@
         ],
         "evidence_diff": [],
         "diagnostics": {
-          "round_id_observed": "c1435d3a-dbeb-45df-a256-1843264039d1",
+          "round_id_observed": "c5611ae2-1f08-419d-bae3-09efc6f0e3de",
           "runner": "public-api-contract-runner",
           "golden_result_id": "golden-academy-incorrect-accusation"
+        }
+      },
+      {
+        "scenario_id": "academy-victim-recruiter",
+        "scenario_version": "1.0.0",
+        "seed": "fga16-victim-recruiter-001",
+        "execution_mode": "COMPONENT_MOCK",
+        "status": "PASS",
+        "final_state": "MIXED_ROLE_REVIEW",
+        "action_history": [
+          "REVIEW_ROLE_EVIDENCE"
+        ],
+        "expected_state": "MIXED_ROLE_REVIEW",
+        "actual_state": "MIXED_ROLE_REVIEW",
+        "correlation_ids": [
+          "academy:academy-victim-recruiter:fga16-victim-recruiter-001"
+        ],
+        "evidence_diff": [],
+        "diagnostics": {
+          "runner": "mixed-role-ethics-component-runner",
+          "golden_result_id": "golden-academy-victim-recruiter",
+          "role_pattern": "victim_and_recruiter",
+          "fixture": "contracts\\academy\\fga16-mixed-role-cases.json"
+        }
+      },
+      {
+        "scenario_id": "academy-professional-proximity",
+        "scenario_version": "1.0.0",
+        "seed": "fga16-professional-proximity-001",
+        "execution_mode": "COMPONENT_MOCK",
+        "status": "PASS",
+        "final_state": "ROLE_PROXIMITY_REVIEW",
+        "action_history": [
+          "CHECK_PROFESSIONAL_ROLE"
+        ],
+        "expected_state": "ROLE_PROXIMITY_REVIEW",
+        "actual_state": "ROLE_PROXIMITY_REVIEW",
+        "correlation_ids": [
+          "academy:academy-professional-proximity:fga16-professional-proximity-001"
+        ],
+        "evidence_diff": [],
+        "diagnostics": {
+          "runner": "mixed-role-ethics-component-runner",
+          "golden_result_id": "golden-academy-professional-proximity",
+          "role_pattern": "professional_with_legitimate_proximity",
+          "fixture": "contracts\\academy\\fga16-mixed-role-cases.json"
+        }
+      },
+      {
+        "scenario_id": "academy-beneficiary-operator-split",
+        "scenario_version": "1.0.0",
+        "seed": "fga16-beneficiary-operator-split-001",
+        "execution_mode": "COMPONENT_MOCK",
+        "status": "PASS",
+        "final_state": "ROLE_CHAIN_REVIEW",
+        "action_history": [
+          "SEPARATE_ROLE_CHAIN"
+        ],
+        "expected_state": "ROLE_CHAIN_REVIEW",
+        "actual_state": "ROLE_CHAIN_REVIEW",
+        "correlation_ids": [
+          "academy:academy-beneficiary-operator-split:fga16-beneficiary-operator-split-001"
+        ],
+        "evidence_diff": [],
+        "diagnostics": {
+          "runner": "mixed-role-ethics-component-runner",
+          "golden_result_id": "golden-academy-beneficiary-operator-split",
+          "role_pattern": "beneficiary_differs_from_operational_actor",
+          "fixture": "contracts\\academy\\fga16-mixed-role-cases.json"
         }
       },
       {
@@ -232,12 +301,12 @@
         ],
         "evidence_diff": [],
         "diagnostics": {
-          "round_id_observed": "884d0d4a-e4f4-4364-8a38-c8de94734658",
+          "round_id_observed": "2f0540cb-1bba-469c-8043-c1e69a987e2b",
           "runner": "complete-game-loop-api-runner",
           "golden_result_id": "golden-academy-complete-game-loop",
           "public_receipt": {
-            "submission_id": "7c3a9ed5-e748-464b-9d0b-04856c2e12be",
-            "round_id": "884d0d4a-e4f4-4364-8a38-c8de94734658",
+            "submission_id": "308887a0-f0e5-43ec-be19-3417d4bb94fb",
+            "round_id": "2f0540cb-1bba-469c-8043-c1e69a987e2b",
             "idempotency_key": "academy-complete-game-loop-submission",
             "status": "RECORDED",
             "score": 1000,
@@ -257,7 +326,7 @@
             "credits_remaining": 3,
             "scoring_version": "fga11-scoring-v1",
             "economy_version": "fga11-economy-v1",
-            "created_at": "2026-11-27T00:01:06.128267Z",
+            "created_at": "2026-11-27T00:37:56.520145Z",
             "replayed": false,
             "ethics": {
               "status": "SUPPORTED",
@@ -437,7 +506,7 @@
       "idempotent_replay": true,
       "errors": []
     },
-    "generated_at_utc": "2026-11-27T00:02:15.105641+00:00"
+    "generated_at_utc": "2026-11-27T00:38:29.067268+00:00"
   },
   "databricks_public_boundary": {
     "status": "pass",

@@ -21,7 +21,7 @@ All three branches were created from the preceding FGA-15 branch and pushed to t
 - Read `Fraud Graph Arena — Master Series Outline Updated.md` and `FGA_Development_Series_Outline_07-19.md`.
 - Read the FGA-14 and FGA-15 articles and checked the repeated opening, section notation, noir narration, tables, separator placement, source-code receipt and final-image treatment.
 - Applied the editorial-review skill to the draft: checked intent, reader path, certainty, observable claims, paragraph pulse, repeated recap, scope boundaries, accessibility and traceability.
-- Kept FGA-16 at `readingTime: 18`, with no fenced code blocks and no invented provider claim.
+- Kept FGA-16 at `readingTime: 19` (the site estimator also returns 19), with no fenced code blocks and no invented provider claim.
 
 ### 2. Contract and implementation pass
 
@@ -77,6 +77,7 @@ After those corrections, `tests/iteration_16` passed `7 tests`. The isolated sha
 - The static build passed and generated `/fga/16-test-me-baby-one-more-time/index.html`.
 - Pagefind indexed 99 pages. Its existing informational note about the default UI was recorded; it was not a build failure.
 - The new slug was added to `unlistedArticleSlugs`, preserving direct access without changing the public homepage count.
+- The new asset snapshot exceeded jsDelivr's 50 MB package limit. Its image blobs remained healthy on GitHub Raw, so the article validator now allowlists immutable Raw URLs for the same asset repository and the article uses that direct fallback for both images.
 
 ### 7. Visual assets
 
@@ -85,13 +86,14 @@ Generated and visually inspected two FGA-16 assets using the image-generation sk
 - `1.png`: dark muted sepia newspaper cover with the Detective Academy, twelve scenarios, three mixed-role cards, seeds, golden results, regression and a UI-to-persistence receipt.
 - `2.png`: darker sepia top-down case-file infographic with eight numbered panels, the three role cases, three runner layers, the real UI loop, diagnostics, regression and the SQL Warehouse limit.
 
-Both keep Hercule Perrot as a recognisable Spanish Water Dog rather than a wolf or generic hound. Assets were committed and pushed to `angelic-assets` as `6859c986679ac741f0fb5fb86ce136c43ce8826e`. The article pins both CDN URLs to that immutable commit.
+Both keep Hercule Perrot as a recognisable Spanish Water Dog rather than a wolf or generic hound. Assets were committed and pushed to `angelic-assets` as `6859c986679ac741f0fb5fb86ce136c43ce8826e`. The article pins both GitHub Raw URLs to that immutable commit after jsDelivr rejected the new repository snapshot because the package exceeded its 50 MB limit.
 
 ### 8. Databricks qualification
 
 - Verified the requested profile with `databricks current-user me --profile fga`.
 - Ran `scripts/qualify_fga16_academy.py --profile fga --catalog sda_dev --schema sandbox --warehouse-id eded42c9d0a69b84`.
 - Final result after the second implementation pass is recorded in `databricks-fga16-academy-current.json`: `status=pass`, local Academy `PASS`, 12 scenarios, 14 local packages, SQLite persistence `PASS`, 13 remote canonical public boundaries `pass`.
+- The receipt was generated at `2026-11-27T00:40:05.917324+00:00` with `source_commit=8b1a6c2b9535c591ab11fb1c4d9f4de6c1fa5194`, `profile=fga`, `read_only=true`, `truth_source_queried=false` and `actual_engine_run=false`.
 - Remote mode is read-only. It queried no protected truth source and did not claim an actual GraphFrames or Zingg run. The receipt records `actual_engine_run=false` and `graphframes_compatibility=UNRESOLVED_SQL_WAREHOUSE_ONLY`.
 - Full JSON receipt: `reports/iteration-16/databricks-fga16-academy-current.json`.
 
