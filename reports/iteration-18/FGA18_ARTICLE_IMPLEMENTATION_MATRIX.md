@@ -18,7 +18,7 @@
 | Browser click reaches API trace | Frontend sends stable trace header from the browser request | `apps/web/e2e/fga18-observability.spec.ts` (`18 passed` full E2E run) | Parts VII–VIII |
 | API trace reaches database and analytics | Python TestClient smoke exercises create/start/opening/graph flow with SQLite | `fga18_observability_smoke.py`; full backend regression | Parts V, VII–VIII |
 | Databricks boundary stays honest | Profile-specific read-only qualification script; no Docker or hidden truth | `databricks-fga18-observability-current.json`, status `pass`, 13 packages | Parts VII, Case Closed? |
-| FGA-18 remains under the time budget and series pattern | 16-minute estimate; direct route, newspaper cover, final infographic and matching separators | Content validation, link check and Astro build generated `/fga/18-log-me-tender/` | Source Code, Release Receipt |
+| FGA-18 remains under the time budget and series pattern | 17-minute estimate; direct route, newspaper cover, final infographic and matching separators | Content validation, link check and Astro build generated `/fga/18-log-me-tender/` | Source Code, Release Receipt |
 
 ## Deliberate non-claims
 
